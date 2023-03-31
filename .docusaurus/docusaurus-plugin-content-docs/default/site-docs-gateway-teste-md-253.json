@@ -1,0 +1,16 @@
+{
+  "unversionedId": "gateway/teste",
+  "id": "gateway/teste",
+  "title": "Introduction",
+  "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+  "source": "@site/docs/gateway/teste.md",
+  "sourceDirName": "gateway",
+  "slug": "/gateway/teste",
+  "permalink": "/docs/gateway/teste",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/gateway/teste.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "gatewaySidebar"
+}

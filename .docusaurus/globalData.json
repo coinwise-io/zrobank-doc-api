@@ -1,0 +1,71 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "overview/teste",
+          "docs": [
+            {
+              "id": "caas/teste",
+              "path": "/docs/caas/teste",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "gateway/teste",
+              "path": "/docs/gateway/teste",
+              "sidebar": "gatewaySidebar"
+            },
+            {
+              "id": "overview/teste",
+              "path": "/docs/overview/teste",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/teste2",
+              "path": "/docs/overview/teste2",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "paas/teste",
+              "path": "/docs/paas/teste",
+              "sidebar": "paasSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "overviewSidebar": {
+              "link": {
+                "path": "/docs/overview/teste",
+                "label": "overview/teste"
+              }
+            },
+            "paasSidebar": {
+              "link": {
+                "path": "/docs/paas/teste",
+                "label": "paas/teste"
+              }
+            },
+            "caasSidebar": {
+              "link": {
+                "path": "/docs/caas/teste",
+                "label": "caas/teste"
+              }
+            },
+            "gatewaySidebar": {
+              "link": {
+                "path": "/docs/gateway/teste",
+                "label": "gateway/teste"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
