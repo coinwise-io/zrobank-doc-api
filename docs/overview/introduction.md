@@ -14,4 +14,4 @@ For institutional clients, we build all crypto and payments infrastructure using
 
 # Questions?
 
-It’s always a pleasure to help you! If you require assistance with the integration or have any questions, please, feel free to use our documentation and do not hesitate to contact us at *INSERIR CANAL DE SUPORTE TÉCNICO*.
+It’s always a pleasure to help you! If you require assistance with the integration or have any questions, please feel free to use our documentation and do not hesitate to contact us at *INSERIR CANAL DE SUPORTE TÉCNICO*.
