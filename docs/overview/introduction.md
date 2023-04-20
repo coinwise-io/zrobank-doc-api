@@ -6,7 +6,7 @@ Here you'll find all the information you must have to integrate with Zro Bank an
 
 # Overview
 
-Zro Bank is a Brazilian digital bank and cryptocurrency exchange, blockchain-based. With our proprietary technology, we build financial services for you and your business.
+Zro Bank is a Brazilian digital bank and cryptocurrency exchange based on blockchain technology. We build financial services for customers and their businesses using proprietary technology.
 
 ** ZRO FOR BUSINESS ** - Made for your company 
 
