@@ -8,7 +8,7 @@
           "label": "Next",
           "isLast": true,
           "path": "/docs",
-          "mainDocId": "overview/teste",
+          "mainDocId": "overview/introduction",
           "docs": [
             {
               "id": "caas/teste",
@@ -21,13 +21,28 @@
               "sidebar": "gatewaySidebar"
             },
             {
-              "id": "overview/teste",
-              "path": "/docs/overview/teste",
+              "id": "overview/api-changelog",
+              "path": "/docs/overview/api-changelog",
               "sidebar": "overviewSidebar"
             },
             {
-              "id": "overview/teste2",
-              "path": "/docs/overview/teste2",
+              "id": "overview/api-key",
+              "path": "/docs/overview/api-key",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/environments",
+              "path": "/docs/overview/environments",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/introduction",
+              "path": "/docs/overview/introduction",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/security",
+              "path": "/docs/overview/security",
               "sidebar": "overviewSidebar"
             },
             {
@@ -40,8 +55,8 @@
           "sidebars": {
             "overviewSidebar": {
               "link": {
-                "path": "/docs/overview/teste",
-                "label": "overview/teste"
+                "path": "/docs/overview/introduction",
+                "label": "overview/introduction"
               }
             },
             "paasSidebar": {

@@ -16,14 +16,32 @@
           {
             "type": "link",
             "label": "Introduction",
-            "href": "/docs/overview/teste",
-            "docId": "overview/teste"
+            "href": "/docs/overview/introduction",
+            "docId": "overview/introduction"
           },
           {
             "type": "link",
             "label": "Security",
-            "href": "/docs/overview/teste2",
-            "docId": "overview/teste2"
+            "href": "/docs/overview/security",
+            "docId": "overview/security"
+          },
+          {
+            "type": "link",
+            "label": "Environments",
+            "href": "/docs/overview/environments",
+            "docId": "overview/environments"
+          },
+          {
+            "type": "link",
+            "label": "API Key",
+            "href": "/docs/overview/api-key",
+            "docId": "overview/api-key"
+          },
+          {
+            "type": "link",
+            "label": "API Changelog",
+            "href": "/docs/overview/api-changelog",
+            "docId": "overview/api-changelog"
           }
         ],
         "collapsed": true,
@@ -92,16 +110,34 @@
       "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
       "sidebar": "gatewaySidebar"
     },
-    "overview/teste": {
-      "id": "overview/teste",
-      "title": "Introduction",
-      "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+    "overview/api-changelog": {
+      "id": "overview/api-changelog",
+      "title": "API Changelog",
+      "description": "",
       "sidebar": "overviewSidebar"
     },
-    "overview/teste2": {
-      "id": "overview/teste2",
+    "overview/api-key": {
+      "id": "overview/api-key",
+      "title": "API Key",
+      "description": "",
+      "sidebar": "overviewSidebar"
+    },
+    "overview/environments": {
+      "id": "overview/environments",
+      "title": "Environments",
+      "description": "",
+      "sidebar": "overviewSidebar"
+    },
+    "overview/introduction": {
+      "id": "overview/introduction",
+      "title": "Introduction",
+      "description": "Welcome to Zro Bank!",
+      "sidebar": "overviewSidebar"
+    },
+    "overview/security": {
+      "id": "overview/security",
       "title": "Security",
-      "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+      "description": "",
       "sidebar": "overviewSidebar"
     },
     "paas/teste": {
