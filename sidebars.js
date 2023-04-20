@@ -23,7 +23,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Overview',
-      items: ['overview/teste', 'overview/teste2'],
+      items: ['overview/introduction', 'overview/security', 'overview/environments', 'overview/api-key', 'overview/api-changelog'],
     },
     
   ],

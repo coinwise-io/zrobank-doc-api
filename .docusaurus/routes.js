@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '2fe'),
+    component: ComponentCreator('/docs', '559'),
     routes: [
       {
         path: '/docs/caas/teste',
@@ -54,14 +54,32 @@ export default [
         sidebar: "gatewaySidebar"
       },
       {
-        path: '/docs/overview/teste',
-        component: ComponentCreator('/docs/overview/teste', '2ab'),
+        path: '/docs/overview/api-changelog',
+        component: ComponentCreator('/docs/overview/api-changelog', 'c0b'),
         exact: true,
         sidebar: "overviewSidebar"
       },
       {
-        path: '/docs/overview/teste2',
-        component: ComponentCreator('/docs/overview/teste2', 'c32'),
+        path: '/docs/overview/api-key',
+        component: ComponentCreator('/docs/overview/api-key', 'f40'),
+        exact: true,
+        sidebar: "overviewSidebar"
+      },
+      {
+        path: '/docs/overview/environments',
+        component: ComponentCreator('/docs/overview/environments', '097'),
+        exact: true,
+        sidebar: "overviewSidebar"
+      },
+      {
+        path: '/docs/overview/introduction',
+        component: ComponentCreator('/docs/overview/introduction', 'a91'),
+        exact: true,
+        sidebar: "overviewSidebar"
+      },
+      {
+        path: '/docs/overview/security',
+        component: ComponentCreator('/docs/overview/security', 'ddb'),
         exact: true,
         sidebar: "overviewSidebar"
       },
