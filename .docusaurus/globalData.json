@@ -11,8 +11,53 @@
           "mainDocId": "overview/introduction",
           "docs": [
             {
-              "id": "caas/teste",
-              "path": "/docs/caas/teste",
+              "id": "caas/apiLogs",
+              "path": "/docs/caas/apiLogs",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/authentication",
+              "path": "/docs/caas/authentication",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/errors",
+              "path": "/docs/caas/errors",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/indepotence",
+              "path": "/docs/caas/indepotence",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/pagination",
+              "path": "/docs/caas/pagination",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/protocol",
+              "path": "/docs/caas/protocol",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/rateLimiting",
+              "path": "/docs/caas/rateLimiting",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/request_id",
+              "path": "/docs/caas/request_id",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/serialization",
+              "path": "/docs/caas/serialization",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/versioning",
+              "path": "/docs/caas/versioning",
               "sidebar": "caasSidebar"
             },
             {
@@ -67,8 +112,8 @@
             },
             "caasSidebar": {
               "link": {
-                "path": "/docs/caas/teste",
-                "label": "caas/teste"
+                "path": "/docs/caas/authentication",
+                "label": "caas/authentication"
               }
             },
             "gatewaySidebar": {

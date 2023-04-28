@@ -39,11 +39,65 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', '559'),
+    component: ComponentCreator('/docs', 'cb2'),
     routes: [
       {
-        path: '/docs/caas/teste',
-        component: ComponentCreator('/docs/caas/teste', '083'),
+        path: '/docs/caas/apiLogs',
+        component: ComponentCreator('/docs/caas/apiLogs', '4e8'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/authentication',
+        component: ComponentCreator('/docs/caas/authentication', 'b42'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/errors',
+        component: ComponentCreator('/docs/caas/errors', '278'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/indepotence',
+        component: ComponentCreator('/docs/caas/indepotence', 'b2e'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/pagination',
+        component: ComponentCreator('/docs/caas/pagination', 'b33'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/protocol',
+        component: ComponentCreator('/docs/caas/protocol', '5ec'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/rateLimiting',
+        component: ComponentCreator('/docs/caas/rateLimiting', '45b'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/request_id',
+        component: ComponentCreator('/docs/caas/request_id', 'a7f'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/serialization',
+        component: ComponentCreator('/docs/caas/serialization', '3c2'),
+        exact: true,
+        sidebar: "caasSidebar"
+      },
+      {
+        path: '/docs/caas/versioning',
+        component: ComponentCreator('/docs/caas/versioning', 'a4d'),
         exact: true,
         sidebar: "caasSidebar"
       },

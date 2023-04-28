@@ -20,20 +20,236 @@
           "contentPathLocalized": "/Users/mthais/Documents/Github/zrobank-doc-api/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
-              "unversionedId": "caas/teste",
-              "id": "caas/teste",
-              "title": "Introduction",
-              "description": "You have just learned the basics of Docusaurus and made some changes to the",
-              "source": "@site/docs/caas/teste.md",
+              "unversionedId": "caas/apiLogs",
+              "id": "caas/apiLogs",
+              "title": "API Logs",
+              "description": "Os arquivos de logs na API ZroBank são armazenados no servidor.",
+              "source": "@site/docs/caas/apiLogs.md",
               "sourceDirName": "caas",
-              "slug": "/caas/teste",
-              "permalink": "/docs/caas/teste",
+              "slug": "/caas/apiLogs",
+              "permalink": "/docs/caas/apiLogs",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/teste.md",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/apiLogs.md",
               "tags": [],
               "version": "current",
               "frontMatter": {},
-              "sidebar": "caasSidebar"
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Authentication",
+                "permalink": "/docs/caas/authentication"
+              },
+              "next": {
+                "title": "Errors",
+                "permalink": "/docs/caas/errors"
+              }
+            },
+            {
+              "unversionedId": "caas/authentication",
+              "id": "caas/authentication",
+              "title": "Authentication",
+              "description": "A autenticação na API é realizada por meio do HTTP Bearer Authentication. Para autenticar-se, é necessário fornecer a chave da API como valor do token do tipo Bearer. É importante ressaltar que todas as requisições à API devem ser feitas por HTTPS, já que chamadas realizadas por HTTP simples não serão aceitas. Além disso, é fundamental que as solicitações à API sejam autenticadas, caso contrário elas não serão executadas com sucesso.",
+              "source": "@site/docs/caas/authentication.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/authentication",
+              "permalink": "/docs/caas/authentication",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/authentication.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "next": {
+                "title": "API Logs",
+                "permalink": "/docs/caas/apiLogs"
+              }
+            },
+            {
+              "unversionedId": "caas/errors",
+              "id": "caas/errors",
+              "title": "Errors",
+              "description": "HTTP Errors",
+              "source": "@site/docs/caas/errors.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/errors",
+              "permalink": "/docs/caas/errors",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/errors.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "API Logs",
+                "permalink": "/docs/caas/apiLogs"
+              },
+              "next": {
+                "title": "Indepotence",
+                "permalink": "/docs/caas/indepotence"
+              }
+            },
+            {
+              "unversionedId": "caas/indepotence",
+              "id": "caas/indepotence",
+              "title": "Indepotence",
+              "description": "Indepotência é um conceito fundamental em APIs, referente à garantia de que uma mesma requisição pode ser feita diversas vezes sem efeitos colaterais. Em nossa API, a ideia de indepotência é levada em consideração em todas as requisições, e ela é implementada automaticamente para garantir a consistência dos dados.",
+              "source": "@site/docs/caas/indepotence.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/indepotence",
+              "permalink": "/docs/caas/indepotence",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/indepotence.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Errors",
+                "permalink": "/docs/caas/errors"
+              },
+              "next": {
+                "title": "Pagination",
+                "permalink": "/docs/caas/pagination"
+              }
+            },
+            {
+              "unversionedId": "caas/pagination",
+              "id": "caas/pagination",
+              "title": "Pagination",
+              "description": "Para garantir que solicitações consecutivas de páginas não sejam afetadas por objetos recém-criados, implementamos a paginação utilizando um cursor. Ao listar um recurso, a resposta incluirá uma lista de objetos que pode ter um tamanho máximo especificado.   Todos os nossos endpoints de busca geral tem paginação.",
+              "source": "@site/docs/caas/pagination.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/pagination",
+              "permalink": "/docs/caas/pagination",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/pagination.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Indepotence",
+                "permalink": "/docs/caas/indepotence"
+              },
+              "next": {
+                "title": "Protocol",
+                "permalink": "/docs/caas/protocol"
+              }
+            },
+            {
+              "unversionedId": "caas/protocol",
+              "id": "caas/protocol",
+              "title": "Protocol",
+              "description": "A API Zrobank Cass é uma ferramenta de programação que permite a comunicação entre aplicativos e a plataforma Zrobank Cass, utilizando os métodos HTTP GET, POST, PATCH e DELETE. Cada método realiza uma operação específica, como recuperar informações, criar novos registros, atualizar informações e excluir registros. As respostas da API são fornecidas em formato JSON, um padrão de intercâmbio de dados amplamente utilizado na web. O uso de códigos de resposta HTTP padronizados permite que o cliente entenda o status da operação realizada, como sucesso, erro ou necessidade de ação adicional.",
+              "source": "@site/docs/caas/protocol.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/protocol",
+              "permalink": "/docs/caas/protocol",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/protocol.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Pagination",
+                "permalink": "/docs/caas/pagination"
+              },
+              "next": {
+                "title": "Rate Limiting",
+                "permalink": "/docs/caas/rateLimiting"
+              }
+            },
+            {
+              "unversionedId": "caas/rateLimiting",
+              "id": "caas/rateLimiting",
+              "title": "Rate Limiting",
+              "description": "Nós utilizamos limitação de taxa para proteger a estabilidade da nossa API, garantindo que ela não seja sobrecarregada com um grande número de solicitações. Para isso, aplicamos um limitador de taxa geral para todos os endpoints, limitando o número de solicitações por unidade de tempo.  Nosso limitador de taxa permite até insira aqui o valor solicitações por minuto.",
+              "source": "@site/docs/caas/rateLimiting.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/rateLimiting",
+              "permalink": "/docs/caas/rateLimiting",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/rateLimiting.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Protocol",
+                "permalink": "/docs/caas/protocol"
+              },
+              "next": {
+                "title": "Request ID",
+                "permalink": "/docs/caas/request_id"
+              }
+            },
+            {
+              "unversionedId": "caas/request_id",
+              "id": "caas/request_id",
+              "title": "Request ID",
+              "description": "Toda solicitação feita à API ZroBank Caas possui um identificador único associado criado automaticamente quando executado um Request-ID e não é retornado.",
+              "source": "@site/docs/caas/request_id.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/request_id",
+              "permalink": "/docs/caas/request_id",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/request_id.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Rate Limiting",
+                "permalink": "/docs/caas/rateLimiting"
+              },
+              "next": {
+                "title": "Serialization",
+                "permalink": "/docs/caas/serialization"
+              }
+            },
+            {
+              "unversionedId": "caas/serialization",
+              "id": "caas/serialization",
+              "title": "Serialization",
+              "description": "Snake case",
+              "source": "@site/docs/caas/serialization.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/serialization",
+              "permalink": "/docs/caas/serialization",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/serialization.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Request ID",
+                "permalink": "/docs/caas/request_id"
+              },
+              "next": {
+                "title": "Versioning",
+                "permalink": "/docs/caas/versioning"
+              }
+            },
+            {
+              "unversionedId": "caas/versioning",
+              "id": "caas/versioning",
+              "title": "Versioning",
+              "description": "",
+              "source": "@site/docs/caas/versioning.md",
+              "sourceDirName": "caas",
+              "slug": "/caas/versioning",
+              "permalink": "/docs/caas/versioning",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/caas/versioning.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "caasSidebar",
+              "previous": {
+                "title": "Serialization",
+                "permalink": "/docs/caas/serialization"
+              }
             },
             {
               "unversionedId": "gateway/teste",
@@ -233,7 +449,43 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "caas/teste"
+                    "id": "caas/authentication"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/apiLogs"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/errors"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/indepotence"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/pagination"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/protocol"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/rateLimiting"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/request_id"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/serialization"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "caas/versioning"
                   }
                 ],
                 "collapsed": true,
