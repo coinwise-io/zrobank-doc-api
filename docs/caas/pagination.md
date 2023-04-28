@@ -14,4 +14,4 @@ Para garantir que solicitações consecutivas de páginas não sejam afetadas po
   -H 'accept: application/json' \
   -H 'Authorization: Bearer 2'`
 
-# Idempotence
+

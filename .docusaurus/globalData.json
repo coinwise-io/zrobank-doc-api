@@ -1,0 +1,131 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "overview/introduction",
+          "docs": [
+            {
+              "id": "caas/apiLogs",
+              "path": "/docs/caas/apiLogs",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/authentication",
+              "path": "/docs/caas/authentication",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/errors",
+              "path": "/docs/caas/errors",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/indepotence",
+              "path": "/docs/caas/indepotence",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/pagination",
+              "path": "/docs/caas/pagination",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/protocol",
+              "path": "/docs/caas/protocol",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/rateLimiting",
+              "path": "/docs/caas/rateLimiting",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/request_id",
+              "path": "/docs/caas/request_id",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/serialization",
+              "path": "/docs/caas/serialization",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "caas/versioning",
+              "path": "/docs/caas/versioning",
+              "sidebar": "caasSidebar"
+            },
+            {
+              "id": "gateway/teste",
+              "path": "/docs/gateway/teste",
+              "sidebar": "gatewaySidebar"
+            },
+            {
+              "id": "overview/api-changelog",
+              "path": "/docs/overview/api-changelog",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/api-key",
+              "path": "/docs/overview/api-key",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/environments",
+              "path": "/docs/overview/environments",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/introduction",
+              "path": "/docs/overview/introduction",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "overview/security",
+              "path": "/docs/overview/security",
+              "sidebar": "overviewSidebar"
+            },
+            {
+              "id": "paas/teste",
+              "path": "/docs/paas/teste",
+              "sidebar": "paasSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "overviewSidebar": {
+              "link": {
+                "path": "/docs/overview/introduction",
+                "label": "overview/introduction"
+              }
+            },
+            "paasSidebar": {
+              "link": {
+                "path": "/docs/paas/teste",
+                "label": "paas/teste"
+              }
+            },
+            "caasSidebar": {
+              "link": {
+                "path": "/docs/caas/authentication",
+                "label": "caas/authentication"
+              }
+            },
+            "gatewaySidebar": {
+              "link": {
+                "path": "/docs/gateway/teste",
+                "label": "gateway/teste"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

@@ -206,4 +206,3 @@ Nossa API também possui erros de validação de dados. A seguir, apresentamos u
 | IS_DATE_AFTER_THAN_NOW | The field {property} must be after now date. |
 | IS_IN | The {property} value is not valid. |
 
-# Rate Limiting
