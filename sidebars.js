@@ -46,7 +46,7 @@ const sidebars = {
         "caas/authentication",
         "caas/apiLogs",
         "caas/errors",
-        "caas/indepotence",
+        "caas/idempotence",
         "caas/pagination",
         "caas/protocol",
         "caas/rateLimiting",
