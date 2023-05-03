@@ -42,7 +42,7 @@ const sidebars = {
       type: 'category',
       label: 'CaaS',
       items: ['caas/authentication', 'caas/apiLogs','caas/errors',
-      'caas/indepotence','caas/pagination','caas/protocol',
+      'caas/idempotence','caas/pagination','caas/protocol',
       'caas/rateLimiting','caas/request_id','caas/serialization','caas/versioning'],
     },
     
