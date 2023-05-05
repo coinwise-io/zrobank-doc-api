@@ -15,7 +15,7 @@ For institutional clients, we build all crypto and payments infrastructure using
 
 # What is Pix?
 
-Pix is a new instant payment system that was launched in Brazil, November 2020. This system allows individuals and businesses to make instant money transfers through a mobile app or online banking platform. The main advantage of Pix is that it is available 24/7, including weekends and holidays, and the transactions are processed instantly.
+Pix is a new instant payment system that was launched in Brazil, November 2020. This system allows individuals and businesses to make instant money transfers through a mobile app or online banking platform. The main advantage of Pix is that it is available 24/7, including holidays, and the transactions are processed instantly.
 
 
 One of the benefits of Pix is that it is a cheaper and faster alternative to traditional payment methods, such as bank transfers, and credit cards. There are no fees for individuals and small businesses to use Pix. Large businesses may incur fees depending on the volume of transactions.
