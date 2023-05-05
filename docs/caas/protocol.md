@@ -5,3 +5,4 @@ A nossa API segue o protocolo de API REST (Representational State Transfer), bas
 O cliente envia uma solicitação HTTP para o servidor, especificando o método HTTP adequado (GET, POST, PUT, DELETE, etc.) e o recurso que deseja acessar.
 
 O servidor processa a solicitação e retorna uma resposta HTTP com um código de status indicando se a operação foi bem-sucedida ou não. Dependendo da requisição, o servidor pode retornar também dados relevantes na resposta em um formato específico, como JSON.
+
