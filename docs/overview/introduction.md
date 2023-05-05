@@ -24,9 +24,9 @@ One of the benefits of Pix is that it is a cheaper and faster alternative to tra
 On our Pix as a Service API, you can send and receive money by a Pix Key, dynamic QR code or bank account.
 
 
-The Pix payment system through Pix keys works by allowing users to link a unique identification process, such as a phone number, email address, document number or random key, to their bank account. When making a payment, the user simply provides a Pix key instead of bank account information.
+The Pix payment system, through Pix keys, works by allowing users to link a unique identification process, such as a phone number, email address, document number or random key, to their bank account. When making a payment, the user simply provides a Pix key instead of bank account information.
 Pix dynamic QR code works by allowing the payer to scan or copy the QR code created by the merchant or service provider. The QR code contains information such as the payment amount and the recipient’s account details. The use of dynamic QR codes allows for greater security and flexibility in payments, as the code is generated for each individual transaction, reducing the risk of fraudulent activity.
-In order to receive a Pix Payment, if you didn’t register a pix key, you can use your bank account information on Pix. Providing the data that it’s usually provided for a traditional bank transfer, the money is credited to the recipient’s account instantly as a Pix Payment.
+In order to receive a Pix Payment, if you didn’t register a pix key, you can use your bank account information on Pix. You can use the data that is usually provided by a traditional bank, the money will then be credited to the recipient’s account instantly as a Pix Payment.
 
 
 You can find more information on Pix on Central Bank FAQ section on its website
