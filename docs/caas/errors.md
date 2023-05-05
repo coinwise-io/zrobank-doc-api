@@ -1,67 +1,70 @@
-# Errors
+# API Responses
 
-## HTTP Errors
+As respostas da nossa API utilizam códigos de `status HTTP` padrão. 
 
-As respostas de nossa API utilizam os códigos de status HTTP padrão, onde códigos na faixa 2xx indicam sucesso na requisição, códigos na faixa 3xx indicam que algo mais precisa ser feito ou precisou ser feito para completar a solicitação e códigos na faixa 4xx indicam que a solicitação não pode ser concluída ou contém a sintaxe incorreta O corpo da resposta contém uma lista de erros com título e detalhes.
+Em casos de respostas de erros de aplicação, o response body irá conter os campos `code` e `message`, onde eles especificarão detalhes do erro ocorrido.
 
-| HTTP Status | Description |
+Abaixo estão listados os tipos de HTTP Status Codes, API Error Codes e Data Validation Errors.
+
+## HTTP Status Codes
+
+| HTTP Status Code | Description |
 | --- | --- |
-| DEFAULT | Unable to process your request. Please try again. |
-| HTTP_STATUS_100 | Continue, server is ready to receive request. |
-| HTTP_STATUS_101 | Your TCP connection is about to be switched to a different protocol. |
-| HTTP_STATUS_103 | Please perform initialization and/or preload resources for the server. |
-| HTTP_STATUS_200 | Your request was successfully processed. |
-| HTTP_STATUS_201 | Request created successfully. |
-| HTTP_STATUS_202 | Your request was accepted. |
-| HTTP_STATUS_203 | Unauthorized information. |
-| HTTP_STATUS_204 | Your request was successful. |
-| HTTP_STATUS_205 | Please reset document display. |
-| HTTP_STATUS_206 | Your request was successfully processed, only part of the resource sent by the client was delivered. |
-| HTTP_STATUS_300 | More than one representation for the requested resource was found. |
-| HTTP_STATUS_301 | This and all future requests must be directed to the URL. |
-| HTTP_STATUS_302 | Your request was redirected. |
-| HTTP_STATUS_303 | Your request was redirected. |
-| HTTP_STATUS_304 | Your request has not been modified. |
-| HTTP_STATUS_307 | Requested resource was temporarily redirected. |
-| HTTP_STATUS_308 | Requested resource has been permanently redirected. |
-| HTTP_STATUS_400 | Your request could not be processed. Please check the data and try again. |
-| HTTP_STATUS_401 | Access is denied. |
-| HTTP_STATUS_402 | Payment failed. |
-| HTTP_STATUS_403 | Access denied to requested resource. User may not have sufficient permission. |
-| HTTP_STATUS_404 | Requested resource was not found. |
-| HTTP_STATUS_405 | Unsupported method. |
-| HTTP_STATUS_406 | Request not accepted. |
-| HTTP_STATUS_407 | Proxy authentication required. |
-| HTTP_STATUS_408 | Request timed out. |
-| HTTP_STATUS_409 | Request could not be processed. |
-| HTTP_STATUS_410 | Resource is no longer available on the origin server. |
-| HTTP_STATUS_411 | The URI used in the request does not contain defined Content-Length. |
-| HTTP_STATUS_412 | Access to the specified resource was denied. |
-| HTTP_STATUS_413 | The request is larger than it can handle. |
-| HTTP_STATUS_414 | The requested resource is larger than the supported size. |
-| HTTP_STATUS_415 | This resource type is not supported. |
-| HTTP_STATUS_416 | The URI used in the request does not contain the Content-Range with a satisfactory string. |
-| HTTP_STATUS_417 | The request sent in the request failed. |
-| HTTP_STATUS_422 | Request could not be processed. |
-| HTTP_STATUS_425 | The server could not process this request. |
-| HTTP_STATUS_426 | Upgrade Required. It is necessary to update the protocol to a new version. |
-| HTTP_STATUS_428 | The origin server requires the request to be conditional. |
-| HTTP_STATUS_429 | The app has been restricted and should not attempt to retry the request before a certain time interval. |
-| HTTP_STATUS_431 | Processing was not performed due to the size of the header, please reduce the size and repeat the request. |
-| HTTP_STATUS_451 | Error accessing illegal protocol. |
-| HTTP_STATUS_500 | We are unable to process your request. Please try again in a moment. |
-| HTTP_STATUS_501 | The requested feature has not been implemented. |
-| HTTP_STATUS_502 | An invalid response was obtained. |
-| HTTP_STATUS_503 | The service is temporarily unavailable for maintenance or is overloaded.|
-| HTTP_STATUS_504 | The server did not receive a response in a timely manner to complete the request. |
-| HTTP_STATUS_505 | The version used in the request is not supported. |
-| HTTP_STATUS_506 | Internal configuration error. Endpoint not suitable for this process.|
-| HTTP_STATUS_507 | The maximum storage quota has been reached.|
-| HTTP_STATUS_508 | An infinite loop was detected while processing the request.|
-| HTTP_STATUS_510 | The request received with the extension declaration is not supported by the server.|
-| HTTP_STATUS_511 | You must authenticate to the network to proceed.
+| 100 | Continue, server is ready to receive request. |
+| 101 | Your TCP connection is about to be switched to a different protocol. |
+| 103 | Please perform initialization and/or preload resources for the server. |
+| 200 | Your request was successfully processed. |
+| 201 | Request created successfully. |
+| 202 | Your request was accepted. |
+| 203 | Unauthorized information. |
+| 204 | Your request was successful. |
+| 205 | Please reset document display. |
+| 206 | Your request was successfully processed, only part of the resource sent by the client was delivered. |
+| 300 | More than one representation for the requested resource was found. |
+| 301 | This and all future requests must be directed to the URL. |
+| 302 | Your request was redirected. |
+| 303 | Your request was redirected. |
+| 304 | Your request has not been modified. |
+| 307 | Requested resource was temporarily redirected. |
+| 308 | Requested resource has been permanently redirected. |
+| 400 | Your request could not be processed. Please check the data and try again. |
+| 401 | Access is denied. |
+| 402 | Payment failed. |
+| 403 | Access denied to requested resource. User may not have sufficient permission. |
+| 404 | Requested resource was not found. |
+| 405 | Unsupported method. |
+| 406 | Request not accepted. |
+| 407 | Proxy authentication required. |
+| 408 | Request timed out. |
+| 409 | Request could not be processed. |
+| 410 | Resource is no longer available on the origin server. |
+| 411 | The URI used in the request does not contain defined Content-Length. |
+| 412 | Access to the specified resource was denied. |
+| 413 | The request is larger than it can handle. |
+| 414 | The requested resource is larger than the supported size. |
+| 415 | This resource type is not supported. |
+| 416 | The URI used in the request does not contain the Content-Range with a satisfactory string. |
+| 417 | The request sent in the request failed. |
+| 422 | Request could not be processed. |
+| 425 | The server could not process this request. |
+| 426 | Upgrade Required. It is necessary to update the protocol to a new version. |
+| 428 | The origin server requires the request to be conditional. |
+| 429 | The app has been restricted and should not attempt to retry the request before a certain time interval. |
+| 431 | Processing was not performed due to the size of the header, please reduce the size and repeat the request. |
+| 451 | Error accessing illegal protocol. |
+| 500 | We are unable to process your request. Please try again in a moment. |
+| 501 | The requested feature has not been implemented. |
+| 502 | An invalid response was obtained. |
+| 503 | The service is temporarily unavailable for maintenance or is overloaded.|
+| 504 | The server did not receive a response in a timely manner to complete the request. |
+| 505 | The version used in the request is not supported. |
+| 506 | Internal configuration error. Endpoint not suitable for this process.|
+| 507 | The maximum storage quota has been reached.|
+| 508 | An infinite loop was detected while processing the request.|
+| 510 | The request received with the extension declaration is not supported by the server.|
+| 511 | You must authenticate to the network to proceed.
 
-Exemplo de Error **HTTP_STATUS_401**:
+Exemplo de response **401**:
 
 ```json
 {
@@ -72,18 +75,17 @@ Exemplo de Error **HTTP_STATUS_401**:
 }
 ```
 
-## Default Errors
+## API Error Codes
 
-Nossa API também possui erros padrão da aplicação. A seguir, apresentamos uma tabela com os tipos de erro e suas respectivas descrições.
-
-| Default Status | Description |
+| Code | Description |
 |------|---------|
 | DEFAULT | Unable to process your request. Please try again. |
 | FORBIDDEN | Access Denied. |
 | UNAUTHORIZED | Access is denied. |
 | MISSING_DATA | Required mandatory data: {}. |
 | USER_NOT_FOUND | User not found. |
-| INVALID_FORMAT | `"{\\"one\\": \\"Check the data format {invalidList} and try again.\\", \\"other\\": \\"Check the data format {invalidList} and try again.\\"}"`|
+| VALIDATION | Ex.: The quotation_id value must be an UUID. |
+| INVALID_FORMAT | Check the data format {} and try again.|
 | INVALID_EVP_FORMAT | The random key provided has an invalid format. |
 | INVALID_CPF_FORMAT | The CPF provided has an invalid format. |
 | INVALID_CNPJ_FORMAT | The CNPJ provided has an invalid format. |
@@ -169,13 +171,22 @@ Nossa API também possui erros padrão da aplicação. A seguir, apresentamos um
 | USER_WALLET_NOT_FOUND | User's association with the wallet is not found. Please check your data and try again. |
 | WALLET_ACCOUNTS_NOT_FOUND | No account details found. Please verify your registration and try again. |
 
-## Validation Erros
+Exemplo de response **422** com code **QUOTATION_NOT_FOUND**:
 
-Nossa API também possui erros de validação de dados. A seguir, apresentamos uma tabela com os tipos de erro e suas respectivas descrições.
+```json
+{
+  "success": false,
+  "data": null,
+  "error": "USER",
+  "message": "Quote was not found. Please try again.",
+  "code": "QUOTATION_NOT_FOUND"
+}
+```
 
-| Validation Status | Description |
+## Data Validation Errors
+
+| Validation Types | Description |
 | --- | --- |
-| DEFAULT | Unable to process your order. Please try again. |
 | IS_UUID | The {property} value must be an UUID. |
 | IS_ENUM | The value {value} is not accepted in param {property}. |
 | IS_BOOLEAN | The value {property} should be a boolean. |
@@ -206,3 +217,14 @@ Nossa API também possui erros de validação de dados. A seguir, apresentamos u
 | IS_DATE_AFTER_THAN_NOW | The field {property} must be after now date. |
 | IS_IN | The {property} value is not valid. |
 
+Exemplo de response **422** com code **VALIDATION**:
+
+```json
+{
+  "success": false,
+  "data": null,
+  "error": "USER",
+  "message": "The quotation_id value must be an UUID.",
+  "code": "VALIDATION"
+}
+```

@@ -1,20 +1,8 @@
-# Rate Limiting
+# Rate Limit
 
-Nós utilizamos limitação de taxa para proteger a estabilidade da nossa API, garantindo que ela não seja sobrecarregada com um grande número de solicitações. Para isso, aplicamos um limitador de taxa geral para todos os endpoints, limitando o número de solicitações por unidade de tempo.  Nosso limitador de taxa permite até 400 solicitações por minuto.
 
-Além disso, alguns endpoints podem exigir uma limitação de taxa mais específica, que também é definida.
+Rate limit é uma técnica utilizada em APIs para limitar o número de solicitações que um cliente pode fazer em um determinado período de tempo. Isso é feito para proteger o servidor contra sobrecarga e garantir a disponibilidade e o desempenho da API para todos os usuários.
 
-Na nossa API, as variáveis que guardam essa informação é a:
+* Para requisições de `/auth/refresh-token`, nós utilizamos um Rate Limit que permite até 1 solicitação por minuto;
 
-```
-{
-    
-    ttl: configService.get<number>('APP_GLOBAL_THROTTLE_TTL'),
-    
-    limit: configService.get<number>('APP_GLOBAL_THROTTLE_LIMIT')
-}```
-``
-
-Onde:
-**ttl:** é o time to leave (tempo)
-**limit:**  quantidade de vezes que pode ser feita a solicitação.
+* Para as demais requisições, nós utilizamos um Rate Limit padrão que permite até 400 solicitações por minuto.
