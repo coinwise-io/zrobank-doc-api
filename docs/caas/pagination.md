@@ -4,6 +4,7 @@ Todos os nossos endpoints de busca que possam retornar uma grande escala de dado
 
 Com a paginação, em vez de retornar todos os dados de uma só vez, os dados de resposta são divididos em páginas. A configuração das páginas é definida na requisição, a partir dos parâmetros listados abaixo.
 
+
 | Parameter       | Description                            |
 | --------------- | -------------------------------------- |
 | page  | Page number. **Default value : 1** |
@@ -13,7 +14,6 @@ Com a paginação, em vez de retornar todos os dados de uma só vez, os dados de
 
 
 > Observação: todos estes parâmetros mencionados são opcionais. Caso não definidos, seus valores DEFAULT serão considerados. 
-
 
 Exemplo de response com paginação, onde `page = 1`, `size = 5`, `sort = id`, `order = asc`:  
 ```
@@ -75,6 +75,3 @@ Exemplo de response com paginação, onde `page = 1`, `size = 5`, `sort = id`, `
   "error": null
 }
 ```
-
-
-
