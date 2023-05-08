@@ -1,6 +1,8 @@
 # Authentication
 
-Todas as requisições da API requerem uma autenticação de segurança do tipo HTTP Bearer Authentication, através de um **Access Token**. 
+All API requests require HTTP Bearer Authentication security authentication through an **Access Token**. 
+
+ If your API keys were accidentally shared, please contact our support immediately at 
 
 É importante ressaltar que todas as requisições à API devem ser feitas por HTTPS, já que chamadas realizadas por HTTP simples não serão aceitas. Além disso, é fundamental que as solicitações à API sejam autenticadas, caso contrário elas não serão executadas com sucesso.
 
