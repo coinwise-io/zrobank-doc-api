@@ -9,7 +9,7 @@ Abaixo estão listados os tipos de HTTP Status Codes, API Error Codes e Data Val
 ## HTTP Status Codes
 
 | HTTP Status Code | Description |
-| --- | --- |
+|------|---------|
 | 100 | Continue, server is ready to receive request. |
 | 101 | Your TCP connection is about to be switched to a different protocol. |
 | 103 | Please perform initialization and/or preload resources for the server. |
@@ -186,7 +186,7 @@ Exemplo de response **422** com code **QUOTATION_NOT_FOUND**:
 ## Data Validation Errors
 
 | Validation Types | Description |
-| --- | --- |
+|------|---------|
 | IS_UUID | The {property} value must be an UUID. |
 | IS_ENUM | The value {value} is not accepted in param {property}. |
 | IS_BOOLEAN | The value {property} should be a boolean. |
