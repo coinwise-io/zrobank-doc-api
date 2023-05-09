@@ -1,23 +1,21 @@
-# Endpoint
+# Quotation Endpoints
 
-## Otc | Conversions
-
-### /v2/quotations/spot
+## /v2/quotations/spot
 
 To create a new currency conversion, first you need to create a Quotation ID. Enter a new SPOT quotation below and execute to get its ID. This ID is the quotation_id which will be required to create a new currency conversion.
 
 **Método HTTP:** GET.
 
-#### Parâmetros
+### Parâmetros
 
-| Parâmetro | Tipo | Obrigatório | Descrição |
+| Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| base_currency  | string | sim | Quotation currency. |
-| amount_currency  | string | sim | Quotation currency quote. |
-| amount  | string | sim | Quotation amount. |
-| side  | string | sim | Quotation side.|
+| base_currency  | string | yes | Quotation currency. |
+| amount_currency  | string | yes | Quotation currency quote. |
+| amount  | string | yes | Quotation amount. |
+| side  | string | yes | Quotation side.|
 
-#### Corpo da requisição
+### Requisition Body
 
 ```json
 {
@@ -39,10 +37,10 @@ To create a new currency conversion, first you need to create a Quotation ID. En
 }
 ```
 
-#### Respostas
+### Responses
 
-| Código de status | Descrição | Corpo da resposta |
+| Status Code | Description | Response |
 | --- | --- | --- |
-| 200 | OK | `{ "message": "exemplo." }` |
-| 400 | Bad Request | `{ "message": "exemplo." }` |
-| 401 | Unauthorized | `{ "message": "exemplo." }` |
+| 200 | OK | `{ "message": "exemple." }` |
+| 400 | Bad Request | `{ "message": "exemple." }` |
+| 401 | Unauthorized | `{ "message": "exemple." }` |

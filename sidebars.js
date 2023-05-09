@@ -44,65 +44,24 @@ const sidebars = {
       label: "CaaS",
       items: [
         "caas/authentication",
-        "caas/apiLogs",
-        "caas/errors",
         "caas/idempotence",
         "caas/pagination",
         "caas/protocol",
-        "caas/rateLimiting",
+        "caas/rate_limit",
         "caas/request_id",
         "caas/serialization",
-        "caas/versioning",
+        "caas/api_responses",
+        "caas/quotation_endpoints",
+        "caas/conversion_endpoints",
+        "caas/change_log",
       ],
     },
   ],
   gatewaySidebar: [
     {
       type: "category",
-      label: "API Overview",
-      items: [
-        "gateway/api-overview/introduction",
-        "gateway/api-overview/authentication",
-        "gateway/api-overview/protocol",
-        "gateway/api-overview/serialization",
-        "gateway/api-overview/errors",
-        "gateway/api-overview/changelog",
-      ],
-    },
-    {
-      type: "category",
-      label: "Endpoints",
-      items: [
-        {
-          type: "category",
-          label: "QrCodes",
-          items: [
-            "gateway/qr-codes/generate-new-qr-code-for-single-or-multiple-orders",
-            "gateway/qr-codes/generate-new-qr-code",
-          ],
-        },
-        {
-          type: "category",
-          label: "Refunds",
-          items: ["gateway/refunds/generate-complete-or-parcial-refund"],
-        },
-        {
-          type: "category",
-          label: "Transactions",
-          items: [
-            "gateway/transactions/search-by-uuid",
-            "gateway/transactions/update-transaction-status",
-          ],
-        },
-        {
-          type: "category",
-          label: "Withdrawals",
-          items: [
-            "gateway/withdrawals/withdraw",
-            "gateway/withdrawals/search-withdraw-transaction-by-merchant-id",
-          ],
-        },
-      ],
+      label: "Gateway",
+      items: ["gateway/teste"],
     },
   ],
 };
