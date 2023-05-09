@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Zro Bank',
   tagline: 'Documentation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-test-site.com',
@@ -60,7 +60,7 @@ const config = {
         title: 'Zro Bank ',
         logo: {
           alt: 'Zro Bank Logo',
-          src: 'img/logo.png',
+          src: 'img/favicon.svg',
         },
         items: [
           {
@@ -79,7 +79,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'caasSidebar',
             position: 'left',
-            label: 'Cripto as a Service',
+            label: 'Crypto as a Service',
           },
           {
             type: 'docSidebar',

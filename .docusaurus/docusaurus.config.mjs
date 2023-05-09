@@ -6,7 +6,7 @@
 export default {
   "title": "Zro Bank",
   "tagline": "Documentation",
-  "favicon": "img/favicon.ico",
+  "favicon": "img/favicon.svg",
   "url": "https://your-docusaurus-test-site.com",
   "baseUrl": "/",
   "organizationName": "facebook",
@@ -41,7 +41,7 @@ export default {
       "title": "Zro Bank ",
       "logo": {
         "alt": "Zro Bank Logo",
-        "src": "img/logo.png"
+        "src": "img/favicon.svg"
       },
       "items": [
         {
@@ -60,7 +60,7 @@ export default {
           "type": "docSidebar",
           "sidebarId": "caasSidebar",
           "position": "left",
-          "label": "Cripto as a Service"
+          "label": "Crypto as a Service"
         },
         {
           "type": "docSidebar",
