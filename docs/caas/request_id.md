@@ -1,5 +1,5 @@
 # Request ID (Nonce)
 
-Request ID, nomeado em nossa API como **Nonce**, é um identificador único, do tipo UUID (versão 4), associado a cada nova requisição. 
+Request ID, named in our API as **Nonce**, is a unique identifier, of type UUID (version 4), associated with each new request.
 
-Cada requisição deve possuir um parâmetro `nonce` **único**, o qual é utilizado para rastrear e correlacionar todas as atividades relacionadas a esta determinada requisição, desde o momento em que ela é recebida pela API, até a sua resposta.
+Each request must have a **unique** `nonce` parameter, which is used to track and correlate all activities related to this particular request, from the moment it is received by the API until its response.

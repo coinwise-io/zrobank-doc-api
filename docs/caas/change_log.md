@@ -1,3 +1,3 @@
 # Change Log
 
-As versões da API Zrobank Cass estão disponíveis no GITHUB. A última versão atualizada é a versão 1.9.0-r.c.
+The versions of Zrobank CaaS API are available on Github. The latest release is 1.9.0-r.c.

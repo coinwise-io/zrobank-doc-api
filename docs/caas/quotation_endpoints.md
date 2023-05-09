@@ -2,11 +2,11 @@
 
 ## /v2/quotations/spot
 
-To create a new currency conversion, first you need to create a Quotation ID. Enter a new SPOT quotation below and execute to get its ID. This ID is the quotation_id which will be required to create a new currency conversion.
+To create a new currency conversion, first, you need to create a **Quotation ID**. Enter a new SPOT quotation below and execute it to get its ID. This ID is the `quotation_id` that will be required to create a new currency conversion.
 
-**Método HTTP:** GET.
+**HTTP Method:** GET.
 
-### Parâmetros
+### Parameters
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |

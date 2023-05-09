@@ -1,10 +1,11 @@
 # Authentication
 
-Todas as requisições da API requerem uma autenticação de segurança do tipo HTTP Bearer Authentication, através de um **Access Token**. 
+All API requests require HTTP Bearer Authentication security authentication through an **Access Token**.
 
-É importante ressaltar que todas as requisições à API devem ser feitas por HTTPS, já que chamadas realizadas por HTTP simples não serão aceitas. Além disso, é fundamental que as solicitações à API sejam autenticadas, caso contrário elas não serão executadas com sucesso.
+It is important to note that all API requests must be made via HTTPS, as calls made by simple HTTP will not be accepted. In addition, it is essential that API requests be authenticated, otherwise they will not be successfully executed.
 
-## Como gerar um novo Access Token?
-Para gerar um novo Access Token, basta fornecer o seu `API ID` e `API Key` no corpo de requisição do endpoint `/auth/signin`. Esta requisição irá retornar um Access Token, que é justamente o Baerer Token necessário para a autenticação das demais requisições. 
+## How to generate a new Access Token?
 
-> Caso o seu Access Token pare de funcionar, insira-o no endpoint `/auth/refresh-token`, e um novo Access Token válido será retornado.
+To generate a new Access Token, simply provide your `API ID` and `API Key` in the request body of the `/auth/signin` endpoint. This request will return an Access Token, which is precisely the Baerer Token required for authentication of all requests.
+
+> If your Access Token stops working, insert it into the `/auth/refresh-token` endpoint, and a new valid Access Token will be returned, ready to be used.

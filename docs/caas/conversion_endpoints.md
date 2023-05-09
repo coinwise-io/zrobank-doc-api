@@ -2,7 +2,7 @@
 
 ## /v2/otc/conversions
 
-To create a new currency conversion, first you need to create a Quotation ID at the endpoint /v2/quotations/spot. With the quotation_id created, enter it's information on the requisition body below and execute.
+To create a new currency conversion, first, you need to create a **Quotation ID** at the endpoint `/v2/quotations/spot`. After the `quotation_id` is created, enter its information in the requisition body below and execute it.
 
 **HTTP Method:** POST.
 

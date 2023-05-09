@@ -1,10 +1,10 @@
 # API Responses
 
-As respostas da nossa API utilizam códigos de `status HTTP` padrão. 
+Our API responses use standard HTTP status codes.
 
-Em casos de respostas de erros de aplicação, o response body irá conter os campos `code` e `message`, onde eles especificarão detalhes do erro ocorrido.
+In case of application error responses, the response body will contain the `code` and `message` fields, respectively specifying and detailing the error that occurred.
 
-Abaixo estão listados os tipos de HTTP Status Codes, API Error Codes e Data Validation Errors.
+Below are listed the types of HTTP Status Codes, API Error Codes, and Data Validation Errors.
 
 ## HTTP Status Codes
 
@@ -64,7 +64,7 @@ Abaixo estão listados os tipos de HTTP Status Codes, API Error Codes e Data Val
 | 510 | The request received with the extension declaration is not supported by the server.|
 | 511 | You must authenticate to the network to proceed.
 
-Exemplo de response **401**:
+Example of response **401**:
 
 ```json
 {
@@ -171,7 +171,7 @@ Exemplo de response **401**:
 | USER_WALLET_NOT_FOUND | User's association with the wallet is not found. Please check your data and try again. |
 | WALLET_ACCOUNTS_NOT_FOUND | No account details found. Please verify your registration and try again. |
 
-Exemplo de response **422** com code **QUOTATION_NOT_FOUND**:
+Example of response **422** containing the code **QUOTATION_NOT_FOUND**:
 
 ```json
 {
@@ -217,7 +217,7 @@ Exemplo de response **422** com code **QUOTATION_NOT_FOUND**:
 | IS_DATE_AFTER_THAN_NOW | The field {property} must be after now date. |
 | IS_IN | The {property} value is not valid. |
 
-Exemplo de response **422** com code **VALIDATION**:
+Example of response **422** containing the code **VALIDATION**:
 
 ```json
 {

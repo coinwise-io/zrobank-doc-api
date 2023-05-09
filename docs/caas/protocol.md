@@ -1,8 +1,7 @@
 # Protocol
 
-A nossa API segue o protocolo de API REST (Representational State Transfer), baseado em HTTP, utilizando seus métodos e códigos de status para definir ações e resultados.
+Our API follows the REST (Representational State Transfer) API protocol, based on HTTP, using its methods and status codes to define actions and results.
 
-O cliente envia uma solicitação HTTP para o servidor, especificando o método HTTP adequado (GET, POST, PUT, DELETE, etc.) e o recurso que deseja acessar.
+The client sends an HTTP request to the server, specifying the appropriate HTTP method (GET, POST, PUT, DELETE, etc.) and the resource it wants to access.
 
-O servidor processa a solicitação e retorna uma resposta HTTP com um código de status indicando se a operação foi bem-sucedida ou não. Dependendo da requisição, o servidor pode retornar também dados relevantes na resposta em um formato específico, como JSON.
-
+The server processes the request and returns an HTTP response with a status code indicating whether the operation was successful or not. Depending on the request, the server may also return relevant data in the response in a specific format, such as JSON.

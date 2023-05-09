@@ -1,8 +1,8 @@
 # Pagination
 
-Todos os nossos endpoints de busca que possam retornar uma grande escala de dados possuem paginação.
+All of our search endpoints that may return a large scale of data have pagination.
 
-Com a paginação, em vez de retornar todos os dados de uma só vez, os dados de resposta são divididos em páginas. A configuração das páginas é definida na requisição, a partir dos parâmetros listados abaixo.
+With pagination, instead of returning all data at once, the response data is divided into pages. The page configuration is defined in the request, using the parameters listed below.
 
 | Parameter       | Description                            |
 | --------------- | -------------------------------------- |
@@ -11,11 +11,11 @@ Com a paginação, em vez de retornar todos os dados de uma só vez, os dados de
 | sort  | Page sort attribute. The response data will be ordered by this attribute. |
 | order | Page order. Available values : asc, desc. **Default value : asc**  |
 
-> Observação: todos estes parâmetros mencionados acima são opcionais. Caso não definidos, seus valores DEFAULT serão considerados.
+> Note: all of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
 
-Exemplo de response com paginação, onde `page = 1`, `size = 5`, `sort = id`, `order = asc`:  
+Exemple of response with pagination where `page = 1`, `size = 5`, `sort = id`, `order = asc`:  
 
-```
+```json
  {
   "success": true,
   "data": {

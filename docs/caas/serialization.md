@@ -2,25 +2,26 @@
 
 ## Snake case
 
-A serialização de dados na API ZroBank requer que todas as solicitações de resposta sigam a convenção de snake case para garantir uma integração adequada com o sistema.
+Data serialization in the ZroBank API requires all response requests to follow the snake case convention to ensure proper integration with the system.
 
 ## Data
 
-Tanto as solicitações quanto as respostas da API são regidas pela especificação JSON, na qual os corpos de requisições e respostas são codificados em JSON. Para endpoints de listagem, busca e ação, a presença de um corpo de requisição não é obrigatória. As respostas, por sua vez, são representadas por um único objeto em JSON contendo as seguintes chaves:
+Both API requests and responses follow the JSON specification, in which request and response bodies are encoded in JSON. Some endpoints do not require the presence of a request body. Responses, in turn, are represented by a single JSON object containing the following keys:
 
 | Key name | Values          |
 | -------- | ---------------|
-| success  | Indica se a solicitação foi bem-sucedida (true) ou não (false).         |
-| data   | Fornece os dados da resposta em formato JSON.      |
-| error  | Indica o tipo de erro ocorrido na solicitação (por exemplo, "AUTH" para erros de autenticação).         |
-| message   | Fornece informações adicionais sobre o erro ocorrido.     |
+| success  | Indicates whether the request was successful (true) or not (false).         |
+| data   | Provides the response data in JSON format.      |
+| error  | Indicates the type of error that occurred in the request (for example, "AUTH" for authentication errors).         |
+| message   | Provides additional information about the error that occurred.    |
 
-Um exemplo de saída do json é:
+Example of JSON response:
 
-```json<br>
+```json
 {
-"success": false,<br>
-"data": null,<br>
-"error": "USER",<br>
-"message": "Access is denied."<br>
-}```
+  "success": false,<br>
+  "data": null,<br>
+  "error": "USER",<br>
+  "message": "Access is denied."<br>
+}
+```

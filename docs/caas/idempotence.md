@@ -1,7 +1,5 @@
 # Idempotence
 
-A indepotência é um conceito fundamental em nossa API, pois garante que uma mesma requisição possa ser feita várias vezes sem causar efeitos colaterais indesejados, mantendo a consistência dos dados.
+Idempotence is a fundamental concept in our API, as it ensures that the same request can be made multiple times without causing unwanted side effects, maintaining data consistency.
 
-Ao fazer uma requisição em nossa API, ela é encaminhada automaticamente para o Kafka, um sistema de mensagens distribuído que nos permite trabalhar com dados em tempo real e garantir a integridade dos mesmos. Dessa forma, podemos assegurar que cada requisição seja tratada de forma independente e com total segurança, sem causar efeitos colaterais ou inconsistências nos dados.
-
-
+When making a request to our API, it is automatically forwarded to Kafka, a distributed messaging system that allows us to work with real-time data and ensure its integrity. This way, we can ensure that each request is treated independently and with total security, without causing side effects or inconsistencies in the data.
