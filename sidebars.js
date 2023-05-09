@@ -43,6 +43,7 @@ const sidebars = {
       type: "category",
       label: "CaaS",
       items: [
+        "caas/introduction",
         "caas/authentication",
         "caas/idempotence",
         "caas/pagination",
