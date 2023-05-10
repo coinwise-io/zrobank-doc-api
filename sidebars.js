@@ -50,12 +50,12 @@ const sidebars = {
       type: "category",
       label: "API Overview",
       items: [
-        "gateway/authentication",
-        "gateway/serialization",
-        "gateway/errors",
-        "gateway/protocol",
-        "gateway/rate_limiting",
-        "gateway/idempotence",
+        "gateway/api_overview/authentication",
+        "gateway/api_overview/serialization",
+        "gateway/api_overview/errors",
+        "gateway/api_overview/protocol",
+        "gateway/api_overview/rate_limiting",
+        "gateway/api_overview/idempotence",
       ],
     },
     {
@@ -64,8 +64,13 @@ const sidebars = {
       items: [
         {
           type: "category",
-          label: "Transactions",
-          items: ["gateway/generate_new_qr_code"],
+          label: "POST",
+          items: ["gateway/api_resources/generate_new_qr_code"],
+        },
+        {
+          type: "category",
+          label: "GET",
+          items: ["gateway/api_resources/search_by_uuid"],
         },
       ],
     },
