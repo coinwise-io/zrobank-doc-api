@@ -9,22 +9,17 @@ The error codes and messages are returned as a JSON object in the response body,
 
 | Code | Description |
 | --- | --- |
-| 201 | Successful operation|
 | 400 | Bad Request |
 | 401 | Unauthenticated |
 | 408 | Request timeout |
 | 422 | Missing or invalid data request |
 | 500 | Server error |
 
-## Example
 
-```json title=JSON
+
+```json title='Example response'
 {
   "code": 401,
   "message": "Invalid x-api-key",
 }
 ```
-
-
-:::info
-We have also implemented detailed error logs, which can be accessed by authorized system administrators to provide further information on any errors that occur. This can be useful for troubleshooting and resolving any issues that may arise.

@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate new Qr code
+# Generate a new QrCode
 
 | POST      | /api/trasaction/generate_qr_code_pix |
 | --------- | ----------- |
@@ -38,7 +38,7 @@ const axios = require('axios');
 
 axios({
   method: 'post',
-  url: 'https://zrotest.com/api/trasaction/generate_qr_code_pix',
+  url: 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix',
   headers: {
     'x-api-key': '{your API key}',
     'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ axios({
 ```js
 const fetch = require('node-fetch');
 
-const url = 'https://zrotest.com/api/trasaction/generate_qr_code_pix';
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
 const apiKey = '{Your API key}';
 
 fetch(url, {
@@ -98,7 +98,7 @@ fetch(url, {
 ```python
 import requests
 
-url = "https://zrotest.com/api/trasaction/generate_qr_code_pix"
+url = "https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix"
 api_key = "{your API key}"
 params = {
     "value': 10,
@@ -115,6 +115,9 @@ headers = {
 }
 
 response = requests.post(url=url, headers=headers, json=params)
+
+print(response)
+
 ```
 </TabItem>
 </Tabs>
@@ -125,9 +128,9 @@ response = requests.post(url=url, headers=headers, json=params)
 <TabItem value="curl" label="CURL">
 
 ```shell
-curl -X POST https://zrotest.com/api/trasaction/generate_qr_code_pix \
+curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix \
      -H 'Content-Type: application/json' \
-     -H 'x-api-key: {Your api key}'
+     -H 'x-api-key: {Your api key}' \
      -d $'{
             "value": 10,
             "description": "Cobrança de deposito",
@@ -147,7 +150,7 @@ curl -X POST https://zrotest.com/api/trasaction/generate_qr_code_pix \
 ```shell
 <?php
 
-$url = 'https://zrotest.com/api/trasaction/generate_qr_code_pix';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
 $api_key = '{your API key}';
 $params = array(
     "value" => 10,
@@ -185,9 +188,13 @@ curl_close($curl);
 </Tabs>
 
 ## Response
+
+<Tabs>
+<TabItem value="201" label="201">
+
 ```json  title=/api/trasaction/generate_qr_code_pix
 {
-  "code": 200,
+  "code": 201,
   "status": "pending",
   "message": null,
   "qr_code": "00020101021126330014br.gov.bcb.pix0111082853887515204000053039865406100.005802BR5912API DE TESTE6009SAO PAULO620605022163045927",
@@ -195,3 +202,14 @@ curl_close($curl);
   "merchant_id": "271e4016-47de-45e0-9340-6f2560ce3a90"
 }
 ```
+</TabItem>
+
+<TabItem value="401" label="401">
+
+```json  title=/api/trasaction/generate_qr_code_pix
+{
+  "message": "Invalid x-api-key",
+}
+```
+</TabItem>
+</Tabs>

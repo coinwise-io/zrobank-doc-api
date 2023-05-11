@@ -33,11 +33,11 @@ Returns the found transaction data.
 ```js
 const axios = require('axios');
 
-const transactionUuid = "d3052397-b29a-4d13-9c68-1bb0e95a0ca8" ;
+const transactionUuid = "7da0c9af-215e-4625-b484-b8cfc87aaa09" ;
 
 axios({
   method: 'get',
-  url: `https://zrotest.com/api/trasaction/${transactionUuid}/status`,
+  url: `https://sandbox-api-payments.zrobank.xyz/api/trasaction/${transactionUuid}/status`,
   headers: {
     'x-api-key': '{your API key}',
     'Content-Type': 'application/json'
@@ -56,9 +56,9 @@ axios({
 
 ```js
 const apiKey = '{your API key}';
-const transactionUuid = 'd3052397-b29a-4d13-9c68-1bb0e95a0ca8';
+const transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09';
 
-fetch(`https://zrotest.com/api/trasaction/generate_qr_code_pix
+fetch(`https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix
 `, {
   method: 'GET',
   headers: {
@@ -85,8 +85,8 @@ fetch(`https://zrotest.com/api/trasaction/generate_qr_code_pix
 ```python
 import requests
 
-transactionUuid = 'd3052397-b29a-4d13-9c68-1bb0e95a0ca8'
-url = f'https://zrotest.com/api/trasaction/{transactionUuid}/status'
+transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09'
+url = f'https://sandbox-api-payments.zrobank.xyz/api/trasaction/{transactionUuid}/status'
 
 headers = {
     'x-api-key':'your API key'
@@ -107,7 +107,7 @@ print(data)
 <TabItem value="curl" label="CURL">
 
 ```shell
-curl -X GET https://zrotest.com/api/trasaction/{transactionUuid}/status\
+curl -X GET https://sandbox-api-payments.zrobank.xyz/api/trasaction/{transactionUuid}/status\
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}'
 ```
@@ -120,8 +120,8 @@ curl -X GET https://zrotest.com/api/trasaction/{transactionUuid}/status\
 
 ```shell
 $api_key = 'ypur API key';
-$transactionUuid = 'd3052397-b29a-4d13-9c68-1bb0e95a0ca8';
-$url = 'https://zrotest.com/api/trasaction/' . $transactionUuid . '/status';
+$transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/' . $transactionUuid . '/status';
 
 $headers = array(
     'x-api-key: ' . $api_key,
@@ -146,6 +146,10 @@ curl_close($curl);
 </Tabs>
 
 ## Response
+
+<Tabs>
+<TabItem value="201" label="201">
+
 ```json  title=/api/trasaction/{transactionUuid}/status
 {
   "id": "3000",
@@ -159,3 +163,13 @@ curl_close($curl);
   "merchant_id": "123456"
 }
 ```
+</TabItem>
+<TabItem value="401" label="401">
+
+```json  title=/api/trasaction/{transactionUuid}/status
+{
+  "message": "Invalid x-api-key",
+}
+```
+</TabItem>
+</Tabs>
