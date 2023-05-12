@@ -4,7 +4,7 @@ Our system includes error handling to ensure that requests are processed smoothl
 
 To facilitate this, we have created a list of common error codes and messages that can be returned by our API. These error codes and messages are designed to help you quickly identify and resolve any issues that may arise when using our API.
 
-The error codes and messages are returned as a JSON object in the response body, with the HTTP status code indicating the overall status of the request. By analyzing the error codes and messages returned, you can take the appropriate action to resolve the issue and ensure that your requests are processed successfully.
+The error codes and messages are returned as a JSON object in the response body, with the HTTPS status code indicating the overall status of the request. By analyzing the error codes and messages returned, you can take the appropriate action to resolve the issue and ensure that your requests are processed successfully.
 
 
 | Code | Description |

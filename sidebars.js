@@ -50,22 +50,48 @@ const sidebars = {
       type: "category",
       label: "API Overview",
       items: [
-        "gateway/api_overview/introduction",
-        "gateway/api_overview/authentication",
-        "gateway/api_overview/protocol",
-        "gateway/api_overview/serialization",
-        "gateway/api_overview/rate_limiting",
-        "gateway/api_overview/errors",
-        "gateway/api_overview/changelog",
+        "gateway/api-overview/introduction",
+        "gateway/api-overview/authentication",
+        "gateway/api-overview/protocol",
+        "gateway/api-overview/serialization",
+        "gateway/api-overview/errors",
+        "gateway/api-overview/changelog",
       ],
     },
     {
       type: "category",
-      label: "Transactions",
+      label: "Endpoints",
       items: [
-        "gateway/transactions/generate_new_qr_code",
-        "gateway/transactions/search_by_uuid",
-        "gateway/transactions/generate_new_qr_code_for_single_or_multiple_orders",
+        {
+          type: "category",
+          label: "QrCodes",
+          items: [
+            "gateway/qr-codes/generate-new-qr-code",
+            "gateway/qr-codes/generate-new-qr-code-for-single-or-multiple-orders",
+          ],
+        },
+        {
+          type: "category",
+          label: "Refunds",
+          items: [
+            "gateway/refunds/generate-complete-or-parcial-refund",
+          ],
+        },
+        {
+          type: "category",
+          label: "Transactions",
+          items: [
+            "gateway/transactions/search-by-uuid",
+            "gateway/transactions/update-transaction-status",
+          ],
+        },
+        {
+          type: "category",
+          label: "Withdraws",
+          items: [
+            "gateway/withdraws/withdraw",
+          ],
+        },
       ],
     },
   ],

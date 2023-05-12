@@ -14,38 +14,36 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 
 | Title            | Type        | Description |
 | ---------------- | ----------- | ----------- |
-| value🔸          | number      | Value to be paid |
-| description🔸    | string      | Description of the transaction |
-| client_document🔸| string      | Document of the person whose charge is being designed to |
-| merchant_id🔸    | string      | Reference of the store that solicitate the QrCode |
+| value:small_orange_diamond:          | number      | Value to be paid |
+| description:small_orange_diamond:    | string      | Description of the transaction |
+| client_document:small_orange_diamond:| string      | Document of the person whose charge is being designed to |
+| merchant_id:small_orange_diamond:    | string      | Reference of the store that solicitate the QrCode |
 | code             | integer     | Response code|
 | status           | string      | Transaction status |
 | message          | string      | Message about the request |
 | qr_code          | string      | PIX EMV QrCode |
 | transaction_uuid | string      | Reference of the QrCode for conciliation |
-🔸 *Required parameters to request*
+:small_orange_diamond: *Required parameters to request*
 
 
 ### Orders
 
 | Title                | Type        | Description |
 | -------------------- | ----------- | ----------- |
-| fee🔸                | number      | Percent of fee for the store |
-| value🔸              | number      | Value for the store|
-| company_identifier🔸 | string      | Identifier for the store(wallet identifier) |
+| fee:small_orange_diamond:                | number      | Percent of fee for the store |
+| value:small_orange_diamond:              | number      | Value for the store|
+| company_identifier:small_orange_diamond: | string      | Identifier for the store(wallet identifier) |
 
-🔸 *Required parameters to request*
+:small_orange_diamond: *Required parameters to request*
 
 
 
 ## Request
 
 <Tabs>
-<TabItem value="js" label="Javascript">
-<Tabs>
-<TabItem value="js_axios" label="Axios">
+<TabItem value="js" label="NodeJS">
 
-```js
+```js title=Axios
 const axios = require('axios');
 
 axios({
@@ -87,57 +85,9 @@ axios({
 });
 ```
 </TabItem>
-
-<TabItem value="js_fetch" label="Fetch">
-
-```js
-const fetch = require('node-fetch');
-
-const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_order_qr_code_pix';
-const apiKey = '{Your API key}';
-
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'x-api-key': apiKey,
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    value: 300,
-    description: "Qr code Zro Gateway",
-    client_document: "80064671020",
-    merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
-    orders: [
-      {
-        fee: 10,
-        value: 100,
-        company_identifier: "f6e2e084-29b9-4935-a059-5473b13033aa"
-      },
-      {
-        fee: 20,
-        value: 100,
-        company_identifier: "df1a24a0-8f4e-478e-84f9-326f48c1f2f2"
-      },
-      {
-        fee: 10,
-        value: 100,
-        company_identifier: "74b00eb0-9784-421c-b24c-4f08a50f8466"
-      }
-    ]
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error(error));
-```
-</TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="py" label="Python">
-<Tabs>
-<TabItem value="py_request" label="Requests">
 
-```python
+```python title=Requests
 import requests
 
 url = "https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_order_qr_code_pix"
@@ -176,14 +126,9 @@ response = requests.post(url=url, headers=headers, json=params)
 print(response)
 ```
 </TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="shell" label="Shell">
 
-<Tabs>
-<TabItem value="curl" label="CURL">
-
-```shell
+```shell title=CURL
 curl -X POST 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_order_qr_code_pix' \
   -H 'x-api-key: {your API key}' \
   -H 'Content-Type: application/json' \
@@ -212,18 +157,11 @@ curl -X POST 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_
 }'
 ```
 </TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="php" label="PHP">
-<Tabs>
-<TabItem value="php_curl" label="CURL">
 
-```shell
+```shell title=CURL
 //TODO - Make req for PHP case
 ```
-</TabItem>
-</Tabs>
-
 </TabItem>
 </Tabs>
 

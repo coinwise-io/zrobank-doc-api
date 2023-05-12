@@ -26,11 +26,9 @@ Returns the found transaction data.
 ## Request
 
 <Tabs>
-<TabItem value="js" label="Javascript">
-<Tabs>
-<TabItem value="js_axios" label="Axios">
+<TabItem value="js" label="NodeJS">
 
-```js
+```js title=Axios
 const axios = require('axios');
 
 const transactionUuid = "7da0c9af-215e-4625-b484-b8cfc87aaa09" ;
@@ -51,38 +49,9 @@ axios({
 });
 ```
 </TabItem>
-
-<TabItem value="js_fetch" label="Fetch">
-
-```js
-const apiKey = '{your API key}';
-const transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09';
-
-fetch(`https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix
-`, {
-  method: 'GET',
-  headers: {
-    'x-api-key': apiKey
-  }
-})
-.then(response => {
-  return response.json();
-})
-.then(data => {
-  console.log(data);
-})
-.catch(error => {
-  console.error(error);
-});
-```
-</TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="py" label="Python">
-<Tabs>
-<TabItem value="py_request" label="Requests">
 
-```python
+```python title=Requests
 import requests
 
 transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09'
@@ -99,26 +68,17 @@ data = response.json()
 print(data)
 ```
 </TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="shell" label="Shell">
 
-<Tabs>
-<TabItem value="curl" label="CURL">
-
-```shell
+```shell title=CURL
 curl -X GET https://sandbox-api-payments.zrobank.xyz/api/trasaction/{transactionUuid}/status\
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}'
 ```
 </TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="php" label="PHP">
-<Tabs>
-<TabItem value="php_curl" label="CURL">
 
-```shell
+```shell title=CURL
 $api_key = 'ypur API key';
 $transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09';
 $url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/' . $transactionUuid . '/status';
@@ -139,9 +99,6 @@ print_r($data);
 
 curl_close($curl);
 ```
-</TabItem>
-</Tabs>
-
 </TabItem>
 </Tabs>
 

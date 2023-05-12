@@ -2,12 +2,11 @@
 
 # Serialization
 
-## Snake_Case
+## Snake Case
 Data serialization in the Gateway requires that all response requests follow the snake case convention to ensure proper integration with the system.
-
 ## Data
 
-Our system's API uses JSON (JavaScript Object Notation) as the data serialization format for all HTTP requests and responses. JSON is widely supported by different systems and is easy to read and manipulate. To access our API, you need to include the "x-api-key" header in all HTTP requests, with the value of your unique API key. The "x-api-key" header should be set as a string that represents your API key.
+Our system's API uses JSON (JavaScript Object Notation) as the data serialization format for all HTTPS requests and responses. JSON is widely supported by different systems and is easy to read and manipulate. To access our API, you need to include the "x-api-key" header in all HTTPS requests, with the value of your unique API key. The "x-api-key" header should be set as a string that represents your API key.
 
 ### Request
 

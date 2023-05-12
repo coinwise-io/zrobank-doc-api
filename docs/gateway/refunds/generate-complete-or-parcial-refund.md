@@ -1,39 +1,37 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate a new QrCode
+# Generate complete or partial refund
 
-| POST      | /api/trasaction/generate_qr_code_pix |
-| --------- | ----------- |
+| POST      | /api/trasaction/generate_refund |
+| --------- | ------------------------------- |
 
 Generates a new dynamic QR Code.
 
 ## Data description
 
-| Title            | Type        | Description |
-| ---------------- | ----------- | ----------- |
-| value🔸          | number      | Value to be paid |
-| description🔸    | string      | Description of the transaction |
-| client_name🔸    | string      | Name of the person whose charge is being designed to |
-| client_email     | string      | Email of the person whose charge is being designed to |
-| client_document🔸| string      | Document of the person whose charge is being designed to |
-| merchant_id🔸    | string      | Reference of the store that solicitate the QrCode |
-| code             | integer     | Response code|
-| status           | string      | Transaction status |
-| message          | string      | Message about the request |
-| qr_code          | string      | PIX EMV QrCode |
-| transaction_uuid | string      | Reference of the QrCode for conciliation |
-🔸 *Required parameters to request*
+| Title            | Type        |Length                            | Description                                              |
+| ---------------- | ----------- |--------------------------------- | -------------------------------------------------------- |
+| value:small_orange_diamond:          | number      |                                  | Value to be paid                                         |
+| description:small_orange_diamond:    | string      |                                  | Description of the transaction                           |
+| client_name:small_orange_diamond:    | string      |                                  | Name of the person whose charge is being designed to     |
+| client_email     | string      |                                  | Email of the person whose charge is being designed to    |
+| client_document:small_orange_diamond:| string      |                                  | Document of the person whose charge is being designed to |
+| merchant_id:small_orange_diamond:    | string      |                                  | Reference of the store that solicitate the QrCode        |
+| code             | integer     |                                  | Response code                                            |
+| status           | string      |                                  | Transaction status                                       |
+| message          | string      |                                  | Message about the request                                |
+| qr_code          | string      |                                  | PIX EMV QrCode                                           |
+| transaction_uuid | string      |                                  | Reference of the QrCode for conciliation                 |
+:small_orange_diamond: *Required parameters to request*
 
 
 ## Request
 
 <Tabs>
-<TabItem value="js" label="Javascript">
-<Tabs>
-<TabItem value="js_axios" label="Axios">
+<TabItem value="js_axios" label="NodeJS">
 
-```js
+```js title=Axios
 const axios = require('axios');
 
 axios({
@@ -44,13 +42,13 @@ axios({
     'Content-Type': 'application/json'
   },
   data: {
-        value: 10,
-        description: "Cobrança de deposito",
-        client_name: "Johnny",
-        client_email: "client@email.com",
-        client_document: "80064671020",
-        merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
-    }
+    value: 10,
+    description: "Cobrança de deposito",
+    client_name: "Johnny",
+    client_email: "client@email.com",
+    client_document: "80064671020",
+    merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
+  }
 })
 .then((response) => {
   console.log(response.data);
@@ -61,41 +59,9 @@ axios({
 ```
 </TabItem>
 
-<TabItem value="js_fetch" label="Fetch">
-
-```js
-const fetch = require('node-fetch');
-
-const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
-const apiKey = '{Your API key}';
-
-fetch(url, {
-  method: 'POST',
-  headers: {
-    'x-api-key': apiKey,
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    value: 10,
-    description: "Cobrança de deposito",
-    client_name: "Johnny",
-    client_email: "client@email.com",
-    client_document: "80064671020",
-    merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(error => console.error(error));
-```
-</TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="py" label="Python">
-<Tabs>
-<TabItem value="py_request" label="Requests">
 
-```python
+```python title=Requests
 import requests
 
 url = "https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix"
@@ -120,14 +86,9 @@ print(response)
 
 ```
 </TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="shell" label="Shell">
 
-<Tabs>
-<TabItem value="curl" label="CURL">
-
-```shell
+```shell title=CURL
 curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix \
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}' \
@@ -141,13 +102,9 @@ curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr
         }'
 ```
 </TabItem>
-</Tabs>
-</TabItem>
 <TabItem value="php" label="PHP">
-<Tabs>
-<TabItem value="php_curl" label="CURL">
 
-```shell
+```shell title=CURL
 <?php
 
 $url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
@@ -181,9 +138,6 @@ print_r($data);
 
 curl_close($curl);
 ```
-</TabItem>
-</Tabs>
-
 </TabItem>
 </Tabs>
 
