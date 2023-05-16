@@ -41,7 +41,7 @@ export default {
       "title": "Zro Bank ",
       "logo": {
         "alt": "Zro Bank Logo",
-        "src": "img/favicon.svg"
+        "src": "img/logo.svg"
       },
       "items": [
         {
