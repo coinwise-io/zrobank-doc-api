@@ -3,16 +3,35 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-
 /* You can override the default Infima variables here. */
-@import url('https://www.zrobank.com.br/fonts/gilroy.css?family=Gilroy');
+
+@font-face {
+  font-family: "Gilroy Medium";
+  src: url("/fonts/gilroy/Gilroy-Medium.woff"),
+    url("/fonts/gilroy/Gilroy-Medium.ttf"),
+    url("/fonts/gilroy/Gilroy-Medium.eot");
+}
+
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url("/fonts/gilroy/Gilroy-Bold.woff"),
+    url("/fonts/gilroy/Gilroy-Bold.ttf"),
+    url("/fonts/gilroy/Gilroy-Bold.eot");
+}
 
 body {
-  font-family: 'Gilroy', sans-serif !important;
+  font-family: "Gilroy Medium", sans-serif;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gilroy', sans-serif !important;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gilroy Bold", sans-serif;
 }
+
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -26,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #27C2C7;
-  --ifm-color-primary-dark: #27C2C7;
-  --ifm-color-primary-darker: #27C2C7;
-  --ifm-color-primary-darkest: #27C2C7;
-  --ifm-color-primary-light: #27C2C7;
-  --ifm-color-primary-lighter: #27C2C7;
-  --ifm-color-primary-lightest: #27C2C7;
+[data-theme="dark"] {
+  --ifm-color-primary: #27c2c7;
+  --ifm-color-primary-dark: #27c2c7;
+  --ifm-color-primary-darker: #27c2c7;
+  --ifm-color-primary-darkest: #27c2c7;
+  --ifm-color-primary-light: #27c2c7;
+  --ifm-color-primary-lighter: #27c2c7;
+  --ifm-color-primary-lightest: #27c2c7;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

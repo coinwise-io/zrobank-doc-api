@@ -1,6 +1,6 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
@@ -8,42 +8,44 @@ type FeatureItem = {
   description: JSX.Element;
 };
 
-
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Pix as a Service',
-    src: require('@site/static/img/paas.png').default,
+    title: "Pix as a Service",
+    src: require("@site/static/img/paas.png").default,
     description: (
       <>
-        Send and receive instant payments through our Pix API, quickly and safely.
+        Send and receive instant payments through our Pix API, quickly and
+        safely.
       </>
     ),
   },
   {
-    title: 'Zro Gateway',
-    src: require('@site/static/img/gateway.png').default,
+    title: "Zro Gateway",
+    src: require("@site/static/img/gateway.png").default,
     description: (
       <>
-        Manage your wallets, track your transactions, and enjoy availability across multiple banks with the lowest fees.
+        Manage your wallets, track your transactions, and enjoy availability
+        across multiple banks with the lowest fees.
       </>
     ),
   },
   {
-    title: 'Crypto as a Service',
-    src: require('@site/static/img/caas.png').default,
+    title: "Crypto as a Service",
+    src: require("@site/static/img/caas.png").default,
     description: (
       <>
-        Increase liquidity in your operations and offer your customers the most popular cryptocurrencies on your website or app, using our Crypto API.
+        Increase liquidity in your operations and offer your customers the most
+        popular cryptocurrencies on your website or app, using our Crypto API.
       </>
     ),
   },
 ];
 
-function Feature({title, src, description}: FeatureItem) {
+function Feature({ title, src, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
-        <img src={src}className={styles.featureSvg} role="img" />
+        <img src={src} className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

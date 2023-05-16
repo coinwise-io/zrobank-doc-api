@@ -26,11 +26,11 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/mthais/Documents/Github/zrobank-doc-api/sidebars.js",
+          "sidebarPath": "/Users/lfs/Documents/zro-projects/zrobank-doc-api/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
-          "customCss": "/Users/mthais/Documents/Github/zrobank-doc-api/src/css/custom.css"
+          "customCss": "/Users/lfs/Documents/zro-projects/zrobank-doc-api/src/css/custom.css"
         }
       }
     ]
