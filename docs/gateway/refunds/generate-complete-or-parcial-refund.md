@@ -6,27 +6,36 @@ import TabItem from '@theme/TabItem';
 | POST      | /api/trasaction/generate_refund |
 | --------- | ------------------------------- |
 
-Generates a new dynamic QR Code.
+Generates a new complete or a partial refund.
+
+For partial refund of an individual order or for multiple orders at once, the orders must be specified in an array of objects.
+
+For a single order, the array will be composed by one single object. For multiple orders, the array will be composed by multiple objects.
+
+For complete refund, orders is not required.
 
 ## Data description
 
-| Title            | Type        |Length                            | Description                                              |
-| ---------------- | ----------- |--------------------------------- | -------------------------------------------------------- |
-| value:small_orange_diamond:          | number      |                                  | Value to be paid                                         |
-| description:small_orange_diamond:    | string      |                                  | Description of the transaction                           |
-| client_name:small_orange_diamond:    | string      |                                  | Name of the person whose charge is being designed to     |
-| client_email     | string      |                                  | Email of the person whose charge is being designed to    |
-| client_document:small_orange_diamond:| string      |                                  | Document of the person whose charge is being designed to |
-| merchant_id:small_orange_diamond:    | string      |                                  | Reference of the store that solicitate the QrCode        |
-| code             | integer     |                                  | Response code                                            |
-| status           | string      |                                  | Transaction status                                       |
-| message          | string      |                                  | Message about the request                                |
-| qr_code          | string      |                                  | PIX EMV QrCode                                           |
-| transaction_uuid | string      |                                  | Reference of the QrCode for conciliation                 |
+### General
+
+| Title                                    | Type        |Allow Null?                       | Description                                              |
+| ---------------------------------------- | ----------- |--------------------------------- | -------------------------------------------------------- |
+| description:small_orange_diamond:        | STRING      |                                  | Description of the return                                |
+| merchant_id:small_orange_diamond:        | STRING      |                                  | Reference of the store that solicitate the return        |
+| transaction_uuid:small_orange_diamond:   | STRING      |                                  | Reference of the transaction that should be returned     |
+| client_document:small_orange_diamond:    | STRING      |                                  | Client's document (CPF or CNPJ)                          |
 :small_orange_diamond: *Required parameters to request*
 
+### Orders
 
-## Request
+| Title                                    | Type        |Allow Null?                       | Description                                                             |
+| ---------------------------------------- | ----------- |--------------------------------- | ----------------------------------------------------------------------- |
+| value:small_orange_diamond:              | NUMBER      |                                  | Value that should be returned to the store                              |
+| company_identifier:small_orange_diamond: | STRING      |                                  | Identifier for the store that should return the value(wallet identifier)|
+:small_orange_diamond: *Required parameters to request*
+
+## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+
 
 <Tabs>
 <TabItem value="js_axios" label="NodeJS">
@@ -36,18 +45,22 @@ const axios = require('axios');
 
 axios({
   method: 'post',
-  url: 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix',
+  url: 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_refund',
   headers: {
     'x-api-key': '{your API key}',
     'Content-Type': 'application/json'
   },
   data: {
-    value: 10,
-    description: "Cobrança de deposito",
-    client_name: "Johnny",
-    client_email: "client@email.com",
-    client_document: "80064671020",
-    merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
+    description: "Return example",
+    merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
+    transaction_uuid: "1a3259d0-f3b9-40dd-ab60-f594996a6453",
+    client_document: "13813438058",
+    orders: [
+      {
+        value: 100,
+        company_identifier: "f6e2e084-29b9-4935-a059-5473b13033aa"
+      }
+    ]
   }
 })
 .then((response) => {
@@ -64,15 +77,19 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix"
+url = "https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_refund"
 api_key = "{your API key}"
 params = {
-    "value': 10,
-    "description": "Cobrança de deposito",
-    "client_name": "Johnny",
-    "client_email": "client@email.com",
-    "client_document": "80064671020",
-    "merchant_id": "271e4016-47de-45e0-9340-6f2560ce3a90"
+  "description": "Return example",
+  "merchant_id": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
+  "transaction_uuid": "1a3259d0-f3b9-40dd-ab60-f594996a6453",
+  "client_document": "13813438058",
+  "orders": [
+    {
+      "value": 100,
+      "company_identifier": "f6e2e084-29b9-4935-a059-5473b13033aa"
+    }
+  ]
 }
 
 headers = {
@@ -89,17 +106,21 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix \
+curl -X POST https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_refund \
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}' \
      -d $'{
-            "value": 10,
-            "description": "Cobrança de deposito",
-            "client_name": "Johnny",
-            "client_email": "client@email.com",
-            "client_document": "80064671020",
-            "merchant_id": "271e4016-47de-45e0-9340-6f2560ce3a90"
-        }'
+        "description": "Return example",
+        "merchant_id": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
+        "transaction_uuid": "1a3259d0-f3b9-40dd-ab60-f594996a6453",
+        "client_document": "13813438058",
+        "orders": [
+          {
+            "value": 100,
+            "company_identifier": "f6e2e084-29b9-4935-a059-5473b13033aa"
+          }
+        ]
+      }'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
@@ -107,15 +128,17 @@ curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr
 ```shell title=CURL
 <?php
 
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_refund';
 $api_key = '{your API key}';
 $params = array(
-    "value" => 10,
-    "description" => "Cobrança de deposito",
-    "client_name" => "Johnny",
-    "client_email" => "client@email.com",
-    "client_document" => "80064671020"
-    "merchant_id => ""271e4016-47de-45e0-9340-6f2560ce3a90""
+    "description" => "Return example",
+    "merchant_id" => "7da0c9af-215e-4625-b484-b8cfc87aaa09",
+    "transaction_uuid" => "1a3259d0-f3b9-40dd-ab60-f594996a6453",
+    "client_document" => "13813438058",
+    "orders" => array(
+        "value" => 100,
+        "company_identifier" => "f6e2e084-29b9-4935-a059-5473b13033aa"
+    )
 );
 
 $headers = array(
@@ -146,7 +169,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasaction/generate_qr_code_pix
+```json  title=/api/transaction/generate_refund
 {
   "code": 201,
   "status": "pending",
@@ -160,7 +183,7 @@ curl_close($curl);
 
 <TabItem value="401" label="401">
 
-```json  title=/api/trasaction/generate_qr_code_pix
+```json  title=/api/transaction/generate_refund
 {
   "message": "Invalid x-api-key",
 }

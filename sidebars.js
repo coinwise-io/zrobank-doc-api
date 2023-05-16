@@ -66,8 +66,8 @@ const sidebars = {
           type: "category",
           label: "QrCodes",
           items: [
-            "gateway/qr-codes/generate-new-qr-code",
             "gateway/qr-codes/generate-new-qr-code-for-single-or-multiple-orders",
+            "gateway/qr-codes/generate-new-qr-code",
           ],
         },
         {
@@ -83,13 +83,14 @@ const sidebars = {
           items: [
             "gateway/transactions/search-by-uuid",
             "gateway/transactions/update-transaction-status",
+            "gateway/transactions/search-withdraw-transaction-by-merchant-id"
           ],
         },
         {
           type: "category",
-          label: "Withdraws",
+          label: "Withdrawals",
           items: [
-            "gateway/withdraws/withdraw",
+            "gateway/withdrawals/withdraw",
           ],
         },
       ],

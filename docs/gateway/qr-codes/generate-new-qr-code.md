@@ -1,12 +1,11 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate a new QrCode
+# Generate a new QrCode without split
 
 
 | POST      | /api/trasaction/generate_qr_code_pix |
-| --------- | ------------------------------------ |   <button name="button" onclick="http://www.google.com">Try it</button>
-
+| --------- | ------------------------------------ |
 
 Generates a new dynamic QR Code.
 
@@ -17,21 +16,22 @@ Generates a new dynamic QR Code.
 
 | Title                                  | Type        |Properties                        | Description                                              |
 | -------------------------------------- | ----------- |--------------------------------- | -------------------------------------------------------- |
-| value :small_orange_diamond:           | number      |                                  | Value to be paid                                         |
-| description :small_orange_diamond:     | string      |                                  | Description of the transaction                           |
-| client_name :small_orange_diamond:     | string      |                                  | Name of the person whose charge is being designed to     |
-| client_email                           | string      |                                  | Email of the person whose charge is being designed to    |
-| client_document :small_orange_diamond: | string      |                                  | Document of the person whose charge is being designed to |
-| merchant_id :small_orange_diamond:     | string      |                                  | Reference of the store that solicitate the QrCode        |
-| code                                   | integer     |                                  | Response code                                            |
-| status                                 | string      |                                  | Transaction status                                       |
-| message                                | string      |                                  | Message about the request                                |
-| qr_code                                | string      |                                  | PIX EMV QrCode                                           |
-| transaction_uuid                       | string      |                                  | Reference of the QrCode for conciliation                 |
+| value :small_orange_diamond:           | NUMBER      |                                  | Value to be paid                                         |
+| description :small_orange_diamond:     | STRING      |                                  | Description of the transaction                           |
+| client_name :small_orange_diamond:     | STRING      |                                  | Name of the person whose charge is being designed to     |
+| client_email                           | STRING      |                                  | Email of the person whose charge is being designed to    |
+| client_document :small_orange_diamond: | STRING      |                                  | Document of the person whose charge is being designed to |
+| merchant_id :small_orange_diamond:     | STRING      |                                  | Reference of the store that solicitate the QrCode        |
+| code                                   | INTEGER     | ENUM - [200, 422, 404, 408, 500] | Response code                                            |
+| status                                 | STRING      | ENUM - [pending, failed]         | Transaction status                                       |
+| message                                | STRING      |                                  | Message about the request                                |
+| qr_code                                | STRING      |                                  | PIX EMV QrCode                                           |
+| transaction_uuid                       | STRING      |                                  | Reference of the QrCode for conciliation                 |
 :small_orange_diamond: *Required parameters to request*
 
 
-## Request
+## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+
 
 <Tabs>
 <TabItem value="js_axios" label="NodeJS">
@@ -146,7 +146,9 @@ curl_close($curl);
 </TabItem>
 </Tabs>
 
+
 ## Response
+
 
 <Tabs>
 <TabItem value="201" label="201">

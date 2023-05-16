@@ -1,31 +1,28 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update a transaction status
+# Search withdraw transaction by Merchant ID
 
 
-:::caution
-Only available for **development environment**
-:::
-
-| PUT       | /api/trasactions                         |
+| GET       | /api/withdraws/{merchantId}/status       |
 | --------- | ---------------------------------------- |
 
-This endpoint is only meant for development environment. Update the status of a transaction to trigger the receipt of webhooks for testing purposes.
+Returns the found withdrawal transaction data.
+
 
 ## Data description
 
 | Title                | Type        | Property                                                         |Description                                                 |
 | ----------------     | ----------- | ---------------------------------------------------------------- | ---------------------------------------------------------- |
 | id                   | STRING      |                                                                  | ID of the transaction                                      |
-| transaction_uuid:small_orange_diamond:   | STRING      |                                                                  | Reference of the QrCode for conciliation                   |
-| status:small_orange_diamond:             | ENUM        | [pending, paid, canceled, paid_by_third_party, failed, awaiting] | Transaction status                                         |
+| transaction_uuid     | STRING      |                                                                  | Reference of the QrCode for conciliation                   |
+| status               | ENUM        | [pending, paid, canceled, paid_by_third_party, failed, awaiting] | Transaction status                                         |
 | transaction_type     | ENUM        | [transaction, withdraw, refund]                                  | Transaction type                                           |
 | value                | STRING      |                                                                  |  Value of the transaction                                  |
 | client_document      | STRING      |                                                                  |  Document of the person who paid or received (CPF or CNPJ) |
 | created_at           | STRING      |                                                                  |  Date when the transaction was created                     |
 | process_status       | ENUM        | [waiting, completed, failed]                                     |  Transaction payment status                                |
-| merchant_id          | STRING      |                                                                  |  Merchant's ID for conciliation                            |
+| merchant_id:small_orange_diamond:  | STRING      |                                                                  |  Merchant's ID for conciliation                            |
 :small_orange_diamond: *Required parameters to request*
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
@@ -37,16 +34,14 @@ This endpoint is only meant for development environment. Update the status of a 
 ```js title=Axios
 const axios = require('axios');
 
+const merchantId = "123456";
+
 axios({
-  method: 'put',
-  url: `https://sandbox-api-payments.zrobank.xyz/api/trasactions`,
+  method: 'get',
+  url: `https://sandbox-api-payments.zrobank.xyz/api/withdraws/${merchantId}/status`,
   headers: {
     'x-api-key': '{your API key}',
     'Content-Type': 'application/json'
-  },
-  data: {
-    transaction_uuid : '7da0c9af-215e-4625-b484-b8cfc87aaa09',
-    status : 'pending'
   }
 })
 .then((response) => {
@@ -60,19 +55,18 @@ axios({
 <TabItem value="py" label="Python">
 
 ```python title=Requests
-url = "https://sandbox-api-payments.zrobank.xyz/api/trasactions"
+
+merchantId = "123456"
+
+url = "https://sandbox-api-payments.zrobank.xyz/api/withdraws/{merchantId}/status"
 api_key = "{your API key}"
-params = {
-    "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
-    "status" : "pending"
-}
 
 headers = {
     "x-api-key": api_key,
     "Content-Type": "application/json"
 }
 
-response = requests.put(url=url, headers=headers, json=params)
+response = requests.get(url=url, headers=headers)
 
 print(response)
 ```
@@ -80,36 +74,23 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X PUT https://sandbox-api-payments.zrobank.xyz/api/trasactions \
+curl -X GET https://sandbox-api-payments.zrobank.xyz/api/withdraws/{merchantId}/status\
      -H 'Content-Type: application/json' \
-     -H 'x-api-key: {Your api key}' \
-     -d $'{
-            "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
-            "status": "pending"
-        }'
+     -H 'x-api-key: {Your api key}'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
 
 ```shell title=CURL
-<?php
-
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasactions';
-$api_key = '{your API key}';
-$params = array(
-    "transaction_uuid" => "7da0c9af-215e-4625-b484-b8cfc87aaa09",
-    "status" => "pending",
-);
+$api_key = 'ypur API key';
+$merchantId = '123456';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/' . $merchantId . '/status';
 
 $headers = array(
     'x-api-key: ' . $api_key,
-    'Content-Type: application/json'
 );
 
-$curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_PUT, true);
-curl_setopt($curl, CURLOPT_PUTFIELDS, json_encode($params));
+$curl = curl_init($url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 

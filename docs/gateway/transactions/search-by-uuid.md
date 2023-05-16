@@ -23,7 +23,8 @@ Returns the found transaction data.
 | merchant_id          | string      |  Merchant's ID for conciliation |
 
 
-## Request
+## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+
 
 <Tabs>
 <TabItem value="js" label="NodeJS">

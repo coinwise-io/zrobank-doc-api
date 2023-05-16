@@ -55,3 +55,19 @@ h6 {
   --ifm-color-primary-lightest: #27c2c7;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.try-btn {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: #2e8555;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.try-btn:hover {
+  background-color: #205d3b; /* Darker shade of #2e8555 */
+}
