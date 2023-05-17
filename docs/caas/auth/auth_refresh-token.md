@@ -1,6 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Generate a new token
 
 | POST      | /auth/refresh-token|
 | --------- | ----------- |

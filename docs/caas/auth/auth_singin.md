@@ -1,6 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Generate access token from API ID and API Key
+
 | POST      | /auth/singin |
 | --------- | ----------- |
 

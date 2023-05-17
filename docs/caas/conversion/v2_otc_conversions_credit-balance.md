@@ -1,6 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Get user's liability and credit balance
+
 | GET    | /v2/otc/conversions/credit-balance |
 | --------- | ----------- |
 

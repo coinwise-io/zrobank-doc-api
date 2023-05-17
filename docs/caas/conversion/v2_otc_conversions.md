@@ -1,6 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Create a new currency conversion
 
 | POST      | /v2/otc/conversions |
 | --------- | ----------- |

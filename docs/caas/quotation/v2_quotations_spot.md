@@ -1,6 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Create a new currency conversion
+
 | GET      | /v2/quotations/spot |
 | --------- | ----------- |
 
