@@ -1,8 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Quotation Endpoints
-
 | GET      | /v2/quotations/spot |
 | --------- | ----------- |
 
