@@ -36,7 +36,7 @@ const sidebars = {
   caasSidebar: [
     {
       type: 'category',
-      label: 'CaaS',
+      label: 'API Overview',
       items: [
         'caas/introduction',
         'caas/authentication',
