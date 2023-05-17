@@ -57,7 +57,7 @@ axios({
   data: {
     value: 300,
     description: "Qr code Zro Gateway",
-    client_document: "80064671020",
+    client_document: "81688771280",
     merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
     orders: [
       {
@@ -96,7 +96,7 @@ api_key = "{your API key}"
 params = {
     "value": 300,
     "description": "Qr code Zro Gateway",
-    "client_document": "80064671020",
+    "client_document": "81688771280",
     "merchant_id": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
     "orders": [
       {
@@ -136,7 +136,7 @@ curl -X POST 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_
   -d '{
   "value": 300,
   "description": "Qr code Zro Gateway",
-  "client_document": "80064671020",
+  "client_document": "81688771280",
   "merchant_id": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
   "orders": [
     {
@@ -168,7 +168,7 @@ $api_key = '{your API key}';
 $params = array(
   "value" => 300,
   "description" => "Qr code Zro Gateway",
-  "client_document" => "80064671020",
+  "client_document" => "81688771280",
   "merchant_id" => "7da0c9af-215e-4625-b484-b8cfc87aaa09",
   "orders" => array(
       array(

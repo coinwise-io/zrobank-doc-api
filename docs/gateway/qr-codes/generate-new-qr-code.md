@@ -51,7 +51,7 @@ axios({
     description: "Cobrança de deposito",
     client_name: "Johnny",
     client_email: "client@email.com",
-    client_document: "80064671020",
+    client_document: "81688771280",
     merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
   }
 })
@@ -76,7 +76,7 @@ params = {
     "description": "Cobrança de deposito",
     "client_name": "Johnny",
     "client_email": "client@email.com",
-    "client_document": "80064671020",
+    "client_document": "81688771280",
     "merchant_id": "271e4016-47de-45e0-9340-6f2560ce3a90"
 }
 
@@ -102,7 +102,7 @@ curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr
             "description": "Cobrança de deposito",
             "client_name": "Johnny",
             "client_email": "client@email.com",
-            "client_document": "80064671020",
+            "client_document": "81688771280",
             "merchant_id": "271e4016-47de-45e0-9340-6f2560ce3a90"
         }'
 ```
@@ -119,7 +119,7 @@ $params = array(
     "description" => "Cobrança de deposito",
     "client_name" => "Johnny",
     "client_email" => "client@email.com",
-    "client_document" => "80064671020"
+    "client_document" => "81688771280"
     "merchant_id => ""271e4016-47de-45e0-9340-6f2560ce3a90""
 );
 
