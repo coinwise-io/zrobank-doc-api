@@ -12,17 +12,17 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 
 ### General
 
-| Title                                | Type       | Properties                                | Description |
-| ------------------------------------ | -----------|------------------------------------------ |----------- |
-| value:small_orange_diamond:          | NUMBER     |                                           | Value to be paid |
-| description:small_orange_diamond:    | STRING     |                                           | Description of the transaction |
-| client_document:small_orange_diamond:| STRING     |                                           | Document of the person whose charge is being designed to |
-| merchant_id:small_orange_diamond:    | STRING     |                                           | Reference of the store that solicitate the QrCode |
-| code                                 | INTEGER    | ENUM - [200, 422, 404, 408, 500]          | Response code|
-| status                               | STRING     | ENUM - [pending, failed]                  | Transaction status
-| message                              | STRING     |                                           | Message about the request |
-| qr_code                              | STRING     |                                           | PIX EMV QrCode |
-| transaction_uuid                     | STRING     |                                           | Reference of the QrCode for conciliation |
+| Title                                | Type       | Properties                       | Maximum Length  | Description |
+| ------------------------------------ | :---------:|:--------------------------------:|:--------------: |--------------------------------------------------------- |
+| value:small_orange_diamond:          | NUMBER     |                                  |    INT4         | Value to be paid                                         |
+| description:small_orange_diamond:    | STRING     |                                  |    255          | Description of the transaction                           |
+| client_document:small_orange_diamond:| STRING     |                                  |    255          | Document of the person whose charge is being designed to |
+| merchant_id:small_orange_diamond:    | STRING     |                                  |    255          | Reference of the store that solicitate the QrCode        |
+| code                                 | INTEGER    | ENUM - [200, 422, 404, 408, 500] |                 | Response code                                            |
+| status                               | STRING     | ENUM - [pending, failed]         |                 | Transaction status                                       |
+| message                              | STRING     |                                  |                 | Message about the request                                |
+| qr_code                              | STRING     |                                  |                 | PIX EMV QrCode                                           |
+| transaction_uuid                     | STRING     |                                  |                 | Reference of the QrCode for conciliation                 |
 :small_orange_diamond: *Required parameters to request*
 
 

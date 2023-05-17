@@ -59,7 +59,7 @@ h6 {
 .try-btn {
   display: inline-block;
   border-radius: 8px;
-  background-color: #2e8555;
+  background-color: #20a4a8;
   color: #ffffff;
   padding: 5px 10px;
   text-decoration: none;
@@ -69,5 +69,5 @@ h6 {
 }
 
 .try-btn:hover {
-  background-color: #205d3b; /* Darker shade of #2e8555 */
+  background-color: #136366; /* Darker shade of #2e8555 */
 }
