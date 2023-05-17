@@ -11,16 +11,16 @@ Returns the found transaction data.
 ## Data description
 
 | Title            | Type        | Description |
-| ---------------- | ----------- | ----------- |
-| id                   | string      | ID of the transaction |
-| transaction_uuid     | string      | Reference of the QrCode for conciliation |
-| status               | string      | Transaction status |
-| transaction_type     | string      | Transaction type |
-| value                | string      | Value of the transaction |
-| client_document      | string      | Document of the person who paid or received (CPF or CNPJ) |
-| created_at           | string      | Date when the transaction was created |
-| process_status       | string      | Transaction payment status |
-| merchant_id          | string      |  Merchant's ID for conciliation |
+| ---------------- | :---------: | --------------------------------------------------------- |
+| id               | STRING      | ID of the transaction                                     |
+| transaction_uuid | STRING      | Reference of the QrCode for conciliation                  |
+| status           | STRING      | Transaction status                                        |
+| transaction_type | STRING      | Transaction type                                          |
+| value            | STRING      | Value of the transaction                                  |
+| client_document  | STRING      | Document of the person who paid or received (CPF or CNPJ) |
+| created_at       | STRING      | Date when the transaction was created                     |
+| process_status   | STRING      | Transaction payment status                                |
+| merchant_id      | STRING      |  Merchant's ID for conciliation                           |
 
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>

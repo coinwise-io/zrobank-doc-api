@@ -12,17 +12,17 @@ Returns the found withdrawal transaction data.
 
 ## Data description
 
-| Title                | Type        | Property                                                         |Description                                                 |
-| ----------------     | ----------- | ---------------------------------------------------------------- | ---------------------------------------------------------- |
-| id                   | STRING      |                                                                  | ID of the transaction                                      |
-| transaction_uuid     | STRING      |                                                                  | Reference of the QrCode for conciliation                   |
-| status               | ENUM        | [pending, paid, canceled, paid_by_third_party, failed, awaiting] | Transaction status                                         |
-| transaction_type     | ENUM        | [transaction, withdraw, refund]                                  | Transaction type                                           |
-| value                | STRING      |                                                                  |  Value of the transaction                                  |
-| client_document      | STRING      |                                                                  |  Document of the person who paid or received (CPF or CNPJ) |
-| created_at           | STRING      |                                                                  |  Date when the transaction was created                     |
-| process_status       | ENUM        | [waiting, completed, failed]                                     |  Transaction payment status                                |
-| merchant_id:small_orange_diamond:  | STRING      |                                                                  |  Merchant's ID for conciliation                            |
+| Title                              | Type                 | Property                                                         |Maximum Length | Description                                                |
+| ---------------------------------- | :-------------------:| -----------------------------------------------------------------|:------------: | ---------------------------------------------------------- |
+| id                                 | STRING               |                                                                  |               | ID of the transaction                                      |
+| transaction_uuid                   | STRING(UUID)         |                                                                  |               | Reference of the QrCode for conciliation                   |
+| status                             | ENUM                 | [pending, paid, canceled, paid_by_third_party, failed, awaiting] |               | Transaction status                                         |
+| transaction_type                   | ENUM                 | [transaction, withdraw, refund]                                  |               | Transaction type                                           |
+| value                              | STRING               |                                                                  |               | Value of the transaction                                   |
+| client_document                    | STRING               |                                                                  |               | Document of the person who paid or received (CPF or CNPJ)  |
+| created_at                         | STRING               |                                                                  |               | Date when the transaction was created                      |
+| process_status                     | ENUM                 | [waiting, completed, failed]                                     |               | Transaction payment status                                 |
+| merchant_id:small_orange_diamond:  | STRING               |                                                                  |    255        | Merchant's ID for conciliation                             |
 :small_orange_diamond: *Required parameters to request*
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>

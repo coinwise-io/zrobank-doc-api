@@ -18,20 +18,20 @@ For complete refund, orders is not required.
 
 ### General
 
-| Title                                    | Type        |Allow Null?                       | Description                                              |
-| ---------------------------------------- | ----------- |--------------------------------- | -------------------------------------------------------- |
-| description:small_orange_diamond:        | STRING      |                                  | Description of the return                                |
-| merchant_id:small_orange_diamond:        | STRING      |                                  | Reference of the store that solicitate the return        |
-| transaction_uuid:small_orange_diamond:   | STRING      |                                  | Reference of the transaction that should be returned     |
-| client_document:small_orange_diamond:    | STRING      |                                  | Client's document (CPF or CNPJ)                          |
+| Title                                    | Type        |Maximum Length                    | Description                                              |
+| ---------------------------------------- | :---------: |:-------------------------------: | -------------------------------------------------------- |
+| description:small_orange_diamond:        | STRING      |   255                            | Description of the return                                |
+| merchant_id:small_orange_diamond:        | STRING      |   255                            | Reference of the store that solicitate the return        |
+| transaction_uuid:small_orange_diamond:   | STRING(UUID)|                                  | Reference of the transaction that should be returned     |
+| client_document:small_orange_diamond:    | STRING      |   255                            | Client's document (CPF or CNPJ)                          |
 :small_orange_diamond: *Required parameters to request*
 
 ### Orders
 
-| Title                                    | Type        |Allow Null?                       | Description                                                             |
-| ---------------------------------------- | ----------- |--------------------------------- | ----------------------------------------------------------------------- |
-| value:small_orange_diamond:              | NUMBER      |                                  | Value that should be returned to the store                              |
-| company_identifier:small_orange_diamond: | STRING      |                                  | Identifier for the store that should return the value(wallet identifier)|
+| Title                                    | Type        |Maximum Length                      | Description                                                             |
+| ---------------------------------------- | ----------- |:--------------------------------:  | ----------------------------------------------------------------------- |
+| value:small_orange_diamond:              | NUMBER      |  INT4                              | Value that should be returned to the store                              |
+| company_identifier:small_orange_diamond: | STRING      |  INT8                              | Identifier for the store that should return the value(wallet identifier)|
 :small_orange_diamond: *Required parameters to request*
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>

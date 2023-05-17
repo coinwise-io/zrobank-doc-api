@@ -11,18 +11,18 @@ Creates a new withdraw request using PIX as the payment method.
 
 ## Data description
 
-| Title                                  | Type        |Properties                        | Description                                              |
-| -------------------------------------- | ----------- |--------------------------------- | -------------------------------------------------------- |
-| value :small_orange_diamond:           | number      |                                  | Value to be paid                                         |
-| type_key_pix :small_orange_diamond:    | ENUM        | [cpf, cnpj, email, phone, evp ]  | PIX key type                                             |
-| key :small_orange_diamond:             | string      |                                  | PIX key                                                  |
-| description :small_orange_diamond:     | string      |                                  | Description of the payment                               |
-| client_name :small_orange_diamond:     | string      |                                  | Client's name                                            |
-| client_email                           | string      |                                  | Client's email                                           |
-| client_document :small_orange_diamond: | string      |                                  | Client's document (CPF or CNPJ)                          |
-| merchant_id :small_orange_diamond:     | string      |                                  | Merchant's ID for conciliation                           |
-| status                                 | string      |                                  | Transaction status                                       |
-| message                                | string      |                                  | Message about the request                                |
+| Title                                  | Type        |Properties                      |Max Length         | Description                                              |
+| -------------------------------------- |:-----------:|--------------------------------|:-----------------:| -------------------------------------------------------- |
+| value :small_orange_diamond:           | NUMBER      |                                |  INT4             | Value to be paid                                         |
+| type_key_pix :small_orange_diamond:    | ENUM        | [cpf, cnpj, email, email, evp ]|                   | PIX key type                                             |
+| key :small_orange_diamond:             | STRING      |                                |  255              | PIX key                                                  |
+| description :small_orange_diamond:     | STRING      |                                |  255              | Description of the payment                               |
+| client_name :small_orange_diamond:     | STRING      |                                |  255              | Client's name                                            |
+| client_email                           | STRING      |                                |  255              | Client's email                                           |
+| client_document :small_orange_diamond: | STRING      |                                |  255              | Client's document (CPF or CNPJ)                          |
+| merchant_id :small_orange_diamond:     | STRING      |                                |  255              | Merchant's ID for conciliation                           |
+| status                                 | STRING      |                                |                   | Transaction status                                       |
+| message                                | STRING      |                                |                   | Message about the request                                |
 :small_orange_diamond: *Required parameters to request*
 
 
@@ -44,12 +44,12 @@ axios({
   },
   data: {
     value: 10,
-    type_key_pix: "phone",
-    key: "+5533123456789",
+    type_key_pix: "email",
+    key: "ramonzin@gmail.com",
     description: "Payment to client",
     client_name: "John",
     client_email: "client@email.com",
-    client_document: "13813438058",
+    client_document: "81688771280",
     merchant_id: "123456"
   }
 })
@@ -71,12 +71,12 @@ url = "https://sandbox-api-payments.zrobank.xyz/api/withdraw"
 api_key = "{your API key}"
 params = {
     "value": 10,
-    "type_key_pix": "phone",
-    "key": "+5533123456789",
+    "type_key_pix": "email",
+    "key": "ramonzin@gmail.com",
     "description": "Payment to client",
     "client_name": "John",
     "client_email": "client@email.com",
-    "client_document": "13813438058",
+    "client_document": "81688771280",
     "merchant_id": "123456"
 }
 
@@ -99,12 +99,12 @@ curl -X POST https://sandbox-api-payments.zrobank.xyz/api/withdraw \
      -H 'x-api-key: {Your api key}' \
      -d $'{
         "value": 10,
-        "type_key_pix": "phone",
-        "key": "+5533123456789",
+        "type_key_pix": "email",
+        "key": "ramonzin@gmail.com",
         "description": "Payment to client",
         "client_name": "John",
         "client_email": "client@email.com",
-        "client_document": "13813438058",
+        "client_document": "81688771280",
         "merchant_id": "123456"
         }'
 ```
@@ -118,12 +118,12 @@ $url = 'https://sandbox-api-payments.zrobank.xyz/api/withdraw';
 $api_key = '{your API key}';
 $params = array(
     "value" => 10,
-    "type_key_pix" => "phone",
-    "key" => "+5533123456789",
+    "type_key_pix" => "email",
+    "key" => "ramonzin@gmail.com",
     "description" => "Payment to client",
     "client_name" => "John",
     "client_email" => "client@email.com",
-    "client_document" => "13813438058"
+    "client_document" => "81688771280"
     "merchant_id => "123456"
 );
 

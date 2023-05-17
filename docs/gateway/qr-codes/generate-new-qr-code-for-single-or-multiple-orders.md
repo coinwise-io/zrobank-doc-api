@@ -12,17 +12,17 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 
 ### General
 
-| Title                                | Type       | Properties                                | Description |
-| ------------------------------------ | -----------|------------------------------------------ |----------- |
-| value:small_orange_diamond:          | NUMBER     |                                           | Value to be paid |
-| description:small_orange_diamond:    | STRING     |                                           | Description of the transaction |
-| client_document:small_orange_diamond:| STRING     |                                           | Document of the person whose charge is being designed to |
-| merchant_id:small_orange_diamond:    | STRING     |                                           | Reference of the store that solicitate the QrCode |
-| code                                 | INTEGER    | ENUM - [200, 422, 404, 408, 500]          | Response code|
-| status                               | STRING     | ENUM - [pending, failed]                  | Transaction status
-| message                              | STRING     |                                           | Message about the request |
-| qr_code                              | STRING     |                                           | PIX EMV QrCode |
-| transaction_uuid                     | STRING     |                                           | Reference of the QrCode for conciliation |
+| Title                                | Type       | Properties                       | Maximum Length  | Description |
+| ------------------------------------ | :---------:|:--------------------------------:|:--------------: |--------------------------------------------------------- |
+| value:small_orange_diamond:          | NUMBER     |                                  |    INT4         | Value to be paid                                         |
+| description:small_orange_diamond:    | STRING     |                                  |    255          | Description of the transaction                           |
+| client_document:small_orange_diamond:| STRING     |                                  |    255          | Document of the person whose charge is being designed to |
+| merchant_id:small_orange_diamond:    | STRING     |                                  |    255          | Reference of the store that solicitate the QrCode        |
+| code                                 | INTEGER    | ENUM - [200, 422, 404, 408, 500] |                 | Response code                                            |
+| status                               | STRING     | ENUM - [pending, failed]         |                 | Transaction status                                       |
+| message                              | STRING     |                                  |                 | Message about the request                                |
+| qr_code                              | STRING     |                                  |                 | PIX EMV QrCode                                           |
+| transaction_uuid                     | STRING     |                                  |                 | Reference of the QrCode for conciliation                 |
 :small_orange_diamond: *Required parameters to request*
 
 
@@ -57,7 +57,7 @@ axios({
   data: {
     value: 300,
     description: "Qr code Zro Gateway",
-    client_document: "80064671020",
+    client_document: "81688771280",
     merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
     orders: [
       {
@@ -96,7 +96,7 @@ api_key = "{your API key}"
 params = {
     "value": 300,
     "description": "Qr code Zro Gateway",
-    "client_document": "80064671020",
+    "client_document": "81688771280",
     "merchant_id": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
     "orders": [
       {
@@ -136,7 +136,7 @@ curl -X POST 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_
   -d '{
   "value": 300,
   "description": "Qr code Zro Gateway",
-  "client_document": "80064671020",
+  "client_document": "81688771280",
   "merchant_id": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
   "orders": [
     {
@@ -168,7 +168,7 @@ $api_key = '{your API key}';
 $params = array(
   "value" => 300,
   "description" => "Qr code Zro Gateway",
-  "client_document" => "80064671020",
+  "client_document" => "81688771280",
   "merchant_id" => "7da0c9af-215e-4625-b484-b8cfc87aaa09",
   "orders" => array(
       array(
