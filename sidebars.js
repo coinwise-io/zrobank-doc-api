@@ -73,9 +73,7 @@ const sidebars = {
         {
           type: "category",
           label: "Refunds",
-          items: [
-            "gateway/refunds/generate-complete-or-parcial-refund",
-          ],
+          items: ["gateway/refunds/generate-complete-or-parcial-refund"],
         },
         {
           type: "category",
@@ -83,7 +81,6 @@ const sidebars = {
           items: [
             "gateway/transactions/search-by-uuid",
             "gateway/transactions/update-transaction-status",
-            "gateway/transactions/search-withdraw-transaction-by-merchant-id"
           ],
         },
         {
@@ -91,6 +88,7 @@ const sidebars = {
           label: "Withdrawals",
           items: [
             "gateway/withdrawals/withdraw",
+            "gateway/withdrawals/search-withdraw-transaction-by-merchant-id",
           ],
         },
       ],
