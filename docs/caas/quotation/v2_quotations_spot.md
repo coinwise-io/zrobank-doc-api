@@ -11,12 +11,13 @@ To create a new currency conversion, first, you need to create a **Quotation ID*
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
+| Parameter | Type |  Description |
 | --- | --- | --- | --- |
-| base_currency  | string | yes | Quotation currency. |
-| amount_currency  | string | yes | Quotation currency quote. |
-| amount  | string | yes | Quotation amount. |
-| side  | string | yes | Quotation side.|
+| base_currency:small_orange_diamond:   | string |  Quotation currency. |
+| amount_currency:small_orange_diamond:   | string |  Quotation currency quote. |
+| amount:small_orange_diamond:   | string |  Quotation amount. |
+| side:small_orange_diamond:   | string |  Quotation side.|
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 
@@ -26,7 +27,7 @@ To create a new currency conversion, first, you need to create a **Quotation ID*
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://api.example.com/endpoint';
+const url = 'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot;
 
 axios.get(url)
   .then(response => {
@@ -43,7 +44,7 @@ axios.get(url)
 ```python title=Requests
 import requests
 
-url = 'https://api.example.com/endpoint'
+url = 'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot'
 
 data = {
     'id': 'f6e2e084-29b9-4935-a059-5473b13033aa',
@@ -94,7 +95,7 @@ curl -X GET \
     "base_currency_title": "Real",
     "ttl": "2023-05-05T13:41:52.775Z"
   }' \
-  'https://api.example.com/endpoint'
+  'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
@@ -102,7 +103,7 @@ curl -X GET \
 ```shell title=CURL
 <?php
 
-$url = 'https://api.example.com/endpoint';
+$url = 'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot';
 
 $data = array(
     'id' => 'f6e2e084-29b9-4935-a059-5473b13033aa',

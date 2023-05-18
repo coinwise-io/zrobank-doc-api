@@ -20,7 +20,7 @@ No parameters.
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://api.example.com/endpoint';
+const url = 'https://api-dev159sw.zrobank.biz:2083/auth/singin';
 
 const headers = {
   'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ axios.post(url, data, { headers })
 ```python title=Requests
 import requests
 
-url = 'https://api.example.com/endpoint'
+url = 'https://api-dev159sw.zrobank.biz:2083/auth/singin'
 
 headers = {
     'Content-Type': 'application/json'
@@ -71,7 +71,7 @@ else:
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api.example.com/endpoint' \
+  'https://api-dev159sw.zrobank.biz:2083/auth/singin' \
   -H 'Content-Type: application/json' \
   -d '{
     "api_id": "b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6",

@@ -10,9 +10,11 @@ User should inform authorization old access token in header and a new access tok
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
+| Parameter | Type | Description |
 | --- | --- | --- | --- |
-| x-access-token | string | yes | Send expired jwt access token with refresh token inside. |
+| x-access-token:small_orange_diamond:  | string | yes | Send expired jwt access token with refresh token inside. |
+
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 
@@ -22,7 +24,7 @@ User should inform authorization old access token in header and a new access tok
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://api.example.com/endpoint';
+const url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token';
 
 const headers = {
   'Content-Type': 'application/json'

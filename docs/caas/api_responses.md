@@ -64,9 +64,9 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | 510 | The request received with the extension declaration is not supported by the server.|
 | 511 | You must authenticate to the network to proceed.
 
-Example of response **401**:
 
-```json
+
+```json title="Example of response 401:"
 {
   "success": false,
   "data": null,
@@ -171,9 +171,9 @@ Example of response **401**:
 | USER_WALLET_NOT_FOUND | User's association with the wallet is not found. Please check your data and try again. |
 | WALLET_ACCOUNTS_NOT_FOUND | No account details found. Please verify your registration and try again. |
 
-Example of response **422** containing the code **QUOTATION_NOT_FOUND**:
 
-```json
+
+```json title="Example of response 422 containing the code QUOTATION_NOT_FOUND:"
 {
   "success": false,
   "data": null,
@@ -217,9 +217,7 @@ Example of response **422** containing the code **QUOTATION_NOT_FOUND**:
 | IS_DATE_AFTER_THAN_NOW | The field {property} must be after now date. |
 | IS_IN | The {property} value is not valid. |
 
-Example of response **422** containing the code **VALIDATION**:
-
-```json
+```json title="Example of response 422 containing the code VALIDATION:"
 {
   "success": false,
   "data": null,

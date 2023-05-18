@@ -11,19 +11,20 @@ Get a list of user's conversions. You can include any of the filter parameters b
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| nonce  | string | yes | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
-| page | number| no | Page number.|
-|  size  |   number | no | Page size. Max size is 100.       |
-|  sort   |  string | no | Page sort attribute.      |
-|  order    | string | no | Page order.      |
-|  operation_id    |  string | no |Operation ID for conversion.       |
-|  currency_symbol |   string | no |Currency Symbol for conversion.       |
-|  quotation_id   |  string | no |Quotation ID for conversion.       |
-|  conversion_type |  string | no |Conversion type.       |
-|  created_at_start | string | no |Created at start for any conversion.       |
-|  created_at_end  |  string | no |Created at end for any conversion.      |
+| Parameter | Type |  Description |
+| --- | --- | --- |
+| nonce:small_orange_diamond:   | string | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+| page | number|  Page number.|
+|  size  |   number |  Page size. Max size is 100.       |
+|  sort   |  string |  Page sort attribute.      |
+|  order    | string |  Page order.      |
+|  operation_id    |  string | Operation ID for conversion.       |
+|  currency_symbol |   string | Currency Symbol for conversion.       |
+|  quotation_id   |  string | Quotation ID for conversion.       |
+|  conversion_type |  string | Conversion type.       |
+|  created_at_start | string | Created at start for any conversion.       |
+|  created_at_end  |  string | Created at end for any conversion.      |
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 

@@ -10,9 +10,10 @@ To create a new currency conversion, first, you need to create a **Quotation ID*
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| nonce  | string | yes | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+| Parameter | Type |  Description |
+| --- | --- | --- | 
+| nonce:small_orange_diamond:   | string |  The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 
@@ -23,7 +24,7 @@ To create a new currency conversion, first, you need to create a **Quotation ID*
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://api.example.com/endpoint';
+const url = 'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions';
 
 const data = {
   quotation_id: 'abb8e578-6540-4104-8fa9-90a854ab0d1c'
@@ -45,7 +46,7 @@ axios.post(url, data)
 ```python title=Requests
 import requests
 
-url = 'https://api.example.com/endpoint'
+url = 'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions'
 
 data = {
     'quotation_id': 'abb8e578-6540-4104-8fa9-90a854ab0d1c'
@@ -68,7 +69,7 @@ curl -X POST \
   -d '{
     "quotation_id": "abb8e578-6540-4104-8fa9-90a854ab0d1c"
   }' \
-  'https://api.example.com/endpoint'
+  'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
@@ -76,7 +77,7 @@ curl -X POST \
 ```shell title=CURL
 <?php
 
-$url = 'https://api.example.com/endpoint';
+$url = 'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions';
 
 $data = array(
     'quotation_id' => 'abb8e578-6540-4104-8fa9-90a854ab0d1c'

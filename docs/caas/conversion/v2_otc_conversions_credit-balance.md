@@ -10,9 +10,10 @@ Get user's liability (the sum in BRL of all negative balances of all active curr
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| nonce  | string | yes | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+| Parameter | Type |  Description |
+| --- | --- |  --- |
+| nonce:small_orange_diamond:   | string |  The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 

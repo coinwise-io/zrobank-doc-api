@@ -10,10 +10,11 @@ Enter the conversion's ID below and execute to get all its information.
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| nonce  | string | yes | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
-| id  | string | yes | Conversion UUID. |
+| Parameter | Type |  Description |
+| --- | --- |  --- |
+| nonce:small_orange_diamond:   | string |  The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+| id:small_orange_diamond:   | string | Conversion UUID. |
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 
@@ -22,8 +23,8 @@ Enter the conversion's ID below and execute to get all its information.
 
 ```js title=Axios
 const axios = require('axios');
-
-const url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/2';
+id = 10
+const url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/{id}';
 const headers = {
   'accept': 'application/json',
   'nonce': '1'
@@ -42,8 +43,8 @@ axios.get(url, { headers })
 
 ```python title=Requests
 import requests
-
-url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/2'
+id = 10
+url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/{id}'
 
 headers = {
     'accept': 'application/json',
@@ -59,7 +60,7 @@ print(response.json())
 
 ```shell title=CURL
   curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/otc/conversions/2' \
+  'https://api-dev159sw.zrobank.biz:2083/otc/conversions/10' \
   -H 'accept: application/json' \
   -H 'nonce: 1'
 ```

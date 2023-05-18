@@ -11,11 +11,10 @@ With pagination, instead of returning all data at once, the response data is div
 | sort  | Page sort attribute. The response data will be ordered by this attribute. |
 | order | Page order. Available values : asc, desc. **Default value : asc**  |
 
-> Note: all of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
+:::note all of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
+:::
 
-Exemple of response with pagination where `page = 1`, `size = 5`, `sort = id`, `order = asc`:  
-
-```json
+```json title="Example of response with pagination where: page = 1, size = 5, sort = id, order = asc"
  {
   "success": true,
   "data": {

@@ -10,9 +10,10 @@ Enter the conversion's ID below and execute to get its related quotation.
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| nonce  | string | yes | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+| Parameter | Type  Description |
+| --- | --- |--- |
+| nonce:small_orange_diamond:  | string |  The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
+:small_orange_diamond: *Required parameters to request*
 
 ### Request
 
@@ -22,8 +23,8 @@ Enter the conversion's ID below and execute to get its related quotation.
 
 ```js title=Axios
 const axios = require('axios');
-
-const url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/10/quotations';
+id = 10
+const url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/{id}/quotations';
 const headers = {
   'accept': 'application/json',
   'nonce': '1'
@@ -43,8 +44,8 @@ axios.get(url, { headers })
 
 ```python title=Requests
 import requests
-
-url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/10/quotations'
+id = 10
+url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/{id}/quotations'
 headers = {
     'accept': 'application/json',
     'nonce': '1'
