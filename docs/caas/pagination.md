@@ -4,14 +4,17 @@ All of our search endpoints that may return a large scale of data have paginatio
 
 With pagination, instead of returning all data at once, the response data is divided into pages. The page configuration is defined in the request, using the parameters listed below.
 
-| Parameter       | Description                            |
-| --------------- | -------------------------------------- |
-| page  | Page number. **Default value : 1** |
-| size  | Page limit size. Max size is 100. **Default value : 20** |
-| sort  | Page sort attribute. The response data will be ordered by this attribute. |
-| order | Page order. Available values : asc, desc. **Default value : asc**  |
+| Parameter | Description                                   | Default Value | Max Length     |
+| --------- | --------------------------------------------- | ------------- | ------------- |
+| page      | Page number.                                 | 1             | -             |
+| size      | Page limit size.                             | 20            | 100           |
+| sort      | Page sort attribute. The response data will be ordered by this attribute. | -             | -             |
+| order     | Page order. Available values: asc, desc.       | asc           | -             |
 
-:::note all of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
+
+
+:::note 
+all of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
 :::
 
 ```json title="Example of response with pagination where: page = 1, size = 5, sort = id, order = asc"

@@ -15,9 +15,7 @@ Both API requests and responses follow the JSON specification, in which request 
 | error  | Indicates the type of error that occurred in the request (for example, "AUTH" for authentication errors).         |
 | message   | Provides additional information about the error that occurred.    |
 
-Example of JSON response:
-
-```json
+```json title="Example of JSON response:"
 {
   "success": false,<br>
   "data": null,<br>
