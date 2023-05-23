@@ -16,15 +16,15 @@ Enter the conversion's ID below and execute to get all its information.
 | id:small_orange_diamond:   | string | Conversion UUID. |
 :small_orange_diamond: *Required parameters to request*
 
-### Request
+### Request <a href="https://api-dev159sw.zrobank.biz:2083/api/#/" class="try-btn">Try it!</a>
 
 <Tabs>
 <TabItem value="js" label="NodeJS">
 
 ```js title=Axios
 const axios = require('axios');
-id = 10
-const url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/{id}';
+const id = 10
+const url = `https://api-dev159sw.zrobank.biz:2083/otc/conversions/${id}/quotations`;
 const headers = {
   'accept': 'application/json',
   'nonce': '1'

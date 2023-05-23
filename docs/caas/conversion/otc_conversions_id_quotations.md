@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate conversionfrom Conversion ID
+# Generate conversion from Conversion ID
 
 | GET    | /otc/conversions/{id}/quotations|
 | --------- | ----------- |
@@ -15,7 +15,7 @@ Enter the conversion's ID below and execute to get its related quotation.
 | nonce:small_orange_diamond:  | string |  The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier. |
 :small_orange_diamond: *Required parameters to request*
 
-### Request
+### Request <a href="https://api-dev159sw.zrobank.biz:2083/api/#/" class="try-btn">Try it!</a>
 
 <Tabs>
 <TabItem value="js" label="NodeJS">
@@ -23,8 +23,8 @@ Enter the conversion's ID below and execute to get its related quotation.
 
 ```js title=Axios
 const axios = require('axios');
-id = 10
-const url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/{id}/quotations';
+const id = 10
+const url = `https://api-dev159sw.zrobank.biz:2083/otc/conversions/${id}/quotations`;
 const headers = {
   'accept': 'application/json',
   'nonce': '1'
