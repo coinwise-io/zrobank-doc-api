@@ -35,11 +35,12 @@ const sidebars = {
         'paas/api-overview/authentication',
         'paas/api-overview/protocol',
         'paas/api-overview/idempotence',
-        'paas/api-overview/rate_limiting',
-        'paas/api-overview/request_id',
+        'paas/api-overview/rate-limiting',
+        'paas/api-overview/request-id',
         'paas/api-overview/serialization',
         'paas/api-overview/pagination',
-        'paas/api-overview/change_log',
+        'paas/api-overview/api-responses',
+        'paas/api-overview/change-log',
       ],
     },
     {
@@ -49,10 +50,12 @@ const sidebars = {
         {
           type: 'category',
           label: 'Authentication',
-          items: [
-            'paas/auth/auth_singin',
-            'paas/auth/auth_refresh-token',
-          ],
+          items: ['paas/auth/auth-singin', 'paas/auth/auth-refresh-token'],
+        },
+        {
+          type: 'category',
+          label: 'Pix | Payments',
+          items: ['paas/pix/create-new-pix-payment-decode-by-account','paas/pix/create-new-pix-payment-by-bank-account', ],
         },
       ],
     },
@@ -72,6 +75,7 @@ const sidebars = {
         'caas/serialization',
         'caas/api_responses',
         'caas/change_log',
+        'caas/api_responses',
       ],
     },
     {

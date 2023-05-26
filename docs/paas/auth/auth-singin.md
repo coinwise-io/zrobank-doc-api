@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate access token from API ID and API Key
+# Create an access token to log user in
 
 | POST      | /auth/singin |
 | --------- | ----------- |
@@ -10,7 +10,13 @@ Enter your API ID and API Key on the requisition body below and execute to get y
 
 ### Parameters
 
-No parameters.
+|Parameter                      | Type   | Description|
+|-------------------------------|--------|------------|
+| api_id:small_orange_diamond:  | STRING | API Id     |
+| api_key:small_orange_diamond: | STRING | API key    |
+
+:small_orange_diamond: *Required parameters to request*
+
 
 ### Request
 
@@ -107,7 +113,7 @@ $apiKey = $data['api_key'];
 
 ```json  title=/auth/singin
 {
-  "access_token": "string",
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi",
 }
 ```
 </TabItem>
@@ -117,8 +123,7 @@ $apiKey = $data['api_key'];
 {
   {
   "code": 400,
-  "message": "If any required params are missing or has invalid format or type."
-  }
+  "message": "The value api-key should be a string."  }
 }
 ```
 </TabItem>

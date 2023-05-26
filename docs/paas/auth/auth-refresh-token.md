@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate a new token
+# Refresh token user
 
 | POST      | /auth/refresh-token|
 | --------- | ----------- |
@@ -27,13 +27,10 @@ const axios = require('axios');
 const url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token';
 
 const headers = {
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
+  x-acess-token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi"
 };
 
-const data = {
-  api_id: 'b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6',
-  api_key: 'abcd1234'
-};
 
 axios.post(url, data, { headers })
   .then(response => {
@@ -53,7 +50,7 @@ url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token'
 
 headers = {
     'accept': 'application/json',
-    'x-access-token': 'x1231'
+    'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi'
 }
 
 response = requests.post(url, headers=headers)
@@ -72,7 +69,7 @@ else:
 curl -X 'POST' \
   'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token' \
   -H 'accept: application/json' \
-  -H 'x-access-token: x1231'
+  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
@@ -84,7 +81,7 @@ $url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token';
 
 $headers = array(
     'accept: application/json',
-    'x-access-token: x1231'
+    'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi'
 );
 
 $curl = curl_init($url);
@@ -115,7 +112,7 @@ curl_close($curl);
 
 ```json  title=/auth/refresh-token
 {
-  "access_token": "string",
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOiI1NTgxOTk1NjU3Nzc3IiwiaWQiOiJiMjgxNjNlYy0",
 }
 ```
 </TabItem>
@@ -125,7 +122,7 @@ curl_close($curl);
 {
   {
   "code": 400,
-  "message": "If any required params are missing or has invalid format or type."
+  "message": "The value x-acess-token should be a string."
   }
 }
 ```
