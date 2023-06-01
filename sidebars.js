@@ -55,7 +55,19 @@ const sidebars = {
         {
           type: 'category',
           label: 'Pix | Payments',
-          items: ['paas/pix/create-new-pix-payment-decode-by-account','paas/pix/create-new-pix-payment-by-bank-account', ],
+          items: [
+            'paas/pix/payments/create-new-pix-payment-decode-by-account',
+            'paas/pix/payments/create-new-pix-payment-by-bank-account',
+            'paas/pix/payments/create-new-pix-payment-decode-by-key',
+            'paas/pix/payments/create-new-pix-payment-by-pix-key',
+            'paas/pix/payments/get-users-pix-payments',
+            'paas/pix/payments/get-pix-payment-by-id',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Pix | Devolutions',
+          items: ['paas/pix/devolutions/crete-new-pix-devolution'],
         },
       ],
     },
