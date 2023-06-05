@@ -8,34 +8,43 @@ import TabItem from '@theme/TabItem';
 
 Generates a new complete or a partial refund.
 
-For partial refund of an individual order or for multiple orders at once, the orders must be specified in an array of objects.
+> For partial refund of an individual order or for multiple orders at once, the orders must be specified in an array of objects
 
-For a single order, the array will be composed by one single object. For multiple orders, the array will be composed by multiple objects.
+> For a single order, the array will be composed by one single object
 
-For complete refund, orders is not required.
+> For multiple orders, the array will be composed by multiple objects
 
-## Data description
+> For complete refund, orders is not required
 
-### General
-
-| Title                                    | Type        |Maximum Length                    | Description                                              |
-| ---------------------------------------- | :---------: |:-------------------------------: | -------------------------------------------------------- |
-| description:small_orange_diamond:        | STRING      |   255                            | Description of the return                                |
-| merchant_id:small_orange_diamond:        | STRING      |   255                            | Reference of the store that solicitate the return        |
-| transaction_uuid:small_orange_diamond:   | STRING(UUID)|                                  | Reference of the transaction that should be returned     |
-| client_document:small_orange_diamond:    | STRING      |   255                            | Client's document (CPF or CNPJ)                          |
-:small_orange_diamond: *Required parameters to request*
-
-### Orders
-
-| Title                                    | Type        |Maximum Length                      | Description                                                             |
-| ---------------------------------------- | ----------- |:--------------------------------:  | ----------------------------------------------------------------------- |
-| value:small_orange_diamond:              | NUMBER      |  INT4                              | Value that should be returned to the store                              |
-| company_identifier:small_orange_diamond: | STRING      |  INT8                              | Identifier for the store that should return the value(wallet identifier)|
-:small_orange_diamond: *Required parameters to request*
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 
+### Header
+| Title                                | Type       | Description    |
+| ------------------------------------ | :---------:|--------------- |
+| x-api-key:small_orange_diamond:      | STRING     | Your x-api-key |
+:small_orange_diamond: *Required parameters on header*
+
+
+### Body
+
+#### General
+
+| Title                                    | Type       |Properties        |Maximum Length  | Description                                              |
+| ---------------------------------------- | :---------:|:----------------:|:-------------: | -------------------------------------------------------- |
+| description:small_orange_diamond:        | STRING     |-                 |  255           | Description of the return                                |
+| merchant_id:small_orange_diamond:        | STRING     |Must be a **UUID**|   -            | Reference of the store that solicitate the return        |
+| transaction_uuid:small_orange_diamond:   | STRING     |Must be a **UUID**|   -            | Reference of the transaction that should be returned     |
+| client_document:small_orange_diamond:    | STRING     |-                 |  255           | Client's document (CPF or CNPJ)                          |
+:small_orange_diamond: *Required parameters on body*
+
+#### Orders
+
+| Title                                    | Type        |Properties        |Maximum Length     | Description                                                             |
+| ---------------------------------------- | :----------:|:----------------:|:---------------:  | ----------------------------------------------------------------------- |
+| value:small_orange_diamond:              | NUMBER      |-                 |  INT4             | Value that should be returned to the store                              |
+| company_identifier:small_orange_diamond: | STRING      |Must be a **UUID**|  -                | Identifier for the store that should return the value(wallet identifier)|
+:small_orange_diamond: *Required parameters on body*
 
 <Tabs>
 <TabItem value="js_axios" label="NodeJS">
@@ -190,3 +199,14 @@ curl_close($curl);
 ```
 </TabItem>
 </Tabs>
+
+### Data description
+
+| Title                                | Type       | Properties                                      | Description |
+| ------------------------------------ | :---------:|:-----------------------------------------------:|--------------------------------------------------------- |
+| code                                 | NUMBER     | Available codes:<br/> *200, 422, 404, 408, 500* | Response code                                            |
+| status                               | STRING     | Available status:<br/> *pending, failed*        | Transaction status                                       |
+| message                              | STRING     | -                                               | Message about the request                                |
+| qr_code                              | STRING     | -                                               | PIX EMV QrCode                                           |
+| transaction_uuid                     | STRING     | **UUID**                                        | Reference of the QrCode for conciliation                 |
+| merchant_id                          | STRING     | **UUID**                                        | Reference of the store that solicitate the QrCode        |

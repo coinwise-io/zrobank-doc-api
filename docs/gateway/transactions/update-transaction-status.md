@@ -3,33 +3,29 @@ import TabItem from '@theme/TabItem';
 
 # Update a transaction status
 
+| PUT       | /api/trasactions                         |
+| --------- | ---------------------------------------- |
 
 :::caution
 Only available for **development environment**
 :::
 
-| PUT       | /api/trasactions                         |
-| --------- | ---------------------------------------- |
-
-This endpoint is only meant for development environment. Update the status of a transaction to trigger the receipt of webhooks for testing purposes.
-
-## Data description
-
-| Title                                  | Type         | Property                                                         |Description                                                 |
-| ---------------------------------------|:------------:| ---------------------------------------------------------------- | ---------------------------------------------------------- |
-| id                                     | STRING       |                                                                  | ID of the transaction                                      |
-| transaction_uuid:small_orange_diamond: | STRING(UUID) |                                                                  | Reference of the QrCode for conciliation                   |
-| status:small_orange_diamond:           | ENUM         | [pending, paid, canceled, paid_by_third_party, failed, awaiting] | Transaction status                                         |
-| transaction_type                       | ENUM         | [transaction, withdraw, refund]                                  | Transaction type                                           |
-| value                                  | STRING       |                                                                  |  Value of the transaction                                  |
-| client_document                        | STRING       |                                                                  |  Document of the person who paid or received (CPF or CNPJ) |
-| created_at                             | STRING       |                                                                  |  Date when the transaction was created                     |
-| process_status                         | ENUM         | [waiting, completed, failed]                                     |  Transaction payment status                                |
-| merchant_id                            | STRING       |                                                                  |  Merchant's ID for conciliation                            |
-:small_orange_diamond: *Required parameters to request*
+Update the status of a transaction to trigger the receipt of webhooks for testing purposes.
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 
+### Header
+| Title                                | Type       | Description    |
+| ------------------------------------ | :---------:|--------------- |
+| x-api-key:small_orange_diamond:      | STRING     | Your x-api-key |
+:small_orange_diamond: *Required parameters on header*
+
+
+### Body
+| Title                                  | Type  | Property                                                                               |Description                                                 |
+| ---------------------------------------|:-----:| :------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
+| transaction_uuid:small_orange_diamond: | STRING| Must be a **UUID**                                                                     | Reference of the QrCode for conciliation                   |
+| status:small_orange_diamond:           | STRING|Available status:<br/> *pending, paid, canceled, paid_by_third_party, failed, awaiting* | Transaction status                                         |
 
 <Tabs>
 <TabItem value="js" label="NodeJS">
@@ -152,3 +148,17 @@ curl_close($curl);
 ```
 </TabItem>
 </Tabs>
+
+## Data description
+
+| Title             | Type  | Property                                                                                |Description                                                 |
+| ------------------|-------|:--------------------------------------------------------------------------------------: | ---------------------------------------------------------- |
+| id                | STRING| **UUID**                                                                                | ID of the transaction                                      |
+| transaction_uuid  | STRING| **UUID**                                                                                | Reference of the QrCode for conciliation                   |
+| status            | STRING| Available status:<br/> *pending, paid, canceled, paid_by_third_party, failed, awaiting* | Transaction status                                         |
+| transaction_type  | STRING| Available types: <br/> *transaction, withdraw, refund*                                  | Transaction type                                           |
+| value             | STRING| -                                                                                       |  Value of the transaction                                  |
+| client_document   | STRING| -                                                                                       |  Document of the person who paid or received (CPF or CNPJ) |
+| created_at        | STRING| Timestamp with timezone                                                                 |  Date when the transaction was created                     |
+| process_status    | STRING| Available status: <br/> *waiting, completed, failed*                                    |  Transaction payment status                                |
+| merchant_id       | STRING| **UUID**                                                                                |  Merchant's ID for conciliation                            |

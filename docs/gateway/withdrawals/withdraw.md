@@ -9,25 +9,29 @@ import TabItem from '@theme/TabItem';
 
 Creates a new withdraw request using PIX as the payment method.
 
-## Data description
-
-| Title                                  | Type        |Properties                      |Max Length         | Description                                              |
-| -------------------------------------- |:-----------:|--------------------------------|:-----------------:| -------------------------------------------------------- |
-| value :small_orange_diamond:           | NUMBER      |                                |  INT4             | Value to be paid                                         |
-| type_key_pix :small_orange_diamond:    | ENUM        | [cpf, cnpj, email, email, evp ]|                   | PIX key type                                             |
-| key :small_orange_diamond:             | STRING      |                                |  255              | PIX key                                                  |
-| description :small_orange_diamond:     | STRING      |                                |  255              | Description of the payment                               |
-| client_name :small_orange_diamond:     | STRING      |                                |  255              | Client's name                                            |
-| client_email                           | STRING      |                                |  255              | Client's email                                           |
-| client_document :small_orange_diamond: | STRING      |                                |  255              | Client's document (CPF or CNPJ)                          |
-| merchant_id :small_orange_diamond:     | STRING      |                                |  255              | Merchant's ID for conciliation                           |
-| status                                 | STRING      |                                |                   | Transaction status                                       |
-| message                                | STRING      |                                |                   | Message about the request                                |
-:small_orange_diamond: *Required parameters to request*
-
-
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 
+### Header
+| Title                                | Type       | Description    |
+| ------------------------------------ | :---------:|--------------- |
+| x-api-key:small_orange_diamond:      | STRING     | Your x-api-key |
+:small_orange_diamond: *Required parameters on header*
+
+
+### Body
+
+
+| Title                                  | Type        |Properties                                             |Maximum Length         | Description                                          |
+| -------------------------------------- |:-----------:|:-----------------------------------------------------:|:-----------------:| -------------------------------------------------------- |
+| value :small_orange_diamond:           | NUMBER      | -                                                     |  INT4             | Value to be paid                                         |
+| type_key_pix :small_orange_diamond:    | STRING      | Available types: <br/> *cpf, cnpj, email, email, evp* | -                 | PIX key type                                             |
+| key :small_orange_diamond:             | STRING      | -                                                     |  255              | PIX key                                                  |
+| description :small_orange_diamond:     | STRING      | -                                                     |  255              | Description of the payment                               |
+| client_name :small_orange_diamond:     | STRING      | -                                                     |  255              | Client's name                                            |
+| client_email                           | STRING      | -                                                     |  255              | Client's email                                           |
+| client_document :small_orange_diamond: | STRING      | -                                                     |  255              | Client's document (CPF or CNPJ)                          |
+| merchant_id :small_orange_diamond:     | STRING      | Must be a **UUID**                                    |  -                | Merchant's ID for conciliation                           |
+:small_orange_diamond: *Required parameters on body*
 
 <Tabs>
 <TabItem value="js_axios" label="NodeJS">
@@ -175,3 +179,18 @@ curl_close($curl);
 ```
 </TabItem>
 </Tabs>
+
+### Data description
+
+| Title           | Type        |Properties                                              | Description                                              |
+| ----------------|:-----------:|:------------------------------------------------------:| -------------------------------------------------------- |
+| status          | STRING      |-                                                       | Transaction status                                       |
+| message         | STRING      |-                                                       | Message about the request                                |
+| value           | NUMBER      |-                                                       | Value to be paid                                         |
+| type_key_pix    | STRING      | Available types: <br/> *cpf, cnpj, email, email, evp*  | PIX key type                                             |
+| key             | STRING      |-                                                       | PIX key                                                  |
+| description     | STRING      |-                                                       | Description of the payment                               |
+| client_name     | STRING      |-                                                       | Client's name                                            |
+| client_email    | STRING      |-                                                       | Client's email                                           |
+| client_document | STRING      |-                                                       | Client's document (CPF or CNPJ)                          |
+| merchant_id     | STRING      | **UUID**                                               | Merchant's ID for conciliation                           |

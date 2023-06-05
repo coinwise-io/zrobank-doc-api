@@ -4,7 +4,7 @@ All of our search endpoints that may return a large scale of data have paginatio
 
 With pagination, instead of returning all data at once, the response data is divided into pages. The page configuration is defined in the request, using the parameters listed below.
 
-| Parameter | Description                                   | Default Value | Max Length     |
+| Parameter | Description                                   | Default Value | Maximum Length     |
 | --------- | --------------------------------------------- | ------------- | ------------- |
 | page      | Page number.                                 | 1             | -             |
 | size      | Page limit size.                             | 20            | 100           |
@@ -13,7 +13,7 @@ With pagination, instead of returning all data at once, the response data is div
 
 
 
-:::note 
+:::note
 All of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
 :::
 
