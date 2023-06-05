@@ -67,7 +67,61 @@ const sidebars = {
         {
           type: 'category',
           label: 'Pix | Devolutions',
-          items: ['paas/pix/devolutions/crete-new-pix-devolution'],
+          items: [
+            'paas/pix/devolutions/crete-new-pix-devolution',
+            'paas/pix/devolutions/get-users-pix-devolutions',
+            'paas/pix/devolutions/get-users-pix-devolutions-received',
+            'paas/pix/devolutions/get-pix-devolution-by-id',
+            'paas/pix/devolutions/get-pix-devolution-received-by-id',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Pix | Deposits',
+          items: [
+            'paas/pix/deposits/create-new-dynamic-qr-code',
+            'paas/pix/deposits/get-dynamic-qr-code-by-id',
+            'paas/pix/deposits/get-users-pix-deposits',
+            'paas/pix/deposits/get-pix-deposit-by-id',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Pix | Keys',
+          items: [
+            'paas/pix/keys/create-new-evp-pix-key',
+            'paas/pix/keys/get-users-pix-keys',
+            'paas/pix/keys/get-pix-key-by-id',
+            'paas/pix/keys/delete-pix-key-by-id',
+            'paas/pix/keys/dismiss-pix-key-by-id',
+          ],
+        },
+
+        {
+          type: 'category',
+          label: 'Operations | P2P transfers',
+          items: ['paas/operations/p2p-transfers/create-new-p2p-transfers'],
+        },
+        {
+          type: 'category',
+          label: 'Operations | Currency',
+          items: ['paas/operations/currency/get-currencies'],
+        },
+        {
+          type: 'category',
+          label: 'Operations | Wallet Accounts',
+          items: [
+            'paas/operations/wallet-accounts/get-users-wallet-accounts',
+            'paas/operations/wallet-accounts/get-users-wallet-accounts-by-id',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Compliance',
+          items: [
+            'paas/compliance/create-user-withdraw-settings-request',
+            'paas/compliance/get-user-withdraw-settings-request-by-id',
+          ],
         },
       ],
     },
