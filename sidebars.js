@@ -54,65 +54,96 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Pix | Payments',
+          label: 'PIX',
           items: [
-            'paas/pix/payments/create-new-pix-payment-decode-by-account',
-            'paas/pix/payments/create-new-pix-payment-by-bank-account',
-            'paas/pix/payments/create-new-pix-payment-decode-by-key',
-            'paas/pix/payments/create-new-pix-payment-by-pix-key',
-            'paas/pix/payments/get-users-pix-payments',
-            'paas/pix/payments/get-pix-payment-by-id',
+            {
+              type: 'category',
+              label: 'Payments',
+              items: [
+                'paas/pix/payments/create-new-pix-payment-decode-by-account',
+                'paas/pix/payments/create-new-pix-payment-by-bank-account',
+                'paas/pix/payments/create-new-pix-payment-decode-by-key',
+                'paas/pix/payments/create-new-pix-payment-by-pix-key',
+                'paas/pix/payments/get-users-pix-payments',
+                'paas/pix/payments/get-pix-payment-by-id',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Devolutions',
+              items: [
+                'paas/pix/devolutions/crete-new-pix-devolution',
+                'paas/pix/devolutions/get-users-pix-devolutions',
+                'paas/pix/devolutions/get-users-pix-devolutions-received',
+                'paas/pix/devolutions/get-pix-devolution-by-id',
+                'paas/pix/devolutions/get-pix-devolution-received-by-id',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Deposits',
+              items: [
+                'paas/pix/deposits/create-new-dynamic-qr-code',
+                'paas/pix/deposits/get-dynamic-qr-code-by-id',
+                'paas/pix/deposits/get-users-pix-deposits',
+                'paas/pix/deposits/get-pix-deposit-by-id',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Keys',
+              items: [
+                'paas/pix/keys/create-new-evp-pix-key',
+                'paas/pix/keys/get-users-pix-keys',
+                'paas/pix/keys/get-pix-key-by-id',
+                'paas/pix/keys/delete-pix-key-by-id',
+                'paas/pix/keys/dismiss-pix-key-by-id',
+              ],
+            },
           ],
         },
         {
           type: 'category',
-          label: 'Pix | Devolutions',
+          label: 'Operations',
           items: [
-            'paas/pix/devolutions/crete-new-pix-devolution',
-            'paas/pix/devolutions/get-users-pix-devolutions',
-            'paas/pix/devolutions/get-users-pix-devolutions-received',
-            'paas/pix/devolutions/get-pix-devolution-by-id',
-            'paas/pix/devolutions/get-pix-devolution-received-by-id',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Pix | Deposits',
-          items: [
-            'paas/pix/deposits/create-new-dynamic-qr-code',
-            'paas/pix/deposits/get-dynamic-qr-code-by-id',
-            'paas/pix/deposits/get-users-pix-deposits',
-            'paas/pix/deposits/get-pix-deposit-by-id',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Pix | Keys',
-          items: [
-            'paas/pix/keys/create-new-evp-pix-key',
-            'paas/pix/keys/get-users-pix-keys',
-            'paas/pix/keys/get-pix-key-by-id',
-            'paas/pix/keys/delete-pix-key-by-id',
-            'paas/pix/keys/dismiss-pix-key-by-id',
-          ],
-        },
-
-        {
-          type: 'category',
-          label: 'Operations | P2P transfers',
-          items: ['paas/operations/p2p-transfers/create-new-p2p-transfers'],
-        },
-        {
-          type: 'category',
-          label: 'Operations | Currency',
-          items: ['paas/operations/currency/get-currencies'],
-        },
-        {
-          type: 'category',
-          label: 'Operations | Wallet Accounts',
-          items: [
-            'paas/operations/wallet-accounts/get-users-wallet-accounts',
-            'paas/operations/wallet-accounts/get-users-wallet-accounts-by-id',
+            {
+              type: 'category',
+              label: 'Operation',
+              items: [
+                'paas/operations/operation/get-users-operations',
+                'paas/operations/operation/get-user-operation-by-id',
+                'paas/operations/operation/get-receipt-by-operation-id',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'P2P transfers',
+              items: ['paas/operations/p2p-transfers/create-new-p2p-transfers'],
+            },
+            {
+              type: 'category',
+              label: 'Currency',
+              items: ['paas/operations/currency/get-currencies'],
+            },
+            {
+              type: 'category',
+              label: 'Wallets',
+              items: [
+                'paas/operations/wallets/create-new-wallet',
+                'paas/operations/wallets/get-users-wallets',
+                'paas/operations/wallets/update-operation-wallet-by-id',
+                'paas/operations/wallets/delete-wallet-by-id',
+                'paas/operations/wallets/get-wallet-by-id',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Wallet Accounts',
+              items: [
+                'paas/operations/wallet-accounts/get-users-wallet-accounts',
+                'paas/operations/wallet-accounts/get-users-wallet-accounts-by-id',
+              ],
+            },
           ],
         },
         {
