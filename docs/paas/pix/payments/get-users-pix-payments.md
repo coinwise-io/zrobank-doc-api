@@ -32,8 +32,8 @@ Enter the PIX payment's ID below and execute to get it's state and all informati
 | payment_date_period_start| STRING     | Date format - *YYYY-MM-DD*                                                          | -            | Transaction period date start for any transaction |
 | payment_date_period_end  | STRING     | Date format - *YYYY-MM-DD*                                                          | -            | Transaction period date end for any transaction   |
 | created_at_period_start  | STRING     | Date format - *YYYY-MM-DD*                                                          | -            | created at period date start for any transaction  |
-| created_at_period_end    | STRING     | Date format - *YYYY-MM-DD*                                                          | -            | created_at_period_end                             |
-| end_to_end_id            | STRING     | -                                                                                   | -            | Payment end to end id                             |
+| created_at_period_end    | STRING     | Date format - *YYYY-MM-DD*                                                          | -            | Created at period date end for any transaction                             |
+| end_to_end_id            | STRING     | -                                                                                   | -            | Payment end to end ID                             |
 
 
 <Tabs>
@@ -230,6 +230,10 @@ curl_close($curl);
 
 | Title                               | Type       |Properties                                        | Description                          |
 | ----------------------------------  |:----------:|:------------------------------------------------:|--------------------------------------|
+| page:small_orange_diamond:          | NUMBER     |-                                                 | Page number                          |
+| page_size:small_orange_diamond:     | NUMBER     |-                                                 | Page size                            |
+| page_total:small_orange_diamond:    | NUMBER     |-                                                 | Page total                           |
+| total:small_orange_diamond:         | NUMBER     |-                                                 | Total of elements                    |
 | id:small_orange_diamond:            | STRING     | **UUID**                                         | Unique decoded pix key UUID          |
 | type:small_orange_diamond:          | STRING     |Available values: *CNPJ, CPF, PHONE, EMAIL, EVP*  | PIX Key state                        |
 | person_type:small_orange_diamond:   | STRING     |Available values: *NATURAL_PERSON, LEGAL_PERSON*  | Person type                          |
@@ -237,6 +241,6 @@ curl_close($curl);
 | document:small_orange_diamond:      | STRING     |-                                                 | Person's document number             |
 | name:small_orange_diamond:          | STRING     |-                                                 | Person's name                        |
 | trade_name                          | STRING     |-                                                 | Company's trade name                 |
-| end_to_end_id                       | STRING     |-                                                 | End to end id                        |
+| end_to_end_id                       | STRING     |-                                                 | end to end ID                        |
 | ispb                                | STRING     |-                                                 | Bank ISPB                            |
 :small_orange_diamond: *Required fields in the response*

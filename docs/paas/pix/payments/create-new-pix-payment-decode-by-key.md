@@ -82,9 +82,9 @@ print(response)
 curl -X 'GET' \
   'https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL' \
   -H 'accept: application/json' \
-  -H 'x-transaction-uuid: ad544389-6ff4-4e08-b67a-c79cfc727e42 ' \
+  -H 'x-transaction-uuid: ad544389-6ff4-4e08-b67a-c79cfc727e42' \
   -H 'nonce: 5ac11357-5fd2-4fa2-9708-e92d4b7985dc' \
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
@@ -179,6 +179,6 @@ curl_close($curl);
 | document:small_orange_diamond:      | STRING     |-                                                 | Person's document number             |
 | name:small_orange_diamond:          | STRING     |-                                                 | Person's name                        |
 | trade_name                          | STRING     |-                                                 | Company's trade name                 |
-| end_to_end_id                       | STRING     |-                                                 | End to end id                        |
+| end_to_end_id                       | STRING     |-                                                 | end to end ID                        |
 | ispb                                | STRING     |-                                                 | Bank ISPB                            |
 :small_orange_diamond: *Required fields in the response*

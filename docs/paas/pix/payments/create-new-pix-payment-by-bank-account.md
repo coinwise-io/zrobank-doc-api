@@ -88,7 +88,8 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X 'POST' 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-account/instant-billing' \
+curl -X 'POST' \
+ 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-account/instant-billing' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: aebc8924-3a4f-4f36-ae12-918d32e4088a',
   -H 'nonce: 23a88363-449b-4e5c-92c7-5e624c8dc22f' \

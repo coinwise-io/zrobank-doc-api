@@ -99,7 +99,7 @@ curl -X 'POST https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-accoun
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: f1668901-de1e-4b1a-862b-e871a0099b89' \
   -H 'nonce: a5c11013-a4f1-4a85-921e-c26d3fca762c' \
-  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9 \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9' \
   -H 'Content-Type: application/json' \
   -d '{
   "person_type": "NATURAL_PERSON",

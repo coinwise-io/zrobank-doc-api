@@ -24,7 +24,7 @@ Enter the pix payment's ID and execute to get it's state and all information.
 
 | Title                    | Type       | Properties             |Description                                        |
 | -------------------------| :---------:|:----------------------:| ------------------------------------------------- |
-| id:small_orange_diamond: | STRING     | Must be a **UUID**     | Payment UUID.                                     |
+| id:small_orange_diamond: | STRING     | Must be a **UUID**     | Payment ID                                        |
 :small_orange_diamond: *Required parameters on header request*
 
 
@@ -177,7 +177,7 @@ curl_close($curl);
 | id:small_orange_diamond:                     | STRING     |**UUID**                                                                             | Payment UUID                                                                                                                  |
 | operation_id                                 | STRING     |**UUID**                                                                             | Operation UUID. Used to get receipt and track the transaction. **This will not be returned if the payment has been scheduled**|
 | state:small_orange_diamond:                  | STRING     |Available values : *PENDING, WAITING, CONFIRMED, ERROR, FAILED, CANCELED, SCHEDULED* | Payment state                                                                                                                 |
-| end_to_end_id:small_orange_diamond:          | STRING     |**UUID**                                                                             | End to end id.                                                                                                                |
+| end_to_end_id:small_orange_diamond:          | STRING     |**UUID**                                                                             | end to end ID.                                                                                                                |
 | txid                                         | STRING     |**UUID**                                                                             | Payment txid identifier                                                                                                       |
 | amount:small_orange_diamond:                 | NUMBER     |-                                                                                    | Value in **R$ cents**                                                                                                         |
 | owner_name                                   | STRING     |-                                                                                    | The payment owner name                                                                                                        |
