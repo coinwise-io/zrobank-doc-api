@@ -135,7 +135,7 @@ curl_close($curl);
 
 | Title            | Type       | Properties                                                                               | Description |
 | ---------------- | :---------:|:---------------------------------------------------------------------------------------: | --------------------------------------------------------- |
-| id               | STRING     | **UUID**                                                                                 | ID of the transaction                                     |
+| id               | STRING     | -                                                                                        | ID of the transaction                                     |
 | transaction_uuid | STRING     | **UUID**                                                                                 | Reference of the QrCode for conciliation                  |
 | status           | STRING     | Available status: <br/> *pending, paid, canceled, paid_by_third_party, failed, awaiting* | Transaction status                                        |
 | transaction_type | STRING     | Available types: <br/>*transaction, withdraw, refund*                                    | Transaction type                                          |

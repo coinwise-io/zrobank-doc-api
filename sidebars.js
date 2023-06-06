@@ -21,8 +21,6 @@ const sidebars = {
         'overview/introduction',
         'overview/security',
         'overview/environments',
-        'overview/api-key',
-        'overview/api-changelog',
       ],
     },
   ],
@@ -241,6 +239,7 @@ const sidebars = {
           items: [
             'gateway/endpoints/transactions/search-by-uuid',
             'gateway/endpoints/transactions/update-transaction-status',
+            'gateway/endpoints/transactions/get-transactions'
           ],
         },
         {
