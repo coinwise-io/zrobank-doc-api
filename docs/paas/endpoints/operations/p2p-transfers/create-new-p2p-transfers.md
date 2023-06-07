@@ -211,4 +211,4 @@ curl_close($curl);
 | created_at                                 | STRING     | Timestamp with timezone  | Transfer created date              |
 
 
-:small_orange_diamond: *Required fields on response*
+:small_orange_diamond: *Required fields in the response*

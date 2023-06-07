@@ -156,7 +156,7 @@ curl_close($curl);
 | id                | STRING| -                                                                                       | ID of the transaction                                      |
 | transaction_uuid  | STRING| **UUID**                                                                                | Reference of the QrCode for conciliation                   |
 | status            | STRING| Available status:<br/> *pending, paid, canceled, paid_by_third_party, failed, awaiting* | Transaction status                                         |
-| transaction_type  | STRING| Available types: <br/> *transaction, withdraw, refund*                                  | Transaction type                                           |
+| transaction_type  | STRING| Available values: <br/> *transaction, withdraw, refund*                                  | Transaction type                                           |
 | value             | STRING| -                                                                                       |  Value of the transaction                                  |
 | client_document   | STRING| -                                                                                       |  Document of the person who paid or received (CPF or CNPJ) |
 | created_at        | STRING| Timestamp with timezone                                                                 |  Date when the transaction was created                     |

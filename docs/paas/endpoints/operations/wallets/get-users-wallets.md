@@ -168,9 +168,9 @@ curl_close($curl);
 | id:small_orange_diamond:               | STRING     | **UUID**                                             | Wallet ID                                                |
 | name:small_orange_diamond:             | STRING     | -                                                    | Wallet name                                              |
 | default:small_orange_diamond:          | STRING     | -                                                    | Wallet default flag                                      |
-| state:small_orange_diamond:            | STRING     | Available states:<br/> *pending, active, deactivate* | Wallet state                                             |
+| state:small_orange_diamond:            | STRING     | Available values:<br/> *pending, active, deactivate* | Wallet state                                             |
 | permission_types:small_orange_diamond: | STRING     | -                                                    | Wallet permission type that defines what the user can do |
 | owner_id:small_orange_diamond:         | STRING     | **UUID**                                             | Wallet owner ID                                          |
 | owner_name:small_orange_diamond:       | STRING     | -                                                    | Wallet owner name                                        |
 | created_at:small_orange_diamond:       | STRING     | Timestamp with timezone                              | Wallet created date                                      |
-:small_orange_diamond: *Required fields on response*
+:small_orange_diamond: *Required fields in the response*

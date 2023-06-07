@@ -22,12 +22,12 @@ Enter the bank account's information on the requisition body below and execute t
 
 | Title                           | Type       | Properties                                                         | Maximum Length |Minimum Length| Description                                                                  |
 | --------------------------------| :---------:|:------------------------------------------------------------------:|:--------------:|:------------:|----------------------------------------------------------------------------- |
-| person_type	                    | STRING     | Available Person type values: *NATURAL_PERSON, LEGAL_PERSON*       | -              |-             | Person type: **NATURAL_PERSON | LEGAL_PERSON**                               |
+| person_type	                    | STRING     | Available values:<br/> *NATURAL_PERSON, LEGAL_PERSON*               | -              |-             | Person type: **NATURAL_PERSON | LEGAL_PERSON**                               |
 | document:small_orange_diamond:  | STRING     | -                                                                  | 255            |-             | Person's document **(CPF or CNPJ)**                                          |
 | bank_ispb                       | STRING     | -                                                                  | 8 digits       |-             | Bank ISPB code                                                               |
 | branch                          | STRING     | -                                                                  | 4 digits       |-             | Account branch                                                               |
 | account_number                  | STRING     | -                                                                  | 255            | 4 digits     | Account number                                                               |
-| account_type                    | STRING     | Available account type values: *CACC, CASH, CHAR, CISH, COMM, CPAC, LLSV, LOAN, MGLD, MOMA, NREX, ODFT, ONDP, OTHR, SACC, SLRY, SVGS, TAXE, TRAN, TRAS, CC* | - | - | Account type|
+| account_type                    | STRING     | Available values:<br/> *CACC, CASH, CHAR, CISH, COMM, CPAC, LLSV, LOAN, MGLD, MOMA, NREX, ODFT, ONDP, OTHR, SACC, SLRY, SVGS, TAXE, TRAN, TRAS, CC* | - | - | Account type|
 :small_orange_diamond: *Required parameters on body*
 
 
@@ -198,8 +198,9 @@ curl_close($curl);
 
 ### Data description
 
-| Title        | Type       |Properties | Description                          |
-| ------------ |:----------:|:--------: | -------------------------------------|
-| id           | STRING     | **UUID**  | Pix decoded account ID               |
-| name         | STRING     |     -     | Person full name or company tax name |
-| trade_name   | STRING     |     -     | Company trade name                   |
+| Title                     | Type       |Properties | Description                          |
+| ------------------------- |:----------:|:--------: | -------------------------------------|
+| id:small_orange_diamond:  | STRING     | **UUID**  | Pix decoded account ID               |
+| name:small_orange_diamond:| STRING     |     -     | Person full name or company tax name |
+| trade_name                | STRING     |     -     | Company trade name                   |
+:small_orange_diamond: *Required fields in the response*

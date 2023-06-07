@@ -172,6 +172,6 @@ curl_close($curl);
 | symbol_align:small_orange_diamond:  | STRING     |Available values: *left, right*                   | Currency symbol align position       |
 | decimal:small_orange_diamond:       | NUMBER     |-                                                 | Currency decimal value               |
 | tag:small_orange_diamond:           | STRING     |-                                                 | Currency tag                         |
-| state:small_orange_diamond:         | STRING     |Available states: *active, deactivate*            | Currency state                       |
+| state:small_orange_diamond:         | STRING     |Available values: *active, deactivate*            | Currency state                       |
 
 :small_orange_diamond: *Required fields in the response*

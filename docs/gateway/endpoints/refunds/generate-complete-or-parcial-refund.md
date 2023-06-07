@@ -8,13 +8,10 @@ import TabItem from '@theme/TabItem';
 
 Generates a new complete or a partial refund.
 
-> For partial refund of an individual order or for multiple orders at once, the orders must be specified in an array of objects
-
-> For a single order, the array will be composed by one single object
-
-> For multiple orders, the array will be composed by multiple objects
-
-> For complete refund, orders is not required
+- **For partial refund of an individual order or for multiple orders at once, the orders must be specified in an array of objects**
+- **For a single order, the array will be composed by one single object**
+- **For multiple orders, the array will be composed by multiple objects**
+- **For complete refund, orders is not required**
 
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>

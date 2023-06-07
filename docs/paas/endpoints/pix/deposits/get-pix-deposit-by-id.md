@@ -176,7 +176,7 @@ curl_close($curl);
 | --------------------------------------------  |:------:|:-----------------------------------------------------------------------------------:|----------------------------------------------|
 | id:small_orange_diamond:                      | STRING |**UUID**                                                                                          | Deposit ID                      |
 | operation_id:small_orange_diamond:            | STRING |**UUID**                                                                                          | Operation ID                    |
-| state:small_orange_diamond:                   | STRING |Available states: *NEW, RECEIVED, WAITING, ERROR, BLOCKED*                                        | Deposit state                   |
+| state:small_orange_diamond:                   | STRING |Available values: *NEW, RECEIVED, WAITING, ERROR, BLOCKED*                                        | Deposit state                   |
 | end_to_end_id:small_orange_diamond:           | STRING |-                                                                                                 | end to end ID                   |
 | txid                                          | STRING |**UUID**                                                                                          | Payment txid identifier         |
 | amount:small_orange_diamond:                  | NUMBER |-                                                                                                 | Value in **R$ cents**           |

@@ -170,7 +170,7 @@ curl_close($curl);
 | pending_amount                               | NUMBER     |-                                                 | Pending amount                       |
 | currency_id:small_orange_diamond:            | NUMBER     |-                                                 | Currency ID                          |
 | currency_title                               | STRING     |-                                                 | Currency title                       |
-| currency_decimal:small_orange_diamond        | NUMBER     |-                                                 | Currency decimal value               |
+| currency_decimal:small_orange_diamond:       | NUMBER     |-                                                 | Currency decimal value               |
 | currency_symbol:small_orange_diamond:        | STRING     |-                                                 | Currency symbol                      |
 | currency_symbol_align:small_orange_diamond:  | STRING     |Available values: *left, right*                   | Currency symbol align position       |
 

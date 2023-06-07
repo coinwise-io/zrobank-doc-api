@@ -24,13 +24,13 @@ Endpoint to user create a withdraw settings request
 | -------------------------------------------| :---------:|:--------------------------------------------------------------------------------:|:--------------: |-----------------------------------------------------------------|
 | wallet_id:small_orange_diamond:            | STRING     | Must be a **UUID**                                                               | -               | User wallet id                                                  |
 | transaction_type_tag:small_orange_diamond: | STRING     | -                                                                                | 255             | Transaction type tag                                            |
-| pix_key_type:small_orange_diamond:         | STRING     | Available types: *CNPJ, CPF, PHONE, EMAIL, EVP*                                  | -               | Pix key type                                                    |
+| pix_key_type:small_orange_diamond:         | STRING     | Available values: *CNPJ, CPF, PHONE, EMAIL, EVP*                                  | -               | Pix key type                                                    |
 | pix_key:small_orange_diamond:              | STRING     | -                                                                                | Pix key                                                         |
 | pix_key_document	                         | STRING     | -                                                                                | 255             | Pix key document related (CPF or CNPJ)                          |
-| type:small_orange_diamond:                 | STRING     | Available types: *DAILY, WEEKLY, MONTHLY, BALANCE*                               | 255             | Withdraw settings type                                          |
+| type:small_orange_diamond:                 | STRING     | Available values: *DAILY, WEEKLY, MONTHLY, BALANCE*                               | 255             | Withdraw settings type                                          |
 | balance:small_orange_diamond:              | NUMBER     | -                                                                                | INT8            | Withdraw settings balance                                       |
 | day                                        | NUMBER     | -                                                                                | INT4            | Month day of withdraw **(if withdraw settings type is MONTHLY)**|
-| week_day                                   | STRING     | Available days: *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | 255             | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
+| week_day                                   | STRING     | Available values: *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | 255             | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
 
 :small_orange_diamond: *Required parameters on body*
 
@@ -230,15 +230,15 @@ curl_close($curl);
 | Title                                      | Type       | Properties                                                                            | Description                                                     |
 | -------------------------------------------| :---------:|:------------------------------------------------------------------------------------: |-----------------------------------------------------------------|
 | id:small_orange_diamond:                   | STRING     | **UUID**                                                                              | User withdraw settings request id                               |
-| state:small_orange_diamond:                | STRING     | Available states:<br/> *PENDING, OPEN, CLOSED, FAILED*                                | User withdraw settings request state                            |
+| state:small_orange_diamond:                | STRING     | Available values:<br/> *PENDING, OPEN, CLOSED, FAILED*                                | User withdraw settings request state                            |
 | wallet_id:small_orange_diamond:            | STRING     | **UUID**                                                                              | User wallet id                                                  |
 | transaction_type_tag:small_orange_diamond: | STRING     | -                                                                                     | Transaction type tag                                            |
-| pix_key_type:small_orange_diamond:         | STRING     | Available types:<br/> *CNPJ, CPF, PHONE, EMAIL, EVP*                                  | Pix key type                                                    |
+| pix_key_type:small_orange_diamond:         | STRING     | Available values:<br/> *CNPJ, CPF, PHONE, EMAIL, EVP*                                  | Pix key type                                                    |
 | pix_key:small_orange_diamond:              | STRING     | -                                                                                     | Pix key                                                         |
 | pix_key_document	                         | STRING     | -                                                                                     | Pix key document related (CPF or CNPJ)                          |
-| type:small_orange_diamond:                 | STRING     | Available types:<br/> *DAILY, WEEKLY, MONTHLY, BALANCE*                               | Withdraw settings type                                          |
+| type:small_orange_diamond:                 | STRING     | Available values:<br/> *DAILY, WEEKLY, MONTHLY, BALANCE*                               | Withdraw settings type                                          |
 | balance:small_orange_diamond:              | NUMBER     | -                                                                                     | Withdraw settings balance                                       |
 | day                                        | NUMBER     | -                                                                                     | Month day of withdraw **(if withdraw settings type is MONTHLY)**|
-| week_day                                   | STRING     | Available days:<br/> *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
+| week_day                                   | STRING     | Available values:<br/> *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
 
-:small_orange_diamond: *Required fields on response*
+:small_orange_diamond: *Required fields in the response*

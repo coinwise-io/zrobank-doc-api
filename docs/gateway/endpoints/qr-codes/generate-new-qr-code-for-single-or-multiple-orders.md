@@ -248,4 +248,3 @@ curl_close($curl);
 | qr_code                              | STRING     |-                                                | PIX EMV QrCode                                           |
 | transaction_uuid                     | STRING     |**UUID**                                         | Reference of the QrCode for conciliation                 |
 | merchant_id                          | STRING     |**UUID**                                         | Reference of the store that solicitate the QrCode        |
-:small_orange_diamond: *Required parameters to request*

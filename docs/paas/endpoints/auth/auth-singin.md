@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create an access token to log user in
+# Create an access token
 
 | POST      | /auth/singin |
 | --------- | ------------ |

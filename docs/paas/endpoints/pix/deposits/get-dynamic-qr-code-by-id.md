@@ -167,6 +167,6 @@ curl_close($curl);
 | key_id:small_orange_diamond:         |STRING     |**UUID**                                  | Associated key UUID                    |
 | value                                |NUMBER     |-                                         | Value in **R$ cents**                  |
 | description:small_orange_diamond:    |STRING     |-                                         | User defined payment description       |
-| state:small_orange_diamond:          |STRING     |Available states : *PENDING, READY, ERROR*| Qr Code state                          |
+| state:small_orange_diamond:          |STRING     |Available values : *PENDING, READY, ERROR*| Qr Code state                          |
 | created_at:small_orange_diamond:     |STRING     |-                                         | Qr Code created date                   |
 :small_orange_diamond: *Required fields in the response*

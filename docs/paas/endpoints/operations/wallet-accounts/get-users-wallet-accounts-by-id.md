@@ -155,7 +155,7 @@ curl_close($curl);
 | id:small_orange_diamond:                     | STRING     |**UUID**                                          | Wallet Account ID                    |
 | balance:small_orange_diamond:                | NUMBER     |-                                                 | User's balance                       |
 | pending_amount                               | NUMBER     |-                                                 | Pending amount                       |
-| state:small_orange_diamond:                  | STRING     |Available states: *pending, active, deactive*     | Wallet account state                 |
+| state:small_orange_diamond:                  | STRING     |Available values: *pending, active, deactive*     | Wallet account state                 |
 | account_number                               | STRING     |-                                                 | Wallet account number                |
 | branch_number                                | STRING     |-                                                 | Wallet account branch number         |
 | wallet_id:small_orange_diamond:              | STRING     |**UUID**                                          | Wallet account wallet ID             |

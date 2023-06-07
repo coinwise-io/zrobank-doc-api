@@ -205,10 +205,10 @@ curl_close($curl);
 | txid:small_orange_diamond:        | STRING     | **UUID**                                  | PIX Tx ID                          |
 | emv:small_orange_diamond:         | STRING     | -                                         | EMV code                           |
 | key_id:small_orange_diamond:      | STRING     | **UUID**                                  | Associated key UUID                |
-| state:small_orange_diamond:       | STRING     | Available states: *PENDING, READY, ERROR* | Qr code state                      |
+| state:small_orange_diamond:       | STRING     | Available values: *PENDING, READY, ERROR* | Qr code state                      |
 | summary                           | STRING     | -                                         | User defined payment ID            |
 | description:small_orange_diamond: | STRING     | -                                         | User defined payment description   |
 | expiration_date                   | STRING     | -                                         | Expiration date for generate qrCode|
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                   | QrCode created date                |
 
-:small_orange_diamond: *Required fields on response*
+:small_orange_diamond: *Required fields in the response*

@@ -189,6 +189,6 @@ curl_close($curl);
 | id:small_orange_diamond:        | STRING     | **UUID**                                                                                       | Devolution ID                    |
 | amount :small_orange_diamond:   | NUMBER     | -                                                                                              | Value in **R$ cents**            |
 | description                     | STRING     | -                                                                                              | User defined payment description |
-| state:small_orange_diamond:     | STRING     | Available states: *PENDING, WAITING, CONFIRMED, ERROR, FAILED, CANCELED, SCHEDULED*            | Devolution state                 |
+| state:small_orange_diamond:     | STRING     | Available values: *PENDING, WAITING, CONFIRMED, ERROR, FAILED, CANCELED, SCHEDULED*            | Devolution state                 |
 | created_at:small_orange_diamond:| STRING     | Timestamp with timezone                                                                        | Payment created date             |
 :small_orange_diamond: *Required parameters on response*

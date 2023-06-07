@@ -178,4 +178,4 @@ curl_close($curl);
 | operation_id:small_orange_diamond:| STRING     | **UUID**                                  | Operation ID. Used to track the conversion  |
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                   | Conversion created date                     |
 
-:small_orange_diamond: *Required fields on response*
+:small_orange_diamond: *Required fields in the response*

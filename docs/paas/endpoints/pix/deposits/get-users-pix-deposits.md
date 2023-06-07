@@ -30,7 +30,7 @@ Get a list of user's pix deposits. You can include any of the filter parameters 
 | created_at_period_start  | STRING     | Date format - *YYYY-MM-DD*                                 | -            | created at period date start for any transaction  |
 | created_at_period_end    | STRING     | Date format - *YYYY-MM-DD*                                 | -            | Created at period date end for any transaction    |
 | end_to_end_id            | STRING     | -                                                          | -            | PIX deposit end to end ID                         |
-| states                   | STRING[]   | Available states: *NEW, RECEIVED, WAITING, ERROR, BLOCKED* | -            | PIX deposit state                                 |
+| states                   | STRING[]   | Available values: *NEW, RECEIVED, WAITING, ERROR, BLOCKED* | -            | PIX deposit state                                 |
 
 
 <Tabs>
@@ -215,8 +215,8 @@ curl_close($curl);
 | total:small_orange_diamond:                   | NUMBER |-                                                                                                 | Total of elements               |
 | id:small_orange_diamond:                      | STRING |**UUID**                                                                                          | Deposit ID                      |
 | operation_id:small_orange_diamond:            | STRING |**UUID**                                                                                          | Operation ID                    |
-| type:small_orange_diamond:                    | STRING |Available types: *DEVOLUTION_COMPLETED, DEVOLUTION_RECEIVED, DEPOSIT_RECEIVED, PAYMENT_COMPLETED* | Transaction type                |
-| state:small_orange_diamond:                   | STRING |Available states: *NEW, RECEIVED, WAITING, ERROR, BLOCKED*                                        | Deposit state                   |
+| type:small_orange_diamond:                    | STRING |Available values: *DEVOLUTION_COMPLETED, DEVOLUTION_RECEIVED, DEPOSIT_RECEIVED, PAYMENT_COMPLETED* | Transaction type                |
+| state:small_orange_diamond:                   | STRING |Available values: *NEW, RECEIVED, WAITING, ERROR, BLOCKED*                                        | Deposit state                   |
 | end_to_end_id                                 | STRING |-                                                                                                 | end to end ID                   |
 | txid                                          | STRING |**UUID**                                                                                          | Payment txid identifier         |
 | amount:small_orange_diamond:                  | NUMBER |-                                                                                                 | Value in **R$ cents**           |

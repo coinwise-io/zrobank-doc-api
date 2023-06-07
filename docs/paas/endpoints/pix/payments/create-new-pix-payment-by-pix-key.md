@@ -198,4 +198,4 @@ curl_close($curl);
 | payment_date                    | STRING     | -                                                                                              | Payment date                                                                                                                  |
 | description                     | STRING     | -                                                                                              | User defined payment description                                                                                              |
 | created_at:small_orange_diamond:| STRING     | Timestamp with timezone                                                                        | Payment created date                                                                                                          |
-:small_orange_diamond: *Required fields on response*
+:small_orange_diamond: *Required fields in the response*

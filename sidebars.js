@@ -38,7 +38,7 @@ const sidebars = {
         'paas/api-overview/serialization',
         'paas/api-overview/pagination',
         'paas/api-overview/api-responses',
-        'paas/api-overview/change-log',
+        'paas/api-overview/changelog',
       ],
     },
     {
@@ -162,14 +162,14 @@ const sidebars = {
       items: [
         'caas/api-overview/introduction',
         'caas/api-overview/authentication',
-        'caas/api-overview/idempotence',
-        'caas/api-overview/pagination',
         'caas/api-overview/protocol',
+        'caas/api-overview/idempotence',
         'caas/api-overview/rate-limiting',
         'caas/api-overview/request-id',
         'caas/api-overview/serialization',
-        'caas/api-overview/change-log',
+        'caas/api-overview/pagination',
         'caas/api-overview/api-responses',
+        'caas/api-overview/changelog',
       ],
     },
     {
@@ -180,8 +180,8 @@ const sidebars = {
           type: 'category',
           label: 'Authentication',
           items: [
-            'caas/endpoints/auth/auth-refresh-token',
             'caas/endpoints/auth/auth-singin',
+            'caas/endpoints/auth/auth-refresh-token',
           ],
         },
         {
@@ -213,7 +213,7 @@ const sidebars = {
         'gateway/api-overview/protocol',
         'gateway/api-overview/serialization',
         'gateway/api-overview/errors',
-        'gateway/api-overview/change-log',
+        'gateway/api-overview/changelog',
       ],
     },
     {

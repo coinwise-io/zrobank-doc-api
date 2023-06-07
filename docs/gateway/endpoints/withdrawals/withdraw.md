@@ -24,7 +24,7 @@ Creates a new withdraw request using PIX as the payment method.
 | Title                                  | Type        |Properties                                             |Maximum Length         | Description                                          |
 | -------------------------------------- |:-----------:|:-----------------------------------------------------:|:-----------------:| -------------------------------------------------------- |
 | value :small_orange_diamond:           | NUMBER      | -                                                     |  INT4             | Value to be paid                                         |
-| type_key_pix :small_orange_diamond:    | STRING      | Available types: <br/> *cpf, cnpj, email, email, evp* | -                 | PIX key type                                             |
+| type_key_pix :small_orange_diamond:    | STRING      | Available values: <br/> *cpf, cnpj, email, email, evp* | -                 | PIX key type                                             |
 | key :small_orange_diamond:             | STRING      | -                                                     |  255              | PIX key                                                  |
 | description :small_orange_diamond:     | STRING      | -                                                     |  255              | Description of the payment                               |
 | client_name :small_orange_diamond:     | STRING      | -                                                     |  255              | Client's name                                            |
@@ -187,7 +187,7 @@ curl_close($curl);
 | status          | STRING      |-                                                       | Transaction status                                       |
 | message         | STRING      |-                                                       | Message about the request                                |
 | value           | NUMBER      |-                                                       | Value to be paid                                         |
-| type_key_pix    | STRING      | Available types: <br/> *cpf, cnpj, email, email, evp*  | PIX key type                                             |
+| type_key_pix    | STRING      | Available values: <br/> *cpf, cnpj, email, email, evp*  | PIX key type                                             |
 | key             | STRING      |-                                                       | PIX key                                                  |
 | description     | STRING      |-                                                       | Description of the payment                               |
 | client_name     | STRING      |-                                                       | Client's name                                            |
