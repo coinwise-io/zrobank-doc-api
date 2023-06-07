@@ -1,34 +1,28 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Get new SPOT quotation
+# Get quotation by conversion ID
 
-| GET      | /v2/quotations/spot |
-| ---------| ------------------- |
+| GET       |/otc/conversions/{id}/quotations|
+| --------- | ------------------------------ |
 
-To create a new currency conversion, first, you need to create a **Quotation ID**. Enter a new SPOT quotation and execute it to get its ID. This ID is the `quotation_id` that will be required to **[create a new currency conversion](../conversion/create-new-conversion.md)**
+Enter the conversion's ID and execute to get its related quotation
 
-
-
-
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/#/" class="try-btn">Try it!</a>
 
 ### Header
-
-| Title                      | Type       | Properties                       | Description |
-| ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
-| nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
+| Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |
+| ---------------------------------------- | :---------:|--------------------|:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
+| nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
 :small_orange_diamond: *Required parameters on header*
 
-### Query Parameters
+### Parameters
 
-| Title                                 | Type       | Properties                          |Description              |
-| -------------------------------------:|:-----------|:-----------------------------------:|------------------------ |
-| base_currency:small_orange_diamond:   | STRING     | -                                   | Quotation currency      |
-| amount_currency:small_orange_diamond: | STRING     | -                                   | Quotation currency quote|
-| amount:small_orange_diamond:          | NUMBER     | -                                   | Quotation amount        |
-| side:small_orange_diamond:            | STRING     | Available values:<br/> *buy, sell*  | Quotation side          |
-:small_orange_diamond: *Required parameters on query request*
+| Title                    | Type       | Properties             |Description   |
+| -------------------------| :---------:|:----------------------:|--------------|
+| id:small_orange_diamond: | STRING     | Must be a **UUID**     |Conversion ID |
+:small_orange_diamond: *Required parameters on path*
+
 
 
 <Tabs>
@@ -39,10 +33,10 @@ const axios = require('axios');
 
 axios({
   method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot?base_currency=BTC&amount_currency=BRL&amount=1000&side=buy',
+  url: 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations',
   headers: {
     accept: 'application/json',
-    nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
+    nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
     Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
     'Content-Type: application/json'
   }
@@ -60,11 +54,11 @@ axios({
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot?base_currency=BTC&amount_currency=BRL&amount=1000&side=buy'
+url = "https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations"
 
 headers = {
     "accept": "application/json",
-    "nonce": "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
+    "nonce": "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
     "Content-Type": "application/json"
 }
@@ -78,9 +72,9 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot?base_currency=BTC&amount_currency=BRL&amount=1000&side=buy' \
+  'https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations' \
   -H 'accept: application/json' \
-  -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
+  -H 'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
 ```
 </TabItem>
@@ -89,11 +83,11 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/v2/quotations/spot?base_currency=BTC&amount_currency=BRL&amount=1000&side=buy';
+$url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations';
 
 $headers = array(
   'accept: application/json',
-  'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
+  'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d',
   'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9',
   'Content-Type: application/json'
 );
@@ -121,7 +115,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="201">
 
-```json  title=/v2/quotations/spot
+```json  title=/otc/conversions/{id}/quotations
 {
   "success": true,
   "data": {
@@ -139,7 +133,7 @@ curl_close($curl);
     "base_currency_symbol": "BTC",
     "base_currency_decimal": 8,
     "base_currency_title": "Bitcoin",
-    "ttl": "2022-08-24T19:34:30.345Z"
+    "created_at": "2022-08-24T19:34:30.345Z"
   },
   "error": null
 }
@@ -147,7 +141,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/v2/quotations/spot
+```json  title=/otc/conversions/{id}/quotations
 {
   "success": false,
   "data": null,
@@ -158,12 +152,12 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/v2/quotations/spot
+```json  title=/otc/conversions/{id}/quotations
 {
   "success": false,
   "data": null,
   "error": "USER",
-  "message": "The field amount must be a number",
+  "message": "The id value must be an UUID.",
   "code": "VALIDATION"
 }
 ```
@@ -188,5 +182,5 @@ curl_close($curl);
 | base_currency_symbol:small_orange_diamond:    | STRING |-                                   | Quotation base currency symbol  |
 | base_currency_decimal:small_orange_diamond:   | NUMBER |-                                   | Quotation base currency decimal |
 | base_currency_title:small_orange_diamond:     | STRING |-                                   | Quotation base currency title   |
-| ttl                                           | STRING |Timestamp with timezone             | Quotation TTL date              |
+| created_at                                    | STRING |Timestamp with timezone             | Quotation created date          |
 :small_orange_diamond: *Required fields in the response*

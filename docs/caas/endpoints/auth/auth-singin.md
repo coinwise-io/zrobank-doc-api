@@ -1,18 +1,25 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Generate access token from API ID and API Key
+# Create an access token to log user in
 
 | POST      | /auth/singin |
-| --------- | ----------- |
+| --------- | ------------ |
 
-Enter your API ID and API Key on the requisition body below and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
+Enter your API ID and API Key on the requisition body and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
 
-### Parameters
+## Request
 
-No parameters.
+### Body
 
-### Request
+ Title                         | Type       | Properties             |Description          |
+| -----------------------------| :---------:|:----------------------:|---------------------|
+| api_id:small_orange_diamond: | STRING     | Must be a **UUID**     |User defined API ID  |
+| api_key:small_orange_diamond:| STRING     | -                      |User defined API key |
+
+:small_orange_diamond: *Required parameters on body*
+
+
 
 <Tabs>
 <TabItem value="js" label="NodeJS">
@@ -71,11 +78,12 @@ else:
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/auth/singin' \
+  'https://api-dev159sw.zrobank.biz:2083/auth/signin' \
+  -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-    "api_id": "b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6",
-    "api_key": "abcd1234"
+  "api_id": "b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6",
+  "api_key": "abcd1234"
 }'
 ```
 </TabItem>
@@ -100,25 +108,14 @@ $apiKey = $data['api_key'];
 </Tabs>
 
 
-### Responses
+## Response
 
 <Tabs>
 <TabItem value="200" label="200">
 
 ```json  title=/auth/singin
 {
-  "access_token": "string",
-}
-```
-</TabItem>
-<TabItem value="400" label="400">
-
-```json  title=/auth/singin
-{
-  {
-  "code": 400,
-  "message": "If any required params are missing or has invalid format or type."
-  }
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
 }
 ```
 </TabItem>
@@ -134,3 +131,8 @@ $apiKey = $data['api_key'];
 ```
 </TabItem>
 </Tabs>
+
+
+ Title                               | Type       | Properties             |Description                                                    |
+| -----------------------------------| :---------:|:----------------------:|---------------------------------------------------------------|
+| access_token:small_orange_diamond: | STRING     | -                      |JWT access token. Token used to access all protected endpoints |
