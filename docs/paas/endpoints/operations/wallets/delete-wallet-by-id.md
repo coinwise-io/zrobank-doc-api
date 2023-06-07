@@ -15,21 +15,21 @@ Delete a wallet
 | Title                      | Type       | Properties                       | Description |
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
 | nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Parameters
 
 | Title                    | Type       | Properties                          |Description             |
 | -------------------------| :---------:|:-----------------------------------:| -----------------------|
 | id:small_orange_diamond: | STRING     | Must be a **UUID**                  | Wallet ID              |
-:small_orange_diamond: *Required parameters on path request*
+:small_orange_diamond: *Required parameters on path*
 
 ### Body
 
 | Title                                  | Type       | Properties                         |Description             |
 | ---------------------------------------| :---------:|:-----------------------------------| -----------------------|
 | wallet_backup_id:small_orange_diamond: | STRING     | Is nullable                        | Wallet backup id. **If the wallet to delete has balance, have to pass a wallet backup id to transfer the balance** |
-:small_orange_diamond: *Required parameters on body request*
+:small_orange_diamond: *Required parameters on body*
 
 
 <Tabs>

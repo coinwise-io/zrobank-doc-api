@@ -18,7 +18,7 @@ Enter the PIX payment's ID below and execute to get it's state and all informati
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
 | x-wallet-uuid              | STRING     | Must be a **UUID(v4)**           | Sender Wallet UUID **(if empty, your default Wallet UUID will be settled)**                                    |
 | nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Filter Parameters
 

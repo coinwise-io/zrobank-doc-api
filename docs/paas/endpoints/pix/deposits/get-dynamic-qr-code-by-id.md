@@ -16,14 +16,14 @@ Enter the pix dinamic QR code's ID below and execute to get its state and all in
 | Title                      | Type       | Properties                       | Description |
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
 | nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Parameters
 
 | Title                    | Type       | Properties             |Description                                        |
 | -------------------------| :---------:|:----------------------:| ------------------------------------------------- |
 | id:small_orange_diamond: | STRING     | Must be a **UUID**     | QrCode ID                                         |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 
 

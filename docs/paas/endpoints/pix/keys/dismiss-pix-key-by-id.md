@@ -32,14 +32,14 @@ Returns user's pix key which state is **CLAIM_PENDING, CANCELED or READY**
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |
 | ---------------------------------------- | :---------:|--------------------|:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
 | nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Parameters
 
 | Title                    | Type       | Properties             |Description                                        |
 | -------------------------| :---------:|:----------------------:| ------------------------------------------------- |
 | id:small_orange_diamond: | STRING     | Must be a **UUID**     | PIX key ID                                        |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 
 

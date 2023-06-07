@@ -188,11 +188,11 @@ const sidebars = {
           type: 'category',
           label: 'Conversion',
           items: [
-            'caas/endpoints/conversion/otc-conversions-id-quotations',
-            'caas/endpoints/conversion/otc-conversions-id',
-            'caas/endpoints/conversion/v2-otc-conversions-credit-balance',
-            'caas/endpoints/conversion/v2-otc-conversions',
-            'caas/endpoints/conversion/v3-otc-conversions',
+            'caas/endpoints/conversion/get-quotation-by-id',
+            'caas/endpoints/conversion/get-conversion-by-id',
+            'caas/endpoints/conversion/get-users-credit-balance-and-liability',
+            'caas/endpoints/conversion/create-new-conversion',
+            'caas/endpoints/conversion/get-conversions',
           ],
         },
         {
@@ -213,7 +213,7 @@ const sidebars = {
         'gateway/api-overview/protocol',
         'gateway/api-overview/serialization',
         'gateway/api-overview/errors',
-        'gateway/api-overview/changelog',
+        'gateway/api-overview/change-log',
       ],
     },
     {

@@ -1,22 +1,21 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refresh token user
+# Refresh user token
 
 | POST      | /auth/refresh-token|
-| --------- | ----------- |
+| --------- | ------------------ |
 
 User should inform authorization old access token in header and a new access token will be generated.
 
-### Parameters
+## Request
 
-| Parameter | Type | Description |
-| --- | --- | --- | --- |
-| x-access-token:small_orange_diamond:  | string | yes | Send expired jwt access token with refresh token inside. |
+### Header
 
-:small_orange_diamond: *Required parameters to request*
+ Title                               | Type       | Properties             |Description                                              |
+| -----------------------------------| :---------:|:----------------------:|---------------------------------------------------------|
+| access_token:small_orange_diamond: | STRING     | -                      |Send expired jwt access token with refresh token inside  |
 
-### Request
 
 <Tabs>
 <TabItem value="js" label="NodeJS">
@@ -27,10 +26,13 @@ const axios = require('axios');
 const url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token';
 
 const headers = {
-  'Content-Type': 'application/json',
-  x-acess-token : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi"
+  'Content-Type': 'application/json'
 };
 
+const data = {
+  api_id: 'b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6',
+  api_key: 'abcd1234'
+};
 
 axios.post(url, data, { headers })
   .then(response => {
@@ -39,6 +41,7 @@ axios.post(url, data, { headers })
   .catch(error => {
     console.error('Erro na solicitação:', error.message);
   });
+
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -49,11 +52,15 @@ import requests
 url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token'
 
 headers = {
-    'accept': 'application/json',
-    'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi'
+    'Content-Type': 'application/json'
 }
 
-response = requests.post(url, headers=headers)
+data = {
+    'api_id': 'b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6',
+    'api_key': 'abcd1234'
+}
+
+response = requests.post(url, headers=headers, json=data)
 
 if response.status_code == 200:
     response_data = response.json()
@@ -67,9 +74,13 @@ else:
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token' \
+  'https://api-dev159sw.zrobank.biz:2083/auth/signin' \
   -H 'accept: application/json' \
-  -H 'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi'
+  -H 'Content-Type: application/json' \
+  -d '{
+  "api_id": "b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6",
+  "api_key": "abcd1234"
+}'
 ```
 </TabItem>
 <TabItem value="php" label="PHP">
@@ -77,53 +88,30 @@ curl -X 'POST' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token';
+$json = '{
+  "api_id": "b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6",
+  "api_key": "abcd1234"
+}';
 
-$headers = array(
-    'accept: application/json',
-    'x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOi'
-);
+$data = json_decode($json, true);
 
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$apiId = $data['api_id'];
+$apiKey = $data['api_key'];
+?>
 
-$response = curl_exec($curl);
-$status_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-// Verificar o código de status da resposta
-if ($status_code == 200) {
-    $response_data = json_decode($response, true);
-    print_r($response_data);
-} else {
-    echo 'Erro na solicitação. Código de status: ' . $status_code;
-}
-
-curl_close($curl);
 ```
 </TabItem>
 </Tabs>
 
-### Responses
+
+## Response
 
 <Tabs>
 <TabItem value="200" label="200">
 
 ```json  title=/auth/refresh-token
 {
-  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOiI1NTgxOTk1NjU3Nzc3IiwiaWQiOiJiMjgxNjNlYy0",
-}
-```
-</TabItem>
-<TabItem value="400" label="400">
-
-```json  title=/auth/refresh-token
-{
-  {
-  "code": 400,
-  "message": "The value x-acess-token should be a string."
-  }
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
 }
 ```
 </TabItem>
@@ -138,15 +126,9 @@ curl_close($curl);
 }
 ```
 </TabItem>
-<TabItem value="500" label="500">
-
-```json  title=/auth/refresh-token
-{
-  {
-  "code": 500,
-  "message": "Internal server error"
-  }
-}
-```
-</TabItem>
 </Tabs>
+
+
+ Title                               | Type       | Properties             |Description                                                    |
+| -----------------------------------| :---------:|:----------------------:|---------------------------------------------------------------|
+| access_token:small_orange_diamond: | STRING     | -                      |JWT access token. Token used to access all protected endpoints |

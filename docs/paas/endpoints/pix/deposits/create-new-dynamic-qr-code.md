@@ -16,7 +16,7 @@ Enter the PIX billing information on the requisition body below and execute to g
 | ---------------------------------------- | :---------:|--------------------|:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
 | x-transaction-uuid:small_orange_diamond: | STRING     | Must be a **UUID** | -               | The transaction ID is a UUID (v4) used to uniquely identify the object that will be created. All requisitions must have an identifier |
 | nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Body
 
@@ -28,7 +28,7 @@ Enter the PIX billing information on the requisition body below and execute to g
 | summary                              | STRING     | -                                        | 255             | User friendly QR code identifier   |
 | description:small_orange_diamond:    | STRING     | -                                        | 255             | User defined payment description   |
 | payer_request	                       | STRING     | -                                        | 255             | Payer request                      |
-:small_orange_diamond: *Required parameters on body request*
+:small_orange_diamond: *Required parameters on body*
 
 
 <Tabs>

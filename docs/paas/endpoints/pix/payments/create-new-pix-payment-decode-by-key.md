@@ -18,7 +18,7 @@ Enter the pix key's information on the requisition body below and execute to get
 | ------------------------------------ | :---------:|:-------------------------------:  |:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
 | x-transaction-uuid:small_orange_diamond:| STRING     | Must be a **UUID**           | -               | The transaction ID is a UUID (v4) used to uniquely identify the object that will be created. All requisitions must have an identifier |
 | nonce:small_orange_diamond:          | STRING     | Must be a **UUID**           | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Query Parameters
 

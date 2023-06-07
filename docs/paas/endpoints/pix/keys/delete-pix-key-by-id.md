@@ -17,14 +17,14 @@ Enter the user's pix key ID below and execute to delete it. After deleted, the r
 | Title                      | Type       | Properties                       | Description |
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
 | nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Parameters
 
 | Title                    | Type       | Properties             |Description                                        |
 | -------------------------| :---------:|:----------------------:| ------------------------------------------------- |
 | id:small_orange_diamond: | STRING     | Must be a **UUID**     | PIX key ID                                        |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 
 

@@ -16,14 +16,14 @@ To create a new wallet with optional wallet name
 | ---------------------------------------- | :---------:|--------------------|:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
 | x-transaction-uuid:small_orange_diamond: | STRING     | Must be a **UUID** | -               | The transaction ID is a UUID (v4) used to uniquely identify the object that will be created. All requisitions must have an identifier |
 | nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Body
 
 | Title                                | Type       | Properties | Maximum Length  | Description |
 | -------------------------------------| :---------:|:----------:|:--------------: |-------------|
 | name:small_orange_diamond:           | STRING     | -          | 255             | Wallet name |
-:small_orange_diamond: *Required parameters on body request*
+:small_orange_diamond: *Required parameters on body*
 
 
 <Tabs>

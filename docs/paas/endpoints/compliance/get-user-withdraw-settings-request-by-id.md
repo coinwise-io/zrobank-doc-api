@@ -18,14 +18,14 @@ Endpoint to user get a withdraw settings request by id.
 | ---------------------------| :---------:|:---------------------------: |----------------------------------------------------------------------------------------------------------------|
 | x-wallet-uuid              | STRING     | Must be a **UUID**           | Sender Wallet UUID **(if empty, your default Wallet UUID will be settled)**                                    |
 | nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Parameters
 
 | Title                    | Type       | Properties             |Description                        |
 | -------------------------| :---------:|:----------------------:| ----------------------------------|
 | id:small_orange_diamond: | STRING     | Must be a **UUID**     | User withdraw setting request id  |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 
 

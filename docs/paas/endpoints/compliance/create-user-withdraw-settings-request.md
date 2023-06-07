@@ -16,7 +16,7 @@ Endpoint to user create a withdraw settings request
 | ---------------------------------------- | :---------:|--------------------|:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
 | x-transaction-uuid:small_orange_diamond: | STRING     | Must be a **UUID** | -               | The transaction ID is a UUID (v4) used to uniquely identify the object that will be created. All requisitions must have an identifier |
 | nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Body
 
@@ -32,7 +32,7 @@ Endpoint to user create a withdraw settings request
 | day                                        | NUMBER     | -                                                                                | INT4            | Month day of withdraw **(if withdraw settings type is MONTHLY)**|
 | week_day                                   | STRING     | Available days: *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | 255             | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
 
-:small_orange_diamond: *Required parameters on body request*
+:small_orange_diamond: *Required parameters on body*
 
 
 <Tabs>

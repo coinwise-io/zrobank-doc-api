@@ -16,14 +16,14 @@ Get user's operation
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
 | x-wallet-uuid              | STRING     | Must be a **UUID(v4)**           | Sender Wallet UUID **(if empty, your default Wallet UUID will be settled)**                                    |
 | nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
-:small_orange_diamond: *Required parameters on header request*
+:small_orange_diamond: *Required parameters on header*
 
 ### Parameters
 
 | Title                    | Type       | Properties                      |Description   |
 | -------------------------| :---------:|:-------------------------------:| -------------|
 | id:small_orange_diamond: | STRING     | Must be a **UUID**              | Operation ID |
-:small_orange_diamond:*Required parameters on path request*
+:small_orange_diamond:*Required parameters on path*
 
 <Tabs>
 <TabItem value="js" label="NodeJS">
