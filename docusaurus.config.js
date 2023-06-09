@@ -16,7 +16,8 @@ const config = {
   url: "http://localhost:3000",
   baseUrl: "/",
   organizationName: "coinwise-io", // Usually your GitHub org/user name.
-  projectName: "zrobank", // Usually your repo name.
+  projectName: "zrobank-doc-api", // Usually your repo name.
+  deploymentBranch: 'main',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   i18n: {
