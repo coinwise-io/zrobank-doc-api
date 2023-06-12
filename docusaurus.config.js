@@ -17,7 +17,7 @@ const config = {
   baseUrl: "/",
   organizationName: "coinwise-io", // Usually your GitHub org/user name.
   projectName: "zrobank-doc-api", // Usually your repo name.
-  deploymentBranch: 'main',
+  deploymentBranch: 'gh-pages',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   i18n: {
