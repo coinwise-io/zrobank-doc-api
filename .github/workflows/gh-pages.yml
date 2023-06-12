@@ -8,6 +8,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    env:
+      ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -16,7 +21,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-          
+
       - name: Install dependencies
         run: npm install
 
