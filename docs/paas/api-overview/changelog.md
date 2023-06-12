@@ -1,7 +1,7 @@
 # Changelog
 
 ##  March 29, 2023
-### Release 1.0.7
+### Release 1.7.0
 #### :seedling: New features
 - New pix key ownership time process from 14 days max to 30 days max following central bank resolution
 - New version of refresh token
@@ -11,7 +11,7 @@
 - New endpoint to delete another user access to a certain wallet of mine
 
 ##  April 3, 2023
-### Release 1.0.8
+### Release 1.8.0
 #### :seedling: New feature
 - Adding cache for pix keys decode
 - Allowing users to delete a pix key on error status
@@ -20,7 +20,7 @@
 
 
 ##  April 17, 2023
-### Release 1.0.9
+### Release 1.9.0
 #### :seedling: New feature
 - Masking all document fields for natural person on PaaS payloads
 
