@@ -10,14 +10,10 @@
 #### :collision: Breaking changes
 - Adding a unique identifier on the header of every endpoint (UUID v4)
 - Removing chargebacks webhooks
-- Integrating with Banco Asaas
 
 #### :seedling: New feature
 - Changing permissions on Admin Dashboard to allow some users to view only information regarding them
-- Add new status type to deposits: “paid_without_qrcode”
-- When searching for a transaction, checking, besides UUID, if the transaction belongs to the company that made the request
 - Adding parent transaction id on the header of P2P transfers endpoint
-- Changing client name field on clients table to not required so a company can generate a QR code without its name
 - Sending wallet transactions report to clients via email everyday
 - Adding “fee” field on the payload of every p2p transaction
 
@@ -52,9 +48,6 @@
 #### :wrench: Fixes
 - Correcting request on loop bug when getting an error response after calling GET wallets endpoint
 
-#### :shamrock: Improvement
-- Changing “my company” icon name to “gateway”
-
 
 ##  May 24, 2023
 ### Release 0.6.0
@@ -82,9 +75,6 @@
 #### :seedling: New feature
 - Not allowing QR codes with value greater than R$50.000 to be created
 
-#### :wrench: Fixes
-- Fixing condition on generating Asaas QR code to verify when to accept a payment by 3rd party or not
-- Correcting transaction receipt to contain “Zro Instituição de Pagamentos S.A.” title instead of “Zro Gateway”
 
 ## June 6, 2023
 ### Release 0.7.0
@@ -93,7 +83,8 @@
 
 ---
 #### :seedling: New feature
-- Charging merchants present in the order for QR code fee (25 cents). Before, the marketplace would be charged
+- Charging merchants present in the order for QR code fee (25 cents).
+
 
 <br/>
 
