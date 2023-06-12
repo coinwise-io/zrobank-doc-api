@@ -23,6 +23,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: build
         with:
           publish_dir: ./build
