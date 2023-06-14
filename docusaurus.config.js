@@ -13,11 +13,12 @@ const config = {
   title: "ZroBank",
   tagline: "Documentation",
   favicon: "img/favicon.ico",
-  url: "http://localhost:3000",
+  url: "https://coinwise-io.github.io",
   baseUrl: "/",
   organizationName: "coinwise-io", // Usually your GitHub org/user name.
   projectName: "zrobank-doc-api", // Usually your repo name.
-  deploymentBranch: 'main',
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   i18n: {
