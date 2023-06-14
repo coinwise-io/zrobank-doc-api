@@ -14,7 +14,7 @@ const config = {
   tagline: "Documentation",
   favicon: "img/favicon.ico",
   url: "https://coinwise-io.github.io",
-  baseUrl: "/",
+  baseUrl: "/zrobank-doc-api/",
   organizationName: "coinwise-io", // Usually your GitHub org/user name.
   projectName: "zrobank-doc-api", // Usually your repo name.
   deploymentBranch: 'gh-pages',
