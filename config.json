@@ -1,6 +1,7 @@
 {
   "index_name": "dev_zrobank",
-  "sitemap_urls": ["http://localhost:3000/sitemap.xml"],
+  "start_urls:": ["https://coinwise-io.github.io/zrobank-doc-api"],
+  "sitemap_urls": ["https://coinwise-io.github.io/zrobank-doc-api/sitemap.xml"],
   "sitemap_alternate_links": true,
   "stop_urls": ["/tests"],
   "selectors": {
@@ -21,7 +22,13 @@
   "strip_chars": " .,;:#",
   "custom_settings": {
     "separatorsToIndex": "_",
-    "attributesForFaceting": ["language", "version", "type", "docusaurus_tag"],
+    "attributesForFaceting": [
+      "language",
+      "version",
+      "type",
+      "docusaurus_tag",
+      "lang"
+    ],
     "attributesToRetrieve": [
       "hierarchy",
       "content",

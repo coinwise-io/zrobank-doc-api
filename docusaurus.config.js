@@ -88,8 +88,6 @@ const config = {
         appId: ALGOLIA_APP_ID,
         apiKey: ALGOLIA_API_KEY,
         indexName: "dev_zrobank",
-        contextualSearch: true,
-        searchParameters: {},
       },
     }),
 };
