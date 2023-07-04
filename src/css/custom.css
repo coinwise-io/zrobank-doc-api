@@ -15,8 +15,7 @@
 @font-face {
   font-family: "Gilroy Bold";
   src: url("/fonts/gilroy/Gilroy-Bold.woff"),
-    url("/fonts/gilroy/Gilroy-Bold.ttf"),
-    url("/fonts/gilroy/Gilroy-Bold.eot");
+    url("/fonts/gilroy/Gilroy-Bold.ttf"), url("/fonts/gilroy/Gilroy-Bold.eot");
 }
 
 body {
@@ -70,4 +69,24 @@ h6 {
 
 .try-btn:hover {
   background-color: #136366; /* Darker shade of #2e8555 */
+}
+
+.aa-DetachedSearchButton {
+  border-radius: 20px !important;
+  padding: 0 16px 0 6px !important;
+  color: var(--ifm-color-primary) !important;
+}
+
+.aa-SubmitIcon {
+  color: var(--ifm-color-primary) !important;
+}
+
+.aa-Input::placeholder {
+  color: #fff !important;
+}
+
+.aa-Form:focus-within {
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: rgba(39, 194, 199, 0.2), rgba(39, 194, 199, 0.2) 0 0 0 2px,
+    inset rgba(39, 194, 199, 0.2), rgba(39, 194, 199, 0.2) 0 0 0 2px !important;
 }

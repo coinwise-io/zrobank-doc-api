@@ -6,7 +6,7 @@ require("dotenv").config();
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
-const { ALGOLIA_API_KEY, ALGOLIA_APP_ID } = process.env;
+// const { ALGOLIA_API_KEY, ALGOLIA_APP_ID } = process.env;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -21,6 +21,7 @@ const config = {
   trailingSlash: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
+  plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -84,11 +85,11 @@ const config = {
         defaultMode: "dark",
         disableSwitch: true,
       },
-      algolia: {
-        appId: ALGOLIA_APP_ID,
-        apiKey: ALGOLIA_API_KEY,
-        indexName: "dev_zrobank",
-      },
+      // algolia: {
+      //   appId: ALGOLIA_APP_ID,
+      //   apiKey: ALGOLIA_API_KEY,
+      //   indexName: "dev_zrobank",
+      // },
     }),
 };
 
