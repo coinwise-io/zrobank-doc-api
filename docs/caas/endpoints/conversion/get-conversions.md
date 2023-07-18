@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Get a list of user's conversions. You can include any of the filter parameters below to refine your search.
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -38,22 +38,25 @@ Get a list of user's conversions. You can include any of the filter parameters b
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy',
-  headers: {
-    accept: 'application/json',
-    nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -61,7 +64,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy'
+url = 'https://sandbox.zro.com/api/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy'
 
 headers = {
     "accept": "application/json",
@@ -79,7 +82,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy' \
+  'https://sandbox.zro.com/api/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy' \
   -H 'accept: application/json' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -90,7 +93,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy';
+$url = 'https://sandbox.zro.com/api/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy';
 
 $headers = array(
   'accept: application/json',
@@ -120,10 +123,69 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/v3/otc/conversions
-Adicionar
+{
+  "success": true,
+  "data": {
+    "page": 1,
+    "page_size": 20,
+    "page_total": 13,
+    "total": 246,
+    "data": [
+      {
+        "id": "338a58d3-80a6-406e-b726-48c0be9958f0",
+        "operation_id": "a98c8772-d938-4966-a7cb-2fb32c60ac64",
+        "quotation_id": "466ebc77-2273-457c-af02-a0d2ac0a2c07",
+        "price": 518,
+        "side": "buy",
+        "quote_amount": 3972,
+        "quote_currency_symbol": null,
+        "quote_currency_decimal": null,
+        "quote_currency_title": null,
+        "base_amount": 7668975,
+        "base_currency_symbol": null,
+        "base_currency_decimal": null,
+        "base_currency_title": null,
+        "created_at": "2022-08-24T19:34:30.439Z"
+      },
+      {
+        "id": "568ddf70-7b2d-4228-9281-a4e05f70372f",
+        "operation_id": "87b34037-4c47-434b-b905-042a56131a74",
+        "quotation_id": "ca77de9b-a9d8-44ea-80ea-3dc9324cf336",
+        "price": 11236429,
+        "side": "buy",
+        "quote_amount": 8905,
+        "quote_currency_symbol": null,
+        "quote_currency_decimal": null,
+        "quote_currency_title": null,
+        "base_amount": 79252,
+        "base_currency_symbol": null,
+        "base_currency_decimal": null,
+        "base_currency_title": null,
+        "created_at": "2022-08-24T20:35:03.307Z"
+      },
+      {
+        "id": "678265d7-a9f1-4c10-84af-49a3daba14a1",
+        "operation_id": "2b50729b-74b8-493d-b15c-923752b37467",
+        "quotation_id": "ea2da27c-7526-4f53-bd33-3a54b2a757d8",
+        "price": 11232320,
+        "side": "buy",
+        "quote_amount": 17804,
+        "quote_currency_symbol": null,
+        "quote_currency_decimal": null,
+        "quote_currency_title": null,
+        "base_amount": 158504,
+        "base_currency_symbol": null,
+        "base_currency_decimal": null,
+        "base_currency_title": null,
+        "created_at": "2022-08-24T20:35:40.219Z"
+      }
+    ]
+  },
+  "error": null
+}
 ```
 </TabItem>
 <TabItem value="401" label="401">

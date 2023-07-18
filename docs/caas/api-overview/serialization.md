@@ -17,9 +17,9 @@ Both API requests and responses follow the JSON specification, in which request 
 
 ```json title="Example of JSON response:"
 {
-  "success": false,<br>
-  "data": null,<br>
-  "error": "USER",<br>
-  "message": "Access is denied."<br>
+  "success": false,
+  "data": null,
+  "error": "USER",
+  "message": "Access is denied."
 }
 ```

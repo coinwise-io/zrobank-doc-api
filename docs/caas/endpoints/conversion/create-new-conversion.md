@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 To create a new currency conversion, first, you need to **[create a Quotation ID](../quotation/v2-quotations-spot.md)**. After the `quotation_id` is created, enter its information in the requisition body and execute it.
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -32,26 +32,31 @@ To create a new currency conversion, first, you need to **[create a Quotation ID
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
-    nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    quotation_id: "0ce45063-9c0c-413f-b5b3-b3aa48692ef3"
+const url = 'https://sandbox.zro.com/api/v2/otc/conversions';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
+  nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json',
+};
+
+const data = {
+  quotation_id: "0ce45063-9c0c-413f-b5b3-b3aa48692ef3"
+};
+
+async function makeRequest(){
+  try{
+    const response = await axios.post(url, data, {headers});
+    console.log(response.data);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+  catch(error){
+    console.error('Solicitation error:', error.message);
+  }
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -59,7 +64,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions"
+url = "https://sandbox.zro.com/api/v2/otc/conversions"
 params = {
     "quotation_id": "0ce45063-9c0c-413f-b5b3-b3aa48692ef3"
 }
@@ -81,7 +86,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions' \
+  'https://sandbox.zro.com/api/v2/otc/conversions' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: 126f7d3b-9462-4c6d-afdd-65f4b83d9efc' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
@@ -97,7 +102,7 @@ curl -X 'POST' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/v2/otc/conversions';
+$url = 'https://sandbox.zro.com/api/v2/otc/conversions';
 $params = array(
    "quotation_id" => "0ce45063-9c0c-413f-b5b3-b3aa48692ef3"
 )
@@ -130,7 +135,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/v2/otc/conversions
  {
