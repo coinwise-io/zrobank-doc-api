@@ -31,22 +31,26 @@ Returns the found transaction data.
 ```js title=Axios
 const axios = require('axios');
 
-const transactionUuid = "7da0c9af-215e-4625-b484-b8cfc87aaa09" ;
+const transactionUuid = "7da0c9af-215e-4625-b484-b8cfc87aaa09";
 
-axios({
-  method: 'get',
-  url: `https://sandbox-api-payments.zrobank.xyz/api/trasaction/${transactionUuid}/status`,
-  headers: {
-    'x-api-key': '{your API key}',
-    'Content-Type': 'application/json'
+const url = `https://sandbox-api-payments.zrobank.xyz/api/trasaction/${transactionUuid}/status`;
+
+const headers = {
+  'x-api-key': '{your API key}',
+  'Content-Type': 'application/json'
+};
+
+async function makeRequest(){
+  try{
+    const response = await axios.get(url, {headers});
+    console.log(response.data);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+  catch(error){
+    console.error('Solicitation error:', error.message);
+  }
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">

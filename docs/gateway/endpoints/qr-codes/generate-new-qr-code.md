@@ -36,28 +36,32 @@ Generates a new dynamic QR Code.
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix',
-  headers: {
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
+
+const headers = {
     'x-api-key': '{your API key}',
     'Content-Type': 'application/json'
-  },
-  data: {
-    value: 10,
-    description: "Cobrança de deposito",
-    client_name: "Johnny",
-    client_email: "client@email.com",
-    client_document: "81688771280",
-    merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
+};
+
+const data = {
+  value: 10,
+  description: "Cobrança de deposito",
+  client_name: "Johnny",
+  client_email: "client@email.com",
+  client_document: "81688771280",
+  merchant_id: "271e4016-47de-45e0-9340-6f2560ce3a90"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 
