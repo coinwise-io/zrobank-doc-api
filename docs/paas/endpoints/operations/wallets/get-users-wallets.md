@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 Get a list of user's wallets. You can include any of the filter parameters below to refine your search.
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -31,22 +31,25 @@ Get a list of user's wallets. You can include any of the filter parameters below
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/operations/wallets?owner=USER',
-  headers: {
-    accept: 'application/json',
-    nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/operations/wallets?owner=USER';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -54,7 +57,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/operations/wallets?owner=USER'
+url = 'https://sandbox.zro.com/api/operations/wallets?owner=USER'
 
 headers = {
     "accept": "application/json",
@@ -72,7 +75,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/operations/wallets?owner=USER' \
+  'https://sandbox.zro.com/api/operations/wallets?owner=USER' \
   -H 'accept: application/json' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -83,7 +86,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/operations/wallets?owner=USER';
+$url = 'https://sandbox.zro.com/api/operations/wallets?owner=USER';
 
 $headers = array(
   'accept: application/json',
@@ -113,7 +116,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/operations/wallets
 {

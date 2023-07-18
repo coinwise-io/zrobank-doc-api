@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Enter the PIX payment's ID below and execute to get it's state and all information.
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -42,22 +42,25 @@ Enter the PIX payment's ID below and execute to get it's state and all informati
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01',
-  headers: {
-    accept: 'application/json',
-    nonce: "c70177e8-4d0b-4236-bf5f-9bd501dbfd6a",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "c70177e8-4d0b-4236-bf5f-9bd501dbfd6a",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -65,7 +68,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01"
+url = "https://sandbox.zro.com/api/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01"
 
 headers = {
     "accept": "application/json",
@@ -83,7 +86,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01' \
+  'https://sandbox.zro.com/api/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01' \
   -H 'accept: application/json' \
   -H 'nonce: c70177e8-4d0b-4236-bf5f-9bd501dbfd6a' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -94,7 +97,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01';
+$url = 'https://sandbox.zro.com/api/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_start=2022-01-01&payment_date_period_end=2022-04-01';
 
 $headers = array(
   'accept: application/json',
@@ -124,7 +127,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/v4/pix/payments
 {

@@ -23,7 +23,7 @@ User should inform authorization old access token in header and a new access tok
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token';
+const url = 'https://sandbox.zro.com/api/auth/refresh-token';
 
 const headers = {
   'Content-Type': 'application/json'
@@ -34,13 +34,16 @@ const data = {
   api_key: 'abcd1234'
 };
 
-axios.post(url, data, { headers })
-  .then(response => {
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
     console.log(response.data);
-  })
-  .catch(error => {
-    console.error('Erro na solicitação:', error.message);
-  });
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
+  }
+}
+
+makeRequest();
 
 ```
 </TabItem>
@@ -49,7 +52,7 @@ axios.post(url, data, { headers })
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/auth/refresh-token'
+url = 'https://sandbox.zro.com/api/auth/refresh-token'
 
 headers = {
     'Content-Type': 'application/json'
@@ -74,7 +77,7 @@ else:
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/auth/signin' \
+  'https://sandbox.zro.com/api/auth/signin' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{

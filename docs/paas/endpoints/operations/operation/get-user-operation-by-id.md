@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Get user's operation
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -31,22 +31,25 @@ Get user's operation
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352',
-  headers: {
-    accept: 'application/json',
-    nonce: "c70177e8-4d0b-4236-bf5f-9bd501dbfd6a",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url =  'https://sandbox.zro.com/api/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "c70177e8-4d0b-4236-bf5f-9bd501dbfd6a",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -54,7 +57,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352"
+url = "https://sandbox.zro.com/api/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352"
 
 headers = {
     "accept": "application/json",
@@ -72,7 +75,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352' \
+  'https://sandbox.zro.com/api/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352' \
   -H 'accept: application/json' \
   -H 'nonce: c70177e8-4d0b-4236-bf5f-9bd501dbfd6a' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -83,7 +86,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352';
+$url = 'https://sandbox.zro.com/api/operations/cf83aac7-5dc6-42ae-a99a-15ccdea0c352';
 
 $headers = array(
   'accept: application/json',
@@ -113,7 +116,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/operations/{id}
 {

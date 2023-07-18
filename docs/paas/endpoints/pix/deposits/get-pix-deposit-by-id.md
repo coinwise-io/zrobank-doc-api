@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Enter the PIX deposit's ID below and execute to get it's state and all information.
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -35,22 +35,25 @@ Enter the PIX deposit's ID below and execute to get it's state and all informati
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863',
-  headers: {
-    accept: 'application/json',
-    nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -58,7 +61,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863"
+url = "https://sandbox.zro.com/api/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863"
 
 headers = {
     "accept": "application/json",
@@ -76,7 +79,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863' \
+  'https://sandbox.zro.com/api/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863' \
   -H 'accept: application/json' \
   -H 'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -87,7 +90,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863';
+$url = 'https://sandbox.zro.com/api/v2/pix/deposits/726ce668-c64a-411c-83ec-4f5efda68863';
 
 $headers = array(
   'accept: application/json',
@@ -117,7 +120,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/v2/pix/deposits/{id}
 {

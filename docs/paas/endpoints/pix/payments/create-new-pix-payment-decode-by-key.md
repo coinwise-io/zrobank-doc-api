@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Enter the pix key's information on the requisition body below and execute to get its ID. This ID is the `decoded_pix_key_id` which will be required to **[create a pix payment by a pix key](./create-new-pix-payment-by-pix-key)**
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -37,23 +37,26 @@ Enter the pix key's information on the requisition body below and execute to get
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: "ad544389-6ff4-4e08-b67a-c79cfc727e42",
-    nonce: "5ac11357-5fd2-4fa2-9708-e92d4b7985dc",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: "ad544389-6ff4-4e08-b67a-c79cfc727e42",
+  nonce: "5ac11357-5fd2-4fa2-9708-e92d4b7985dc",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -61,7 +64,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL"
+url = "https://sandbox.zro.com/api/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL"
 
 headers = {
     "accept": "application/json",
@@ -80,7 +83,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL' \
+  'https://sandbox.zro.com/api/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: ad544389-6ff4-4e08-b67a-c79cfc727e42' \
   -H 'nonce: 5ac11357-5fd2-4fa2-9708-e92d4b7985dc' \
@@ -92,7 +95,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL';
+$url = 'https://sandbox.zro.com/api/pix/payment/decode/by-key?key=ramonzin%40gmail.com&type=EMAIL';
 
 $headers = array(
   'accept: application/json',
@@ -125,7 +128,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/payment/decode/by-key
 {

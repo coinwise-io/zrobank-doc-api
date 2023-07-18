@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 To create a new pix payment by a bank account, first you need to create a Decoded Pix Account ID at the endpoint: **[Create new decoded pix account Id](./create-new-pix-payment-decode-by-account)**. Make your request with the created `decoded_pix_account_id`
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -36,28 +36,32 @@ To create a new pix payment by a bank account, first you need to create a Decode
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-account/instant-billing',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: 'aebc8924-3a4f-4f36-ae12-918d32e4088a',
-    nonce: '23a88363-449b-4e5c-92c7-5e624c8dc22f',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    decoded_pix_account_id: "2572db53-8953-4aa9-a2a2-0ca72feb7c7b",
-    value: 1299,
-    description: "Payment test"
+const url = 'https://sandbox.zro.com/api/pix/payments/by-account/instant-billing';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: 'aebc8924-3a4f-4f36-ae12-918d32e4088a',
+  nonce: '23a88363-449b-4e5c-92c7-5e624c8dc22f',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+const data = {
+  decoded_pix_account_id: "2572db53-8953-4aa9-a2a2-0ca72feb7c7b",
+  value: 1299,
+  description: "Payment test"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -65,7 +69,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/payments/by-account/instant-billing"
+url = "https://sandbox.zro.com/api/pix/payments/by-account/instant-billing"
 params = {
     "decoded_pix_account_id": "2572db53-8953-4aa9-a2a2-0ca72feb7c7b",
     "value": 1299,
@@ -89,7 +93,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'POST' \
- 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-account/instant-billing' \
+ 'https://sandbox.zro.com/api/pix/payments/by-account/instant-billing' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: aebc8924-3a4f-4f36-ae12-918d32e4088a',
   -H 'nonce: 23a88363-449b-4e5c-92c7-5e624c8dc22f' \
@@ -107,7 +111,7 @@ curl -X 'POST' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-account/instant-billing';
+$url = 'https://sandbox.zro.com/api/pix/payments/by-account/instant-billing';
 $params = array(
     "decoded_pix_account_id" => "2572db53-8953-4aa9-a2a2-0ca72feb7c7b",
     "value" => 1299,
@@ -142,7 +146,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/payments/by-account/instant-billing
   {

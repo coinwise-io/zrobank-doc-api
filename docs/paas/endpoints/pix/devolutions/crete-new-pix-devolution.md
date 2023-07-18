@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Enter the PIX devolution's information to create a new pix devolution.
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -35,28 +35,32 @@ Enter the PIX devolution's information to create a new pix devolution.
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/devolutions',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
-    nonce: 'c63267ad-3f5c-487b-9f52-b73c9dd7a10d',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    operation_id: "013f4cc5-53d1-44e0-81b5-b8056ab6772b",
-    amount:  1000,
-    description: "Devolution description"
+const url = 'https://sandbox.zro.com/api/pix/devolutions';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
+  nonce: 'c63267ad-3f5c-487b-9f52-b73c9dd7a10d',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+const data = {
+  operation_id: "013f4cc5-53d1-44e0-81b5-b8056ab6772b",
+  amount:  1000,
+  description: "Devolution description"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -64,7 +68,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/devolutions"
+url = "https://sandbox.zro.com/api/pix/devolutions"
 params = {
   "operation_id": "013f4cc5-53d1-44e0-81b5-b8056ab6772b",
   "amount": 1000,
@@ -87,7 +91,7 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X 'POST' 'https://api-dev159sw.zrobank.biz:2083/pix/devolutions' \
+curl -X 'POST' 'https://sandbox.zro.com/api/pix/devolutions' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
   -H 'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d' \
@@ -105,7 +109,7 @@ curl -X 'POST' 'https://api-dev159sw.zrobank.biz:2083/pix/devolutions' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/devolutions';
+$url = 'https://sandbox.zro.com/api/pix/devolutions';
 $params = array(
     "operation_id" => "013f4cc5-53d1-44e0-81b5-b8056ab6772b",
     "amount" => 1000,
@@ -140,7 +144,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/devolutions
 {

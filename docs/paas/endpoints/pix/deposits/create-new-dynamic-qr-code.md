@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Enter the PIX billing information on the requisition body below and execute to get a new dynamic QR Code.
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -37,31 +37,35 @@ Enter the PIX billing information on the requisition body below and execute to g
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/deposits/qr-codes/dynamic/instant-billing',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
-    nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    key: "0ce45063-9c0c-413f-b5b3-b3aa48692ef3",
-    document_value: 2300,
-    expiration_date: "2023-06-12",
-    summary: "party-payment",
-    description: "Qr code to receive payment.",
-    payer_request: "Send receipt to my email."
+const url = 'https://sandbox.zro.com/api/pix/deposits/qr-codes/dynamic/instant-billing';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
+  nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+const data = {
+  key: "0ce45063-9c0c-413f-b5b3-b3aa48692ef3",
+  document_value: 2300,
+  expiration_date: "2023-06-12",
+  summary: "party-payment",
+  description: "Qr code to receive payment.",
+  payer_request: "Send receipt to my email."
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -69,7 +73,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/deposits/qr-codes/dynamic/instant-billing"
+url = "https://sandbox.zro.com/api/pix/deposits/qr-codes/dynamic/instant-billing"
 params = {
     "key": "0ce45063-9c0c-413f-b5b3-b3aa48692ef3",
     "document_value": 2300,
@@ -96,7 +100,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/pix/deposits/qr-codes/dynamic/instant-billing' \
+  'https://sandbox.zro.com/api/pix/deposits/qr-codes/dynamic/instant-billing' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: 126f7d3b-9462-4c6d-afdd-65f4b83d9efc' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
@@ -117,7 +121,7 @@ curl -X 'POST' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/deposits/qr-codes/dynamic/instant-billing';
+$url = 'https://sandbox.zro.com/api/pix/deposits/qr-codes/dynamic/instant-billing';
 $params = array(
    "key" => "0ce45063-9c0c-413f-b5b3-b3aa48692ef3",
     "document_value" => 2300,
@@ -155,13 +159,13 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/deposits/qr-codes/dynamic/instant-billing
   {
   "id": "ef44f622-6e02-4c8c-8f63-ff0c7dd4e12a",
   "txid": "6b928494640f4ee191b81b92efff7234",
-  "emv": "00020101021226910014BR.GOV.BCB.PIX2569pix-h.bancotopazio.com.br/pix/v2/cob/6b928494640f4ee191b81b92efff7234520400005303986540523.005802BR5925RAMON TESTE FULLNAME NOME6006Recife62070503***630451F2",
+  "emv": "00020001021226910014BR.GOV.BCB.PIX2569pix-h.bancotopazio.com.br/pix/v2/cob/6b928494640f4ee191b81b92efff7234520400005303986540523.005802BR5925RAMON TESTE FULLNAME NOME6006Recife62070503***630451F2",
   "key_id": "13efaf17-7651-496b-baa8-08c22dc4e4b9",
   "state": "PENDING",
   "summary": "party-payment",
