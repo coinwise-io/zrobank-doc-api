@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # API Responses
 
 Our API responses use standard HTTP status codes.
@@ -66,14 +69,47 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 
 
 
-```json title="Example of response 401:"
-{
-  "success": false,
-  "data": null,
-  "error": "USER",
-  "message": "Access is denied."
-}
-```
+<Tabs>
+  <TabItem value="200" label="200">
+
+  ```json title="Request success to endpoint 'Create new EVP PIX key'"
+  {
+    "success": true,
+    "data": {
+      "id": "126f7d3b-9462-4c6d-afdd-65f4b83d9efc",
+      "key": null,
+      "type": "EVP",
+      "state": "CONFIRMED",
+      "created_at": "2023-06-05T01:43:33.662Z"
+    },
+    "error": null
+  }
+  ```
+  </TabItem>
+  <TabItem value="401" label="401">
+
+  ```json title="Request error when access is denied"
+  {
+    "success": false,
+    "data": null,
+    "error": "USER",
+    "message": "Access is denied."
+  }
+  ```
+  </TabItem>
+  <TabItem value="422" label="422">
+
+  ```json  title="Validation error"
+  {
+    "success": false,
+    "data": null,
+    "error": "USER",
+    "message": "The id value must be an UUID.",
+    "code": "VALIDATION"
+  }
+  ```
+</TabItem>
+</Tabs>
 
 ## API Error Codes
 
@@ -171,17 +207,20 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | USER_WALLET_NOT_FOUND | User's association with the wallet is not found. Please check your data and try again. |
 | WALLET_ACCOUNTS_NOT_FOUND | No account details found. Please verify your registration and try again. |
 
+<Tabs>
+  <TabItem value="422" label="422">
 
-
-```json title="Example of response 422 containing the code QUOTATION_NOT_FOUND:"
-{
+  ```json title="Example containing the code: VALIDATION"
+  {
   "success": false,
   "data": null,
   "error": "USER",
-  "message": "Quote was not found. Please try again.",
-  "code": "QUOTATION_NOT_FOUND"
-}
-```
+  "message": "The field created_at_start has the wrong format.",
+  "code": "VALIDATION"
+  }
+  ```
+  </TabItem>
+</Tabs>
 
 ## Data Validation Errors
 
@@ -217,12 +256,17 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | IS_DATE_AFTER_THAN_NOW | The field {property} must be after now date. |
 | IS_IN | The {property} value is not valid. |
 
-```json title="Example of response 422 containing the code VALIDATION:"
-{
+<Tabs>
+  <TabItem value="422" label="422">
+
+  ```json title="Example containing the code: IS_STRING"
+  {
   "success": false,
   "data": null,
   "error": "USER",
-  "message": "The quotation_id value must be an UUID.",
-  "code": "VALIDATION"
-}
-```
+  "message": "The value id should be a string.",
+  "code": "IS_STRING"
+  }
+  ```
+  </TabItem>
+</Tabs>
