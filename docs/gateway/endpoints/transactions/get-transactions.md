@@ -13,7 +13,7 @@ List all transactions data
 If no parameter is set, it will automatically select today’s date as the search parameter
 :::
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -38,21 +38,24 @@ If no parameter is set, it will automatically select today’s date as the searc
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://sandbox-api-payments.zrobank.xyz/api/transactions?start_date=2023-05-19%2010%3A00%3A00&end_date=2023-05-19%2020%3A00%3A00&page=1&limit=1',
-  headers: {
-   accept: 'application/json'
-   x-api-key: `${Your api key}`
-   X-CSRF-TOKEN: ''
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/transactions?start_date=2023-05-19%2010%3A00%3A00&end_date=2023-05-19%2020%3A00%3A00&page=1&limit=1';
+
+const headers = {
+  accept: 'application/json'
+  x-api-key: `${Your api key}`
+  X-CSRF-TOKEN: ''
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">

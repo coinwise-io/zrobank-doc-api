@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Withdraw
+# Create new withdraw
 
 
 | POST      | /api/withdraw |
@@ -39,30 +39,34 @@ Creates a new withdraw request using PIX as the payment method.
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://sandbox-api-payments.zrobank.xyz/api/withdraw',
-  headers: {
-    'x-api-key': '{your API key}',
-    'Content-Type': 'application/json'
-  },
-  data: {
-    value: 10,
-    type_key_pix: "email",
-    key: "ramonzin@gmail.com",
-    description: "Payment to client",
-    client_name: "John",
-    client_email: "client@email.com",
-    client_document: "81688771280",
-    merchant_id: "123456"
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/withdraw',
+
+const headers: {
+  'x-api-key': '{your API key}',
+  'Content-Type': 'application/json'
+};
+
+const data = {
+  value: 10,
+  type_key_pix: "email",
+  key: "ramonzin@gmail.com",
+  description: "Payment to client",
+  client_name: "John",
+  client_email: "client@email.com",
+  client_document: "81688771280",
+  merchant_id: "123456"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 

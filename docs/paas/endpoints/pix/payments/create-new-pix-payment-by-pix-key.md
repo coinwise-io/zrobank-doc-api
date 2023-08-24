@@ -10,7 +10,7 @@ To create a new pix payment by a pix key, first you need to create a decoded PIX
 
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -38,28 +38,32 @@ To create a new pix payment by a pix key, first you need to create a decoded PIX
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-key/instant-billing',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: 'a014d840-ed9d-4196-b1f2-e3ba28f2d8ae',
-    nonce: '17cce13f-c6bc-4e6c-b30c-a323380449eb',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    decode_pix_key_id: "7041a0d4-e733-49fb-8193-7fda6caeec2d",
-    value: 1299,
-    description: "Payment test"
+const url = 'https://sandbox.zro.com/api/pix/payments/by-key/instant-billing';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: 'a014d840-ed9d-4196-b1f2-e3ba28f2d8ae',
+  nonce: '17cce13f-c6bc-4e6c-b30c-a323380449eb',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+const data = {
+  decode_pix_key_id: "7041a0d4-e733-49fb-8193-7fda6caeec2d",
+  value: 1299,
+  description: "Payment test"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -67,7 +71,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/payments/by-key/instant-billing"
+url = "https://sandbox.zro.com/api/pix/payments/by-key/instant-billing"
 params = {
     "decode_pix_key_id": "7041a0d4-e733-49fb-8193-7fda6caeec2d",
     "value": 1299,
@@ -90,7 +94,7 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X 'POST' 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-key/instant-billing' \
+curl -X 'POST' 'https://sandbox.zro.com/api/pix/payments/by-key/instant-billing' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: a014d840-ed9d-4196-b1f2-e3ba28f2d8ae',
   -H 'nonce: 17cce13f-c6bc-4e6c-b30c-a323380449eb' \
@@ -108,7 +112,7 @@ curl -X 'POST' 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-key/instan
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/payments/by-key/instant-billing';
+$url = 'https://sandbox.zro.com/api/pix/payments/by-key/instant-billing';
 $params = array(
     "decode_pix_key_id" => "7041a0d4-e733-49fb-8193-7fda6caeec2d",
     "value" => 1299,
@@ -143,7 +147,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/payments/by-key/instant-billing
   {

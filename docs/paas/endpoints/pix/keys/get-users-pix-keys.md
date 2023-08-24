@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Get a list of user's pix keys, **except for canceled keys**
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -26,22 +26,25 @@ Get a list of user's pix keys, **except for canceled keys**
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/keys',
-  headers: {
-    accept: 'application/json',
-    nonce: "9d15cfea-231d-4e22-852c-6f167e42f7bc",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/pix/keys';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "9d15cfea-231d-4e22-852c-6f167e42f7bc",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -49,7 +52,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/pix/keys'
+url = 'https://sandbox.zro.com/api/pix/keys'
 
 headers = {
     "accept": "application/json",
@@ -67,7 +70,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/pix/keys' \
+  'https://sandbox.zro.com/api/pix/keys' \
   -H 'accept: application/json' \
   -H 'nonce: 9d15cfea-231d-4e22-852c-6f167e42f7bc' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -78,7 +81,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/keys';
+$url = 'https://sandbox.zro.com/api/pix/keys';
 
 $headers = array(
   'accept: application/json',
@@ -108,7 +111,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/keys
 {

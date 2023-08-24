@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Create a new EVP key type (random key) to the user
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -25,23 +25,26 @@ Create a new EVP key type (random key) to the user
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/keys',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
-    nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/pix/keys';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
+  nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -49,7 +52,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/keys"
+url = "https://sandbox.zro.com/api/pix/keys"
 
 headers = {
     "accept": "application/json",
@@ -68,7 +71,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/pix/keys' \
+  'https://sandbox.zro.com/api/pix/keys' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: 126f7d3b-9462-4c6d-afdd-65f4b83d9ef' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
@@ -81,7 +84,7 @@ curl -X 'POST' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/keys';
+$url = 'https://sandbox.zro.com/api/pix/keys';
 
 $headers = array(
   'accept: application/json',
@@ -110,7 +113,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/keys
  {

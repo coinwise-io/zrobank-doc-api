@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Enter the bank account's information on the requisition body below and execute to get its ID. This ID is the `decoded_pix_account_id` which will be required to **[create a pix payment by a bank account](./create-new-pix-payment-by-bank-account)**.
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -37,31 +37,35 @@ Enter the bank account's information on the requisition body below and execute t
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-account',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: "f1668901-de1e-4b1a-862b-e871a0099b89",
-    nonce: "a5c11013-a4f1-4a85-921e-c26d3fca762c",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9",
-    'Content-Type: application/json'
-  },
-  data: {
-    person_type: "NATURAL_PERSON",
-    document: "81688771280",
-    bank_ispb: "68900810",
-    branch: "0001",
-    account_number: "12345",
-    account_type: "CACC"
+const url = 'https://sandbox.zro.com/api/pix/payment/decode/by-account';
+
+const headers =  {
+  accept: 'application/json',
+  x-transaction-uuid: "f1668901-de1e-4b1a-862b-e871a0099b89",
+  nonce: "a5c11013-a4f1-4a85-921e-c26d3fca762c",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9",
+  'Content-Type: application/json'
+};
+
+const data = {
+  person_type: "NATURAL_PERSON",
+  document: "81688771280",
+  bank_ispb: "68900810",
+  branch: "0001",
+  account_number: "12345",
+  account_type: "CACC"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -69,7 +73,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-account"
+url = "https://sandbox.zro.com/api/pix/payment/decode/by-account"
 params = {
     "person_type": "NATURAL_PERSON",
     "document": "81688771280",
@@ -95,7 +99,7 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X 'POST https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-account' \
+curl -X 'POST https://sandbox.zro.com/api/pix/payment/decode/by-account' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: f1668901-de1e-4b1a-862b-e871a0099b89' \
   -H 'nonce: a5c11013-a4f1-4a85-921e-c26d3fca762c' \
@@ -116,7 +120,7 @@ curl -X 'POST https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-accoun
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/payment/decode/by-account';
+$url = 'https://sandbox.zro.com/api/pix/payment/decode/by-account';
 $params = array(
     "person_type" => "NATURAL_PERSON",
     "document" => "81688771280",
@@ -157,7 +161,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/payment/decode/by-account
 {

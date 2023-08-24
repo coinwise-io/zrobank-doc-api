@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 To update a wallet name with new one
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -39,26 +39,30 @@ To update a wallet name with new one
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'put',
-  url: 'https://api-dev159sw.zrobank.biz:2083/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: '8b1ef3a5-6d03-421e-8321-6d88ab5de8a0',
-    nonce: '5430a3e4-d8db-4c71-bd8f-d5f982a1aeec',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    name: 'New wallet name'
+const url = 'https://sandbox.zro.com/api/operations/wallets/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: '8b1ef3a5-6d03-421e-8321-6d88ab5de8a0',
+  nonce: '5430a3e4-d8db-4c71-bd8f-d5f982a1aeec',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+const data = {
+  name: 'New wallet name'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.put(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -66,7 +70,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486"
+url = "https://sandbox.zro.com/api/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486"
 params = {
    "name":"New wallet name"
 }
@@ -88,7 +92,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'PUT' \
-  'https://api-dev159sw.zrobank.biz:2083/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486' \
+  'https://sandbox.zro.com/api/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: 8b1ef3a5-6d03-421e-8321-6d88ab5de8a0' \
   -H 'nonce: 5430a3e4-d8db-4c71-bd8f-d5f982a1aeec' \
@@ -105,7 +109,7 @@ curl -X 'PUT' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486';
+$url = 'https://sandbox.zro.com/api/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486';
 $params = array(
    "name" => "New wallet name"
    )
@@ -138,7 +142,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/operations/wallets/{id}
 {

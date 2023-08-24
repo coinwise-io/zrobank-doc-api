@@ -49,32 +49,36 @@ Generates a new complete or a partial refund.
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_refund',
-  headers: {
-    'x-api-key': '{your API key}',
-    'Content-Type': 'application/json'
-  },
-  data: {
-    description: "Return example",
-    merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
-    transaction_uuid: "1a3259d0-f3b9-40dd-ab60-f594996a6453",
-    client_document: "13813438058",
-    orders: [
-      {
-        value: 100,
-        company_identifier: "f6e2e084-29b9-4935-a059-5473b13033aa"
-      }
-    ]
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_refund';
+
+const headers = {
+  'x-api-key': '{your API key}',
+  'Content-Type': 'application/json'
+};
+
+const data = {
+  description: "Return example",
+  merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
+  transaction_uuid: "1a3259d0-f3b9-40dd-ab60-f594996a6453",
+  client_document: "13813438058",
+  orders: [
+    {
+      value: 100,
+      company_identifier: "f6e2e084-29b9-4935-a059-5473b13033aa"
+    }
+  ]
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 

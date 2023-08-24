@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Enter the conversion's ID and execute to get its related quotation
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/#/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/#/" class="try-btn">Try it!</a>
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |
@@ -31,22 +31,25 @@ Enter the conversion's ID and execute to get its related quotation
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations',
-  headers: {
+const url = 'https://sandbox.zro.com/api/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations';
+
+const headers = {
     accept: 'application/json',
     nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
     Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
     'Content-Type: application/json'
+  };
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -54,7 +57,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations"
+url = "https://sandbox.zro.com/api/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations"
 
 headers = {
     "accept": "application/json",
@@ -72,7 +75,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations' \
+  'https://sandbox.zro.com/api/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations' \
   -H 'accept: application/json' \
   -H 'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -83,7 +86,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations';
+$url = 'https://sandbox.zro.com/api/otc/conversions/338a58d3-80a6-406e-b726-48c0be9958f0/quotations';
 
 $headers = array(
   'accept: application/json',
@@ -113,7 +116,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/otc/conversions/{id}/quotations
 {

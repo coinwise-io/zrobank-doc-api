@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Endpoint to user create a withdraw settings request
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -24,10 +24,10 @@ Endpoint to user create a withdraw settings request
 | -------------------------------------------| :---------:|:--------------------------------------------------------------------------------:|:--------------: |-----------------------------------------------------------------|
 | wallet_id:small_orange_diamond:            | STRING     | Must be a **UUID**                                                               | -               | User wallet id                                                  |
 | transaction_type_tag:small_orange_diamond: | STRING     | -                                                                                | 255             | Transaction type tag                                            |
-| pix_key_type:small_orange_diamond:         | STRING     | Available values: *CNPJ, CPF, PHONE, EMAIL, EVP*                                  | -               | Pix key type                                                    |
-| pix_key:small_orange_diamond:              | STRING     | -                                                                                | Pix key                                                         |
+| pix_key_type:small_orange_diamond:         | STRING     | Available values: *CNPJ, CPF, PHONE, EMAIL, EVP*                                 | -               | Pix key type                                                    |
+| pix_key:small_orange_diamond:              | STRING     | -                                                                                | 255             | Pix key                                                         |
 | pix_key_document	                         | STRING     | -                                                                                | 255             | Pix key document related (CPF or CNPJ)                          |
-| type:small_orange_diamond:                 | STRING     | Available values: *DAILY, WEEKLY, MONTHLY, BALANCE*                               | 255             | Withdraw settings type                                          |
+| type:small_orange_diamond:                 | STRING     | Available values: *DAILY, WEEKLY, MONTHLY, BALANCE*                              | 255             | Withdraw settings type                                          |
 | balance:small_orange_diamond:              | NUMBER     | -                                                                                | INT8            | Withdraw settings balance                                       |
 | day                                        | NUMBER     | -                                                                                | INT4            | Month day of withdraw **(if withdraw settings type is MONTHLY)**|
 | week_day                                   | STRING     | Available values: *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | 255             | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
@@ -41,36 +41,40 @@ Endpoint to user create a withdraw settings request
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://api-dev159sw.zrobank.biz:2083/withdraw-settings-request',
-  headers: {
-    accept: 'application/json',
-    x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
-    nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
-    'Content-Type: application/json'
-  },
-  data: {
-    id: "b4b48884-4d1c-46f9-9847-1a273c66ad10",
-    state: "PENDING",
-    wallet_id: "3267dfe0-73ee-4421-80e7-0c3a5372fa13",
-    transaction_type_tag: "PIXSEND",
-    pix_key_type: "EVP",
-    pix_key: "6fc0b20d-727a-4e76-b5b6-c7a97f2ef486",
-    pix_key_document: "81688771280",
-    type: "DAILY",
-    balance: 1000000,
-    day: 10,
-    week_day: "MONDAY"
+const url = 'https://sandbox.zro.com/api/withdraw-settings-request';
+
+const headers = {
+  accept: 'application/json',
+  x-transaction-uuid: '126f7d3b-9462-4c6d-afdd-65f4b83d9efc',
+  nonce: 'e5c8e59d-6f37-4c55-8b9a-1366f378abfd',
+  Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ',
+  'Content-Type: application/json'
+};
+
+const data = {
+  id: "b4b48884-4d1c-46f9-9847-1a273c66ad10",
+  state: "PENDING",
+  wallet_id: "3267dfe0-73ee-4421-80e7-0c3a5372fa13",
+  transaction_type_tag: "PIXSEND",
+  pix_key_type: "EVP",
+  pix_key: "6fc0b20d-727a-4e76-b5b6-c7a97f2ef486",
+  pix_key_document: "81688771280",
+  type: "DAILY",
+  balance: 1000000,
+  day: 10,
+  week_day: "MONDAY"
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -78,7 +82,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/withdraw-settings-request"
+url = "https://sandbox.zro.com/api/withdraw-settings-request"
 params = {
     "id": "b4b48884-4d1c-46f9-9847-1a273c66ad10",
     "state": "PENDING",
@@ -110,7 +114,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'POST' \
-  'https://api-dev159sw.zrobank.biz:2083/withdraw-settings-request' \
+  'https://sandbox.zro.com/api/withdraw-settings-request' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: 126f7d3b-9462-4c6d-afdd-65f4b83d9efc' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
@@ -137,7 +141,7 @@ curl -X 'POST' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/withdraw-settings-request';
+$url = 'https://sandbox.zro.com/api/withdraw-settings-request';
 $params = array(
     "id" => "b4b48884-4d1c-46f9-9847-1a273c66ad10",
     "state" => "PENDING",
@@ -181,7 +185,7 @@ curl_close($curl);
 ## Response
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/withdraw-settings-request
  {

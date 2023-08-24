@@ -246,7 +246,7 @@ const sidebars = {
           type: 'category',
           label: 'Withdrawals',
           items: [
-            'gateway/endpoints/withdrawals/withdraw',
+            'gateway/endpoints/withdrawals/create-withdraw',
             'gateway/endpoints/withdrawals/search-withdraw-transaction-by-merchant-id',
           ],
         },

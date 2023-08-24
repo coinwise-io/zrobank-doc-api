@@ -34,20 +34,23 @@ const axios = require('axios');
 
 const merchantId = "123456";
 
-axios({
-  method: 'get',
-  url: `https://sandbox-api-payments.zrobank.xyz/api/withdraws/${merchantId}/status`,
-  headers: {
-    'x-api-key': '{your API key}',
-    'Content-Type': 'application/json'
+const url = `https://sandbox-api-payments.zrobank.xyz/api/withdraws/${merchantId}/status`;
+
+const headers = {
+  'x-api-key': '{your API key}',
+  'Content-Type': 'application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">

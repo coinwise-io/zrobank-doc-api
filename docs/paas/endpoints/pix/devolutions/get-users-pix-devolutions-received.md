@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Get a list of user's received PIX devolutions. You can include any of the filter parameters below to refine your search.
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -40,22 +40,25 @@ Get a list of user's received PIX devolutions. You can include any of the filter
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR',
-  headers: {
-    accept: 'application/json',
-    nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -63,7 +66,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR'
+url = 'https://sandbox.zro.com/api/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR'
 
 headers = {
     "accept": "application/json",
@@ -81,7 +84,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR' \
+  'https://sandbox.zro.com/api/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR' \
   -H 'accept: application/json' \
   -H 'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -92,7 +95,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR';
+$url = 'https://sandbox.zro.com/api/v3/pix/devolutions-received?page=1&size=20&order=desc&states=READY&states=ERROR';
 
 $headers = array(
   'accept: application/json',
@@ -122,7 +125,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/v3/pix/devolutions-received
 {
@@ -156,7 +159,7 @@ curl_close($curl);
         "id": "1ad13f30-b24e-4df6-95cc-76f904184449",
         "state": "READY",
         "description": "",
-        "operation_id": "808259d8-549b-4298-9201-5e09697ff484",
+        "operation_id": "808259d8-549b-4298-9200-5e09697ff484",
         "type": "DEVOLUTION_RECEIVED",
         "end_to_end_id": null,
         "txid": null,

@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 Delete a wallet
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -38,25 +38,30 @@ Delete a wallet
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'delete',
-  url: 'https://api-dev159sw.zrobank.biz:2083/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa',
-  headers: {
-    accept: 'application/json',
-    nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
-  },
-  data:{
-    wallet_backup_id: 'b4b48884-4d1c-46f9-9847-1a273c66ad10'
+const url =  'https://sandbox.zro.com/api/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "e5c8e59d-6f37-4c55-8b9a-1366f378abfd",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+const data = {
+  wallet_backup_id: 'b4b48884-4d1c-46f9-9847-1a273c66ad10'
+};
+
+
+async function makeRequest() {
+  try {
+    const response = await axios.delete(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -64,7 +69,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = 'https://api-dev159sw.zrobank.biz:2083/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa'
+url = 'https://sandbox.zro.com/api/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa'
 
 params = {
     "wallet_backup_id": "b4b48884-4d1c-46f9-9847-1a273c66ad10"
@@ -86,7 +91,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'DELETE' \
-  'https://api-dev159sw.zrobank.biz:2083/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa' \
+  'https://sandbox.zro.com/api/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa' \
   -H 'accept: application/json' \
   -H 'nonce: e5c8e59d-6f37-4c55-8b9a-1366f378abfd' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -100,7 +105,7 @@ curl -X 'DELETE' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa';
+$url = 'https://sandbox.zro.com/api/operations/wallets/f6e2e084-29b9-4935-a059-5473b13033aa';
 
 $params = array(
     "wallet_backup_id" => "b4b48884-4d1c-46f9-9847-1a273c66ad10"
@@ -135,7 +140,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/operations/wallets/{id}
 {

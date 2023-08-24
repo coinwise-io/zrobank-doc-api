@@ -14,7 +14,7 @@ Canceled keys are not returned **(422 error will be sent)**
 :::
 
 
-## Request <a href="https://api-dev159sw.zrobank.biz:2083/api/" class="try-btn">Try it!</a>
+## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
 ### Header
 
@@ -38,22 +38,25 @@ Canceled keys are not returned **(422 error will be sent)**
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'get',
-  url: 'https://api-dev159sw.zrobank.biz:2083/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e',
-  headers: {
-    accept: 'application/json',
-    nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
-    'Content-Type: application/json'
+const url = 'https://sandbox.zro.com/api/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e';
+
+const headers = {
+  accept: 'application/json',
+  nonce: "c63267ad-3f5c-487b-9f52-b73c9dd7a10d",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey",
+  'Content-Type: application/json'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.get(url, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -61,7 +64,7 @@ axios({
 ```python title=Requests
 import requests
 
-url = "https://api-dev159sw.zrobank.biz:2083/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e"
+url = "https://sandbox.zro.com/api/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e"
 
 headers = {
     "accept": "application/json",
@@ -79,7 +82,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'GET' \
-  'https://api-dev159sw.zrobank.biz:2083/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e' \
+  'https://sandbox.zro.com/api/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e' \
   -H 'accept: application/json' \
   -H 'nonce: c63267ad-3f5c-487b-9f52-b73c9dd7a10d' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ey'
@@ -90,7 +93,7 @@ curl -X 'GET' \
 ```shell title=CURL
 <?php
 
-$url = 'https://api-dev159sw.zrobank.biz:2083/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e';
+$url = 'https://sandbox.zro.com/api/pix/keys/9973c013-2eba-4b11-9828-1d458f30861e';
 
 $headers = array(
   'accept: application/json',
@@ -120,7 +123,7 @@ curl_close($curl);
 
 
 <Tabs>
-<TabItem value="200" label="201">
+<TabItem value="200" label="200">
 
 ```json  title=/pix/keys/{id}
 {

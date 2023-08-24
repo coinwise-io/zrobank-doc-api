@@ -43,43 +43,47 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'post',
-  url: 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_order_qr_code_pix',
-  headers: {
-    'x-api-key': '{your API key}',
-    'Content-Type': 'application/json'
-  },
-  data: {
-    value: 300,
-    description: "Qr code Zro Gateway",
-    client_document: "81688771280",
-    merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
-    orders: [
-      {
-        fee: 10,
-        value: 100,
-        company_identifier: "f6e2e084-29b9-4935-a059-5473b13033aa"
-      },
-      {
-        fee: 20,
-        value: 100,
-        company_identifier: "df1a24a0-8f4e-478e-84f9-326f48c1f2f2"
-      },
-      {
-        fee: 10,
-        value: 100,
-        company_identifier: "74b00eb0-9784-421c-b24c-4f08a50f8466"
-      }
-    ]
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_order_qr_code_pix';
+
+const headers = {
+  'x-api-key': '{your API key}',
+  'Content-Type': 'application/json'
+};
+
+const data = {
+  value: 300,
+  description: "Qr code Zro Gateway",
+  client_document: "81688771280",
+  merchant_id: "7da0c9af-215e-4625-b484-b8cfc87aaa09",
+  orders: [
+    {
+      fee: 10,
+      value: 100,
+      company_identifier: "f6e2e084-29b9-4935-a059-5473b13033aa"
+    },
+    {
+      fee: 20,
+      value: 100,
+      company_identifier: "df1a24a0-8f4e-478e-84f9-326f48c1f2f2"
+    },
+    {
+      fee: 10,
+      value: 100,
+      company_identifier: "74b00eb0-9784-421c-b24c-4f08a50f8466"
+    }
+  ]
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">

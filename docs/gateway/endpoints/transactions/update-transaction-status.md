@@ -33,24 +33,28 @@ Update the status of a transaction to trigger the receipt of webhooks for testin
 ```js title=Axios
 const axios = require('axios');
 
-axios({
-  method: 'put',
-  url: `https://sandbox-api-payments.zrobank.xyz/api/trasactions`,
-  headers: {
-    'x-api-key': '{your API key}',
-    'Content-Type': 'application/json'
-  },
-  data: {
-    transaction_uuid : '7da0c9af-215e-4625-b484-b8cfc87aaa09',
-    status : 'pending'
+const url = `https://sandbox-api-payments.zrobank.xyz/api/trasactions`;
+
+const headers = {
+  'x-api-key': '{your API key}',
+  'Content-Type': 'application/json'
+};
+
+const data = {
+  transaction_uuid : '7da0c9af-215e-4625-b484-b8cfc87aaa09',
+  status : 'pending'
+};
+
+async function makeRequest() {
+  try {
+    const response = await axios.put(url, data, { headers });
+    console.log(response.data);
+  } catch (error) {
+    console.error('Solicitation error:', error.message);
   }
-})
-.then((response) => {
-  console.log(response.data);
-})
-.catch((error) => {
-  console.error(error);
-});
+}
+
+makeRequest();
 ```
 </TabItem>
 <TabItem value="py" label="Python">
