@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/paas/endpoints/operations/currency/params/GetCurrencies/filterParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/currency/params/GetCurrencies/headerParams.ts'
 
 # List currencies
 
@@ -9,6 +12,7 @@ import TabItem from '@theme/TabItem';
 
 Get a list of all available and tradable currencies. You can include any of the filter parameters below to refine your search.
 
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations/currencies" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -178,3 +182,4 @@ curl_close($curl);
 | state:small_orange_diamond:         | STRING     |Available values: *active, deactivate*            | Currency state                       |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

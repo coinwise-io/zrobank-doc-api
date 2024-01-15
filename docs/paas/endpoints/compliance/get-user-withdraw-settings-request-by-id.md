@@ -1,14 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import pathParam from '@site/docs/paas/endpoints/compliance/params/GetUserWithdrawSettingsRequestById/pathParams.ts'
+import headerParams from '@site/docs/paas/endpoints/compliance/params/GetUserWithdrawSettingsRequestById/headerParams.ts'
 
 # Get user withdraw settings request by ID
 
-| GET       | /withdraw-settings-request/{id} |
+| GET       | /withdraw-settings-request/\{id\} |
 | --------- | --------------------------------|
 
 
 Endpoint to user get a withdraw settings request by id.
 
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/withdraw-settings-request/" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -121,7 +125,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/withdraw-settings-request/{id}
+```json  title=/withdraw-settings-request/\{id\}
 {
   "id": "b4b48884-4d1c-46f9-9847-1a273c66ad10",
   "analysis_result": "APPROVED",
@@ -143,7 +147,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/withdraw-settings-request/{id}
+```json  title=/withdraw-settings-request/\{id\}
 {
   "success": false,
   "data": null,
@@ -154,7 +158,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/withdraw-settings-request/{id}
+```json  title=/withdraw-settings-request/\{id\}
 {
   "success": false,
   "data": null,
@@ -187,3 +191,4 @@ curl_close($curl);
 | week_day:small_orange_diamond:             | STRING     | Timestamp with timezone                                                               | User withdraw setting request close date                        |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

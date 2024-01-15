@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/transactions/params/UpdateTransactionStatus/headerParams.ts'
+import bodyParams from '@site/docs/gateway/endpoints/transactions/params/UpdateTransactionStatus/bodyParams.ts'
 
 # Update a transaction status
 
@@ -11,6 +14,8 @@ Only available for **development environment**
 :::
 
 Update the status of a transaction to trigger the receipt of webhooks for testing purposes.
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction" method="put">
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 
@@ -166,3 +171,4 @@ curl_close($curl);
 | created_at        | STRING| Timestamp with timezone                                                                 |  Date when the transaction was created                     |
 | process_status    | STRING| Available status: <br/> *waiting, completed, failed*                                    |  Transaction payment status                                |
 | merchant_id       | STRING| **UUID**                                                                                |  Merchant's ID for conciliation                            |
+</RequestComponent>

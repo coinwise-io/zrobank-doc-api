@@ -1,12 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import pathParam from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/pathParams.ts'
+import bodyParams from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/bodyParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/headerParams.ts'
 
 # Update wallet data
 
-| PUT      | /operations/wallets/{id}|
+| PUT      | /operations/wallets/\{id\}|
 | -------- | ------------------------|
 
 To update a wallet name with new one
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} endpoint="/operations/wallets/" method="put">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -70,7 +76,7 @@ makeRequest();
 ```python title=Requests
 import requests
 
-url = "https://sandbox.zro.com/api/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486"
+url = "https://sandbox.zro.com/api/operations/wallets/\{id\}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486"
 params = {
    "name":"New wallet name"
 }
@@ -92,7 +98,7 @@ print(response)
 
 ```shell title=CURL
 curl -X 'PUT' \
-  'https://sandbox.zro.com/api/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486' \
+  'https://sandbox.zro.com/api/operations/wallets/\{id\}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486' \
   -H 'accept: application/json' \
   -H 'x-transaction-uuid: 8b1ef3a5-6d03-421e-8321-6d88ab5de8a0' \
   -H 'nonce: 5430a3e4-d8db-4c71-bd8f-d5f982a1aeec' \
@@ -109,7 +115,7 @@ curl -X 'PUT' \
 ```shell title=CURL
 <?php
 
-$url = 'https://sandbox.zro.com/api/operations/wallets/{id}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486';
+$url = 'https://sandbox.zro.com/api/operations/wallets/\{id\}/6fc0b20d-727a-4e76-b5b6-c7a97f2ef486';
 $params = array(
    "name" => "New wallet name"
    )
@@ -144,7 +150,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/operations/wallets/{id}
+```json  title=/operations/wallets/\{id\}
 {
   "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
   "name": "New wallet name",
@@ -156,7 +162,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/operations/wallets/{id}
+```json  title=/operations/wallets/\{id\}
 {
   "success": false,
   "data": null,
@@ -167,7 +173,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/operations/wallets/{id}
+```json  title=/operations/wallets/\{id\}
 {
   "success": false,
   "data": null,
@@ -190,3 +196,4 @@ curl_close($curl);
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                              | Wallet created date                |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

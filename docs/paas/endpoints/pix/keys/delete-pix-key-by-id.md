@@ -1,14 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/keys/params/DeletePixKeyById/headerParams.ts'
+import pathParam from '@site/docs/paas/endpoints/pix/keys/params/DeletePixKeyById/pathParams.ts'
 
 # Delete PIX key by ID
 
-| DELETE    | /pix/keys/{id}|
+| DELETE    | /pix/keys/\{id\}|
 | --------- | --------------|
 
 
 Enter the user's pix key ID below and execute to delete it. After deleted, the returned pix key's state will be DELETING.
 
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="delete">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -121,7 +125,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/pix/keys/{id}
+```json  title=/pix/keys/\{id\}
 {
   "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
   "key": "2d2c95b0-9b7a-47e8-8cb2-5b37ac33b89e",
@@ -133,7 +137,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/pix/keys/{id}
+```json  title=/pix/keys/\{id\}
 {
   "success": false,
   "data": null,
@@ -144,7 +148,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/pix/keys/{id}
+```json  title=/pix/keys/\{id\}
 {
   "success": false,
   "data": null,
@@ -166,3 +170,4 @@ curl_close($curl);
 | state:small_orange_diamond:       | STRING     | Available values: *PENDING, CONFIRMED, NOT_CONFIRMED, ADD_KEY_READY, READY, CANCELED, ERROR, DELETING, DELETED, PORTABILITY_PENDING, PORTABILITY_OPENED, PORTABILITY_STARTED, PORTABILITY_READY, PORTABILITY_CONFIRMED, PORTABILITY_CANCELED, PORTABILITY_REQUEST_PENDING, PORTABILITY_REQUEST_CANCEL_OPENED, PORTABILITY_REQUEST_CANCEL_STARTED, PORTABILITY_REQUEST_CONFIRM_OPENED, PORTABILITY_REQUEST_CONFIRM_STARTED, PORTABILITY_REQUEST_AUTO_CONFIRMED, OWNERSHIP_PENDING, OWNERSHIP_OPENED, OWNERSHIP_STARTED, OWNERSHIP_CONFIRMED, OWNERSHIP_READY, OWNERSHIP_CANCELED, OWNERSHIP_WAITING, OWNERSHIP_CONFLICT, CLAIM_NOT_CONFIRMED, CLAIM_PENDING, CLAIM_CLOSING, CLAIM_DENIED, CLAIM_CLOSED*       | PIX key state                      |
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                         | PIX key created date               |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

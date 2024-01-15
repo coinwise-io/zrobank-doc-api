@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccounts/filterParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccounts/headerParams.ts'
 
 # List user's wallet accounts
 
@@ -8,6 +11,8 @@ import TabItem from '@theme/TabItem';
 
 
 Get a list of user's wallet accounts. You can include any of the filter parameters below to refine your search.
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations/wallet-accounts" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -178,3 +183,4 @@ curl_close($curl);
 | currency_symbol_align:small_orange_diamond:  | STRING     |Available values: *left, right*                   | Currency symbol align position       |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

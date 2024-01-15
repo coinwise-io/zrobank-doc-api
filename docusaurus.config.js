@@ -45,10 +45,9 @@ const config = {
     ({
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Zro Bank ",
         logo: {
           alt: "Zro Bank Logo",
-          src: "img/logo.svg",
+          src: "img/new-logo.png",
         },
         items: [
           {

@@ -1,12 +1,17 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import pathParam from '@site/docs/caas/endpoints/conversion/params/GetQuotationById/pathParams.ts'
+import headerParams from '@site/docs/caas/endpoints/conversion/params/GetQuotationById/headerParams.ts'
 
 # Get quotation by conversion ID
 
-| GET       |/otc/conversions/{id}/quotations|
+| GET       |/otc/conversions/\{id\}/quotations|
 | --------- | ------------------------------ |
 
 Enter the conversion's ID and execute to get its related quotation
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/otc/conversions/" endpointComplement="/quotations" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/#/" class="try-btn">Try it!</a>
 
@@ -118,7 +123,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/otc/conversions/{id}/quotations
+```json  title=/otc/conversions/\{id\}/quotations
 {
   "success": true,
   "data": {
@@ -144,7 +149,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/otc/conversions/{id}/quotations
+```json  title=/otc/conversions/\{id\}/quotations
 {
   "success": false,
   "data": null,
@@ -155,7 +160,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/otc/conversions/{id}/quotations
+```json  title=/otc/conversions/\{id\}/quotations
 {
   "success": false,
   "data": null,
@@ -187,3 +192,4 @@ curl_close($curl);
 | base_currency_title:small_orange_diamond:     | STRING |-                                   | Quotation base currency title   |
 | created_at                                    | STRING |Timestamp with timezone             | Quotation created date          |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

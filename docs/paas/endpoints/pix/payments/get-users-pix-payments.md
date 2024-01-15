@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/paas/endpoints/pix/payments/params/GetUsersPixPayments/filterParams.ts'
+import headerParams from '@site/docs/paas/endpoints/pix/payments/params/GetUsersPixPayments/headerParams.ts'
 
 # List user's PIX payments
 
@@ -9,6 +12,7 @@ import TabItem from '@theme/TabItem';
 
 Enter the PIX payment's ID below and execute to get it's state and all information.
 
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v4/pix/payments" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -247,3 +251,4 @@ curl_close($curl);
 | end_to_end_id                       | STRING     |-                                                 | end to end ID                        |
 | ispb                                | STRING     |-                                                 | Bank ISPB                            |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentDecodeByAccount/bodyParams.ts'
+import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentDecodeByAccount/headerParams.ts'
 
 # Create new decoded PIX account ID
 
@@ -7,6 +10,8 @@ import TabItem from '@theme/TabItem';
 | --------- | ------------------------------ |
 
 Enter the bank account's information on the requisition body below and execute to get its ID. This ID is the `decoded_pix_account_id` which will be required to **[create a pix payment by a bank account](./create-new-pix-payment-by-bank-account)**.
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payment/decode/by-account" method="post">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -208,3 +213,4 @@ curl_close($curl);
 | name:small_orange_diamond:| STRING     |     -     | Person full name or company tax name |
 | trade_name                | STRING     |     -     | Company trade name                   |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

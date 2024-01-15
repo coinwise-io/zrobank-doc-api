@@ -1,13 +1,17 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/transactions/params/SearchByUuid/headerParams.ts'
+import pathParam from '@site/docs/gateway/endpoints/transactions/params/SearchByUuid/pathParams.ts'
 
 # Search transaction by UUID
 
-| GET      | /api/trasaction/{transactionUuid}/status |
+| GET      | /api/trasaction/\{transactionUuid\}/status |
 | --------- | ----------- |
 
 Returns the found transaction data.
 
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 ### Header
@@ -33,7 +37,7 @@ const axios = require('axios');
 
 const transactionUuid = "7da0c9af-215e-4625-b484-b8cfc87aaa09";
 
-const url = `https://sandbox-api-payments.zrobank.xyz/api/trasaction/${transactionUuid}/status`;
+const url = `https://sandbox-api-payments.zrobank.xyz/api/trasaction/$\{transactionUuid\}/status`;
 
 const headers = {
   'x-api-key': '{your API key}',
@@ -59,7 +63,7 @@ makeRequest();
 import requests
 
 transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09'
-url = f'https://sandbox-api-payments.zrobank.xyz/api/trasaction/{transactionUuid}/status'
+url = f'https://sandbox-api-payments.zrobank.xyz/api/trasaction/\{transactionUuid\}/status'
 
 headers = {
     'x-api-key':'your API key'
@@ -75,7 +79,7 @@ print(data)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X GET https://sandbox-api-payments.zrobank.xyz/api/trasaction/{transactionUuid}/status\
+curl -X GET https://sandbox-api-payments.zrobank.xyz/api/trasaction/\{transactionUuid\}/status\
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}'
 ```
@@ -111,7 +115,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasaction/{transactionUuid}/status
+```json  title=/api/trasaction/\{transactionUuid\}/status
 {
   "id": "3000",
   "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
@@ -127,7 +131,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/api/trasaction/{transactionUuid}/status
+```json  title=/api/trasaction/\{transactionUuid\}/status
 {
   "message": "Invalid x-api-key",
 }
@@ -148,3 +152,4 @@ curl_close($curl);
 | created_at       | STRING     | Timestamp with timezone                                                                  | Date when the transaction was created                     |
 | process_status   | STRING     |Available status: <br/>*waiting, completed, failed*                                       | Transaction payment status                                |
 | merchant_id      | STRING     | **UUID**                                                                                 |  Merchant's ID for conciliation                           |
+</RequestComponent>

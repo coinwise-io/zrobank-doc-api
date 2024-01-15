@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByPixKey/bodyParams.ts'
+import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByPixKey/headerParams.ts'
 
 # Create new PIX payment by PIX key
 
@@ -8,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 To create a new pix payment by a pix key, first you need to create a decoded PIX key ID at the endpoint: **[Create new decoded PIX key id](./create-new-pix-payment-decode-by-key)**. With the `decoded_pix_key_id` created, enter the pix payment's information to make a requisition.
 
-
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payments/by-key/instant-billing" method="post">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -203,3 +206,4 @@ curl_close($curl);
 | description                     | STRING     | -                                                                                              | User defined payment description                                                                                              |
 | created_at:small_orange_diamond:| STRING     | Timestamp with timezone                                                                        | Payment created date                                                                                                          |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

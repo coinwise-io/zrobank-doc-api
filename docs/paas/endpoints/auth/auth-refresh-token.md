@@ -1,5 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/auth/params/AuthRefreshTokenParams/headerParams.ts'
 
 # Refresh token
 
@@ -7,6 +9,8 @@ import TabItem from '@theme/TabItem';
 | --------- | ------------------ |
 
 User should inform authorization old access token in header and a new access token will be generated.
+
+<RequestComponent headerParams={headerParams} endpoint="/auth/refresh-token" method="post">
 
 ## Request
 
@@ -135,3 +139,4 @@ $apiKey = $data['api_key'];
  Title                               | Type       | Properties             |Description                                                    |
 | -----------------------------------| :---------:|:----------------------:|---------------------------------------------------------------|
 | access_token:small_orange_diamond: | STRING     | -                      |JWT access token. Token used to access all protected endpoints |
+</RequestComponent>

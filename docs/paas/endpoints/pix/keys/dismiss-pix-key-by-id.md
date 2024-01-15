@@ -1,9 +1,12 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/keys/params/DismissPixKeyById/headerParams.ts'
+import pathParam from '@site/docs/paas/endpoints/pix/keys/params/DismissPixKeyById/pathParams.ts'
 
 # Dismiss PIX key by ID
 
-| POST      | /pix/keys/{id}/dismiss|
+| POST      | /pix/keys/\{id\}/dismiss|
 | --------- | ----------------------|
 
 Set key to do not be shown anymore. The key state will be changed to: **CLAIM_PENDING, CANCELED or READY :**
@@ -24,6 +27,8 @@ Set key to do not be shown anymore. The key state will be changed to: **CLAIM_PE
 
 
 Returns user's pix key which state is **CLAIM_PENDING, CANCELED or READY**
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" endpointComplement="/dismiss" method="post">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -185,3 +190,4 @@ curl_close($curl);
 | state:small_orange_diamond:       | STRING     | Available values: *PENDING, CONFIRMED, NOT_CONFIRMED, ADD_KEY_READY, READY, CANCELED, ERROR, DELETING, DELETED, PORTABILITY_PENDING, PORTABILITY_OPENED, PORTABILITY_STARTED, PORTABILITY_READY, PORTABILITY_CONFIRMED, PORTABILITY_CANCELED, PORTABILITY_REQUEST_PENDING, PORTABILITY_REQUEST_CANCEL_OPENED, PORTABILITY_REQUEST_CANCEL_STARTED, PORTABILITY_REQUEST_CONFIRM_OPENED, PORTABILITY_REQUEST_CONFIRM_STARTED, PORTABILITY_REQUEST_AUTO_CONFIRMED, OWNERSHIP_PENDING, OWNERSHIP_OPENED, OWNERSHIP_STARTED, OWNERSHIP_CONFIRMED, OWNERSHIP_READY, OWNERSHIP_CANCELED, OWNERSHIP_WAITING, OWNERSHIP_CONFLICT, CLAIM_NOT_CONFIRMED, CLAIM_PENDING, CLAIM_CLOSING, CLAIM_DENIED, CLAIM_CLOSED*       | PIX key state                      |
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                         | PIX key created date               |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

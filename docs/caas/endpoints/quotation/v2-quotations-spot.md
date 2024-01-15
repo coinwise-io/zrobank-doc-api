@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/caas/endpoints/quotation/params/V2QuotationsSpot/filterParams.ts'
+import headerParams from '@site/docs/caas/endpoints/quotation/params/V2QuotationsSpot/headerParams.ts'
 
 # Get new SPOT quotation
 
@@ -8,8 +11,7 @@ import TabItem from '@theme/TabItem';
 
 To create a new currency conversion, first, you need to create a **Quotation ID**. Enter a new SPOT quotation and execute it to get its ID. This ID is the `quotation_id` that will be required to **[create a new currency conversion](../conversion/create-new-conversion.md)**
 
-
-
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v2/quotations/spot" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -193,3 +195,4 @@ curl_close($curl);
 | base_currency_title:small_orange_diamond:     | STRING |-                                   | Quotation base currency title   |
 | ttl                                           | STRING |Timestamp with timezone             | Quotation TTL date              |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

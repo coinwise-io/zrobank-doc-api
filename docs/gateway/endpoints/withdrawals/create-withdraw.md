@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/withdrawals/params/CreateWithdraw/headerParams.ts'
+import bodyParams from '@site/docs/gateway/endpoints/withdrawals/params/CreateWithdraw/bodyParams.ts'
 
 # Create new withdraw
 
@@ -8,6 +11,8 @@ import TabItem from '@theme/TabItem';
 | --------- | ------------------------------------ |
 
 Creates a new withdraw request using PIX as the payment method.
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
 
 ## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 
@@ -198,3 +203,4 @@ curl_close($curl);
 | client_email    | STRING      |-                                                       | Client's email                                           |
 | client_document | STRING      |-                                                       | Client's document (CPF or CNPJ)                          |
 | merchant_id     | STRING      | **UUID**                                               | Merchant's ID for conciliation                           |
+</RequestComponent>

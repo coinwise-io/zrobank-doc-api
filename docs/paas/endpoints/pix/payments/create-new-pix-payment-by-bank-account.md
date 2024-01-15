@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByBankAccount/bodyParams.ts'
+import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByBankAccount/headerParams.ts'
 
 # Create new PIX payment by bank account
 
@@ -7,6 +10,8 @@ import TabItem from '@theme/TabItem';
 | --------- | ---------------------------------------- |
 
 To create a new pix payment by a bank account, first you need to create a Decoded Pix Account ID at the endpoint: **[Create new decoded pix account Id](./create-new-pix-payment-decode-by-account)**. Make your request with the created `decoded_pix_account_id`
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payments/by-account/instant-billing" method="post">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -202,3 +207,4 @@ curl_close($curl);
 | description                      | STRING     | -                                                                                              | User defined payment description                                                                                              |
 | created_at:small_orange_diamond: | STRING     | Timestamp with timezone                                                                        | Payment created date                                                                                                          |
 :small_orange_diamond: *Required parameters on body*
+</RequestComponent>

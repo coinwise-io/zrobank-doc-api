@@ -1,13 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/GetDynamicQrCodeById/headerParams.ts'
+import pathParam from '@site/docs/paas/endpoints/pix/deposits/params/GetDynamicQrCodeById/pathParams.ts'
 
 # Get dynamic QrCode by ID
 
-| GET       | /v3/pix/deposits/qr-codes/dynamic/{id}|
+| GET       | /v3/pix/deposits/qr-codes/dynamic/\{id\}|
 | --------- | --------------------------------------|
 
 
 Enter the pix dinamic QR code's ID below and execute to get its state and all information
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -121,7 +126,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/v3/pix/deposits/qr-codes/dynamic/{id}
+```json  title=/v3/pix/deposits/qr-codes/dynamic/\{id\}
 {
   "id": "abf6c3c6-f54b-4fbf-83ee-75ecf5f36c66",
   "txid": "f6e2e084-29b9-4935-a059-5473b13033aa",
@@ -137,7 +142,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/v3/pix/deposits/qr-codes/dynamic/{id}
+```json  title=/v3/pix/deposits/qr-codes/dynamic/\{id\}
 {
   "success": false,
   "data": null,
@@ -148,7 +153,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/v3/pix/deposits/qr-codes/dynamic/{id}
+```json  title=/v3/pix/deposits/qr-codes/dynamic/\{id\}
 {
   "success": false,
   "data": null,
@@ -174,3 +179,4 @@ curl_close($curl);
 | state:small_orange_diamond:          |STRING     |Available values : *PENDING, READY, ERROR*| Qr Code state                          |
 | created_at:small_orange_diamond:     |STRING     |-                                         | Qr Code created date                   |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

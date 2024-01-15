@@ -18,8 +18,24 @@
     url("/fonts/gilroy/Gilroy-Bold.ttf"), url("/fonts/gilroy/Gilroy-Bold.eot");
 }
 
+@font-face {
+  font-family: "Kanit";
+  src: url("/fonts/kanit/Kanit-Regular.ttf"),
+}
+
+@font-face {
+  font-family: "Kanit Medium";
+  src: url("/fonts/kanit/Kanit-Medium.ttf"),
+}
+
+@font-face {
+  font-family: "Kanit Italic";
+  src: url("/fonts/kanit/Kanit-Italic.ttf"),
+}
+
 body {
   font-family: "Gilroy Medium", sans-serif;
+
 }
 
 h1,
@@ -32,26 +48,51 @@ h6 {
 }
 
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #54b7e8;
+  --ifm-color-primary-dark: #38abe4;
+  --ifm-color-primary-darker: #2aa5e2;
+  --ifm-color-primary-darkest: #1a8bc3;
+  --ifm-color-primary-light: #70c3ec;
+  --ifm-color-primary-lighter: #7ec9ee;
+  --ifm-color-primary-lightest: #a8daf3;
+  --ifm-font-color-base: #FFF;
   --ifm-code-font-size: 95%;
+  --ifm-background-color: #252f59 !important;
+  --ifm-navbar-link-color: #142032 !important;
+  --ifm-menu-color: #FFF
+  --ifm-pre-background: #282A35;
+  --ifm-toc-link-color: #FFF;
+  --ifm-blockquote-color: #FFF;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  font-size: "10px"
+}
+
+code {
+  background-color: #142032;
+}
+
+.main-wrapper {
+ background: linear-gradient(180deg, #252F59 0%, #020305 100%) !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #27c2c7;
-  --ifm-color-primary-dark: #27c2c7;
-  --ifm-color-primary-darker: #27c2c7;
-  --ifm-color-primary-darkest: #27c2c7;
-  --ifm-color-primary-light: #27c2c7;
-  --ifm-color-primary-lighter: #27c2c7;
-  --ifm-color-primary-lightest: #27c2c7;
+  --ifm-color-primary: #54b7e8;
+  --ifm-color-primary-dark: #38abe4;
+  --ifm-color-primary-darker: #2aa5e2;
+  --ifm-color-primary-darkest: #1a8bc3;
+  --ifm-color-primary-light: #70c3ec;
+  --ifm-color-primary-lighter: #7ec9ee;
+  --ifm-color-primary-lightest: #a8daf3;
+  --ifm-font-color-base: #FFF;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-link-color: #142032 !important;
+  --ifm-background-color: #252f59 !important;
+  --ifm-menu-color: #FFF;
+  --ifm-pre-background: #282A35;
+  --ifm-toc-link-color: #FFF;
+  --ifm-blockquote-color: #FFF;
+  --ifm-background-surface-color: #FFF !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -89,4 +130,13 @@ h6 {
   border-color: var(--ifm-color-primary) !important;
   box-shadow: rgba(39, 194, 199, 0.2), rgba(39, 194, 199, 0.2) 0 0 0 2px,
     inset rgba(39, 194, 199, 0.2), rgba(39, 194, 199, 0.2) 0 0 0 2px !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }

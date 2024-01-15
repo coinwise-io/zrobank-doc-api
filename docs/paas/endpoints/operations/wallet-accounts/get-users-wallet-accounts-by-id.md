@@ -1,13 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import pathParam from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccountsById/pathParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccountsById/headerParams.ts'
 
 # Get user's wallet account by ID
 
-| GET       | /operations/wallet-accounts/{id}   |
+| GET       | /operations/wallet-accounts/\{id\}   |
 | --------- | -----------------------------------|
 
 
 Get a user's wallet account by id
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallet-accounts/" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -121,7 +126,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/operations/wallet-accounts/{id}
+```json  title=/operations/wallet-accounts/\{id\}
 {
   "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
   "balance": 10000,
@@ -140,7 +145,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/operations/wallet-accounts/{id}
+```json  title=/operations/wallet-accounts/\{id\}
 {
   "success": false,
   "data": null,
@@ -168,3 +173,4 @@ curl_close($curl);
 | currency_symbol:small_orange_diamond:        | STRING     |-                                                 | Currency symbol                      |
 | currency_symbol_align:small_orange_diamond:  | STRING     |Available values: *left, right*                   | Currency symbol align position       |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

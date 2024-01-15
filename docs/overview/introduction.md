@@ -1,5 +1,4 @@
 # Introduction
-
 Welcome to Zro Bank!
 
 Here you'll find all the information you must have to integrate with Zro Bank and our API endpoints. We've tried to build this documentation as user-friendly as possible, creating a simple and gentle experience for you.

@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/caas/endpoints/conversion/params/GetConversions/filterParams.ts'
+import headerParams from '@site/docs/caas/endpoints/conversion/params/GetConversions/headerParams.ts'
 
 # List user's conversions
 
@@ -7,6 +10,8 @@ import TabItem from '@theme/TabItem';
 | ------ | ------------------- |
 
 Get a list of user's conversions. You can include any of the filter parameters below to refine your search.
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v3/otc/conversions" method="get">
 
 ## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
 
@@ -238,3 +243,4 @@ curl_close($curl);
 
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>
