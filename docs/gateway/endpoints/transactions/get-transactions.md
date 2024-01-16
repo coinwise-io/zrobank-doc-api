@@ -16,9 +16,10 @@ List all transactions data
 If no parameter is set, it will automatically select today’s date as the search parameter
 :::
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/api/trasaction" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/" class="try-btn">Try it!</a>
+## Request
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/api/trasaction" method="get">
 
 ### Header
 

@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/De
 
 Delete a wallet
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} endpoint="/operations/wallets/" method="delete">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} endpoint="/operations/wallets/" method="delete">
 
 ### Header
 

@@ -16,9 +16,10 @@ Enter the pix key ID below and execute to get it's state and all information.
 Canceled keys are not returned **(422 error will be sent)**
 :::
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="get">
 
 ### Header
 

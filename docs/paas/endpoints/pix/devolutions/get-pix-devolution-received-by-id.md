@@ -12,9 +12,10 @@ import pathParam from '@site/docs/paas/endpoints/pix/devolutions/params/GetPixDe
 
 Enter the received pix devolution's ID below and execute to get it's state and all information.
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/devolutions-received/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/devolutions-received/" method="get">
 
 ### Header
 

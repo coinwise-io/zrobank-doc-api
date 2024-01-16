@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/operation/params/
 
 Get a list of user's operations
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations" method="get">
 
 ### Header
 

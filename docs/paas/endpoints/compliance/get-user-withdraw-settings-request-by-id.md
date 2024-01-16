@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/compliance/params/GetUserWit
 
 Endpoint to user get a withdraw settings request by id.
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/withdraw-settings-request/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/withdraw-settings-request/" method="get">
 
 ### Header
 

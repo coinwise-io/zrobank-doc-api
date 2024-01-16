@@ -10,9 +10,10 @@ import headerParams from '@site/docs/paas/endpoints/pix/keys/params/CreateNewEvp
 
 Create a new EVP key type (random key) to the user
 
-<RequestComponent headerParams={headerParams} endpoint="/pix/keys" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} endpoint="/pix/keys" method="post">
 
 ### Header
 

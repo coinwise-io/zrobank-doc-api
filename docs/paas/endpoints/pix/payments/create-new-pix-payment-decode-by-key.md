@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNe
 
 Enter the pix key's information on the requisition body below and execute to get its ID. This ID is the `decoded_pix_key_id` which will be required to **[create a pix payment by a pix key](./create-new-pix-payment-by-pix-key)**
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/pix/payment/decode/by-key" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/pix/payment/decode/by-key" method="get">
 
 ### Header
 

@@ -11,9 +11,10 @@ import headerParams from '@site/docs/caas/endpoints/conversion/params/CreateNewC
 
 To create a new currency conversion, first, you need to **[create a Quotation ID](../quotation/v2-quotations-spot.md)**. After the `quotation_id` is created, enter its information in the requisition body and execute it.
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/v2/otc/conversions" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/v2/otc/conversions" method="post">
 
 ### Header
 

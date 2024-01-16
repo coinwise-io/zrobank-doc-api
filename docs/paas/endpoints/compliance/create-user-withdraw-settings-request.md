@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/compliance/params/CreateUser
 
 Endpoint to user create a withdraw settings request
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/withdraw-settings-request" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/withdraw-settings-request" method="post">
 
 ### Header
 

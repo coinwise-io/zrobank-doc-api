@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNe
 
 Enter the bank account's information on the requisition body below and execute to get its ID. This ID is the `decoded_pix_account_id` which will be required to **[create a pix payment by a bank account](./create-new-pix-payment-by-bank-account)**.
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payment/decode/by-account" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payment/decode/by-account" method="post">
 
 ### Header
 

@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/Cr
 
 To create a new wallet with optional wallet name
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/operations/wallets" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/operations/wallets" method="post">
 
 ### Header
 

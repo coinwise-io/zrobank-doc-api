@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNe
 
 To create a new pix payment by a bank account, first you need to create a Decoded Pix Account ID at the endpoint: **[Create new decoded pix account Id](./create-new-pix-payment-decode-by-account)**. Make your request with the created `decoded_pix_account_id`
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payments/by-account/instant-billing" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payments/by-account/instant-billing" method="post">
 
 ### Header
 

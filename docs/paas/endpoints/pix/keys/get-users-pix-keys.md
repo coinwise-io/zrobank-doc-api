@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/pix/keys/params/GetUsersPixK
 
 Get a list of user's pix keys, **except for canceled keys**
 
-<RequestComponent headerParams={headerParams} endpoint="/pix/keys" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} endpoint="/pix/keys" method="get">
 
 ### Header
 

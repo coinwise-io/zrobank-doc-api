@@ -11,9 +11,10 @@ import headerParams from '@site/docs/caas/endpoints/conversion/params/GetQuotati
 
 Enter the conversion's ID and execute to get its related quotation
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/otc/conversions/" endpointComplement="/quotations" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/#/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/otc/conversions/" endpointComplement="/quotations" method="get">
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |

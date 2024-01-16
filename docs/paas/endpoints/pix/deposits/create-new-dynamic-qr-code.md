@@ -11,9 +11,10 @@ import bodyParam from '@site/docs/paas/endpoints/pix/deposits/params/CreateNewDy
 
 Enter the PIX billing information on the requisition body below and execute to get a new dynamic QR Code.
 
-<RequestComponent headerParams={headerParams} bodyParam={bodyParam} endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParam={bodyParam} endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
 
 ### Header
 

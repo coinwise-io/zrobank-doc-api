@@ -12,9 +12,11 @@ import bodyParams from '@site/docs/gateway/endpoints/qr-codes/params/GenerateNew
 
 Generates a new dynamic QR code for an individual order or for multiple orders at once. The orders must be specified in an array of objects. For a single order, the array will be composed by one single object. For multiple orders, the array will be composed by multiple objects.
 
+
+## Request
+
 <RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true} hasOrderFeeProp={true}>
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 ### Header
 | Title                                | Type       | Description    |
 | ------------------------------------ | :---------:|--------------- |

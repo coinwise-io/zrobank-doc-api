@@ -12,9 +12,10 @@ import pathParam from '@site/docs/paas/endpoints/pix/deposits/params/GetDynamicQ
 
 Enter the pix dinamic QR code's ID below and execute to get its state and all information
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
 
 ### Header
 

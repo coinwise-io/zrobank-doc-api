@@ -12,9 +12,10 @@ import pathParam from '@site/docs/paas/endpoints/pix/keys/params/DeletePixKeyByI
 
 Enter the user's pix key ID below and execute to delete it. After deleted, the returned pix key's state will be DELETING.
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="delete">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="delete">
 
 ### Header
 

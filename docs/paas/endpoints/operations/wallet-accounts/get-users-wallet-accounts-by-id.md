@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/wallet-accounts/p
 
 Get a user's wallet account by id
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallet-accounts/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallet-accounts/" method="get">
 
 ### Header
 

@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from "react";
-import { AddOrderButton, BodyBox, ButtonsContainer, CancelButton, ClearButton, Container, ContainerAllParams, ContainerOrder, ContainerParams, ExecuteButton, HeaderBox, ParamsTitle, RequestContainer, ResetButton, ResponseCodeDescriptionBox, ResponseContainer, ResponseHeader, Spinner } from "./style.ts";
+import { AddOrderButton, BodyBox, ButtonsContainer, CancelButton, ClearButton, Container, ContainerAllParams, ContainerOrder, ContainerParams, ExecuteButton, HeaderBox, ParamsTitle, RemoveOrderButton, RequestContainer, ResetButton, ResponseCodeDescriptionBox, ResponseContainer, ResponseHeader, Spinner } from "./style.ts";
 import TryItOutButtonComponent from "../TryItOutButton/index.tsx";
 import CustomInput from "../CustomInput/index.tsx";
 import { useAccessTokenStore } from "@site/src/store/useAccessTokenStore.ts";
@@ -51,7 +51,7 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
   const [statusDescription, setStatusDescription] = useState<string>("")
 
   const {register, handleSubmit, reset, control} = useForm()
-  const {fields: orders, append: addNewOrder, remove: removeNewOrder} = useFieldArray({name: "orders", control})
+  const {fields: orders, append: addNewOrder, remove: removeOrder} = useFieldArray({name: "orders", control})
 
   const isAuthEndpoint = endpoint?.split("/").includes("auth");
 
@@ -163,6 +163,7 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
           <ParamsTitle>Orders</ParamsTitle>
         <ContainerParams>
           {orders.map((order, index) => (<ContainerOrder>
+            <RemoveOrderButton onClick={() => removeOrder(Number(order.id))}>Remove</RemoveOrderButton>
             {hasOrderFeeProp && <CustomInput isRequired={true} placeholder="fee" register={register(`body.orders.${index}.fee`, {required: true})} title="fee" type="number" key={`order-fee-${order.id}`} />}
             <CustomInput isRequired={true} placeholder="value" register={register(`body.orders.${index}.value`, {required: true})} title="value" type="number" key={`order-value-${order.id}`} />
             <CustomInput isRequired={true} placeholder="company_identifier" register={register(`body.orders.${index}.company_identifier`, {required: true})} title="company_identifier" type="string" key={`order-company_identifier-${order.id}`} />

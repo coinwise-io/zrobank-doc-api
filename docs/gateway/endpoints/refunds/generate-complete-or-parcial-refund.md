@@ -16,10 +16,11 @@ Generates a new complete or a partial refund.
 - **For multiple orders, the array will be composed by multiple objects**
 - **For complete refund, orders is not required**
 
+
+
+## Request
+
 <RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true}>
-
-
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 
 ### Header
 | Title                                | Type       | Description    |

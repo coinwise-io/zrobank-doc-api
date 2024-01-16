@@ -12,10 +12,10 @@ import pathParam from '@site/docs/gateway/endpoints/withdrawals/params/SearchWit
 
 Returns the found withdrawal transaction data.
 
+
+## Request
+
 <RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/api/withdraws/" endpointComplement="/status" method="get">
-
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
-
 
 ### Header
 | Title                                | Type       | Description    |

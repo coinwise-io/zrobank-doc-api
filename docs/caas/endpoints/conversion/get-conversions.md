@@ -11,9 +11,10 @@ import headerParams from '@site/docs/caas/endpoints/conversion/params/GetConvers
 
 Get a list of user's conversions. You can include any of the filter parameters below to refine your search.
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v3/otc/conversions" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v3/otc/conversions" method="get">
 
 ### Header
 

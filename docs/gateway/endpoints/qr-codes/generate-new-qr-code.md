@@ -12,9 +12,10 @@ import bodyParams from '@site/docs/gateway/endpoints/qr-codes/params/GenerateNew
 
 Generates a new dynamic QR Code.
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_qr_code_pix" method="post">
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+## Request
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_qr_code_pix" method="post">
 
 ### Header
 

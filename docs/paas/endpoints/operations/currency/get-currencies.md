@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/currency/params/G
 
 Get a list of all available and tradable currencies. You can include any of the filter parameters below to refine your search.
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations/currencies" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations/currencies" method="get">
 
 ### Header
 

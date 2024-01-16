@@ -15,9 +15,10 @@ Only available for **development environment**
 
 Update the status of a transaction to trigger the receipt of webhooks for testing purposes.
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction" method="put">
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+## Request
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction" method="put">
 
 ### Header
 | Title                                | Type       | Description    |

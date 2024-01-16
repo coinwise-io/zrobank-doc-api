@@ -8,9 +8,10 @@ import headerParams from '@site/docs/caas/endpoints/conversion/params/GetUsersCr
 | GET       | /v2/otc/conversions/credit-balance |
 | --------- | ---------------------------------- |
 
-<RequestComponent headerParams={headerParams} endpoint="/v2/otc/conversions/credit-balance" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/#/" class="try-btn">Try it!</a>
+## Request
+
+<RequestComponent headerParams={headerParams} endpoint="/v2/otc/conversions/credit-balance" method="get">
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |

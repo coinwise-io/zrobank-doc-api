@@ -11,9 +11,11 @@ import pathParam from '@site/docs/gateway/endpoints/transactions/params/SearchBy
 
 Returns the found transaction data.
 
+
+## Request
+
 <RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
 ### Header
 
 | Title                                | Type       | Description    |

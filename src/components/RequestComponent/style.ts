@@ -199,6 +199,32 @@ margin-top: 2rem;
   text-decoration: none;
 }
 `
+
+export const RemoveOrderButton = styled.button`
+width: 8rem;
+height: 2.25rem;
+color: rgba(84, 183, 232, 1);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+border: none;
+background: transparent;
+border-color: transparent;
+font-family: "Kanit Medium";
+border-radius: 1rem;
+cursor: pointer;
+font-size: 0.875rem;
+margin-top: 1rem;
+position: absolute;
+right: 0;
+top: 0;
+
+&:hover {
+  text-decoration: none;
+}
+`
+
 export const ContainerOrder = styled.div`
 display: flex;
 flex-direction: column;
@@ -206,5 +232,5 @@ padding: 1rem;
 gap: 1rem;
 border: 1px solid rgba(199, 234, 255, 0.25);
 border-radius: 1rem;
-
+position: relative;
 `

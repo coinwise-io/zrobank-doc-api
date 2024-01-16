@@ -15,9 +15,10 @@ Transfer funds from one wallet to another within your organization **(Master Acc
 If you leave the `x-wallet-uuid` param empty, your default wallet will be settled.
 :::
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/operations/p2p-transfers" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/operations/p2p-transfers" method="post">
 
 ### Header
 

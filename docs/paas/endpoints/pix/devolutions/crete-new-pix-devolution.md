@@ -11,9 +11,10 @@ import bodyParams from '@site/docs/paas/endpoints/pix/devolutions/params/CreateN
 
 Enter the PIX devolution's information to create a new pix devolution.
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/devolutions" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/devolutions" method="post">
 
 ### Header
 

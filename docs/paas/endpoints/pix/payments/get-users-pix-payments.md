@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/pix/payments/params/GetUsers
 
 Enter the PIX payment's ID below and execute to get it's state and all information.
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v4/pix/payments" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v4/pix/payments" method="get">
 
 ### Header
 

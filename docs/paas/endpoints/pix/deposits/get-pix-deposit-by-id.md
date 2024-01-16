@@ -12,9 +12,10 @@ import pathParam from '@site/docs/paas/endpoints/pix/deposits/params/GetPixDepos
 
 Enter the PIX deposit's ID below and execute to get it's state and all information.
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v2/pix/deposits/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v2/pix/deposits/" method="get">
 
 ### Header
 

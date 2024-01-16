@@ -12,9 +12,10 @@ import filterParams from '@site/docs/paas/endpoints/pix/deposits/params/GetUsers
 
 Get a list of user's pix deposits. You can include any of the filter parameters below to refine your search.
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v4/pix/deposits" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v4/pix/deposits" method="get">
 
 ### Header
 

@@ -28,9 +28,10 @@ Set key to do not be shown anymore. The key state will be changed to: **CLAIM_PE
 
 Returns user's pix key which state is **CLAIM_PENDING, CANCELED or READY**
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" endpointComplement="/dismiss" method="post">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" endpointComplement="/dismiss" method="post">
 
 ### Header
 

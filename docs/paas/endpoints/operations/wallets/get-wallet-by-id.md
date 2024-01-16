@@ -12,9 +12,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/Up
 
 Enter the wallet's ID and execute to get it's state and all information
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallets/" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallets/" method="get">
 
 ### Header
 

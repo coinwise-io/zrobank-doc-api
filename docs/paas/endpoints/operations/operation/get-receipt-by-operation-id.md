@@ -11,9 +11,10 @@ import headerParams from '@site/docs/paas/endpoints/operations/operation/params/
 
 Get receipt by it's operation ID
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/" endpointComplement="/receipt" method="get">
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/" endpointComplement="/receipt" method="get">
 
 ### Header
 
