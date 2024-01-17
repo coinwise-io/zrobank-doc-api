@@ -7,7 +7,7 @@ import axios from "axios";
 import { useFieldArray, useForm } from "react-hook-form";
 import ReactJson from 'react-json-view'
 import { BASE_URL } from "@site/src/config/index.ts";
-import { title } from "@site/docusaurus.config.js";
+
 
 enum Method {
   GET = "get",
