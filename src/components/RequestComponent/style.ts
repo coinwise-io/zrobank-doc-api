@@ -234,3 +234,34 @@ border: 1px solid rgba(199, 234, 255, 0.25);
 border-radius: 1rem;
 position: relative;
 `
+
+export const AuthorizedFlagBox = styled.div`
+display: flex;
+width: fit-content;
+padding: .5rem;
+height: fit-content;
+gap: 1rem;
+border: 1px solid green;
+border-radius: 1rem;
+position: relative;
+margin-right: 1rem;
+color: green;
+`
+export const UnauthorizedFlagBox = styled.div`
+display: flex;
+width: fit-content;
+padding: .5rem;
+height: fit-content;
+gap: 1rem;
+border: 1px solid red;
+border-radius: 1rem;
+position: relative;
+margin-right: 1rem;
+color: red;
+`
+
+export const AuthStatusBox = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+`
