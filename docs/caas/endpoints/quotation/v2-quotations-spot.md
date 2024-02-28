@@ -17,7 +17,7 @@ To create a new currency conversion, first, you need to create a **Quotation ID*
 
 | Title                      | Type       | Properties                       | Description |
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
-| nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
+| nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID   used to uniquely identify the requisition. All requisitions must have an identifier|
 :small_orange_diamond: *Required parameters on header*
 
 ### Query Parameters
