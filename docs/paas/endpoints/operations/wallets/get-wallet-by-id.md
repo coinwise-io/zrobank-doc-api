@@ -16,7 +16,7 @@ Enter the wallet's ID and execute to get it's state and all information
 
 | Title                      | Type       | Properties                       | Description |
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
-| nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
+| nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID  used to uniquely identify the requisition. All requisitions must have an identifier|
 :small_orange_diamond: *Required parameters on header*
 
 ### Filter Parameters

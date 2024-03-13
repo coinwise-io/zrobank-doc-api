@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |
 | ---------------------------------------- | :---------:|--------------------|:--------------: |-------------------------------------------------------------------------------------------------------------------------------------- |
-| nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier                       |
+| nonce:small_orange_diamond:              | STRING     | Must be a **UUID** | -               | The nonce ID is a UUID  used to uniquely identify the requisition. All requisitions must have an identifier                       |
 :small_orange_diamond: *Required parameters on header*
 
 <Tabs>
