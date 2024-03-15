@@ -15,7 +15,7 @@ Enter the user's pix key ID below and execute to delete it. After deleted, the r
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="delete">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/keys/" method="delete">
 
 ### Header
 

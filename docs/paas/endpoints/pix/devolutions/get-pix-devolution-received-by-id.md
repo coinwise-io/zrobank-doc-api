@@ -15,7 +15,7 @@ Enter the received pix devolution's ID below and execute to get it's state and a
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/devolutions-received/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/v3/pix/devolutions-received/" method="get">
 
 ### Header
 

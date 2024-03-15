@@ -14,7 +14,7 @@ Enter the PIX devolution's information to create a new pix devolution.
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/devolutions" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/devolutions" method="post">
 
 ### Header
 

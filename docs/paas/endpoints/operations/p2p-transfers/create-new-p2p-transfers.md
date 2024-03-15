@@ -18,7 +18,7 @@ If you leave the `x-wallet-uuid` param empty, your default wallet will be settle
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/operations/p2p-transfers" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/p2p-transfers" method="post">
 
 ### Header
 

@@ -15,7 +15,7 @@ Enter the wallet's ID and execute to get it's state and all information
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallets/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets/" method="get">
 
 ### Header
 

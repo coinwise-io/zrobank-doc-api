@@ -10,7 +10,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "ZroBank",
+  title: "Z.ro Bank",
   tagline: "Documentation",
   favicon: "img/favicon.ico",
   url: "https://github.com",

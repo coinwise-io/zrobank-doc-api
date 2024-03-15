@@ -14,7 +14,7 @@ To create a new pix payment by a bank account, first you need to create a Decode
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payments/by-account/instant-billing" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/payments/by-account/instant-billing" method="post">
 
 ### Header
 

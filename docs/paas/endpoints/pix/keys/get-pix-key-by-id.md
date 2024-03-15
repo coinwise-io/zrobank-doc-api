@@ -19,7 +19,7 @@ Canceled keys are not returned **(422 error will be sent)**
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/keys/" method="get">
 
 ### Header
 

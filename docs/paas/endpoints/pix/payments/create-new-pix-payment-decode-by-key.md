@@ -15,7 +15,7 @@ Enter the pix key's information on the requisition body below and execute to get
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/pix/payment/decode/by-key" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/payment/decode/by-key" method="get">
 
 ### Header
 

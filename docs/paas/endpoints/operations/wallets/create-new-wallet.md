@@ -14,7 +14,7 @@ To create a new wallet with optional wallet name
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/operations/wallets" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets" method="post">
 
 ### Header
 

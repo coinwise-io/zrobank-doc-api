@@ -14,7 +14,7 @@ Get a list of user's operations
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations" method="get">
 
 ### Header
 

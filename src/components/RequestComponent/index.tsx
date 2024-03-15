@@ -2,11 +2,13 @@ import React, { ReactNode, useState } from "react";
 import { AddOrderButton, AuthorizedFlagBox,  AuthStatusBox, BodyBox, ButtonsContainer, CancelButton, ClearButton, Container, ContainerAllParams, ContainerOrder, ContainerParams, ExecuteButton, HeaderBox, ParamsTitle, RemoveOrderButton, RequestContainer, ResetButton, ResponseCodeDescriptionBox, ResponseContainer, ResponseHeader, Spinner, UnauthorizedFlagBox } from "./style.ts";
 import TryItOutButtonComponent from "../TryItOutButton/index.tsx";
 import CustomInput from "../CustomInput/index.tsx";
-import { useAccessTokenStore } from "@site/src/store/useAccessTokenStore.ts";
+import { ContextEnum, useAccessTokenStore } from "@site/src/store/useAccessTokenStore.ts";
 import axios from "axios";
 import { useFieldArray, useForm } from "react-hook-form";
 import ReactJson from 'react-json-view'
 import { BASE_URL } from "@site/src/config/index.ts";
+import { AuthTag } from "../AuthTag/AuthTag.tsx";
+
 
 
 enum Method {
@@ -31,6 +33,7 @@ type OrderType = {
 
 type RequestComponentProps = {
 children: ReactNode;
+baseUrl: string;
 method: Method;
 endpoint: string;
 endpointComplement?: string;
@@ -40,11 +43,12 @@ bodyParams?: Array<ParamsType>
 filterParams?: Array<ParamsType>
 hasOrdersProp?: boolean;
 hasOrderFeeProp?: boolean;
+isPublic?: boolean;
 }
 
-export default function RequestComponent ({children, bodyParams, headerParams, filterParams, method, pathParam, endpoint, endpointComplement = "", hasOrdersProp = false, hasOrderFeeProp = false }: RequestComponentProps){
+export default function RequestComponent ({children, bodyParams, headerParams, filterParams, method, pathParam, endpoint, endpointComplement = "", hasOrdersProp = false, hasOrderFeeProp = false, baseUrl, isPublic = false }: RequestComponentProps){
   const [active, setActive] = useState(false);
-  const [accessToken, setAccess, clearAccess] = useAccessTokenStore((state) => [state.accessToken, state.setAccess, state.clearAccess])
+  const [accessTokenList, setAccess] = useAccessTokenStore((state) => [state.accessTokenList, state.setAccess,])
   const [isLoading, setIsLoading] = useState(false);
   const [responseView, setResponseView] = useState<any>({});
   const [codeResponse, setCodeResponse] = useState<number>();
@@ -56,6 +60,12 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
   const isAuthEndpoint = endpoint?.split("/").includes("auth");
 
   const hasData = Object.keys(responseView).length !== 0;
+
+  const isPaas = baseUrl.includes("paas");
+
+  const currentAccessToken = isPaas ? accessTokenList.paas : accessTokenList.caas
+
+  const hasAccessToken = Object.values(accessTokenList).filter((token) => token.length !== 0).length !== 0
 
   const onSubmitFn = async (data) => {
     setIsLoading(true)
@@ -72,19 +82,19 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
       }
       , "") : "";
 
-      const finalEndpointToRequest = `${endpoint}${(pathParam ? data.path[pathParam.title] : "")}${endpointComplement}${filterParamsString}`
+      const finalEndpointToRequest = `${baseUrl}/${endpoint}${(pathParam ? data.path[pathParam.title] : "")}${endpointComplement}${filterParamsString}`
 
       const response = await axios({
         method: method,
-        url: `${BASE_URL}${finalEndpointToRequest}`,
-        headers: { 'Content-Type': 'application/json', "access_token": "", ...(accessToken && {Authorization: accessToken}), ...data.header},
+        url: `${finalEndpointToRequest}`,
+        headers: { 'Content-Type': 'application/json', "access_token": "", ...(hasAccessToken && {Authorization: currentAccessToken}), ...data.header},
         data: data.body
       })
       setResponseView(response.data.data)
       setCodeResponse(response.status)
       setStatusDescription(response.statusText)
       if(isAuthEndpoint){
-        setAccess(response.data.data.access_token)
+        setAccess(response.data.data.access_token, isPaas ? ContextEnum.PAAS : ContextEnum.CAAS)
       }
       setIsLoading(false);
     } catch (e) {
@@ -109,12 +119,7 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
       {active && <RequestContainer id="request-component">
         <AuthStatusBox>
         <h2>Params</h2>
-        {accessToken ? <AuthorizedFlagBox>
-          <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg> Authorized</AuthorizedFlagBox> : <UnauthorizedFlagBox><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M16.584 6C15.8124 4.2341 14.0503 3 12 3C9.23858 3 7 5.23858 7 8V10.0288M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V16.2C20 17.8802 20 18.7202 19.673 19.362C19.3854 19.9265 18.9265 20.3854 18.362 20.673C17.7202 21 16.8802 21 15.2 21H8.8C7.11984 21 6.27976 21 5.63803 20.673C5.07354 20.3854 4.6146 19.9265 4.32698 19.362C4 18.7202 4 17.8802 4 16.2V14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C5.99429 10.1455 6.41168 10.0647 7 10.0288Z" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>Unauthorized</UnauthorizedFlagBox>}
+        {!isPublic && (<AuthTag accessToken={currentAccessToken }/>)}
         </AuthStatusBox>
         <BodyBox>
           <ContainerAllParams>

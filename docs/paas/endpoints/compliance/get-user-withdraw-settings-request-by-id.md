@@ -15,7 +15,7 @@ Endpoint to user get a withdraw settings request by id.
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/withdraw-settings-request/" method="get">
+<RequestComponent headerParams={headerParams} baseUrl="https://paas.zrobank.xyz" pathParam={pathParam} endpoint="/withdraw-settings-request/" method="get">
 
 ### Header
 

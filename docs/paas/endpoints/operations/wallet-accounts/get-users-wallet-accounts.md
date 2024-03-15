@@ -15,7 +15,7 @@ Get a list of user's wallet accounts. You can include any of the filter paramete
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations/wallet-accounts" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallet-accounts" method="get">
 
 ### Header
 

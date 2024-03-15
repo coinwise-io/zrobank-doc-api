@@ -12,7 +12,7 @@ import bodyParams from '@site/docs/paas/endpoints/auth/params/AuthSigninParams/b
 
 Enter your API ID and API Key on the requisition body and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
 
-<RequestComponent bodyParams={bodyParams} endpoint="/auth/signin" method="post">
+<RequestComponent bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/auth/signin" method="post">
 
 ## Request
 

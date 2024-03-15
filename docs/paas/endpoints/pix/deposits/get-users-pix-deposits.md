@@ -15,7 +15,7 @@ Get a list of user's pix deposits. You can include any of the filter parameters 
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v4/pix/deposits" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/v4/pix/deposits" method="get">
 
 ### Header
 

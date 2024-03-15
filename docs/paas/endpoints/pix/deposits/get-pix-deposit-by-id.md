@@ -15,7 +15,7 @@ Enter the PIX deposit's ID below and execute to get it's state and all informati
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v2/pix/deposits/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/v2/pix/deposits/" method="get">
 
 ### Header
 

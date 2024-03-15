@@ -31,7 +31,7 @@ Returns user's pix key which state is **CLAIM_PENDING, CANCELED or READY**
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" endpointComplement="/dismiss" method="post">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" baseUrl="https://paas.zrobank.xyz" endpointComplement="/dismiss" method="post">
 
 ### Header
 

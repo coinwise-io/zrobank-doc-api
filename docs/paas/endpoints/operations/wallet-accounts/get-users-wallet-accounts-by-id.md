@@ -15,7 +15,7 @@ Get a user's wallet account by id
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/wallet-accounts/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallet-accounts/" method="get">
 
 ### Header
 

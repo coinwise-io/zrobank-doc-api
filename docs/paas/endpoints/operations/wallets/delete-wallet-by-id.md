@@ -15,7 +15,7 @@ Delete a wallet
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} endpoint="/operations/wallets/" method="delete">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets/" method="delete">
 
 ### Header
 

@@ -14,7 +14,7 @@ Enter the bank account's information on the requisition body below and execute t
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payment/decode/by-account" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/payment/decode/by-account" method="post">
 
 ### Header
 

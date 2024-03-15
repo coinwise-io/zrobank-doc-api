@@ -14,7 +14,7 @@ Get receipt by it's operation ID
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/operations/" endpointComplement="/receipt" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/" endpointComplement="/receipt" method="get">
 
 ### Header
 

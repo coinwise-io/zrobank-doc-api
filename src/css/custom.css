@@ -71,10 +71,6 @@ code {
   background-color: #142032;
 }
 
-.main-wrapper {
- background: linear-gradient(180deg, #252F59 0%, #020305 100%) !important;
-}
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: #54b7e8;

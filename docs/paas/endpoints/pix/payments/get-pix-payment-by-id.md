@@ -15,7 +15,7 @@ Enter the pix payment's ID and execute to get it's state and all information.
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParams} endpoint="/v3/pix/payments/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParams} baseUrl="https://paas.zrobank.xyz" endpoint="/v3/pix/payments/" method="get">
 
 ### Header
 

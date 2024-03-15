@@ -14,7 +14,7 @@ Enter the PIX billing information on the requisition body below and execute to g
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParam={bodyParam} endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
+<RequestComponent headerParams={headerParams} bodyParam={bodyParam} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
 
 ### Header
 

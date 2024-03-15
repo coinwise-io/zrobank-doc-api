@@ -14,7 +14,7 @@ Get a list of user's pix keys, **except for canceled keys**
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} endpoint="/pix/keys" method="get">
+<RequestComponent headerParams={headerParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/keys" method="get">
 
 ### Header
 

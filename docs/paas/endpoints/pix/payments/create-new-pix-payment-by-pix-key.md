@@ -14,7 +14,7 @@ To create a new pix payment by a pix key, first you need to create a decoded PIX
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/pix/payments/by-key/instant-billing" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/payments/by-key/instant-billing" method="post">
 
 ### Header
 

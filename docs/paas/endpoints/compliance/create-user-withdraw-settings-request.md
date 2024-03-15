@@ -14,7 +14,7 @@ Endpoint to user create a withdraw settings request
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/withdraw-settings-request" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/withdraw-settings-request" method="post">
 
 ### Header
 

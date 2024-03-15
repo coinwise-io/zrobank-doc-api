@@ -15,7 +15,7 @@ Enter the pix dinamic QR code's ID below and execute to get its state and all in
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
 
 ### Header
 

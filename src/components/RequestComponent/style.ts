@@ -246,6 +246,7 @@ border-radius: 1rem;
 position: relative;
 margin-right: 1rem;
 color: green;
+background-color: "#FFF";
 `
 export const UnauthorizedFlagBox = styled.div`
 display: flex;
@@ -258,6 +259,7 @@ border-radius: 1rem;
 position: relative;
 margin-right: 1rem;
 color: red;
+background-color: "#FFF";
 `
 
 export const AuthStatusBox = styled.div`

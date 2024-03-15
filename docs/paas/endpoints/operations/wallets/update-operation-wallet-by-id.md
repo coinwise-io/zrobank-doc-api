@@ -15,7 +15,7 @@ To update a wallet name with new one
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} endpoint="/operations/wallets/" method="put">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets/" method="put">
 
 ### Header
 

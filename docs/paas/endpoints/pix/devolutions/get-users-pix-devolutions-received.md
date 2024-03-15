@@ -15,7 +15,7 @@ Get a list of user's received PIX devolutions. You can include any of the filter
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v3/pix/devolutions-received" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/v3/pix/devolutions-received" method="get">
 
 ### Header
 

@@ -13,7 +13,7 @@ Create a new EVP key type (random key) to the user
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} endpoint="/pix/keys" method="post">
+<RequestComponent headerParams={headerParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/keys" method="post">
 
 ### Header
 

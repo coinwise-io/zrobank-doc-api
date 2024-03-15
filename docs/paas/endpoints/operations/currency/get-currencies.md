@@ -15,7 +15,7 @@ Get a list of all available and tradable currencies. You can include any of the 
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/operations/currencies" method="get">
+<RequestComponent headerParams={headerParams} baseUrl="https://paas.zrobank.xyz" filterParams={filterParams} endpoint="/operations/currencies" method="get">
 
 ### Header
 
