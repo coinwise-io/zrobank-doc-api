@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import bodyParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByPixKey/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByPixKey/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Create new PIX payment by PIX key
 
@@ -14,7 +15,7 @@ To create a new pix payment by a pix key, first you need to create a decoded PIX
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/payments/by-key/instant-billing" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/pix/payments/by-key/instant-billing" method="post">
 
 ### Header
 

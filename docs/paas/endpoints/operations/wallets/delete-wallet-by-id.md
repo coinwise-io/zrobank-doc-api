@@ -4,6 +4,7 @@ import RequestComponent from '@site/src/components/RequestComponent'
 import pathParam from '@site/docs/paas/endpoints/operations/wallets/params/DeleteWalletById/pathParams.ts'
 import bodyParams from '@site/docs/paas/endpoints/operations/wallets/params/DeleteWalletById/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/DeleteWalletById/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Delete wallet
 
@@ -15,7 +16,7 @@ Delete a wallet
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets/" method="delete">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/operations/wallets/" method="delete">
 
 ### Header
 

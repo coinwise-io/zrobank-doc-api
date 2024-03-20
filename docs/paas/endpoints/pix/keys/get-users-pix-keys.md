@@ -2,6 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/keys/params/GetUsersPixKeys/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # List user's PIX keys
 
@@ -14,7 +15,7 @@ Get a list of user's pix keys, **except for canceled keys**
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/keys" method="get">
+<RequestComponent headerParams={headerParams} baseUrl={BASE_URL.paas} endpoint="/pix/keys" method="get">
 
 ### Header
 

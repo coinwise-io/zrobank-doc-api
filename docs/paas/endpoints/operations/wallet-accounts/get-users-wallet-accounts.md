@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import filterParams from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccounts/filterParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccounts/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # List user's wallet accounts
 
@@ -15,7 +16,7 @@ Get a list of user's wallet accounts. You can include any of the filter paramete
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallet-accounts" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl={BASE_URL.paas} endpoint="/operations/wallet-accounts" method="get">
 
 ### Header
 

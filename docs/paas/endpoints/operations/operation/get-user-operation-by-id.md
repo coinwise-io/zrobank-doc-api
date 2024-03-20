@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import pathParam from '@site/docs/paas/endpoints/operations/operation/params/GetUserOperationById/pathParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/operation/params/GetUserOperationById/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Get user's operation by ID
 
@@ -14,7 +15,7 @@ Get user's operation
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/operations/" method="get">
 
 ### Header
 

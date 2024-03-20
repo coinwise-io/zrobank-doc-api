@@ -4,6 +4,7 @@ import RequestComponent from '@site/src/components/RequestComponent'
 import pathParam from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/pathParams.ts'
 import bodyParams from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Update wallet data
 
@@ -15,7 +16,7 @@ To update a wallet name with new one
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets/" method="put">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/operations/wallets/" method="put">
 
 ### Header
 

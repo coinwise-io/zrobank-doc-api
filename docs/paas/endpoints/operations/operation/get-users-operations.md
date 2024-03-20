@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import filterParams from '@site/docs/paas/endpoints/operations/operation/params/GetUsersOperations/filterParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/operation/params/GetUsersOperations/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # List user's operations
 
@@ -14,7 +15,7 @@ Get a list of user's operations
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl={BASE_URL.paas} endpoint="/operations" method="get">
 
 ### Header
 

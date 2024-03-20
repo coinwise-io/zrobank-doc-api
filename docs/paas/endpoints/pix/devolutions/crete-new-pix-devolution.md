@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/devolutions/params/CreateNewPixDevolution/headerParams.ts'
 import bodyParams from '@site/docs/paas/endpoints/pix/devolutions/params/CreateNewPixDevolution/bodyParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Create new PIX devolution
 
@@ -14,7 +15,7 @@ Enter the PIX devolution's information to create a new pix devolution.
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/devolutions" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/pix/devolutions" method="post">
 
 ### Header
 

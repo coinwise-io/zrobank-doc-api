@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import bodyParams from '@site/docs/paas/endpoints/operations/wallets/params/CreateNewWallet/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/CreateNewWallet/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Create new wallet
 
@@ -14,7 +15,7 @@ To create a new wallet with optional wallet name
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/operations/wallets" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/operations/wallets" method="post">
 
 ### Header
 

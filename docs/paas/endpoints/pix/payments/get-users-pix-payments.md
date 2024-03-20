@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import filterParams from '@site/docs/paas/endpoints/pix/payments/params/GetUsersPixPayments/filterParams.ts'
 import headerParams from '@site/docs/paas/endpoints/pix/payments/params/GetUsersPixPayments/headerParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # List user's PIX payments
 
@@ -15,7 +16,7 @@ Enter the PIX payment's ID below and execute to get it's state and all informati
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl="https://paas.zrobank.xyz" endpoint="/v4/pix/payments" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl={BASE_URL.paas} endpoint="/v4/pix/payments" method="get">
 
 ### Header
 

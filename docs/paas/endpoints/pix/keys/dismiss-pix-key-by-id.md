@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/keys/params/DismissPixKeyById/headerParams.ts'
 import pathParam from '@site/docs/paas/endpoints/pix/keys/params/DismissPixKeyById/pathParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Dismiss PIX key by ID
 
@@ -31,7 +32,7 @@ Returns user's pix key which state is **CLAIM_PENDING, CANCELED or READY**
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" baseUrl="https://paas.zrobank.xyz" endpointComplement="/dismiss" method="post">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/pix/keys/" baseUrl={BASE_URL.paas} endpointComplement="/dismiss" method="post">
 
 ### Header
 

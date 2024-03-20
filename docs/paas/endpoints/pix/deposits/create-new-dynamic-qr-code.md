@@ -3,6 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/CreateNewDynamicQrCode/headerParams.ts'
 import bodyParam from '@site/docs/paas/endpoints/pix/deposits/params/CreateNewDynamicQrCode/bodyParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Create new dynamic QrCode
 
@@ -14,7 +15,7 @@ Enter the PIX billing information on the requisition body below and execute to g
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParam={bodyParam} baseUrl="https://paas.zrobank.xyz" endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
+<RequestComponent headerParams={headerParams} bodyParam={bodyParam} baseUrl={BASE_URL.paas} endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
 
 ### Header
 

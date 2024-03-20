@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://paas.zrobank.xyz'
+export const BASE_URL = {paas: 'https://paas.zrobank.xyz'}

@@ -2,6 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import bodyParams from '@site/docs/paas/endpoints/auth/params/AuthSigninParams/bodyParams.ts'
+import BASE_URL from "@site/src/config/index.ts"
 
 # Create an access token
 
@@ -12,7 +13,7 @@ import bodyParams from '@site/docs/paas/endpoints/auth/params/AuthSigninParams/b
 
 Enter your API ID and API Key on the requisition body and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
 
-<RequestComponent bodyParams={bodyParams} baseUrl="https://paas.zrobank.xyz" endpoint="/auth/signin" method="post">
+<RequestComponent bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/auth/signin" method="post">
 
 ## Request
 
