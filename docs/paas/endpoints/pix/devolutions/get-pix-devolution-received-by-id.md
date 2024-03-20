@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetPixDevolutionReceivedById/headerParams.ts'
 import pathParam from '@site/docs/paas/endpoints/pix/devolutions/params/GetPixDevolutionReceivedById/pathParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get received PIX devolution by ID
 
@@ -16,7 +16,7 @@ Enter the received pix devolution's ID below and execute to get it's state and a
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/v3/pix/devolutions-received/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/v3/pix/devolutions-received/" method="get">
 
 ### Header
 

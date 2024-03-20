@@ -3,7 +3,6 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/GetUsersPixDeposits/headerParams.ts'
 import filterParams from '@site/docs/paas/endpoints/pix/deposits/params/GetUsersPixDeposits/filterParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
 
 # List user's PIX deposits
 
@@ -16,7 +15,7 @@ Get a list of user's pix deposits. You can include any of the filter parameters 
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl={BASE_URL.paas} endpoint="/v4/pix/deposits" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/v4/pix/deposits" method="get">
 
 ### Header
 

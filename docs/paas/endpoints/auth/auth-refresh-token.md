@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/auth/params/AuthRefreshTokenParams/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Refresh token
 
@@ -11,7 +11,7 @@ import BASE_URL from "@site/src/config/index.ts"
 
 User should inform authorization old access token in header and a new access token will be generated.
 
-<RequestComponent headerParams={headerParams} baseUrl={BASE_URL.paas} endpoint="/auth/refresh-token" method="post">
+<RequestComponent headerParams={headerParams} selectorBaseUrl="paas" endpoint="/auth/refresh-token" method="post">
 
 ## Request
 

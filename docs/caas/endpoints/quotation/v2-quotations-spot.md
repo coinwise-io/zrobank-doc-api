@@ -14,7 +14,7 @@ To create a new currency conversion, first, you need to create a **Quotation ID*
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v2/quotations/spot" method="get">
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} filterParams={filterParams} endpoint="/v2/quotations/spot" method="get">
 
 ### Header
 

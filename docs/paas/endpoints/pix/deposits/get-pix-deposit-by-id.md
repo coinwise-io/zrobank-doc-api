@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/GetPixDepositById/headerParams.ts'
 import pathParam from '@site/docs/paas/endpoints/pix/deposits/params/GetPixDepositById/pathParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get PIX deposit by ID
 
@@ -16,7 +16,7 @@ Enter the PIX deposit's ID below and execute to get it's state and all informati
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/v2/pix/deposits/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/v2/pix/deposits/" method="get">
 
 ### Header
 

@@ -1,14 +1,13 @@
 import React, { ReactNode, useState } from "react";
-import { AddOrderButton, AuthorizedFlagBox,  AuthStatusBox, BodyBox, ButtonsContainer, CancelButton, ClearButton, Container, ContainerAllParams, ContainerOrder, ContainerParams, ExecuteButton, HeaderBox, ParamsTitle, RemoveOrderButton, RequestContainer, ResetButton, ResponseCodeDescriptionBox, ResponseContainer, ResponseHeader, Spinner, UnauthorizedFlagBox } from "./style.ts";
+import { AddOrderButton, AuthStatusBox, BodyBox, ButtonsContainer, CancelButton, ClearButton, Container, ContainerAllParams, ContainerOrder, ContainerParams, ExecuteButton, HeaderBox, ParamsTitle, RemoveOrderButton, RequestContainer, ResetButton, ResponseCodeDescriptionBox, ResponseContainer, ResponseHeader, Spinner } from "./style.ts";
 import TryItOutButtonComponent from "../TryItOutButton/index.tsx";
 import CustomInput from "../CustomInput/index.tsx";
-import { ContextEnum, useAccessTokenStore } from "@site/src/store/useAccessTokenStore.ts";
+import { useAccessTokenStore } from "@site/src/store/useAccessTokenStore.ts";
 import axios from "axios";
 import { useFieldArray, useForm } from "react-hook-form";
 import ReactJson from 'react-json-view'
 import { BASE_URL } from "@site/src/config/index.ts";
 import { AuthTag } from "../AuthTag/AuthTag.tsx";
-
 
 
 enum Method {
@@ -25,15 +24,9 @@ type ParamsType = {
   isRequired: boolean;
 }
 
-type OrderType = {
-  fee?: number,
-  value: number,
-  "company_identifier": string;
-}
-
 type RequestComponentProps = {
 children: ReactNode;
-baseUrl: string;
+selectorBaseUrl: string;
 method: Method;
 endpoint: string;
 endpointComplement?: string;
@@ -46,7 +39,7 @@ hasOrderFeeProp?: boolean;
 isPublic?: boolean;
 }
 
-export default function RequestComponent ({children, bodyParams, headerParams, filterParams, method, pathParam, endpoint, endpointComplement = "", hasOrdersProp = false, hasOrderFeeProp = false, baseUrl, isPublic = false }: RequestComponentProps){
+export default function RequestComponent ({children, bodyParams, headerParams, filterParams, method, pathParam, endpoint, endpointComplement = "", hasOrdersProp = false, hasOrderFeeProp = false, selectorBaseUrl, isPublic = false }: RequestComponentProps){
   const [active, setActive] = useState(false);
   const [accessTokenList, setAccess] = useAccessTokenStore((state) => [state.accessTokenList, state.setAccess,])
   const [isLoading, setIsLoading] = useState(false);
@@ -61,11 +54,10 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
 
   const hasData = Object.keys(responseView).length !== 0;
 
-  const isPaas = baseUrl.includes("paas");
+  const currentAccessToken = accessTokenList[selectorBaseUrl]
 
-  const currentAccessToken = isPaas ? accessTokenList.paas : accessTokenList.caas
+  const baseUrl = BASE_URL[selectorBaseUrl]
 
-  const hasAccessToken = Object.values(accessTokenList).filter((token) => token.length !== 0).length !== 0
 
   const onSubmitFn = async (data) => {
     setIsLoading(true)
@@ -87,14 +79,14 @@ export default function RequestComponent ({children, bodyParams, headerParams, f
       const response = await axios({
         method: method,
         url: `${finalEndpointToRequest}`,
-        headers: { 'Content-Type': 'application/json', "access_token": "", ...(hasAccessToken && {Authorization: currentAccessToken}), ...data.header},
+        headers: { 'Content-Type': 'application/json', "access_token": "", ...(currentAccessToken && {Authorization: currentAccessToken}), ...data.header},
         data: data.body
       })
       setResponseView(response.data.data)
       setCodeResponse(response.status)
       setStatusDescription(response.statusText)
       if(isAuthEndpoint){
-        setAccess(response.data.data.access_token, isPaas ? ContextEnum.PAAS : ContextEnum.CAAS)
+        setAccess(response.data.data.access_token, selectorBaseUrl);
       }
       setIsLoading(false);
     } catch (e) {

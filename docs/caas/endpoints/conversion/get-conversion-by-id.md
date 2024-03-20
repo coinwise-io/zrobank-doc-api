@@ -14,7 +14,7 @@ Enter the conversion's ID and execute to get all it's information
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/otc/conversions/" method="get">
+<RequestComponent headerParams={headerParams} selectorBaseUrl="caas" pathParam={pathParam} endpoint="/otc/conversions/" method="get">
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |

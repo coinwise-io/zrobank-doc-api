@@ -10,7 +10,7 @@ import headerParams from '@site/docs/caas/endpoints/auth/params/AuthRefreshToken
 
 User should inform authorization old access token in header and a new access token will be generated.
 
-<RequestComponent headerParams={headerParams} endpoint="/auth/refresh-token" method="post">
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} endpoint="/auth/refresh-token" method="post">
 
 ## Request
 

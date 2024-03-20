@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/keys/params/DeletePixKeyById/headerParams.ts'
 import pathParam from '@site/docs/paas/endpoints/pix/keys/params/DeletePixKeyById/pathParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Delete PIX key by ID
 
@@ -16,7 +16,7 @@ Enter the user's pix key ID below and execute to delete it. After deleted, the r
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/pix/keys/" method="delete">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/pix/keys/" method="delete">
 
 ### Header
 

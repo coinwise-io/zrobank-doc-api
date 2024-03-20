@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/keys/params/GetPixKeyById/headerParams.ts'
 import pathParam from '@site/docs/paas/endpoints/pix/keys/params/GetPixKeyById/pathParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get PIX key by ID
 
@@ -20,7 +20,7 @@ Canceled keys are not returned **(422 error will be sent)**
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/pix/keys/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/pix/keys/" method="get">
 
 ### Header
 

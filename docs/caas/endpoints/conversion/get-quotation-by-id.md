@@ -14,7 +14,7 @@ Enter the conversion's ID and execute to get its related quotation
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/otc/conversions/" endpointComplement="/quotations" method="get">
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} pathParam={pathParam} endpoint="/otc/conversions/" endpointComplement="/quotations" method="get">
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |

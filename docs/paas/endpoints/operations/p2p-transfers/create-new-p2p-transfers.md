@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import bodyParams from '@site/docs/paas/endpoints/operations/p2p-transfers/params/CreateNewP2pTransfers/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/p2p-transfers/params/CreateNewP2pTransfers/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Create new P2P transfer
 
@@ -19,7 +19,7 @@ If you leave the `x-wallet-uuid` param empty, your default wallet will be settle
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/operations/p2p-transfers" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} selectorBaseUrl="paas" endpoint="/operations/p2p-transfers" method="post">
 
 ### Header
 

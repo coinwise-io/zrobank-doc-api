@@ -12,7 +12,7 @@ import bodyParams from '@site/docs/caas/endpoints/auth/params/AuthSigninParams/b
 
 Enter your API ID and API Key on the requisition body and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
 
-<RequestComponent bodyParams={bodyParams} endpoint="/auth/signin" method="post">
+<RequestComponent selectorBaseUrl="caas" bodyParams={bodyParams} endpoint="/auth/signin" method="post">
 
 ## Request
 

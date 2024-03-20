@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import pathParam from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccountsById/pathParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/wallet-accounts/params/GetUsersWalletAccountsById/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get user's wallet account by ID
 
@@ -16,7 +16,7 @@ Get a user's wallet account by id
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/operations/wallet-accounts/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/operations/wallet-accounts/" method="get">
 
 ### Header
 

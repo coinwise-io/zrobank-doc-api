@@ -11,7 +11,7 @@ import headerParams from '@site/docs/caas/endpoints/conversion/params/GetUsersCr
 
 ## Request
 
-<RequestComponent headerParams={headerParams} endpoint="/v2/otc/conversions/credit-balance" method="get">
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} endpoint="/v2/otc/conversions/credit-balance" method="get">
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |

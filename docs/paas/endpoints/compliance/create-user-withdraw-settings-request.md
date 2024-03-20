@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import bodyParams from '@site/docs/paas/endpoints/compliance/params/CreateUserWithdrawSettingsRequest/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/compliance/params/CreateUserWithdrawSettingsRequest/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Create user withdraw settings request
 
@@ -15,7 +15,7 @@ Endpoint to user create a withdraw settings request
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/withdraw-settings-request" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} selectorBaseUrl="paas" endpoint="/withdraw-settings-request" method="post">
 
 ### Header
 

@@ -15,7 +15,7 @@ Generates a new dynamic QR Code.
 
 ## Request
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_qr_code_pix" method="post">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_qr_code_pix" method="post">
 
 ### Header
 

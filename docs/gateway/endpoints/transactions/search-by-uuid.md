@@ -14,7 +14,7 @@ Returns the found transaction data.
 
 ## Request
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} pathParam={pathParam} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
 
 ### Header
 

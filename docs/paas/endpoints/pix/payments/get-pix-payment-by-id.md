@@ -3,7 +3,6 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import pathParams from '@site/docs/paas/endpoints/pix/payments/params/GetPixPaymentById/pathParams.ts'
 import headerParams from '@site/docs/paas/endpoints/pix/payments/params/GetPixPaymentById/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
 
 # Get PIX payment by ID
 
@@ -16,7 +15,7 @@ Enter the pix payment's ID and execute to get it's state and all information.
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParams} baseUrl={BASE_URL.paas} endpoint="/v3/pix/payments/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParams} selectorBaseUrl="paas" endpoint="/v3/pix/payments/" method="get">
 
 ### Header
 

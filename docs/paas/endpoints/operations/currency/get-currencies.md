@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import filterParams from '@site/docs/paas/endpoints/operations/currency/params/GetCurrencies/filterParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/currency/params/GetCurrencies/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # List currencies
 
@@ -16,7 +16,7 @@ Get a list of all available and tradable currencies. You can include any of the 
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} baseUrl={BASE_URL.paas} filterParams={filterParams} endpoint="/operations/currencies" method="get">
+<RequestComponent headerParams={headerParams} selectorBaseUrl="paas" filterParams={filterParams} endpoint="/operations/currencies" method="get">
 
 ### Header
 

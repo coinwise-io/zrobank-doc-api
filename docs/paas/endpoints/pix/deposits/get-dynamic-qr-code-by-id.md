@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/GetDynamicQrCodeById/headerParams.ts'
 import pathParam from '@site/docs/paas/endpoints/pix/deposits/params/GetDynamicQrCodeById/pathParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get dynamic QrCode by ID
 
@@ -16,7 +16,7 @@ Enter the pix dinamic QR code's ID below and execute to get its state and all in
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/v3/pix/deposits/qr-codes/dynamic/" method="get">
 
 ### Header
 

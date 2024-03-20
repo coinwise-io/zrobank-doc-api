@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/keys/params/CreateNewEvpPixKey/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Create new EVP PIX key
 
@@ -14,7 +14,7 @@ Create a new EVP key type (random key) to the user
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} baseUrl={BASE_URL.paas} endpoint="/pix/keys" method="post">
+<RequestComponent headerParams={headerParams} selectorBaseUrl="paas" endpoint="/pix/keys" method="post">
 
 ### Header
 

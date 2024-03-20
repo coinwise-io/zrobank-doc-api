@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import headerParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetUsersPixDevolutions/headerParams.ts'
 import filterParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetUsersPixDevolutions/filterParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # List user's PIX devolutions
 
@@ -16,7 +16,7 @@ Get a list of user's PIX devolutions. You can include any of the filter paramete
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} baseUrl={BASE_URL.paas} endpoint="/v3/pix/devolutions" method="get">
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/v3/pix/devolutions" method="get">
 
 ### Header
 

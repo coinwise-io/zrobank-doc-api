@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import pathParam from '@site/docs/paas/endpoints/operations/operation/params/GetReceiptByOperationId/pathParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/operation/params/GetReceiptByOperationId/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get receipt by operation ID
 
@@ -15,7 +15,7 @@ Get receipt by it's operation ID
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/operations/" endpointComplement="/receipt" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/operations/" endpointComplement="/receipt" method="get">
 
 ### Header
 

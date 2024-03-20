@@ -14,7 +14,7 @@ Get a list of user's conversions. You can include any of the filter parameters b
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} filterParams={filterParams} endpoint="/v3/otc/conversions" method="get">
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} filterParams={filterParams} endpoint="/v3/otc/conversions" method="get">
 
 ### Header
 

@@ -20,7 +20,7 @@ Generates a new complete or a partial refund.
 
 ## Request
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true}>
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true}>
 
 ### Header
 | Title                                | Type       | Description    |

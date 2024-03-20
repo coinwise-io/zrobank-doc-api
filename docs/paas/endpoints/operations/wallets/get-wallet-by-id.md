@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import pathParam from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/pathParams.ts'
 import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/UpdateOperationWalletById/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
+
 
 # Get wallet by ID
 
@@ -16,7 +16,7 @@ Enter the wallet's ID and execute to get it's state and all information
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} pathParam={pathParam} baseUrl={BASE_URL.paas} endpoint="/operations/wallets/" method="get">
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/operations/wallets/" method="get">
 
 ### Header
 

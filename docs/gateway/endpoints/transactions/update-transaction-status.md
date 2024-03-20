@@ -18,7 +18,7 @@ Update the status of a transaction to trigger the receipt of webhooks for testin
 
 ## Request
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction" method="put">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction" method="put">
 
 ### Header
 | Title                                | Type       | Description    |

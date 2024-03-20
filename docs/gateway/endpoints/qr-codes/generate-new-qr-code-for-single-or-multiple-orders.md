@@ -15,7 +15,7 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 
 ## Request
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true} hasOrderFeeProp={true}>
+<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true} hasOrderFeeProp={true}>
 
 ### Header
 | Title                                | Type       | Description    |

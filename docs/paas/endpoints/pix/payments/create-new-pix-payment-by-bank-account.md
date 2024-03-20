@@ -3,7 +3,6 @@ import TabItem from '@theme/TabItem';
 import RequestComponent from '@site/src/components/RequestComponent'
 import bodyParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByBankAccount/bodyParams.ts'
 import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentByBankAccount/headerParams.ts'
-import BASE_URL from "@site/src/config/index.ts"
 
 # Create new PIX payment by bank account
 
@@ -15,7 +14,7 @@ To create a new pix payment by a bank account, first you need to create a Decode
 
 ## Request 
 
-<RequestComponent headerParams={headerParams} bodyParams={bodyParams} baseUrl={BASE_URL.paas} endpoint="/pix/payments/by-account/instant-billing" method="post">
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} selectorBaseUrl="paas" endpoint="/pix/payments/by-account/instant-billing" method="post">
 
 ### Header
 
