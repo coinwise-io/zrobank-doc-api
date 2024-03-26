@@ -23,7 +23,7 @@ Enter the PIX deposit's ID below and execute to get it's state and all informati
 | Title                      | Type       | Properties                   | Description                                                                                                    |
 | ---------------------------| :---------:|:---------------------------: |----------------------------------------------------------------------------------------------------------------|
 | x-wallet-uuid              | STRING     | Must be a **UUID**           | Sender Wallet UUID **(if empty, your default Wallet UUID will be settled)**                                    |
-| nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
+| nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID  used to uniquely identify the requisition. All requisitions must have an identifier|
 :small_orange_diamond: *Required parameters on header*
 
 ### Parameters

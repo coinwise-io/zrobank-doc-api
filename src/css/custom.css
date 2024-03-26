@@ -6,16 +6,31 @@
 /* You can override the default Infima variables here. */
 
 @font-face {
-  font-family: "Gilroy Medium";
-  src: url("/fonts/gilroy/Gilroy-Medium.woff"),
-    url("/fonts/gilroy/Gilroy-Medium.ttf"),
-    url("/fonts/gilroy/Gilroy-Medium.eot");
+  font-family: 'Gilroy Medium';
+  src: url('/fonts/gilroy/Gilroy-Medium.woff'),
+    url('/fonts/gilroy/Gilroy-Medium.ttf'),
+    url('/fonts/gilroy/Gilroy-Medium.eot');
 }
 
 @font-face {
-  font-family: "Gilroy Bold";
-  src: url("/fonts/gilroy/Gilroy-Bold.woff"),
-    url("/fonts/gilroy/Gilroy-Bold.ttf"), url("/fonts/gilroy/Gilroy-Bold.eot");
+  font-family: 'Gilroy Bold';
+  src: url('/fonts/gilroy/Gilroy-Bold.woff'),
+    url('/fonts/gilroy/Gilroy-Bold.ttf'), url('/fonts/gilroy/Gilroy-Bold.eot');
+}
+
+@font-face {
+  font-family: 'Kanit';
+  src: url('/fonts/kanit/Kanit-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Kanit Medium';
+  src: url('/fonts/kanit/Kanit-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Kanit Italic';
+  src: url('/fonts/kanit/Kanit-Italic.ttf');
 }
 
 @font-face {
@@ -34,8 +49,7 @@
 }
 
 body {
-  font-family: "Gilroy Medium", sans-serif;
-
+  font-family: 'Gilroy Medium', sans-serif;
 }
 
 h1,
@@ -44,7 +58,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Gilroy Bold", sans-serif;
+  font-family: 'Gilroy Bold', sans-serif;
 }
 
 :root {
@@ -55,16 +69,16 @@ h6 {
   --ifm-color-primary-light: #70c3ec;
   --ifm-color-primary-lighter: #7ec9ee;
   --ifm-color-primary-lightest: #a8daf3;
-  --ifm-font-color-base: #FFF;
+  --ifm-font-color-base: #fff;
   --ifm-code-font-size: 95%;
   --ifm-background-color: #252f59 !important;
   --ifm-navbar-link-color: #142032 !important;
-  --ifm-menu-color: #FFF
-  --ifm-pre-background: #282A35;
-  --ifm-toc-link-color: #FFF;
-  --ifm-blockquote-color: #FFF;
+  --ifm-menu-color: #fff;
+  --ifm-pre-background: #282a35;
+  --ifm-toc-link-color: #fff;
+  --ifm-blockquote-color: #fff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  font-size: "10px"
+  font-size: '10px';
 }
 
 code {
@@ -72,7 +86,7 @@ code {
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --ifm-color-primary: #54b7e8;
   --ifm-color-primary-dark: #38abe4;
   --ifm-color-primary-darker: #2aa5e2;
@@ -80,15 +94,15 @@ code {
   --ifm-color-primary-light: #70c3ec;
   --ifm-color-primary-lighter: #7ec9ee;
   --ifm-color-primary-lightest: #a8daf3;
-  --ifm-font-color-base: #FFF;
+  --ifm-font-color-base: #fff;
   --ifm-code-font-size: 95%;
   --ifm-navbar-link-color: #142032 !important;
   --ifm-background-color: #252f59 !important;
-  --ifm-menu-color: #FFF;
-  --ifm-pre-background: #282A35;
-  --ifm-toc-link-color: #FFF;
-  --ifm-blockquote-color: #FFF;
-  --ifm-background-surface-color: #FFF !important;
+  --ifm-menu-color: #fff;
+  --ifm-pre-background: #282a35;
+  --ifm-toc-link-color: #fff;
+  --ifm-blockquote-color: #fff;
+  --ifm-background-surface-color: #fff !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -130,9 +144,9 @@ code {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
-input[type=number] {
-    -moz-appearance:textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
 }

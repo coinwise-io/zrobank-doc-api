@@ -1,41 +1,41 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-require("dotenv").config();
+require('dotenv').config()
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require('prism-react-renderer/themes/github')
+const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 // const { ALGOLIA_API_KEY, ALGOLIA_APP_ID } = process.env;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Z.ro Bank",
-  tagline: "Documentation",
-  favicon: "img/favicon.ico",
-  url: "https://github.com",
-  baseUrl: "/zrobank-doc-api/",
-  organizationName: "coinwise-io", // Usually your GitHub org/user name.
-  projectName: "zrobank-doc-api", // Usually your repo name.
+  title: 'Z.ro Bank',
+  tagline: 'Documentation',
+  favicon: 'img/favicon.png',
+  url: 'https://github.com',
+  baseUrl: '/zrobank-doc-api/',
+  organizationName: 'coinwise-io', // Usually your GitHub org/user name.
+  projectName: 'zrobank-doc-api', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  plugins: [require.resolve("@cmfcmf/docusaurus-search-local")],
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
   presets: [
     [
-      "classic",
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve('./sidebars.js'),
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -43,36 +43,36 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: "img/docusaurus-social-card.jpg",
+      image: 'img/docusaurus-social-card.jpg',
       navbar: {
         logo: {
-          alt: "Zro Bank Logo",
-          src: "img/new-logo.png",
+          alt: 'Zro Bank Logo',
+          src: 'img/new-logo.png',
         },
         items: [
           {
-            type: "docSidebar",
-            sidebarId: "overviewSidebar",
-            position: "left",
-            label: "Overview",
+            type: 'docSidebar',
+            sidebarId: 'overviewSidebar',
+            position: 'left',
+            label: 'Overview',
           },
           {
-            type: "docSidebar",
-            sidebarId: "paasSidebar",
-            position: "left",
-            label: "Pix as a Service",
+            type: 'docSidebar',
+            sidebarId: 'paasSidebar',
+            position: 'left',
+            label: 'Pix as a Service',
           },
           {
-            type: "docSidebar",
-            sidebarId: "caasSidebar",
-            position: "left",
-            label: "Crypto as a Service",
+            type: 'docSidebar',
+            sidebarId: 'caasSidebar',
+            position: 'left',
+            label: 'Crypto as a Service',
           },
           {
-            type: "docSidebar",
-            sidebarId: "gatewaySidebar",
-            position: "left",
-            label: "Gateway",
+            type: 'docSidebar',
+            sidebarId: 'gatewaySidebar',
+            position: 'left',
+            label: 'Gateway',
           },
         ],
       },
@@ -81,7 +81,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: "dark",
+        defaultMode: 'dark',
         disableSwitch: true,
       },
       // algolia: {
@@ -90,6 +90,6 @@ const config = {
       //   indexName: "dev_zrobank",
       // },
     }),
-};
+}
 
-module.exports = config;
+module.exports = config

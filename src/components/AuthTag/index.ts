@@ -1,1 +1,1 @@
-export * from "./AuthTag"
+export * from './AuthTag'

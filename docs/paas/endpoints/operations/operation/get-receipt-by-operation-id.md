@@ -21,8 +21,8 @@ Get receipt by it's operation ID
 
 | Title                      | Type       | Properties                       | Description |
 | ---------------------------| :---------:|:-------------------------------: |----------------------------------------------------------------------------------------------------------------|
-| x-wallet-uuid              | STRING     | Must be a **UUID(v4)**           | Sender Wallet UUID **(if empty, your default Wallet UUID will be settled)**                                    |
-| nonce:small_orange_diamond:| STRING     | Must be a **UUID(v4)**           | The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier|
+| x-wallet-uuid              | STRING     | Must be a **UUID**           | Sender Wallet UUID **(if empty, your default Wallet UUID will be settled)**                                    |
+| nonce:small_orange_diamond:| STRING     | Must be a **UUID**           | The nonce ID is a UUID  used to uniquely identify the requisition. All requisitions must have an identifier|
 :small_orange_diamond: *Required parameters on header*
 
 ### Parameters
