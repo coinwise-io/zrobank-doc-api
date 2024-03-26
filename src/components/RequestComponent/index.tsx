@@ -1,10 +1,3 @@
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-
-if (ExecutionEnvironment.canUseDOM) {
-  require('react-hook-form');
-  require('react-json-view');
-}
-
 import React, { ReactNode, useState } from 'react'
 import {
   AddOrderButton,
@@ -36,9 +29,6 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import { BASE_URL } from '@site/src/config/index.ts'
 import { AuthTag } from '../AuthTag/AuthTag.tsx'
 import BrowserOnly from '@docusaurus/BrowserOnly';
-
-
-
 
 enum Method {
   GET = 'get',
@@ -161,8 +151,9 @@ export default function RequestComponent({
   return (
     <BrowserOnly>
     {
-      () => 
-    <form onSubmit={handleSubmit(onSubmitFn)}>
+      () => {
+        const ReactJson = require('react-json-view')
+    return <form onSubmit={handleSubmit(onSubmitFn)}>
       <Container>
         {active ? (
           <ButtonsContainer>
@@ -383,6 +374,7 @@ export default function RequestComponent({
         )}
       </Container>
     </form>
+      }
     }
     </BrowserOnly>
   )
