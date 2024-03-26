@@ -1,4 +1,6 @@
 import React, { ReactNode, useState } from 'react'
+import { BASE_URL } from '@site/src/config/index.ts'
+import axios from 'axios'
 import {
   AddOrderButton,
   AuthStatusBox,
@@ -24,10 +26,8 @@ import {
 import TryItOutButtonComponent from '../TryItOutButton/index.tsx'
 import CustomInput from '../CustomInput/index.tsx'
 import { useAccessTokenStore } from '@site/src/store/useAccessTokenStore.ts'
-import axios from 'axios'
 import { useFieldArray, useForm } from 'react-hook-form'
 import ReactJson from 'react-json-view'
-import { BASE_URL } from '@site/src/config/index.ts'
 import { AuthTag } from '../AuthTag/AuthTag.tsx'
 
 enum Method {
@@ -113,7 +113,7 @@ export default function RequestComponent({
           }, '')
         : ''
 
-      const finalEndpointToRequest = `${baseUrl}/${endpoint}${
+      const finalEndpointToRequest = `${baseUrl}${endpoint}${
         pathParam ? data.path[pathParam.title] : ''
       }${endpointComplement}${filterParamsString}`
 
@@ -128,7 +128,7 @@ export default function RequestComponent({
         },
         data: data.body,
       })
-      setResponseView(response.data.data)
+      setResponseView(response.data)
       setCodeResponse(response.status)
       setStatusDescription(response.statusText)
       if (isAuthEndpoint) {

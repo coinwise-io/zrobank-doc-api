@@ -6,7 +6,7 @@ import pathParam from '@site/docs/gateway/endpoints/transactions/params/SearchBy
 
 # Search transaction by UUID
 
-| GET      | /api/trasaction/\{transactionUuid\}/status |
+| GET      | /api/transaction/\{transactionUuid\}/status |
 | --------- | ----------- |
 
 Returns the found transaction data.
@@ -14,7 +14,7 @@ Returns the found transaction data.
 
 ## Request
 
-<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} pathParam={pathParam} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} pathParam={pathParam} endpoint="/api/transaction/" endpointComplement="/status" method="get">
 
 ### Header
 
@@ -39,7 +39,7 @@ const axios = require('axios');
 
 const transactionUuid = "7da0c9af-215e-4625-b484-b8cfc87aaa09";
 
-const url = `https://sandbox-api-payments.zrobank.xyz/api/trasaction/$\{transactionUuid\}/status`;
+const url = `https://sandbox-api-payments.zrobank.xyz/api/transaction/$\{transactionUuid\}/status`;
 
 const headers = {
   'x-api-key': '{your API key}',
@@ -65,7 +65,7 @@ makeRequest();
 import requests
 
 transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09'
-url = f'https://sandbox-api-payments.zrobank.xyz/api/trasaction/\{transactionUuid\}/status'
+url = f'https://sandbox-api-payments.zrobank.xyz/api/transaction/\{transactionUuid\}/status'
 
 headers = {
     'x-api-key':'your API key'
@@ -81,7 +81,7 @@ print(data)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X GET https://sandbox-api-payments.zrobank.xyz/api/trasaction/\{transactionUuid\}/status\
+curl -X GET https://sandbox-api-payments.zrobank.xyz/api/transaction/\{transactionUuid\}/status\
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}'
 ```
@@ -91,7 +91,7 @@ curl -X GET https://sandbox-api-payments.zrobank.xyz/api/trasaction/\{transactio
 ```shell title=CURL
 $api_key = 'ypur API key';
 $transactionUuid = '7da0c9af-215e-4625-b484-b8cfc87aaa09';
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/' . $transactionUuid . '/status';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/' . $transactionUuid . '/status';
 
 $headers = array(
     'x-api-key: ' . $api_key,
@@ -117,7 +117,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasaction/\{transactionUuid\}/status
+```json  title=/api/transaction/\{transactionUuid\}/status
 {
   "id": "3000",
   "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
@@ -133,7 +133,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/api/trasaction/\{transactionUuid\}/status
+```json  title=/api/transaction/\{transactionUuid\}/status
 {
   "message": "Invalid x-api-key",
 }

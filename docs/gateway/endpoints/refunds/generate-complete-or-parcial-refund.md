@@ -6,7 +6,7 @@ import bodyParams from '@site/docs/gateway/endpoints/refunds/params/GenerateComp
 
 # Generate complete or partial refund
 
-| POST      | /api/trasaction/generate_refund |
+| POST      | /api/transaction/generate_refund |
 | --------- | ------------------------------- |
 
 Generates a new complete or a partial refund.
@@ -20,7 +20,7 @@ Generates a new complete or a partial refund.
 
 ## Request
 
-<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true}>
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/transaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true}>
 
 ### Header
 | Title                                | Type       | Description    |

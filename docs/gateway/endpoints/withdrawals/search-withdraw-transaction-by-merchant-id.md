@@ -89,7 +89,7 @@ curl -X GET https://sandbox-api-payments.zrobank.xyz/api/withdraws/\{merchantId\
 ```shell title=CURL
 $api_key = 'ypur API key';
 $merchantId = '123456';
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/' . $merchantId . '/status';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/' . $merchantId . '/status';
 
 $headers = array(
     'x-api-key: ' . $api_key,
@@ -115,7 +115,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasactions
+```json  title=/api/transactions
 {
   "id": "3000",
   "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
@@ -131,7 +131,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/api/trasactions
+```json  title=/api/transactions
 {
   "message": "Invalid x-api-key",
 }
