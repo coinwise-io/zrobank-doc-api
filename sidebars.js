@@ -48,7 +48,10 @@ const sidebars = {
         {
           type: 'category',
           label: 'Authentication',
-          items: ['paas/endpoints/auth/auth-singin', 'paas/endpoints/auth/auth-refresh-token'],
+          items: [
+            'paas/endpoints/auth/auth-singin',
+            'paas/endpoints/auth/auth-refresh-token',
+          ],
         },
         {
           type: 'category',
@@ -116,7 +119,9 @@ const sidebars = {
             {
               type: 'category',
               label: 'P2P transfers',
-              items: ['paas/endpoints/operations/p2p-transfers/create-new-p2p-transfers'],
+              items: [
+                'paas/endpoints/operations/p2p-transfers/create-new-p2p-transfers',
+              ],
             },
             {
               type: 'category',
@@ -231,7 +236,9 @@ const sidebars = {
         {
           type: 'category',
           label: 'Refunds',
-          items: ['gateway/endpoints/refunds/generate-complete-or-parcial-refund'],
+          items: [
+            'gateway/endpoints/refunds/generate-complete-or-parcial-refund',
+          ],
         },
         {
           type: 'category',
@@ -239,7 +246,7 @@ const sidebars = {
           items: [
             'gateway/endpoints/transactions/search-by-uuid',
             'gateway/endpoints/transactions/update-transaction-status',
-            'gateway/endpoints/transactions/get-transactions'
+            'gateway/endpoints/transactions/get-transactions',
           ],
         },
         {
@@ -253,6 +260,6 @@ const sidebars = {
       ],
     },
   ],
-};
+}
 
-module.exports = sidebars;
+module.exports = sidebars

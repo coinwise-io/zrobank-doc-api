@@ -8,21 +8,34 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: url("/img/hero-bg-blue.jpg");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background: var(--ifm-background-color);
 }
 
 .hero__title {
-  color: "#FFF"
+  color: '#FFF';
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
+}
+
+.heroCircle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.heroCircleBg {
+  position: absolute;
+  mix-blend-mode: overlay;
+  transform: translate(-35%, -60%);
 }
 
 .buttons {
