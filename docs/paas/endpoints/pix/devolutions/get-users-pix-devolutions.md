@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetUsersPixDevolutions/headerParams.ts'
+import filterParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetUsersPixDevolutions/filterParams.ts'
+
 
 # List user's PIX devolutions
 
@@ -9,7 +13,10 @@ import TabItem from '@theme/TabItem';
 
 Get a list of user's PIX devolutions. You can include any of the filter parameters below to refine your search.
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/v3/pix/devolutions" method="get">
 
 ### Header
 
@@ -233,3 +240,4 @@ curl_close($curl);
 
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

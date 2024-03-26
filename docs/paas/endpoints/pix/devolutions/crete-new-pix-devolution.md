@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/devolutions/params/CreateNewPixDevolution/headerParams.ts'
+import bodyParams from '@site/docs/paas/endpoints/pix/devolutions/params/CreateNewPixDevolution/bodyParams.ts'
+
 
 # Create new PIX devolution
 
@@ -8,7 +12,10 @@ import TabItem from '@theme/TabItem';
 
 Enter the PIX devolution's information to create a new pix devolution.
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} selectorBaseUrl="paas" endpoint="/pix/devolutions" method="post">
 
 ### Header
 
@@ -196,3 +203,5 @@ curl_close($curl);
 | state:small_orange_diamond:     | STRING     | Available values: *PENDING, WAITING, CONFIRMED, ERROR, FAILED, CANCELED, SCHEDULED*            | Devolution state                 |
 | created_at:small_orange_diamond:| STRING     | Timestamp with timezone                                                                        | Payment created date             |
 :small_orange_diamond: *Required parameters on response*
+
+</RequestComponent>

@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/paas/endpoints/compliance/params/CreateUserWithdrawSettingsRequest/bodyParams.ts'
+import headerParams from '@site/docs/paas/endpoints/compliance/params/CreateUserWithdrawSettingsRequest/headerParams.ts'
+
 
 # Create user withdraw settings request
 
@@ -8,7 +12,10 @@ import TabItem from '@theme/TabItem';
 
 Endpoint to user create a withdraw settings request
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} selectorBaseUrl="paas" endpoint="/withdraw-settings-request" method="post">
 
 ### Header
 
@@ -246,3 +253,4 @@ curl_close($curl);
 | week_day                                   | STRING     | Available values:<br/> *MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY* | Week day of withdraw **(if withdraw settings type is WEEKLY)**  |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

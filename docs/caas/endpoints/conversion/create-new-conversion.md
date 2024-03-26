@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/caas/endpoints/conversion/params/CreateNewConversion/bodyParams.ts'
+import headerParams from '@site/docs/caas/endpoints/conversion/params/CreateNewConversion/headerParams.ts'
 
 # Create a new currency conversion
 
@@ -8,7 +11,10 @@ import TabItem from '@theme/TabItem';
 
 To create a new currency conversion, first, you need to **[create a Quotation ID](../quotation/v2-quotations-spot.md)**. After the `quotation_id` is created, enter its information in the requisition body and execute it.
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} bodyParams={bodyParams} endpoint="/v2/otc/conversions" method="post">
 
 ### Header
 
@@ -184,3 +190,4 @@ curl_close($curl);
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                   | Conversion created date                     |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

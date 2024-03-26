@@ -1,5 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/caas/endpoints/conversion/params/GetUsersCreditBalanceAndLiability/headerParams.ts'
 
 # Get user's liability and credit balance
 
@@ -7,7 +9,9 @@ import TabItem from '@theme/TabItem';
 | --------- | ---------------------------------- |
 
 
-## Request <a href="https://sandbox.zro.com/api/api/#/" class="try-btn">Try it!</a>
+## Request
+
+<RequestComponent selectorBaseUrl="caas" headerParams={headerParams} endpoint="/v2/otc/conversions/credit-balance" method="get">
 
 ### Header
 | Title                                    | Type       | Properties         | Maximum Length  | Description                                                                                                                           |
@@ -139,3 +143,4 @@ curl_close($curl);
 | liability:small_orange_diamond:      | NUMBER |-           | Libability (Sum of all negative balances of all active currencies) |
 | credit_balance:small_orange_diamond: | NUMBER |-           | Credit balance for user                                            |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

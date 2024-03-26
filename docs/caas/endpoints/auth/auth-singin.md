@@ -1,12 +1,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/caas/endpoints/auth/params/AuthSigninParams/bodyParams.ts'
 
 # Create an access token
 
-| POST      | /auth/singin |
+
+| POST      | /auth/signin |
 | --------- | ------------ |
 
+
 Enter your API ID and API Key on the requisition body and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
+
+<RequestComponent selectorBaseUrl="caas" bodyParams={bodyParams} endpoint="/auth/signin" method="post">
 
 ## Request
 
@@ -24,7 +30,7 @@ Enter your API ID and API Key on the requisition body and execute to get your Ac
 <Tabs>
 <TabItem value="js" label="NodeJS">
 
-```js title=Axios
+```js
 const axios = require('axios');
 
 const url = 'https://sandbox.zro.com/api/auth/singin';
@@ -38,18 +44,16 @@ const data = {
   api_key: 'abcd1234'
 };
 
-async function makeRequest(){
-  try{
-    const response = await axios.post(url, data, {headers});
+async function makeRequest() {
+  try {
+    const response = await axios.post(url, data, { headers });
     console.log(response.data);
-  }
-  catch(error){
+  } catch (error) {
     console.error('Solicitation error:', error.message);
   }
 }
 
 makeRequest();
-
 ```
 </TabItem>
 <TabItem value="py" label="Python">
@@ -140,3 +144,4 @@ $apiKey = $data['api_key'];
  Title                               | Type       | Properties             |Description                                                    |
 | -----------------------------------| :---------:|:----------------------:|---------------------------------------------------------------|
 | access_token:small_orange_diamond: | STRING     | -                      |JWT access token. Token used to access all protected endpoints |
+</RequestComponent>

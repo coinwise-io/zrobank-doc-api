@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/CreateNewDynamicQrCode/headerParams.ts'
+import bodyParam from '@site/docs/paas/endpoints/pix/deposits/params/CreateNewDynamicQrCode/bodyParams.ts'
+
 
 # Create new dynamic QrCode
 
@@ -8,7 +12,10 @@ import TabItem from '@theme/TabItem';
 
 Enter the PIX billing information on the requisition body below and execute to get a new dynamic QR Code.
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParam={bodyParam} selectorBaseUrl="paas" endpoint="/pix/deposits/qr-codes/dynamic/instant-billing" method="post">
 
 ### Header
 
@@ -216,3 +223,4 @@ curl_close($curl);
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                   | QrCode created date                |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

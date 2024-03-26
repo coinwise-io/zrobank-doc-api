@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentDecodeByKey/filterParams.ts'
+import headerParams from '@site/docs/paas/endpoints/pix/payments/params/CreateNewPixPaymentDecodeByKey/headerParams.ts'
 
 # Create new decoded PIX key ID
 
@@ -10,7 +13,9 @@ import TabItem from '@theme/TabItem';
 Enter the pix key's information on the requisition body below and execute to get its ID. This ID is the `decoded_pix_key_id` which will be required to **[create a pix payment by a pix key](./create-new-pix-payment-by-pix-key)**
 
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/pix/payment/decode/by-key" method="get">
 
 ### Header
 
@@ -185,3 +190,4 @@ curl_close($curl);
 | end_to_end_id                       | STRING     |-                                                 | end to end ID                        |
 | ispb                                | STRING     |-                                                 | Bank ISPB                            |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

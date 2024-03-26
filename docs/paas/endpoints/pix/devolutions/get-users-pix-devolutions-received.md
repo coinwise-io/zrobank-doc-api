@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetUsersPixDevolutionsReceived/headerParams.ts'
+import filterParams from '@site/docs/paas/endpoints/pix/devolutions/params/GetUsersPixDevolutionsReceived/filterParams.ts'
+
 
 # List user's received PIX devolutions
 
@@ -10,7 +14,9 @@ import TabItem from '@theme/TabItem';
 Get a list of user's received PIX devolutions. You can include any of the filter parameters below to refine your search.
 
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/v3/pix/devolutions-received" method="get">
 
 ### Header
 
@@ -231,3 +237,4 @@ curl_close($curl);
 | beneficiary_bank_name:small_orange_diamond:   | STRING |-                                                                                                 | Payment beneficiary bank name                                |
 | created_at:small_orange_diamond:              | STRING |Timestamp with timezone                                                                           | Devolution created date                                      |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

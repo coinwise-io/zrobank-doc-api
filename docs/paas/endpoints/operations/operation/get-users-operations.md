@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/paas/endpoints/operations/operation/params/GetUsersOperations/filterParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/operation/params/GetUsersOperations/headerParams.ts'
+
 
 # List user's operations
 
@@ -8,7 +12,10 @@ import TabItem from '@theme/TabItem';
 
 Get a list of user's operations
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/operations" method="get">
 
 ### Header
 
@@ -224,3 +231,4 @@ curl_close($curl);
 | chargeback_id 	                   | STRING     |**UUID**                                                                | Operation chargeback ID     |
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/transactions/params/GetTransactions/headerParams.ts'
+import filterParams from '@site/docs/gateway/endpoints/transactions/params/GetTransactions/filterParams.ts'
 
 # List all transactions data
 
@@ -13,7 +16,10 @@ List all transactions data
 If no parameter is set, it will automatically select today’s date as the search parameter
 :::
 
-## Request <a href="https://sandbox.zro.com/api/" class="try-btn">Try it!</a>
+
+## Request
+
+<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" filterParams={filterParams} endpoint="/api/trasaction" method="get">
 
 ### Header
 
@@ -208,3 +214,4 @@ curl_close($curl);
 | per_page         | NUMBER   |-                                                                                       | Pagination per_page number os items                      |
 | to               | NUMBER   |-                                                                                       | Pagination to page                                       |
 | total            | NUMBER   |-                                                                                       | Total number of itens per page                           |
+</RequestComponent>

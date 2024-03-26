@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import filterParams from '@site/docs/paas/endpoints/operations/wallets/params/GetUsersWallets/filterParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/wallets/params/GetUsersWallets/headerParams.ts'
+
 
 # List user's wallets
 
@@ -9,7 +13,10 @@ import TabItem from '@theme/TabItem';
 
 Get a list of user's wallets. You can include any of the filter parameters below to refine your search.
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+
+## Request 
+
+<RequestComponent headerParams={headerParams} filterParams={filterParams} selectorBaseUrl="paas" endpoint="/operations/wallets" method="get">
 
 ### Header
 
@@ -177,3 +184,4 @@ curl_close($curl);
 | owner_name:small_orange_diamond:       | STRING     | -                                                    | Wallet owner name                                        |
 | created_at:small_orange_diamond:       | STRING     | Timestamp with timezone                              | Wallet created date                                      |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

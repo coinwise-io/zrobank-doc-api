@@ -1,17 +1,21 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/withdrawals/params/SearchWithdrawTransactionByMerchantId/headerParams.ts'
+import pathParam from '@site/docs/gateway/endpoints/withdrawals/params/SearchWithdrawTransactionByMerchantId/pathParams.ts'
 
 # Search withdraw transaction by Merchant ID
 
 
-| GET       | /api/withdraws/{merchantId}/status       |
+| GET       | /api/withdraws/\{merchantId\}/status       |
 | --------- | ---------------------------------------- |
 
 Returns the found withdrawal transaction data.
 
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+## Request
 
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} pathParam={pathParam} endpoint="/api/withdraws/" endpointComplement="/status" method="get">
 
 ### Header
 | Title                                | Type       | Description    |
@@ -34,7 +38,7 @@ const axios = require('axios');
 
 const merchantId = "123456";
 
-const url = `https://sandbox-api-payments.zrobank.xyz/api/withdraws/${merchantId}/status`;
+const url = `https://sandbox-api-payments.zrobank.xyz/api/withdraws/$\{merchantId\}/status`;
 
 const headers = {
   'x-api-key': '{your API key}',
@@ -59,7 +63,7 @@ makeRequest();
 
 merchantId = "123456"
 
-url = "https://sandbox-api-payments.zrobank.xyz/api/withdraws/{merchantId}/status"
+url = "https://sandbox-api-payments.zrobank.xyz/api/withdraws/\{merchantId\}/status"
 api_key = "{your API key}"
 
 headers = {
@@ -75,7 +79,7 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X GET https://sandbox-api-payments.zrobank.xyz/api/withdraws/{merchantId}/status\
+curl -X GET https://sandbox-api-payments.zrobank.xyz/api/withdraws/\{merchantId\}/status\
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}'
 ```
@@ -148,3 +152,4 @@ curl_close($curl);
 | created_at        | STRING| Timestamp with timezone                                                                 |  Date when the transaction was created                     |
 | process_status    | STRING| Available status: <br/> *waiting, completed, failed*                                    |  Transaction payment status                                |
 | merchant_id       | STRING| **UUID**                                                                                |  Merchant's ID for conciliation                            |
+</RequestComponent>

@@ -1,16 +1,22 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/deposits/params/GetPixDepositById/headerParams.ts'
+import pathParam from '@site/docs/paas/endpoints/pix/deposits/params/GetPixDepositById/pathParams.ts'
+
 
 # Get PIX deposit by ID
 
-| GET       | /v2/pix/deposits/{id}   |
+| GET       | /v2/pix/deposits/\{id\}   |
 | --------- | ------------------------|
 
 
 Enter the PIX deposit's ID below and execute to get it's state and all information.
 
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/v2/pix/deposits/" method="get">
 
 ### Header
 
@@ -122,7 +128,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/v2/pix/deposits/{id}
+```json  title=/v2/pix/deposits/\{id\}
 {
   "success": true,
   "data": {
@@ -150,7 +156,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/v2/pix/deposits/{id}
+```json  title=/v2/pix/deposits/\{id\}
 {
   "success": false,
   "data": null,
@@ -161,7 +167,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/v2/pix/deposits/{id}
+```json  title=/v2/pix/deposits/\{id\}
 {
   "success": false,
   "data": null,
@@ -194,3 +200,4 @@ curl_close($curl);
 | beneficiary_bank_name:small_orange_diamond:   | STRING |-                                                                                                 | Payment beneficiary bank name   |
 | created_at:small_orange_diamond:              | STRING |Timestamp with timezone                                                                           | Deposit created date            |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

@@ -1,5 +1,8 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/refunds/params/GenerateCompleteOrParcialRefund/headerParams.ts'
+import bodyParams from '@site/docs/gateway/endpoints/refunds/params/GenerateCompleteOrParcialRefund/bodyParams.ts'
 
 # Generate complete or partial refund
 
@@ -14,7 +17,10 @@ Generates a new complete or a partial refund.
 - **For complete refund, orders is not required**
 
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+
+## Request
+
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true}>
 
 ### Header
 | Title                                | Type       | Description    |
@@ -211,3 +217,4 @@ curl_close($curl);
 | qr_code                              | STRING     | -                                               | PIX EMV QrCode                                           |
 | transaction_uuid                     | STRING     | **UUID**                                        | Reference of the QrCode for conciliation                 |
 | merchant_id                          | STRING     | **UUID**                                        | Reference of the store that solicitate the QrCode        |
+</RequestComponent>

@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import bodyParams from '@site/docs/paas/endpoints/operations/p2p-transfers/params/CreateNewP2pTransfers/bodyParams.ts'
+import headerParams from '@site/docs/paas/endpoints/operations/p2p-transfers/params/CreateNewP2pTransfers/headerParams.ts'
+
 
 # Create new P2P transfer
 
@@ -13,7 +17,9 @@ If you leave the `x-wallet-uuid` param empty, your default wallet will be settle
 :::
 
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} bodyParams={bodyParams} selectorBaseUrl="paas" endpoint="/operations/p2p-transfers" method="post">
 
 ### Header
 
@@ -216,3 +222,4 @@ curl_close($curl);
 
 
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>

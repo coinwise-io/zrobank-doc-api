@@ -1,5 +1,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/gateway/endpoints/qr-codes/params/GenerateNewQrCodeForSingleOrMultipleOrders/headerParams.ts'
+import bodyParams from '@site/docs/gateway/endpoints/qr-codes/params/GenerateNewQrCodeForSingleOrMultipleOrders/bodyParams.ts'
+
 
 # Generate new dynamic QrCode with split
 
@@ -9,7 +13,10 @@ import TabItem from '@theme/TabItem';
 Generates a new dynamic QR code for an individual order or for multiple orders at once. The orders must be specified in an array of objects. For a single order, the array will be composed by one single object. For multiple orders, the array will be composed by multiple objects.
 
 
-## Request <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation" class="try-btn">Try it!</a>
+## Request
+
+<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true} hasOrderFeeProp={true}>
+
 ### Header
 | Title                                | Type       | Description    |
 | ------------------------------------ | :---------:|--------------- |
@@ -252,3 +259,4 @@ curl_close($curl);
 | qr_code                              | STRING     |-                                                | PIX EMV QrCode                                           |
 | transaction_uuid                     | STRING     |**UUID**                                         | Reference of the QrCode for conciliation                 |
 | merchant_id                          | STRING     |**UUID**                                         | Reference of the store that solicitate the QrCode        |
+</RequestComponent>

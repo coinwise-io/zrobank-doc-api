@@ -1,9 +1,13 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RequestComponent from '@site/src/components/RequestComponent'
+import headerParams from '@site/docs/paas/endpoints/pix/keys/params/GetPixKeyById/headerParams.ts'
+import pathParam from '@site/docs/paas/endpoints/pix/keys/params/GetPixKeyById/pathParams.ts'
+
 
 # Get PIX key by ID
 
-| GET       | /pix/keys/{id}|
+| GET       | /pix/keys/\{id\}|
 | --------- | --------------|
 
 
@@ -14,7 +18,9 @@ Canceled keys are not returned **(422 error will be sent)**
 :::
 
 
-## Request <a href="https://sandbox.zro.com/api/api/" class="try-btn">Try it!</a>
+## Request 
+
+<RequestComponent headerParams={headerParams} pathParam={pathParam} selectorBaseUrl="paas" endpoint="/pix/keys/" method="get">
 
 ### Header
 
@@ -125,7 +131,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title=/pix/keys/{id}
+```json  title=/pix/keys/\{id\}
 {
   "success": true,
   "data": {
@@ -141,7 +147,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/pix/keys/{id}
+```json  title=/pix/keys/\{id\}
 {
   "success": false,
   "data": null,
@@ -152,7 +158,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title=/pix/keys/{id}
+```json  title=/pix/keys/\{id\}
 {
   "success": false,
   "data": null,
@@ -175,3 +181,4 @@ curl_close($curl);
 | created_at:small_orange_diamond:  | STRING     | Timestamp with timezone                         | PIX key created date               |
 | failed_message | STRING     | -                     | Pix Key failed message    |
 :small_orange_diamond: *Required fields in the response*
+</RequestComponent>
