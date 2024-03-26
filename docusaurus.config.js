@@ -12,7 +12,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const config = {
   title: 'Z.ro Bank',
   tagline: 'Documentation',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
   url: 'https://github.com',
   baseUrl: '/zrobank-doc-api/',
   organizationName: 'coinwise-io', // Usually your GitHub org/user name.
