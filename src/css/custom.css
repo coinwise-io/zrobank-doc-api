@@ -18,22 +18,8 @@
     url('/fonts/gilroy/Gilroy-Bold.ttf'), url('/fonts/gilroy/Gilroy-Bold.eot');
 }
 
-@font-face {
-  font-family: 'Kanit';
-  src: url('/fonts/kanit/Kanit-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'Kanit Medium';
-  src: url('/fonts/kanit/Kanit-Medium.ttf');
-}
-
-@font-face {
-  font-family: 'Kanit Italic';
-  src: url('/fonts/kanit/Kanit-Italic.ttf');
-}
-
-body {
+body,
+button {
   font-family: 'Gilroy Medium', sans-serif;
 }
 
