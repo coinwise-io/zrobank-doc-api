@@ -14,7 +14,6 @@ export const TryItOutButton = styled.a`
   cursor: pointer;
   font-weight: 500;
   background: linear-gradient(90deg, #54b7e8 1.32%, #3491ff 100%);
-  font-family: 'Kanit Medium';
   margin-bottom: 1.25rem;
 
   &:hover {

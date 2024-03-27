@@ -15,7 +15,6 @@ export const RequestContainer = styled.div`
   padding-bottom: 2rem;
 
   h2 {
-    font-family: 'Kanit Medium';
     padding: 1.5rem 0 1.5rem 1rem;
   }
 `
@@ -54,7 +53,6 @@ export const ExecuteButton = styled.button`
   border-radius: 1rem;
   margin-top: 3rem;
   font-size: 1.5rem;
-  font-family: 'Kanit Medium';
   color: rgba(37, 47, 89, 1);
   cursor: pointer;
 `
@@ -66,7 +64,6 @@ export const ContainerParams = styled.div`
 `
 
 export const ParamsTitle = styled.h3`
-  font-family: 'Kanit Medium';
   font-size: 1.25rem;
 `
 
@@ -92,7 +89,6 @@ export const ResponseHeader = styled.div`
 
   h3 {
     font-size: 1rem;
-    font-family: 'Kanit';
   }
 `
 export const ResponseCodeDescriptionBox = styled.div`
@@ -101,10 +97,6 @@ export const ResponseCodeDescriptionBox = styled.div`
   width: 100%;
   padding-left: 1rem;
   gap: 7rem;
-
-  p {
-    font-family: 'Kanit';
-  }
 `
 export const ButtonsContainer = styled.div`
   display: flex;
@@ -122,7 +114,6 @@ export const ClearButton = styled.button`
   border-radius: 1rem;
   margin-top: 3rem;
   font-size: 1.5rem;
-  font-family: 'Kanit Medium';
   cursor: pointer;
 `
 
@@ -137,7 +128,6 @@ export const ResetButton = styled.a`
   border: none;
   background: transparent;
   border-color: transparent;
-  font-family: 'Kanit Medium';
   border-radius: 1rem;
   cursor: pointer;
   font-size: 0.875rem;
@@ -154,7 +144,6 @@ export const CancelButton = styled.button`
   font-size: 0.875rem;
   border: none;
   border-color: transparent;
-  font-family: 'Kanit Medium';
   border-radius: 0.5rem;
   cursor: pointer;
 `
@@ -189,7 +178,6 @@ export const AddOrderButton = styled.button`
   border: none;
   background: transparent;
   border-color: transparent;
-  font-family: 'Kanit Medium';
   border-radius: 1rem;
   cursor: pointer;
   font-size: 0.875rem;
@@ -211,7 +199,6 @@ export const RemoveOrderButton = styled.button`
   border: none;
   background: transparent;
   border-color: transparent;
-  font-family: 'Kanit Medium';
   border-radius: 1rem;
   cursor: pointer;
   font-size: 0.875rem;
