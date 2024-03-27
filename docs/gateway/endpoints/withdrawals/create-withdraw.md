@@ -15,7 +15,7 @@ Creates a new withdraw request using PIX as the payment method.
 
 ## Request
 
-<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/" endpointComplement="/status" method="get">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/transaction/" endpointComplement="/status" method="get">
 
 ### Header
 | Title                                | Type       | Description    |

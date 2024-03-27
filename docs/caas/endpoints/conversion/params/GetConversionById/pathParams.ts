@@ -1,7 +1,7 @@
 const params = {
-  title: "id",
-  type: "string",
-  placeholder: "id",
+  title: 'id',
+  type: 'string',
+  placeholder: 'id',
   isRequired: true,
 }
 

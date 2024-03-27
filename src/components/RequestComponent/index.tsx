@@ -1,4 +1,6 @@
 import React, { ReactNode, useState } from 'react'
+import { BASE_URL } from '@site/src/config/index.ts'
+import axios from 'axios'
 import {
   AddOrderButton,
   AuthStatusBox,
@@ -20,15 +22,18 @@ import {
   ResponseContainer,
   ResponseHeader,
   Spinner,
+  JsonContainer,
 } from './style.ts'
 import TryItOutButtonComponent from '../TryItOutButton/index.tsx'
 import CustomInput from '../CustomInput/index.tsx'
-import { useAccessTokenStore } from '@site/src/store/useAccessTokenStore.ts'
-import axios from 'axios'
+import {
+  TokenTypes,
+  useAccessTokenStore,
+} from '@site/src/store/useAccessTokenStore.ts'
 import { useFieldArray, useForm } from 'react-hook-form'
-import ReactJson from 'react-json-view'
-import { BASE_URL } from '@site/src/config/index.ts'
+import { JSONTree } from 'react-json-tree'
 import { AuthTag } from '../AuthTag/AuthTag.tsx'
+import { theme } from './themeColors.ts'
 
 enum Method {
   GET = 'get',
@@ -98,6 +103,8 @@ export default function RequestComponent({
 
   const baseUrl = BASE_URL[selectorBaseUrl]
 
+  const successfullyStatus = [200, 201]
+
   const onSubmitFn = async (data) => {
     setIsLoading(true)
     try {
@@ -113,7 +120,7 @@ export default function RequestComponent({
           }, '')
         : ''
 
-      const finalEndpointToRequest = `${baseUrl}/${endpoint}${
+      const finalEndpointToRequest = `${baseUrl}${endpoint}${
         pathParam ? data.path[pathParam.title] : ''
       }${endpointComplement}${filterParamsString}`
 
@@ -128,11 +135,17 @@ export default function RequestComponent({
         },
         data: data.body,
       })
-      setResponseView(response.data.data)
+      setResponseView(response.data)
       setCodeResponse(response.status)
       setStatusDescription(response.statusText)
       if (isAuthEndpoint) {
         setAccess(response.data.data.access_token, selectorBaseUrl)
+      }
+      if (
+        selectorBaseUrl === TokenTypes.gateway.toString() &&
+        successfullyStatus.includes(response.status)
+      ) {
+        setAccess(response.config.headers['x-api-key'], selectorBaseUrl)
       }
       setIsLoading(false)
     } catch (e) {
@@ -350,19 +363,9 @@ export default function RequestComponent({
                     <p>{codeResponse}</p>
                     <p>{statusDescription}</p>
                   </ResponseCodeDescriptionBox>
-                  <ReactJson
-                    src={responseView}
-                    name={false}
-                    displayDataTypes={false}
-                    theme="harmonic"
-                    displayObjectSize={false}
-                    enableClipboard={false}
-                    style={{
-                      overflow: 'scroll',
-                      maxHeight: '30rem',
-                      padding: '1rem 0 1rem 1rem',
-                    }}
-                  />
+                  <JsonContainer>
+                    <JSONTree data={responseView} theme={theme} />
+                  </JsonContainer>
                 </ResponseContainer>
               )}
             </BodyBox>

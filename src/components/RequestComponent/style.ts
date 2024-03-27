@@ -267,3 +267,13 @@ export const AuthStatusBox = styled.div`
   align-items: center;
   justify-content: space-between;
 `
+
+export const JsonContainer = styled.div`
+  ul {
+    padding: 1rem !important;
+  }
+
+  li {
+    text-wrap: wrap;
+  }
+`

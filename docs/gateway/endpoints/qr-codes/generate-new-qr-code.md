@@ -7,7 +7,7 @@ import bodyParams from '@site/docs/gateway/endpoints/qr-codes/params/GenerateNew
 # Generate a new QrCode without split
 
 
-| POST      | /api/trasaction/generate_qr_code_pix |
+| POST      | /api/transaction/generate_qr_code_pix |
 | --------- | ------------------------------------ |
 
 Generates a new dynamic QR Code.
@@ -15,7 +15,7 @@ Generates a new dynamic QR Code.
 
 ## Request
 
-<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction/generate_qr_code_pix" method="post">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/transaction/generate_qr_code_pix" method="post">
 
 ### Header
 
@@ -42,7 +42,7 @@ Generates a new dynamic QR Code.
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_qr_code_pix';
 
 const headers = {
     'x-api-key': '{your API key}',
@@ -76,7 +76,7 @@ makeRequest();
 ```python title=Requests
 import requests
 
-url = "https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix"
+url = "https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_qr_code_pix"
 api_key = "{your API key}"
 params = {
     "value': 10,
@@ -101,7 +101,7 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix \
+curl -X POST https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_qr_code_pix \
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}' \
      -d $'{
@@ -119,7 +119,7 @@ curl -X POST https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr
 ```shell title=CURL
 <?php
 
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_qr_code_pix';
 $api_key = '{your API key}';
 $params = array(
     "value" => 10,
@@ -160,7 +160,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasaction/generate_qr_code_pix
+```json  title=/api/transaction/generate_qr_code_pix
 {
   "code": 201,
   "status": "pending",
@@ -174,7 +174,7 @@ curl_close($curl);
 
 <TabItem value="401" label="401">
 
-```json  title=/api/trasaction/generate_qr_code_pix
+```json  title=/api/transaction/generate_qr_code_pix
 {
   "message": "Invalid x-api-key",
 }

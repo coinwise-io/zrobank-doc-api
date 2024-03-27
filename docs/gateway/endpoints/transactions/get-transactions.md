@@ -19,7 +19,7 @@ If no parameter is set, it will automatically select today’s date as the searc
 
 ## Request
 
-<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" filterParams={filterParams} endpoint="/api/trasaction" method="get">
+<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" filterParams={filterParams} endpoint="/api/transaction" method="get">
 
 ### Header
 

@@ -7,7 +7,7 @@ import bodyParams from '@site/docs/gateway/endpoints/qr-codes/params/GenerateNew
 
 # Generate new dynamic QrCode with split
 
-| POST      | /api/trasaction/generate_order_qr_code_pix |
+| POST      | /api/transaction/generate_order_qr_code_pix |
 | --------- | ----------- |
 
 Generates a new dynamic QR code for an individual order or for multiple orders at once. The orders must be specified in an array of objects. For a single order, the array will be composed by one single object. For multiple orders, the array will be composed by multiple objects.
@@ -15,7 +15,7 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 
 ## Request
 
-<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" bodyParams={bodyParams} endpoint="/api/trasaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true} hasOrderFeeProp={true}>
+<RequestComponent headerParams={headerParams} selectorBaseUrl="gateway" bodyParams={bodyParams} endpoint="/api/transaction/generate_order_qr_code_pix" method="post" hasOrdersProp={true} hasOrderFeeProp={true}>
 
 ### Header
 | Title                                | Type       | Description    |
@@ -50,7 +50,7 @@ Generates a new dynamic QR code for an individual order or for multiple orders a
 ```js title=Axios
 const axios = require('axios');
 
-const url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_order_qr_code_pix';
+const url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_order_qr_code_pix';
 
 const headers = {
   'x-api-key': '{your API key}',
@@ -98,7 +98,7 @@ makeRequest();
 ```python title=Requests
 import requests
 
-url = "https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_order_qr_code_pix"
+url = "https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_order_qr_code_pix"
 api_key = "{your API key}"
 params = {
     "value": 300,
@@ -170,7 +170,7 @@ curl -X POST 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_
 ```shell title=CURL
 <?php
 
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasaction/generate_qr_code_pix';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/transaction/generate_qr_code_pix';
 $api_key = '{your API key}';
 $params = array(
   "value" => 300,
@@ -226,7 +226,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasaction/generate_order_qr_code_pix
+```json  title=/api/transaction/generate_order_qr_code_pix
 {
   {
   "code": 200,
@@ -241,7 +241,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/api/trasaction/generate_order_qr_code_pix
+```json  title=/api/transaction/generate_order_qr_code_pix
 {
   "message": "Invalid x-api-key",
 }

@@ -6,7 +6,7 @@ import bodyParams from '@site/docs/gateway/endpoints/transactions/params/UpdateT
 
 # Update a transaction status
 
-| PUT       | /api/trasactions                         |
+| PUT       | /api/transactions                         |
 | --------- | ---------------------------------------- |
 
 :::caution
@@ -18,7 +18,7 @@ Update the status of a transaction to trigger the receipt of webhooks for testin
 
 ## Request
 
-<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/trasaction" method="put">
+<RequestComponent selectorBaseUrl="gateway" headerParams={headerParams} bodyParams={bodyParams} endpoint="/api/transaction" method="put">
 
 ### Header
 | Title                                | Type       | Description    |
@@ -39,7 +39,7 @@ Update the status of a transaction to trigger the receipt of webhooks for testin
 ```js title=Axios
 const axios = require('axios');
 
-const url = `https://sandbox-api-payments.zrobank.xyz/api/trasactions`;
+const url = `https://sandbox-api-payments.zrobank.xyz/api/transactions`;
 
 const headers = {
   'x-api-key': '{your API key}',
@@ -66,7 +66,7 @@ makeRequest();
 <TabItem value="py" label="Python">
 
 ```python title=Requests
-url = "https://sandbox-api-payments.zrobank.xyz/api/trasactions"
+url = "https://sandbox-api-payments.zrobank.xyz/api/transactions"
 api_key = "{your API key}"
 params = {
     "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
@@ -86,7 +86,7 @@ print(response)
 <TabItem value="shell" label="Shell">
 
 ```shell title=CURL
-curl -X PUT https://sandbox-api-payments.zrobank.xyz/api/trasactions \
+curl -X PUT https://sandbox-api-payments.zrobank.xyz/api/transactions \
      -H 'Content-Type: application/json' \
      -H 'x-api-key: {Your api key}' \
      -d $'{
@@ -100,7 +100,7 @@ curl -X PUT https://sandbox-api-payments.zrobank.xyz/api/trasactions \
 ```shell title=CURL
 <?php
 
-$url = 'https://sandbox-api-payments.zrobank.xyz/api/trasactions';
+$url = 'https://sandbox-api-payments.zrobank.xyz/api/transactions';
 $api_key = '{your API key}';
 $params = array(
     "transaction_uuid" => "7da0c9af-215e-4625-b484-b8cfc87aaa09",
@@ -135,7 +135,7 @@ curl_close($curl);
 <Tabs>
 <TabItem value="201" label="201">
 
-```json  title=/api/trasactions
+```json  title=/api/transactions
 {
   "id": "3000",
   "transaction_uuid": "7da0c9af-215e-4625-b484-b8cfc87aaa09",
@@ -151,7 +151,7 @@ curl_close($curl);
 </TabItem>
 <TabItem value="401" label="401">
 
-```json  title=/api/trasactions
+```json  title=/api/transactions
 {
   "message": "Invalid x-api-key",
 }
