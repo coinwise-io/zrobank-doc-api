@@ -26,7 +26,10 @@ import {
 } from './style.ts'
 import TryItOutButtonComponent from '../TryItOutButton/index.tsx'
 import CustomInput from '../CustomInput/index.tsx'
-import { useAccessTokenStore } from '@site/src/store/useAccessTokenStore.ts'
+import {
+  TokenTypes,
+  useAccessTokenStore,
+} from '@site/src/store/useAccessTokenStore.ts'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { JSONTree } from 'react-json-tree'
 import { AuthTag } from '../AuthTag/AuthTag.tsx'
@@ -100,6 +103,8 @@ export default function RequestComponent({
 
   const baseUrl = BASE_URL[selectorBaseUrl]
 
+  const successfullyStatus = [200, 201]
+
   const onSubmitFn = async (data) => {
     setIsLoading(true)
     try {
@@ -135,6 +140,12 @@ export default function RequestComponent({
       setStatusDescription(response.statusText)
       if (isAuthEndpoint) {
         setAccess(response.data.data.access_token, selectorBaseUrl)
+      }
+      if (
+        selectorBaseUrl === TokenTypes.gateway.toString() &&
+        successfullyStatus.includes(response.status)
+      ) {
+        setAccess(response.config.headers['x-api-key'], selectorBaseUrl)
       }
       setIsLoading(false)
     } catch (e) {

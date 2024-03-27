@@ -1,5 +1,7 @@
 import { create } from 'zustand'
 
+export enum TokenTypes { pass, cass, gateway } 
+
 export type ObjectTokenList = {
   paas: string
   caas: string
