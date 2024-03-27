@@ -6,21 +6,26 @@
 /* You can override the default Infima variables here. */
 
 @font-face {
-  font-family: 'Gilroy Medium';
-  src: url('/fonts/gilroy/Gilroy-Medium.woff'),
-    url('/fonts/gilroy/Gilroy-Medium.ttf'),
-    url('/fonts/gilroy/Gilroy-Medium.eot');
+  font-family: 'Kanit Regular';
+  src: url('/fonts/kanit/Kanit-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'Gilroy Bold';
-  src: url('/fonts/gilroy/Gilroy-Bold.woff'),
-    url('/fonts/gilroy/Gilroy-Bold.ttf'), url('/fonts/gilroy/Gilroy-Bold.eot');
+  font-family: 'Kanit Medium';
+  src: url('/fonts/kanit/Kanit-Medium.ttf');
 }
 
-body,
+@font-face {
+  font-family: 'Kanit Bold';
+  src: url('/fonts/kanit/Kanit-Bold.ttf');
+}
+
+body {
+  font-family: 'Kanit Regular', sans-serif;
+}
+
 button {
-  font-family: 'Gilroy Medium', sans-serif;
+  font-family: 'Kanit Medium', sans-serif;
 }
 
 h1,
@@ -29,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Gilroy Bold', sans-serif;
+  font-family: 'Kanit Bold', sans-serif;
 }
 
 :root {

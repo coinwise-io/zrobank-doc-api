@@ -42,4 +42,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10rem;
+}
+
+.buttons a {
+  border-radius: 20rem !important;
 }
