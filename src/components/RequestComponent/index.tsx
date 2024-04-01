@@ -237,8 +237,8 @@ export default function RequestComponent({
                   <Container>
                     <ParamsTitle>Body</ParamsTitle>
                     <HeaderBox>
-                      <h3>Name</h3>
-                      <h3>Description</h3>
+                      <p>Name</p>
+                      <p>Description</p>
                     </HeaderBox>
                     <ContainerParams>
                       {bodyParams.map(

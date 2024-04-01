@@ -9,8 +9,7 @@ export const RequestContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 3px solid rgba(199, 234, 255, 0.25);
-  border-radius: 1.5rem;
+  border: 1px solid var(--ifm-table-border-color);
   margin-top: 1.875rem;
   padding-bottom: 2rem;
 
@@ -26,6 +25,7 @@ export const BodyBox = styled.div`
   height: 100%;
   padding: 0 2rem;
 `
+
 export const HeaderBox = styled.div`
   display: flex;
   width: 100%;
@@ -41,20 +41,21 @@ export const HeaderBox = styled.div`
     padding: 0 2rem;
   }
 `
+
 export const ExecuteButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 4.25rem;
+  height: 3.25rem;
   background: linear-gradient(90deg, #54b7e8 51.69%, #3491ff 100%);
   border-color: transparent;
   border: none;
   border-radius: 1rem;
   margin-top: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: rgba(37, 47, 89, 1);
   cursor: pointer;
+  padding: 1rem 2rem;
 `
 
 export const ContainerParams = styled.div`
@@ -63,7 +64,7 @@ export const ContainerParams = styled.div`
   gap: 2rem;
 `
 
-export const ParamsTitle = styled.h3`
+export const ParamsTitle = styled.p`
   font-size: 1.25rem;
 `
 
@@ -253,6 +254,7 @@ export const AuthStatusBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem;
 `
 
 export const JsonContainer = styled.div`
