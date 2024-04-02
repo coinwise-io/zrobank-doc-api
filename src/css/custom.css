@@ -37,7 +37,7 @@ h6 {
   font-family: 'Kanit Bold', sans-serif;
 }
 
-:root {
+/* :root {
   --ifm-color-primary: #54b7e8;
   --ifm-color-primary-dark: #38abe4;
   --ifm-color-primary-darker: #2aa5e2;
@@ -54,8 +54,9 @@ h6 {
   --ifm-toc-link-color: #fff;
   --ifm-blockquote-color: #fff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-cyan-dark: #20a4a8;
   font-size: '10px';
-}
+} */
 
 code {
   background-color: #142032;
@@ -80,12 +81,15 @@ code {
   --ifm-blockquote-color: #fff;
   --ifm-background-surface-color: #fff !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-cyan-dark: #20a4a8;
+  --ifm-color-red-dark: #fc0304;
+  --ifm-color-yellow-dark: #df7d03;
 }
 
 .try-btn {
   display: inline-block;
   border-radius: 8px;
-  background-color: #20a4a8;
+  background-color: var(--ifm-color-cyan-dark);
   color: #ffffff;
   padding: 5px 10px;
   text-decoration: none;
@@ -125,4 +129,45 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] {
   -moz-appearance: textfield;
+}
+
+.theme-doc-sidebar-item-link {
+  position: relative;
+}
+
+.menu-badge a {
+  padding-right: 3.5rem;
+}
+
+.menu-badge::after {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  transform: translateY(50%);
+  color: #fff;
+  padding: 0 0.5rem;
+  border-radius: 10px;
+  font-size: 10px;
+  width: 34px;
+  text-align: center;
+}
+
+.get::after {
+  content: 'GET';
+  background: var(--ifm-color-cyan-dark);
+}
+
+.post::after {
+  content: 'POST';
+  background: var(--ifm-color-primary-darkest);
+}
+
+.delete::after {
+  content: 'DELETE';
+  background: var(--ifm-color-red-dark);
+}
+
+.put::after {
+  content: 'PUT';
+  background: var(--ifm-color-yellow-dark);
 }

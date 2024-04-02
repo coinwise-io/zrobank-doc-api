@@ -49,8 +49,16 @@ const sidebars = {
           type: 'category',
           label: 'Authentication',
           items: [
-            'paas/endpoints/auth/auth-singin',
-            'paas/endpoints/auth/auth-refresh-token',
+            {
+              type: 'doc',
+              id: 'paas/endpoints/auth/auth-singin',
+              className: 'menu-badge post',
+            },
+            {
+              type: 'doc',
+              id: 'paas/endpoints/auth/auth-refresh-token',
+              className: 'menu-badge post',
+            },
           ],
         },
         {
@@ -61,44 +69,124 @@ const sidebars = {
               type: 'category',
               label: 'Payments',
               items: [
-                'paas/endpoints/pix/payments/create-new-pix-payment-decode-by-account',
-                'paas/endpoints/pix/payments/create-new-pix-payment-by-bank-account',
-                'paas/endpoints/pix/payments/create-new-pix-payment-decode-by-key',
-                'paas/endpoints/pix/payments/create-new-pix-payment-by-pix-key',
-                'paas/endpoints/pix/payments/get-users-pix-payments',
-                'paas/endpoints/pix/payments/get-pix-payment-by-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/payments/create-new-pix-payment-decode-by-account',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/payments/create-new-pix-payment-by-bank-account',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/payments/create-new-pix-payment-decode-by-key',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/payments/create-new-pix-payment-by-pix-key',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/payments/get-users-pix-payments',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/payments/get-pix-payment-by-id',
+                  className: 'menu-badge get',
+                },
               ],
             },
             {
               type: 'category',
               label: 'Devolutions',
               items: [
-                'paas/endpoints/pix/devolutions/crete-new-pix-devolution',
-                'paas/endpoints/pix/devolutions/get-users-pix-devolutions',
-                'paas/endpoints/pix/devolutions/get-users-pix-devolutions-received',
-                'paas/endpoints/pix/devolutions/get-pix-devolution-by-id',
-                'paas/endpoints/pix/devolutions/get-pix-devolution-received-by-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/devolutions/crete-new-pix-devolution',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/devolutions/get-users-pix-devolutions',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/devolutions/get-users-pix-devolutions-received',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/devolutions/get-pix-devolution-by-id',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/devolutions/get-pix-devolution-received-by-id',
+                  className: 'menu-badge get',
+                },
               ],
             },
             {
               type: 'category',
               label: 'Deposits',
               items: [
-                'paas/endpoints/pix/deposits/create-new-dynamic-qr-code',
-                'paas/endpoints/pix/deposits/get-dynamic-qr-code-by-id',
-                'paas/endpoints/pix/deposits/get-users-pix-deposits',
-                'paas/endpoints/pix/deposits/get-pix-deposit-by-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/deposits/create-new-dynamic-qr-code',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/deposits/get-dynamic-qr-code-by-id',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/deposits/get-users-pix-deposits',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/deposits/get-pix-deposit-by-id',
+                  className: 'menu-badge get',
+                },
               ],
             },
             {
               type: 'category',
               label: 'Keys',
               items: [
-                'paas/endpoints/pix/keys/create-new-evp-pix-key',
-                'paas/endpoints/pix/keys/get-users-pix-keys',
-                'paas/endpoints/pix/keys/get-pix-key-by-id',
-                'paas/endpoints/pix/keys/delete-pix-key-by-id',
-                'paas/endpoints/pix/keys/dismiss-pix-key-by-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/keys/create-new-evp-pix-key',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/keys/get-users-pix-keys',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/keys/get-pix-key-by-id',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/keys/delete-pix-key-by-id',
+                  className: 'menu-badge delete',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/pix/keys/dismiss-pix-key-by-id',
+                  className: 'menu-badge post',
+                },
               ],
             },
           ],
@@ -111,40 +199,90 @@ const sidebars = {
               type: 'category',
               label: 'Operation',
               items: [
-                'paas/endpoints/operations/operation/get-users-operations',
-                'paas/endpoints/operations/operation/get-user-operation-by-id',
-                'paas/endpoints/operations/operation/get-receipt-by-operation-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/operation/get-users-operations',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/operation/get-user-operation-by-id',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/operation/get-receipt-by-operation-id',
+                  className: 'menu-badge get',
+                },
               ],
             },
             {
               type: 'category',
               label: 'P2P transfers',
               items: [
-                'paas/endpoints/operations/p2p-transfers/create-new-p2p-transfers',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/p2p-transfers/create-new-p2p-transfers',
+                  className: 'menu-badge post',
+                },
               ],
             },
             {
               type: 'category',
               label: 'Currency',
-              items: ['paas/endpoints/operations/currency/get-currencies'],
+              items: [
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/currency/get-currencies',
+                  className: 'menu-badge get',
+                },
+              ],
             },
             {
               type: 'category',
               label: 'Wallets',
               items: [
-                'paas/endpoints/operations/wallets/create-new-wallet',
-                'paas/endpoints/operations/wallets/get-users-wallets',
-                'paas/endpoints/operations/wallets/update-operation-wallet-by-id',
-                'paas/endpoints/operations/wallets/delete-wallet-by-id',
-                'paas/endpoints/operations/wallets/get-wallet-by-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallets/create-new-wallet',
+                  className: 'menu-badge post',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallets/get-users-wallets',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallets/update-operation-wallet-by-id',
+                  className: 'menu-badge put',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallets/delete-wallet-by-id',
+                  className: 'menu-badge delete',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallets/get-wallet-by-id',
+                  className: 'menu-badge get',
+                },
               ],
             },
             {
               type: 'category',
               label: 'Wallet Accounts',
               items: [
-                'paas/endpoints/operations/wallet-accounts/get-users-wallet-accounts',
-                'paas/endpoints/operations/wallet-accounts/get-users-wallet-accounts-by-id',
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallet-accounts/get-users-wallet-accounts',
+                  className: 'menu-badge get',
+                },
+                {
+                  type: 'doc',
+                  id: 'paas/endpoints/operations/wallet-accounts/get-users-wallet-accounts-by-id',
+                  className: 'menu-badge get',
+                },
               ],
             },
           ],
@@ -155,6 +293,16 @@ const sidebars = {
           items: [
             'paas/endpoints/compliance/create-user-withdraw-settings-request',
             'paas/endpoints/compliance/get-user-withdraw-settings-request-by-id',
+            {
+              type: 'doc',
+              id: 'paas/endpoints/compliance/create-user-withdraw-settings-request',
+              className: 'menu-badge post',
+            },
+            {
+              type: 'doc',
+              id: 'paas/endpoints/compliance/get-user-withdraw-settings-request-by-id',
+              className: 'menu-badge get',
+            },
           ],
         },
       ],
@@ -185,25 +333,59 @@ const sidebars = {
           type: 'category',
           label: 'Authentication',
           items: [
-            'caas/endpoints/auth/auth-singin',
-            'caas/endpoints/auth/auth-refresh-token',
+            {
+              type: 'doc',
+              id: 'caas/endpoints/auth/auth-singin',
+              className: 'menu-badge post',
+            },
+            {
+              type: 'doc',
+              id: 'caas/endpoints/auth/auth-refresh-token',
+              className: 'menu-badge post',
+            },
           ],
         },
         {
           type: 'category',
           label: 'Conversion',
           items: [
-            'caas/endpoints/conversion/get-quotation-by-id',
-            'caas/endpoints/conversion/get-conversion-by-id',
-            'caas/endpoints/conversion/get-users-credit-balance-and-liability',
-            'caas/endpoints/conversion/create-new-conversion',
-            'caas/endpoints/conversion/get-conversions',
+            {
+              type: 'doc',
+              id: 'caas/endpoints/conversion/get-quotation-by-id',
+              className: 'menu-badge get',
+            },
+            {
+              type: 'doc',
+              id: 'caas/endpoints/conversion/get-conversion-by-id',
+              className: 'menu-badge get',
+            },
+            {
+              type: 'doc',
+              id: 'caas/endpoints/conversion/get-users-credit-balance-and-liability',
+              className: 'menu-badge get',
+            },
+            {
+              type: 'doc',
+              id: 'caas/endpoints/conversion/create-new-conversion',
+              className: 'menu-badge post',
+            },
+            {
+              type: 'doc',
+              id: 'caas/endpoints/conversion/get-conversions',
+              className: 'menu-badge get',
+            },
           ],
         },
         {
           type: 'category',
           label: 'Quotation',
-          items: ['caas/endpoints/quotation/v2-quotations-spot'],
+          items: [
+            {
+              type: 'doc',
+              id: 'caas/endpoints/quotation/v2-quotations-spot',
+              className: 'menu-badge get',
+            },
+          ],
         },
       ],
     },
@@ -229,32 +411,64 @@ const sidebars = {
           type: 'category',
           label: 'QrCodes',
           items: [
-            'gateway/endpoints/qr-codes/generate-new-qr-code-for-single-or-multiple-orders',
-            'gateway/endpoints/qr-codes/generate-new-qr-code',
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/qr-codes/generate-new-qr-code-for-single-or-multiple-orders',
+              className: 'menu-badge post',
+            },
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/qr-codes/generate-new-qr-code',
+              className: 'menu-badge post',
+            },
           ],
         },
         {
           type: 'category',
           label: 'Refunds',
           items: [
-            'gateway/endpoints/refunds/generate-complete-or-parcial-refund',
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/refunds/generate-complete-or-parcial-refund',
+              className: 'menu-badge post',
+            },
           ],
         },
         {
           type: 'category',
           label: 'Transactions',
           items: [
-            'gateway/endpoints/transactions/search-by-uuid',
-            'gateway/endpoints/transactions/update-transaction-status',
-            'gateway/endpoints/transactions/get-transactions',
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/transactions/search-by-uuid',
+              className: 'menu-badge get',
+            },
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/transactions/update-transaction-status',
+              className: 'menu-badge put',
+            },
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/transactions/get-transactions',
+              className: 'menu-badge get',
+            },
           ],
         },
         {
           type: 'category',
           label: 'Withdrawals',
           items: [
-            'gateway/endpoints/withdrawals/create-withdraw',
-            'gateway/endpoints/withdrawals/search-withdraw-transaction-by-merchant-id',
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/withdrawals/create-withdraw',
+              className: 'menu-badge post',
+            },
+            {
+              type: 'doc',
+              id: 'gateway/endpoints/withdrawals/search-withdraw-transaction-by-merchant-id',
+              className: 'menu-badge get',
+            },
           ],
         },
       ],
