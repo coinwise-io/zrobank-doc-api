@@ -30,7 +30,7 @@ export const HeaderBox = styled.div`
   display: flex;
   width: 100%;
   border-bottom: 1px solid rgba(199, 234, 255, 0.25);
-  gap: 16rem;
+  gap: 18rem;
   margin-bottom: 1rem;
 
   h3 {
@@ -47,13 +47,12 @@ export const ExecuteButton = styled.button`
   justify-content: center;
   align-items: center;
   height: 3.25rem;
-  background: linear-gradient(90deg, #54b7e8 51.69%, #3491ff 100%);
-  border-color: transparent;
-  border: none;
+  background: transparent;
+  border: 1px solid #54b7e8;
   border-radius: 1rem;
   margin-top: 3rem;
   font-size: 1.3rem;
-  color: rgba(37, 47, 89, 1);
+  color: #54b7e8;
   cursor: pointer;
   padding: 1rem 2rem;
 `
@@ -85,7 +84,7 @@ export const ResponseHeader = styled.div`
   display: flex;
   width: 100%;
   border-bottom: 1px solid rgba(199, 234, 255, 0.25);
-  gap: 7rem;
+  gap: 7.5rem;
   padding-left: 1rem;
 
   h3 {
@@ -153,8 +152,8 @@ export const Spinner = styled.div`
   border: 5px solid #f3f3f3;
   border-top: 5px solid rgba(37, 47, 89, 1);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   animation: spin 1s linear infinite;
 
   @keyframes spin {

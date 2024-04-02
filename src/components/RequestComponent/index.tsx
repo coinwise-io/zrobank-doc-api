@@ -191,8 +191,8 @@ export default function RequestComponent({
                   <Container>
                     <ParamsTitle>Path</ParamsTitle>
                     <HeaderBox>
-                      <h3>Name</h3>
-                      <h3>Description</h3>
+                      <p>Name</p>
+                      <p>Description</p>
                     </HeaderBox>
                     <ContainerParams>
                       <CustomInput
@@ -212,8 +212,8 @@ export default function RequestComponent({
                   <Container>
                     <ParamsTitle>Header</ParamsTitle>
                     <HeaderBox>
-                      <h3>Name</h3>
-                      <h3>Description</h3>
+                      <p>Name</p>
+                      <p>Description</p>
                     </HeaderBox>
                     <ContainerParams>
                       {headerParams.map(
@@ -262,8 +262,8 @@ export default function RequestComponent({
                   <Container>
                     <ParamsTitle>Filter</ParamsTitle>
                     <HeaderBox>
-                      <h3>Name</h3>
-                      <h3>Description</h3>
+                      <p>Name</p>
+                      <p>Description</p>
                     </HeaderBox>
                     <ContainerParams>
                       {filterParams.map(
@@ -356,8 +356,8 @@ export default function RequestComponent({
                 <ResponseContainer>
                   <h2>Response</h2>
                   <ResponseHeader>
-                    <h3>Code</h3>
-                    <h3>Description</h3>
+                    <p>Code</p>
+                    <p>Description</p>
                   </ResponseHeader>
                   <ResponseCodeDescriptionBox>
                     <p>{codeResponse}</p>

@@ -37,6 +37,10 @@ h6 {
   font-family: 'Kanit Bold', sans-serif;
 }
 
+table {
+  display: inline-table;
+}
+
 /* :root {
   --ifm-color-primary: #54b7e8;
   --ifm-color-primary-dark: #38abe4;
