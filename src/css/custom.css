@@ -85,8 +85,10 @@ code {
   --ifm-blockquote-color: #fff;
   --ifm-background-surface-color: #fff !important;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --ifm-color-cyan-dark: #20a4a8;
-  --ifm-color-red-dark: #fc0304;
+  --ifm-color-blue-medium: #53b7e7;
+  --ifm-color-green-dark: #00a401;
+  --ifm-color-red-dark: #f9383e;
+  --ifm-color-yellow-light: #ffba00;
   --ifm-color-yellow-dark: #df7d03;
 }
 
@@ -139,11 +141,11 @@ input[type='number'] {
   position: relative;
 }
 
-.menu-badge a {
+.api-method a {
   padding-right: 3.5rem;
 }
 
-.menu-badge::after {
+.api-method::after {
   position: absolute;
   top: 0;
   right: 1%;
@@ -158,12 +160,12 @@ input[type='number'] {
 
 .get::after {
   content: 'GET';
-  background: var(--ifm-color-cyan-dark);
+  background: var(--ifm-color-blue-medium);
 }
 
 .post::after {
   content: 'POST';
-  background: var(--ifm-color-primary-darkest);
+  background: var(--ifm-color-green-dark);
 }
 
 .delete::after {
@@ -174,4 +176,9 @@ input[type='number'] {
 .put::after {
   content: 'PUT';
   background: var(--ifm-color-yellow-dark);
+}
+
+.patch::after {
+  content: 'PATCH';
+  background: var(--ifm-color-yellow-light);
 }

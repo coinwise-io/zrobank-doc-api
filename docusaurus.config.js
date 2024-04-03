@@ -21,7 +21,42 @@ const config = {
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  plugins: [require.resolve('@cmfcmf/docusaurus-search-local')],
+  plugins: [
+    require.resolve('@cmfcmf/docusaurus-search-local'),
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'api',
+        docsPluginId: 'classic',
+        config: {
+          gateway: {
+            specPath: 'https://api-users-hml.zrobank.xyz/api-yaml',
+            outputDir: 'docs/gateway',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
+          paas: {
+            specPath: 'https://paas-hml.zrobank.xyz/api-yaml',
+            outputDir: 'docs/paas',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
+          caas: {
+            specPath: 'https://paas-hml.zrobank.xyz/api-yaml',
+            outputDir: 'docs/caas',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
+        },
+      },
+    ],
+  ],
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -32,7 +67,10 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          docLayoutComponent: '@theme/DocPage',
+          docItemComponent: '@theme/ApiItem',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -90,6 +128,7 @@ const config = {
       //   indexName: "dev_zrobank",
       // },
     }),
+  themes: ['docusaurus-theme-openapi-docs'],
 }
 
 module.exports = config

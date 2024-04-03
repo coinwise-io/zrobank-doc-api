@@ -1,0 +1,54 @@
+---
+id: get-pix-deposit-by-operation-id-rest-controller-execute
+title: "Get deposit by operation id."
+description: "Get deposit by operation id."
+sidebar_label: "Get deposit by operation id."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2zYQ/iuEPjVBbCuy0sbGMCwvbuBuSAI3WYAGQUBJp5iN3kpSjjVP/313lKxYtpd6xYZ9EkXy7p57e44LK81Aci3SZBxYQ+sC9LWYn0OWKqFPi6vXwwkofZYmWqZRBPIR5uDnGqwDK+OSx6BBKmt4v7AS/EFF884Lx4u6k+ciwFsiwc0p8AAk/gWgfCky0ozbnyHBbXZnBNjt7ficvRMhgzjTxQEr0lyyAEKeR7p150VEEfOAKdA6gmAP9Sp/CjG3hgtLFxnBUFqK5Mkqy4MGWZImPnwH0c0UmLnH0I5QjNeoZu4eyxUETKcsT8S3HKKCiQASLcKCaZSS8C0XGDvU02UnCHBlQ7E4V5pN+QwYT5ZyAmQXAZh7EjAJWuawmysmsuuCxq+M6+mGV0020TSZhDmPs4gUhe/BAfvY7TgDb9BxB/2jDrePBp0j90PfO+zb/T7nb4b3gXCoDH0EReeObdOnbb8uKxameRIwr2DpCiCmct8HpcI8igpC52OxYYBIDc+ySPjmZu+rIl2LTSyp9xV8TQUpSa8WFRKM0Qbe9cAsgY3PfyAs5YHFZ1xE3Ivgkcfom16xmOSxt6XAlhYbSVZJtuwfOoMBatdTIYNHbDP9WOV9V3eM4DXKXaJY27OPGGWWmO22hSD18xhaLuxq5bwWbVva3993j95/OB7s75Mppbne6gJgpJBArMvRHf5NRmej8e+jc1zenYxvxpcXuBpNJlcT/J7+dnX2K549/B0kY6QNo1GIGHwJeB48cuNlmMqYVlaAmx0tYiKH3VyvFTG+5rNjO27H7nf69s2hPXTdoTPoHrn9L9S8K/16XzXwRvUso9RCis5qoY36t0l6UvchGiNz7rZOHIdIQAVbQmGGw5HmJLBYKIU+s1QiUSkmkhmPsDurKNEuhcZUjWsfbmq+VcjkPEcqRG6rWpaF6B8ElYzj/CdoqIj5E00gC0PD/mR1dBTFTeGokkIXZj55gHolLh/KjfrBwOKkqXK7Rk+UYJxy05Sm5BMYniGOHVq9mdPLxLxXC6qeV3Qayd5CBCUlFOSsmpAreD4ThVUstURV8xplud46qBcfl2X66e7mtUCnWmfGe5GEqWmruka+dGXKTnnyzCgjip1cjzfKePsdwlmdH3ad465dUzH3TbfUk6cRxdNcRjUSNez1Xl5eun/I1MOzrp/GXY9cQKYWdEmDn6RR+iT4L2t30AWkeKC6fbVi5qd4mmqFxWFCGOxij+KBudAxT1aUfSe5rdA09KRhrntZxHGolrXlRZ34e2vmUBWIuZGuyw3TtZJ+/B1ij2POp4iHZBYLjyu4lVFZ0ja+IGRRVcWMS0EsYKo0EIrWWGwhjxRswGuGo/VuUrfNHluf71t9qDex4SjXPMrpD5fPUFQvivIBb9Xvon8G5d97x21FXiFcf1g2LtC76IfC9j889t7wb/k8bflVHZ3gAynTK2cb7yKitIalLkZEFMTFKwW9xiomw1tL4qdTc4HdpM+Q/NwUiKZfqpGy/AskOSAv
+sidebar_class_name: "get api-method"
+info_path: gateway/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get deposit by operation id.</h1>
+
+<MethodEndpoint method={"get"} path={"/v2/pix/deposits/by-operation/{id}"}></MethodEndpoint>
+
+
+
+Get deposit by operation id.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Operation id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Deposit found by operation id successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Deposit ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"available_amount"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Deposit available amount.","example":1299}}></SchemaItem><SchemaItem collapsible={false} name={"third_part_name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Deposit thirdPartName.","example":"Full name."}}></SchemaItem><SchemaItem collapsible={false} name={"third_part_document"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Deposit thirdPartDocument.","example":"***456789**"}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`NEW`, `RECEIVED`, `WAITING`, `ERROR`, `BLOCKED`]"} schema={{"type":"string","enum":["NEW","RECEIVED","WAITING","ERROR","BLOCKED"],"description":"Deposit state.","example":"RECEIVED"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Deposit created at.","example":"2024-03-30T10:44:29.543Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"available_amount\": 1299,\n  \"third_part_name\": \"Full name.\",\n  \"third_part_document\": \"***456789**\",\n  \"state\": \"RECEIVED\",\n  \"created_at\": \"2024-03-30T10:44:29.543Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

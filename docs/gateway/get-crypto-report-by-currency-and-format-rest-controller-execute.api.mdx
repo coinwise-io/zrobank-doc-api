@@ -1,0 +1,54 @@
+---
+id: get-crypto-report-by-currency-and-format-rest-controller-execute
+title: "Get user's portfolio statement."
+description: "Get the user's portfolio statement by currency symbol, format (PDF or XLSX), and date range. If no date range is provided, the default 1-year range will be considered. Insert the statement details in the parameters below and execute the request to obtain the file's ID. Enter the generated file ID in the 'storage/:id/download' endpoint to download the statement. The portfolio statement allows users to view and download a historical record of their wallet activity. It can also serve as a helpful tool to evaluate their trading performance."
+sidebar_label: "Get user's portfolio statement."
+hide_title: true
+hide_table_of_contents: true
+api: eJztV9tu20YQ/ZUFX2IDEnW1GwtFUduJAxcFaviCBjEMYUkOpY1Xu+zuUjKr+t87syRNyVJc1U3Ql7zY0l7OnJ05c9Ey0BkY7oRW50kwCj6AOzVF5vQlZNq4k+I0NwZUXByr5EybGXeXYN2pVs5oKcGM4QHi3EHQChKwsREZQZVAzE2B5RbMG8sILNVSaGYddzAD5VhUsLhCZ7aYRVq2WOptsL2Ld2dMG/bx16uP+y3GVcISvMYMVxMI2XnKlF5ZYQItGD0XCSQtbzaBlOfSsV67AG6qUwshJYuAxVpZPGogQSiFBEuqDbMEHBfSMqH8RsYNn4EDY/G21AvPp3q4P2DgjxzdwpxmOsKr5bVUSMCnn78L2XuFt/3iBBT5GxK/jZu1kTfWacMn0BmJpJPohZKaJ28YqCTTQnnsenWdbciuieMWB3OJZK0PgaX7cwEl9ycgzqaC7IqYS3xFrE3CdEr4wrAF3sco8tiJuXAF+sqxmCuEtWgFzBwYtwQBMktziRY0/WEw5zLnpWsQxhmeCDVhqDMfXRVDiHJpnBqMbpeBwi8oG6VxG3cFaWgKHKO0IS16rj/nvUcMbm7w0958uE9vTYhDrgSGRBYM46ycSIunOAkrCCdkx1KuLlg2yzGEU07PUvU9AYbI+nOol2DkTA6twMZTmPFgtAxckRFv6wy+MXh8bD09pZTylsv+bcjOFBtPu9gSxRKHWDRWQeUzdFuQJSmuP0j7ENy1XuBS59m4zLP/TupZ4uIdeOCzTJKxk+vTYDcXxQYoFcbcjRHarDsrRZ29glgJybCIeMh1v1UxGQVUO9pOzEhrO/HDPPy67BDwFdzuiIPNUK5g6VK/26V//2y5qTs2j2OwFjNWFsQAq6HDEwTDs0xiKSCYzmdLWMvNOOroM8QUKqy4mNNOlExEshnr5y45K0teuCaX9BD60H07bPePoqP28Ghw0Obdg6P2wfCHQdQbdAcDzoPHVkD1clwGZic7dPTfW2r3+oPhmBqAnHLynG7/aXTE1X3o0wyJNKrYMWxb6TVSWCfZ7/aH7e6gPehe97qj4XDUPwoPDw4/kTBX9HdLDl91yhovKgbCebzdOvplJSq0QnaG22SFXZergtUcyraI5dcAmwlrqcZjy55y6pvYAkRSd3NcJYeEgUfubSLfYDdhPMcSjTW31B9LsQNjg/Z3+v1vwgahHZ9Q/wl+czH7izWJc1UnjiVfWmz1Blug71QRDhTYlUa3d5SN2MKmmianCfic4G6KXzraxZ2nlty2DRqBYef0XW8F+YqyrEykGr9KPYphtdSqPpzVkvvl9+tGbFPnMv8moVLtc6RSwKfQaHaCCmY3fhI4vjjfkOT2M8Sz3O+F/bdht6oWOBEQflUkn67ibm5kxcSOOp3FYhHWyRPrWRjRE7CYCDrkIFZa6ongPz87g0/AKgSkxsaK79ZiMnUWQ+5dmOxij/yRaetw7FgBo+H0y4Np+Nw7y6ZGfp9rv8+1L8+1VTY6eHCdTKLPSM9ep8uqOtwGWB2oVmyrD1gTpqhXOrVcRtzCjZGPj7RcThlUgRJheSRXppAvqnXvsiqP++zl0XIr63soVudYej4dCmhC+mocNifJF7hszrGvJLXr6PgSl83h9duQqSbF3aiUc2pD5I6+GEFMfMtq1b+qXi2k/+Hn1wtPr38wrrm+3DrGOTdbDcvGeLvWwD+8p2ZKU8jKgPms83qvVVs4faxg/3jiD7BrfQ/qp6Cm5+gr2sGp6m+GCQz+
+sidebar_class_name: "get api-method"
+info_path: gateway/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get user's portfolio statement.</h1>
+
+<MethodEndpoint method={"get"} path={"/otc/portfolio-statements"}></MethodEndpoint>
+
+
+
+Get the user's portfolio statement by currency symbol, format (PDF or XLSX), and date range. If no date range is provided, the default 1-year range will be considered. Insert the statement details in the parameters below and execute the request to obtain the file's ID. Enter the generated file ID in the 'storage/:id/download' endpoint to download the statement. The portfolio statement allows users to view and download a historical record of their wallet activity. It can also serve as a helpful tool to evaluate their trading performance.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"format","required":true,"in":"query","description":"Portfolio statement format.","schema":{"enum":["pdf","xlsx"],"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"currency_symbol","required":true,"in":"query","description":"Portfolio statement currency symbol","example":"BTC","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_at_start","required":false,"in":"query","description":"Portfolio statement created at start.","schema":{"format":"date-time","type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_at_end","required":false,"in":"query","description":"Portfolio statement created at end.","schema":{"format":"date-time","type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Portfolio statement generated successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"File ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"file_name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"File name.","example":"f6e2e084-29b9-4935-a059-5473b13033aa-1234_detalhamento-zrobank.xlsx"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"File created at.","example":"2024-03-30T10:44:29.656Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"file_name\": \"f6e2e084-29b9-4935-a059-5473b13033aa-1234_detalhamento-zrobank.xlsx\",\n  \"created_at\": \"2024-03-30T10:44:29.656Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

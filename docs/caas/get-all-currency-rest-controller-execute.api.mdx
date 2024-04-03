@@ -1,0 +1,58 @@
+---
+id: get-all-currency-rest-controller-execute
+title: "List currencies."
+description: "Get a list of all available and tradable currencies. You can include any of the filter parameters below to refine your search."
+sidebar_label: "List currencies."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV21v2zYQ/iuEPrWAITtGPgzGMCxNt8LDhgVpgqENgoCWTjYbilRJyonq+b/vjqQsv8VxUgz9Jkr38tzx+PDRItEVGO6EVuM8GSUfwJ1JeV4bAyprLsG6c62c0VKCuYNHyGoHSS/JwWZGVOQWnBhnUljHdMG4lIzPuZB8IoFxlTNneO4XWYgrwKbsk65ZxhUTKpN1ToYNebsZsEJIB4ZV3PAS8MmyCUj9wJxmBgqhgDW6NswCN9ksRTidZTK6WSQKFwhLaZURWEEYZ8BzMDvQrzCdt2Pj90xYLOP6Gp/ezE/fstpCTjlrJb7WIBsmclBOFI0HaeBrLaygOCnDnq2/sKyssRkzPqe6Wj8BhsB6OwPYbWdq6CU2m0HJk9EicU1FuK0zQk2T5bK3KqXiU9hwLbi0EEtDcKbZqewCXZiqy0nI2mXJoeC1dMnopNdmDGYbGa349qqM5Jeyv/ijf6KWngwGmwBK/ijKukQAg0GvgzMcHMSjjXsVHvRj3GFLJzi6m0BAEYqbROTJbe9A97UJo/Pi5N7xie4n3Gb4pcUQVhTjMBbblBMtXwimPc/so/feRLSd65Zi2wqnGCx9Hw4GAfj2uelOM86+q43C42LrLANri1rKhtJkyB44/BSAV5UUmaea/hdLURa7KPTkC2S00ZUhYnIiYPDz31nF+Xhm5OGRl5VE+5Nlz0e480N9XBg/x+tBhoM2itOOyyPDeNvdOEeGuCIzYkWQUGIb7WZZAwqVc8d39+e82xsyIL+YihvDaUKEg9I+33k8G8/CXI3X+H2aUHXCSdgdrSfdvL33jNN9vKuNA73yveNSTNW+CO1Jk1B4JhHTmaOzdjAy8+FYpSPTU6IcMlEes32rWNGDzbmsQ6GOT1/SID4NJTru9jZ2xSKZE/NwQftHMj9QIoVLiV7W2MTTYbuHvY5vNtrbNSGU0kK7XW3+HiVxGVlljJOHSbeyxiuuO6cbp609MnHej8pDOTDJ6T7+GhdecLQAgtbA698AK4W12FUkb7zALeoT3DWRs0Kbkjt6S83323E6ONmNfG1RuvAaJQLe+YHuWIFqCPLgMxz+L2jCTJH+Sf5uFZ1l/7K2MdQyi/LNCNd4kTRB9YQzO7q5JcZH9TTTJACn4DmAuxku+itxaPsd29Nug5kHtbUW9iOReWCNNnhkeNqn+KoXH373BeD7P/656shp5lzlaxGq0H7Q4y5/To1m77i6Zxcc23B2Md45LXtNCGX4fJIOf0oH8UrCw0HR45268sSvtZERhx31+w8PD+k3oyf4Lc10mU6oALyxBBk5yJSWeir4r1s2WABedUAz2GXxGpFIh65L38D8mHzUDaQfV3K1FuxPEttrcnq7G4vu5v3x8jxuroNH168kR6GyjIUv4qTddL8hNF5rs4bzNcPqyWSxmHAL10Yul/Q6SB0a5VxYwt9JoSdbsaUQ9gK7h6ZT3J6xcZmQBHthniel8IG0kfm+K+2O4j2UL8jq78m3ErkH0rQK+pV59ujXQzW1V1aX7ZYWRlA6z3i99n/wZePz5jIy9Fv2A34cD5Tc/upu9Dd8OkNBXq3v8Y4O3+D/D78RHdP9taYztrjbd62Vk6pZi/3zO2/ArvQ9qF+SFp6jJebB+/g/l4Kfqg==
+sidebar_class_name: "get api-method"
+info_path: caas/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>List currencies.</h1>
+
+<MethodEndpoint method={"get"} path={"/operations/currencies"}></MethodEndpoint>
+
+
+
+Get a list of all available and tradable currencies. You can include any of the filter parameters below to refine your search.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"page","required":false,"in":"query","description":"Page number.","schema":{"default":1,"type":"number"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"size","required":false,"in":"query","description":"Page size. Max size is 100.","schema":{"maximum":100,"default":20,"type":"number"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"sort","required":false,"in":"query","description":"Page sort attribute.","schema":{"enum":["id"],"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"order","required":false,"in":"query","description":"Page order.","schema":{"default":"asc","enum":["asc","desc"],"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"symbol","required":false,"in":"query","description":"Currency Symbol.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The currencies returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"page"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Page number.","example":1}}></SchemaItem><SchemaItem collapsible={false} name={"page_size"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Page size.","example":20}}></SchemaItem><SchemaItem collapsible={false} name={"page_total"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Page total.","example":20}}></SchemaItem><SchemaItem collapsible={false} name={"total"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Total of elements.","example":100}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>data</strong><span className={"openapi-schema__name"}> object[]</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+Currencies data.
+
+</div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Currency ID."}}></SchemaItem><SchemaItem collapsible={false} name={"title"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Currency title."}}></SchemaItem><SchemaItem collapsible={false} name={"symbol"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Currency symbol."}}></SchemaItem><SchemaItem collapsible={false} name={"symbol_align"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`left`, `right`]"} schema={{"type":"string","enum":["left","right"],"description":"Currency symbol align position."}}></SchemaItem><SchemaItem collapsible={false} name={"decimal"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Currency decimal value."}}></SchemaItem><SchemaItem collapsible={false} name={"tag"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Currency tag."}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`active`, `deactivate`]"} schema={{"type":"string","enum":["active","deactivate"],"description":"Currency state."}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"page\": 1,\n  \"page_size\": 20,\n  \"page_total\": 20,\n  \"total\": 100,\n  \"data\": [\n    {\n      \"id\": 0,\n      \"title\": \"string\",\n      \"symbol\": \"string\",\n      \"symbol_align\": \"left\",\n      \"decimal\": 0,\n      \"tag\": \"string\",\n      \"state\": \"active\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

@@ -1,0 +1,58 @@
+---
+id: delete-wallet-rest-controller-execute
+title: "Delete a wallet."
+description: "To delete a wallet."
+sidebar_label: "Delete a wallet."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1rHDcQ/itiPyVwvXNMPpSjlMSxC1cKLc6ZQBNjdKvZW8VaaaOXO2+2+987I+lefHuGUijFYGuleX3mmRn3hWnBci+NXohiXlyDAg+fuMI/t+D8B6O9NfhlH+AJyuChmBQCXGllS0qosjRMRC3G2TYqTlGm5ZY3eGldMf/cFxo/UFYbXZIFSYo1cAF2bK8GFuXY4ppJh1bv7vD0avP2NQsOBPOGBS2/BVAdkwK0l1XHPGpZ+Bakk2Rnyt4rdXzhWBOcZzXfYJx6pyfBUrBRzgIC4G2ASeHKGhpezPvCdy3F7byVel0Mw2SfihRnFGNeLff1KKsEKfolfy/bv082EfkrIzqSOLiouHJwajcVLAOPKHDK0bEVV5wgzNr70uBD+RhawtBCCRLRIOSqoIWjyEqsNyJDjnnbKllGasy+OnLWjwM3q69Qeqq3JSJ5CY5ek7OH5OwBoRqleprHR0DXYhclwsQWVQwt33Qm4FF7ijzT7SjPSXzXkNghtcNQMGd3YpQeveXaVWCj8R1MvDEBba+gMghWtI9BMolUxpoXXnoFJ91x1S1ErNEwkIgF1yLLUvqXFxf0Z8zrHElKQDAXyhKcq4JSHXqaFG/PKSIQXHe7UgoWWwv7AiNtpHMUqLERDak3XGGamEWDRMBbAj1bfjO2fIc4MR4QCWyGVGpWcalAJJ3Ly/8kGkKUr2kwFL/vpo9jf7EErCuwCbBywUrfxeGxArRu8XhP/YFTpTY0qxKKcdZgw82L2X6UuVkC2s16KQZqOLCbNIqObH8kMqeC7TxkhlOt89UkH36JSeD9r5+WeJnJXHvfxnyoQW4PjXvzxJuWKHOuFfbdTvOiMrE3MsH+nFrDrrh+ZFQax97/sRh1ynkZSi+9v5le/ji9yL3My9jLeWbtVfE1WJUTcPPZbLvdTr9bs8K3aWma6Yoyx1aXJOSh1EaZteTvTmQwBZwRgLw/8hInr1zX3iFLIvLin/gjGFvjfMP1kbHr8Wp5Bkd/GFkvbKJcKg9PftYqjiN6yNH0mTmfD0vQoULmDp7mWC4kTI1RkVTfr7iDO6uGga6x2rZLlNpwK/mKSoh0FdLR+YWJfRzwq9vcRa/Zs/1wNuR8ic1H5eYq0BceH6FL62i4R6m8VP91HP/D9j2bbcpq9//CPl1awOnpQ4r+hyVpHyRGW+vZyLi++e1meUNNnbdrYwRpWb6lbY6/58UX/MEP0yY+0Aqm+77AVbEOfE3yyTIxlqbn0XY7mRqxDmcL99NVFGBL8wj6530ZPX1SJYfhb/ItTrk=
+sidebar_class_name: "delete api-method"
+info_path: gateway/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete a wallet.</h1>
+
+<MethodEndpoint method={"delete"} path={"/operations/wallets/{id}"}></MethodEndpoint>
+
+
+
+To delete a wallet.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Wallet id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}><div style={{"marginTop":"1rem","marginBottom":"1rem"}}>
+
+Delete wallet that has balance require a wallet backup to receive the funds.
+
+</div></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"wallet_backup_id"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Second wallet id. If the wallet you want to delete has balance, you need to insert a second wallet id to transfer the balance amount before deleting it."}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The wallet deleted successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

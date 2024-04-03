@@ -1,0 +1,54 @@
+---
+id: get-wallet-account-by-id-rest-controller-execute
+title: "Get user's wallet account by id."
+description: "Get a user's wallet account by id."
+sidebar_label: "Get user's wallet account by id."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV21v2zYQ/iuEvqwB4pc4zpoYw7BkL0WKASvSZAEWBAElnWw2lKiSlBPN9X/vHUk5ku00L9uwfIlE8Z577vjw7ryIVAmaW6GK0zSaRO/AXnIpwR4niaoKe1Kfpmdg7M+qsFrhB30D95BUFqLdKAWTaFGSsTdlnFUG9HeG3TkQxj0Ki2sm0j6alFzzHCxoE02uFlGBL2h63/P7e1UlUtwlCG8GPAW94eYjFLjMPEt2cXH6C3sjMgZ5aetdVqtKsxQyXknb2XMnpGQxMAPWSkh3ENckM8h5NFlEti6JhrFaFNNoudxdMStUkcATjM5nwNw+hn6EwSR4VvPxDqUjZVaxqhCfK5CUBiisyGpm0UrD50oYQTh9dowEWwuG5ZWxbMbnwHjR2AnQlEa3TwOemNUVPC8Ul9l1QxdXye1sI6rL7gn643vczzVhmxJ5g6Hvo+GQ/m1mak0ZGmylC0ySqZIEjMkqKWtylaDiMGQC4WUpReJEOvhkCGmxyUTFnyCxJDFNkrbC88CoN9g+EmqQPCMREgO453kpyS77HkYwPBz3RkfxUW98tH/Q48ODo97B+O1+vLc/3N/nPFruRjGXnPTy4LGo8niLZP7ksgImCpZgiKbjbG+If4hVos6R7A3PidQ/gjzwiMZyC8/ORnNAzsrBoWO8tA0xXOGJFXNfCNwjwV+38xY2LGmrQ7sJ5F9Kwpv1XY41pnj2WiBv3cbzerx5gU4arKDk14olqbSGIqm7rh853TXXje2689HbNrAVVj7jwOlWrgCdTTegE2EThYWiDZ1CInIunybeAQ9WHfjDNqyp81jJF1L2Rmucz36PNoFvuBTT4lXwzJm274GEjMqNFtOZ7creL2HtbZXbK19/mwrR3Ma2/rqS2JLszUQ9FiHSCYf/aEc/C9UaeRLT8bZ6fZph66lZEwVz3RsbnAaWC2MwdUxpbFEG684cPacsUzrnllYpw+6CjYd7m8gXOCYwXmETxK7mSzvLuMDO7G1Go/+EDUJbPqXZI/qjmXsM+8K6HcBQ/gxOOVrY2s0pMaAXrDZX19TocICZKZqWpuAaDrXPSTRYTVJmEMaZcF3NYCHSJZ056LkffVoOPlIn882qcRPaGx1fWNoND7+5iHD9/eU5LgYZz6wtXXCiyJSTdzj8v/pasRNe3LIPHPNy/OF0Q+tbtxBL/3mvPzrsD0M/xnpO6GGgWFni10rLwMNMBoO7u7v+31rF+K2fqLwfUwDYrgVtspAUSqqp4D+t7cEAsM8DifLBixuL6EIZPHmXwPQ5/igbpTI250ULjGbUJybUTnYWD2PI8+bbcCAW7u2glNxXTUd2EXRy9TBxm9X1XykFVyZ4+VEeMyRPuxeLmBu40HK5pGWcInXtBTTnWvCYzhkVmgpDz6jKjEsD34jjzVm4QDts64y3NYSwiPeP1EGjBr7h4y3UfrRcXuOuMCC/jM+/N9BvZe4Zrv/CWIVAA/Krcvc/TP3fiK/5ndKJy3/CogalbX3bGKc7Ne3dr1RYqDS3+uRaFXInvFUSP5y4Dexc3ULx40ogll5JI8vlV+S38ag=
+sidebar_class_name: "get api-method"
+info_path: caas/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get user's wallet account by id.</h1>
+
+<MethodEndpoint method={"get"} path={"/operations/wallet-accounts/{id}"}></MethodEndpoint>
+
+
+
+Get a user's wallet account by id.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Wallet account id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The wallet account returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet Account uuid.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"balance"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Value in cents.","example":10000}}></SchemaItem><SchemaItem collapsible={false} name={"pending_amount"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Value in cents.","example":5000}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`pending`, `active`, `deactivate`]"} schema={{"type":"string","description":"Wallet account state.","enum":["pending","active","deactivate"],"example":"active"}}></SchemaItem><SchemaItem collapsible={false} name={"account_number"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet account number."}}></SchemaItem><SchemaItem collapsible={false} name={"branch_number"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet account branch number."}}></SchemaItem><SchemaItem collapsible={false} name={"wallet_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet account wallet id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"currency_id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Wallet account currency id.","example":27}}></SchemaItem><SchemaItem collapsible={false} name={"currency_title"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The currency title.","example":"Bitcoin"}}></SchemaItem><SchemaItem collapsible={false} name={"currency_decimal"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"The currency decimal.","example":8}}></SchemaItem><SchemaItem collapsible={false} name={"currency_symbol"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The currency symbol.","example":"BRL"}}></SchemaItem><SchemaItem collapsible={false} name={"currency_symbol_align"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`left`, `right`]"} schema={{"type":"string","description":"The currency symbol align.","enum":["left","right"],"example":"right"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"balance\": 10000,\n  \"pending_amount\": 5000,\n  \"state\": \"active\",\n  \"account_number\": \"string\",\n  \"branch_number\": \"string\",\n  \"wallet_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"currency_id\": 27,\n  \"currency_title\": \"Bitcoin\",\n  \"currency_decimal\": 8,\n  \"currency_symbol\": \"BRL\",\n  \"currency_symbol_align\": \"right\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

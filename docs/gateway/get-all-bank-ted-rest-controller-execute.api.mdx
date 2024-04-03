@@ -1,0 +1,58 @@
+---
+id: get-all-bank-ted-rest-controller-execute
+title: "List the banks."
+description: "List the banks."
+sidebar_label: "List the banks."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV21v2zYQ/iuEPrWALcuys9TGMCxZt8JDOxSJgwENgoCSzjYbiVRJKolr+L/vjpJiy0ocJ92wT5bEu3uO9/p45akcNLdCyUnijb0PYE/S9JTLmykkZ2Dsb0pardIU9DXcQ1xY8DpeAibWIict1PkojGV2ASxCNePjec41z8CCNt74cuVJfEE5qWRM2oKUFsAT0C1bUzTj5NjkPROGcXZxgU9vbodvWWEgYVaxQopvBaRLJhKQVsyWDlzDt0IYQXZ8hnfY/mBYVqCPC34LjMtaT4AmZ52cBry91QV0PBMvIOPeeOXZZU5+G6uFnHvrdefhKjmfQ0N1xlMD1dXQOb1s3ewzqjBZZFGJukFJYMaL1HrjfqdGLMUaiEZ8fxUi6fnsE793TxTSfhA0Hcj4vciKDB0Igs7GnTDY64/S9lX+oB7jFkMaYS01HQFJXlx6IsHPsUpcsZg8wh+H2vF4bMUtPcQauIXkmlvvqrMnUUqXVfZiP53iE4nyuInxpHa3fCMb+30xwHW8eKEz506JzUSK7eSz6QIzWL5QLuuWMJWU0q4JGYaGESpWe8IohDsZF/IjyLlduKLD/NdvR0H7AlfksMmxi8CQchgEZTR2+9a1P7adLbREfFPEMRgzK9J06buESot9R7o8z1MRu6nT+2rIwKrddir6CjHVWK5pRllRwrvW20hVpflMt8E9z/IU5fvrjrNw7frpMDOuhbaNhEFtxSrL0wPNONm2nQNNTEmMqRmDFDIMo2leKyBTCbe8nZpqmBtGx6RVAXGtOdWbsJCZ5+OOTdkaibtOnta1N3nfcM+b/QQhBO+G3XAUjbrD0eCoy4OjUfdoeDyI+oNgMODcW1dNfzgMiTeBwsEx2XFT43A7dYds7ByH/REZKlv3YEMk3jT0cPQXteO5f+KTWWqK6xfaJp1nAbBAPikJS4eyNSQRBodDRk9UJtC1wg3UQwNdWsLBvRPuIBx2g0F3EEz7wXg4HIcj/2g4+kJzb2vM7Rvpm1C0prqwDqTFSc6qcTTBykWkHahqN2+6vNGrdcNV3XIIDEEgxvCxuTeZ4YhdshqfOeaDtEUDy4QxGFTcJEg8DBPylqciYWUa6CvF3uVpGPTbli8MjnheILVBrlLOSjbjIoWk1AnD/8Qbmkh8TrzNZZ+qAmNkkPlpYZeOzkW4bHBCjS+vaDcgz1sooo5zcEOD0x7xelGp3MN0umdDCwj0bckJt0ye09wvR0xtuFoGlJTqU6d6+KOu4T//nm6qd2Ft7jwXcqZcR1Up/eJrxVwRUzQNO/k8adX44zLkZ3ne98N3flDtL+QfZL9a6A+qeFrotPLEjHu9u7s7/7tWdHE/Vpkf0RVwvQkSshBLlaq54L/uyOAVcC8C1dwGxXFZMV9Y2q0uhMkheBSPXBmbcbllrM3VG9FYbbb0I6JVuC3c216ecmQt68qRVZX3S6/KO0k7P8vcY74X6AsJrFYRN3Ch0/WaPpesh8oqEYZH6RYretKzneX+qFs3sNzwdKz1gkQ8YmMvxHmSQO+BrcbOD8G2ePI+vJKM/wjeA9/dA1OT6Vfi/ItUdl8sapa98fKKXrQgN93U6tT/Pl9Wdm/Oqrn6lv0Pf1P3XLn+Y93IS3l0ghw8366NFvVuzPAPv9NYpa2zRUx2ZrCLWs0h5XLL9s+nToBN1Q3IX7zaPUuviINb9B9OnYQB
+sidebar_class_name: "get api-method"
+info_path: gateway/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>List the banks.</h1>
+
+<MethodEndpoint method={"get"} path={"/banking/ted/banks"}></MethodEndpoint>
+
+
+
+List the banks.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"page","required":false,"in":"query","description":"Page number.","schema":{"default":1,"type":"number"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"size","required":false,"in":"query","description":"Page size. Max size is 100.","schema":{"maximum":100,"default":20,"type":"number"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"sort","required":false,"in":"query","description":"Page sort attribute.","schema":{"enum":["id","code","ispb","name","active","created_at"],"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"order","required":false,"in":"query","description":"Page order.","schema":{"default":"asc","enum":["asc","desc"],"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"search","required":false,"in":"query","description":"Search filter. This filter is used to search for bank ted name and ispb.","schema":{"minLength":1,"maxLength":50,"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The banks returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"page"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Page number.","example":1}}></SchemaItem><SchemaItem collapsible={false} name={"page_size"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Page size.","example":20}}></SchemaItem><SchemaItem collapsible={false} name={"page_total"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Page total.","example":20}}></SchemaItem><SchemaItem collapsible={false} name={"total"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Total of elements.","example":100}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>data</strong><span className={"openapi-schema__name"}> object[]</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem"}}>
+
+BankTeds data.
+
+</div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bank ted ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"code"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bank ted code.","example":"237"}}></SchemaItem><SchemaItem collapsible={false} name={"ispb"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bank ted ispb.","example":"7219"}}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bank ted name.","example":"Bank ted Name S.A."}}></SchemaItem><SchemaItem collapsible={false} name={"full_name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bank ted full name.","example":"Bank ted Name of Money."}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Bank ted created at.","example":"2024-03-30T10:44:29.549Z"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"page\": 1,\n  \"page_size\": 20,\n  \"page_total\": 20,\n  \"total\": 100,\n  \"data\": [\n    {\n      \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n      \"code\": \"237\",\n      \"ispb\": \"7219\",\n      \"name\": \"Bank ted Name S.A.\",\n      \"full_name\": \"Bank ted Name of Money.\",\n      \"created_at\": \"2024-03-30T10:44:29.549Z\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

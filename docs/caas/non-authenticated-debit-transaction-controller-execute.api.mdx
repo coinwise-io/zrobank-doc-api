@@ -1,0 +1,54 @@
+---
+id: non-authenticated-debit-transaction-controller-execute
+title: "Create new non authenticated debit transaction."
+description: "Create a new checkout transaction without authentication workflow."
+sidebar_label: "Create new non authenticated debit transaction."
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVs1u4zYQfhVCZ/+qWcRrFEUT7xZND9kg8bZA00VBSSOJG4pUSSqO19XT9LSv0GterDOUbMt2unaB9lIbsCXOcP74fTNcBboEw53Q6ioJpsG1VheVy0E5EXMHyRuIhJsbriyPSWmmlTNaSjC/whPElYOgFyRgYyNKkqOJmQHcyThTsGBxDvGDrhxzWxtsIVxOa3zryS9r85BKvRigyZIbXoADY4Pp/YdeYOC3Cqy71MkymK78qzCAETtTQS+IMSy0RCJelrK1OPxoKaJVYDGMgtOTW5aAMeroI8SO/BjK3wmwJJ210VIpNrrWGaGywzTXmV0lLMMSJpopzUrz/Lm/Thr3wBMvSklmotevs69gkvbTcRj2z0ajSZ+fR9CPztM45MDTLMsnQd0LfMln3PgYDkqbCMdiEvYCLuW7FMtzNCtUv66KCMzxrK6f/yzAaIbZoBf3/Ac+AkueP2NMeiefs1evxpPzUfMZT8YU+vdaJid50QV4F7ooqXKGCXwAa30NW8dHvb19KkUD3TcIuONeUYtTNo+gYlEgXLpp7ngbh8NwFJ6Rk0vE7QlouEQtwGj+zuKPwvKgrnsd5N53D2ZTu4O01iEgCZxw3tgGIbcNK4L6w4HpLZK7iOoYaWh6jO9EuI2XuvFiS61sA61wND5E6TwHNhMg6TBVl+SQYPnR/k4zMOAqo1BkqzhGCKSVlEtqAf8nTt857ip7QgCVMZgza/W/eKqtzj8+0tv2ANvzxKgPj/AqZVwt2do38+3YMm6AFcJaDJ0haXNumVCPXIqEpdoU3NEqZTgIvOUXwPHegtlv/CkXEpJmTxj+J9Ggaccz64voofk7WxeTKmhxlBnhlr6bRoCWDc2dGkU4hXJNo7HU1qOLuxzfhjGZGZZ8SZ3EDj2whwj4/g7gA7JtHjdzbO3ojtDbAHTtroW0x1Wz1GsfvvPZ4PoPP81xsYVQ7lzpEyNG3G7n49s1PHexfyJY9+ZPd3YcNuFtx39Jtt+fN21101W3bVGoVHt6tFD+eYBDCJvqA7vheK4XN1cHXHlRhSrdiMeDcDIYtX0EkU/WFS92jKO0MrKtpZ0Oh4vFYvDJ6AhlAxxOg4gOAduMICUHsdJSZ4J/u6eDCWB/AiLV1suFlMyILHcWketBkJzij6pBUCu46hhrL1V0pTqhqQ72i7XadtN/537WYtDBkxuWkgtFNfC5rVqG3AeeIZ4xDUd8UBgp/h/yBLmRE8Fw32oVcQvvjaxrWkZgm2XDnkduBI8IIMhN3ADcgw85+wBLSq1Jsj+n6EhdVhTlwfioe+sdFzhzSvdF3W4PuHl3RwyM2mtooRPaY/gCF+l3GvyCX3zRvvCe3359FUiusopnpN/YpYOmGnSmwh7vu3c7bICdKL++9Apsrh9AfYOCJhtHr/42UP8FZDkQKw==
+sidebar_class_name: "post api-method"
+info_path: caas/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create new non authenticated debit transaction.</h1>
+
+<MethodEndpoint method={"post"} path={"/cielo/payments/debit/non-authenticated"}></MethodEndpoint>
+
+
+
+Create a new checkout transaction without authentication workflow.
+
+## Request
+
+<MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CheckoutId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Checkout Id gerado no pré-checkout","example":"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>DebitCard</strong><span className={"openapi-schema__name"}> object</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CardNumber"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Número do cartão de débito","example":"4551870000000181"}}></SchemaItem><SchemaItem collapsible={false} name={"Holder"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Nome do comprador impresso no cartão","example":"4551870000000181"}}></SchemaItem><SchemaItem collapsible={false} name={"ExpirationDate"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Data de vencimento do cartão","example":"12/2024"}}></SchemaItem><SchemaItem collapsible={false} name={"Brand"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bandeira do cartão","example":"Visa"}}></SchemaItem></div></details></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+The Cielo non authenticated debit transaction returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CheckoutId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Checkout Id gerado no pré-checkout","example":"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8"}}></SchemaItem><SchemaItem collapsible={false} name={"Status"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Current Status"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"CheckoutId\": \"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8\",\n  \"Status\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

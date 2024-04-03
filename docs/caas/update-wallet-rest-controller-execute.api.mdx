@@ -1,0 +1,54 @@
+---
+id: update-wallet-rest-controller-execute
+title: "Update a wallet data."
+description: "To update a wallet name with new one."
+sidebar_label: "Update a wallet data."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVutv2zYQ/1cIfWqBWHb86BpjGJa0G5B9WZDZKNA0KGjpbLOhSJWk7Hia/vfekfTbKYyhwxDAoch73+8edaJLMNwJrW7zZJiMy5w7+MClBHcP1r3TyhmNX+YzPENWOUgukhxsZkRJTMgy0qzyXIyzpWdkihfAlsLNmYIl0wpS5Cq5wWsHxibDhzohGuRWWmUkU5CoOfAczLGGOTBPx27fM2FRz3iMp1eL/mtWWciZQxOU+FqBXDGRg3JiumIOuQx8rYQVJCdl11LuXlhWVNaxOV+g5WrNJ8CQsZ7OAIbEmQouEpvNoeDJsE7cqiS7rTNCzZKmudi4IvITjN6vkrv5kVchyKiX9L0s/zHIxFzc6HxFFIcqMswR2k5PvCylyHw6218sqamPRevJF8gcZcRQ8p0AS6/Bi0MDXrCaiMlueOZFKYn+PUx5JV2EAAVmx9CHIB19ccJ58l2geceaJrDYElMTLOp2OvTvGAwRZgF2ObNVloG100rKFRn1gwKC+Tw3HCGJ22BM30AXOm/7re7V5KrVv+oNWrwzuGoN+j/1Jpe9Tq/HeYLu/uCYE6O/2ZE50VoCVy8JjQxsKvlsT/iUSwso0TqM8dk2emovR1UF5b0ElQd6njmxCO3DH0ns4643kQB1ZgYosZ+5d2SqTUGnhLLdcqIgIWdZE+Uw7vbj1u10+61Or9XrjC47w/5g2B2k/e6bj0eo9SXtk7QN7Toke2a+gGxqofcR0hHh/VOgvp1iC1qxtWrmeyU2OgOsENaii0wbbFWWCbXgUuQsBIVuKRJp4iVfHkseWzCMV9gMsbuFQmBTLiTkgafb/U+sQdGOz6jTJ3+uB4xl/7AQFkvxsjhOjHArPw0mgNINHh+p4eGYmGsaR2Xly5La5zBpb0aVbQfE23Yt8oYyAmYRBsuO4L+ozkMpr8XH4vd1Ea4u4uH3Ncj++DDawmvuXOmdod5xv23Dv62htGn+x6Uo1FT7uom4+JgazW64emJ3HEN3fXd7BNuTJORYeL5Mu2/TTmxwWC076jec+FoZGU23w3Z7uVymfxs9wbc000U6IZ+x/wkicpApLfVM8F8PaNABbJxAuN1q8RNUzObOIjh8zPNz9FEAS21dwdWOsPHB0oBfPD0MSb1t5mcvGjF3Dp5du5QcJ3ATjawjlB62W49FhggmPA2x4BFBczSWqOp6wi2MjWwausb0m1XA2IIbwSeUVwRvLiyd89g0v+PCq/tYU6/Z3uQ4aXK8xFIkFHBZ0Rcen2AVto3mEanizvSv7fgflquT3gav1uvgxl3ar8LTu2B9a0TcW4qjCb/luMa1oHTfpd1tNndjqvxJ3LIKnROL4Uva6vB3mHzCP/zQZQAOrWJ0XyeSq1nFZ0QfxBLiqenuzuH9fuMTdjLDP994AjbST6B+2eTb0SelvGm+Aaa3+tk=
+sidebar_class_name: "put api-method"
+info_path: caas/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Update a wallet data.</h1>
+
+<MethodEndpoint method={"put"} path={"/operations/wallets/{id}"}></MethodEndpoint>
+
+
+
+To update a wallet name with new one.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Wallet id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet name.","example":"Default wallet"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The wallet updated successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet name.","example":"Default wallet"}}></SchemaItem><SchemaItem collapsible={false} name={"default"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"Wallet default flag.","example":false}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`pending`, `active`, `deactivate`]"} schema={{"type":"string","description":"Wallet state.","enum":["pending","active","deactivate"],"example":"active"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Wallet created at.","example":"2024-03-30T10:45:25.426Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"name\": \"Default wallet\",\n  \"default\": false,\n  \"state\": \"active\",\n  \"created_at\": \"2024-03-30T10:45:25.426Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

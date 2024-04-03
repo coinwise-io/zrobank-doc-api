@@ -1,0 +1,54 @@
+---
+id: cancel-transaction-controller-execute
+title: "Request a refund."
+description: "Request a new void for payment checkout."
+sidebar_label: "Request a refund."
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VdtuEzEQ/RVrn0BKNm1Aoo0QokRCKk9VaYVEVaHZ3dmsqWMb29s2LPtBfAc/xozXadKmQuUBnuK153Jm5pxJlxmLDoI0+rjKZtkcdInqzIH2UPLt3OjgjFLovuAtlm3AbJRV6EsnLb+Tzyl+a9EHAULjjbg2shK1ccLCaok6iLLB8sq0ISdHCw6WGND5bHbRZZo+KMDaghCMMkfRpEMCE1yLo0xyCguh2ck7T27iuBILKqIyQhth3a+f43VE8sFbWFrFaYrDw8ULPKjH9f50On65t3cwhlcFjotXdTkFhHqxaA7Iw5P3ErJZl4WVZUcfnNSLrO8vGZ63Rnv0/D7d2+ef+7DOGhRziYqh4B0S4TC0TmMlfFuW6H3dKrXinpTUYeoTBwJrlSzjNCZfPUfrdtGY4iuWXJl1PLsgByzzTRN3kP+fzvWj7GOA0PonAGidY24k+77fnvvFdi13Man3QYYIZ4ekp2koFIhDEcDdsRzXAvRKrNOISEUvwKFYSu8JpSDSNuCF1NegBhIvIfAtF5NnMfIjAz/36AS0oaGK0vREDVJhNfhMp/8EDYUOsPCxX5FuP8S6b9wsT2J1Mqyi0AqkyI6Ol8xhUmBjWO02zjmKa5ZNSo4ySbL1k24jy37isG41T4NqvR7ku5XjI3N0oOE6UyJuZM9wNUqH97EQuv/w6YwuE1GaEGysSeraRAKlYX/OnRHvQF+JE6B2HJ0c77DpURNGOTzv59ODfC8pjQjD0dPmufOk19aphMPPJpObm5v8uzMFveWlWeYFF0BClGwUsNRGmYWEtw9sqABSMDIXN1mOlBJOLprgaeCxgdVT8nE3rPFhCXor2GbbDjPJH7aj22yUv1nNaQ4Bb8PEKqC12yeMXWLIRRYZEhkzcISOswfLO9KEqNEQcHbpugI8njvV93xNcNxqIM81OAkFz5gIWknPZyJlDcrjH0p6dpo081w8bY09Wli6JA0yVUC1/EXHK1zd/0PqL8m6QaiifLpkcEQr3IYt153NfU9nJ+fMdF4RW6vxgSxi9EdhvX4XDcSZuUL95g5k4E/G1/e/AQImqtM=
+sidebar_class_name: "put api-method"
+info_path: caas/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Request a refund.</h1>
+
+<MethodEndpoint method={"put"} path={"/cielo/payments/{checkoutId}/refund"}></MethodEndpoint>
+
+
+
+Request a new void for payment checkout.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"checkoutId","required":true,"in":"path","description":"Checkout Id gerado no pré-checkout","example":"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8","schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+The Cielo pre-checkout returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CheckoutId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Checkout Id gerado no pré-checkout","example":"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8"}}></SchemaItem><SchemaItem collapsible={false} name={"Status"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Current Status"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"CheckoutId\": \"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8\",\n  \"Status\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

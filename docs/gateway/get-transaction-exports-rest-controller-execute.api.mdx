@@ -1,0 +1,54 @@
+---
+id: get-transaction-exports-rest-controller-execute
+title: "Download transaction exports file."
+description: "Download transaction file."
+sidebar_label: "Download transaction exports file."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFWNtu20YQ/ZUFn2JAlhwjD4VRFE1qx1CfjMRGigaGsCKH0sKrXWYvlllV/96ZJSVTl1CkKKNPEvdyzuzM7PAMF5HOwHAntBom0VV0C+7ecGV5TEM3L5k2zn4B6/7QyhktJZgRvEDsHUS9KAEbG5HRUtx7redKap4w94rAUiGhj0szbvgMHBgbXX1fRAofcMvL+Zwjpjv3XiS4ShDOFHgCZgf+KygcZt/CBvbwMLxm70TKYJa5vMdy7Q1LIOVeuo01cyElGwOz4JyE5AxxbTyFGY+uFpHLMzLDOiPUJFoue2vLlFYxHLDofgosrGPIIyzjpVXPH86Yt4CO0Mwr8cODzJlIQDmR5szhLgM/vLCCcPrsIxpYGbBs5q1jU/4MjKvVPgGG3BjWGcBQOeOh2VGCZ183plxaKA+Gppl851yfhcRAsXG+Ecnhdb+h78pgHkeZQKbREcGVTQljKdBJo/B0LG+BwQijJW2iYz/DP12pVzgt6XGdkF25A0hTYpoZPUE+ysTL0cR3w78YYjACa0p8Is7GDjbAHSQj67jBMHPXIbsIim4RoTC8VRPos6+Ey1KjZ2H4qqVZWA/fwKhy2mPRka3M8llyKm9JjgWwwNtnW2uPrUzr7LEDhrV3GjrLeXu0PcX2xvmsZxlX+ahDdS4hWrwMxlw9davMhNCqLlfeWqOwqh1zRQC1qk6UXU5TkrUkvFFBKuBGFkLzc7JHArYZigSwNH95cUE/u7IkWWkxnVJykuJw3ijUJNbHMVibeimxEC570Yd9GMOUUZhXp2BBvqHCMcBmwlq0hmmDGsUyoZ65FAlLtZlxR6OFzwLy+13kB4tR5R5VEF6WuKg/Kb58ICn2XF6+iTUI7fiExGd0x3N6zVp2ixd1znP2LyuFboT+tShujXB5kKljQA6Dfx/J9ahfp5pU8gRckLRuig+DrMQ7nxR4g0r+2QGU0IRsngv9W6H5SrEugrkiWxQJEC5PMdQr/3wOp8LxP7/d42CZHVPnsnBAoVIdskag0sWJv/tGs090e8jpln28G+7k3v41ZGcx/75/+Uv/AodibADwTIRf5vt6K856I0tL7NVgMJ/P+/8YTRe3jxWjP6YjFDoFbyfESks9Efz3rTV4BCliwOSusAR1LCZTjBemPrkwacJH/kAh6WZcVcD2tihlhNatyoaDFuHgpO4ONDhlMBy8uEEmOV73ZWnmosyU79F2ptC2Sq6Qk14TcYrW06bFYswtPBi5XNJwUUIoORNh+VhWSsxPDa8T9HvtRpG0ahzwPnlaEFGlO4ZyW9DXEJaNQ2fKLS1fw7jZOZyKuKrkD5NX+odTGbCW84fZV+1DZ+ptQV9DvdVAnIr6AOsJCZvK+Tr372su3sawveq0gWkVudzZsDaSvq5C7Gsy3tq4xo7b02d0tu1V4tcQr9uI7gm0IfDrkqTaTHSm3dD4NazVbuJI0n3yvq5W7TYTRxJvy/wa0o1W4pXukR6MIL6gSXurL5Pt5MDpvqTWHGH70+6RTnv3pRT9Z+x/+Nxac77VB+KN6Kw7hNsbEujU5lTauC01H6JWTuFNqmD9+iksYPf6CdRv0ToV6RF5lsvlfwt2J1k=
+sidebar_class_name: "get api-method"
+info_path: gateway/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Download transaction exports file.</h1>
+
+<MethodEndpoint method={"get"} path={"/payments-gateway/transactions/exports"}></MethodEndpoint>
+
+
+
+Download transaction file.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":false,"in":"query","description":"Filter by transaction ID.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"uuid","required":false,"in":"query","description":"Filter by deposit UUID.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"client_name","required":false,"in":"query","description":"Filter by client name.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"client_document","required":false,"in":"query","description":"Filter by client document.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"client_email","required":false,"in":"query","description":"Filter by client email.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"type_key_pix","required":false,"in":"query","description":"Filter by PIX key type.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"key_pix","required":false,"in":"query","description":"Filter by PIX key.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_start_date","required":false,"in":"query","description":"Filter by creation date range. Start from date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_end_date","required":false,"in":"query","description":"Filter by creation date range. Filter until date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"updated_start_date","required":false,"in":"query","description":"Filter by last update date range. Filter from date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"updated_end_date","required":false,"in":"query","description":"Filter by last update date range. Filter until date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"status","required":false,"in":"query","description":"Filter by status.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"company_id","required":false,"in":"query","description":"Filter by company ID.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"bank_name","required":false,"in":"query","description":"Filter by bank name.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"transaction_type","required":false,"in":"query","description":"Transaction type.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"end_to_end","required":false,"in":"query","description":"End to end id","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The download of File returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

@@ -1,0 +1,54 @@
+---
+id: create-payment-controller-execute
+title: "Create a new PicPay payment."
+description: "Create a new PicPay payment."
+sidebar_label: "Create a new PicPay payment."
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vetu4kYUfpWRf7USYKAoTehFJSEbsZUJJWFXSRRVw/iAJ7E9zsw4QFw/UJ+jL9ZzbIdLoNltpSJFGdvnfr7vm8xRCWhupYoHvtN1zjRwCyO+iiC2Zyq2WoUh6N9hCSK14NQcH4zQMiGPtT3jLIYFG0mBniwpvRtonHDNI7CgjdO9y5wYH9BJBCAeVWoxY83R8JRKDZjc6hRqjqSwCbfBXq6qKpbov/6sv8ZgA58SwZJHSUjBZ82jme8ffVc/8jvteqf1/bQ+nXJe98UxtH3/5OSkc4wOBgNE3Olmjl0l5GeslvHcyfN7qskkKjZg6Hu72aJ/u7VcB/CmXabBpjoGn5lUCDBmlobhimoTOEY0oCA8SUIpinG7D4YiZfuVqOkDCEvT07QcK8s6NMxAQyyAFvW27H+clRRYH1v7/rdx5bTJIuBEh/86earD3ZyBtYnpui5Oo1HaNISK3NeVusPPHyLvYvwwjD7J275o3rTPF17fWwxfbsObl/MF1QPLBFFjesVYZ0pHHE/ODf7qnlfv9zHh+0WeL2URgfkI4AaFfNJC+XBoEbuev43ZGRru9JRttvwV7Q2xDW95ee21vP68Nbyg9gYL72WyvOyLFcadcgNHHYyFxfGujPgc3CSe/1C+r8lPp5fjRfPXi7nq4W94NQnOJ3M83Q4GPyGE821a3e0gZ2eT654R81baYjklqqsVjsHQX0EGiouBO83mPh0GM8ZjglmZlBW8N4xrYJE0BufPlGYBN0zGzzyUPitXRm9p2MX8O4eINjGgGU9tgNVUzGEzLkPwS592+3+pBkNbPifVqgbC/mBn1QJpWgblUEu7KmRtChha4/GexAP1LlCkpYkyBYtJy7qOW0LBrcZv3GwjgzkJEujnUie3wl+RNpT0f01SCQatqnpVqw4fXlnw8fP1Bv6ExqIfGc9UAe5q0bcNrdgpjx/ZiOMoeqPBHtIPmlCV5edWo33caFYKx0VBxUri1574NSXNWLNisVg0XrSa4jeiRWNKDaAASjKyIGIVqrnkv7yxwQZQOYFwuMnSC0Om5TywBpddDND/mnw0DVpOxOOtYF+4ynYms033L/hVa7CwtG4Scrze8qrErILGnVNCY8NNg8fu1i2JiAgITGiaZaQBSN48p9dPKehViZlnriWf0moRkr40dEYYznho4J3yvxlXNPmWvXfBHmyjeolkI1zwMKUnPD7Caveaz+/ROgDuFzTJKoMe3pOJ3XLdux53+DS6vCJckxhsifQbEhThD9b142lhwK7VI8Q/r6u09EgF5vnfSkoU7w==
+sidebar_class_name: "post api-method"
+info_path: caas/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create a new PicPay payment.</h1>
+
+<MethodEndpoint method={"post"} path={"/picpay/payments/{checkoutId}"}></MethodEndpoint>
+
+
+
+Create a new PicPay payment.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"checkoutId","required":true,"in":"path","description":"Payment pré-checkout Id.","example":"f06fdd63-6d42-417b-bbaa-dc8e2dd99948","schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+The PicPay payment returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"referenceId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment picpay reference Id.","example":"f06fdd63-6d42-417b-bbaa-dc8e2dd99948"}}></SchemaItem><SchemaItem collapsible={false} name={"paymentUrl"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment picpay url.","example":"https://app.picpay.com/checkout/NWFmMGRjNmViZDc0Y2EwMDMwNzZlYzEw"}}></SchemaItem><SchemaItem collapsible={false} name={"expiresAt"} required={false} schemaName={"YYYY-MM-DD"} qualifierMessage={undefined} schema={{"format":"YYYY-MM-DD","type":"string","description":"Exipires date."}}></SchemaItem><SchemaItem collapsible={false} name={"qrcode"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"QR Code.","example":{"content":"https://app.picpay.com/checkout/NWNlYzMxOTM1MDg1NGEwMDIwMzUxODcy","base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZII="}}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"referenceId\": \"f06fdd63-6d42-417b-bbaa-dc8e2dd99948\",\n  \"paymentUrl\": \"https://app.picpay.com/checkout/NWFmMGRjNmViZDc0Y2EwMDMwNzZlYzEw\",\n  \"expiresAt\": \"string\",\n  \"qrcode\": {\n    \"content\": \"https://app.picpay.com/checkout/NWNlYzMxOTM1MDg1NGEwMDIwMzUxODcy\",\n    \"base64\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZII=\"\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
