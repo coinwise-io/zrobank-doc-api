@@ -30,7 +30,7 @@ const config = {
         docsPluginId: 'classic',
         config: {
           gateway: {
-            specPath: 'https://api-users-hml.zrobank.xyz/api-yaml',
+            specPath: 'specs/gateway-spec.json',
             outputDir: 'docs/gateway/endpoints',
             sidebarOptions: {
               groupPathsBy: 'tag',
@@ -38,7 +38,7 @@ const config = {
             },
           },
           paas: {
-            specPath: 'https://paas-hml.zrobank.xyz/api-yaml',
+            specPath: 'specs/paas-spec.json',
             outputDir: 'docs/paas/endpoints',
             sidebarOptions: {
               groupPathsBy: 'tag',
@@ -46,7 +46,7 @@ const config = {
             },
           },
           caas: {
-            specPath: 'https://paas-hml.zrobank.xyz/api-yaml',
+            specPath: 'specs/caas-spec.json',
             outputDir: 'docs/caas/endpoints',
             sidebarOptions: {
               groupPathsBy: 'tag',
