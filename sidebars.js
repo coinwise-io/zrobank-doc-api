@@ -27,7 +27,7 @@ const sidebars = {
   paasSidebar: [
     {
       type: 'category',
-      label: 'Pix as a Service',
+      label: 'API Overview',
       items: [
         'paas/api-overview/introduction',
         'paas/api-overview/authentication',
@@ -50,7 +50,7 @@ const sidebars = {
   caasSidebar: [
     {
       type: 'category',
-      label: 'Crypto as a Service',
+      label: 'API Overview',
       items: [
         'caas/api-overview/introduction',
         'caas/api-overview/authentication',
@@ -73,7 +73,7 @@ const sidebars = {
   gatewaySidebar: [
     {
       type: 'category',
-      label: 'Gateway',
+      label: 'API Overview',
       items: [
         'gateway/api-overview/introduction',
         'gateway/api-overview/authentication',

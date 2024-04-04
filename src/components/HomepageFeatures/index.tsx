@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Pix as a Service',
     src: require('@site/static/img/pix.png').default,
-    to: '/docs/paas/api-overview/introduction',
+    to: '/paas/api-overview/introduction',
     description: (
       <>
         Send and receive instant payments through our Pix API, quickly and
@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Zro Gateway',
     src: require('@site/static/img/dashboard.png').default,
-    to: '/docs/gateway/api-overview/introduction',
+    to: '/gateway/api-overview/introduction',
     description: (
       <>
         Manage your wallets, track your transactions, and enjoy availability
@@ -36,7 +36,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Crypto as a Service',
     src: require('@site/static/img/bitcoin.png').default,
-    to: '/docs/caas/api-overview/introduction',
+    to: '/caas/api-overview/introduction',
     description: (
       <>
         Increase liquidity in your operations and offer your customers the most
