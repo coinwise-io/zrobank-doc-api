@@ -1,0 +1,54 @@
+---
+id: get-validation-client-kyc-count-rest-controller-execute
+title: "Validation client kyc count."
+description: "Validation client kyc count."
+sidebar_label: "Validation client kyc count."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v20YM/iuEPjWAIztBPwzGMDTN1iDblyIvK9AgKM4SZV9zulPvqDiq5/8+8iTHcpw67rphX2zpji8PyYekFomr0CvSzp7nyTg5Q/pTGZ3Hk1Oj0dIfTXbqaksXGOjUWfLOGPSf8AGzmjAZJDmGzOtKNNjCWh2yqA93TQaZWEhZuFJelUjoQzK+WSSWX1jp4XCu2Cod1rXOWUqLpRmqHP2Wg0u0fAwfogJcX5//Cq90AVhW1AygcbWHHAtVG9qQmWtjYIIQkMhgfsB2QzbDUiXjRUJNJTACeW2nyXI5eERmnc3wBURXM4QoB+xHB1AdqvvXB1AHzIEc1FZ/qdE0oHPOiS4aINby+KXWQYudFE4YYO8gQFkHgpm6R1B2pafRSxqjnEcuGfka9wslc2WlbLOhXSgTsIuO8flmK7jTVivdM1+BlKdPTAD8Tj/vtGFWwKQBUQav7BRTuBRzUHhXxuPxniiYIj+GIfPYcrgPprtmJmuzB5xbcR4qriQGuT8ejeRvmzv3324ZJgTV3jKHQp1lGEJRGxOLkXErsqhYVFVldBYNDD8HMbvYhuUmnzEj6UAvLU+6BUWOlOmJ2bqcPEdxEYMdvQ0F/+YCDB9UWRm2dTQacU16BbjpvHFiSJOIvDRvLrr8cTbF1OvnMnhecHs0sHIDccJwE3qEUofAtQDnuY0CaBszzVB9qUhOJeg0iZaPti1fB662qrlRueJtfqFQmqdHq3N8/J+gYdOkpjIfk/eqKdl5gDNm21w18BdweiSBgaev19TEKTpBtu/58VZIx+N15mSYTzHWW9GMX4ZVZ+tw2toarmk3bKs55GoOYzWF1+jv2ynd83YprGqJs/LZUU2K2R0Nuod3MTA+//3DFR92BJsRVTFGbQsXiddR4WPqHbxV9g4k7wFO3p9v0fB5GcHZ3h+lxz+lo647VBa7oxsJj6p8W3vTIQnj4XA+n6dfvZvwXcozMp1ICNw8WoQIM+uMm2r15okMh8Bdh8LOtZc4w/V0xiXj3pcU5vv4k3xULlCpbM/YC6t0IzWL9UB4Sa8rBOEDDSujeB4uO4iLjiw3yVOySJYfrUp+o11+YMsx3UIaJsqMgxD9xWKiAl57s1zKcTtuhaq5DmpieuP4m1H0Fs+ziO+w2VhqjK8WqUT2wP5u9t47O0BsLL0fxrH/7tkBqbcB14Bu5cVrQRSHxWD1RfN9lfn3vsB2BPD0k/AfpvXVRTeJD+B/+EzbEd/qw3IjrvbqhDd9Rb27rQW/MebPfpPxKnuqt8efzOJY4e5qs11+fhsF4Mrdof0lWcEjeWU/vHf/Bt4wL7Q=
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Validation client kyc count.</h1>
+
+<MethodEndpoint method={"get"} path={"/payments-gateway/validation/client/kyc/count"}></MethodEndpoint>
+
+
+
+Validation client kyc count.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"company","required":false,"in":"query","description":"Company.","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"start_date","required":false,"in":"query","description":"Filter by date range. Start from date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"end_date","required":false,"in":"query","description":"Filter by creation date range. Filter until date:","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The validation client kyc count returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"total"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Total Validation client kyc count found.","example":100}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"total\": 100\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

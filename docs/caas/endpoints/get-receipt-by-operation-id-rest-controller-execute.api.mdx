@@ -1,0 +1,58 @@
+---
+id: get-receipt-by-operation-id-rest-controller-execute
+title: "Get receipt by its operation id."
+description: "Enter the pix payment's operation ID below and execute to get its receipt. Should use <b>/operations/{id}/receipt</b> path."
+sidebar_label: "Get receipt by its operation id."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2zYQ/isHfVkC2LJjO1tjBMGSrSvSLwvyggIrgoCSTjYbWVRJyrbm+b/vjqIVy/bSdtjQL4lFHu+eOz73HFeBKlALK1V+nQTj4B3aW4xRFvaq+v1l5xaN/UXlVqssQ/2ES4xLi0EnSNDEmqzJik6/zS1qsFOEQi6hENUMc/uDgSYGXP8KEWZqASJPwLsBq2CCFqQ1oOvgIdxNVZklUBqE8+ii13gwvZVM1j1vd96LLiiOnYYOS0HLwiIlYnWJnaAQWsyQMJlg/HEV5PRBKJfdhaA0bLcsZULnJEOfokhQ72V0hzktwwd3AB4eCP+RTAFnha06UKlSQ4KpKDPbslnILKNEwaC1GSbH5NfEU5yJYLwKbFUwDGO1zCfBet1pkOUqj/ELiO6pus6OaykNCI9qPjrmaiVczTKXn0vMKpAJXYBMK3cnGj+X0kj2E8IlAdxaMDArjYWpmCNdzeacRM2FdXb6paxfk4qr7O5Blxdf115WDdcodPhqtR7ZrSkIMhreH/T7/K/tznMYUlUSz6Jqi4EyAVPGMRqTlllWcbCYmE35shtRFJmMnWXvk2Ffq30sKvqEsaWDhWa/VtZIPN+fEmEPWrch3tTWwNZwdJ10YC4yKhIv0F+08XEYrDuNVyuJSfsF+Se3zpyTw6WYFXwyuKGefMYKOJ+kJFruFIKCNWV6ovv7YqxbzLjbWsVth0x/xAH234y6g7PorDs6G552Rf/0rHs6+mkYnQz7w6EQHFeapwbVVtxIqQxFvhf4Ot2ICxhLELgPmvMtBMw78i9iK+f4lOBcZWXt5NuDxNQYEbeRLXW+EycVmUHi/xblP7YJsXuTO8XeqcEhyMR8T4LXZPrWNwe1CuMZHWoPSk3kFWywgtNJkhKNMJPG0F2D0iQGBmROrKSWSZWeCcurXDXHlVH/ZN/zgyG1FCXJDelH3UeQCumuhc8MBv8LGnJtxYRV3rH8L/BtYLhohqaMlrZyMyBC8qvp5yMrCQ2HqeK5R/PH3RBJ0zjo0fTaTJheVHWbi3Kzh9UJ9bweKlvu71gmaiXYBPHa4VhWL3X8j99cBrT+/sM9LXoqTq0tXDIyT5WjqL/vP0Kt4Erkz5QY1eHy5nqPrgdNGGW9fRIO3oR9L3bELfbupbo5SbulzjwOM+71FotF+KdWEe2FsZqFESdAWijZyGKcq0xNpPh5x4YSIBFFJuFLFDdw5GTqhrwrYPI18bgahTJ2JvItZ8T/zVOB1Z1fDrsi1KrO6kXjv/Mjxd+0xaXtFZmgibj2VVh5+pFuyKUbnu40U2aLgvQ5Jrkg3k2pKmy9WkXC4IPO1mtepsGvq5qZc6GliJhARPxEGv6deK16pUBHt74Tj2F3LB9E7xeph5lxPMToi37SrKkfAutHsvLPmW+D8t89vw4irxHuvgebFPg586/K9h3eaK/kt3lVtvKqty5p/juKbfb23j8tlXz3lsWK5X17fraVzd3wQUqcXzkDuFfPmF80BLH8yRxZr/8GU+tS4A==
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get receipt by its operation id.</h1>
+
+<MethodEndpoint method={"get"} path={"/pix/receipt/by-operation/{id}"}></MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Enter the pix payment's operation ID below and execute to get its receipt. Should use <b>/operations/{id}/receipt</b> path.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Operation id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Receipt found by operation id successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"payment_data"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"Payment data (Id, value, date, etc)."}}></SchemaItem><SchemaItem collapsible={false} name={"payment_title"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment title.","example":"Pix key scheduled successfully."}}></SchemaItem><SchemaItem collapsible={false} name={"operation_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Related operation id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"is_scheduled"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"If payment state is scheduled.","example":true}}></SchemaItem><SchemaItem collapsible={false} name={"active_devolution"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"If payment state can be returned.","example":false}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"payment_data\": {},\n  \"payment_title\": \"Pix key scheduled successfully.\",\n  \"operation_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"is_scheduled\": true,\n  \"active_devolution\": false\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

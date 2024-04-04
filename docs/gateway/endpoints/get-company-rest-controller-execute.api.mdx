@@ -1,0 +1,54 @@
+---
+id: get-company-rest-controller-execute
+title: "Get my company."
+description: "Execute to get your company information."
+sidebar_label: "Get my company."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV21P4zgQ/itWPi06WtrCct3qdLousKuulhdBEbpDqHKSSWNInKztUHK9/vebsVPa0JalEqeTKjVxZp558cz48dTLclDciEwOQq/nfQVzlKU5l+UlaHyURmVJAmoETxAUBrxdLwQdKJGTCiqcuHVmMjYGw8qsUCxwCEzIKFOpBW+iYs4VT8GA0l7vdupJfEGAp8aEowXTKAoRopQg1Bh4CGrF2BVIXGY3VoFdXw+O2QcRMUhzU+462yFEvEhMTWYikoT5wDQYk0C4g7g6iCHlXm/qmTInN7RRQo692Wz32TOZyQB+4tEwBmblGNoRmvHKq8eDHVZoCCkvhRQ/CkgwHyFII6KSGdRS8KMQWtjksD46uLSgWVpow2L+CIzLuZ4ARWm0cgpwt4wq4LVQ7khY54gHmr53Wi36q0dQbTeLskKGTBdBAFpHRZKUZCzACkDjpMbzPBGB3c29e02601XbmX8PgaHNVlRYRjjLuLMLGVmk/ppUzh0ZHJNheOJpnpB425vhHsBqgBsBTl4AdPbdj4Dc3r4V6gyl62Cn/avhySU7Oj+96J/9yb4Pj/sEG8j8/u2wR2cX3zb4aH+EmMeZ3MLTCxJnZza1dehu+9MyrtAjbEklnpaw/SxLgMvNGdXs1OrUkan+CNIoHqJvo+1yO3RaG3Nsk5BwOdqmeC5QYX0FVZ0g/AS2Qrxc6K0HduOrjvmT0Kvh9BKORwe/tj8efmwE+xA1DtpRt8GDA2j4h61Ph9w/7HYPfWsR/DjLHkaYd6l54MBXW3CDbadM6Z8r172Q2PvLVibCxKHik+1N3FSa6/EDBdxAOOJmi8ZxOqxv6pidVme/0eo0Wt1hu9vr7Pda+7+0Wj2cd2ioyMOtDV07ne0M+ZhSHIh685C9KnweBDhpja7j3t7ha+UaV4qXdO4YSPXaI8rzuXwYzZE2m/uMYqz/HgapUB5hZO3ioT4KuI5HQq6a7ltBZ/lLptgRCrLBuhJD0CQ5jywXePX0oAkjjFUkWG92t8mhrDBv9Oi8MO/s0mz5ZL71HJch+mCnYnVCzMf68hh+MT8XQ29lZi3PmvVTYE3X1hqt1gx3iyDqtK8aeTjbZxTWwTraMIgYVdg8ZGbJHfIfBSwVWtNgx1zHXCMLfOSJCJnjgrRKqW16Frm9inytkeLxAjkSkh7HN1jEBRI3p9Pp/Cfe0JbyMVFT74KXKRrX7CumasJL9g+rskM500h4lTClrRIf0IbCxztiW8hu44xoNFJhS3hNjC97eYXXGDu8vYogEw8F9egI8RLyFbEqN0bm+BXVsoe1W9qtHr7YQHD9281w0dKxMbmNiTi4belqp/9qqsz1AuVZs/7FYGUIrpchP933drPTbbYqdoiVR/gVZ35WpVJTSeWJ7u3tTSaT5t8qo4ZtYvxNn0JA8ihIyEAgsyQbC/7HCxkMAVknUDUurFi6LMYxbhG2CKUwfIs9ykeeaZNyuQSGtc/Scn5pab7MxnTBgbe57FT7YODJ7GFD46icVR5Oq7q49V7Whc3oc53F6ClJTac+13CtktmMlvEqoUpXL49cCe7Ttt7SSKyuKFSWodD0AUsx4omGV0J6vyvV2ogfoFxzx8MWLEjWo9vW2339cFn19w77H+5dr8Q3vynW4nKf8PSF3Cx9W7lG1QbH1xNqYpp+y/S83vHLx5ObInPs3z5bATbMHkD+7s3dM/Rqz6jZvxJqZPY=
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get my company.</h1>
+
+<MethodEndpoint method={"get"} path={"/payments-gateway/company"}></MethodEndpoint>
+
+
+
+Execute to get your company information.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Company found successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Company ID.","example":"1"}}></SchemaItem><SchemaItem collapsible={false} name={"ie"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company IE.","example":"123123123"}}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company Name.","example":"MASTER COMPANY LTDA"}}></SchemaItem><SchemaItem collapsible={false} name={"cnpj"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company CNPJ.","example":"12312312312312"}}></SchemaItem><SchemaItem collapsible={false} name={"phone"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company Phone Number.","example":"81912312312"}}></SchemaItem><SchemaItem collapsible={false} name={"is_matrix"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"Company Is Matrix.","example":"true"}}></SchemaItem><SchemaItem collapsible={false} name={"trading_name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company Trading Name.","example":"MASTER"}}></SchemaItem><SchemaItem collapsible={false} name={"plan_id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Company Plan ID.","example":"1"}}></SchemaItem><SchemaItem collapsible={false} name={"responsible_id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Company Responsible ID.","example":"1"}}></SchemaItem><SchemaItem collapsible={false} name={"wallet_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company Wallet ID.","example":"af471565-c3ef-41f8-ac4e-b6096ab6886b"}}></SchemaItem><SchemaItem collapsible={false} name={"webhook_transaction"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"Company Webhook Transaction.","example":"null"}}></SchemaItem><SchemaItem collapsible={false} name={"webhook_withdraw"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"Company Webhook Withdraw.","example":"null"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company Created At.","example":"2023-02-08T18:23:03+00:00"}}></SchemaItem><SchemaItem collapsible={false} name={"updated_at"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Company Updated At.","example":"2023-02-08T18:23:03+00:00"}}></SchemaItem><SchemaItem collapsible={false} name={"branches"} required={false} schemaName={"string[]"} qualifierMessage={undefined} schema={{"description":"Company Subaccounts.","example":"[]","type":"array","items":{"type":"string"}}}></SchemaItem><SchemaItem collapsible={false} name={"bank_accounts"} required={false} schemaName={"string[]"} qualifierMessage={undefined} schema={{"description":"Company Bank Accounts.","example":"[]","type":"array","items":{"type":"string"}}}></SchemaItem><SchemaItem collapsible={false} name={"active_bank_for_cash_in"} required={false} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","title":"Bank"}}></SchemaItem><SchemaItem collapsible={false} name={"active_bank_for_cash_out"} required={false} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","title":"Bank"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"1\",\n  \"ie\": \"123123123\",\n  \"name\": \"MASTER COMPANY LTDA\",\n  \"cnpj\": \"12312312312312\",\n  \"phone\": \"81912312312\",\n  \"is_matrix\": \"true\",\n  \"trading_name\": \"MASTER\",\n  \"plan_id\": \"1\",\n  \"responsible_id\": \"1\",\n  \"wallet_id\": \"af471565-c3ef-41f8-ac4e-b6096ab6886b\",\n  \"webhook_transaction\": \"null\",\n  \"webhook_withdraw\": \"null\",\n  \"created_at\": \"2023-02-08T18:23:03+00:00\",\n  \"updated_at\": \"2023-02-08T18:23:03+00:00\",\n  \"branches\": \"[]\",\n  \"bank_accounts\": \"[]\",\n  \"active_bank_for_cash_in\": {},\n  \"active_bank_for_cash_out\": {}\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

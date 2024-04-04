@@ -1,0 +1,50 @@
+---
+id: send-confirm-code-rest-controller-execute
+title: "Send confirmation code by email."
+description: "Generates a new 5-digit code and sends it via email to the user for the purpose of verifying their account."
+sidebar_label: "Send confirmation code by email."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVe9v0zAQ/Vcsf2JSm3b9AWs/MQZM5RPaViExTchJLo01x85sp12I8r9z52RTt1UTQgI+1Tmfz+/dPb823JRghZdGr1K+5Jeg0zOjM2mLM5PCBTiPn94apcD+gHtIKg98wFNwiZUlncNT56CpCDgmmIYdmw9TuZGeJViCCZ0yh2Udw8hWCgaFkIp5w3wOrHJgWWZs+CgrWxoHzGRsC1ZmtdQb2pCWiSQxlfYR3l0KKwrwYB1fXjdc4wdi0EYnhEwSoBxECvYFziu8I+Sx1UcmCe16jas329kRAUkJVKXlXQWqZjIF7RFDQGbhrpJOUp2InSq1H3CsqJxnudgS2YdzEiyBDXkWsLfeVjDgLsmRP1823Ncl4XbeIkvetoNHKjI9cDDwKoXPX7C6lBtdlUiJ7oN7UZSKqmRvYQLjk9lwsogXw9liOh+K8XwxnM/eTePj6Xg6FYK/BuiGQLgSCYKj/cl4TD9PLyeV0Hg9c1WSgHNZpVQd8XbAZ4fyVxn2qGYP7FgYJk7CAiukczRwFEMuUC16K5RMSRyF8BQlgF3lyeSvVMbSXmxIVn1TOfYApZYbehsb8EF9OIIlH7mQMGpk2o5I59RKsNtOlTf0kVRW+vqS+ts1MAYEY2kVmk7N7kODfvE5IML4l29XGOwnkntfBnBSZyZMSvow4u+RNeyD0LdsjXc7dvp19UIdh3MIZ7d/HE1OojGGEnznIvFUv9fh41HcrazqkbjlaLTb7aKf1sS4FyWmiGKiEN41JnlItFFmI8X7ZzlIQckEUFB7t4TXJDe5dzi70ML0d+6jfqBZ+ELovWLkX2g7wcCCq3UeFNed60TP29ME2ijff+5i/Ww93PtRqQQ+77Zn3fQau+adxjB5GSwhyAyllSNt2m6aWDhYW9W2FEbbsnUnvq2wUsSkETTIVDpao4QzoRy80oE3F/3jOWJPTOUg1j6Ib470JFRFX7i8hbrzsPYGs3on/mMc/8GyD7LtWD38yTzSbfcN4vzTFcryF7YVfgo=
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Send confirmation code by email.</h1>
+
+<MethodEndpoint method={"get"} path={"/signup/{id}/code"}></MethodEndpoint>
+
+
+
+Generates a new 5-digit code and sends it via email to the user for the purpose of verifying their account.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Signup ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Code sent successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

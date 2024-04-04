@@ -1,0 +1,54 @@
+---
+id: get-order-by-id-rest-controller-execute
+title: "Get order by ID."
+description: "Enter the order's ID below and execute to get its information."
+sidebar_label: "Get order by ID."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2zYQ/iuEvqzBYlk2UrQzhmHJ1gXelxZpggILAoOWThYbSlRJyo7m6b/vjqIdyXYzey/YJ8vkvT738O7WgSpBcytUMU2CSXAN9r1OQF/V0+QGjP1JFVYrKUHP4AniykJwHiRgYi1KUkKVd4UFzWwGTJHmN4ZNf2ZzkGrFeJEwr8asYguwTFjDRJEqnTunIZorueY5oBETTO7XQYF/0OzTYMXRrx1UlUhQSpCvDDi62AvhIxR4zD45BXZ3hwG8EimDvLT1OatVpVkCKa+k7cmshJQYKTNgrYTkDO2aOIOcB5N1YOuSwjBWi2IRNM35NrJCFTH8RUS3CIeTIzCEYdxHtbw4Y5WBhOCoCvGlAlkzkUBhRVo7EDV8qYQRDhx2iQF2DgzLK2NZxpeA2G70BGiC0clpwCpaXcFxqThkdxVdXiW32V5WjhqYUXgIqaLK54hE0zyQSVNiuGDofhxF9HPAFLGMpapCmpgqjsGYtJKyJvMxEg+zI0VellLEji7Dz4a01/ve1fwzxJbYpInRVrS+McG9CL+WFV7AE89LibKj5jxYclnBLMYozLFGnDBzimHPXBShwRRgJooZhhf71PqVOWzTizPU7tkMovB10BBSecmLenZ8ql7DF3JrcIzGrOaF4TGJn2Cwo7Vr9GJEUFpluZy1gJpMlY8AmNZp2D7rMWfuq2C//c6hXfI6R4mZsdxW5mi0Wy3WavUBLzlCQohr4BaSGT+6hk6D0ElQsW90HI3Hg9F4EL25HUeT6PVk9ObbCD8i8lSVyYmeJMcG0aqd6szT4tCjeoFFJzjo0ORYJx2Vox013ZZ23/a47lvuPZk9yu8Rp1fvXkmw0VlhXTi7c/PGN0CMhuK5ONQCpymjV7iJlbk5iKNCA8uFMVhjnKjY7GlgYvyCWiWNTTol7MLAWR7tW74zCB2vcJzgfGg7J0u5wBnX6ozH/0k0VGK+oCkefGgxNOwawVrxmv3BHD6GQDO4EWhhazfu54AuNH4+0ODAPSBTtIjgruBKgVNoEgx9Scxg0ZobulXDDNciaWgWgV6260PH+kcaEe0U2Pjwc4MK5o/O/ccvLhc8//XTLXGipWZmbenSoo3FUdaX+7dQK3bFi0dGUBt2+WG6R+DDMhRnez8Kx2/DyI865B/Z92N5q0p809JHYibD4Wq1Cn/Xao53IbI4nFMKOAkFCVmICyXVQvAfd2QwBRyhQIR89uKWC7HIsEo4rwnC5Bh/hEepjM150TGGD6Dd/9h8M1h6cKyfJ/o/3xh9eSw82WEpOS4sjQ987SlzH+xSBtVa0uDHBN85MiXDLEh0vZ5zA3daNg0d41Km65ZLS64Fn1PJkamJMPSN7Ey5NPBCgq9u/Cs6Y92V6WDY/pAar29T+A8/H6FuF7TmAaX8mnlaGP/eWnww8jbC3T19mwKtmX8Lsv9hd34hv82238urvbrElbW0nbu9TbXX0q7fUWuhttyZfjt9yFX4ICW+v3IC7FY9QvHDliCW/hJHmuZPWPKsUw==
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get order by ID.</h1>
+
+<MethodEndpoint method={"get"} path={"/payments-gateway/orders/{id}"}></MethodEndpoint>
+
+
+
+Enter the order's ID below and execute to get its information.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Order ID.","schema":{"type":"number"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+OrderById found successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Order ID","example":1}}></SchemaItem><SchemaItem collapsible={false} name={"value_cents"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Order cents value.","example":100}}></SchemaItem><SchemaItem collapsible={false} name={"fee_in_percent"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Order percent fee.","example":"0.5"}}></SchemaItem><SchemaItem collapsible={false} name={"company_id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Order company ID.","example":2}}></SchemaItem><SchemaItem collapsible={false} name={"transaction_id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Order transaction ID.","example":411}}></SchemaItem><SchemaItem collapsible={false} name={"total_value_shopkeeper_cents"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Order shopkeeper total cents value.","example":8900}}></SchemaItem><SchemaItem collapsible={false} name={"payment_status"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Order payment status.","example":"paid"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Order creation date.","example":"2022-12-07T20:05:17+00:00"}}></SchemaItem><SchemaItem collapsible={false} name={"updated_at"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Order last update date.","example":"2022-12-07T20:05:17+00:00"}}></SchemaItem><SchemaItem collapsible={false} name={"company"} required={false} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"Order company.","example":"2022-12-07T20:05:17+00:00"}}></SchemaItem><SchemaItem collapsible={false} name={"transaction"} required={false} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"Order transaction.","example":"2022-12-07T20:05:17+00:00"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": 1,\n  \"value_cents\": 100,\n  \"fee_in_percent\": \"0.5\",\n  \"company_id\": 2,\n  \"transaction_id\": 411,\n  \"total_value_shopkeeper_cents\": 8900,\n  \"payment_status\": \"paid\",\n  \"created_at\": \"2022-12-07T20:05:17+00:00\",\n  \"updated_at\": \"2022-12-07T20:05:17+00:00\",\n  \"company\": \"2022-12-07T20:05:17+00:00\",\n  \"transaction\": \"2022-12-07T20:05:17+00:00\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

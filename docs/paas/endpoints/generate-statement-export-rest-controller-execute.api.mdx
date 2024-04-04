@@ -1,0 +1,54 @@
+---
+id: generate-statement-export-rest-controller-execute
+title: "Request statement export file."
+description: "Request statement export file."
+sidebar_label: "Request statement export file."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1PIzcQ/iuWPx1SSACdBI2q6ggELtXpLgpwVKUocnZnEx9ee2t7E7ZR/ntnvLt556VSqwop2N5nXj3zjOfcZGCFl0b3Yt7m16BpCzcef1LQvvucGesH4PyF0d4apcAO4Rmi3ANv8BhcZGVG8ig9gD9zRDJXSzMI4iyRCpoIz4QVKXiwjrcf5lzjBsWeD2cC9frDPJcxoiTpmoCIwe6YuAGNx+w+CLC7u94l+yATBmnmiwYrTG5ZDInIld/AzKRSbATMgfcK4gPU66IJpIK359wXGbnhvJV6zBeLxtIzbXQEb3h0OwEWcAztSMdE5dX04wHLHcTMG5ZriZlRBZMxZkUmBfMoZTFd0knS02Tn6ODagWNpjpmciCkwoWs5CZbSGHAW8MK8zeG1UB5LMF5Kx8QFIbZlI7xW1E2fRJYpGYViaP1wFNx8V7UZ/YDI011aKh0vwdHXKLcWdFQMXZGOjNr1ZTtt3+q6Y7UoK0UpQHgWaaZIujP4whcN7q3QTkSEH5LeoRfjfTZA5ymWFu+f9Du3uL/v3X6+HJzf4/L6/rLbCf8vBt1LXPR7v118Pv963S3Xl93vg+7Fcn3T/VqBlqeD7tXd6pDWiCu3K3Rt8Qt/fDnktXAYhcAwnM24K7sYemgmtxassFYUr+Qz9O6GtgcuoggyD3EonileGy7RP4lt6l7L45pcDJGSOixzHRtNfZFhN5YCS60NPhNYwXo8LGXXDkoMf8QO42aGRDOMTZSnVfW9US6EZzV+M1dnpz8dnZ2eHh8dn1LCRshhiYyksMU/MNBZSb3HDNWk9OH8Bc4MDbdYENKCy7Cly1s8OTqif5vWr5Agsf19bjHDzOWYOueSXKmiSSF93CfTS5AZClY3NAvkivxjgaXSOQySGYsM4pjUU6FkzBJjU+HplHJRaT7e1XznMNciR45C0ikJgSUCXYxLmZOT/8QbyqkY02jASUIpdFSjDmeNlb4IE2MEqNDi8pGoDUfJxNDYyowLlCT8BHctW0q3lnOoVc4hR7QPdlrOnzXdN8Ry5fXUFirqowuujhrV4ir4jee/3hPFVGU18T4LIRBzDlac263rZw9HBnZ7idxW1FMzwIttvN1MG6X6UkNst43UiQltUpX1701rWEfoJ9YXeGvn/d5Oz+yFUHbLz8fNk7PmES9nDMZH2qvBupQkNrGqyp9rt1qz2az5lzUj/NaMTNocUeJxBEkCeYi0UWYsxactDAaAswuwydashJkqxxPvsC7DxcfvsUe3SBWVCr2m7M3HzUZu5qvB+rZkVUIenn0rUwJfG4vKzXlV0w+8qum6HMIdEjst+2RCPYDA+XwkHNxZtVjQMZq2RVntU2GlGIWB8IgGqvcMtVUsHX3AVkqEcvBKLP/e+2tv0E9Q7HkQIl/khOX0NHu/rx8GFRkdsP/hkfZKfPWzciOu8tNF6f3hLUmvEDtPsw3663+7ISYaVU+81MQkY8WMeAJ/2/wP/MONCVkKPBfO51wJPc7FmPClXip+ov61ibnFf6Fi6reILta8/LkTAOzWPIH+hdfhetqix6j7byIWO/0=
+sidebar_class_name: "post api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Request statement export file.</h1>
+
+<MethodEndpoint method={"post"} path={"/reports/statement/exports"}></MethodEndpoint>
+
+
+
+Request statement export file.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"currency_symbol"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Operation currency symbol.","example":"BRL"}}></SchemaItem><SchemaItem collapsible={false} name={"transaction_type_tag"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`P2PBT`, `WITHDRAW`, `GWDEB`, `GWCRED`, `PIXCHANGE`, `PIXDEVREC`, `PIXDEVSEND`, `PIXREC`, `PIXREFUND`, `PIXREFUNDDEV`, `PIXSEND`, `PIXWITHDRAWL`]"} schema={{"type":"string","enum":["P2PBT","WITHDRAW","GWDEB","GWCRED","PIXCHANGE","PIXDEVREC","PIXDEVSEND","PIXREC","PIXREFUND","PIXREFUNDDEV","PIXSEND","PIXWITHDRAWL"],"description":"Operation transaction type tag.","example":"PIXREC"}}></SchemaItem><SchemaItem collapsible={false} name={"states"} required={false} schemaName={"string[]"} qualifierMessage={"**Possible values:** [`accepted`, `declined`, `undone`, `pending`, `reverted`, `waiting_accept`, `waiting_revert`]"} schema={{"type":"array","description":"Operation State.","example":["accepted","reverted"],"items":{"type":"string","enum":["accepted","declined","undone","pending","reverted","waiting_accept","waiting_revert"]}}}></SchemaItem><SchemaItem collapsible={false} name={"owner_document"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Owner document.","example":"87908771017"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_document"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Beneficiary document.","example":"87908771017"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+File returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

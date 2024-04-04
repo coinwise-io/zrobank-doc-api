@@ -1,0 +1,54 @@
+---
+id: v-2-get-conversion-credit-by-user-rest-controller-execute
+title: "Get user's credit balance and liability."
+description: "Get user's liability (the sum in BRL of all negative balances of all active currencies) and credit balance."
+sidebar_label: "Get user's credit balance and liability."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVd9v2zgM/lcIv1wLtE4a7OEQDMPa3t3QYcCGrt2AFcMgy0ysVZY8SU6befnfRypy4jTFfjzc3VMckSI/8vtIdZlt0ImgrLkos2n2bvICw7k1C3Sezs4dliqcLa89ukv0bAnOao3uE96jbANmR1mJXjrVcAyKQPehJfc/PGglCqVVWMJBqBB8W4MycHb5CuwMhNZgcE6pFwiF0MJI9L1ByHgsW+fQSIX+EIQpQUY4vXdOuRvhRI2B0GbTmy4z9IcwGEtmsioGVKEo0e3hvCJE0Q8u/gLlQcD1NX0dLJ4cMv4SgoXWqC8t6iWoEk1QsyVwHQ6/tMorjpPDKaEdHHioWx+gEoRemP6eQsdgox+VkE2Da/Eo87LCWmTTLgvLhnH74JSZZ6vVR3b2DcVDz/bJeMw/uxVsaeob41tJTfScSxJTlJtviabRSkaOR589X+32U9viM8rAHXWsiKDWiTcUDlxNWxePNPSVKjZ0vyWqf59jxo33om40pTk+GY/HKyoklvYp3f45jPMdjcDMuijHndgcerxaDRm5GZS6l5ToCCrwzZ8NyGVijTjk+E8e4+2C6jdL6HND1DAJ0CHUyntSABDoSnialoXQquQiahH4lGvPsxj5ZD8yowDRkkhJdWvGYSaUxnJ9ZzL5V9BQ6CDmPIHZ6yDhG2z747l3njaFixqiES2QQjv6/Mgqp9mtLC+eOUbxiVDRn9FiMrJBjuQ2zmhNyXFPCUd1i/XcD1K8ZV2vpdsnSmJn8tLRUfr4JxZC5y/fX9Fh0lUVQhNrUmZmo94S9R9yZ+FMmFt4I6gdp28u9sT3qEsqgcwn+eTPfJymk/TP0dPK2twka+t0wuGno9Hd3V3+1dmCbLm0dV5wATS8ip0CSmO1nSvx/IEPFUBTj6zFbZa4rdS8Cp4Ijw0sfyUfd6OxPtTCDIINNv3uYo67ejNO+cMuddvl9B+/FonhgPdh1GhBz8MqVd8l6d1kiwk5kvjWLG1k3O+E48FOqKglfKXrCuHx2unVio/pyXDLtSwXwlFVrB6S+1H/FPEYlMqzgaQ/E9rjD1p0cJlG8xD+hzfr0Zbd4nLwytJWaNmHLF0yndI71ISBbe8N2hn+F3/z/PHiGuz3B8Mau5ZMtLAGsZ+eRQe4srdonmU9vMB/KQ8t4u+NXRGB
+sidebar_class_name: "get api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get user's credit balance and liability.</h1>
+
+<MethodEndpoint method={"get"} path={"/v2/otc/conversions/credit-balance"}></MethodEndpoint>
+
+
+
+Get user's liability (the sum in BRL of all negative balances of all active currencies) and credit balance.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Conversion credit success.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"liability"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Libability (Sum of all negative balances of all active currencies).","example":-1000}}></SchemaItem><SchemaItem collapsible={false} name={"credit_balance"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Credit balance for user.","example":10000}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"liability\": -1000,\n  \"credit_balance\": 10000\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

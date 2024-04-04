@@ -1,0 +1,54 @@
+---
+id: get-dashboard-rest-controller-execute
+title: "List dashboard."
+description: "Get a list of dashboard. You can include any of the filter parameters below to refine your search."
+sidebar_label: "List dashboard."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV1lv20YQ/isDPtmATdlCHgqhKOo0jeGiKAIfCFrDMFbkUNx4yWX2sMyq+u+dWVISdUSW7Lh9kric45tjZz5OIl2hEU7q8iKNBtE5ug/C5kMtTHqJ1v2iS2e0Umju8QkT7zA6ilK0iZEVKzUqIEBJ60BnkM60Y/hTe0hECbJMlE8RRFmzhMsRMqkcGqiEEQXSPwtDVHoMToPBTJYItfYGLAqT5DG5XEhGg9tJVNIDuX46HgvC5o69lylJScaTo0jRrMG8wpKO4XNQgJubiw9wIDPAonL1UeMuxUx45ZZkxlIpAkdQnFOYHpJdm+RYiGgwiVxdMQzrjCxH0XR6NEdW6jLBZxBdUyKCHJAfaSmJDarHd4fgLaacDV/Krx5VDTLF0smsDukz+NVLK9lODGcEsHNgofBUilw8csZnehINpzHIGaRKO+Nxt1CULKRb0s2EstjGRuhMvRbaJzFCCIpwgE/xAPonh/GOqatId093f/hiSLWl5mJl2/o83bVYiUHhML23Thh3nwq3r/+PTTsPawim6BDYChhRjjCGK7YLmdFFOB7sCYsa9w1Ata89dYfaC5av0u+VLSWoUxt7m7DtnbEZtFdn7Blg+yetmVP2xYAW+vgkikqRzdvW6CkdNv/60d0GNMIYwaalw8JuQjm9Y1S2otmBQaB/csI/y1jmawEy7csUrE8StDbzStV8tRPaFDRqWFFUlZJJaLneF8vak3VYevgFE54rleEV5GTjm5IqnnUeL+WB4O8cajf/t40zVpeOLa1tv8s2K6xJqu825eUiC4ttZrbZaTTMDUIhrSW/oA2NY0t78FEoySGYQjg+ZXhxFCyfrlu+sVR74WngU7s16YRMSNpCjU6//yZoyLQTI96zNMbrgpxbOKdWH4sa/oF5fkKvESMw0tVhJw9pWdOWo3pwQ9GyzjUzihGGIguX00Ovai0ejxqLvTlf4IuE5rHZ8B3bV9w4TW/MPLTdxBVrj47aPx9DMHT+2+fraN4WuXNViEuWmQ5t0db7r9hoeC/KB+BcWzj7dLF2BzfLMM7m/Wnc/yE+aS+ASMIFaC/9XJXeeqNaJHbQ643H4/hvo4f0Lk50EQ85BLofkoUcJqVWeiTFzysyFAJdLOSOXHgJ+1+OcioT3WJOYbqLP85Hpa0rRNkx9jvTuAWHW83GZHHN/xve11bQ4ZPrVUrQrJy2sU3anrqNVnuKQXe7NKcoWW4yGQqLN0ZNp3zcjFzu3FRaMVSdkfzNmL/FazbCfMC6Q5/otnmWiXgr7O5xC7XZ4rTlUC/0uT+d2QJlI7l6G2Abt/MO0Dp04dXA9qE0W6BtJFlvDW7nxG3gWa/GtmA4WxwvhBb+7vjBSHYYls/R7Htrv6v9/b4Pt+Bf/WB9YdYOLtv9fgj/w0fklvhmn71LcTWvzoguVt1BuMYSl2jD+a+8wJn9dHjcyrYPFZ5Rv7Lu2P7xfRCAa/2A5U/RDJ7jR/JDbO5fxeHUPw==
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>List dashboard.</h1>
+
+<MethodEndpoint method={"get"} path={"/payments-gateway/dashboard"}></MethodEndpoint>
+
+
+
+Get a list of dashboard. You can include any of the filter parameters below to refine your search.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"limit","required":false,"in":"query","description":"Page limit (ex.: 20).","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"page","required":false,"in":"query","description":"Number of pages (ex.: 1)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_start_date","required":false,"in":"query","description":"Filter by creation date range. Start from date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_end_date","required":false,"in":"query","description":"Filter by creation date range. Filter until date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"updated_start_date","required":false,"in":"query","description":"Filter by last update date range. Filter from date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"updated_end_date","required":false,"in":"query","description":"Filter by last update date range. Filter until date:","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"wallets","required":false,"in":"query","description":"Filter by wallets","example":["wallet1","wallet2"],"schema":{"type":"array","items":{"type":"string"}}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Dashboard found successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"data"} required={true} schemaName={"string[]"} qualifierMessage={undefined} schema={{"description":"Dashboard found.","example":[],"type":"array","items":{"type":"string"}}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"data\": []\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

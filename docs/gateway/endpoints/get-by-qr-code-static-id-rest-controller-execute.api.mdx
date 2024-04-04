@@ -1,0 +1,54 @@
+---
+id: get-by-qr-code-static-id-rest-controller-execute
+title: "Get a user's QR code by id."
+description: "Get user's QR code by id."
+sidebar_label: "Get a user's QR code by id."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm2P2kYQ/iurVaUmEhhjuCagqioX6ImqTS6ES9ucTqfFHmBztte3u+ZwKf+9M2tD4OCSE1LVTyzr2Xnm9ZlZcZWBFlaqdBjxLr8Ae168129UBB8sXofDaATGvlGp1SqOQd/CEsLcAq/xCEyoZUZvy5csN6C/N+z9iIWogE0KJiMPJTOhRQIWtOHd6xVP8Q++SFUakh5Jz+cgItAHWsdzYE6ODftMGibY1RWeXizaLwktYlaxPJX3OcQEBqmV04JZfKXhPpdGkh6P9eJ498KwJDeWzcUCmEg37yRoMtbJacBoWJ1DjZtwDong3RW3RUZ2G6tlOuPrdW3rioyOPHR+ZcLOD7yqAoShKuPzNMQNqTUZmgyGvge+Tz/76i7lchvzqcpTpzPElKFbJC2yLJahS3Ljs6Enq0NINfkMoaVkaSoJK0tA9OzArAN3dIk97BMwLEWSxSQ+/QEC8F+360Fn0qm3O62zuvDPOvWz9qvWpNnyWy0h+LrG7fI5KJfDP5ldnooByeLbEIPfPzpPToO4g+L2OY70jFGhFBarF5+4gj4NcCHiHHbw0jyZHOmhjyTGZMpG37EQS8LsoTWDTgd1mTxJhC6+bf0V9jiLYCpTtD8TRYIaDzKPDW+LevWVTN3TcRLEjsg+FlGEw9uIegRokL3gGBRglJCF+OXgbX/49gJvRoNe/y/87Q9+G4zLK3cc9PE0GI3ejfjNUyXvYPbt2ShGI0INlOZb4dpwqnRCJx7hZd3KhMjveZ1VKWLC7mMFftCu+616yx83/W673Q06Xvss+ETktMNH1yVBuT7b1ukmRntmoqNWWqf7iVEwqugIIQikfYyQhlOk1YJtDGCO/5G8NbBEGoOeMqWRfpH/UixiGbEyNnRLAXEZbPvNQ82uNESOBI+MXVIamwoZQ1S+CYL/xBoiKTEzrm6QbP9hfcgUzhJDATM4ELW0hZttE0C9Go83xN049OaK5uoMHLXSMOjyRiaXjajS0LjXdcqxaaxktKasgF6Uk3JH9wei65KRNwgVh1OqqqtadfhlU2i//jH+UmJzazPniUynynVGlehPnlbsXKR3jKJrWO9yeFCIx2XIzvJ70wtee341dkTo6r2ajdun+DXXcWWJ6TYaDw8P3t9aTfCbF6rEm5ALOJUkCVkIUxWrmRQ/P5JBF3CcAdXgFxQ34eVsbg0m2oUweg4exQPzYBOR7iijXUY8uc084rLtoP3qClQlwcLSNrJY4G6wrsxbVWVxzbEsnPqqtGp8Uxp47GLHYj3M0VYSXa0mwsCVjtdrusb9h7ibKmYhtBQTSixWYyQNnbECpyI28BXbX4yq9njJHm8nR02vLrGx+HYQ8ZJcyn1ofYNS1VZ3sin/w/p31NvSq83CunWXNsDyUy8MIbM73w52rj06uBhQYxKP7YyoR13sonY0zD+eOwE2VneQ/rQNuqW/FPf1+l/dmeqD
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get a user's QR code by id.</h1>
+
+<MethodEndpoint method={"get"} path={"/pix/deposits/qr-codes/{id}"}></MethodEndpoint>
+
+
+
+Get user's QR code by id.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"QR code's id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Pix QR code found.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Qr code ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"txid"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"PIX txID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"emv"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"EMV code.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"key_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Associated key UUID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"value"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Value in R$ cents.","example":1299}}></SchemaItem><SchemaItem collapsible={false} name={"summary"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User defined payment ID.","example":"party-payment"}}></SchemaItem><SchemaItem collapsible={false} name={"description"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User defined payment description.","example":"The party payment."}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`PENDING`, `READY`, `DELETING`, `DELETED`, `ERROR`]"} schema={{"type":"string","enum":["PENDING","READY","DELETING","DELETED","ERROR"],"description":"Qr code state.","example":"PENDING"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Qr code created at.","example":"2024-03-30T10:44:29.452Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"txid\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"emv\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"key_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"value\": 1299,\n  \"summary\": \"party-payment\",\n  \"description\": \"The party payment.\",\n  \"state\": \"PENDING\",\n  \"created_at\": \"2024-03-30T10:44:29.452Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

@@ -1,0 +1,54 @@
+---
+id: get-banking-ted-by-id-rest-controller-execute
+title: "Get a BankingTed status."
+description: "Get a BankingTed status."
+sidebar_label: "Get a BankingTed status."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV+lP4zgU/1esfJqRaJteLFSr1QbK0REtqC3D7CCEXMdtPeQa2wG6Vf73fc9JS5sElmNWmy92fLzfu/3e0gojLqkWYdBzrY51wvUBDe5EMBtz92DRc4dc6cMw0DL0PC5v+SNnsebWjhVRSX2uuVRW53ppBfAD94MwYLgrAviZc+pyCX8uV0yKCFFgeTznxJwjvS4RilByeQmzT/etzyRW3CU6JHEgfsbcWxDh8kCL6YJouCX5z1gogXSqxPG8zQVF/FhpMqf3nNBgdU9wWQUGzDnJQUItY75jKTbnPrU6S0svIuRbaQkyW0mysxZFuCUXjVwR1fOCVE9qA7EQkz9SP/KAUqu9v1cCGcT+BLSTJDcIoyIQgSvcb9g2Ds+Sl5xxcc9dBGFgGhAUz9Mo8gQzpqz9UHhpWQQNJz8402g+iYbXIoUEWQuMvU3ABCTUFDyjoNMX6JgbhhRgghtZF0eDbm9wAitXTm+czo6d3tlRFyfnwytn2DXzw/PBcW/Yh/nNBiMby8AP9cM4Vc2rBUuvbAlXb9ttG6it4+R2S1n/LuT6ImGSg7zuFnmrPmk1m40Gr7i7brvS2ttvVyhrTiu01bIZ223u1XcpSjPhAZ8KJqhc3E6A+m3qpm9gZIMCQQoEKWwzA6dZSA4kRSIhGVWdaik2C90PYoucGhrN3/JIHxKwKNsAVsgY0lkeJ6X/Thy8tI0zhYTEwjyIG7LY51vu+DagFYFtsP3VV7fziHTGA7Z4N156fRvNtu16AYaxXJi9ESe9nwsK8z0DdeuKmfgwIDFUcrBFJWaQH/KRFWLRVxjbSH6HzuEhpjZndIrDqTPEoZf+nff7OFw4eOTsbPQVh3NnAEP/5AxTYv+878AwGB59g+G8ezzGYdC9wGF8isRGKcLobPgXDl9PRjCMnW9HOAwNMRhwEc7dgCq0pIGi7D1pb+MqmUHae6CL/Lvx6twHr9xUSJ+7t9TYfRpKH2eWC4QrWvhYcryaszU14q6en6c0ZDdaFbtZadrjut1ptTqN/Wq7tf8duZhS4f0iFlJSb8TPno9fo4OU1ps4SDbLoeu0Ptp6FUvSd0mmfSYvliav8lTzUlZ4IXyhUtBCGyFLy9xhVoSBpChrq6wM602huFyQlR6IqYKhhJWc+EIpIEhCCUWoIiK4p54AUxs74Woa/oZyvUj5UnFJaAxlLtStaRmXuUl6p9H4T7jBIKczrOFX7oF6UlDlS6EXprSfcCAoYXqDpeo2B6BIqN9zJV2s0KWgOZiH2FPMuCk4sWjuWLVJerYG3ldbCjexEE3ep33EBvQIS9e0Ol0xkNWzaMBsaSebHK+C4cvV+CkM5lpHRkIRTEOTvDLzf6/K0DBNUOuKOBe9QrCUn0E+0/16tbFXtbMSHPIc0s86h/VV2I2ll3GiOrXaw8ND9W8Zog6qLPSrExQBKnSBhzRnQeiFM0H/zJ0BEaC05+ibTyim/xGzuVbgAEaF7mvwUB9RqLRPgw1iL9hxSy3rB0DzR12LPAoNUZKhLjMbX1uZjdEShqkOJAcw7RxgcXu5nFDFL6WXJLgMjZ5cpMa/p1LQCdoI/M4VCufgQlPqKV7gZN37WJ+GWQR8JoUupZTfbBGCB21KvRj/YHrHF2nnl+Drl/Wv7+blf2h0S6VNpVq15mtxsddNtxzGeKQ39gq9JEb+OqBPjjDIMFdtOEQuIo3WStX8+4E5QMbhHQ/+WCtd4y/qPUn+AdsWjQo=
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/z-ro-bank-users-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get a BankingTed status.</h1>
+
+<MethodEndpoint method={"get"} path={"/banking/ted/{id}"}></MethodEndpoint>
+
+
+
+Get a BankingTed status.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"BankingTed ID.","example":4598,"schema":{"type":"number"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+BankingTed received.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"BankingTed ID.","example":4598}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={false} schemaName={"string"} qualifierMessage={"**Possible values:** [`PENDING`, `WAITING`, `FAILED`, `FORWARDED`, `CONFIRMED`]"} schema={{"type":"string","description":"BankingTed state.","enum":["PENDING","WAITING","FAILED","FORWARDED","CONFIRMED"],"example":"CONFIRMED"}}></SchemaItem><SchemaItem collapsible={false} name={"amount"} required={false} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"BankingTed amount.","example":15050}}></SchemaItem><SchemaItem collapsible={false} name={"operation_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed operation created.","example":"1b43322e-d6d5-4895-ac3f-a440cc63816a"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_bank_name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary bank name.","example":"Banco Bradesco S.A."}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_bank_code"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary bank id.","example":"237"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary name.","example":"Name Test"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_type"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary type.","example":"fisico"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_document"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary document.","example":"99999999910"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_agency"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary agency.","example":"0001"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_account"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary account.","example":"111111"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_account_digit"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed beneficiary account digit.","example":"10"}}></SchemaItem><SchemaItem collapsible={false} name={"beneficiary_account_type"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`CACC`, `CASH`, `CHAR`, `CISH`, `COMM`, `CPAC`, `LLSV`, `LOAN`, `MGLD`, `MOMA`, `NREX`, `ODFT`, `ONDP`, `OTHR`, `SACC`, `SLRY`, `SVGS`, `TAXE`, `TRAN`, `TRAS`, `CC`]"} schema={{"type":"string","description":"BankingTed beneficiary account type.","example":"cc","enum":["CACC","CASH","CHAR","CISH","COMM","CPAC","LLSV","LOAN","MGLD","MOMA","NREX","ODFT","ONDP","OTHR","SACC","SLRY","SVGS","TAXE","TRAN","TRAS","CC"]}}></SchemaItem><SchemaItem collapsible={false} name={"transaction_id"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"BankingTed transaction gateway ID.","example":"1b43322e-d6d5-4895-ac3f-a440cc63816a"}}></SchemaItem><SchemaItem collapsible={false} name={"confirmed_at"} required={false} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"BankingTed confirmed date.","example":"2024-03-30T10:44:29.549Z"}}></SchemaItem><SchemaItem collapsible={false} name={"failed_at"} required={false} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"BankingTed failed date.","example":"2024-03-30T10:44:29.549Z"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={false} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"BankingTed created date.","example":"2024-03-30T10:44:29.549Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": 4598,\n  \"state\": \"CONFIRMED\",\n  \"amount\": 15050,\n  \"operation_id\": \"1b43322e-d6d5-4895-ac3f-a440cc63816a\",\n  \"beneficiary_bank_name\": \"Banco Bradesco S.A.\",\n  \"beneficiary_bank_code\": \"237\",\n  \"beneficiary_name\": \"Name Test\",\n  \"beneficiary_type\": \"fisico\",\n  \"beneficiary_document\": \"99999999910\",\n  \"beneficiary_agency\": \"0001\",\n  \"beneficiary_account\": \"111111\",\n  \"beneficiary_account_digit\": \"10\",\n  \"beneficiary_account_type\": \"cc\",\n  \"transaction_id\": \"1b43322e-d6d5-4895-ac3f-a440cc63816a\",\n  \"confirmed_at\": \"2024-03-30T10:44:29.549Z\",\n  \"failed_at\": \"2024-03-30T10:44:29.549Z\",\n  \"created_at\": \"2024-03-30T10:44:29.549Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
