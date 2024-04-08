@@ -1,6 +1,7 @@
-var fs = require('fs')
-const paasUrl = 'https://paas-hml.zrobank.xyz/api-json'
-const gatewayUrl = 'https://api-users-hml.zrobank.xyz/api-json'
+require('dotenv').config()
+const fs = require('fs')
+const paasUrl = process.env.PAAS_BASE_URL
+const gatewayUrl = process.env.GATEWAY_BASE_URL
 
 function generateSpecs(url, filename, includeOptions = []) {
   let specJson = {}
@@ -33,11 +34,12 @@ function generateSpecs(url, filename, includeOptions = []) {
     })
 }
 
-generateSpecs(paasUrl, 'paas-spec', ['/auth/', '/pix/'])
+generateSpecs(paasUrl, 'paas-spec', ['/auth/', '/pix/', '/operations/'])
 generateSpecs(paasUrl, 'caas-spec', [
   '/auth/',
   '/otc/',
   '/quotations',
   '/conversions',
+  '/operations/',
 ])
-generateSpecs(gatewayUrl, 'gateway-spec', ['/auth/', '/payments-gateway/'])
+generateSpecs(gatewayUrl, 'gateway-spec', ['/api/'])

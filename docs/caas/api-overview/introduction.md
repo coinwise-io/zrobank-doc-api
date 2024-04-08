@@ -17,5 +17,3 @@ Once your `API ID` and `API Key` are created, you are ready to start the integra
 ## API Base URLs
 
 - **Test environment:** <a href="https://sandbox.zro.com/api/#">https://sandbox.zro.com/api/#</a>
-
-- **Production environment:** _Colocar URL de produção_
