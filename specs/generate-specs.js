@@ -10,13 +10,18 @@ function generateSpecs(url, filename, includeOptions = []) {
     .then((res) => res.json())
     .then((data) => {
       for (const [key, value] of Object.entries(data.paths)) {
-        if (includeOptions.some((i) => key.includes(i))) {
-          specJson = {
-            ...data,
-            paths: {
-              ...specJson.paths,
-              [key]: value,
-            },
+        for (const method in data.paths[key]) {
+          if (
+            includeOptions.some((i) => key.includes(i)) &&
+            !data.paths[key][method]?.deprecated
+          ) {
+            specJson = {
+              ...data,
+              paths: {
+                ...specJson.paths,
+                [key]: value,
+              },
+            }
           }
         }
       }
