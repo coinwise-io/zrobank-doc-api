@@ -9,25 +9,25 @@ function generateSpecs(url, filename, includeOptions = []) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      for (const [key, value] of Object.entries(data.paths)) {
+      for (const key in data.paths) {
         for (const method in data.paths[key]) {
           if (
             includeOptions.some((i) => key.includes(i)) &&
             !data.paths[key][method]?.deprecated
           ) {
-            specJson = {
-              ...data,
-              paths: {
-                ...specJson.paths,
-                [key]: value,
-              },
+            if (!specJson[key]) {
+              specJson[key] = {}
             }
+            specJson[key][method] = data.paths[key][method]
           }
         }
       }
       fs.writeFile(
         `specs/${filename}.json`,
-        JSON.stringify(specJson),
+        JSON.stringify({
+          ...data,
+          paths: specJson,
+        }),
         (err) => {
           if (err) throw err
           console.log(`The ${filename}.json has been saved!`)
