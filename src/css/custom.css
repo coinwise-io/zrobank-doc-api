@@ -182,3 +182,7 @@ input[type='number'] {
   content: 'PATCH';
   background: var(--ifm-color-yellow-light);
 }
+
+.menu__list-item--deprecated {
+  text-decoration: line-through;
+}
