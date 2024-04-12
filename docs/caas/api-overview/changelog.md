@@ -1,19 +1,9 @@
 # Changelog
-##  February 27, 2023
-### Release 1.6.0
-#### :seedling: New feature
--  Allowing simultaneous conversions
 
-#### :wrench: Fixes
--  Revert operation when error in create conversion
--  Adjust throttle when get quotation and create conversion
+<!-- ## May 19, 2023
 
-##  March 23, 2023
-### Release 1.7.0
-#### :shamrock: Improvement
--  Change conversions response to ensure data security
+### Release 0.5.0
 
-##  May 8, 2023
-### Release 1.10.0
-#### :collision: Breaking changes
-- Adding a unique identifier on the header of every PaaS endpoint
+:globe_with_meridians: **API**
+
+--- -->

@@ -8,7 +8,7 @@ This documentation provides all the necessary information to help you integrate 
 
 Once your `x-api-key` are created, you are ready to start the integration.
 
-Note: Never share your `x-api-key` to anyone. If you have accidentally shared, please contact our support team immediately at Colocar telefone do suporte.
+Note: Never share your `x-api-key` to anyone. If you have accidentally shared, please contact our support team immediately at (81) 99999-9999.
 
 ## API Base URLs
 

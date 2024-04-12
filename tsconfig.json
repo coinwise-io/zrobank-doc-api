@@ -3,6 +3,7 @@
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "allowImportingTsExtensions": true
-  },
+    "allowImportingTsExtensions": true,
+    "module": "Node16"
+  }
 }

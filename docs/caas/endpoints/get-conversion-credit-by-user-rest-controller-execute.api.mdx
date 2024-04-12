@@ -1,0 +1,58 @@
+---
+id: get-conversion-credit-by-user-rest-controller-execute
+title: "Conversions."
+description: "Get liability and credit balance conversion."
+sidebar_label: "Conversions."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVdtOGzEQ/RVrn0CCTUB9qFBVFehFVJWKKKhSEUJe7yRr8NqLPRtIt/n3zjhesiSol4eqT9l4xmcu58y4y1wDXqJ29qTMDrIPgMfOzsAHOjn2UGo8ml8E8GcQ2ILeGQP+Gh5AtQjZTlZC40FJBLqOvgU+CcrrhjGXiMJoWWijcS6kLYWKsKKQRloFQj3GywmukV7WgHSQHVx2maU/BGIdeZJVM2IFsgSfrQc6r0BEP3HyVuggpLi4oK+t2Ytt0QYoBTrRWn3XgpkLXYJFPZkLpFse7lodNOPk4tCY4UEQdRtQVHIGlHx/T4PnZKOfX1UeVAW1zA66DOcN5x3QazvNFosrdg4N4UFg+/54zD9PK1h1vu9RaJWCEDgWtQkpNt+STWO0iqSNbgJf7TZDu+IGFHJHPVOMehn4kYqBq23r4pmGftJFT9vWl7YWbiIkNcfClEJTOxKBoTdIFY9V6z1YRfG2OW94kHVjKMzu3ng8XlAhsbTrdPv3aRw/lcvEeabTP8Fm6PFiMWTkclDqRlCiAzXyzV8r/ixxRgwy+ovnWDuh6u1c9JFFVDDJz4OodQjEv6CUKxmEtjNpdMkl1BL5lCvPs4i8t4nMWQjZkkRJc0u+xURqA+Xyzv7+P8mGoFFOef6yz6jED7HqT+DOBRp9HxVEA1oAQXv6vGKN0+RWjvfIFKL0JFb0Z7Qa8TBaMrHbM8FwfrYc9wH2F5bzUrF9hKRx5iwd7aSP97ECOv/49ZwOk5wqxCYWo+3ERZklxr/l3okjaW/FqaQ+HJ6ebGjuWZdUApn38v2X+TgNJcme0dOmerxJ1tablEc4GI3u7+/z794VZMuVq/OCC6CZ1eyEoKwzbqrlmzUfKoCGHViEqyhxSelphYGYjg0s/yQed6NxAWtpB2ADevP1TnSrvfO3mzzRgPCAo8ZIWt2LlGKXhHGZDYTxOKS7gyGtKFn267pCBrjwZrHgY9rhfr4UzEx6Sol5JQXu9G8DK7PUgQ2kxok0Yf1dGha2dZamZVv8h0fk2T7dwnzw7NGgtuxDli6ZDulhaHBg23gUnszjh3c8GbxLBgt3bYxi15KJdsgA+9VRdBDn7hbs66xPD/kvxaHd+BPPqdz8
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Conversions.</h1>
+
+<MethodEndpoint method={"get"} path={"/conversions/credit-balance"}></MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Get liability and credit balance conversion.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Conversion credit success.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"liability"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Libability (Sum of all negative balances of all active currencies).","example":-1000}}></SchemaItem><SchemaItem collapsible={false} name={"credit_balance"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Credit balance for user.","example":10000}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"liability\": -1000,\n  \"credit_balance\": 10000\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

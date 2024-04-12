@@ -11,12 +11,12 @@ Data serialization in the Zro Bank API requires all response requests to follow 
 
 Both API requests and responses follow the JSON specification, in which request and response bodies are encoded in JSON. Some endpoints do not require the presence of a request body. Responses, in turn, are represented by a single JSON object containing the following keys:
 
-| Key name | Values          |
-| -------- | ---------------|
-| success  | Indicates whether the request was successful (true) or not (false).         |
-| data   | Provides the response data in JSON format.      |
-| error  | Indicates the type of error that occurred in the request (for example, "AUTH" for authentication errors).         |
-| message   | Provides additional information about the error that occurred.    |
+| Key name | Values                                                                                                    |
+| -------- | --------------------------------------------------------------------------------------------------------- |
+| success  | Indicates whether the request was successful (true) or not (false).                                       |
+| data     | Provides the response data in JSON format.                                                                |
+| error    | Indicates the type of error that occurred in the request (for example, "AUTH" for authentication errors). |
+| message  | Provides additional information about the error that occurred.                                            |
 
 <Tabs>
 <TabItem value='js' label='200'>
@@ -48,6 +48,7 @@ Both API requests and responses follow the JSON specification, in which request 
     }
   "error": null
 ```
+
 </TabItem>
 
 <TabItem value='js1' label='400'>
@@ -60,5 +61,6 @@ Both API requests and responses follow the JSON specification, in which request 
   "message": "Access is denied."
 }
 ```
+
 </TabItem>
 </Tabs>

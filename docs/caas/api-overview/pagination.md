@@ -7,14 +7,12 @@ All of our search endpoints that may return a large scale of data have paginatio
 
 With pagination, instead of returning all data at once, the response data is divided into pages. The page configuration is defined in the request, using the parameters listed below.
 
-| Parameter | Description                                   | Default Value | Maximum Length     |
-| --------- | --------------------------------------------- | ------------- | ------------- |
-| page      | Page number.                                 | 1             | -             |
-| size      | Page limit size.                             | 20            | 100           |
-| sort      | Page sort attribute. The response data will be ordered by this attribute. | -             | -             |
-| order     | Page order. Available values: asc, desc.       | asc           | -             |
-
-
+| Parameter | Description                                                               | Default Value | Maximum Length |
+| --------- | ------------------------------------------------------------------------- | ------------- | -------------- |
+| page      | Page number.                                                              | 1             | -              |
+| size      | Page limit size.                                                          | 20            | 100            |
+| sort      | Page sort attribute. The response data will be ordered by this attribute. | -             | -              |
+| order     | Page order. Available values: asc, desc.                                  | asc           | -              |
 
 :::note
 All of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
@@ -23,7 +21,7 @@ All of the parameters listed above are optional. If not defined, their DEFAULT v
 <Tabs>
 <TabItem value="200" label="200">
 
-```json  title="/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy"
+```json title="/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy"
 {
   "success": true,
   "data": {
@@ -86,10 +84,11 @@ All of the parameters listed above are optional. If not defined, their DEFAULT v
 }
 ...
 ```
+
 </TabItem>
 <TabItem value="422" label="422">
 
-```json  title="/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy&created_at_start=2022-01-01"
+```json title="/v3/otc/conversions?page=1&size=20&order=asc&conversion_type=buy&created_at_start=2022-01-01"
 {
   "success": false,
   "data": null,
@@ -98,5 +97,6 @@ All of the parameters listed above are optional. If not defined, their DEFAULT v
   "code": "VALIDATION"
 }
 ```
+
 </TabItem>
 </Tabs>

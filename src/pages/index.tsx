@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
 import styles from './index.module.css'
+import Footer from '../components/Footer'
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
@@ -21,7 +22,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--primary button--lg"
-            to="/docs/overview/introduction"
+            to="/overview/introduction"
           >
             Get Start
           </Link>
@@ -34,19 +35,22 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
-      <HomepageHeader />
-      <main>
-        <img
-          className={clsx('heroCircleBg', styles.heroCircleBg)}
-          src="img/blue-circle-bg.svg"
-          alt="Circle"
-        />
-        <HomepageFeatures />
-      </main>
-    </Layout>
+    <>
+      <Layout
+        title={`${siteConfig.title}`}
+        description="Description will go into a meta tag in <head />"
+      >
+        <HomepageHeader />
+        <main>
+          <img
+            className={clsx('heroCircleBg', styles.heroCircleBg)}
+            src="img/blue-circle-bg.svg"
+            alt="Circle"
+          />
+          <HomepageFeatures />
+        </main>
+      </Layout>
+      <Footer />
+    </>
   )
 }
