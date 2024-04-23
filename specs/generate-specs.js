@@ -23,6 +23,14 @@ function generateSpecs(url, filename, includeOptions = []) {
         `specs/${filename}.json`,
         JSON.stringify({
           ...data,
+          servers: data.servers
+            ? [
+                data?.servers?.find(
+                  (item) =>
+                    item.url.includes('hml') || item.url.includes('sandbox')
+                ),
+              ]
+            : specJson?.servers,
           paths: specJson,
         }),
         (err) => {
