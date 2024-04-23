@@ -13,8 +13,8 @@ const config = {
   title: 'Z.ro Bank',
   tagline: 'Documentation',
   favicon: 'img/favicon.png',
-  url: 'https://github.com',
-  baseUrl: '/zrobank-doc-api/',
+  url: 'https://docs.zrobank.io',
+  baseUrl: '/',
   organizationName: 'coinwise-io', // Usually your GitHub org/user name.
   projectName: 'zrobank-doc-api', // Usually your repo name.
   deploymentBranch: 'gh-pages',

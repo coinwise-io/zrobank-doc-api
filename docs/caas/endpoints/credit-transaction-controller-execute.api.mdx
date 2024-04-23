@@ -1,0 +1,54 @@
+---
+id: credit-transaction-controller-execute
+title: "Create new credit transaction."
+description: "Create a new checkout transaction with credit."
+sidebar_label: "Create new credit transaction."
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVs1u20YQfpUFz/qxZAd2hKKoraaIiyIxbCcF6gbFkByRGy+57O7SsqLoaXoIcu6tV71YZ5aURImupR56qSQI5O7s/H7fzM4DXaABJ3V+GQejYGwwlu7WQG4h4tWxzp3RSqH5DR8xKh0GnSBGGxlZ8H51BhwKEDlORZRidK9LJ9xGh5hKl4rIq+7R8QIMZOjQ2GB096ETGPy9ROsudDwLRnP/Kkk4GDlTYieIyAXMHW9BUSgZeXf7Hy1bnweWTGbAT25WIPmjw48YObZjODgn0fLuuPaM41zLWmdknrRDWkVxGYuE8hNrkWtRmOXX7ipAOoOPkBWK1YQvXybHeDbpTgbDYffk6OisC6chdsPTSTQEhEmSpGfBolPndwzGO9HKI+2JiDc7ASj1dkL52RsWib8psxDN/rDeLP/K0GhB4ZAVt/yDHpEKs/xKhvVWRCcvXgzOTo+qz+BswM6/1io+yIzO0NvQWcG5M0LSA1rrs1hb3mvt1WMhK2R+T/Dab5WkgMN5wDySGQGmGeeWtcGwPzwanrCRG4K0kW421vEBJsbLP2OZ+KRZTEpC+PILHJLNwfCYrV3QiQPQd0FSSLH/k//vpYVgseg0mHLXxMG6Uq0k7gS88og46KTzujcAva5YGSw+tExtmLSF6G01ZK/VTZjia72LSq8tdG4rLA+PBm1a3KYoxhKVrjvIVmcx6EqTYyxsGUWEsEmp1Ix7zP+padw4cKU9wIHSGIpZ1PLPlq2W2V+y67pAdb3IzXaJLicC8plYGRO+wVsBBkUmrSVfBTWBFKyQ+QMoGYuJNhk4XuWQeoHX/ETx31k0AkqXUlx1DcUEpMK4OjMc/ifekGoHifVZ89D7LFbZ45TZmkS+PYdImg1PsgVt0VxLNU/SQlsPJ3ApvfUjVtMvYMadyfYrKAesyjxUg3AelEaRaOpcMer3lY5ApaRkdEw9sVXrn3hbXAFFcX51SbloHrd0vqCt3iejQ8jve4+zT+1+iQ/kUsH+7NPTTTP1rK7XOtNKJw09jSzdMNcqOq1yVRPQs6Ba6tQPP/hS0PqPP9/SYg14dsZXhfl7vbkuvFqRaZupB1Jrdxw3R2l7JG3m31N7u9NqPWR2Z4yfBetRsOnlMp9oT/Gajr/0aFDTJLjfJHU360+KMJqq7UHvmH51LyQys/Ycsi3ltLtd7ul0uq40ze9eyKWhVilZyGGUc50lfLcjQwFQj0XuExsr50oJI5PUWSKjB3p8iD3OBrMng7yhrL5l+jtmaw70dnMz3wyAf38/rUHn8NH1CwUy5/C82/Oaz3eB57Pnd8VoTnPFaUI+05aF5vMQLL4zarHgZYKtmVVX3gcwEkIuNLUNOoDgkUVN4B5n7HPlffeWXWFxVbJLrVHGfK1OnNP8K9yzss32dPX2hvkV1nfurMKmgSkt8v8o+JW+9KJ9Rj17/fo8UJAnJSQsX+nlgnGPbkyoHVY377HUmxtefnPhBcStvsf8W9qoonH86q8ei78BE2FPew==
+sidebar_class_name: "post api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create new credit transaction.</h1>
+
+<MethodEndpoint method={"post"} path={"/cielo/payments/credit"}></MethodEndpoint>
+
+
+
+Create a new checkout transaction with credit.
+
+## Request
+
+<MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CheckoutId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Checkout Id gerado no pré-checkout","example":"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>CreditCard</strong><span className={"openapi-schema__name"}> object</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CardNumber"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Número do cartão de crédito","example":"4551870000000181"}}></SchemaItem><SchemaItem collapsible={false} name={"Holder"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Nome do comprador impresso no cartão","example":"4551870000000181"}}></SchemaItem><SchemaItem collapsible={false} name={"ExpirationDate"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Data de vencimento do cartão","example":"12/2024"}}></SchemaItem><SchemaItem collapsible={false} name={"SecurityCode"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Código de segurança do cartão de crédito","example":"123"}}></SchemaItem><SchemaItem collapsible={false} name={"Brand"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Bandeira do cartão","example":"Visa"}}></SchemaItem></div></details></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+The Cielo credit transaction returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"CheckoutId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Checkout Id gerado no pré-checkout","example":"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8"}}></SchemaItem><SchemaItem collapsible={false} name={"Status"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Current Status"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"CheckoutId\": \"b99g3e8f-f122-4008-a7be-b7fc2aeafggh8\",\n  \"Status\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

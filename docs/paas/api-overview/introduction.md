@@ -4,7 +4,7 @@
 
 Once your `API ID` and `API Key` are created, you are ready to start the integration.
 
-- If you have not registered your company yet, please access: [Register to Zro Bank CaaS API](https://docs.google.com/forms/d/e/1FAIpQLSdMHWF1sZm7jjSsKiYGZIcd7sN2vCwx_OH5Eh3W1X8n7wS6ug/viewform)
+- If you have not registered your company yet, please access: [Register to Z.ro Bank CaaS API](https://docs.google.com/forms/d/e/1FAIpQLSdMHWF1sZm7jjSsKiYGZIcd7sN2vCwx_OH5Eh3W1X8n7wS6ug/viewform)
 
 - If you have already registered your company, but your credentials were not provided yet, please contact our support team at meajuda@zrobank.com.br.
 

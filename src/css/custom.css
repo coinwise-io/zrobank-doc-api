@@ -186,3 +186,11 @@ input[type='number'] {
 .menu__list-item--deprecated {
   text-decoration: line-through;
 }
+
+.navbar__toggle {
+  color: var(--ifm-background-color);
+}
+
+.menu {
+  background: var(--ifm-background-color);
+}

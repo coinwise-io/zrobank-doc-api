@@ -1,0 +1,62 @@
+---
+id: delete-by-qr-code-static-id-rest-controller-execute
+title: "Delete user's QR code."
+description: "Delete user's QR code by id described in path."
+sidebar_label: "Delete user's QR code."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVWFv2zYQ/SsEv6wFbNmxna0xhmFNnWEu+iFNExRYEQyUeI6IUKRCUo5VTf99d5TsOI7RDQWGAQZMkbzHe3fv7hpuS3AiKGuWks/5AjQEOK8/undWwqeAJ9lSXoEP76wJzmoN7k/YQFYF4AMuoXSQiQBoG1wFtOMzp0oC3MGxyoP7wbOPVyxDVJbWTEnW3UxBMmVYKUKeIGApnCjQxHk+/9Jwgx8IY6zJ6DlFmDkICY4fPnWdA4v32HLBlGeC3dzg6tV69prelyxYVhn1UIGm58EEtapZQCsHD5XyinAS9lbr/Q3PisoHlos1MGG2dgocORvvuSfuPsuhEHze8FCX5LcPTpk73raDHRUljxhGXhSCF6y2IVOSHoSNKEpNMKsfYQLjN7Ph5Cw9G87OpqdDMT49G57OfpqmJ9PxdCoE/5ZHt+SFL5EheDqfjMf09/z1S7XZJU3GVErmqywD71eV1nXC2wGfHbNcrjBcNdsSZTGvmBQHrFDeow/MOgyrx+SvhUY5rKwrRKBdcrVHPnmJfINaYqLCxGEmsqhcthJKg+xtZke9oUTv0/FR2qTDR3TC2IAOVKbHmEz+E0YIHcQdKTtG9i+2gNKizjzHbHisKadCHXWfAuI6XN5SorAgckvV2eUglglqZc5HpdqMZA8yenBDouZHHbdRo2RLGgC33tZT5TRVUAjlfDTSNhM6tz7Mp2PM4aH0PtAxuxTI6O3lkpOGn8w92pd4lHx1NhXmPtnUX18gLGAN2pYFZuqfcIZ5ob+J9bstrLZ3ezh7MftEMu90vI1c02mfNN9vDfrFbzEtuP/+8zVu9oVBzsQMKbOysWBUiJX2R+IsO0e3np4+9O3oFYp5d3ySTPGHWxm2UJEFQu+7wc4ST58H5fHxcRePzBZJSgSwlhVdCpAZioYSvx7cQQJaZYBVvfdK7GnqLg8e5RvlIP/NexQNlFYohNkDO9rSk8OYNJEsJv57hkCfkgCbMCq1wO7Y9u42vfK/cFR+N3+6AhrwrfpJ8VH/uJhjt0WZkMbJpmlS4eHG6balbRwFjsoNl2vhlEgp31gkUnlaY8GthPaHM22f2aurvhu8Zs8b9VEG/SZ2EZKH0BV94fIe6m4wtLd4qx9v3+3I/zAHj7LtWG0n947us362uPhwcX2Bx9TP96bUQcXGYByN3s/n8QK7tvdgftnFMtAnhbNt/wbgQv+w
+sidebar_class_name: "delete api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete user's QR code.</h1>
+
+<MethodEndpoint method={"delete"} path={"/pix/deposits/qr-codes/static/{id}"}></MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Delete user's QR code by id described in path.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"QR code id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Pix QR code deleted successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+If the Pix QR code static id was not found.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

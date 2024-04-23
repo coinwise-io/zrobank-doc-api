@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 ## Snake case
 
-Data serialization in the Zro Bank API requires all response requests to follow the snake case convention to ensure proper integration with the system.
+Data serialization in the Z.ro Bank API requires all response requests to follow the snake case convention to ensure proper integration with the system.
 
 ## Request/Response
 

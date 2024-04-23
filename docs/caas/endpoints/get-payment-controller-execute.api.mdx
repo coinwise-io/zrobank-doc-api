@@ -1,0 +1,54 @@
+---
+id: get-payment-controller-execute
+title: "Get checkout info."
+description: "Get checkout info by unique identifier."
+sidebar_label: "Get checkout info."
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vmtv2zYU/SuEPq1YLD9k52EMQ910azMMQ5CkGLAgGGjpKmIjiSpJOXE8/ffeS1G2ZHtJPGCGAdPSfR6e+1h5sgDFjZD5ReRNvU9gLvkyg9ycy9womaag/oYnCEsD3pEXgQ6VKEi8FmZhAuGDLA0TeSzZfMnKXHwrgYkIbYhYgPJRr+CKZ2BAaW96u/Jy/IP6jS56PvIUfCuFAgzCqBKOPEEeCm6SHbcuQBYKSOUmgIuIPMETz4qUrI9PJnA2HkW94HgCvfHp5KQ3D8+CXhTAyfE8gmgYjlBBo4GMe9OVZ5YF6WmjRH7vVdUdBaULmWvQ9H40GNJPN5ibBNi5DaRwYWnDTamZAlOqHCKmyzAEreMyTZcUYYjAohyZ4kWRitCi3/+qyd5qNx45/wqhIRAV3ZURdTR0XdsxbyN13mBTdCDbRmoymQwGpyHEJ3EwGkaDAcSj4DgIAq868q5tOq/76t5KDULXDS9NIpV4xjtGu1cQg4I8hLck0jWuGtXDMpk5/2u2H+aVt9UP8/wRtBE5r82+5rUl3Nxb15VBAXhvg/JDmflzVeOJZYcv1B+2uN6am2rUGOl1Hd3QCxZxdi3SBe84+SjDMnMsPtRRo9t1NhwF/nhy7J+cnvWw0NrOqBXx8D/5cqpdVz9OJuPhGX16p/ghX6iZSn4AJ4rNLym+6mCWybIDV15mc1D/an/B0xLaRocDf4J2zhVwA9HMmoqlyjievAif9YzISOMVdqEkk/GGWVTislThGzhzXipFsdXy7FLJBbZ5ZW18FtpgdYQtK1wpvkQjwkC2p4FUVdXu+reeHQOu3XT7w27tdmtqm/37iLqHT5trX99PG+A1MK3scCYYYewl266/mZdXaPrKjQvKDZMbDwa7A+MiZjxfsiZxZkejZlwBy4TWiAyTiiVc40RFEoiI1bdMTwlAi/Z43yj6opHw1KVo8tZThcVcpBDVOqPR/xINmjb8ngZ7DQn7hzVzh+DSuDsoYZZ28M8BLSs83tF0xY0gkbR13IOdbzTsp17fdra+I6jurzZrQkXzGtSi2SNKlaJCYkwx7fdTGfI0kdpMgwECv03e3+k1u+SYyuzyAgFpq2vUL/CV/6zknOcP/tPyeU9jXmBghS3PV+z0kix90dZnmclU3rfstKC6phWgnvINYG4vIN65R0fu8GvTA37782ZT/RSMvRpay2ztOdb+5SvJPmBYG9fbse0VIczr10M/wK9bZFxbdgvdWhPfdkF5fHxc4+FmFva2DNlpB1qYExqCv9+SwQRwQQIqqY2XWZoyJe4TQ0uWpUP0Fn+ERoH0yHjeMrazw/rbeKw2G9sBG6+7BwNPpl+kHLfZysW4ckS/9SzRLfFrquNx2tqJkRFEZ5JcreZcwxeVVhU9RneKCgqPC64En9PVYj1EQtMZSyrmqYYXEvnhylX8O/biOr03jaa/59Td60E19fD4AMvuVl/doXQCPLI1v3ICM9yHC9NS3VmDO83h0y/Ea+prrRmyVQTW+t6wfvpgBdiNfID853WQhv5SfFX1HQmIaq8=
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get checkout info.</h1>
+
+<MethodEndpoint method={"get"} path={"/cielo/payments/{checkoutId}"}></MethodEndpoint>
+
+
+
+Get checkout info by unique identifier.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"checkoutId","required":true,"in":"path","description":"Payment cielo checkout Id.","example":"475e942d-365e-4857-bc93-d3e76bded1c2","schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+The Cielo payment status returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"Id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Checkout payment cielo Id.","example":"555008cef7f321d00ef236333"}}></SchemaItem><SchemaItem collapsible={false} name={"Status"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment cielo status.","example":"authorized"}}></SchemaItem><SchemaItem collapsible={false} name={"ReferenceId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment cielo reference Id.","example":"555008cef7f321d00ef236333"}}></SchemaItem><SchemaItem collapsible={false} name={"AuthorizationId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment cielo authorization Id.","example":"555008cef7f321d00ef236333"}}></SchemaItem><SchemaItem collapsible={false} name={"Destination"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Destination payment.","example":"teste@cielo.com.br"}}></SchemaItem><SchemaItem collapsible={false} name={"RequesterName"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment requester Name.","example":"Teste da Silva"}}></SchemaItem><SchemaItem collapsible={false} name={"RequesterDocument"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment requester Document.","example":"123.456.789-01"}}></SchemaItem><SchemaItem collapsible={false} name={"RequesterContact"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment requester Contact.","example":"+554199999-8888"}}></SchemaItem><SchemaItem collapsible={false} name={"Payload"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment payment payload.","example":"+554199999-8888"}}></SchemaItem><SchemaItem collapsible={false} name={"Amount"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Payment value","example":10.5}}></SchemaItem><SchemaItem collapsible={false} name={"CreatedAt"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Date of payment."}}></SchemaItem><SchemaItem collapsible={false} name={"Source"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Current Source Provider."}}></SchemaItem><SchemaItem collapsible={false} name={"Historic"} required={true} schemaName={"string[]"} qualifierMessage={undefined} schema={{"type":"array","items":{"type":"string"}}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"Id\": \"555008cef7f321d00ef236333\",\n  \"Status\": \"authorized\",\n  \"ReferenceId\": \"555008cef7f321d00ef236333\",\n  \"AuthorizationId\": \"555008cef7f321d00ef236333\",\n  \"Destination\": \"teste@cielo.com.br\",\n  \"RequesterName\": \"Teste da Silva\",\n  \"RequesterDocument\": \"123.456.789-01\",\n  \"RequesterContact\": \"+554199999-8888\",\n  \"Payload\": \"+554199999-8888\",\n  \"Amount\": 10.5,\n  \"CreatedAt\": \"2024-04-23T15:32:59.991Z\",\n  \"Source\": \"string\",\n  \"Historic\": [\n    \"string\"\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
