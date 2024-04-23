@@ -4,19 +4,21 @@ import TabItem from '@theme/TabItem';
 # Webhooks
 
 Your account can be configured so that when certain events occur on your account, a HTTP POST request containing JSON data pertaining to that event is sent to one or more URLs of your choosing. These URLs can be configured inside your settings making a request to our team. Notifications of all events listed below are sent to all the configured URLs.
+<br />
 
-Types of webhooks.
+## Types of webhooks
 
 | Type               | Description                                      |
 | -------------------|  ------------------------------------------------|
-| PAYMENT            | When you send a pix payment                      |
+| PAYMENT            | When you send a pix payment.                     |
 | PAYMENT FAILED     | When you send a pix payment and it fails.        |
 | DEVOLUTION         | When you send a pix devolution.                  |
 | DEVOLUTION FAILED  | When you send a pix devolution and it fails.     |
 | DEVOLUTION RECEIVED| When receive a pix devolution.                   |
-| DEPOSIT            | When receive a pix deposit                       |
+| DEPOSIT            | When receive a pix deposit.                      |
+<br /><br />
 
-Credentials (Not required).
+## Credentials (Not required)
 
 | Type                   | Description                                                       |
 |------------------------|-------------------------------------------------------------------|
@@ -25,11 +27,14 @@ Credentials (Not required).
 | Signature Verification | shared secret key                                                 | 
 | Custom header          | header name is not previous defined , using with api key or token |
 | mTLS                   | tls certificate                                                   |
+<br /><br />
 
-**Version 1** PAYLOAD
+## Payloads (Version 1)
 
-Payment
-```
+<Tabs>
+  <TabItem value="Payment">
+
+```json
 {
    "id":"4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
    "type":"PAYMENT",
@@ -49,8 +54,10 @@ Payment
 }
 ```
 
-Payment Failed
-```
+  </TabItem>
+  <TabItem value="Payment Failed">
+
+```json
 {
    "id":"77198133-185e-4c08-8252-f47c9b15785b",
    "type":"PAYMENT",
@@ -71,8 +78,11 @@ Payment Failed
    "created_at":"2024-04-17T13:36:21.188Z"
 }
 ```
-Devolution
-```
+
+  </TabItem>
+  <TabItem value="Devolution">
+
+```json
 {
    "id":"0a1d863e-98bd-49a3-916d-840a1ec0609f",
    "type":"DEVOLUTION",
@@ -91,8 +101,10 @@ Devolution
 }
 ```
 
-Devolution Failed
-```
+  </TabItem>
+  <TabItem value="Devolution Failed">
+
+```json
 {
    "id":"0a1d863e-98bd-49a3-916d-840a1ec0609f",
    "type":"DEVOLUTION",
@@ -113,8 +125,10 @@ Devolution Failed
 }
 ```
 
-Devolution Received
-```
+  </TabItem>
+  <TabItem value="Devolution Received">
+
+```json
 {
    "id":"10b66e97-c747-4dcb-92ad-da1420a0a6b9",
    "type":"DEVOLUTION_RECEIVED",
@@ -136,8 +150,10 @@ Devolution Received
 }
 ```
 
-Deposit
-```
+  </TabItem>
+  <TabItem value="Deposit">
+
+```json
 {
    "id":"a839f358-0e39-409e-b9a5-5a56b18ba3f2",
    "type":"DEPOSIT",
@@ -157,3 +173,6 @@ Deposit
    "created_at":"2024-04-17T13:33:41.071Z"
 }
 ```
+
+  </TabItem>
+</Tabs>
