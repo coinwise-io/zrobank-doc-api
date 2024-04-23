@@ -23,10 +23,10 @@ Your account can be configured so that when certain events occur on your account
 | Type                   | Description                                                       |
 |------------------------|-------------------------------------------------------------------|
 | Authorization Basic    | base64<username:password>                                         |
-| Authorization Bearer   | api key or token                                                  |
-| Signature Verification | shared secret key                                                 | 
-| Custom header          | header name is not previous defined , using with api key or token |
-| mTLS                   | tls certificate                                                   |
+| Authorization Bearer   | API key or token.                                                 |
+| Signature Verification | Shared secret key.                                                | 
+| Custom header          | Header name is not previous defined , using with api key or token.|
+| mTLS                   | TLS certificate.                                                  |
 <br /><br />
 
 ## Payloads (Version 1)
