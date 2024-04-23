@@ -1,0 +1,54 @@
+---
+id: create-refund-controller-execute
+title: "Create PicPay payment refund."
+description: "Create a new PicPay payment."
+sidebar_label: "Create PicPay payment refund."
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vm1P40YQ/isrf86LiS+8RFVVoK1KVakRx6lSuVO1Xo/jPdZed3dNCG7+e2d2DTgO4gC1IiKxd16feWZm20jXYLiTurrIokV0boA7uIS8qbJzXTmjlQLzF9yBaBxEoygDK4ysSeFRnHFWwZotpVjyDav5poTKTVC45oaX4MDYaHH9ZRQZ+LsB6850tokWrX+UBtCvMw2MIoEOUZOOeF0rKXxc06+WfLWRFQWUnH65TQ3oXadfQTjyYygLJ8EGszkYqARQRo/C1hlZrfYyWIZo2aMSkxmFDne8rBUpJvmH5FAk2fgIZofjLE0Px5DOT8biGI7i+ckxPzhIou0o4o0rtJH3j2C+1vWO4p77w3mcpGKWpTzlc8iPk1mczkR8Em23ox6C1ztp70eD6DvpvMV+jZdUoctQFrQYbNpaVzZgOYsP6Gs38KsCHoptvBX8co2pIGO2EQKszRulNpTHf1TSd2NbS4F8HEB8MYB4Pp/H8bGA/ChPZgdZHEM+Sw6TxJf1XWzq3D6R6k0ureOusW/2FtR2/Qhf64ysCo6BKPVeCPvqb0lnwNJhJUcD3na574Xb42+gXuDvJfL2siNsx98PcbxP2Yuc8YoKEiJhfjJZxg2wUlqL+TNtWMEtk9UtVzJjuTYld/SWYJpE3vIzzfDJgvH8Qqw6erOcSwVZ0JnN/pdo0LTjK5qrHR7sH3ZegLjRjSOwLA5sIx3O2es2SgFNG5rBWzzCiVxoGva1tr7VuCvwaRoKPe3mt52G3qZaYIq3YYi3UWMUChfO1YvpVGnBVYFmFkmMsA8p9BsdsyXHRE6XFwhHX92ifo1Hk3ujU17dTO4293sWfoRbULr2RPyGnXFRqhdt/aJLrfSqZ6eH00eaRGHYPKDVjSeiXPdq1P342VcD3//6xxW+7PqIgvGFoel2+bTqfnpok8Fqet1meWaxvLATRpGscu2bu+uWPydGszPE5CnvITDPilDBw/HBJMFPN8y58MO84uWOcTzdrch6vX4shtDlJCX0cNZLEnIgKiqF5D8MZDABXBJA3fzk5VQpZuSqcBZbxnMxe40/KgVRvORVz1h3Zdm9rHR7bDKEpn1aYN+663QkcHDnprXisqJcfIxt12HXUegw33Khx8L4812GXKRGIrG2TbmFT0Ztt/QaiWQ24QJ1y43kKdUVWxkVgGe+r9voBjYUY4h2fEXBkLhqKKi91UsdFDROcV/X7kXZ/shY/v6RGJ92N7hSZ6Rj+Joywf+L6DP+4YP2CIb7GL1vI8WrVcNXJB/sbrtLU28VDfrMZ9Yd4cDsRfndmRdgV/oGqu/xIGTj6BEjRtv/AlP9r9s=
+sidebar_class_name: "post api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create PicPay payment refund.</h1>
+
+<MethodEndpoint method={"post"} path={"/picpay/payments/refunds"}></MethodEndpoint>
+
+
+
+Create a new PicPay payment.
+
+## Request
+
+<MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"referenceId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment reference id.","example":"3f436c3d-7e26-dbb6-eb59-c8e70598a113"}}></SchemaItem><SchemaItem collapsible={false} name={"authorizationId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment authorization id.","example":"6503bc2dbaba5ef8320b2c09"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+The PicPay refund returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"authorizationId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment picpay authorization Id.","example":"555008cef7f321d00ef236333"}}></SchemaItem><SchemaItem collapsible={false} name={"referenceId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment picpay reference Id.","example":"555008cef7f321d00ef236333"}}></SchemaItem><SchemaItem collapsible={false} name={"status"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment picpay status.","example":"created"}}></SchemaItem><SchemaItem collapsible={false} name={"cancellationId"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment picpay cancellation Id.","example":"555008cef7f321d00ef236333"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"authorizationId\": \"555008cef7f321d00ef236333\",\n  \"referenceId\": \"555008cef7f321d00ef236333\",\n  \"status\": \"created\",\n  \"cancellationId\": \"555008cef7f321d00ef236333\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

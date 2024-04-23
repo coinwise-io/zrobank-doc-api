@@ -1,0 +1,54 @@
+---
+id: download-file-by-id-rest-controller-execute
+title: "Download file by ID."
+description: "Download file by ID. Enter the file's ID below and execute to initiate the download. If you haven't generated a file ID yet, please generate it using the appropriate endpoint."
+sidebar_label: "Download file by ID."
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVWGP0zgQ/SuWvwBSL10WPlXoBHuwUHQfEOzqJNAKucm0sdaxg+20G6L8d944aSlt4U5I6IRUqc7YM37z5s24k64mr6J2dl7ImXzuNtY4VVxqQxftvHhLIf7lbPTOGPIf6Y7yJpKcyIJC7nXNjntuYgk/sWjF/HkmXthIXsSSkvVegFEsyLiNULYQYygRndBWR614jbPFGCoT86VoXSNKtSZ7L4oVWUZKhVDDNQjXUpyI2pAKtNsXOoomaLtK4VRde1f7FJ5sUTttYwb8tfKqIgAMcvahkxYfyMM6m3N2mpMqSRXkj3K9QtR0jgHoADTX11jdXz9+gHsBDxk1Vn9qyLRCF2SjXrYJi6dPjQ6a42TimTH7hiCqJsSULOjZ+mnyDDad84QCRd/QRIa8pErJWSdjWzPuED0Sln0/2aWiixOOKa9axfIoq8uBUb7t+9FvOGKogZYC75+fnfHfMT+pPttKIs3YeAtmQpPnFMKyMabNZD+Rj08FQN2VbcUWu0ilAs+eRKVDqqzzYCpAOGtlNFTnfKUiWxnxGPnhceTrAEGqBrUAuXlSvVgqYC0Gn/PzX4IGoaNasdDku+i8WpEEkwH69zq2SX8LQkCP5Q2TDGGWjttxRTFpFQWbyWkYnKfMbph2uuinW465bOTXWzk33rCAY6xn06lxuTKlC3H26Ax8H1b+b94WbxQyePZmLllCX90D/GtsZZ+9Wyh7m921n4+7n9Zo67oCq/8W54+yMj+M9cpVzrjVXpw9qt6xMgfpbQnrBrmyTEfTZFxcpjLA/vqfKxhHLTOYVBFtly5pXEfDG+8z78QFYH29+hDbySPM+bD9MHuEH0w5BqbKI0cfm3Hnid1vSdlsNjs+cldlC04A7af5UKTcMhtaPT04gwSMzgmNuHdLGil6VcYAuSY5FP/lPmajhjwqZfeCnRrph4x0KVWU/bd8AkZFRLqL09oozMZ+ZKsbW+6DHFsOp1PT4X+WBuuu76BObi0+23ULgLj2pu/ZjAfAc3NjuVa4fcEyQ28WOvAa7b1UJtAPKL3/dhw6D8TeeD4JezRiUrEklWn4C8tbaoe3oL/BqfFF+2kU/8PTdzLbIavtY71L95vR+fIFdz0P+72X7GBEJCZOUvfkIh0QV+6W7J87IiN/Mpd9/wWxpiei
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Download file by ID.</h1>
+
+<MethodEndpoint method={"get"} path={"/storage/files/{id}/download"}></MethodEndpoint>
+
+
+
+Download file by ID. Enter the file's ID below and execute to initiate the download. If you haven't generated a file ID yet, please generate it using the appropriate endpoint.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"File ID.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The file download returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

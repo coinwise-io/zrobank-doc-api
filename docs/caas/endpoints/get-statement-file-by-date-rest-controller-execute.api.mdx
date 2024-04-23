@@ -1,0 +1,54 @@
+---
+id: get-statement-file-by-date-rest-controller-execute
+title: "Request statement file by date."
+description: "Request statement file by date."
+sidebar_label: "Request statement file by date."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVmtr2zAU/StCn1ZIk74+hTHWrmmX0W0lDwYroSj2TSwqS54kp3WD//vuVZx3lnaFMSjUlu7z3HOuM+UmAyu8NLod8ya/Bt/1wkMK2l9JBRfFJb51wPlPRntrlAJ7D08Q5R54jcfgIiszckfnDvzK0ZK5eQQ2whBsWLAYD+ponwkrUvBgHW/eTbnGF/TTRkcUTVKQBEQMdit2LwEW7Fj7kknHBOv38end5OyA5Q5i5g3LtcQCVMFkjMnlqGAevSxWJZ2kOHV2rtTqgWNpjgUnYgJM6LmfBEvFBjsLCIu3OdS4ixJIBW9OuS8yqtt5K/WYl2Vt0YqFzFh/T/3uiBAaxBJtsQM7clwAtcw1MjYVHi3o6tDLlAL/uYBw81eZacyM3Nbzgs5THBLvtG6/d3r33d55r/W19a3X5YPt/APK6DIEFBw5nxwd0b/1RP3ODWLvc6txXC6PInBulCtV1HlZ42e7XNojHEvB5t2wwB8cvgWWSucwOTMWx+eY1BOhZMxmcNHprKUQ+XhHMQ4sEzkSBCceBQGwkUAo4pnPyck/qQZDezEm9vOuN1aMgeB0qCcrfRFEMQQMaPFxQLCiWhJDyhyDDwLyCb403My5sZDaIUmNBgh2MpdXbhUJyvus2WgoEwmVGOebp0cI9SYLbuia3Qos/vy2zYlRS3eH/hle1Z+tGQr9UH8qnrciXMIElMmC7l+Ic5ikam+szyY1yoxX4qyg1CWOzng2x2o6Iy5xsjqqVQ9Xc/l8+dFbCoeKCcOQemSCoqVXdPGzbg27wLKWqTdr22lCmM+uj+un+IdHES5MEXmKXmlz4Ym366A8Pj4u8IhMWh9SAyhESUYeIk1oSPFxwwYbUDICVN1KlrDi5DjxDpka6BC/Jh+hkSE9UqFXgr280tfAmYau0exVrtUwPDz5RqYE7qiyKnRaEf2OV0QnZq9THQlBbCab6XQoHPStKks6nq05EkAsnRgq2oIjoRzsKfZdpxL1AdvYxDuLfIBia9mj4nOyDJx/U+a1Tbwnb7XjlwkH9GIlZQx7ozb/ir4ZhP/wud3T8PwHwlrHi8143SJl0y5f+TZvrIGARHWFO3wl1vuLYMB65gH0B77AmF4xT1mWvwHj3R/Y
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Request statement file by date.</h1>
+
+<MethodEndpoint method={"get"} path={"/storage/statement-file"}></MethodEndpoint>
+
+
+
+Request statement file by date.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"report_date","required":true,"in":"query","description":"Report date.","schema":{"format":"date-time","type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"type","required":true,"in":"query","description":"File type.","schema":{"enum":["REPORT_STATEMENTS"],"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+URL returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
