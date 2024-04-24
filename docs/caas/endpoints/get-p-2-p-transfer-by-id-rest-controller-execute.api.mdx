@@ -1,0 +1,54 @@
+---
+id: get-p-2-p-transfer-by-id-rest-controller-execute
+title: "Get P2P transfer by ID."
+description: "Enter the P2P transfer ID below and execute to retrieve its information."
+sidebar_label: "Get P2P transfer by ID."
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vm1v2zYQ/iuEPjVA/Cbb22wUw5Kt6zIMWJA6KNAgCCjpbLOhSJWkbKue/nvvKMnvS5OtG2DAEsW7e+743HNcBzoDw53Q6ioJxsFbcNfh9cRwZadgLour5Aas+1krZ7SUYB5gBXHuIDgPErCxERmZouEb5cAwNweG9szVDtjVLywCqZeMq4TVtsxpZsAZAQtgwlkm1FSb1INoo+OMG54CurPB+G4dKHzBAKvWkiMC18pzkeAuQVHnwBMwR2DegcJl9t4bsNtbRPFKTBmkmSvOWaFzwxKY8ly6vT1LISXCZRack5CcoV8bzyHlwXgduCIjGBZxq1lQlucbZEqrGL6CaIKF8fuoIsIyXqNaDM5YbiGhmuRKfMpBFkwkoJyYFr6cBj7lwgpfHHaBAHcWLEtz69icYyG5auwEGCqj32cAT9WZHJ6Xiq/soaHPK+NufpxVc8yUTPvJct2TX5shZrD0Pex26W/f3w71MM0YxAISchsj/zA1MuBZJkXsudL5aMlqfRxVRx8hdkQlQ/R2ooqJ2R0h+2pKsOJpJsli+h2E0P1h0ApH0ag1GPWHLd4djlrDwff9qNfv9vucB+X5tqMeXhTwz8bsX4Tmqc6Ve4hzY0DFxQuiNyascrEf/vLmj633HacqT6NTZG+cVgbY3yzG47N7TnvhaIQ+pwAvcIi7/8ZbtzwwenbmO8vkUuVS8oh8EvvRa2yAO0geuM+8Uiq0T3Cx5URKnf/cGleeGD8ob9gNB60uHu5g0uuPh+F42Gt3B8MP1Jo73XhXtecevY6PfHNMVW338GMTOuF8zNNCf1O3KEam2INTTXo1Ra0pWIOLeblGRTPAUmEtVoBpg5pEur7gUiSsqhmtUqHagffcO/Z8a4kzOaoeyljV42zKhSQRIJsw/E/QoGvHZzRsgk0PWvaXH2RNgSzVzuL4MsIVfixFgDEMPt6TtuG8mmsaoDPwukNqOQ46m7OynSzMWs1YtJ21SErSSzCLZs7lRtL8cC6z404n49y25qlsfzY64uqxvSo+HzHrN51qqWfsGjezi+uroNxB+Y5UsRK+BmstlXT+9dJ5/fBrQ+vf30+2hCYwvj40oX1L1ez50DaaXSKsbehDbCe3ULLV5167j79a23nse6seQhtL/LpflOVyualHrNN2RAmg9Ava5CBWVA3BfzrYgwngzADi9TaKH6ViNsf7Bw4mOofkOfGoGpm2LuVqxxl20/69JypYpeEHmrSZZN/ywlSfloOV62SS47wu60zWNRPvtqphiZ67XMT3MSoJMmeOedHe9TriFm6NLEtaxkuJIc7j44IbUYkjEjYRlp6R9VMuLTyR66ubuj3P2NF8PQm+XsTOJtJwmdMbPj5CUd1SynvcVd+1Xobl290NTyKvEB5eVjcp0F3rn9Xt/79APpFfc+Xdy6v6dBHHkLmdb0c3tj29fPuG9IZEf2dkH4iTP+GTlHh96TewiX4E9eOGII5eiSNl+QUysV3F
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get P2P transfer by ID.</h1>
+
+<MethodEndpoint method={"get"} path={"/operations/p2p-transfers/{id}"}></MethodEndpoint>
+
+
+
+Enter the P2P transfer ID below and execute to retrieve its information.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Transfer UUID.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+P2PTransfer received.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Transfer UUID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"operation_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Transfer Operation UUID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"amount_currency"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Transfer currency amount.","example":"BRL"}}></SchemaItem><SchemaItem collapsible={false} name={"amount"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Transfer amount in cents.","example":1299}}></SchemaItem><SchemaItem collapsible={false} name={"fee"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Transfer fee in cents.","example":10}}></SchemaItem><SchemaItem collapsible={false} name={"description"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Transfer description.","nullable":true}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Transfer created at.","example":"2024-04-24T13:52:51.045Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"operation_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"amount_currency\": \"BRL\",\n  \"amount\": 1299,\n  \"fee\": 10,\n  \"description\": \"string\",\n  \"created_at\": \"2024-04-24T13:52:51.045Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

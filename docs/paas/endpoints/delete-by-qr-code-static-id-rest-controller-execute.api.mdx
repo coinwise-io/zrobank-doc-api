@@ -1,0 +1,62 @@
+---
+id: delete-by-qr-code-static-id-rest-controller-execute
+title: "Delete user's QR code."
+description: "Delete user's QR code by id described in path."
+sidebar_label: "Delete user's QR code."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVW1rGzkQ/itCX64Fe+3YzrUxpbRpUs7HfUjThMKVULSrcVZEK20krePt3v73zmjXruOYoxRKwWDtaN6emWdGDbclOBGUNQvJ5/wMNAQ4rT+4d1bCx4A32UJegg/vrAnOag3uC6whqwLwAZdQOshEALQNrgKS+Mypkhxu3bHKg/vDsw+XLEOvLK2ZkqzTTEEyZVgpQp6gw1I4UaCJ83z+ueEGP9CNsSajcIp85iAkOL4f6ioHFvXY4owpzwS7vsbTs9XsOcWXLFhWGXVfgabwYIJa1iyglYP7SnlFfhL2VutdgWdF5QPLxQqYMBs7BY6SjXruO3af5VAIPm94qEvK2wenzC1v28EWipIHDCMuKsETVJuSKUkBYS2KUpOb5Z8wgfHL2XBykp4MZyfT46EYH58Mj2cvpunRdDydCsH/L6MbysKXiBA83U/GY/p7HP1CrbdNk7GVkvkqy8D7ZaV1nfB2wGeHLBdLLFfNNkBZ7Cs2xQErlPeYA7MOy+qx+SuhkQ5L6woRSEqp9p6Pnnq+Ri4xUWHjsBNZZC5bCqVB9jazg9lQo3fh+Eht4uEDJmFswAQq0/uYTH4JInQdxC0xO1b2P3YGpUWeeY7d8DhTToU68j4F9OvweEONwoHILU1n14M4JsiVOR+Vaj2SvZPRvRsSND/qsI0aJVviALjVZp4qp2mCQij9fDQqhfDDvNDJV2dTYe6Sdf31CQP/soXV9pZdoDJ7e7Hg7U6yH4lfHYE2KTcd6YhsvWjQH97HeqD8709XKOwZScnE0iiztJGpKkSK/5s4y04xre+h93M7qEJgu+ujZIo/FGW4u0QWyHs/hltLvH1clIeHh209MlskKQHAIVKkFCAzVA0l3uzpIACtMsBx2okSl4m6zYNH3sQ+yB+JR9XAnoZCmB1nB3dpsl+TJoLF2fiZ7du3JMA6jEotcC21fbpNT7nPHCnXLf6OuQO+oR1RLRIPD3Ncc0iTHEGQTdOkwsO1021LYtzBjniOx5VwSqTUb2SnVJ7OyPSl0H7/MdlF9uyyH8Pn7PGGPIigF+L4Ej2ErugLj3dQdxu5vUGt/l356UR+wwN0EG2HavNkbuE+WiRn5/+cX53jNS3Snedhb2JjMQ5W79VpVGBX9g7M620tA31SOdv2G16P0iI=
+sidebar_class_name: "delete api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete user's QR code.</h1>
+
+<MethodEndpoint method={"delete"} path={"/pix/deposits/qr-codes/static/{id}"}></MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Delete user's QR code by id described in path.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"QR code id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Pix QR code deleted successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+If the Pix QR code static id was not found.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

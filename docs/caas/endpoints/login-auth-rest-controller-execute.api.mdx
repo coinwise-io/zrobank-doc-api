@@ -1,0 +1,54 @@
+---
+id: login-auth-rest-controller-execute
+title: "Create an Access Token to log user in."
+description: "Enter your API ID and API Key on the requisition body below and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section."
+sidebar_label: "Create an Access Token to log user in."
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVV1v2zYU/SsEn23Z+ViX+qlp1mHeBixIUwxdFgSUeCWxoUiNpOIogv/77iWVWnGytgP2MsdwJPJ+nnsOOXDbghNBWbOWfMV/tZUyp12oL8CHM2uCs1qDu4F7KLoAfMYl+MKpljzQ/p0J4FhvO8dOz9ds/QMTRsbHX6Bn1rBQA3PwV6e8IheWW9mzHLTdRMsxLguWVRDGQEUB3rNLewsmYx/3l5jyzAC9C9eTo7YVU4Z1RmIplI/qt049APNQUNYM626FEw1gtZ6vrq5nnIrCHt9iPXw1xFflADEIroP9Ns8cCKxSmKeVjE4+bkzabxW1T1kLhBBMoAyibbUqItSLT57CDtwXNTSCnkLfAiay+Scsmcp1NJigwCdfdaPkxM4Hp0z1bBwfPEIgoVQGJEOntaQi4F40rSa3/FVeHnyXH89huSznx3J5ND+Bw3z+PciTk8PXxUlZvuLbWcx3C/2/Tzi2vcso8kIeHB4d8+12NgH56rGlXS6cSVAhOtEAETVCC4iIF2lWGCNF8a01PiFzuFzSvxeqEpMgkvkuDq7stP5PBxOj3gSiw9fR+vn3S5Y8WEjsTjzqPFaITB73hNYM0wRMiOtgZGuVCT57juE0+xfxS4iNAB6/hNm6RO72j5SWLOoFa3HAGuU9tsOsY7XwqLU7oZVkpXWNCLRKXWc8Rj74+jToGCiF0iBTR0FUpMlp1eSI/aBea0vHUmt9xF6EGt8WFGzhVWWUwVUMf5dkPfDOaTSoQ2j9arFohfDzutHZg7O5MLfZff/wbCg/2cbSEXKOxqRivr2mmEXnVOjfEw/SqHNALNxnckQ5paXZ+PBjBCTNGRdHLlAxsU/i1sXu1Hn3qJGdvL9NnxN5TuQ148qUNnJwZMEfmbPsLba9a22/9xdNCMy0fZAd4XdUiyiiWoxongTH3aegbzabz3gXtslyAgjFpMgIOW0IbSXe7NlgA6hCIJbuspyiEpyq6uCRmHHO8lvyEdpEmUaYSbB/OMTHG6Qjlqp4VTzBaNgdFf+j227kXoD7sGi1QJ1sR9yGUUV4eqAjySfpCElfk8pwYxhy4eGD09stLSNjXZ8uzTvhlMiJXVfXGLAGIUkSKLxEx7ME1fyS0pO57uIlsH/CbmePHtRrG75oOz0Izn97T9LKx1u7sZJ8nNjgIv2u+J/4hy82ji8KN64PXAtTdaIi+xSXPn8DogcVyg==
+sidebar_class_name: "post api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create an Access Token to log user in.</h1>
+
+<MethodEndpoint method={"post"} path={"/auth/signin"}></MethodEndpoint>
+
+
+
+Enter your API ID and API Key on the requisition body below and execute to get your Access Token. Your Access Token is necessary to log in under the Authorize section.
+
+## Request
+
+<MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}><div style={{"marginTop":"1rem","marginBottom":"1rem"}}>
+
+Create an Access Token requires an API ID and Api Key.
+
+</div></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"api_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User defined apiId.","example":"b6bf15b4-e00f-4d03-8e2b-7ed8829c8ff6"}}></SchemaItem><SchemaItem collapsible={false} name={"api_key"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User defined apiKey.","example":"abcd1234"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+User authenticated successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"access_token"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"JWT access token. Token used to access all protected endpoints."}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"access_token\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

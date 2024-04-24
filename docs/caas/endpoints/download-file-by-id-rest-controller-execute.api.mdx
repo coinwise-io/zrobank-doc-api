@@ -1,0 +1,54 @@
+---
+id: download-file-by-id-rest-controller-execute
+title: "Download file by ID."
+description: "Download file by ID. Enter the file's ID below and execute to initiate the download. If you haven't generated a file ID yet, please generate it using the appropriate endpoint."
+sidebar_label: "Download file by ID."
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVWFr2zAQ/StCX9pC5rRdP4Ux1q7tln0qXcNgpQzFvsSisuRK56Su8X/fnexkaZONMRhjEIh8Pp3ee/d0bqQrwSvUzo4zOZLnbmmNU9mlNnBWj7NrCPjeWfTOGPDf4BHSCkEOZAYh9brkjRvbxIz2iWktxueJuLAIXmAOMboXKCimYNxSKJuJvpRAJ7TVqBWvKTfrSyViPBO1q0SuFmD3UMzBMlLIhOqOoXI14ECUBlSA9XuhUVRB23ksp8rSu9LH8mCz0mmLCeEvlVcFEMAgR7eNtPRAPKyzKbPTTCoHlYHf4npDVWMeA9CB0EwmtNpfnBzQuQSPGFVWP1RgaqEzsKhndcTi4aHSQXOdRJwasxkIoqgCRrIkz2qfBs9gY54HahD6CgYypDkUSo4aiXXJuAN6IizbdrCmorMdGyOvUmG+xeqyU5RP+3n1O64YSkILgd8fHx7y37Y+sT+rThJNrLwlZUKVphDCrDKmTmQ7kCe7ClDfla3FCruIrSKdPYhCh9hZ50mpQMZZKKPJdc4XCjnKiPvKR9uVJ4EMqSrqBYmbRteLmSKsWbfn+PivoKHSqOZsNPkZnVdzkKRkIP97jXX03xSooKflHYtMxswdX8c5YPQqNWwkh6HbPGR1w7DRWTtcacxtA79Y2bnyhg2MWIbRcFgqFV7lhUmevJsqe5881k9bBvjoCmfcXFxRsji9Gst2A+NntkTX8xXSpvMJ+6MPDfrFZeRP8U9fbijYm4jBRCm0nbloLo2GX3xNvBNnBOvH0S+x7Uxhst3ro+Q1/SiU0qRSKXL1/hasd9Lb56Isl8u1HqkrkikTIN9rTkJILauh1bsXOUTA6BToBmycEu+ynucYyCexD9nvnMdqlC5goexGsV2z9KUiTaRKLv4vZ2/vCIRHHJZG0VBqe7Wa3uu3svc6ZUe30/8oTrS14cmdOWnHuU0zJRATb9qWwzR5Pd8qWi4UnT5lm9GlyHTgNd2rmTIBfiHp/nV/2w/ExlzcCbsP0ohgSypT8RMt76HuhnB7R1n9p+SPUfyDb85Oth2r1VdyTffZzPpwwbeep+zGJ+TFiIhK7JTuzVlMEDfuHuzbtZDIj6xl234Hslv6BQ==
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Download file by ID.</h1>
+
+<MethodEndpoint method={"get"} path={"/storage/files/{id}/download"}></MethodEndpoint>
+
+
+
+Download file by ID. Enter the file's ID below and execute to initiate the download. If you haven't generated a file ID yet, please generate it using the appropriate endpoint.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"File ID.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The file download returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

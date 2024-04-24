@@ -1,0 +1,54 @@
+---
+id: delete-user-withdraw-setting-rest-controller-execute
+title: "Delete an user withdraw setting"
+description: "Deletes an user withdraw setting"
+sidebar_label: "Delete an user withdraw setting"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVW1P2zAQ/isnfwKppMD4VE3TYDCt0z4gaIU0hCY3uTYWThxspyVk+e+7c9Ku0AyhSdOkSnXO9/rcc+damAKt9Mrk40SMxDlq9Dh1aG+UTxMrV9fovcoXV+j8J5N7a7RG+wMfMS49ioFI0MVWFexhY+9A5lCSE1h1XsC1bsigkFZmpGSdGN3WIqcPMsxNHrM7xV5SlAnaHeeTFCHowfgcFAWB6ZROe8uTfY6WgDdQ5uqhRF2BSjD3al6BJyuLD6Vyiv1EcKr1tsBBVjoPqVwip93ZKbQRJRD0LBI03pY4EC5OMZNiVAtfFZy385bLaprBphSV9BiGugrp052qpn04UYUc/s/h7jiEKyh9dHx/fHjIf7uA9bYBVtJBEnqVgCvjGJ2bl1pXkWgG4qTP13hO6FSwrgtCG6kHFiFTzrFTYwlFBypfSq0SmBubSc9STr7zfLTrOQAgS+oTAR8HLsJcKo1Ja3N8/E+yIddeLpiEYuqVdvATQiZr4kPHfCcIa0d0t8pXgbIzpDiWjnfcBuJyanh2WjwDw6nNIzEs2e2QG3CwbsBB14BhrZKGG4x2uZ6E0mrmvveFGw2HhZTuIM109GTNTOb30WP1tMOdLyYz2izgkpTh9HIsmq1cr5k8LTvWGdcto5hJnWjQHT4HeEj+9WZCwo5unExASuVzE2iovOaL75E1cEZp/Q79MrdeFS62vT6K3tGPRDFtFRl79t4N0MaSbp+DslqtNnjEJotmXABNiGIlj3HOaCj58YUOFaBVjDQrW1HCGlCL1DuiUehD8pZ4jEZhnM9kvuWs3Xuvrb1n4NShauL721Zm1w2Pj35YaEm7pOkyrTuy3YpANi6gj24kH9FaInKklDqr1/VMOpxa3TQspp1pmdx0XEqr5Iy7TJxMlOMz0XsutcNXyti76mZxH17baL2ldEKaaKaI1CV/0fEeq3afNnek1b0Kf53Wf3g+eqttq1o/eJtyn+2S84tvF5MLuua9uLX/X0xtAKMXvfdnQQEm5h7zDxssPX8ynE3zC+I7v5c=
+sidebar_class_name: "delete api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete an user withdraw setting</h1>
+
+<MethodEndpoint method={"delete"} path={"/utils/user-withdraw-setting/{id}"}></MethodEndpoint>
+
+
+
+Deletes an user withdraw setting
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"User withdraw setting ID.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The user withdraw setting was deleted successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

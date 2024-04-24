@@ -1,0 +1,54 @@
+---
+id: get-all-wallet-rest-controller-execute
+title: "List user's wallets."
+description: "Get a list of user's wallets. You can include any of the filter parameters below to refine your search."
+sidebar_label: "List user's wallets."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2zYQ/iuEvqwF/Ba/bI0xDIuzrE1RrEXqoFiDIKClk82GIlWSsqN6/u+9o6RItpIhGbANMGCJOt499/Dh3W0DnYLhTmh1HgXT4DW4Eyk/cSnBXYB1p1o5o/HN3MAdhJmDoBNEYEMjUtpUbGGcSWEd0zHLLJgfLNt4D7bH/tQZC7liQoUyi4BxlZOZWwGLhXRgWMoNTwCfLFuA1BvmNDMQCwUs15lhFrgJVz2MW1sG06ttoPAF4yutQkIlCMwKeASmhXGO4bwdO/+NCYt4Ly/x6cV6/JIQRxQzU+JrBjJnIgLlRJx7kAa+ZsIK8tNjSE1zwbIkw6xXfE15VfsEGALr7Qwgqc5k0AlsuIKEB9Nt4PKUcFtnhFoGu13nPhW9UR58vTfm0kKZG6IzeSu1SyS8pJv5/Yz8E4I6IqgsQcqCy49nF/jh/fwN/l93WkiuKbRNMTOwtG84GNBfm8vyeJEMlxmF/NksDMHaOJMyp9gh6gbZoN08TaUIvcT6Xyy52LbJ4MZwyk04SGxjXS++QOjo7A0J1YkCmIjaRB4SU4gYT4XwwB1PUknW8Y8whMGrcXd4vDjujo9Hky4fTI67k/FPo8XRaDAacR7sOuWRPDEIGe+Hmc1PyUsEMc+kazhaaC2Bq8c8lRtYLPlyz6NXAnq0jrunA/PW3k8pgRRUVNjz0Il1cZ39I7m9bqZQGmBMZD4R1qLnG4pq26Iow9WGXoV4g7hPCS8z1gR6oTtFNcIXhUjvpXgVnL47P/tj3pDmY7qoL09xaW6eoYjilvxTXRThnqWOImBbI29xxbKZVhE5Dg3gEUQ33Ksl1iahpyDCxa4TCZ3Uk6KVfhh3+9GGg+G4O8D8xvOj0XQynE6OeoPJ8LMnsa44V3S5SvnX+q1094AWGiewx85eRnSiwnkczRYzy6l8UaO5KOsOotkRoPFDpec89v2jAlu0DqzmBpjHpJZMG6zHFtvNmksRsYJGWi2qovd81PbsqyjPUJ1YwotixWIuJETFnuHwX0GDrh1fUjsL3ld92LK/WMGOJdosdl0jXO5b3gJ7IXaI6dU11WrshStNXXsJvkRyt8KX/n1Ht/2yTtPxgVlXjTMzklqlc6md9vsp57a7SmTvm9ELrm57d/m3lrbe6ERLvWQf0JidfDgPdg1oH6maF1WhAliWeF/wiqVO+fB7Jey3n+a1pAmMp0OoWPuLVarlc89oNkNYdehDbA+aULLF56PeCH9lT8KaRt7Lfnu/E7/uk7LZbO75CHXSW1AC2LIEGTkIFbEh+K8HNpgA9jogHddR/NQglivfL/05RE+JR2yk2rqEq4azdzRnHQxZh4xs6/b7H05n5Uk6uHP9VHIcWXZllttSmlf1sEmS3NQiX2Ge9H27XXALl0budrRcTDwk2UhYvpCNiejRhB+fhx4EeAt5Y/DCa5qRjZf3mhtBQf1161Sj5fPQvLgoq8NL9j/MoH+TcTU11xnjGFp8OsFRLnWNb60Jbq/4vD6je0y1sznl7F96z1rV0lXe8P3zzBuwub4F9UtQwXP0inGwF3wHchZMpQ==
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>List user's wallets.</h1>
+
+<MethodEndpoint method={"get"} path={"/operations/wallets"}></MethodEndpoint>
+
+
+
+Get a list of user's wallets. You can include any of the filter parameters below to refine your search.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"owner","required":false,"in":"query","description":"User wallet owner type.","schema":{"enum":["USER","OTHER"],"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The wallets returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet name.","example":"BTC"}}></SchemaItem><SchemaItem collapsible={false} name={"default"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"Wallet default flag.","example":false}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`pending`, `active`, `deactivate`]"} schema={{"type":"string","description":"Wallet state.","enum":["pending","active","deactivate"],"example":"active"}}></SchemaItem><SchemaItem collapsible={false} name={"permission_types"} required={true} schemaName={"string[]"} qualifierMessage={undefined} schema={{"description":"Wallet permission type that defines what the user can do.","example":["CLIENT"],"type":"array","items":{"type":"string"}}}></SchemaItem><SchemaItem collapsible={false} name={"owner_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet owner id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"owner_name"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Wallet owner name.","example":"James Bond"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Wallet created at.","example":"2024-04-24T13:52:51.052Z"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  {\n    \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n    \"name\": \"BTC\",\n    \"default\": false,\n    \"state\": \"active\",\n    \"permission_types\": [\n      \"CLIENT\"\n    ],\n    \"owner_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n    \"owner_name\": \"James Bond\",\n    \"created_at\": \"2024-04-24T13:52:51.052Z\"\n  }\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

@@ -1,0 +1,54 @@
+---
+id: get-operation-receipt-by-id-rest-controller-execute
+title: "Get receipt by its operation id."
+description: "Get receipt by its operation id."
+sidebar_label: "Get receipt by its operation id."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2zYQ/isHfUoAv8V2tsUYhiV76dwvC9wEBRoEBiWdbDYSqZKUbdXTf++dJCuW7aXpsGFA4EjU8e6543PPcevpFI1wUqtp6E28N+j+3C3MMECZupt8Gs7Qul+0ckbHMZo5bjDIHHodLxVGJOjQWG/ysPUUvZCXTXctyNB1s0yGZCUVLS5RhGjoLUQbGHJMIWj5HSpahvflBri/n/4KZzICTFKXdyDXmYEQI5HFrmWzlnEMPoJF52IMz8mvDZaYCG+y9VyeMgzrjFQLryg6DTKlVYBfQXS3RCjtgOJIC6JGtRqfQ2YxBKchU/JThnEOMkTlZJSDo10GP2XSSvbTg2sCuLdgIcmsg6VYIQi12yfR9AhAaWeQTsCZDF+XSlnZw41lXqlwy6OsmmOl0L0Xq/XIbm1KkNHy9+FgwP/a7mpyQKQzFYKfg97zDzYLArQ2yuI452ABcYfyZTciTWMZlJb9j5Z9bY+xaP8jBo75ZdivkxWSVOQJuZmHwp20bkO8rayBreFsGnZgJWIqEi/QL7rgvOcVncark8Sk44L8ndvSnJPDjUhS3undyg08YQ6cT5gRLQ8KQcGaMs3p/L4aa4YxYQ1bxW2HjL7DIQ5+GHeHV/5Vd3w1uuyKweVV93L8/ci/GA1GIyE4rrTzBtVeXF/rGIU6CjyNoC4LWEcQuA+a/S0EzDvyLwInVzgPcaXjrHLy7UECagyf28hlRh3EiURskfi/R/mHNiEOT/Kg2Ac1OAWZmF+T4CUhnNXNQa3CeMan2oNSEyqHHVYodZKkxCAk0lo6a9CGxMCCVMRKaplIm0Q4XuWqlVwZDy6OPd9bUkuRkdyQflR9BJGQ5bHwnuHwP0FDrp1YsMo/K4mFv6B54eJZGgtGurycBT6Sf0OPj6wobUBUXUJTKQhph3T2iOI0VZaaR9ICSyFgTZt4/cbM9rcyLPq1FxY0NKvdHMpMzPruXGon/X4qhO0uk7j32WhfqKfeJv98RMY/dKJjvYBbMobr26lX7CX0jgWq0qBdWrVqlfyuljr1w+9l7Wj97fs7WqybgMGUZZQq0mVz1Ez70DMabgjWc+hDbCdNONnq80VvRH+1zBKr2Xs9JJqd9LVdlPV63dQj0EnP5wRIhSUbOQwUV0OKnw9sKAGSb2T6P0cpR51cLOkYaXLwOYSvicfVSLV1iVB7zl7BjVZ1GplxuHH9NBY0A4s6+rbmzcOzFFjaP6lnZ0UdOucloWCr7dYXFu9NXBS8TCPeMJnpcSWMFD4fGNErlJafw1qVjgA14847m9U9dw6HA/gk6nqRupVPmMcVvdEjTZVq5BePZFVfXL4Nyr930TqJvEJ4ePNrUuCLyz8q2/9wG3shv939sZVX9emaJn0pRLtvRzcdVpRG1t78xuLAQr4/KdtKUp7wSUr8eFMawJ1+QvVTQxDHr8yRovgCwRkTDw==
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get receipt by its operation id.</h1>
+
+<MethodEndpoint method={"get"} path={"/operations/{id}/receipt"}></MethodEndpoint>
+
+
+
+Get receipt by its operation id.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Operation id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Receipt found by operation id successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"payment_data"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"Payment data (Id, value, date, etc)."}}></SchemaItem><SchemaItem collapsible={false} name={"payment_title"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Payment title.","example":"Pix key scheduled successfully."}}></SchemaItem><SchemaItem collapsible={false} name={"operation_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Related operation id.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"is_scheduled"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"If payment state is scheduled.","example":true}}></SchemaItem><SchemaItem collapsible={false} name={"active_devolution"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"If payment state can be returned.","example":false}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"payment_data\": {},\n  \"payment_title\": \"Pix key scheduled successfully.\",\n  \"operation_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"is_scheduled\": true,\n  \"active_devolution\": false\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

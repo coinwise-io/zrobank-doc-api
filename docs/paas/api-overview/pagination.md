@@ -1,24 +1,28 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Pagination
 
 All of our search endpoints that may return a large scale of data have pagination.
 
 With pagination, instead of returning all data at once, the response data is divided into pages. The page configuration is defined in the request, using the parameters listed below.
 
-| Parameter | Description                                   | Default Value | Maximum Length     |
-| --------- | --------------------------------------------- | ------------- | ------------- |
-| page      | Page number.                                 | 1             | -             |
-| size      | Page limit size.                             | 20            | 100           |
-| sort      | Page sort attribute. The response data will be ordered by this attribute. | -             | -             |
-| order     | Page order. Available values: asc, desc.       | asc           | -             |
-
-
+| Parameter | Description                                                               | Default Value | Maximum Length |
+| --------- | ------------------------------------------------------------------------- | ------------- | -------------- |
+| page      | Page number.                                                              | 1             | -              |
+| size      | Page limit size.                                                          | 20            | 100            |
+| sort      | Page sort attribute. The response data will be ordered by this attribute. | -             | -              |
+| order     | Page order. Available values: asc, desc.                                  | asc           | -              |
 
 :::note
 All of the parameters listed above are optional. If not defined, their DEFAULT values will be considered.
 :::
 
-```json title="EXAMPLE - /v4/pix/payments?page=1&size=20&order=asc&states=SCHEDULED&states=CONFIRMED"
- {
+<Tabs>
+  <TabItem value="200" label="200">
+
+```json title="/v4/pix/payments?page=1&size=20&order=asc&states=SCHEDULED&states=CONFIRMED"
+{
   "success": true,
   "data": {
     "page": 1,
@@ -190,4 +194,21 @@ All of the parameters listed above are optional. If not defined, their DEFAULT v
   },
   "error": null
 }
+...
 ```
+
+  </TabItem>
+  <TabItem value="422" label="422">
+
+```json title="/v4/pix/payments?page=1&size=20&order=asc&states=CONFIRMED&payment_date_period_end=2022-01-02"
+{
+  "success": false,
+  "data": null,
+  "error": "USER",
+  "message": "The field payment_date_period_end must be after the start date.",
+  "code": "VALIDATION"
+}
+```
+
+  </TabItem>
+</Tabs>

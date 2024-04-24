@@ -1,0 +1,50 @@
+---
+id: refresh-token-auth-rest-controller-execute
+title: "Refresh token user."
+description: "User should inform authorization old access token in header and a new access token will be generated."
+sidebar_label: "Refresh token user."
+hide_title: true
+hide_table_of_contents: true
+api: eJy9Vdtq20AQ/ZVFTy0kctL2yU91C6XpS4OTUGgIYS2NrU1Wu8ruKLYj/O89I8mOb7SFQiEQe+dyZs6cGTeJryhoNt5d5MkwGdM0UCyu/SO5Uc3FmCJ/9o6Dt5bCPS0oq5mSkySnmAVTSSDCbiIFFQtf21wZN/WhVBrRPpiXNrfyMOgsoxgVS254qYJ0jjDtYFKO5rsOc2OtmpCakZMCKU+BWumgS2IKMRneNonDF6AvTrvI0zYSbkZq6tIflHpFwKNFZQLl6mHO+6hcqNCRsKk0mpwEPdBTLWHJkENNJ0nMCip1MmwSXlZSSORg3CxZre7EOVbeRYpif3d2Jv+OkCY0kWOTSYsq1m0x09rapSBmoB5WidVVZcULsYOHKAmawwL85IEyFqKCzJVNB9+1eN/Rc1DuPkPfflzvkJKqVg6qjqiQ/dqmMR/AMADxDlYrbxzHFO1vU3W7iw5m2LClPa2JzsY9Y0ggKT4c4+xiCr0s1Tq9agWBWgKp0sSIdpQPqtARY3vW1uRKxKhZXqVrVCeZz/88DVHtVBsrwpNyWM9EdMlox0X6gSALL8tT+dhyr7nAt4EkG/Ra2kgTKM9r+dbBik6ZqzgcDCqt42lR2vQl+Il2j+li+XIwm6++9NbP1CWc1ejyIhGpRSxlMLy8Ejl0E58QKAkbjQjd/dNJ/+FLy0s3bjz2kpBi2nZli1up9MP6mQavPqGsV+j92o66SLOd+Tx9j79e1DprRd0v8CYS1l1S5vP5ho/Ml+lEGoDmjThBek7YMPrjng8awLKQiOkVZQTBBjMrOEI/7Rzyv8ETNmSypXZbycY7NwKrEdJ9QprX9f1vB7IfI9OCB5XVOISrvsWm1yX2EcDtNdtWJmRUiHxhb5qJjnQT7Golz081hSXe8fFZB6MnoofbO+TtL6xIOTdRDNiCqbaRfsPEm3G/u2/VP5zio30+0vLYrwHuQC3OcGl6nxE8Kt6yHVzX1fZiX36/uoYOfgFxmoCA
+sidebar_class_name: "post api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Refresh token user.</h1>
+
+<MethodEndpoint method={"post"} path={"/auth/refresh-token"}></MethodEndpoint>
+
+
+
+User should inform authorization old access token in header and a new access token will be generated.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-access-token","in":"header","description":"Send expired jwt access token with refresh token inside.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+User authenticated successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"access_token"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"JWT access token. Token used to access all protected endpoints."}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"access_token\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
