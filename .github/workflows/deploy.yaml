@@ -6,6 +6,10 @@ on:
       - main
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  schedule:
+    # Every day at 6 am UTC.
+    - cron:  '0 6 * * *'
+  workflow_dispatch:
 
 env:
   PAAS_BASE_URL: ${{ secrets.PAAS_BASE_URL }}
