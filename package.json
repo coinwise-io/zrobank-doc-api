@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "node specs/generate-specs.js && sh specs/generate-docs.sh && node utils/replace-br.js && docusaurus build",
+    "build": "node specs/generate-specs.js && bash specs/generate-docs.sh && node utils/replace-br.js && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
