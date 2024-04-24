@@ -1,0 +1,46 @@
+---
+id: get-quotation-by-conversion-id-rest-controller-execute
+title: "Get quotation by Conversion ID."
+description: "Enter the conversion's ID below and execute to get its related quotation."
+sidebar_label: "Get quotation by Conversion ID."
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV2tv2zYU/SuEvqwF/IofW2MMw5Ku61IMWJs5GNAgCCjp2mZDiQpJOVFd/ffdS8mSZctZnA0YECAyxXvOfZJHa08loLkVKr4Ivan3HuynVFm3cJ69VfEKtHEvL8FY/G21khL0LTxCkFrwOl4IJtAiIQsEeBdb0MwugQWV8XeGXfzCfJDqgfE4ZKUts4otwDJhDdMguYWQ3W/Ie4iccM0jQDzjTa/XXow/kCFWcUC8guiWwEPQe17MkN/tI2JhGGdXV/j0ajV+zVKDPEidxuI+BZkxEUJsxTxzXmu4T4URzgV2JuX2gmFRaixb8hVgHBs7AZqcdfs0YBKtTqHjmWAJEfema89mCfltrBbxwsvzThWKCFsMXVwJt8u9qOpyuHCI9TDLDSGbBL0GQ++HgwH9ayJWtcYwbapjzIxJgwCMmadSZsSAZbQYJ9nyJJEicPv7XwwBrPcdUP4XCCxVT1NrWVHQY6h7Tu7GV3tTBAePPEokGcy/hyEM3oy7w1P/tDs+HU26fDA57U7GP4z8k9FgNOLcy4lTBHDrp9kWWZxGfkuL1GTOiKFRr4YwIOXxGGTlQAz2Rlu8gEDYyx55iLuI5OYwKKE080B2CE9TArc8Umlsj43W2bLCtgq6AXhs7A3EKgUFZJBqDXGQ3Zos8pU8pgcK2A0AKwCa6Ti//L2FKoRARPwFIVRcJUKTbNhCZYWVrYV+JpGzb9JcArqOTD43Ly0xme5WeBvu2AJv41X1dYD/orwO9Onqzt7uE72guE2m1tq+2Sc6urRNmicqG2igu+6Wu0N1rnRET16Ii10rIrrbnstZQjFud3p1MBx3B3hcjmcno+lkOJ2c9PC8/Ey3z9aFc13cQPWp2Tj+ymOs5bhpOzAOTfzB8TwwTPud39K8B9rvULO01xZP3rLI/yB7Lst7FLNH+Ru33aQXc5QEGdvkljntgsJDA4uEMVhGpjRKB8NEvOJShKwoPK1StXuuNJYvSOt4f9iAfWO1H4acNaiatLCZE0M+ILTGxxu66VElLRXpN9RTTjiheph6fWWDfi3DTH8twrxfSSzjriC92uirVEtSVNYmZtrvJ5yb7jKSva9a+Ty+6z1mX/c68TcVKakW7CNuZmcfL7x8y88/SRoUt//G21IvuKusWOqUD79uxuDDX7N6AMgZlxgRz5UbxrJgn3tasXN0q6be9a11S5kKfH3SG+FfKXB44GaxlGWVJb5tJuXh4aHKR6Cink8BoP4RtMlCEFM2BP95Zw8GgMIJqIVqFicuxWLp1K+rQ/gcPspGooyNeLwFhg1ca2fmZ1u9U4qpRnLWtaz7TxV7WTYLj7afSI5SNi9DWpdNee1hUxZZr3q7403dObTVmdhGSwyS9q/XNLxXWuY5LaNm1zQC+LjiWnCf+gG7NxSGnnEI5lwaeCLgV5flkL5mLYq6NYRyESeceojLlH7h4x1khYzPb3BX+THyYm/+h6+W1miLqDbfWVW49OFSvDrDT4TEbr3b+zJoHErv39FI85TqX92nO/Pvstaa5h/P3QY2U3cQ/1Ql3dJPynue/w0n2yOo
+sidebar_class_name: "get api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get quotation by Conversion ID.</h1>
+
+<MethodEndpoint method={"get"} path={"/otc/conversions/{id}/quotations"}></MethodEndpoint>
+
+
+
+Enter the conversion's ID below and execute to get its related quotation.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Conversion UUID.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Quotation returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Quotation ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"price_buy"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation price buy."}}></SchemaItem><SchemaItem collapsible={false} name={"price_sell"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation price sell."}}></SchemaItem><SchemaItem collapsible={false} name={"side"} required={true} schemaName={"string"} qualifierMessage={"**Possible values:** [`buy`, `sell`]"} schema={{"type":"string","enum":["buy","sell"],"description":"Quotation side.","example":"buy"}}></SchemaItem><SchemaItem collapsible={false} name={"quote_amount_buy"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation quote amount buy."}}></SchemaItem><SchemaItem collapsible={false} name={"quote_amount_sell"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation quote amount sell."}}></SchemaItem><SchemaItem collapsible={false} name={"quote_currency_symbol"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Quotation quote currency symbol.","example":"BRL"}}></SchemaItem><SchemaItem collapsible={false} name={"quote_currency_decimal"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation quote currency decimal.","example":"2"}}></SchemaItem><SchemaItem collapsible={false} name={"quote_currency_title"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Quotation quote currency title.","example":"Real"}}></SchemaItem><SchemaItem collapsible={false} name={"base_amount_buy"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation base amount buy."}}></SchemaItem><SchemaItem collapsible={false} name={"base_amount_sell"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation base amount sell."}}></SchemaItem><SchemaItem collapsible={false} name={"base_currency_symbol"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Quotation base currency symbol.","example":"BTC"}}></SchemaItem><SchemaItem collapsible={false} name={"base_currency_decimal"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Quotation base currency decimal.","example":"8"}}></SchemaItem><SchemaItem collapsible={false} name={"base_currency_title"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Quotation base currency title.","example":"Real"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={false} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Quotation created at.","example":"2024-04-24T13:52:51.059Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"price_buy\": 0,\n  \"price_sell\": 0,\n  \"side\": \"buy\",\n  \"quote_amount_buy\": 0,\n  \"quote_amount_sell\": 0,\n  \"quote_currency_symbol\": \"BRL\",\n  \"quote_currency_decimal\": \"2\",\n  \"quote_currency_title\": \"Real\",\n  \"base_amount_buy\": 0,\n  \"base_amount_sell\": 0,\n  \"base_currency_symbol\": \"BTC\",\n  \"base_currency_decimal\": \"8\",\n  \"base_currency_title\": \"Real\",\n  \"created_at\": \"2024-04-24T13:52:51.059Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
