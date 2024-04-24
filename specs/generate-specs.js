@@ -3,7 +3,7 @@ const fs = require('fs')
 const paasUrl = process.env.PAAS_BASE_URL
 const gatewayUrl = process.env.GATEWAY_BASE_URL
 
-function generateSpecs(url, filename, includeOptions = []) {
+function generateSpecs(url, filename, excludeOptions = []) {
   let specJson = {}
 
   fetch(url)
@@ -11,7 +11,7 @@ function generateSpecs(url, filename, includeOptions = []) {
     .then((data) => {
       for (const key in data.paths) {
         for (const method in data.paths[key]) {
-          if (includeOptions.some((i) => key.includes(i))) {
+          if (excludeOptions.every((i) => !key.includes(i))) {
             if (!specJson[key]) {
               specJson[key] = {}
             }
@@ -44,12 +44,11 @@ function generateSpecs(url, filename, includeOptions = []) {
     })
 }
 
-generateSpecs(paasUrl, 'paas-spec', ['/auth/', '/pix/', '/operations/'])
-generateSpecs(paasUrl, 'caas-spec', [
-  '/auth/',
-  '/otc/',
-  '/quotations',
-  '/conversions',
-  '/operations/',
+generateSpecs(paasUrl, 'paas-spec', [
+  '/cielo/',
+  '/nupay/',
+  '/cotations/',
+  '/picpay/',
 ])
-generateSpecs(gatewayUrl, 'gateway-spec', ['/api/'])
+generateSpecs(paasUrl, 'caas-spec', ['/cielo/', '/nupay/', '/picpay/', '/pix/'])
+generateSpecs(gatewayUrl, 'gateway-spec', [])

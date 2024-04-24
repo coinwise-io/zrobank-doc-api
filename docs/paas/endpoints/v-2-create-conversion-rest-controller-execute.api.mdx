@@ -1,0 +1,54 @@
+---
+id: v-2-create-conversion-rest-controller-execute
+title: "Create new currency conversion."
+description: "To create a new currency conversion, first you need to create a Quotation ID at the endpoint /v2/quotations/spot. With the quotation_id created, enter it's information on the requisition body below and execute."
+sidebar_label: "Create new currency conversion."
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVmFv2zYQ/SuEvqwFLNmW5cQ2hmFJumHpl2RpsgLNioCSTjYbSVRJyo7r+b/vjpJs2U4Db+iGYUiQSOTd6d7j3TuuHFmA4kbI/DJ2Js5v/oUCbuBC5nNQGpdvQBt8M0qmKagHeIKoNOB0nBh0pERBruh4K1lkPRlnOSxYVCoFebRk0SZShyVCacOWskQTiJlp+fxaSmPTYJdvGDfMzIBBHhdS5IZ15373c2Ogu7qQxmPvhZlZs83Og4jrgHEHnQ0oJsx3mok8kSqrouMv+Sj4XAot7FIo4yULIZULxvOY1Qg9hFhwxTPAONqZ3K+cHF8Q6pNrFM81j8jbLUsRo6kgEmbAY1CH3OAHWy6EUGjEfHeHT6/mwWtW6oqOMhefS0iXTMSYv0iWNlkZfoKIKEFeFiJNMdkGp8fO8L0y0Cwrkd4ZnyOheRNCgCIoFrACPGOjSug4OppBxp3JyjHLglBpo0Q+ddbrzgZoLvMIjsBm7f4yqtYRVChaC98IysfKGCv4HM+YLPZ9sToNxqYtXhSpiGyVdD9pArc6DF0xTaWhqHGMAE277RI8TGSfs51apyawLWIIGzzxrEjJl4fhCIanI/dkGPTcoN8L3FHCx+64x0fDgIe9uB/RabUg3e/mgeiNMDbYYVtbQtbrKgA2VK4rJH6vT/92E966berO+WbcHcNYK4HLN7s8JSfgQ28UuP44HLvBeDB0eW84dofB6SDsD3qDAecOotzo3FFHdNVY0xFtJWz30/54ODwJ8EyiYRK7AZwO3DEem3uKCQ1Gg8SPk5A+XXP2wC1XlRahe4yLrhEZtdjR8OtYKJF7ufT8wMUa8YPb/mAy9CfDvoc0fDgoEatWO2TsJPhi0dAsuKmrpS6eoNc7rJfLBLt2yZrPMqujqA0KWCa0RohMKuxukuY5T1G2K1JolZjwHBv5mUq80yjqvET9QEGoCo4lXKRUkeTj+/9INhja8ClNAefKROwPtuVEE2UaR4YSZmnHRAgYWuHjRxIgnB8zSaO1kNoWPzczfKORJk3UjVqBKI6aN9OmVCnJrjGFnnS7BefanWWp90XJkOeP3tPyy0Gd/CIzmcopu0ZjdnZ96axbub2jfqxarsmwblI67HqpUz/83BTp2/e32/KkZCwZ1OM3W2X9qSnDfSU8UsVoxCTSdmVdex88Jdk54txi2Qf7rEnNJW73vQH+1jKFg5ei13Nt44m7uywvFosNwZHMvJAYQRUTZGQgyolewX/cs0EAKH9AXbH9ih1pYjrDuYwKSwcbH/M9opdKJeN5K1jViV+7WXn75Ky24vz/vJnVBWngyXSLlOMNZV1zu6o77N6Z+6R0JqpqoN2uM2pFtFitQq7hTqXrNS1jPStqYXyccyV4SKWIXdxpLj/UlrHQtIHFnfBUwwvEv7qpFec1+y/cAJ+l7BGWX7vRohSW5ODQjfBvo/6X74YvgGxuszu4qq2LKnv3lry3Fge3mq3HWRRBYV60bWv/9dU7ktGwvoVmMiYfxRd0ncW/E+d3/LGD2UK0V1VaXzkpz6cln5J9FZcEgiZg6xKzJ962TustnHytLL8/twbsVj5C/oPTUGPoFTPG2H8CqWvRng==
+sidebar_class_name: "post api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create new currency conversion.</h1>
+
+<MethodEndpoint method={"post"} path={"/v2/otc/conversions"}></MethodEndpoint>
+
+
+
+To create a new currency conversion, first you need to create a Quotation ID at the endpoint /v2/quotations/spot. With the quotation_id created, enter it's information on the requisition body below and execute.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-transaction-uuid","in":"header","description":"The transaction ID is a UUID (v4) used to uniquely identify the object that will be created. All objects must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"quotation_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Quotation ID to convert.","example":"abb8e578-6540-4104-8fa9-90a854ab0d1c"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"201"} value={"201"}><div>
+
+Conversion created.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Conversion ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"operation_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Operation ID conversion.","example":"295564a9-c5fd-4e73-9abb-72e0383f2dfb"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"Conversion created at.","example":"2024-04-24T13:52:51.059Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"operation_id\": \"295564a9-c5fd-4e73-9abb-72e0383f2dfb\",\n  \"created_at\": \"2024-04-24T13:52:51.059Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
