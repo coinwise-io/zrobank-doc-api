@@ -24,7 +24,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Zro Gateway',
-    src: require('@site/static/img/dashboard.png').default,
+    src: require('@site/static/img/door.png').default,
     to: '/gateway/api-overview/introduction',
     description: (
       <>
