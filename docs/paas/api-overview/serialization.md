@@ -24,29 +24,28 @@ Both API requests and responses follow the JSON specification, in which request 
 ```json title="Example of JSON response:"
 {
   "success": true,
-  "data":
-      {
-        "id": "926fe974-d833-419c-ae11-d2d48e17bdff",
-        "operation_id": "68cfd14c-edd7-44ab-ab6b-4efeed0aca39",
-        "type": "PAYMENT_COMPLETED",
-        "state": "CONFIRMED",
-        "end_to_end_id": null,
-        "txid": "ZvuKVfwtljGH2qmkoFeU15gnz",
-        "amount": 1,
-        "owner_name": "Test User",
-        "owner_person_type": "NATURAL_PERSON",
-        "owner_document": "***024157**",
-        "owner_bank_name": "ZRO PAGAMENTOS S/A",
-        "owner_bank_ispb": "26264220",
-        "beneficiary_name": "JOAO DA SILVA SAURO",
-        "beneficiary_person_type": "NATURAL_PERSON",
-        "beneficiary_document": "***594110**",
-        "beneficiary_bank_name": "ZRO PAGAMENTOS S/A",
-        "beneficiary_bank_ispb": "26264220",
-        "created_at": "2022-06-07T00:30:39.204Z"
-      }
-    }
+  "data": {
+    "id": "926fe974-d833-419c-ae11-d2d48e17bdff",
+    "operation_id": "68cfd14c-edd7-44ab-ab6b-4efeed0aca39",
+    "type": "PAYMENT_COMPLETED",
+    "state": "CONFIRMED",
+    "end_to_end_id": null,
+    "txid": "ZvuKVfwtljGH2qmkoFeU15gnz",
+    "amount": 1,
+    "owner_name": "Test User",
+    "owner_person_type": "NATURAL_PERSON",
+    "owner_document": "***024157**",
+    "owner_bank_name": "ZRO PAGAMENTOS S/A",
+    "owner_bank_ispb": "26264220",
+    "beneficiary_name": "JOAO DA SILVA SAURO",
+    "beneficiary_person_type": "NATURAL_PERSON",
+    "beneficiary_document": "***594110**",
+    "beneficiary_bank_name": "ZRO PAGAMENTOS S/A",
+    "beneficiary_bank_ispb": "26264220",
+    "created_at": "2022-06-07T00:30:39.204Z"
+  },
   "error": null
+}
 ```
 
 </TabItem>
