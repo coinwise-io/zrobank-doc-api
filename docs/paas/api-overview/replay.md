@@ -9,8 +9,6 @@ For this purpose, a new optional parameter was created: `x-include-replay-protec
 
 ## Protection types
 
-Rules for duplicate cashes out (PIX and P2P) in PaaS API:
-
   - If the user does not choose any of the rules, **the payload blocking** rule will be used by default;
   - If the user chooses a rule via header, then that rule will be applied to that cashout request;
 
