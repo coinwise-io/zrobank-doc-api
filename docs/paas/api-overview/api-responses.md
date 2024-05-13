@@ -175,7 +175,6 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | PSP_OFFLINE                                           | This operation could not be performed. Please try again later.                                     |
 | ADDRESS_NOT_FOUND                                     | Address not found. Please check and try again.                                                     |
 | DECODED_QR_CODE_EXPIRED                               | Unable to make payment, QR Code is expired.                                                        |
-| KEY_OPERATION_TIME_OVERFLOW                           | Operation not allowed at this time.                                                                |
 | INVALID_FORMAT_KEY_PSP                                | Please check the data format and try again.                                                        |
 | PIX_KEY_NOT_FOUND_PSP                                 | Pix key not found. Please check and try again.                                                     |
 | NIGHTTIME_INTERVAL_INVALID                            | Invalid night time interval.                                                                       |

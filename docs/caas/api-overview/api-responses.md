@@ -121,31 +121,9 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | USER_NOT_FOUND                                        | User not found.                                                                                    |
 | VALIDATION                                            | Ex.: The quotation_id value must be an UUID.                                                       |
 | INVALID_FORMAT                                        | Check the data format {} and try again.                                                            |
-| INVALID_EVP_FORMAT                                    | The random key provided has an invalid format.                                                     |
-| INVALID_CPF_FORMAT                                    | The CPF provided has an invalid format.                                                            |
-| INVALID_CNPJ_FORMAT                                   | The CNPJ provided has an invalid format.                                                           |
-| INVALID_DOCUMENT_FORMAT                               | The document provided has an invalid format.                                                       |
-| INVALID_EMAIL_FORMAT                                  | The email provided has an invalid format.                                                          |
-| INVALID_PHONE_NUMBER_FORMAT                           | The entered phone has an invalid format.                                                           |
-| BANK_NOT_FOUND                                        | Bank not available. Please check data and try again.                                               |
 | ONBOARDING_NOT_FOUND                                  | Onboarding not found.                                                                              |
 | NOT_ENOUGH_FUNDS                                      | No balance available.                                                                              |
 | NOT_ENOUGH_LIMIT                                      | No limit available.                                                                                |
-| PAYMENT_INVALID_DATE                                  | Date not allowed or over 3 months, please select a valid date and try again.                       |
-| DECODED_PIX_ACCOUNT_NOT_FOUND                         | Account data not found. Please try again.                                                          |
-| DECODED_PIX_ACCOUNT_INVALID_STATE                     | Account data not processed. Please try again.                                                      |
-| DECODED_PIX_ACCOUNT_DOCUMENT_AND_PERSON_TYPE_CONFLICT | Check the document format and try again.                                                           |
-| QR_CODE_NOT_FOUND                                     | QR Code data not found. Please try again.                                                          |
-| DECODED_QR_CODE_INVALID_STATE                         | QrCode data not processed. Please try again.                                                       |
-| DECODED_PIX_KEY_NOT_FOUND                             | Key data not found. Please try again.                                                              |
-| DECODED_PIX_KEY_INVALID_STATE                         | Key data not processed. Please try again.                                                          |
-| PAYMENT_VALUE_IS_NOT_POSITIVE                         | Payment amount must be greater than 0.                                                             |
-| PAYMENT_VALUE_EXCEEDS_PERIOD_LIMIT                    | Payment amount exceeded the time limit.                                                            |
-| PAYMENT_NOT_FOUND                                     | Payment not found.                                                                                 |
-| PAYMENT_INVALID_STATE                                 | Payment status is invalid for transaction. Please try again.                                       |
-| PIX_DEVOLUTION_MAX_NUMBER                             | Maximum number of returns made.                                                                    |
-| PIX_DEVOLUTION_AMOUNT_OVERFLOW                        | Amount to be returned greater than the deposit amount.                                             |
-| PIX_DEPOSIT_EXPIRED_DEVOLUTION_TIME                   | It is not possible to return this deposit because the deadline has expired.                        |
 | CURRENCY_NOT_FOUND                                    | Currency not found. Please check and try again.                                                    |
 | CURRENCY_NOT_ACTIVE                                   | Inactive currency. Please check and try again.                                                     |
 | WALLET_NOT_ACTIVE                                     | Inactive wallet. Please check and try again.                                                       |
@@ -166,16 +144,7 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | VALUE_IS_ABOVE_MAX_AMOUNT_LIMIT                       | The value is above the maximum limit. Please check and try again.                                  |
 | VALUE_IS_ABOVE_MIN_AMOUNT_LIMIT                       | The value is below the minimum threshold. Please check and try again.                              |
 | ORDER_QUANTITY_CURRENCY_NOT_FOUND                     | Currency not found. Please check and try again.                                                    |
-| DECODED_PIX_KEY_OWNED_BY_USER                         | Unable to make payment for a key owned by yourself. Please check and try again.                    |
-| MAX_DECODED_PIX_KEY_REQUESTS_PER_DAY_REACHED          | Maximum number of payments for keys not made has been reached.                                     |
-| MAX_NUMBER_OF_KEYS_REACHED                            | Maximum number of keys has been reached.                                                           |
-| PSP_ERROR                                             | This operation could not be performed. Please try again later.                                     |
-| PSP_OFFLINE                                           | This operation could not be performed. Please try again later.                                     |
 | ADDRESS_NOT_FOUND                                     | Address not found. Please check and try again.                                                     |
-| DECODED_QR_CODE_EXPIRED                               | Unable to make payment, QR Code is expired.                                                        |
-| KEY_OPERATION_TIME_OVERFLOW                           | Operation not allowed at this time.                                                                |
-| INVALID_FORMAT_KEY_PSP                                | Please check the data format and try again.                                                        |
-| PIX_KEY_NOT_FOUND_PSP                                 | Pix key not found. Please check and try again.                                                     |
 | NIGHTTIME_INTERVAL_INVALID                            | Invalid night time interval.                                                                       |
 | DAILY_LIMIT_EXCEEDED                                  | Daily limit exceeded.                                                                              |
 | MONTHLY_LIMIT_EXCEEDED                                | Monthly limit exceeded.                                                                            |
@@ -194,14 +163,7 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | QUOTATION_NOT_FOUND                                   | Quote was not found. Please try again.                                                             |
 | SPREAD_NOT_FOUND                                      | Spread was not found. Please try again.                                                            |
 | TAX_NOT_FOUND                                         | Tax was not found. Please try again.                                                               |
-| PIX_KEY_NOT_FOUND                                     | Pix key was not found. Please try again.                                                           |
-| PIX_KEY_DECODE_LIMIT_NOT_FOUND                        | Pix key decode limit was not found.                                                                |
 | CONVERSION_CREDIT_BALANCE_OVERFLOW                    | There is no credit available to perform this operation.                                            |
-| QR_CODE_DYNAMIC_NOT_FOUND                             | QR Code was not found. Please try again.                                                           |
-| BANKING_TED_WEEKDAY_INVALID                           | Unable to make ted. This operation is not permitted in weekends.                                   |
-| BANKING_TED_HOLIDAY_INVALID                           | Unable to make ted. This operation is not permitted in holidays.                                   |
-| BANKING_TED_INTERVAL_INVALID                          | Unable to make ted. This operation is outside permitted time.                                      |
-| BANK_TED_NOT_FOUND                                    | Bank not found.                                                                                    |
 | USER_WALLET_ALREADY_EXISTS                            | User is already associated to the wallet. Please check your data and try again.                    |
 | USER_WALLET_NOT_FOUND                                 | User's association with the wallet is not found. Please check your data and try again.             |
 | WALLET_ACCOUNTS_NOT_FOUND                             | No account details found. Please verify your registration and try again.                           |
