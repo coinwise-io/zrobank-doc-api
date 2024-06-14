@@ -10,9 +10,9 @@
 ### Release 1.35.0
 ### :large_blue_diamond: Pix
 #### :seedling: New features
-- beneficiary_branch_number info was added on deposits and  devolution_received webhook
+- The field beneficiary_branch_number info was added on deposits and devolution_received webhook
 - A new pix limit was created for same ownership transactions
 - Now filtering deposits by TXID is allowed
-- beneficiary_branch_number  was added in deposit list response
+- The field beneficiary_branch_number was added in deposit list response
 #### :hammer_and_wrench: Fixes
 - Handling error when trying to register a duplicated pix key
