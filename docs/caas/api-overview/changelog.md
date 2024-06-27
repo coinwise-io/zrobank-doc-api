@@ -1,9 +1,9 @@
 # Changelog
 
-<!-- ## May 19, 2023
+##  May 24, 2024
+### Release 1.35.0
+### :iphone: General
+#### :hammer_and_wrench: Fixes
+- Adjustments in b2c2, bitcoin market and binance test libs
 
-### Release 0.5.0
 
-:globe_with_meridians: **API**
-
---- -->
