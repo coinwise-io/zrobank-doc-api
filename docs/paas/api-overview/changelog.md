@@ -24,3 +24,9 @@
 - Now the pix key registration is linked to the pix account number, which allows it to have specific pix keys for wallets.
 - Now the pix deposit flow is linked to the pix account number, which allows wallets to receive pix by branch and account ,pix key and QR code.
 - Using data from the wallet owner user to register and issue pix payment receipts via static and dynamic QR codes.
+
+## July 23, 2024
+### Release 1.39.0 está em produção:
+### :iphone: Geral
+#### :hammer_and_wrench: Ajustes
+- Now users that received an internal transaction can view the transaction's data in its statement.
