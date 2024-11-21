@@ -234,6 +234,55 @@ Your account can be configured so that when certain events occur on your account
 ```
 
   </TabItem>
+  <TabItem value="Payment Failed">
+
+```json
+{
+  "id": "77198133-185e-4c08-8252-f47c9b15785b",
+  "type": "PAYMENT_FAILED",
+  "end_to_end_id": "E26264220202404171336mckyTdpt5VZ",
+  "txid": null,
+  "operation_id": null,
+  "amount": "3",
+  "owner_name": "Zro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "beneficiary_name": "Name",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_name": "ZRO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "NOT_ENOUGH_FUNDS",
+  "error_description": "Não há saldo disponível.",
+  "created_at": "2024-04-17T13:36:21.188Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Devolution Failed">
+
+```json
+{
+  "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
+  "type": "DEVOLUTION_FAILED",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "operation_id": null,
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZRO IP S/A",
+  "beneficiary_name": "Zro Bolsao",
+  "beneficiary_document": "00000000000000",
+  "beneficiary_bank_name": "ZRO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T17:33:05.523Z"
+}
+```
+
+  </TabItem>
 </Tabs>
 
 ## Payloads (Version 3)
