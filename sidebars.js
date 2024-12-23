@@ -83,6 +83,7 @@ const sidebars = {
         'gateway/api-overview/protocol',
         'gateway/api-overview/serialization',
         'gateway/api-overview/errors',
+        'gateway/api-overview/how-to-use',
         'gateway/api-overview/changelog',
       ],
     },
