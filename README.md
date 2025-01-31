@@ -76,7 +76,7 @@ Commands:
 
 ### Generate specs files
 
-```node
+```sh
 node specs/generate-specs.js
 ```
 
@@ -88,6 +88,6 @@ sh specs/generate-docs.sh
 
 ### Troubleshoot HTML tags and URLs
 
-```node
+```sh
 node utils/replace-helper.js
 ```
