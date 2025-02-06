@@ -194,3 +194,7 @@ input[type='number'] {
 .menu {
   background: var(--ifm-background-color);
 }
+
+.card {
+  background: inherit !important;
+}
