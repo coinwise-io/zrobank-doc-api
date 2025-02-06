@@ -76,12 +76,18 @@ Commands:
 
 ### Generate specs files
 
-```
+```sh
 node specs/generate-specs.js
 ```
 
 ### Generate documentation files
 
-```
+```sh
 sh specs/generate-docs.sh
+```
+
+### Troubleshoot HTML tags and URLs
+
+```sh
+node utils/replace-helper.js
 ```
