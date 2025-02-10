@@ -1,0 +1,54 @@
+---
+id: v-1-login-auth-rest-controller-execute-v-1
+title: "Create Access Token for Login"
+description: "Generate an Access Token by providing your API ID and API Key in the request body. Use the Access Token to authenticate and log in to the application via the 'Authorize' section."
+sidebar_label: "Create Access Token for Login"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVV9tu20YQ/ZXBviQBKMpyjVz4VDtpC7UFGjh2CtQWjBF3SG5M7TJ7kawI+vdilpRF2arjBEHa6sXS7szsnDNXr4Qkl1vVeGW0yMQvpMmiJ0ANx3lOzsGZuSYN0yU01syVVLqEpQkWjt+OYfwGUMv49TdagtLgKwJLHwM5D1MjlymcO4qnO+a8AQy+Iu1V3j4noTZltGCiODZNzXfKaJgrjGdPjoOvjFWf6Ak4yvkuFYkwDfusjB5LkYn3o99NqTSLnpLzr4321tQ12Su6oTx4upqPRCIatDgjT9aJ7GIlNM5IZEIbnZNIhGIyKkJJViR3ODqrCKIcw1cOEM7Px2/g6fzoGQRHkhEErT4GqpegJGMsltH/Sw3dp6MoheO63vxwMAvOQ4XzSH+nqcimGz2RCJZVlqTIvA2UCJdXNEORrYRfNozAeat0Kdbr5BbUzaBGXX4G1VjLGAoXPW0sFWQtSWDVgCWl8IYKDLV3jO/E4idVK9Q9TG+N9aEM5AhUAUG7hnL2X+73v8DaPQAgEaTDTGQXovGDk9P4e3D+Tkx2kTXWyJD7QQhKPiJunfgDkdsJ2F+pNT2EG+3c6EKVoU26r0K3H4RHW5IfBEf2SwG1qozCPgbcFtOiwk4N89wE7cFXyt3WcEzJKUFXO9tYApy2YDPYjUIKX0fIpJUm50+MXLLE3VzfRf/a0r5G1Sm5eNFrUY3iFsXtIjfak/b8Qq/JDD84Nru676GZfqDcc8uw3Gm8Itfqqisl9yXurp/nzK2kQmmSgI0aS3aCbnDW1Kx2iMUPo2lxOKDnL54PjujlaPBSShrIQj5/MRodHtGrF2KdxPeuafnlD3awty+60JBt0LmFsZJTscf0xQbX9sFJIrzyUfP96LjXtbm9nrYhE+t1a8c1RruWoMODA/6zx7l+65fgQoxfEer6m8YnWr3ynBWfJ+3XP8+g1YCokXbptKmc7g7rmkvOU86ek5aNUdq79D6L/dd7DN7nr2WsI/BoH2fjAlAvN5ktIY4uB2gJZso5nsjGQoUOlJ5jrSQUxs7Q8ymjTkW0PPp8NHjYFqhqki0ijyWPx77XrDhJxIx8ZXjcNsZF7tFXIhPD+WjI9oZOlVppkQhHdt4O2Qn/yINVfvmOY9iGaUpoyd4GljnqjpLuy88RTBsjkWziWHnfRB85L063jeOnTZpvK/RxJdarsLsVwm24MDGJujDGwXCC+hpOEB03mnsZtVeEqWivR+nRq/SgS3fMY7p3A+FWUyQi2LoD67LhcLFYpJ+smaK+TnMzS6fMEs1QsZCnXJvalAp/vCOzTkStcuI0274SNw9VVp6bfYySfMx7TDnHfIa6Z6xrxjuduDAW4ip2l5rVtsT/nwtnl4KebvywqVFpZjgyt+oK4ULEJZOf5Bpoi2GSiIqrJbsQq9UUHZ3ber3m44+B7LItkTlahVNOsovJOtmMfl5RpXJ8sZ2l/0jq0240y2fwry6re3lqK2yzaM+xDiwjeCF6PMLvtK0+AOB2qf5KBN9hG33Q+zuL8zdA8R9dQR/Fwp7Ne4eRVv51i3twxia3Eve2lK0G96DGPyjbH6Zv/3jHI27aLcAzI1nH4oJXaVyITFyKSxH/5WULcYDG85XYZL7IRGuXP38D8tdblw==
+sidebar_class_name: "post api-method"
+info_path: baas/endpoints/z-ro-bank-baas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Create Access Token for Login</h1>
+
+<MethodEndpoint method={"post"} path={"/v1/auth/signin"}></MethodEndpoint>
+
+
+
+Generate an Access Token by providing your API ID and API Key in the request body. Use the Access Token to authenticate and log in to the application via the 'Authorize' section.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-uuid","in":"header","description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-target-user-uuid","in":"header","description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}><div style={{"marginTop":"1rem","marginBottom":"1rem"}}>
+
+Create an Access Token requires an API ID and Api Key.
+
+</div></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"api_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User defined apiId.","example":"2af31bf2-e676-4e81-8dde-dfd671124e97"}}></SchemaItem><SchemaItem collapsible={false} name={"api_key"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User defined apiKey.","example":"superpassword"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+User authenticated successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"access_token"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"JWT access token. Token used to access all protected endpoints."}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"access_token\": \"string\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

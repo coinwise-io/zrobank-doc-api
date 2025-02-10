@@ -53,6 +53,14 @@ const config = {
               categoryLinkSource: 'tag',
             },
           },
+          baas: {
+            specPath: 'specs/baas-spec.json',
+            outputDir: 'docs/baas/endpoints',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+          },
         },
       },
     ],
@@ -96,9 +104,9 @@ const config = {
           },
           {
             type: 'docSidebar',
-            sidebarId: 'paasSidebar',
+            sidebarId: 'baasSidebar',
             position: 'left',
-            label: 'Pix as a Service',
+            label: 'Banking as a Service',
           },
           {
             type: 'docSidebar',
@@ -111,6 +119,12 @@ const config = {
             sidebarId: 'gatewaySidebar',
             position: 'left',
             label: 'Gateway',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'paasSidebar',
+            position: 'left',
+            label: 'Pix as a Service',
           },
         ],
       },

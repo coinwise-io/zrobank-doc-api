@@ -1,0 +1,54 @@
+---
+id: v-1-generate-report-operation-statement-export-rest-controller-execute-v-1
+title: "Generate Operation Statement Export File"
+description: "Initiate a request to retrieve a operation statement file for the current date. Use the current date with the '/storage/operation-statement-file' endpoint to download the operation statement in CSV format."
+sidebar_label: "Generate Operation Statement Export File"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVm1v2zYQ/iuH+9IGkOUkyJcJw7CmWQfvS4K8tMAyo6Clk0WEIhXy6Jca/u8DKcl2Ei/Ngq4bli+OjnfH57k33goLcrmVDUujMcORliwFEwiwdO/JMbABS2wlzYLUNGRFUAbHgqkmzVBKRVAaC1wR5N7aICwEUwo3jp5IYS65itI3Q8fGiikNN24HG7eD4PYNkC4aI3XEUZi5VkYU0XgfEqnh/dXHgKUWnGKCG6VRgRl+PPqVdBDQJTXG8nl/etV7+GUR5Jfk+L3RbI1SZD/TgnLP9Hl2hAk2woqamKzD7HaFWtSEGS4Gc6EU8cB7WWCCMgSzIlGQxeRRjK9IF2ThUzSAm5vRGbyVJVDd8DKBpfEWCiqFV/xAZy6VggmBI2ZFxQEm6PKKaoHZCnnZBBiOrdRTXK+TDTJtdE5fQXRdEUQ9GJ2BdCA6VLOTA/COihB7r+W9J7UEWZBmWS5jEv7Q0P115ZLCO6X6Dwe1dwyVCKWje0tJNu3tMMGgKy0VmLH19DJSi4ESevoVViNdyFwwuYi0sVSStVRAMPViSimctWF2gd+pFV+kkkLvcLowlv3UkyOQJXjtGsoD/mI//lIo9wyBBEn7GrNbbHhwehm/BzdXOH7IrLGm8PmLKuk68orqz2TuQcJ+T63ZYdhb50aXcurbbngVu/0kWNhp6ApH9u8Sak0DC/sScltO80p0ZiLPjQ+jo5JuM89iSU4Iuq7e5hLgsiWbwcMspPC6gIyDtmuMduTC+fHhYfh5SPl8zxibdlOqAOfznJwrvVLLFNcJnuzzMSpB6CX00CDOKAfCEtTSOamnYCxUwoHUM6Fk0U3IIA2gO89HTz3fxDB6rkKU8xZnKaSiorU5Pv5H0KwTdJR7K3kZp+yEhCWL2e04BJXFNAxfbIe4w3GCNXFlwohvjOM4pbnCDIezo6FttfY9MUNatB7CdXbWzvTx9u6rkNo2dz2CVZvvkOdOlHT/fIgkMMPfPl1j0hdDxdxEPlKXJhaJZBUOYiOeCn0Hp0I4eHcxetINe1UCyvb4KD35IT3EBHOjWeQcvHcNuLHEBL1VHQ6XDYfz+Tz9Ys1E6Ls0N3U6CQSoFjIoMeXaKDOV4udHOusElcxJO9q5JU56Oa04NFcMYPGS+0I0QppqoXec9S8zbBti8ypD+yzDB6nocZRWkT5p/h9uL10NMS142CghdchDjO+qq/BbjEtJV+O7C88WSkjwYtMpVWiQ7BZXq4lwdGPVeh3E957ssq3+mbBSTEKR3o7XST+qQxsW0oWD7ez7y0x8ux1nbwzuaLln6ZoJ5YMuhqfo5VjfdmO/OIB/dRF6hmm/xL2S4XfahJ5NVbewvZLBd9h0nkX/aCn7Biz+o+vNi6KwZ6vbRmT3Nb44vwpvYVggdhakRw9nHC3dkdDLHWc/nkYFuDZ3pH/CHgiHT1yP1+v1n4yeBME=
+sidebar_class_name: "post api-method"
+info_path: baas/endpoints/z-ro-bank-baas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Generate Operation Statement Export File</h1>
+
+<MethodEndpoint method={"post"} path={"/v1/reports/operation-statement/exports"}></MethodEndpoint>
+
+
+
+Initiate a request to retrieve a operation statement file for the current date. Use the current date with the '/storage/operation-statement-file' endpoint to download the operation statement in CSV format.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-uuid","in":"header","description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-target-user-uuid","in":"header","description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Operation statement generated successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

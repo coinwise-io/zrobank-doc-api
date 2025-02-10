@@ -1,0 +1,54 @@
+---
+id: get-user-bank-account-by-wallet-rest-controller-execute
+title: "List User Bank Account"
+description: "Retrieve a user bank account."
+sidebar_label: "List User Bank Account"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVm1v2zYQ/isEP62AZEu2XL9gGJYsW+FhwIo0QYEGRnCSTjYbiVRJyonr6b8PR8nx6xKvWLFPlsnj3XN3z72seYom0aK0Qkk+4ddotcAlMmCVQc1ikA8MkkRV0na4x1WJGkh2mvIJf4f21qC+BPlw0chcrj5CnqO9RmN/UdJqleeo7/EJk8oi93gJGgq0qA2f3K25hAL5hD/5j+6ZX1Ui5R4XhGWBkKLm3gHEDyhT1Kyxw25vp1fsB5ExLEq78thKVZqlmEGV2z2ZR5HnLEZm0Noc0zfc4yZZYAF8suZ2VRIMY7WQc17X3jMyqWSCryC6WSBzcmx6xYRh0KJaRm8oiimzilVSfKkwXzGRorQiWzG7QKbxSyWMID0ddpHnuweGFZWxbAGUDbl5J1BTHpycxpRPrK7wPFee/Bzk/BVfpjIVCVg0Dl+pMUOtMWX0tII5dthVE1xDXl1q+CpyAZK9V9pW8woNMpGxSpoSE0Kb7qPNIDcvwPU4yqrgkzteWv/y2v33bz/wWV3PSI0plTRo6GEvCOjnOBNHvGUabaUlpsxUSYLGZFWerwhXoqRFaUkPlGVOjgslu58NKVsfo1TxZ0wssVhTIVjRQBHpKU/2kd0eoZpeEQR8gqLM6WH2FnsYjCK/N47HfjTuD3wIBmN/EA37cdgP+n0AXnuc/Ls/2yQxcd9OAlk2TMeZHw8GkR+NhyM/Hg1TfxgOIQrDAQxh9GwnVUlVtCE6w9pGfN/iKIrCMAiDIOiTYiVjBToVcn6WG38+i59wZjjOsqTXD/10EA/8CEeRP+6PIj+KxwkO0v5bGCdksw36vayKGPXrRtt2xhr5fZthrx8N3pLWWINMFmcrvXTiJ3UGQRA2OK1Y4o6qWKkcQZ7BJ2o87vWeZmoPNT12RftNijfdNMthvqfbFXPt8UQjWEzvwenPlC7oi6dg0beioPb5b4ujVcnggEq9oDfwg54fBjfhaBIGk3DQGfZHn6jR7bSZO+7GyKZUDsl8yMEjfhym9jkx20juuT3zuBXWIXx5Jl63LYzXNSGOTjWxacZArtjGG+ZGpmGgkRXCGCoEpdkCDBNyCblIWRNyOqU4d7jTHB5rdnGGyi5olDTNjmUgcurS9KbX+y5oao8bTCot7MoN/RhBU73czairW5jTLuDAGfYXcyApfKyNH0W3QLtQtHLM0fVfsAs+4V1Kq+kSc4Scd9skGhrtqJfNjjHbGv9A/bxp2RsIbZN3BdEcee3Hbxsa//7xZkvghbWlc0jITLlqatP+qaNVg/o9gGEX76dHLD8pQiib67ATjTq9dipB4mqpndzPL4nJOm9xmEm3+/j42PmqFUWgk6iiE5MDWIAgIYuJVLmaC/j5QKb2eC4SJCJurbj9Q8wX1jCNLoDpOfYoGqUytgC5o+wPYeyJVB7EZL0dwa+unm0GLD7ZbpmDkG5IEbp1y4c7V+aU/pYR28I2RKKFMpak1usYDN7qvK7p+EuFetUwZQlaQEwJvZvV3mZHIs6mwtDFdoX5Rz/+u/30pMcPuDqxMC8hr0iW0753PtYfrtuyfsP+hyX2Bf82a/c3+vVdttgX09Gu1nt4m7uLJMHS7twdrZr1boN79yu1G2rSu8N6vzc5RrZXIFc7un+8dALsRj2g/Ilv8Fn6y+tZXdd/A9p6uzQ=
+sidebar_class_name: "get api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>List User Bank Account</h1>
+
+<MethodEndpoint method={"get"} path={"/users/banking/accounts"}></MethodEndpoint>
+
+
+
+Retrieve a user bank account.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian Portuguese if unspecified.","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+The user bank account returned successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User bank account ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"user_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User UUID.","example":"caff7d9f-b554-4978-b87d-717a4115a7a8"}}></SchemaItem><SchemaItem collapsible={false} name={"user_document"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"User document.","example":"84411010003"}}></SchemaItem><SchemaItem collapsible={false} name={"onboarding_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Onboarding UUID.","example":"79ffc231-d5b5-4e84-9384-4b9ce5d36a9c"}}></SchemaItem><SchemaItem collapsible={false} name={"account_number"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Account number.","example":"123456"}}></SchemaItem><SchemaItem collapsible={false} name={"branch_number"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"Branch number.","example":"0001"}}></SchemaItem><SchemaItem collapsible={false} name={"active"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"User bank account is active.","example":true}}></SchemaItem><SchemaItem collapsible={false} name={"default"} required={true} schemaName={"boolean"} qualifierMessage={undefined} schema={{"type":"boolean","description":"User bank account default flag.","example":false}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"User bank account created at.","example":"2025-02-10T18:10:15.738Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"user_id\": \"caff7d9f-b554-4978-b87d-717a4115a7a8\",\n  \"user_document\": \"84411010003\",\n  \"onboarding_id\": \"79ffc231-d5b5-4e84-9384-4b9ce5d36a9c\",\n  \"account_number\": \"123456\",\n  \"branch_number\": \"0001\",\n  \"active\": true,\n  \"default\": false,\n  \"created_at\": \"2025-02-10T18:10:15.738Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

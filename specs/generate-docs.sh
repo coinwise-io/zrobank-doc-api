@@ -1,4 +1,4 @@
-modules=(caas paas gateway)
+modules=(caas paas gateway baas)
 
 for i in ${modules[@]}; do
     rm -rf ./docs/$i/endpoints

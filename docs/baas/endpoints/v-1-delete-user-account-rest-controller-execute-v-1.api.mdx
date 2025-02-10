@@ -1,0 +1,56 @@
+---
+id: v-1-delete-user-account-rest-controller-execute-v-1
+title: "Delete an user account"
+description: "Delete an user account. User account must have no operations"
+sidebar_label: "Delete an user account"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVV21v2zYQ/isHfmoBWX5JsjbCMCxZOsDDgBZpsgHNgoIWzxYbmVTJkxPX038fjpL8Fid103Uv+RJRPvLuee7u4WkhFPrU6YK0NSIRZ5gjIUgDpUcHMk1taSiGy7UVTEtPkMkZgrFgC3SSd/s/DIQ/hxPtCR2qGIZjMJYi0AS3Os9hhFCgG1s3RQUSvB0TqOAzrreLSCxPHCqRiN/6dUwcwUkdwDl6+skacjbP0b3HO0xLwvezvohEIZ2cIqHzIrlaCCOnKBJhrElRREIzxgylQieiLegXGeMxKcLwDLQHCZeXwzN4Njt8zmQoIAul0R9LzOegFRrS4zlQhtACZ+gfS/QUw0metwu/xpc07U6NLm73iUiwrXaoREKuxEj4NMOpFMlC0LxgBJ6cNhNRVdES1F0nl2byGVRDo3QqCX2ItHA4RudQAW8t5QRjOMOxLHPyjO/UyU8619KsYXpjHZWTEj2CHkNpfIEpx692xz+WuX8EQCTQlFORXImCOqfnYd25fCuuN5EVzqoypU5ZarVH3hrzRzK3kbB3sbNrCNvdqTVjPSnr4vv67LQYSLoJUocb6kvx1FvrXtwD2wrSbSZpo4WBMu3bkqwrcoTQtM4qlQDnNdYENpMQw1OyvU5IAL7NZCCikJTdo2FDcYZnsdjhxY4+YErc9Y5FgzR6kSyqSJCmnA1e1wZVdc2ufWGNDyZi0Ovxv0dc1qqk2G9qDaEh3iCLIud+0tZ0P3jetdg3LCZgh81nUeOdnBYBzfg7HGDv5WFncDw67hweHxx1ZO/ouHN0+OJg1D/oHRxIKapIeJKEe/oKtptuFMqU9EwSKj4tdciP72UggKWbn4SShB3SU5bV7Rbf4ac5BdQ9d4Pe4KjTG3T6vYv+UdJ/mRz144MXx+/Yd1mov8F3c8oX+m4K4Ct9N6d8ke9qvU+u6sapc7qRjQ16NuK9XnXAA9fnedMMoqrY3eGudhiOQZo5tKFAuFo9SIcw1d5rMwHrIJMetJnJXCuoSeK3zEwswsn9hxqtpIx1q+4mGEudc7vxnsHgm0TDrYFp6TTNw3AwQunQieTqmvWB5IRnhhCchz/rkaehjBmdImVWhf5gQsOsQZlIRHfW77LU+m7TuL670KripKGb1ZPI9cr1W5aLWhHaABoN4Xw1r6Lm4ee27H75/WJVcBlREeBoM7ah0Ztsh4vtVJobOJXSw8mb4b2q3GnCUdY/9+PD47jXiJ5MQ+03Ar7cyZXn8iYOn3S7t7e38SdnR9LcxKmdxiMGgFOp2YgwNTa3Ey1/3LKpIpHrFLkMV17C5KQnGfFtFQhU+/hjNgrraSrN2mG7x9ltThYrhf9PDMBNlgnvqFvkUpsghczAoqm5KxGG3VB1IhJt3YlIJFpxsWbWE5stFiPp8dLlVcWvP5bo5nU5zqTTcsRVc7UQSnt+Xl3oD/LzrJkP1HPYcVftjLx5Kc2cK03mJa9EJG5wXo8F1XUVtdPQk6P5V8f3nbhrfO2nxxI4j0T7I/yH5vdHACw/M56IYCtH33hUfxTI1lfFEwH9Dwb0vVjY8V2ywUhtf5KmWNDab/dG4Gr9cjx79euri1esSSUL1XIG3brXQp/vFIbvT4MBXNgbND8sZYJ4yUpRVX8Bv+iPCw==
+sidebar_class_name: "delete api-method"
+info_path: baas/endpoints/z-ro-bank-baas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete an user account</h1>
+
+<MethodEndpoint method={"delete"} path={"/v1/users/accounts/{id}"}></MethodEndpoint>
+
+
+
+Delete an user account. User account must have no operations
+      registered. If not, it will be performed a soft delete.
+    
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"User account ID.","schema":{"type":"object","properties":{},"title":"Object"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-uuid","in":"header","description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-target-user-uuid","in":"header","description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+User account deleted.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"User account ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"state"} required={true} schemaName={"object"} qualifierMessage={undefined} schema={{"type":"object","description":"User state.","example":"deactivated"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"User created date.","example":"2025-02-10T15:18:51.379Z"}}></SchemaItem><SchemaItem collapsible={false} name={"updated_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"User updated date.","example":"2025-02-10T15:18:51.379Z"}}></SchemaItem><SchemaItem collapsible={false} name={"deleted_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"User deleted date.","example":"2025-02-10T15:18:51.379Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"state\": \"deactivated\",\n  \"created_at\": \"2025-02-10T15:18:51.379Z\",\n  \"updated_at\": \"2025-02-10T15:18:51.379Z\",\n  \"deleted_at\": \"2025-02-10T15:18:51.379Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
