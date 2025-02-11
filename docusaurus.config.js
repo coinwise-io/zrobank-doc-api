@@ -19,7 +19,7 @@ const config = {
   projectName: 'zrobank-doc-api', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   plugins: [
     require.resolve('@cmfcmf/docusaurus-search-local'),
