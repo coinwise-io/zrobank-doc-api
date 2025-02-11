@@ -1,0 +1,54 @@
+---
+id: get-pix-statement-file-by-date-rest-controller-execute
+title: "Get Pix Statement File by Date"
+description: "Retrieve a pix statement file for a specified date. If you haven't generated a file yet, use the appropriate endpoint to do so."
+sidebar_label: "Get Pix Statement File by Date"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVdtu20YQ/ZXBvDQBKDox/FAQRdE4bgz1ybDjFqghBCNySC683KV3h7IYgf9eDCnJ8qXuBQjaJ4m7czln5szsBguOeTCtGO8ww0uWYHjFQNCaNUQh4YadQGksQ+kDEMSWc1MaLqAg4RTmJfS+g5pW7L4TqNhxIOECaPLqWRLoIoPUDNS2wbfBkDCwK1pvnIB4KDxEn2KCvlVv4928wAzPWS7M+moH45OxfNqfkfAlR/nonQRvLYcvvOa8E8YEWwrUsHCImN1s0FHDmKHzLtdboyRrpoIDJk+4f64ZRjuYn4GJQHB9PT+DN6uTtwq/UJidM3cd2x5MwU5M2Y+kAt91JhqNk8IHaw8PIjRdlLE6QG7nZzgo2dEucIGZhI4TjHnNDWG2QelbxR0lGFfhMCR7KuuZJVf9BZe5K0xOwnHE1wYuOQQuQF07qjiFMy6psxKV1Wmgr8YacnDhg3RVx5HBlNC5fa8foy3JxlfgJsiuazC7wVZmp5fj9+z6CheHPAK3PsgX1dALlRjJ3XUc+mfcLkfHSXx4CKL0oSHBDPVqJqbRwE8LudBcsfUuclSn43fv9OdxiotH2jcOPl79Ook5sHTBcQGxy3OOseys7VMcEjx5KdC8BHI97NjBqM4IFBgaE6NxFfgANUUwbkXWFDCR0FNFvo38/nnk68gBqJNa9ZSPEwMlGautUp/j42+CZkgwct4FI/04X0umwAGzm4VWVqjSscMr8YEqxkWCDUvtdZQrlnE8pcYMj+JkcdSa9Wxf6ZmWWFvKYTUN8OIh3ZX2eerZLulmar72d3uUbP982knhl98+P4igFmlHCsaVfpStEasXv6fBwym5W7ggivDhYv5MdS+aKMrp+n168n16jAnm3gnlotG3Qt97YoJdsFscMTs6ur+/T78GvyR3m+a+SZdKgBsyaiScO299ZeinJzZDgtbk7CIfZBnXjqlqiRB4LGDxd/JpNVofpSF3EOycBXQG9osXdPPCsoezaVwf1WYzkmYn/4sHZNtr4bUctZaM03qNddhs1XeDW/WpHp/rb5Fg7aOo3WazpMjXwQ6DHk/7SGVfmEhLe7AK/7Qgby630/YWniyuF4Hecv9sN67IdmqJOmIrCkZTjyOX7Pb/v8b0Hzx6r/DePdMPjJN/wuubvHqvwN0/xY86tN945z/r7tEdffBEPllUY+e2V+T6g1g/nI4G8NnfsvsRdzlFP3FYDMPwB7BXWz0=
+sidebar_class_name: "get api-method"
+info_path: caas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get Pix Statement File by Date</h1>
+
+<MethodEndpoint method={"get"} path={"/storage/pix-statement-file"}></MethodEndpoint>
+
+
+
+Retrieve a pix statement file for a specified date. If you haven't generated a file yet, use the appropriate endpoint to do so.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"report_date","required":true,"in":"query","description":"Report date.","schema":{"format":"date-time","type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian Portuguese if unspecified.","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Pix statement in CSV file returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

@@ -1,0 +1,54 @@
+---
+id: delete-client-bank-account
+title: "Delete a client bank account"
+description: "Delete a client bank account"
+sidebar_label: "Delete a client bank account"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVVFv20YM/isHPq2AYsmZu256yxoX8FBkQ5JiD4FR0BJjXSPdXe+oJK6gX7OH/ZD+sYGSbMtxmxXdniRRJO/jR/K7BhjXAdIbeF1qMqzOsszWhgMsI7COPLK2ZpFDCjmVxNS7/YrmbvCECBx6rIjJS6IGDFYk/jarK+octIEUHHIBEeQUMq+dpIV0e+rI19PHWnvKIWVfUwQhK6hCSBvgjZO8gb02a2gjoEesXCm26emPs5c/vfr5l2QKbbSDsNrDXOTP4pCCFPauanH+LTi0YVqTfwIE2qXEBmdNoCDup8lMHofnXViVWcNSchvBLJkeu7wzWHNBhnWGTAJ/G5E2gM6VYtfWxB+C+DdjhJo7NJcDDjVLpmoL8mnpX3FyXtrPui+iohBwTePkW9Nz+SB6ypaQg/nvptxsid2TtzD3WOpcPZ6g0yd3tIG23SWwqw+UMbRt2xH2BU6HWbJedd0cGq8uLKs3tjb/lcHZtzA4+58ZnO0ZHOb+OQIvKdjaZ6SMZXXb1fw1Bl8myTGDc++t70ICZbXXvOkWOqDJuK4gvVnKsmN4z/aOjHzLtB/mOO9kQqHK+nasRpsFEVTEhd3LSaceXEAKMTod9zEhbraC0MYSfzLEh7g5WOkW9kivpHc91WOIu3UtmB0Ma9xpA6Hv5rF/eWN9hQwp/Pbn9VFDriWXqlmX+hPmVongKay5X87Pf3/+yyqD6sxp9QfiVcegNrd23OxP3gr2o9znQ6VDmhwVOq323qXOyIRubgZVO3OYFaROJwlEUPtyKC6N44eHhwl2fyfWr+MhNMRvF6/nF1fzk9NJMim4KkVz7smHHsF0kkwSMTkbuEIzOupfmnlQyY5ppkeOXYnaSNIOYDN0+QbQadnDvs8QQTqS/oNWy79D/V5GUNjAkqVpVhjonS/bVswfa/Kbfjzv0WtcCeM3DeQ6yHsO6S2WgY4A7+QAfrgc5P6FOr6SvljXYESzATm1rOULIhDZGl1+cht9F4zjG+k7YBwS2C7bCArCnHxHT+9zlmXkeBR9pIyy5Lu9PZ+/nV/PoW3/AfwH0L0=
+sidebar_class_name: "delete api-method"
+info_path: gateway/endpoints/zrobank
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete a client bank account</h1>
+
+<MethodEndpoint method={"delete"} path={"/api/clients/{document}/bank-accounts/{bankAccountId}"}></MethodEndpoint>
+
+
+
+Delete a client bank account
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"document","in":"path","description":"Client document","required":true,"schema":{"type":"string"},"example":"12345678901"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"bankAccountId","in":"path","description":"Bank account ID","required":true,"schema":{"type":"integer"},"example":"1"}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"204"} value={"204"}><div>
+
+No content
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthenticated
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"message (integer)"} qualifierMessage={undefined} schema={{"title":"message","description":"Response 401","type":"integer","readOnly":true,"example":"Invalid x-api-key"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"Invalid x-api-key\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Client or Bank Account Not Found
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"message (string)"} qualifierMessage={undefined} schema={{"title":"message","description":"Response 404","type":"string","readOnly":true,"example":"Resource not found"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"Resource not found\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Error
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

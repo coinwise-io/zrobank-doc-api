@@ -1,0 +1,58 @@
+---
+id: delete-pix-key
+title: "Delete Pix Key"
+description: "Delete Pix Key"
+sidebar_label: "Delete Pix Key"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9VMFu2zgQ/RViTruAbCmGs011SxsXSLfoBkmKPQTBYixOLDYSyZCjxK6gr+lhP6Q/thhJdpx12pPE4fBx5r3HaYFxFSG/gQuzVn/SBm4TcJ4CsnH2XEMOmipiujBr2U3AY8CamIKcasFiTZCD0ZCAsZCDRy4hAU2xCMYLCuRbcHV+BgkEemhMIA05h4YSiEVJNULeAm+8gEUOxq6gS4DWWPtKYm80ZsVbvJvMjo5pMv9jdjxZzk/mk+VJcVecvEHE7C10t4IevbORogDOsrl8Xhbz2an3zjJZlivmWXaY8g61uqSHhuKYc3SY88ViwyVZNgUySf/FiJq3gN5XEjfOpl+j5Lf7fRrum7oca1Xz7Ehte/0/dz9J8kFkYjM0WlOMuKJ98G3oV3iQbDk3lmlFoZcH9V+22mzledbg3D5iZbRaT9CbyT1toOt2AG75lQqGrut6wl7lndUH11gtlB6/RvsiBBd60EhFEwxveo9FtAU3NeQ3t+I/jP+wuycra1H8JcZZb1e1tXMCNXHpno3cW5hLyCFFb1Jv1uk9bWLaGt3B88VXItbA7f6NO4+WzB5G78p6SRh6+oafDy7UyJDDx7+vDxS4FizVsKnMN9ROyZNS2PDgpR///vjulEV16o26QLzqCTH2zu2r+y24Jdr7A+wzVzQ1WR5hNCr0Rj1nV6YgG3ujjE/31GNRkppNM0igCdXYXJ6mT09PU+x3py6s0vFoTD+dv198vlpMZtNsWnJdiZ6PFOJQwdE0m2YS8i5yjXbvqgNtXtS+45Zpzamv0FiB6UtqR9FuAL0RCc0aEhDhIIHcaBlbpYssGW27xEhfQtV1En5oKGwG7zxiMLgU/m5a0CbKv4b8DqtIB8XsXjP8djlOrN/Vi0H2arljEK3094hVI6uh1mFOdrddAiWhptDXMWycFgV53jtyMEHE6jsvny0+La4X0HX/AYrQ7xk=
+sidebar_class_name: "delete api-method"
+info_path: gateway/endpoints/zrobank
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Delete Pix Key</h1>
+
+<MethodEndpoint method={"delete"} path={"/api/pix/keys/{id}"}></MethodEndpoint>
+
+
+
+Delete Pix Key
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","in":"path","description":"Pix Key ID","required":true,"schema":{"type":"string"},"example":"7da0c9af-215e-4625-b484-b8cfc87aaa09"}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"204"} value={"204"}><div>
+
+No Content
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Bad Request
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthenticated
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"message (integer)"} qualifierMessage={undefined} schema={{"title":"message","description":"Response 401","type":"integer","readOnly":true,"example":"Invalid x-api-key"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"Invalid x-api-key\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Error
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

@@ -1,11 +1,11 @@
 ---
 id: get-receipt-by-operation-id-rest-controller-execute
-title: "Get receipt by its operation id."
-description: "Enter the pix payment's operation ID below and execute to get its receipt. Should use <b>/operations/{id}/receipt</b> path."
-sidebar_label: "Get receipt by its operation id."
+title: "Get Receipt by Operation ID"
+description: "Retrieve the receipt for a pix payment operation by providing its ID. Use the path '/operations/{id}/receipt'."
+sidebar_label: "Get Receipt by Operation ID"
 hide_title: true
 hide_table_of_contents: true
-api: eJzFVm1v2zYQ/isHfVkC+C2xsy1GECzZui77siAvKLAiCCjpHLOhRJWkbKue/vvuKFmxZC9thw0FAkeijnfPPXzujutAZ2iEkzq9ioNp8BbdDUYoM3dZ/PHy5Qat+1mnzmil0DziCqPcYdALYrSRIWuyot1vUocG3BwhkyvIRJFg6r6z0MSAq18gRKWXINIYajfgNDyhA+ksmCr4AG7nOlcx5BbhLDwfNh7scC3jcljbnQ3Dc4rj5gOPJaNl4ZAScSbHXpAJIxIkTDaYvl8HKb0QylV/KSgN189zGdM+ydDnKGI0OxndYkrL8M5vgPt7wn8gZ4BJ5ooeFDo3EONM5Mq1bJZSKUoULDqnMD4kvzaaYyKC6TpwRcYwrDMyfQrKstcgS3Ua4WcQ3RG73o65lBZEjWoxOWS2YmYzT+XHHFUBMqYDkLPCn4nBj7m0kv0M4IIAbi1YSHLrYC4WSEez2SfRMLHezrzQ+iWpeGa7G31efFw7WTVao9CDV9l6YLc2I8ho+fvxaMT/2u5qDcNM56SzsNhSoIzB5lGE1s5ypQoOFpGyKV92I7JMychbDj9Y9rXexaLDDxg52pgZ9utkhaTW+2Ms3F7rNsTryhrYGg6u4h4shCKSeIF+0UWHg6DsNV6dJCXtEvJPbr05J4crkWS8M7immnzGAjifOCdZdoigYA1Nj3R+n411g4qrrUVuO+TsezzG0Y+T/vFpeNqfnI5P+mJ0cto/mfwwDo/Go/FYCI4r7WODaituqLVCke4EvpptmgtYRxC4Dpr9LQSsO/IvIicX+BjjQqu8cvL1QSIqjJDLyOUm7cSZCWWR9L8l+fdtQXRPskN2h4N9kEn5tQhea9M3dXFQqTCeyb7yoNREWsAGK/g+Sa3EICTSWjpr0IaagQWZkiqpZGbaJMLxKrPmtTIZHe16vrfULUVO7Yb6R1VHMBPSHwvvOT7+X9CQayeeuMt7lf8FdRlYJs3SlDHSFX4GhEh+DT0+cCeh4TDXPPdo/vgTotY0DYY0vTYTZhgW/eag/Ozh7oRmsRkquVHcrJ3L7HQ4zISw/XmiBp+MDkX6PFgVn3aU9ZtOtNJPBJJyuri+CsotlLfcbaqGssFatyAv1mqpVz/86omg9d/f3dFirWgG4zmR6Ux7pdey+XNgNFwSrJfQXWx7TTjZ6vPRYEx/dc8kibL3uuM3O+lrm5TlctnwEelkEHIC1FIlGzmMUmZDip86NpQA9WJkLb9E8XNLPs39XcGfQ/wl8ZiNTFuXiHTLGZXR5sbBQ4IvIN1e1mJn/TIqvvFdpz5phys3zJSgwVrWLKxrFVP7kSs/g/1ulsyWkul1Sl2HdDcnVth6vQ6FxXujypKX6f5guGLocSGMFCELiOQeS8vPcd3yXiHo4KYu6EPoTve96OtFagWsOJ6F9EaPNLKq+0T5QFb1rejroPx3t7i9yCuE3WtlkwLfiv4Vbd/gqvdKfpvLaSuv6tMFXSO8xDbfdq5RrWb79g03K54S22O43dn8Ce+VxNmlN4A7/YzpeSMQx6+skbL8G0t2a4w=
+api: eJzFVm1v2zYQ/isHfmkDyHaauFsjDMOaZSu8LwucBgUWBMFJOttsKFLli2PV038fjpJf46YvWLdPlsnj3XPH557jUhRUWcrRUyFSbwMloiCXW1l5abRIxZi8lTQn8DMCSznJysPEWECo5AIqrEvSHkxFFvkIZDVU1sxlIfUUpHcwuujDtWsdVOhn8GywtnaDpSyaQef3WV8kYr03KkQq3pAft5vn9Z+bnTE5/6vR3hqlyN7RgvLgSSSiQoslebJOpDdLobEkkYpF7wGVIt8LQRYiEZIzmxEWZMV+wlekC7LwLh6A6+vRBTyXE6Cy8nUCtQkWCppgUH7H5kEqBRmBI+8VFUciES6fUYkiXQpfVwzDeSv1VDRNskamjc7pM4jezgiiHYwuQDrADtV8eATBUQHeQNDyQyBVgyxIezmpu/v6EKST7KcPr5XaXnBQBudhhnMC1KtzkixfQrSzG058SSqLnkI9/UwuI11IZptr6WBpQtZSAXw04JT6cNEW13FW5xY/SiVRw6WxPkwDOQI5gaBdRTmjLXbRTlC5J+AmgnQoRXojKt87H8f/vesrcbudR2TIfgFiTszeRxmtWQkygvl0qW7ZrauMduR4/+T4mH/2+23VYkEX3Exmyz+4kOfk3CQoVXOw3GhP2rMbrCrFpZVGD9479rV8jMVk7yn33CeW/XrZIum6+K5Af9B6F+Jl1/NsDc9HRQJzVIESXqAEyOdHfdEka69eekWHLuOw22jOydECy4pPiku5gHuqgfMpgqL9QjRbsnEni8/HGpNiydsp7m7IyQ90Qsevhr2Ts+ysNzw7fdnD45dnvZfDH0+zF6fHp6eIHFe6uzWqrbiZMYpQP+b/ZC2ZzqMn7uf1+R0EzLsmEZh7Oae7guZGhdbJ1wfJUbM2WfLB6r04sWWaZpvyN7uE2L/JvWLv1eAQ5NtEdCR4StDHXXOIpmE8w0PtMZoA6hpWWCHqvQO0BKV0jmeOsTBDB1LPUcmCZ1WJnle5apErw+MXjz1fO7KAwc9YB9s+ggnKeC185uTku6BpEuEoD1b6Ok6sjNCSFenNLeuFxykPstgAf0PXIY7rWZKfGZ6QU4r9zNKUikElF6tpOsjq3vqi4pxldSI7b4fj7SbwFctEqwSr8J12RJa1S0n38XvMQKTij3dvRbKi4sz7KiYj9cREinb3/VffGjhHfQ+XiA5eX44e0fWgCaNst1/0h6/6J53YYR7FrpPq9UmRiGBVh8Olg8HDw0P/ozUZ6vt+bsp+xglQiZKNPOXaKDOV+MueTZMIJXNiEm6ixMEppzPvwFIsYPEl8bgalXG+RL3l7A15WGl8VsNmeowu9guz3Mj7f/8M6+7V08IPKoVSc21izsuObDeikos4KuMpJsgW4UQiUlkwU2fGebZeLjN0dG1V0/Dyh0C2bnk4RysxY7rcLEUhHX9vhvkna/J83PXdEewP4YPou0XUNfOLR5ZIhUjEPdXt2G9um2T1cPk6KP/eo/Eg8hbh/it2nQI/Xr6pbP/Dy/KJ/FZv4W/M67s8LZ+8ju69u4O33Xud5xRbYrX36HXWbGv4m99YSnn4bE/3Xd2NjDxI4Z/OowG8Nfekf14T2vNf5nTT/AO9U8pF
 sidebar_class_name: "get api-method"
 info_path: paas/endpoints/z-ro-bank-paas-api
 custom_edit_url: null
@@ -24,7 +24,7 @@ import Markdown from "@theme/Markdown";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 
-<h1 className={"openapi__heading"}>Get receipt by its operation id.</h1>
+<h1 className={"openapi__heading"}>Get Receipt by Operation ID</h1>
 
 <MethodEndpoint method={"get"} path={"/pix/receipt/by-operation/{id}"}></MethodEndpoint>
 
@@ -34,11 +34,11 @@ This endpoint has been deprecated and may be replaced or removed in future versi
 
 :::
 
-Enter the pix payment's operation ID below and execute to get its receipt. Should use <b>/operations/{id}/receipt</b> path.
+Retrieve the receipt for a pix payment operation by providing its ID. Use the path '/operations/{id}/receipt'.
 
 ## Request
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Operation id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","required":true,"in":"path","description":"Operation id.","schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian Portuguese if unspecified.","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
 
 Receipt found by operation id successfully.
 

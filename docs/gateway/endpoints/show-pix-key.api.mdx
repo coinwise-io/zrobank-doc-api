@@ -1,0 +1,54 @@
+---
+id: show-pix-key
+title: "Show Pix Key"
+description: "Show Pix Key"
+sidebar_label: "Show Pix Key"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVstu4zYU/RXirlpAsilZkiXt3MRpPc0kRpxMgQbBgBJpi2OZ1JCUH2Poa7roh8yPFZSd2M4LjTcWL6nDc899aQuGzDSk9zDma/Qn28CDA7JiihguxYhCCrqQqzFf2z0HKqLIghmm7DtbEGTBIAVOwQEuIIWKmAIcoEznilcWA9JHaDQ6BwcU+15zxSikRtXMAZ0XbEEg3YLZVBZMG8XFDBoH2JosqtLa+pTgPCFT1/dC5gaRH7pZEAduFufTPO4TQnACzYNF15UUmmkL6GNs/07JXM/BgVwKw4Sxu6SqSp637na/aXtke8yJm5bAozrPXRuJqUQkk7VBpmDIOse0YRRVfI3mO8mU1dPwHSdOj2Fb4V4Xq906lcS6R+i1KDeP4h0UioIkwsF06lLa990g93M3TnDiJjRIaJZRL6PMarpDPDBo129x2G8+Z8FEvbApcza+AAfOrsafwIHh58HoEhwY/3F9NbTrL2N4eI+xPdA4YEU64jN/ReSD+P9fj56f93zKsBviad8NpsHUTSKauLFH+17EoiSOgjbHFsvj6+3y+fXDz1+QYiWxYTWyjfP8g2wwxj72sId9z/OjXg9jL8hUZyaXnSzPOhVfY8/zcOzHYS+O+6EX+jjAGOOwh3tJHIUBjjyMOxiHMfZ/uwkTzx+MR+h8iG6Hk9thhHEyGVyj8eDu8jrycYRD7Pte1MNBmPh962iumPXgKzHH/h5Zn7t9TgxDq4KJR4/Rimi0f+FD3vvYD1zcdz3/1kvSHk57YQe3v7+hecpJkNk3lhtoGmsLsPeydu8EqU3BhLEF25L4cCHf7BsECrCHHik+d/2NQ6eVvGBak9lJMT2a3sM7KMeFYTOm3pVuJJak5BStXVJx16bd24IFLwW7kgZdyFpQmwHha+1wqJRULahmea242bSNXRORm7bKH2zTJ/qrkXMm7Nq22VOMSSFX6FCkC2YKaSfHjJl2ZJgCUuiSincrvu7O2UZ3t5w2cLhzYuO0k/X4sqeZUBhTwX5W2HXGiGqV2z1cSLWweQ2f/rp9If6txUK14SX/QahEdoQhUptdGv389+c/EgmCBhVHY0ImrRZcTOVxYH8omRExf1kjMq8XTJg9DCWIVBwdTpc8Z0K3ObIflYOK5AVDfgeDA7Uq986l3e5qteqQdrcj1ay7f1V3L0dnw6vJ0PU7uFOYRWlDuWRK7xh4HdzB1lRJbRZEHF31LCwnzJ+UNWxtulVJuLAgLaHtPmT3QCpuA8jX0PZpDQ6knNq2Xkht7IntNiOa3amyaaz5e83UZpc0S6I4yax691ugXNtnCumUlJq9IPNUxvDLzf774Fd08tnwKt29kQjr35KUtV3BfqbY4do8NA4UjFCmWh67jUGes8ocvfKiddgcf0rj34e30DT/ASE3+1g=
+sidebar_class_name: "get api-method"
+info_path: gateway/endpoints/zrobank
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Show Pix Key</h1>
+
+<MethodEndpoint method={"get"} path={"/api/pix/keys/{id}"}></MethodEndpoint>
+
+
+
+Show Pix Key
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"id","in":"path","description":"Pix Key ID","required":true,"schema":{"type":"string"},"example":"7da0c9af-215e-4625-b484-b8cfc87aaa09"}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Ok
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={false} schemaName={"id (string)"} qualifierMessage={undefined} schema={{"title":"id","description":"Pix Key id","type":"string","readOnly":true,"example":"649604ff-dd72-4c2c-8909-9d49dbbd1bde"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={false} schemaName={"type (string)"} qualifierMessage={"**Possible values:** [`CPF`, `CNPJ`, `EMAIL`, `PHONE`, `EVP`]"} schema={{"title":"type","description":"Pix Key type","type":"string","enum":["CPF","CNPJ","EMAIL","PHONE","EVP"],"readOnly":true,"example":"EVP"}}></SchemaItem><SchemaItem collapsible={false} name={"key"} required={false} schemaName={"key (string)"} qualifierMessage={undefined} schema={{"title":"key","description":"Pix Key","type":"string","readOnly":true,"example":"32c32de0-50f7-4f4f-96d9-81d716e69864"}}></SchemaItem><SchemaItem collapsible={false} name={"emv"} required={false} schemaName={"emv (string)"} qualifierMessage={undefined} schema={{"title":"emv","description":"EMV related to the key","type":"string","readOnly":true,"example":"00020101021126330014br.gov.bcb.pix0111082853887515204000053039865406100.005802BR5912API DE TESTE6009SAO PAULO620605022163045927"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={false} schemaName={"created_at (string)"} qualifierMessage={undefined} schema={{"title":"created_at","description":"Date when the key was created","type":"string","readOnly":true,"example":"2024-07-12T19:30:35.000000Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"id\": \"649604ff-dd72-4c2c-8909-9d49dbbd1bde\",\n  \"type\": \"EVP\",\n  \"key\": \"32c32de0-50f7-4f4f-96d9-81d716e69864\",\n  \"emv\": \"00020101021126330014br.gov.bcb.pix0111082853887515204000053039865406100.005802BR5912API DE TESTE6009SAO PAULO620605022163045927\",\n  \"created_at\": \"2024-07-12T19:30:35.000000Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthenticated
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaName={"message (integer)"} qualifierMessage={undefined} schema={{"title":"message","description":"Response 401","type":"integer","readOnly":true,"example":"Invalid x-api-key"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"Invalid x-api-key\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Error
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

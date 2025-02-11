@@ -1,0 +1,54 @@
+---
+id: v-2-get-conversion-credit-by-user-rest-controller-execute-v-2
+title: "Get Credit Balance and Liability"
+description: "Retrieve the user's liability (the sum of all negative balances in BRL across active currencies) and credit balance."
+sidebar_label: "Get Credit Balance and Liability"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVm1vGzcM/iuEvqwFzi8N+mWHYVjcbkWGAivSZgPmGQGto31q7qSrRDlxvfvvA+8lPidemhVbu3xxTiJFPuTDl53KKGhvKjbOqlSdE3tDGwLOCWIg/02AwuDSFIa38EROQyzBrQCLAiytkc2GYIkFWk0BjIXZ+WtA7V0IgLq51dF7stpQeApoM9CeMsO90lglylXkUVw4y1Sqfj15RfzC2Q35YJx90YjPtheB/DkFuWHvioL8Jd2QjkyXmxOVqAo9lsTkg0rnO2WxJJUq66wmlSgj8HLCjLxK7qB+lxM0cnD2EkwAhIuLs5fwZPP8qQQhA3YQrfkQqdiCyciyWW2bEP1hofvz9CFS4DGcFkX/EaCMgSHHDQHaXtOQH/d6KlEiazxlKmUfKVFB51SiSneKt5UgCOyNXau6Tm5B3YwKtOtPoDqzmdHIFBpPK08r8p4yENWIaxrDS1phLDgIvpnHj6YwaAeY3jjPcR0pEJgVRBsq0uJ/dtz/FRbhAQCJIhtLlc5VxaPZefM9unirFofIKu+yqHkUo8kekbdO/IHMHSTs97F3A4S9tnZ2ZdaxJeFnoTsOgtGviUdSSf8UUKvaFOFjwO0xXefYqaHWLloGzk3oOdlScknQ1c4+lwDnLdgUDrMwhs8LyEKkQ+VsoCD3J9Op/BxC3td53xdC1JpCkL6gnWWyLFpYVYXQ2Tg7eR9EdXfftFu+J83SC7y0FDat4dsONhC1sVweycBrs7ztdm8f6nTdxf0WJ37TDZZVQSodPZtOp3WiWmiXnfan3Xhx0CJh5XyT0YO35elpXQ9TMh9AvWd0kSg2LJqf6rDnXdZUXcv7z4/l7WwFaLfQ24am+wZAT1CaEIxdg/OQo8yEDRYmExAlspwK9rFqXn52/+WLhrqRc2F2m3FYoSkoa3VOTv4Tb+pEBdLRNzSZ79SS0JNX6XwhRGZcy1hRv7CGP2EfuiBhLYlzJ5NrTQ35kHOVqsnmZOJYT/ReeNKmZNSnREz6TTuxFnv7b4XXLXV7LzqyS/K6o6T756cGiErVz7+9U0nPq5y5ajAZu3IN37rUNw1whvYKZogBTt+c3SPfUZEOgkrVs/Hzb8fTrjpRN9XZNb5bTZWo6IvOj5BOJtfX1+OP3i3RXo21K8dLAUAlGhFi0tYVbm3whzsydaIKo0m4uLfSTFizzlmaWhPA7DH2JBqVC1yiHTz2ihi6apt11SY7yutBHR1EZ7dvSl9rW+pSzHTDk6pAYyVMDfxdx725ajYix7pN0y1Z+6YwGjSF3AUWld1uiYEufFHXcvwhkt+2vNygN7gU+swXddIPLymSzAS52E+Dv43Vk264ZE/hq65bR4N3RdvBqrjBIoqMkpH+eIRfaN96AMDtWviZCL7APvWg93dWv38Bxf90iXpUFI7sjgcRaeVPtaaKB3f3FqV6OKFe/ShDQqbrYAm5M1Gayu6u0G4Hb383awTgnbsi+73qfWb5VPWiruu/AE2r1yQ=
+sidebar_class_name: "get api-method"
+info_path: baas/endpoints/z-ro-bank-baas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get Credit Balance and Liability</h1>
+
+<MethodEndpoint method={"get"} path={"/v2/otc/conversions/credit-balance"}></MethodEndpoint>
+
+
+
+Retrieve the user's liability (the sum of all negative balances in BRL across active currencies) and credit balance.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-uuid","in":"header","description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-target-user-uuid","in":"header","description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Conversion credit success.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"liability"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Libability (Sum of all negative balances of all active currencies).","example":-1000}}></SchemaItem><SchemaItem collapsible={false} name={"credit_balance"} required={true} schemaName={"number"} qualifierMessage={undefined} schema={{"type":"number","description":"Credit balance for user.","example":10000}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"liability\": -1000,\n  \"credit_balance\": 10000\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

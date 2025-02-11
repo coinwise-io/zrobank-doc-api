@@ -1,0 +1,54 @@
+---
+id: get-operation-statement-file-by-date-rest-controller-execute
+title: "Get Operation Statement File by Date"
+description: "Retrieve a operation statement file for a specified date. If you haven't generated a file yet, use the appropriate endpoint to do so."
+sidebar_label: "Get Operation Statement File by Date"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVdtu20YQ/ZXBvDQBKDox/FAIRdE4bgz1JYZttUANIRiRQ3Lh5S69O5TNCPz3YkhJlmXXvQBB+yRxdi7nzHWNOccsmEaMdzjFS5ZgeMVA4BsOpGKIQsI1O4HCWIbCByCIDWemMJxDTsIpzArofAsVrdh9J1CyU3POgUarjiWBNjJIxUBNE3wTDAkDu7zxxgmIh9xD9CkmuAs+y3GK5yyft4KrLZhPxvJpd0bClxzlo3cSvLUcvvADZ60wJthQoJqFQ8TpzRod1YxTdN5l+mqUcMWUc8DkIA/XFcOgB7MzMBEI5vPZGbxZnbxVErmCbZ25a9l2YHJ2YopuoBb4rjXRqJ8UPli7L4hQt1GGHAG5rZ3hoJQHvcA5TiW0nGDMKq4Jp2uUrlHcUYJxJfZ9sqPyMLHkyr/gMnO5yUg4DviawAWHwDmoaUslp3DGBbVWorI6DfTVWEMOLnyQtmw5MpgCWrer+FO0Bdn4CtwE2bU1Tm+wkcnp5fA9mV/hYp9H4MYH+aKd9EImBnJ3LYfuGbfLwXBsQdwHUfhQk+AU9WkiplbHh4lcaKzYeBc5qtHxu3f68zTE5xfmwDj4ePXr2NiBpQ2Oc4htlnGMRWttl2Kf4MlL7mYFkOtgyxGGHo1AgaE2MRpXgg9QUQTjVmRNDiMVlSr+jef3zz3PIwegVirtqmyEXJCxWjC1OT7+Jmj6BCNnbTDSDVO2ZAoccHqz0PwKlTp8eCU+UMm4SLBmqbyOdckyDKlUOMWjOGoc7UZ/ssv3RBOt5eWwGod58Rj0Sms+1m8bej02gtZ6I0o2fz5t2+KX364fG6ISaQYixhV+aGEjVh9+T4OHU3K3cEEU4cPF7FkHvqiiKMfn9+nJ9+kxJph5J5SJet80/c4SE2yD3eCI06Oj+/v79GvwS3K3aebrdKkEuCajSsKZ89aXhn460OkTtCZjF3kvyrCCTFlJhMBDAvO/E0+z0fgoNbk9Z+cs8DgPu1UMuoth2cHZOMBPMrQeqLOT/9F52dRd+EGOGkvGae6GnKw3/XiDm37cP0aHHblIsPJRVHu9XlLkebB9r+JxW+k45CbS0u4tyj9NzpvLzRS+hYO19iLcW+6ebc4V2VY1UUdvRcFo6GEUk+11+NeY/oOT+Arv7RF/ZJz8E17f5Ca+And3qJ9UaLcJz3/WbaS7e++AHqyuoXKbJ3Ldnq8fTgcFuPa37H7EbUzRT+wXfd//AdXJbL0=
+sidebar_class_name: "get api-method"
+info_path: paas/endpoints/z-ro-bank-paas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get Operation Statement File by Date</h1>
+
+<MethodEndpoint method={"get"} path={"/storage/operation-statement-file"}></MethodEndpoint>
+
+
+
+Retrieve a operation statement file for a specified date. If you haven't generated a file yet, use the appropriate endpoint to do so.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"report_date","required":true,"in":"query","description":"Report date.","schema":{"format":"date-time","type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian Portuguese if unspecified.","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Operation statement in CSV file returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

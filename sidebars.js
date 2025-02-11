@@ -93,6 +93,31 @@ const sidebars = {
       items: require('./docs/gateway/endpoints/sidebar.js'),
     },
   ],
+  baasSidebar: [
+    {
+      type: 'category',
+      label: 'API Overview',
+      items: [
+        'baas/api-overview/introduction',
+        'baas/api-overview/authentication',
+        'baas/api-overview/protocol',
+        'baas/api-overview/idempotence',
+        'baas/api-overview/rate-limiting',
+        'baas/api-overview/request-id',
+        'baas/api-overview/serialization',
+        'baas/api-overview/replay',
+        'baas/api-overview/pagination',
+        'baas/api-overview/api-responses',
+        'baas/api-overview/changelog',
+        'baas/api-overview/webhooks',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Endpoints',
+      items: require('./docs/baas/endpoints/sidebar.js'),
+    },
+  ],
 }
 
 module.exports = sidebars

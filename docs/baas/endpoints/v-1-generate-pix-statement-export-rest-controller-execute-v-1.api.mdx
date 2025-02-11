@@ -1,0 +1,58 @@
+---
+id: v-1-generate-pix-statement-export-rest-controller-execute-v-1
+title: "Generate Pix Statement Export File"
+description: "Initiate a request to retrieve a pix statement by specifying wallet and date range. If no date range is provided, it defaults to the current date. Fill in the pix statement details in the parameters below and execute the request to obtain the file ID. Use the generated file ID with the 'storage/:id/download' endpoint to download the pix statement in CSV format."
+sidebar_label: "Generate Pix Statement Export File"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV1tv2zYU/isHfFkLyPIlSdsIw7CmXQfvZUEuLdDMCGjxyGJDkypJ+VLD/304lORL4rlulnV7WF4ckef2nTsXTGBhMeUeBUu8LTFiAl1qZeGl0SxhfS295B6Bg8XPJToP3oBFbyVO6LSQM3Ceexyj9jCcgyswldlc6hFMuVLogWsBgmRYrkcYQz8DbTZOQDoorJlIgSIC6UFgxkvlHanyOUJaWkvSiSWGd1IpkDrcbGsX6LlUbnXJLR+jR+tgiMpMgyE4w7T0GAg2EJmh5zVbJhVC/20M164iG6FGSy5qrmAqfR6ufnDeWD7CdiJFW5ipVoaLHwC1KIzUQXJzusNeqeHN5XvIjB1zH7OImYIUSaP7giXsfffXWvO5nF02XL/MCmP9BTr/xmhvjVJob2tUt5Mui9gaN0tuFkzzMbKEzVpVOFplKQWLmKTw5sgFWnY/6peoBVr4UMXv+rr/Fp7JDHBc+HkEc1PaJkZbNFOKzBDBofcKxXMWMZfmOOYsWTA/L8gM563UI7ZcRivLtNEpfsWiqxwh0JH7pQNeWzU5fg6lQ0GeLrX8XKKagxSovczmweV/aKj/6nDH8Fqp5sPBuHQeck7JrBtOiTZu+FjEiFbadYkcAmrWUlyPvoKqr4Wk4nNVcljM0FoUQKwlp1p5u1EKZ5Z/kUpyvYHp3Fhfjkp0CDKDUlfVJ1Hstj/jyu0BEDHU5ZglN6zwrbOL8N26vmSDbWSFNaJMD8qkq4ArkO+J3FbAPsbWbCBsuFOjMzkqq/p4FLrdIDy3I6oKh/ZbAVWshMIeAm6NaZrzmo2nqSmpUeTSrfpRSMkhNr1qHUuAiwpsAttRiOHvOiS1SC3ulvtb57n1u+QEv3wu0c4fuOV8q7HVwoB7CMLirU5Q9TuWMOrnLS/HVPwHWYZaPJVdqMUjrBqQdlcY7dARU6/ToZ99OtfTw5Vpis5lpVJz0p0a7VF7EsCLQlEnkEa3PzmSsngYNTP8hCkFprA0KLysbKChdCvFrmretutdPdiorGd8XCiizV5gDzuvjlu90+Fp6/j06KTFOyenrZPjl0fD7lHn6Ihztow2onCgs3ZqXwdg24pep3fS6vRa3c5V9yTpvkpOuvHRyxcfKRE24n2zArtl0CBiXvogaP/EvKhjx5ZLEny8K3r9DLieQ6O02iIccIswls7RXmMs5JzWjAlXUtTzm07JAzELkrsPJV+Hgi99Tv2gCjZkXCoUFU+v949Ys4yYw7S00s/DPjBEbtGy5GZA6ez5iNYEdoHkJEe+HKPPDS0ghXEh3bjPWcLak27bVlTtQs5aqxRv46ziJUV2Uu0dg7XWS0rkKlcb3XV2U8Tqo6j+512TWb99uFrnVO59EZBInZmQ6XW8w7A44/oOzjh38Pq8/yDxdpKQldV1Nz4+jTt1OfI0pHfdeVacLGKlVbUdLmm3p9Np/MWaIdd3cWrG8ZAA4JhLIvKYaqPMSPKf79EsI6ZkipSBay1hG5Gj3NMACA4Uh+gjb1CAxlxvCGvyH6gJrSoAqhKg1Rnv+2ex7kP/b/vfdduvc9vjzLcLxaWm/AhxX9Q1d8PCQl9XHZXiZt2FDrqq2pyKNblhi8WQO7y2armk42osUt0L6fhQbYzNv0yDrw/znabf4Xz3IjHhqiRyRlP9CcyoZ/dhRlQ7w9qEAX1YSTaEHhg1m963+ejpnkh7YNx/sz3Skc/qrVE8h3/1HbUHafMGfCTC7/SQ2huq+r33SATf4aG01/p7b7onQPEffR0d5IUdj8Itj1T0r9MUi80G92CNX26uU+e/X9JKQxvgxrJ+b/8Jbai+4nq+IfzHs0AAV+YO9U+sMdrTJ1sOlsvln1S1vC8=
+sidebar_class_name: "post api-method"
+info_path: baas/endpoints/z-ro-bank-baas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Generate Pix Statement Export File</h1>
+
+<MethodEndpoint method={"post"} path={"/v1/reports/pix-statement/exports"}></MethodEndpoint>
+
+:::caution deprecated
+
+This endpoint has been deprecated and may be replaced or removed in future versions of the API.
+
+:::
+
+Initiate a request to retrieve a pix statement by specifying wallet and date range. If no date range is provided, it defaults to the current date. Fill in the pix statement details in the parameters below and execute the request to obtain the file ID. Use the generated file ID with the 'storage/:id/download' endpoint to download the pix statement in CSV format.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"created_at_start","required":false,"in":"query","description":"Pix statement created at start.","schema":{"format":"date-time","type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"created_at_end","required":false,"in":"query","description":"Pix statement created at end.","schema":{"format":"date-time","type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"x-wallet-uuid","in":"header","description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)","schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-uuid","in":"header","description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-target-user-uuid","in":"header","description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Pix statement generated successfully.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"file_id"} required={true} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"File ID.","example":"f6e2e084-29b9-4935-a059-5473b13033aa"}}></SchemaItem><SchemaItem collapsible={false} name={"created_at"} required={true} schemaName={"date-time"} qualifierMessage={undefined} schema={{"format":"date-time","type":"string","description":"File created at.","example":"2025-02-10T15:18:51.376Z"}}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"file_id\": \"f6e2e084-29b9-4935-a059-5473b13033aa\",\n  \"created_at\": \"2025-02-10T15:18:51.376Z\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

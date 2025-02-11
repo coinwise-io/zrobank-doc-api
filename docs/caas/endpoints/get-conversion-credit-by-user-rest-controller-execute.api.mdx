@@ -1,11 +1,11 @@
 ---
 id: get-conversion-credit-by-user-rest-controller-execute
-title: "Conversions."
-description: "Get liability and credit balance conversion."
-sidebar_label: "Conversions."
+title: "Get Credit Balance and Liability"
+description: "Retrieve the user's liability (the sum of all negative balances in BRL across active currencies) and credit balance."
+sidebar_label: "Get Credit Balance and Liability"
 hide_title: true
 hide_table_of_contents: true
-api: eJzFVdtu2zgQ/ZWBnhIgkZ20T8Fi0SS9ZbHAFmmCAg2KgqLGFhuKVEnKiavq33eGpmzZDrrbh6JAgMgzw7mcOYfsMtugE0FZc1VmZ9kbDJfWLNB5slw6LFW4WN56dNfo2ROc1RrdZ3xE2QbMjrISG4dSBKTjwbXIFi+dajjnKiNoJQqlVViCMCXImBYKoYWRCHJdL6d0jXCixkCG7Oyuywz9oCTGUiR5FWesUJTost1CNxVCjIOrl6A8CLi9pa+DxfNDaD2WECy0Rn1tUS9BlWiCmi0h0CmHX1vlFefJ4VzrscFD3foAlVggNT+cU+i42RjnNpN7WWEtsrMuC8uG+/bBKTPP+v4TB/uG8qFn/+l0yv+2J9ggP2DkWynRe65FMAWqzadE02gl49ImXzwf7fZL2+ILysCIOl5xUKvC61WMQk1bF08A+rcqhrUdvG9rsDMQBI7BOZUmONIC/eAQMppl6xwaSfUOuW98FHWjqczxyXQ67WmQONrndPq/27jcpsvMOl6n28rNqad9P97I3WjUvaK0jqACn/wx46/TzmiDnP35U1u7ounNEobKEBlM9HMItfKe9g/UciU8KLMQWpU8Qi0CW3nyPIuZT/YzcxcgWqIocW61b5gJpbFcnTk9/SXdUOog5qy/7J8g4Tts8PGMnCfpu8ggEmiBlNrR5yfmOCm3snyPzDFST4SKfkw2EveT1SaOh01wOrcY5N46zQIPofFnk0kjhD+uap1/c7YQ5j5/XH7bo8dbW1tt5/COguH83VXWj1p8z6pYEX9oNEmFV59MR+njdQSC7H99uCFjYiU3EzFRZmYjWxNxPubOwgW1tSm929uTIQkJcp/kz+gvaZvUw9nThbc+Sd5tUB4eHtZ4SFvnBQ9A0lccFFAaRkOJFzsxNADdGchc3lSJd52aV8ETYeIeyv9Tj9ForA+1MKNkI5bku0h0m+vrZx+EtIaAj2HSaEEvQJ9a7BK/7rIRv9ZaPx5pvaJmOa7rCuHx1um+ZzM9BY5ZTJ8L4agl3isR+Wh4YpiSpfLsIFLPhPa7z9t4sIPrJLpD+A1v0ZM43eNy9HqS3luOIU+XXOf0vjRh5Nt7W7Zk/eYVK4OvpNG9vSOjiFpy0VU0yv3HRQyAG3uP5s9saC/wT6pDV+y/BBT1qA==
+api: eJzFVt9vIkcM/lcsvzSRlh+J8lCtqqohaSOqSI1IokpF6GRmDcxldmYzM0vC0f3fKy8LLCHN3cvpnoAZ2/N99mebNWZceFYUOcM0+pITzDgor4uoncUURxy95iVDXDCUgf1PAYymqTY6ruBETkOZg5sBGQOW5xT1kmFKhqziANrCYHQLpLwLAUjVt6r0nq3SHE6BbAbKc6bj1qmLCbqCPQmEYYYp3nC8cnbJPmhnr2rjweoxsB9xkJvonTHsP/ErqzIyJliQp5wj+4DpeI2WcsYUrbNKbrUwWzBl7PEt4YcFQ20Hw2vQAQgeH4fXcLK8OBX+GUQHpdXPJZsV6Ixt1LNVnR3Pz6UOWuJ04dKY9kGAvAwRFrRkILv10+yFbG3n9xUIasE5YbrGuCoEd4he2zlWVbKj8toxZOdf4TK0mZbahhpf4XnG3nMG4lrSnLtwzTMqTQzCauDpizaaLNw5H8t5yYFBz6C0oWAlaLNDtDMy4QO4CbItc0zHWMTOYFT/7jze46SqJhImFM4GDuJ43u/LxyH6fcm3AgmlUhyCoFDORrZRvKgojNDUzvY+B3FdH2Ny08+soijDi7ai3jy8k3LL1Jb59J1k3urpTvb3H0m+uTjWuuDmV8oLw5h2zvr9fpXghtqnxvvrMK4OegVmztdteRBbQverql2rcYvq0aOTBKOO4vlxq42ammFVSfSL96o2nAHZFWxfhroTA5BnyHUI2s7BeViQjIYlGZ0JhZyinArzLtaRz44jCwqgMi6kdzb1hhlpI7IUn/Pz74KmSjCwKn0tkvEap0yePabjicg40lxGDP4VFfwL+9QFSWrOceFkgM25lh7FBabYU3ur3qYSnW0l5C2/3Iytyf7he5HzRrHb5xuNS82ao6T58kfNAFP88+8HTLZyWsRY1GS0nblaZk3F/+l6BwOyT3BHFODybnikuXdNGgqY4ln34ufuedOUpOqmbMbUzhMTLL1pcIS013t5eel+8W5K9qmrXN6dCgHOSYtRZGWdcXNNv72xqRI0WrGIcP9KPWz1fBEDeK4TmH3Le5KNwoWYk20Fu+EITZMNmiaTHXXbap+D7Kz3s+hHbcumxJFfY68wpK2kqaa/bkQ3xpbodgOg0xoACxei2K3XUwr86E1VyfFzyX61EeOSvKapaGY8qZLtzpGWyHSQi/1K+N8EnYyaTjyFH7Bo383TE69afw2WZEqxQdm1387ru2zaD+Du1v8B3s3dpVJcxNbd0YKs2rPp5neZEjJXW8vnzUipq9xckV21Yv8yqA3gwT2x/RW3+KL8xGpSVdV/3g+Y4g==
 sidebar_class_name: "get api-method"
 info_path: caas/endpoints/z-ro-bank-paas-api
 custom_edit_url: null
@@ -24,7 +24,7 @@ import Markdown from "@theme/Markdown";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 
-<h1 className={"openapi__heading"}>Conversions.</h1>
+<h1 className={"openapi__heading"}>Get Credit Balance and Liability</h1>
 
 <MethodEndpoint method={"get"} path={"/conversions/credit-balance"}></MethodEndpoint>
 
@@ -34,11 +34,11 @@ This endpoint has been deprecated and may be replaced or removed in future versi
 
 :::
 
-Get liability and credit balance conversion.
+Retrieve the user's liability (the sum of all negative balances in BRL across active currencies) and credit balance.
 
 ## Request
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the requisition. All requisitions must have an identifier.","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian Portuguese if unspecified.","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
 
 Conversion credit success.
 

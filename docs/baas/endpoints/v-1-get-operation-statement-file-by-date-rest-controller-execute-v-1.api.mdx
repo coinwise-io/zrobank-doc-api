@@ -1,0 +1,54 @@
+---
+id: v-1-get-operation-statement-file-by-date-rest-controller-execute-v-1
+title: "Get Operation Statement File by Date"
+description: "Retrieve a operation statement file for a specified date. If you haven't generated a file yet, use the appropriate endpoint to do so."
+sidebar_label: "Get Operation Statement File by Date"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVttu20YQ/ZXBvDQBKPoCv1QIikZxY6gvCXxJgbqCMSKH5MLkLr07K4cR9O/F8iJLsuo6bpvGLzJ3Z3bmzOXMLDFll1hVizIax3jOYhUvGAhMzZbCMTgh4Yq1QKZKhsxYIHA1JypTnEJKwjFMM2iMh4IWrH8QyFkHdU6BOq2GJQLvGKRgoLq2praKhIF1WhulBcRAasCZGCNcG5+mOMZPR2csH4aji8Gd96rkSXNKwufs5J3RYk1Zsr3hz5x44ZvFEUZYk6WKha3D8fUSNVWMY9RGJ4wRqoC6YErZYrQTjMuCoZWD6SkoBwRXV9NTeLU4eR2QpMFjr9Wd57IBlbIWlTUtvj809H+W7zw7ieFtWQ4fDirvpA0VkB40Fdt40MMIg6yynOJYrOcIXVJwRTheojR1QODEKp3jahWtQX0elaTzv0E11alKSNi1ntaWM7aWUwiqnnKO4ZQz8qW4gG9i6YsqFekNTB+NFZ97dgwqA6/XpbDf/4xK9wSACFn7CsfXWMtoct5+j64ucLaNrLYm9YmMvFfpM/LWiz+Rua2E/R5bs4Fw0E6MzlTuu7p7Ebr9IIRszjLyju3XAupUAwr7HHAPmO4L6tUoSYwPDVcoN9RkV5Jzhr53HnIJcN6BHcN2FmL4pwGxXBsrN4FA9lR8G5E7z7Z5FJDzVrFjHty0lRlbkeAYw9VIVBUe3nVgFmy52mjHLigdHx6Gn20TH/bQn9Lw7uJTx2eWxVvNKTifJOxc5suyiXEV4cm+56YZkG5gwAgtKzkgy1Ap55TOwVgoyIHSCypVCh2UcBr8718+evzyVZtSL0XIeNK5nJEqOe10jo//E29WETpOvFXStLw6Z7JscXw9C/EVygPd4oUYSznjLMKKpTCBzXOWlpalwDEeLI4OXCd0sCb90TrkoxDrkGG2i47BZw92L0LauxQO1pddLYR090dR/8/7oTJ+/e3yoSYKkbrFonRm2mJVUoaLlhAmpG9hQuTg7cfpoyLcKxK87K6P4pMf40OMMDFaKJHwel/3a02M0Nuy98ONDw7u7+/jL9bMSd/GianieQDAFakgJJxoU5pc0c87MqsIS5WwdrxhpZ04Ki8kNHkbwPQ59kI0auOkIr3x2BkLPLTEegRDmMEwb+C06+GtCC1b6KzlO1os+rwLf5aDuiSlQ+zamCz7krzGdm3oi3JzF9kty1mEhXESVJbLOTm+suVqFY471gptkSpH83KDF/8yQq96mk1fww697fX5lptHDLqg0gdJDC24IKuC6bYlo2G0vNin/3UZeiICwyL3gD36GoTfaBt6AsB6aXshgm+w7Tzp/c5i9i+g+E5XnGdFYc9mt9WV6yl49ksYQ2Fub+xIOzOr7db+inSz8dabSSsAl+aW9U84+CHhE1ez1Wr1Jy1mrcM=
+sidebar_class_name: "get api-method"
+info_path: baas/endpoints/z-ro-bank-baas-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get Operation Statement File by Date</h1>
+
+<MethodEndpoint method={"get"} path={"/v1/storage/operation-statement-file"}></MethodEndpoint>
+
+
+
+Retrieve a operation statement file for a specified date. If you haven't generated a file yet, use the appropriate endpoint to do so.
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"report_date","required":true,"in":"query","description":"Report date.","schema":{"format":"date-time","type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Header Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"nonce","in":"header","description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-lang","in":"header","description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ","required":false,"schema":{"type":"string","enum":["pt-BR","en-US"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-uuid","in":"header","description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"x-product-target-user-uuid","in":"header","description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ","required":false,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><div><ApiTabs label={undefined} id={undefined}><TabItem label={"200"} value={"200"}><div>
+
+Operation statement in CSV file returned successfully.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+User authentication failed.
+
+</div><div></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+If any required params are missing or has invalid format or type.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
