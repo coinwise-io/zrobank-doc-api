@@ -40,7 +40,6 @@ const sidebars = {
         'paas/api-overview/pagination',
         'paas/api-overview/api-responses',
         'paas/api-overview/changelog',
-        'paas/api-overview/webhooks',
       ],
     },
     {
@@ -85,6 +84,7 @@ const sidebars = {
         'gateway/api-overview/errors',
         'gateway/api-overview/how-to-use',
         'gateway/api-overview/changelog',
+        'gateway/api-overview/webhooks',
       ],
     },
     {
