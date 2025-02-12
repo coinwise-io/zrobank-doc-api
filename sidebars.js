@@ -85,6 +85,7 @@ const sidebars = {
         'gateway/api-overview/errors',
         'gateway/api-overview/how-to-use',
         'gateway/api-overview/changelog',
+        'gateway/api-overview/webhooks',
       ],
     },
     {
