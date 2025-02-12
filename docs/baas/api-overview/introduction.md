@@ -1,8 +1,8 @@
 # Introduction
 
-Welcome to the Z.ro Bank Pix-as-a-Service (BaaS) API documentation. Our API provides a comprehensive set of endpoints to enable developers to build powerful applications that interact with our technology.
+Welcome to the Z.ro Bank Banking-as-a-Service (BaaS) API documentation. Our API provides a comprehensive set of endpoints to enable developers to build powerful applications that interact with our technology.
 
-This documentation provides all the necessary information to help you integrate with our API seamlessly. So let's get started and explore the exciting world of Pix with our Z.ro Bank BaaS API.
+This documentation provides all the necessary information to help you integrate with our API seamlessly. So let's get started and explore the exciting world of Banking with our Z.ro Bank BaaS API.
 
 ## API ID and API Key Setup
 
@@ -16,4 +16,4 @@ Once your `API ID` and `API Key` are created, you are ready to start the integra
 
 ## API Base URLs
 
-- **Test environment:** <a href="https://baas-hml.zrobank.xyz/api">https://baas-hml.zrobank.xyz/api</a>
+- **Test environment:** <a href="https://baas-hml.zrobank.xyz/api">https://api-baas-hml.zrobank.xyz/api</a>
