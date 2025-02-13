@@ -16,4 +16,4 @@ While we trust our employees, we understand the importance of guarding against i
 
 ### Contact Us
 
-For more information about our security measures, contact us COLOCAR CONTATO DO SUPORTE
+For more information about our security measures, [contact us](/overview/support) for assistance.
