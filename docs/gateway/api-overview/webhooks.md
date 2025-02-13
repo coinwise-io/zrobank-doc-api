@@ -30,6 +30,8 @@ All URLs can be the same or different, depending on your requirements.
 
 ## Webhook Security
 
+By default, all webhooks are sent without any authentication. If you need to secure your webhooks, you can use the
+
 ### OAuth2 Client Credentials Flow
 
 If all the URLs provided are an authenticated URL, we support the **OAuth2 Client Credentials** flow for authentication.
@@ -45,7 +47,7 @@ flow [here](https://www.oauth.com/oauth2-servers/access-tokens/client-credential
 ## Webhook Payloads
 
 This section provides examples of the latest webhook payload versions. If you are using an outdated version, we
-recommend updating or contacting our Support Team for assistance.
+recommend updating or contacting our [Support Team](/overview/support) for assistance.
 
 ### Transactional Webhooks
 
@@ -300,7 +302,7 @@ enabled). Below is the JSON payload structure returned by the webhook.
 ```json
 {
   "name": "José da Silva",
-  "document": "40442820135",
+  "document": "12345678900",
   "age": 54,
   "ofLegalAge": true,
   "suspectedDeath": false,
@@ -325,3 +327,8 @@ enabled). Below is the JSON payload structure returned by the webhook.
 | `pep`             | (nullable) Boolean     | Politically Exposed Person status; `null` if not applicable.    |
 | `merchantId`      | String (UUID format)   | Unique identifier for the merchant.                             |
 | `transactionUuid` | String (UUID format)   | Unique identifier for the transaction.                          |
+
+## Support
+
+It’s always a pleasure to help you! If you need assistance with the integration or have any questions, please feel free
+to use our documentation and do not hesitate to [contact us](/overview/support).

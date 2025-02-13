@@ -21,6 +21,7 @@ const sidebars = {
         'overview/introduction',
         'overview/security',
         'overview/environments',
+        'overview/support',
       ],
     },
   ],

@@ -29,4 +29,4 @@ https://www.bcb.gov.br/en/financialstability/pixfaqen
 
 # Questions?
 
-It’s always a pleasure to help you! If you require assistance with the integration or have any questions, please feel free to use our documentation and do not hesitate to contact us at meajuda@zrobank.com.br.
+It’s always a pleasure to help you! If you require assistance with the integration or have any questions, please feel free to use our documentation and do not hesitate to [contact us](/overview/support).
