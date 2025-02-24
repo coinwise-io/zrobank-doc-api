@@ -192,8 +192,8 @@ Your account can be configured so that when certain events occur on your account
    "genre":"M",
    "mother_name":"Jane Doe",
    "birth_date":"1984-11-03",
-   "document":11122233344,
-   "phone_number":5511955551234,
+   "document": "11122233344",
+   "phone_number": "5511955551234",
    "email":"new-user@zrobank.com.br",
    "active":true,
    "person_type":"LEGAL_PERSON",
@@ -233,8 +233,8 @@ Your account can be configured so that when certain events occur on your account
    "genre":"M",
    "mother_name":"Jane Doe",
    "birth_date":"1984-11-03",
-   "document":11122233344,
-   "phone_number":5511955551234,
+   "document": "11122233344",
+   "phone_number": "5511955551234",
    "email":"new-user@zrobank.com.br",
    "active":true,
    "person_type":"LEGAL_PERSON",
@@ -257,8 +257,8 @@ Your account can be configured so that when certain events occur on your account
    "occupation_cbo_code":0,
    "occupation_income":0,
    "patrimony":1299,
-   "failed_code":123,
-   "failed_message":"Failed onboarding description"
+   "failed_code": "DOCUMENT_INVALID",
+   "failed_message":"Failed document onboarding."
 }
 ```
 
