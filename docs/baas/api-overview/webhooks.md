@@ -8,14 +8,16 @@ Your account can be configured so that when certain events occur on your account
 
 ## Types of webhooks
 
-| Type                | Description                                  |
-| ------------------- | -------------------------------------------- |
-| PAYMENT             | When you send a pix payment.                 |
-| PAYMENT FAILED      | When you send a pix payment and it fails.    |
-| DEVOLUTION          | When you send a pix devolution.              |
-| DEVOLUTION FAILED   | When you send a pix devolution and it fails. |
-| DEVOLUTION RECEIVED | When receive a pix devolution.               |
-| DEPOSIT             | When receive a pix deposit.                  |
+| Type                | Description                                        |
+| ------------------- | ---------------------------------------------------|
+| PAYMENT             | When you send a pix payment.                       |
+| PAYMENT FAILED      | When you send a pix payment and it fails.          |
+| DEVOLUTION          | When you send a pix devolution.                    |
+| DEVOLUTION FAILED   | When you send a pix devolution and it fails.       |
+| DEVOLUTION RECEIVED | When receive a pix devolution.                     |
+| DEPOSIT             | When receive a pix deposit.                        |
+| ONBOARDING          | When you create a new user onboarding              |
+| ONBOARDING FAILED   | When you create a new user onboarding and it fails.|
 
 <br /><br />
 
@@ -173,6 +175,90 @@ Your account can be configured so that when certain events occur on your account
   "beneficiary_bank_name": "ZRO IP S/A",
   "beneficiary_bank_ispb": "26264220",
   "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+
+  <TabItem value="Onboarding">
+
+```json
+{
+   "id":"9c4af5a2-6a6b-4e4e-8af8-e03a331b9c5a",
+   "user_id":"c324fb70-db23-482c-a85e-ec3eb58d5941",
+   "type":"ONBOARDING",
+   "name":"John",
+   "full_name":"John Doe",
+   "genre":"M",
+   "mother_name":"Jane Doe",
+   "birth_date":"1984-11-03",
+   "document":11122233344,
+   "phone_number":5511955551234,
+   "email":"new-user@zrobank.com.br",
+   "active":true,
+   "person_type":"LEGAL_PERSON",
+   "legal_person_type":"LTDA",
+   "address":[
+      {
+         "zip_code":96075858,
+         "street":"Alameda",
+         "number":10,
+         "neighborhood":"Alphaville",
+         "city":"São Paulo",
+         "federative_unit":"SP",
+         "country":"Brasil",
+         "complement":"flat 1201"
+      }
+   ],
+   "nationality":"Brasileiro",
+   "pep":true,
+   "pep_since":"2015-02-18T18:38:09.412Z",
+   "occupation_cbo_code":0,
+   "occupation_income":0,
+   "patrimony":1299
+}
+```
+
+  </TabItem>
+
+  <TabItem value="Onboarding Failed">
+
+```json
+{
+   "id":"4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+   "user_id":"a379d727-5409-4b9f-9cae-902aed13efcd",
+   "type":"ONBOARDING_FAILED",
+   "name":"John",
+   "full_name":"John Doe",
+   "genre":"M",
+   "mother_name":"Jane Doe",
+   "birth_date":"1984-11-03",
+   "document":11122233344,
+   "phone_number":5511955551234,
+   "email":"new-user@zrobank.com.br",
+   "active":true,
+   "person_type":"LEGAL_PERSON",
+   "legal_person_type":"LTDA",
+   "address":[
+      {
+         "zip_code":96075858,
+         "street":"Alameda",
+         "number":10,
+         "neighborhood":"Alphaville",
+         "city":"São Paulo",
+         "federative_unit":"SP",
+         "country":"Brasil",
+         "complement":"flat 1201"
+      }
+   ],
+   "nationality":"Brasileiro",
+   "pep":true,
+   "pep_since":"2015-02-18T18:38:09.412Z",
+   "occupation_cbo_code":0,
+   "occupation_income":0,
+   "patrimony":1299,
+   "failed_code":123,
+   "failed_message":"Failed onboarding description"
 }
 ```
 
