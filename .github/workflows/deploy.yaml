@@ -15,6 +15,7 @@ env:
   PAAS_BASE_URL: ${{ secrets.PAAS_BASE_URL }}
   GATEWAY_BASE_URL: ${{ secrets.GATEWAY_BASE_URL }}
   BAAS_BASE_URL: ${{ secrets.BAAS_BASE_URL }}
+  GATEWAY_BASE_API_URL: ${{ secrets.GATEWAY_BASE_API_URL }}
 
 jobs:
   build:
