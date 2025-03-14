@@ -16,7 +16,7 @@ Your account can be configured so that when certain events occur on your account
 | DEVOLUTION FAILED   | When you send a pix devolution and it fails.       |
 | DEVOLUTION RECEIVED | When receive a pix devolution.                     |
 | DEPOSIT             | When receive a pix deposit.                        |
-| ONBOARDING          | When you create a new user onboarding              |
+| ONBOARDING FINISHED | When you create a new user onboarding              |
 | ONBOARDING FAILED   | When you create a new user onboarding and it fails.|
 
 <br /><br />
@@ -186,7 +186,7 @@ Your account can be configured so that when certain events occur on your account
 {
    "id":"9c4af5a2-6a6b-4e4e-8af8-e03a331b9c5a",
    "user_id":"c324fb70-db23-482c-a85e-ec3eb58d5941",
-   "type":"ONBOARDING",
+   "type":"ONBOARDING_FINISHED",
    "name":"John",
    "full_name":"John Doe",
    "genre":"M",
