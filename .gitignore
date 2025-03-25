@@ -21,3 +21,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
+
+# .mdx files
+docs/**/*.mdx
+*.mdx
