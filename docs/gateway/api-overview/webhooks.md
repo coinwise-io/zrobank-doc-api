@@ -56,7 +56,7 @@ refunds. Below, you will find different webhook versions and their respective pa
 explanation of each field.
 
 <Tabs>
-  <TabItem value="V5/V4 (Transactions)">
+  <TabItem value="V7/V6/V5/V4 (Transactions)">
 
 ```json
 {
@@ -91,7 +91,8 @@ explanation of each field.
   "bank_account_data": {
     "bank_name": "ZRO PAGAMENTOS S.A.",
     "bank_ispb": "26264220",
-    "account_number": "56841",
+    "account_number": "5684",
+    "account_digit": "1",
     "account_branch": "0001",
     "account_type": "CACC"
   }
@@ -136,7 +137,7 @@ explanation of each field.
 
   </TabItem>
 
-  <TabItem value="V5/V4 (Withdraw)">
+  <TabItem value="V7/V6/V5/V4 (Withdraw)">
 
 ```json
 {
@@ -163,8 +164,9 @@ explanation of each field.
   "bank_account_data": {
     "bank_name": "Zro Pagamento S.A",
     "bank_ispb": "26264220",
-    "account_number": "87200777",
-    "account_branch": null,
+    "account_number": "8720077",
+    "account_digit": "7",
+    "account_branch": "0001",
     "account_type": "CACC"
   }
 }
@@ -172,7 +174,7 @@ explanation of each field.
 
   </TabItem>
 
-  <TabItem value="V5 (Refund)">
+  <TabItem value="V6/V5 (Refund)">
 
 ```json
 {
@@ -197,7 +199,8 @@ explanation of each field.
   },
   "refund": {
     "transaction_parent_uuid": "dbbb6c6f-a7d5-4162-9569-4aa0de58c6e2",
-    "transaction_parent_merchant_id": "07d464eb-df1c-45a0-9e43-b275cec7b1da"
+    "transaction_parent_merchant_id": "07d464eb-df1c-45a0-9e43-b275cec7b1da",
+    "error_code": "INVALID_PAYER_DOCUMENT"
   },
   "bank_account_data": {
     "bank_name": "FACTA S.A. CFI",
@@ -251,45 +254,47 @@ explanation of each field.
 
 #### Fields Description
 
-| Field                                   | Possible Values/Format                                                              | Description                                                                      |
-|-----------------------------------------|-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| `status`                                | `"paid"`, `"failed"`                                                                | The status of the transaction.                                                   |
-| `webhook_type`                          | `"transaction"`, `"withdraw"`, `"refund"`                                           | The type of the webhook event.                                                   |
-| `transaction_uuid`                      | String (UUID format)                                                                | A unique identifier for the transaction.                                         |
-| `description`                           | String                                                                              | A description of the payment.                                                    |
-| `value`                                 | Numeric String (e.g., `"10.75"`)                                                    | The transaction amount in the respective currency.                               |
-| `payment_date`                          | String (ISO 8601 format, e.g., `"2023-01-01T12:11:39.090"`)                         | The date and time when the payment was processed.                                |
-| `end_to_end_id`                         | String (alphanumeric)                                                               | A unique identifier for tracking the transaction.                                |
-| `merchant_id`                           | String                                                                              | A unique identifier passed by merchant to identify the transaction.              |
-| `client`                                | Object                                                                              | The client who generated the QR code, requested withdraw or received refund.     |
-| `client.name`                           | String                                                                              | The name of the client associated with the transaction.                          |
-| `client.cpf_cnpj`                       | Numeric String (CPF: 11 digits, CNPJ: 14 digits)                                    | The unmasked CPF or CNPJ of the client.                                          |
-| `payer`                                 | (nullable) Object                                                                   | The payer's data. Null when the `webhook_type` is **not** `transaction`.         |
-| `payer.name`                            | String                                                                              | The name of the payer.                                                           |
-| `payer.cpf_cnpj`                        | String (CPF: 11 digits, CNPJ: 14 digits)                                            | The payer’s CPF or CNPJ. May be masked.                                          |
-| `payer.bank_name`                       | String                                                                              | The name of the payer’s bank.                                                    |
-| `payer.bank_ispb`                       | Numeric String (8-digit ISPB code)                                                  | The ISPB (bank identifier) of the payer’s bank.                                  |
-| `payer.paid_by_client`                  | Boolean: `true`, `false`                                                            | Indicates if the payer is the client who generated the QR code.                  |
-| `payer.kyc`                             | Object or Empty Object                                                              | KYC (Know Your Customer) data for the payer. May be an empty object.             |
-| `payer.kyc.ofLegalAge`                  | (nullable) Boolean                                                                  | Indicates if the client is of legal age.                                         |
-| `payer.kyc.birthdate`                   | (nullable) String (ISO format)                                                      | The client’s birth date.                                                         |
-| `payer.kyc.age`                         | (nullable) Integer                                                                  | The client’s age.                                                                |
-| `payer.kyc.pep`                         | (nullable) Boolean                                                                  | Indicates if the client is a PEP (Politically Exposed Person).                   |
-| `payer.kyc.suspectedDeath`              | (nullable) Boolean                                                                  | Indicates if the client is suspected to have passed away.                        |
-| `receiver`                              | (nullable) Object                                                                   | The receiver's data. Null when the `webhook_type` is not `withdraw` or `refund`. |
-| `receiver.name`                         | String                                                                              | The name of the receiver.                                                        |
-| `receiver.cpf_cnpj`                     | Numeric String (CPF: 11 digits, CNPJ: 14 digits)                                    | The unmasked CPF or CNPJ of the receiver.                                        |
-| `receiver.bank_name`                    | String                                                                              | The name of the receiver’s bank.                                                 |
-| `receiver.bank_ispb`                    | Numeric String (8-digit ISPB code)                                                  | The ISPB (bank identifier) of the receiver’s bank.                               |
-| `refund`                                | (nullable) Object                                                                   | Refund data. Null when the `webhook_type` is **not** `refund`.                   |
-| `refund.transaction_parent_uuid`        | String (UUID format)                                                                | The UUID of the original transaction if this is a refund.                        |
-| `refund.transaction_parent_merchant_id` | String (UUID format)                                                                | The merchant ID of the original transaction if this is a refund.                 |
-| `bank_account_data`                     | Object                                                                              | Payer's bank account data.                                                       |
-| `bank_account_data.bank_name`           | String                                                                              | The name of the bank where the QR code was paid.                                 |
-| `bank_account_data.bank_ispb`           | Numeric String (8-digit ISPB code)                                                  | The ISPB code of the bank.                                                       |
-| `bank_account_data.account_number`      | Numeric String (may be empty)                                                       | The account number from which the payment originated.                            |
-| `bank_account_data.account_branch`      | Numeric String (may be empty)                                                       | The branch number of the payer’s bank account.                                   |
-| `bank_account_data.account_type`        | `"CACC"`, `"SVGS"`, `"SLRY"`, `"CASH"`, `"TRAN"`, `"TAXE"`, `"OTHR"` (may be empty) | The type of account.                                                             |
+| Field                                   | Possible Values/Format                                                                                                                                               | Description                                                                        |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| `status`                                | `"paid"`, `"failed"`                                                                                                                                                 | The status of the transaction.                                                     |
+| `webhook_type`                          | `"transaction"`, `"withdraw"`, `"refund"`                                                                                                                            | The type of the webhook event.                                                     |
+| `transaction_uuid`                      | String (UUID format)                                                                                                                                                 | A unique identifier for the transaction.                                           |
+| `description`                           | String                                                                                                                                                               | A description of the payment.                                                      |
+| `value`                                 | Numeric String (e.g., `"10.75"`)                                                                                                                                     | The transaction amount in the respective currency.                                 |
+| `payment_date`                          | String (ISO 8601 format, e.g., `"2023-01-01T12:11:39.090"`)                                                                                                          | The date and time when the payment was processed.                                  |
+| `end_to_end_id`                         | String (alphanumeric)                                                                                                                                                | A unique identifier for tracking the transaction.                                  |
+| `merchant_id`                           | String                                                                                                                                                               | A unique identifier passed by merchant to identify the transaction.                |
+| `client`                                | Object                                                                                                                                                               | The client who generated the QR code, requested withdraw or received refund.       |
+| `client.name`                           | String                                                                                                                                                               | The name of the client associated with the transaction.                            |
+| `client.cpf_cnpj`                       | Numeric String (CPF: 11 digits, CNPJ: 14 digits)                                                                                                                     | The unmasked CPF or CNPJ of the client.                                            |
+| `payer`                                 | (nullable) Object                                                                                                                                                    | The payer's data. Null when the `webhook_type` is **not** `transaction`.           |
+| `payer.name`                            | String                                                                                                                                                               | The name of the payer.                                                             |
+| `payer.cpf_cnpj`                        | String (CPF: 11 digits, CNPJ: 14 digits)                                                                                                                             | The payer’s CPF or CNPJ. May be masked.                                            |
+| `payer.bank_name`                       | String                                                                                                                                                               | The name of the payer’s bank.                                                      |
+| `payer.bank_ispb`                       | Numeric String (8-digit ISPB code)                                                                                                                                   | The ISPB (bank identifier) of the payer’s bank.                                    |
+| `payer.paid_by_client`                  | Boolean: `true`, `false`                                                                                                                                             | Indicates if the payer is the client who generated the QR code.                    |
+| `payer.kyc`                             | Object or Empty Object                                                                                                                                               | KYC (Know Your Customer) data for the payer. May be an empty object.               |
+| `payer.kyc.ofLegalAge`                  | (nullable) Boolean                                                                                                                                                   | Indicates if the client is of legal age.                                           |
+| `payer.kyc.birthdate`                   | (nullable) String (ISO format)                                                                                                                                       | The client’s birth date.                                                           |
+| `payer.kyc.age`                         | (nullable) Integer                                                                                                                                                   | The client’s age.                                                                  |
+| `payer.kyc.pep`                         | (nullable) Boolean                                                                                                                                                   | Indicates if the client is a PEP (Politically Exposed Person).                     |
+| `payer.kyc.suspectedDeath`              | (nullable) Boolean                                                                                                                                                   | Indicates if the client is suspected to have passed away.                          |
+| `receiver`                              | (nullable) Object                                                                                                                                                    | The receiver's data. Null when the `webhook_type` is not `withdraw` or `refund`.   |
+| `receiver.name`                         | String                                                                                                                                                               | The name of the receiver.                                                          |
+| `receiver.cpf_cnpj`                     | Numeric String (CPF: 11 digits, CNPJ: 14 digits)                                                                                                                     | The unmasked CPF or CNPJ of the receiver.                                          |
+| `receiver.bank_name`                    | String                                                                                                                                                               | The name of the receiver’s bank.                                                   |
+| `receiver.bank_ispb`                    | Numeric String (8-digit ISPB code)                                                                                                                                   | The ISPB (bank identifier) of the receiver’s bank.                                 |
+| `refund`                                | (nullable) Object                                                                                                                                                    | Refund data. Null when the `webhook_type` is **not** `refund`.                     |
+| `refund.transaction_parent_uuid`        | String (UUID format)                                                                                                                                                 | The UUID of the original transaction if this is a refund.                          |
+| `refund.transaction_parent_merchant_id` | String (UUID format)                                                                                                                                                 | The merchant ID of the original transaction if this is a refund.                   |
+| `refund.error_code`                     | ISPB_NOT_IN_PERMISSION_LIST", "INVALID_PAID_VALUE", "INVALID_PAYER_DOCUMENT", "KYC_RESTRICTION", "INVALID_PAYER_BANK_ACCOUNT", "INVALID_DEPOSIT_FROM_JURIDIC_PERSON" | Error code when an automatic (due to company policies validations) refund happens. |
+| `bank_account_data`                     | Object                                                                                                                                                               | Payer's bank account data.                                                         |
+| `bank_account_data.bank_name`           | String                                                                                                                                                               | The name of the bank where the QR code was paid.                                   |
+| `bank_account_data.bank_ispb`           | Numeric String (8-digit ISPB code)                                                                                                                                   | The ISPB code of the bank.                                                         |
+| `bank_account_data.account_number`      | Numeric String (may be empty)                                                                                                                                        | The account number from which the payment originated.                              |
+| `bank_account_data.account_digit`       | Numeric String (may be empty)                                                                                                                                        | The account number digit from which the payment originated.                        |
+| `bank_account_data.account_branch`      | Numeric String (may be empty)                                                                                                                                        | The branch number of the payer’s bank account.                                     |
+| `bank_account_data.account_type`        | `"CACC"`, `"SVGS"`, `"SLRY"`, `"CASH"`, `"TRAN"`, `"TAXE"`, `"OTHR"` (may be empty)                                                                                  | The type of account.                                                               |
 
 ### KYC Webhook
 
