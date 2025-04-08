@@ -23,3 +23,6 @@ yarn-error.log*
 .vscode
 
 .idea
+# .mdx files
+docs/**/*.mdx
+*.mdx
