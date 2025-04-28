@@ -36,6 +36,7 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
+            showSchemas: true
           },
           paas: {
             specPath: 'specs/paas-spec.json',
@@ -44,6 +45,7 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
+            showSchemas: true
           },
           caas: {
             specPath: 'specs/caas-spec.json',
@@ -52,6 +54,7 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
+            showSchemas: true
           },
           baas: {
             specPath: 'specs/baas-spec.json',
@@ -60,6 +63,7 @@ const config = {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
             },
+            showSchemas: true
           },
         },
       },
