@@ -7,18 +7,10 @@ This documentation provides all the necessary information to help you integrate 
 ## Authentication
 
 There are two types of authentication methods available for the Z.ro Gateway API:
+- Using PaaS Token
+- Using `x-api-key` (DEPRECATED)
 
-### Using PaaS Token
-
-The PaaS Token is a unique identifier that allows you to authenticate your requests to the Z.ro Gateway API.
-
-To obtain your PaaS Token, you need to perform the authorization as described in the [PaaS Authorization section](/paas/api-overview/authentication).
-
-### Using x-api-key (DEPRECATED)
-
-Once your `x-api-key` are created, you are ready to start the integration.
-
-Note: Never share your `x-api-key` to anyone. If you have accidentally shared, please contact our [support team](/overview/support) immediately.
+You can see the details of each authentication method at the [Authentication section](/gateway/api-overview/authentication).
 
 ## API Base URLs
 
