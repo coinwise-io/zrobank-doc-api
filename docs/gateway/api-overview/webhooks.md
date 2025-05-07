@@ -56,7 +56,7 @@ refunds. Below, you will find different webhook versions and their respective pa
 explanation of each field.
 
 <Tabs>
-  <TabItem value="V7/V6/V5/V4 (Transactions)">
+  <TabItem value="V7 (Transactions)">
 
 ```json
 {
@@ -100,6 +100,49 @@ explanation of each field.
 ```
 
   </TabItem>
+  <TabItem value="V6/V5/V4 (Transactions)">
+
+```json
+{
+  "status": "paid",
+  "webhook_type": "transaction",
+  "transaction_uuid": "e2e30fe2-f7cf-4310-808e-faa60d70e9ee",
+  "description": "Payment Description",
+  "value": "1.16",
+  "payment_date": "2025-02-12T19:29:22.000000",
+  "end_to_end_id": "E26264220202502121929xKDMdFWi5Q5",
+  "merchant_id": "c50539dc-94de-495b-958a-324edf76b348",
+  "client": {
+    "name": "José da Silva",
+    "cpf_cnpj": "12345678900"
+  },
+  "payer": {
+    "name": "Maria Ferreira Da Silva",
+    "cpf_cnpj": "***004714**",
+    "bank_name": "Zro Pagamento S.A",
+    "bank_ispb": "26264220",
+    "paid_by_client": false,
+    "kyc": {
+      "ofLegalAge": true,
+      "birthdate": "1955-01-16T00:00:00",
+      "suspectedDeath": false,
+      "pep": null,
+      "age": 70
+    }
+  },
+  "receiver": null,
+  "refund": null,
+  "bank_account_data": {
+    "bank_name": "ZRO PAGAMENTOS S.A.",
+    "bank_ispb": "26264220",
+    "account_number": "56841",
+    "account_branch": "0001",
+    "account_type": "CACC"
+  }
+}
+```
+
+  </TabItem>
   <TabItem value="V3 (Transactions)">
 
 ```json
@@ -136,8 +179,7 @@ explanation of each field.
 ```
 
   </TabItem>
-
-  <TabItem value="V7/V6/V5/V4 (Withdraw)">
+  <TabItem value="V7 (Withdraw)">
 
 ```json
 {
@@ -173,7 +215,41 @@ explanation of each field.
 ```
 
   </TabItem>
+  <TabItem value="V6/V5/V4 (Withdraw)">
 
+```json
+{
+  "status": "paid",
+  "webhook_type": "withdraw",
+  "transaction_uuid": "01dea582-a6ad-59f8-8ec4-7dfedf23fd50",
+  "description": "Payment Description",
+  "value": "1.01",
+  "payment_date": "2025-02-12T19:29:22.000000",
+  "end_to_end_id": "E26264220202502121929xKDMdFWi5Q5",
+  "merchant_id": "2b541929-6ea2-4259-913e-45edd05178d0",
+  "client": {
+    "name": "Maria Ferreira Da Silva",
+    "cpf_cnpj": "12345678900"
+  },
+  "payer": null,
+  "receiver": {
+    "name": "Maria Ferreira Da Silva",
+    "cpf_cnpj": "12345678900",
+    "bank_name": "Zro Pagamento S.A",
+    "bank_ispb": "26264220"
+  },
+  "refund": null,
+  "bank_account_data": {
+    "bank_name": "Zro Pagamento S.A",
+    "bank_ispb": "26264220",
+    "account_number": "8720077",
+    "account_branch": "0001",
+    "account_type": "CACC"
+  }
+}
+```
+
+  </TabItem>
   <TabItem value="V6/V5 (Refund)">
 
 ```json
