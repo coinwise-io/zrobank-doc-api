@@ -17,7 +17,7 @@ you need to include the PaaS Token in the request header as a Bearer Token in th
 
 ```shell
 curl --request GET \
-  --url https://sandbox-api-payments.zrobank.xyz/api/v2/transactions \
+  --url https://payments-api-hml.zrobank.xyz/api/v2/transactions \
   --header 'Authorization: Bearer <YOUR-PAAS-TOKEN>'
 ```
 
@@ -33,7 +33,7 @@ header. Example:
 
 ```shell
 curl --request GET \
-  --url https://sandbox-api-payments.zrobank.xyz/api/v2/transactions \
+  --url https://payments-api-hml.zrobank.xyz/api/v2/transactions \
   --header 'x-api-key: <YOUR-X-API-KEY>'
 ```
 

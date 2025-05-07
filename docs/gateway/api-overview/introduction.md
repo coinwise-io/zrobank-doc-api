@@ -14,4 +14,4 @@ You can see the details of each authentication method at the [Authentication sec
 
 ## API Base URLs
 
-- **Test environment:** <a href="https://sandbox-api-payments.zrobank.xyz/api/documentation">https://sandbox-api-payments.zrobank.xyz/api/documentation</a>
+- **Test environment:** <a href="https://payments-api-hml.zrobank.xyz/api/documentation">https://payments-api-hml.zrobank.xyz/api/documentation</a>
