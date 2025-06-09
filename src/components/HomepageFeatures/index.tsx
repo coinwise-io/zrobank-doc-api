@@ -44,6 +44,17 @@ const FeatureList: FeatureItem[] = [
       </>
     ),
   },
+  {
+    title: 'Payments Gateway',
+    src: require('@site/static/img/dolar.png').default,
+    to: '/paymentGateway/api-overview/introduction',
+    description: (
+      <>
+        Accept card payments with agility and security through our Payments Gateway API, 
+        enabling seamless integration for in-person and online transactions.
+      </>
+    ),
+  },
 ]
 
 function Feature({ title, src, description, to }: FeatureItem) {

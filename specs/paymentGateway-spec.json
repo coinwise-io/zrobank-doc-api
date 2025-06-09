@@ -1224,9 +1224,7 @@
             "buyer_email",
             "buyer_phone",
             "buyer_document",
-            "buyer_document_type",
-            "payment_card",
-            "buyer_address"
+            "buyer_document_type"
           ]
         },
         "V1CreatePaymentRestResponse": {
@@ -1253,13 +1251,13 @@
               "format": "date-time",
               "type": "string",
               "description": "Payment creation date.",
-              "example": "2025-06-09T20:07:15.604Z"
+              "example": "2025-06-09T21:03:58.071Z"
             },
             "updated_at": {
               "format": "date-time",
               "type": "string",
               "description": "Payment update date.",
-              "example": "2025-06-09T20:07:15.604Z"
+              "example": "2025-06-09T21:03:58.071Z"
             }
           },
           "required": [
@@ -1293,13 +1291,13 @@
               "format": "date-time",
               "type": "string",
               "description": "Payment creation date.",
-              "example": "2025-06-09T20:07:15.604Z"
+              "example": "2025-06-09T21:03:58.071Z"
             },
             "updated_at": {
               "format": "date-time",
               "type": "string",
               "description": "Payment update date.",
-              "example": "2025-06-09T20:07:15.604Z"
+              "example": "2025-06-09T21:03:58.071Z"
             }
           },
           "required": [
