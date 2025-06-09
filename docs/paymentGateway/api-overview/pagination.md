@@ -48,8 +48,8 @@ All of the parameters listed above are optional. If not defined, their DEFAULT v
         "street": "Main Street",
         "number": 123,
         "city": "São Paulo",
-        "federativeUnit": "SP",
-        "zipCode": "01234-567",
+        "federative_unit": "SP",
+        "zip_code": "01234-567",
         "country": "Brazil",
         "neighborhood": "Downtown"
       },
