@@ -1,0 +1,1314 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+      "/v1/auth/signin": {
+        "post": {
+          "description": "Generate an Access Token by providing your API ID and API Key in the request body. Use the Access Token to authenticate and log in to the application via the 'Authorize' section.",
+          "operationId": "V1LoginAuthRestController_execute_v1",
+          "parameters": [
+            {
+              "name": "nonce",
+              "in": "header",
+              "description": "The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-lang",
+              "in": "header",
+              "description": "Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "pt-BR",
+                  "en-US"
+                ]
+              }
+            },
+            {
+              "name": "x-product-uuid",
+              "in": "header",
+              "description": "The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-product-target-user-uuid",
+              "in": "header",
+              "description": "The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "description": "Create an Access Token requires an API ID and Api Key.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/V1AuthenticateRestRequest"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "User authenticated successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuthenticateRestResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "If any required params are missing or has invalid format or type."
+            },
+            "401": {
+              "description": "User authentication failed."
+            }
+          },
+          "summary": "Create Access Token for Login",
+          "tags": [
+            "Authentication"
+          ]
+        }
+      },
+      "/v1/auth/refresh-token": {
+        "post": {
+          "description": "Refresh the user's access token by providing the old access token in the request header. A new access token will be generated upon successful authentication.",
+          "operationId": "V1RefreshTokenAuthRestController_execute_v1",
+          "parameters": [
+            {
+              "name": "x-access-token",
+              "in": "header",
+              "description": "Send expired jwt access token with refresh token inside.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "nonce",
+              "in": "header",
+              "description": "The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-lang",
+              "in": "header",
+              "description": "Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "pt-BR",
+                  "en-US"
+                ]
+              }
+            },
+            {
+              "name": "x-product-uuid",
+              "in": "header",
+              "description": "The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-product-target-user-uuid",
+              "in": "header",
+              "description": "The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User authenticated successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RefreshTokenRestResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "If any required params are missing or has invalid format or type."
+            },
+            "401": {
+              "description": "User authentication failed."
+            }
+          },
+          "summary": "Refresh Access Token",
+          "tags": [
+            "Authentication"
+          ]
+        }
+      },
+      "/v1/payments/{id}": {
+        "get": {
+          "description": "<b>Description</b>: Retrieve payment details by its unique ID.",
+          "operationId": "V1GetTransactionByIdRestController_execute_v1",
+          "parameters": [
+            {
+              "name": "nonce",
+              "in": "header",
+              "description": "The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-lang",
+              "in": "header",
+              "description": "Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "pt-BR",
+                  "en-US"
+                ]
+              }
+            },
+            {
+              "name": "x-product-uuid",
+              "in": "header",
+              "description": "The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-product-target-user-uuid",
+              "in": "header",
+              "description": "The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "required": true,
+              "in": "path",
+              "description": "Payment ID.",
+              "schema": {
+                "example": "b28163ec-3d28-4786-a154-7a28ab3600a6",
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Payment details retrieved successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GetPaymentByIdRestResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "If any required params are missing or has invalid format or type."
+            },
+            "401": {
+              "description": "User authentication failed."
+            },
+            "422": {
+              "description": "If any required params are missing or has invalid format or type."
+            }
+          },
+          "security": [
+            {
+              "bearer": []
+            }
+          ],
+          "summary": "Get Payment by ID",
+          "tags": [
+            "Payments"
+          ]
+        },
+        "delete": {
+          "description": "<b>Description</b>: Endpoint that process the cancellation of a payment.<br>",
+          "operationId": "V1CancelAcquirerTransactionRestController_execute_v1",
+          "parameters": [
+            {
+              "name": "nonce",
+              "in": "header",
+              "description": "The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-lang",
+              "in": "header",
+              "description": "Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "pt-BR",
+                  "en-US"
+                ]
+              }
+            },
+            {
+              "name": "x-product-uuid",
+              "in": "header",
+              "description": "The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-product-target-user-uuid",
+              "in": "header",
+              "description": "The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "id",
+              "required": true,
+              "in": "path",
+              "description": "Payment ID.",
+              "schema": {
+                "example": "b28163ec-3d28-4786-a154-7a28ab3600a6",
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Payment canceled successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/V1CancelPaymentRestResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "If any required params are missing or has invalid format or type."
+            },
+            "401": {
+              "description": "User authentication failed."
+            },
+            "422": {
+              "description": "If any required params are missing or has invalid format or type."
+            }
+          },
+          "security": [
+            {
+              "bearer": []
+            }
+          ],
+          "summary": "Cancel Payment",
+          "tags": [
+            "Payments"
+          ]
+        }
+      },
+      "/v1/payments": {
+        "get": {
+          "description": "<b>Description</b>: Retrieve payments for the authenticated user with pagination and sorting options.",
+          "operationId": "V1GetAllTransactionsRestController_execute_v1",
+          "parameters": [
+            {
+              "name": "nonce",
+              "in": "header",
+              "description": "The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-lang",
+              "in": "header",
+              "description": "Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "pt-BR",
+                  "en-US"
+                ]
+              }
+            },
+            {
+              "name": "x-product-uuid",
+              "in": "header",
+              "description": "The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-product-target-user-uuid",
+              "in": "header",
+              "description": "The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "required": false,
+              "in": "query",
+              "description": "Page number.",
+              "schema": {
+                "default": 1,
+                "type": "number"
+              }
+            },
+            {
+              "name": "size",
+              "required": false,
+              "in": "query",
+              "description": "Page size. Max size is 100.",
+              "schema": {
+                "maximum": 100,
+                "default": 20,
+                "type": "number"
+              }
+            },
+            {
+              "name": "sort",
+              "required": false,
+              "in": "query",
+              "description": "Page sort attribute.",
+              "schema": {
+                "example": "created_at",
+                "enum": [
+                  "created_at"
+                ],
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "required": false,
+              "in": "query",
+              "description": "Page order.",
+              "schema": {
+                "default": "asc",
+                "enum": [
+                  "asc",
+                  "desc"
+                ],
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Payments retrieved successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GetAllPaymentRestResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "If any required params are missing or has invalid format or type."
+            },
+            "401": {
+              "description": "User authentication failed."
+            },
+            "422": {
+              "description": "If any required params are missing or has invalid format or type."
+            }
+          },
+          "security": [
+            {
+              "bearer": []
+            }
+          ],
+          "summary": "Get all payments",
+          "tags": [
+            "Payments"
+          ]
+        },
+        "post": {
+          "description": "<b>Description</b>: Endpoint that processes a payment.",
+          "operationId": "V1CreateAcquirerTransactionRestController_execute_v1",
+          "parameters": [
+            {
+              "name": "x-transaction-uuid",
+              "in": "header",
+              "description": "The transaction ID is a UUID (v4) used to uniquely identify the object that will be created. All objects must have an identifier.",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "nonce",
+              "in": "header",
+              "description": "The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-lang",
+              "in": "header",
+              "description": "Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": [
+                  "pt-BR",
+                  "en-US"
+                ]
+              }
+            },
+            {
+              "name": "x-product-uuid",
+              "in": "header",
+              "description": "The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "x-product-target-user-uuid",
+              "in": "header",
+              "description": "The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/V1CreatePaymentBody"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Payment created successfully.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/V1CreatePaymentRestResponse"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "If any required params are missing or has invalid format or type."
+            },
+            "401": {
+              "description": "User authentication failed."
+            },
+            "422": {
+              "description": "If any required params are missing or has invalid format or type."
+            }
+          },
+          "security": [
+            {
+              "bearer": []
+            }
+          ],
+          "summary": "Create Payment",
+          "tags": [
+            "Payments"
+          ]
+        }
+      }
+    },
+    "info": {
+      "title": "Z.ro Bank Payments Gateway API",
+      "description": "Z.ro Bank Payments Gateway API",
+      "version": "1.53.0",
+      "contact": {
+        "name": "Z.ro Bank",
+        "url": "https://www.zrobank.com.br",
+        "email": "tecnologia@zrobank.com.br"
+      },
+      "license": {
+        "name": "All rights reserved",
+        "url": "https://www.zrobank.com.br"
+      }
+    },
+    "tags": [],
+    "servers": [],
+    "components": {
+      "securitySchemes": {
+        "bearer": {
+          "scheme": "bearer",
+          "bearerFormat": "JWT",
+          "type": "http"
+        }
+      },
+      "schemas": {
+        "V1AuthenticateRestRequest": {
+          "type": "object",
+          "properties": {
+            "api_id": {
+              "type": "string",
+              "description": "User defined apiId.",
+              "example": "2af31bf2-e676-4e81-8dde-dfd671124f00"
+            },
+            "api_key": {
+              "type": "string",
+              "description": "User defined apiKey.",
+              "example": "superpassword"
+            }
+          },
+          "required": [
+            "api_id",
+            "api_key"
+          ]
+        },
+        "AuthenticateRestResponse": {
+          "type": "object",
+          "properties": {
+            "access_token": {
+              "type": "string",
+              "description": "JWT access token. Token used to access all protected endpoints."
+            }
+          },
+          "required": [
+            "access_token"
+          ]
+        },
+        "RefreshTokenRestResponse": {
+          "type": "object",
+          "properties": {
+            "access_token": {
+              "type": "string",
+              "description": "JWT access token. Token used to access all protected endpoints."
+            }
+          },
+          "required": [
+            "access_token"
+          ]
+        },
+        "GetPaymentByIdRestResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Payment ID",
+              "example": "b28163ec-3d28-4786-a154-7a28ab3600a6"
+            },
+            "sales_channel": {
+              "type": "string",
+              "description": "Sales channel used for the Payment",
+              "enum": [
+                "POS",
+                "PDV",
+                "MPOS",
+                "PAYLINK",
+                "INTEGRATION",
+                "TAP_ON_PHONE",
+                "VIRTUAL_TERMINAL"
+              ],
+              "example": "INTEGRATION"
+            },
+            "transaction_method": {
+              "type": "string",
+              "description": "Payment method (Card Present or Card Not Present)",
+              "enum": [
+                "CNP",
+                "CP"
+              ],
+              "example": "CP"
+            },
+            "payment_method": {
+              "type": "string",
+              "description": "Payment method used",
+              "enum": [
+                "DEBIT",
+                "CREDIT"
+              ],
+              "example": "CREDIT"
+            },
+            "amount_local": {
+              "type": "number",
+              "description": "Payment value in local currency in cents",
+              "example": 1000
+            },
+            "amount_original": {
+              "type": "number",
+              "description": "Payment value in original currency in cents",
+              "example": 200
+            },
+            "amount_iof": {
+              "type": "number",
+              "description": "IOF (Tax on Financial Operations) amount",
+              "example": 2
+            },
+            "currency_local": {
+              "type": "string",
+              "description": "Currency used for the payment in local market"
+            },
+            "currency_original": {
+              "type": "string",
+              "description": "Original currency of the payment"
+            },
+            "currency_rate": {
+              "type": "number",
+              "description": "Exchange rate applied to the payment",
+              "example": 5
+            },
+            "status": {
+              "type": "string",
+              "description": "Current payment status",
+              "enum": [
+                "PENDING",
+                "AUTHORIZED",
+                "REVERTED",
+                "CANCELLED",
+                "SETTLED"
+              ],
+              "example": "AUTHORIZED"
+            },
+            "buyer_name": {
+              "type": "string",
+              "description": "Buyer full name",
+              "example": "John Doe"
+            },
+            "buyer_email": {
+              "type": "string",
+              "description": "Buyer email address",
+              "example": "john.doe@example.com"
+            },
+            "buyer_address": {
+              "type": "object",
+              "description": "Buyer address information",
+              "example": {
+                "street": "Main Street",
+                "number": 123,
+                "city": "São Paulo",
+                "federativeUnit": "SP",
+                "zipCode": "01234-567",
+                "country": "Brazil",
+                "neighborhood": "Downtown",
+                "complement": "Apt 456"
+              }
+            },
+            "buyer_phone_number": {
+              "type": "string",
+              "description": "Buyer phone number",
+              "example": "+5511999998888"
+            },
+            "buyer_document_type": {
+              "type": "string",
+              "description": "Buyer document type",
+              "enum": [
+                "CPF",
+                "CNPJ"
+              ],
+              "example": "CPF"
+            },
+            "buyer_document": {
+              "type": "string",
+              "description": "Buyer document number",
+              "example": "12345678901"
+            },
+            "card_last_numbers": {
+              "type": "string",
+              "description": "Last four digits of the card used",
+              "example": "1234"
+            },
+            "installments": {
+              "type": "number",
+              "description": "Number of installments for the payment",
+              "example": 1
+            },
+            "refund_id": {
+              "type": "string",
+              "description": "Refund ID if payment was refunded",
+              "example": "b321ef4f-eb5b-40a6-b862-dc47d6861ccc"
+            },
+            "chargeback_id": {
+              "type": "string",
+              "description": "Chargeback ID if payment was charged back",
+              "example": "9c5ea602-e41a-452c-9698-ab05b761b189"
+            },
+            "creation_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment creation date",
+              "example": "2023-01-01T10:00:00.000Z"
+            },
+            "last_update_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment last update date",
+              "example": "2023-01-01T11:00:00.000Z"
+            },
+            "confirmation_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment confirmation date",
+              "example": "2023-01-01T12:00:00.000Z"
+            },
+            "expected_settlement_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Expected settlement date",
+              "example": "2023-01-02T12:00:00.000Z"
+            }
+          },
+          "required": [
+            "id",
+            "sales_channel",
+            "transaction_method",
+            "payment_method",
+            "amount_local",
+            "amount_original",
+            "amount_iof",
+            "currency_local",
+            "currency_original",
+            "currency_rate",
+            "status",
+            "buyer_name",
+            "buyer_email",
+            "buyer_address",
+            "buyer_phone_number",
+            "buyer_document_type",
+            "buyer_document",
+            "card_last_numbers",
+            "installments",
+            "refund_id",
+            "chargeback_id",
+            "creation_date",
+            "last_update_date",
+            "confirmation_date",
+            "expected_settlement_date"
+          ]
+        },
+        "GetAllPaymentsRestResponseItem": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Payment ID",
+              "example": "b28163ec-3d28-4786-a154-7a28ab3600a6"
+            },
+            "sales_channel": {
+              "type": "string",
+              "description": "Sales channel used for the payment",
+              "enum": [
+                "POS",
+                "PDV",
+                "MPOS",
+                "PAYLINK",
+                "INTEGRATION",
+                "TAP_ON_PHONE",
+                "VIRTUAL_TERMINAL"
+              ],
+              "example": "INTEGRATION"
+            },
+            "transaction_method": {
+              "type": "string",
+              "description": "Payment method (Card Present or Card Not Present)",
+              "enum": [
+                "CNP",
+                "CP"
+              ],
+              "example": "CNP"
+            },
+            "payment_method": {
+              "type": "string",
+              "description": "Payment method used",
+              "enum": [
+                "DEBIT",
+                "CREDIT"
+              ],
+              "example": "CREDIT"
+            },
+            "amount_local": {
+              "type": "number",
+              "description": "Payment value in local currency in cents",
+              "example": 1000
+            },
+            "amount_original": {
+              "type": "number",
+              "description": "Payment value in original currency in cents",
+              "example": 200
+            },
+            "amount_iof": {
+              "type": "number",
+              "description": "IOF (Tax on Financial Operations) amount",
+              "example": 2
+            },
+            "currency_local": {
+              "type": "string",
+              "description": "Currency used for the payment in local market"
+            },
+            "currency_original": {
+              "type": "string",
+              "description": "Original currency of the payment"
+            },
+            "currency_rate": {
+              "type": "number",
+              "description": "Exchange rate applied to the payment",
+              "example": 5
+            },
+            "status": {
+              "type": "string",
+              "description": "Current payment status",
+              "enum": [
+                "PENDING",
+                "AUTHORIZED",
+                "REVERTED",
+                "CANCELLED",
+                "SETTLED"
+              ],
+              "example": "AUTHORIZED"
+            },
+            "buyer_name": {
+              "type": "string",
+              "description": "Buyer full name",
+              "example": "John Doe"
+            },
+            "buyer_email": {
+              "type": "string",
+              "description": "Buyer email address",
+              "example": "john.doe@example.com"
+            },
+            "buyer_address": {
+              "type": "object",
+              "description": "Buyer address information",
+              "example": {
+                "street": "Main Street",
+                "number": 123,
+                "city": "São Paulo",
+                "federativeUnit": "SP",
+                "zipCode": "01234-567",
+                "country": "Brazil",
+                "neighborhood": "Downtown"
+              }
+            },
+            "buyer_phone_number": {
+              "type": "string",
+              "description": "Buyer phone number",
+              "example": "+5511999998888"
+            },
+            "buyer_document_type": {
+              "type": "string",
+              "description": "Buyer document type",
+              "enum": [
+                "CPF",
+                "CNPJ"
+              ],
+              "example": "CPF"
+            },
+            "buyer_document": {
+              "type": "string",
+              "description": "Buyer document number",
+              "example": "12345678901"
+            },
+            "card_last_numbers": {
+              "type": "string",
+              "description": "Last four digits of the card used",
+              "example": "1234"
+            },
+            "installments": {
+              "type": "number",
+              "description": "Number of installments for the payment",
+              "example": 1
+            },
+            "refund_id": {
+              "type": "string",
+              "description": "Refund ID if payment was refunded",
+              "example": "b321ef4f-eb5b-40a6-b862-dc47d6861ccc"
+            },
+            "chargeback_id": {
+              "type": "string",
+              "description": "Chargeback ID if payment was charged back",
+              "example": "9c5ea602-e41a-452c-9698-ab05b761b189"
+            },
+            "creation_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment creation date",
+              "example": "2023-01-01T10:00:00.000Z"
+            },
+            "last_update_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment last update date",
+              "example": "2023-01-01T11:00:00.000Z"
+            },
+            "confirmation_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment confirmation date",
+              "example": "2023-01-01T12:00:00.000Z"
+            },
+            "expected_settlement_date": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Expected settlement date",
+              "example": "2023-01-02T12:00:00.000Z"
+            }
+          },
+          "required": [
+            "id",
+            "sales_channel",
+            "transaction_method",
+            "payment_method",
+            "amount_local",
+            "amount_original",
+            "amount_iof",
+            "currency_local",
+            "currency_original",
+            "currency_rate",
+            "status",
+            "buyer_name",
+            "buyer_email",
+            "buyer_address",
+            "buyer_phone_number",
+            "buyer_document_type",
+            "buyer_document",
+            "card_last_numbers",
+            "installments",
+            "refund_id",
+            "chargeback_id",
+            "creation_date",
+            "last_update_date",
+            "confirmation_date",
+            "expected_settlement_date"
+          ]
+        },
+        "GetAllPaymentRestResponse": {
+          "type": "object",
+          "properties": {
+            "page": {
+              "type": "number",
+              "description": "Page number.",
+              "example": 1
+            },
+            "page_size": {
+              "type": "number",
+              "description": "Page size.",
+              "example": 20
+            },
+            "page_total": {
+              "type": "number",
+              "description": "Page total.",
+              "example": 20
+            },
+            "total": {
+              "type": "number",
+              "description": "Total of elements.",
+              "example": 100
+            },
+            "data": {
+              "description": "Payment data",
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetAllPaymentsRestResponseItem"
+              }
+            }
+          },
+          "required": [
+            "page",
+            "page_size",
+            "page_total",
+            "total",
+            "data"
+          ]
+        },
+        "PaymentCardRequest": {
+          "type": "object",
+          "properties": {
+            "card_number": {
+              "type": "string",
+              "description": "Card number.",
+              "example": "1234567890123456"
+            },
+            "card_cvv": {
+              "type": "string",
+              "description": "Card CVV.",
+              "example": "123"
+            },
+            "card_name": {
+              "type": "string",
+              "description": "Card holder name.",
+              "example": "John Doe"
+            },
+            "card_expiry_date": {
+              "type": "string",
+              "description": "Card expiry date in MM-YYYY format.",
+              "example": "04-2025"
+            }
+          },
+          "required": [
+            "card_number",
+            "card_cvv",
+            "card_name",
+            "card_expiry_date"
+          ]
+        },
+        "OmitTypeClass": {
+          "type": "object",
+          "properties": {
+            "zip_code": {
+              "type": "object",
+              "description": "User address zip code.",
+              "example": "0975858"
+            },
+            "street": {
+              "type": "object",
+              "description": "User address street.",
+              "example": "Alameda"
+            },
+            "number": {
+              "type": "object",
+              "description": "User address number.",
+              "example": 10
+            },
+            "neighborhood": {
+              "type": "object",
+              "description": "User address neighborhood.",
+              "example": "Alphaville"
+            },
+            "city": {
+              "type": "object",
+              "description": "User address neighborhood.",
+              "example": "São Paulo"
+            },
+            "federative_unit": {
+              "type": "object",
+              "description": "User address federative unit.",
+              "example": "SP"
+            },
+            "country": {
+              "type": "object",
+              "description": "User address country.",
+              "example": "Brasil"
+            },
+            "complement": {
+              "type": "object",
+              "description": "User address complement.",
+              "example": "flat 1201"
+            }
+          },
+          "required": [
+            "zip_code",
+            "street",
+            "number",
+            "city",
+            "federative_unit",
+            "country"
+          ]
+        },
+        "V1CreatePaymentBody": {
+          "type": "object",
+          "properties": {
+            "payment_method": {
+              "type": "string",
+              "description": "Payment method used.",
+              "enum": [
+                "DEBIT",
+                "CREDIT"
+              ],
+              "example": "CREDIT"
+            },
+            "amount_total": {
+              "type": "number",
+              "description": "Payment amount in cents.",
+              "example": 10000
+            },
+            "currency_tag": {
+              "type": "string",
+              "description": "Three-letter code of the payment currency.",
+              "enum": [
+                "BRL",
+                "USD"
+              ],
+              "example": "BRL"
+            },
+            "buyer_name": {
+              "type": "string",
+              "description": "Buyer name.",
+              "example": "John Doe"
+            },
+            "buyer_email": {
+              "type": "string",
+              "description": "Buyer email address.",
+              "example": "john.doe@zrobank.com"
+            },
+            "buyer_phone": {
+              "type": "string",
+              "description": "Buyer phone number.",
+              "example": "+5511999999999"
+            },
+            "buyer_document": {
+              "type": "string",
+              "description": "Buyer document.",
+              "example": "12345678901"
+            },
+            "buyer_document_type": {
+              "type": "string",
+              "description": "Buyer document type.",
+              "enum": [
+                "CPF",
+                "CNPJ"
+              ],
+              "example": "CPF"
+            },
+            "installments": {
+              "type": "number",
+              "description": "Number of installments for the payment.",
+              "example": 1
+            },
+            "payment_card": {
+              "description": "Payment card information.",
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/PaymentCardRequest"
+                }
+              ]
+            },
+            "buyer_address": {
+              "description": "Buyer address information.",
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/OmitTypeClass"
+                }
+              ]
+            }
+          },
+          "required": [
+            "payment_method",
+            "amount_total",
+            "currency_tag",
+            "buyer_name",
+            "buyer_email",
+            "buyer_phone",
+            "buyer_document",
+            "buyer_document_type",
+            "payment_card",
+            "buyer_address"
+          ]
+        },
+        "V1CreatePaymentRestResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Payment ID.",
+              "example": "b28163ec-3d28-4786-a154-7a28ab3600a6"
+            },
+            "status": {
+              "type": "string",
+              "description": "Payment status.",
+              "example": "AUTHORIZED",
+              "enum": [
+                "PENDING",
+                "AUTHORIZED",
+                "REVERTED",
+                "CANCELLED",
+                "SETTLED"
+              ]
+            },
+            "created_at": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment creation date.",
+              "example": "2025-06-09T20:07:15.604Z"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment update date.",
+              "example": "2025-06-09T20:07:15.604Z"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        "V1CancelPaymentRestResponse": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Payment ID.",
+              "example": "b28163ec-3d28-4786-a154-7a28ab3600a6"
+            },
+            "status": {
+              "type": "string",
+              "description": "Payment status.",
+              "example": "CANCELLED",
+              "enum": [
+                "PENDING",
+                "AUTHORIZED",
+                "REVERTED",
+                "CANCELLED",
+                "SETTLED"
+              ]
+            },
+            "created_at": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment creation date.",
+              "example": "2025-06-09T20:07:15.604Z"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "type": "string",
+              "description": "Payment update date.",
+              "example": "2025-06-09T20:07:15.604Z"
+            }
+          },
+          "required": [
+            "id",
+            "status",
+            "created_at",
+            "updated_at"
+          ]
+        }
+      }
+    }
+  }
