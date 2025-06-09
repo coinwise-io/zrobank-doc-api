@@ -3,6 +3,7 @@ const fs = require('fs')
 const paasUrl = process.env.PAAS_BASE_URL
 const gatewayUrl = process.env.GATEWAY_BASE_URL
 const baasUrl = process.env.BAAS_BASE_URL
+const paymentGatewayUrl = process.env.PAYMENT_GATEWAY_BASE_URL
 
 function generateSpecs(url, filename, excludeOptions = []) {
   let specJson = {}
@@ -46,3 +47,4 @@ generateSpecs(paasUrl, 'paas-spec', [
 generateSpecs(paasUrl, 'caas-spec', ['/cielo/', '/nupay/', '/picpay/', '/pix/'])
 generateSpecs(gatewayUrl, 'gateway-spec', [])
 generateSpecs(baasUrl, 'baas-spec', [])
+generateSpecs(paymentGatewayUrl, 'paymentGateway-spec', [])

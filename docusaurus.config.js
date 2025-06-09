@@ -65,6 +65,15 @@ const config = {
             },
             showSchemas: true
           },
+          paymentGateway: {
+            specPath: 'specs/paymentGateway-spec.json',
+            outputDir: 'docs/paymentGateway/endpoints',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+            showSchemas: true
+          },
         },
       },
     ],
@@ -129,6 +138,12 @@ const config = {
             sidebarId: 'paasSidebar',
             position: 'left',
             label: 'Pix as a Service',
+          },
+                    {
+            type: 'docSidebar',
+            sidebarId: 'paymentGatewaySidebar',
+            position: 'left',
+            label: 'Payments Gateway',
           },
         ],
       },
