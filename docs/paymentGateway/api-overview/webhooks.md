@@ -8,21 +8,11 @@ Your account can be configured so that when certain events occur on your account
 
 ## Types of webhooks
 
-| Type                | Description                                        |
-| ------------------- | ---------------------------------------------------|
-| TRANSACTION_UPDATE  | Is triggered when the status of a transaction has changed |
-
-## Transaction Status 
-
-| Status                | Description                                        |
-| -------------------   | ---------------------------------------------------|
-| PENDING               | The transaction is pending authorization. If the sale is refused, the status will change to CANCELLED, otherwise to AUTHORIZED. |
-| AUTHORIZED            | The transaction was Authorized. |
-| CANCELLED             | The transaction was Not Authorized. |
-| SETTLED               | The transaction was Settled. |
-| REVERTED              | The transaction was Canceled, due to a chargeback or refund.  |
-
-
+| Type                              | Description                                      |
+| --------------------------------- | -------------------------------------------------|
+| ACQUIRING_TRANSACTION_AUTHORIZED  | Is triggered when the transaction is authorized. |
+| ACQUIRING_TRANSACTION_DECLINED    | Is triggered when the transaction is declined.   |
+| ACQUIRING_TRANSACTION_FAILED      | Is triggered when the transaction is failed.     |
 
 <br /><br />
 
@@ -41,45 +31,123 @@ Your account can be configured so that when certain events occur on your account
 ## Payloads (Version 1)
 
 <Tabs>
-  <TabItem value="TRANSACTION UPDATE">
+  <TabItem value="Authorized">
 
 ```json
 {
-  "payment_id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
-  "operation": "payment_status_change",
-  "status": "SETTLED",
+  "id": "0197f06f-cb13-78fd-9396-6e66fa7db8ae",
+  "user_id": "df4fbd15-6c3e-4327-9bb2-1cfd7f5d6b43",
+  "operation_id": null,
+  "wallet_id": "5a78db37-95e0-48b5-b3f7-e8f4c1e3ed9f",
+  "type": "ACQUIRING_TRANSACTION_AUTHORIZED",
+  "status": "AUTHORIZED",
   "sales_channel": "INTEGRATION",
-  "transaction_method": "CP",
   "payment_method": "CREDIT",
-  "amount_local": 100,
-  "amount_original": 20,
-  "amount_iof": 2,
-  "currency_local": "BRL",
-  "currency_original": "BRL",
-  "currency_rate": 5,
-  "buyer_name": "John Doe",
-  "buyer_email": "john.doe@example.com",
-  "buyer_address": {
-    "street": "Main Street",
-    "number": 123,
-    "city": "São Paulo",
-    "federative_unit": "SP",
-    "zip_code": "01234-567",
-    "country": "Brazil",
-    "neighborhood": "Downtown",
-    "complement": "Apt 456"
-  },
-  "buyer_phone_number": "+5511999998888",
-  "buyer_document_type": "CPF",
-  "buyer_document": "12345678901",
+  "amount": 12990,
+  "currency_tag": "BRL",
+  "third_part_name": "João Silva",
+  "third_part_email": "joao.silva@example.com",
+  "third_part_phone_number": "+551191234-5678",
+  "third_part_document_type": "CPF",
+  "third_part_document": "12345678900",
+  "third_part_address_street": "Rua das Flores",
+  "third_part_address_number": 123,
+  "third_part_address_city": "São Paulo",
+  "third_part_address_federativeUnit": "SP",
+  "third_part_address_zipCode": "01234567",
+  "third_part_address_country": "BR",
+  "third_part_address_neighborhood": "Jardins",
+  "third_part_address_complement": "Apto 45",
   "card_last_numbers": "1234",
-  "installments": 1,
-  "refund_id": "b321ef4f-eb5b-40a6-b862-dc47d6861ccc",
-  "chargeback_id": "9c5ea602-e41a-452c-9698-ab05b761b189",
-  "creation_date": "2023-01-01T10:00:00.000Z",
-  "last_update_date": "2023-01-01T11:00:00.000Z",
-  "confirmation_date": "2023-01-01T11:00:00.000Z",
-  "expected_settlement_date": "2023-02-02T12:00:00.000Z"
+  "installments": 3,
+  "authorized_date": "2025-07-09T14:00:00Z",
+  "declined_date": null,
+  "cancelled_date": null,
+  "settlement_date": null,
+  "scheduled_settlement_date": "2025-07-10T00:00:00Z",
+  "cancelled_max_date": "2025-07-11T23:59:59Z"
+}
+```
+
+  </TabItem>
+
+  <TabItem value="Declined">
+
+```json
+{
+  "id": "0197f06f-cb13-78fd-9396-6e66fa7db8ae",
+  "user_id": "df4fbd15-6c3e-4327-9bb2-1cfd7f5d6b43",
+  "operation_id": null,
+  "wallet_id": "5a78db37-95e0-48b5-b3f7-e8f4c1e3ed9f",
+  "type": "ACQUIRING_TRANSACTION_DECLINED",
+  "status": "DECLINED",
+  "sales_channel": "INTEGRATION",
+  "payment_method": "CREDIT",
+  "amount": 12990,
+  "currency_tag": "BRL",
+  "third_part_name": "João Silva",
+  "third_part_email": "joao.silva@example.com",
+  "third_part_phone_number": "+551191234-5678",
+  "third_part_document_type": "CPF",
+  "third_part_document": "12345678900",
+  "third_part_address_street": "Rua das Flores",
+  "third_part_address_number": 123,
+  "third_part_address_city": "São Paulo",
+  "third_part_address_federativeUnit": "SP",
+  "third_part_address_zipCode": "01234567",
+  "third_part_address_country": "BR",
+  "third_part_address_neighborhood": "Jardins",
+  "third_part_address_complement": "Apto 45",
+  "card_last_numbers": "1234",
+  "installments": 3,
+  "authorized_date": null,
+  "declined_date": "2025-07-09T14:00:00Z",
+  "cancelled_date": null,
+  "settlement_date": null,
+  "scheduled_settlement_date": null,
+  "cancelled_max_date": null
+}
+```
+
+  </TabItem>
+
+  <TabItem value="Failed">
+
+```json
+{
+  "id": "0197f06f-cb13-78fd-9396-6e66fa7db8ae",
+  "user_id": "df4fbd15-6c3e-4327-9bb2-1cfd7f5d6b43",
+  "operation_id": null,
+  "wallet_id": "5a78db37-95e0-48b5-b3f7-e8f4c1e3ed9f",
+  "type": "ACQUIRING_TRANSACTION_FAILED",
+  "status": "FAILED",
+  "sales_channel": "INTEGRATION",
+  "payment_method": "CREDIT",
+  "amount": 12990,
+  "currency_tag": "BRL",
+  "third_part_name": "João Silva",
+  "third_part_email": "joao.silva@example.com",
+  "third_part_phone_number": "+551191234-5678",
+  "third_part_document_type": "CPF",
+  "third_part_document": "12345678900",
+  "third_part_address_street": "Rua das Flores",
+  "third_part_address_number": 123,
+  "third_part_address_city": "São Paulo",
+  "third_part_address_federativeUnit": "SP",
+  "third_part_address_zipCode": "01234567",
+  "third_part_address_country": "BR",
+  "third_part_address_neighborhood": "Jardins",
+  "third_part_address_complement": "Apto 45",
+  "card_last_numbers": "1234",
+  "installments": 3,
+  "authorized_date": null,
+  "declined_date": null,
+  "cancelled_date": null,
+  "settlement_date": null,
+  "scheduled_settlement_date": null,
+  "cancelled_max_date": null,
+  "failed_code": "ACQUIRING_TRANSACTION_NOT_FOUND",
+  "failed_message": "Transação de adquirência não encontrada."
 }
 ```
 
