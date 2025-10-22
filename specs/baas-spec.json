@@ -18139,7 +18139,7 @@
    "info":{
       "title":"Z.ro Bank Baas API",
       "description":"Z.ro Bank Baas API",
-      "version":"1.66.4",
+      "version":"1.68.0",
       "contact":{
          "name":"Z.ro Bank",
          "url":"https://www.zrobank.com.br",
@@ -18245,7 +18245,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.775Z"
+                  "example":"2025-10-22T18:41:31.621Z"
                }
             },
             "required":[
@@ -18343,7 +18343,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.775Z"
+                  "example":"2025-10-22T18:41:31.622Z"
                }
             },
             "required":[
@@ -18433,7 +18433,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.776Z"
+                  "example":"2025-10-22T18:41:31.623Z"
                }
             },
             "required":[
@@ -18519,7 +18519,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.776Z"
+                  "example":"2025-10-22T18:41:31.623Z"
                },
                "failed_message":{
                   "type":"string",
@@ -18562,7 +18562,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.776Z"
+                  "example":"2025-10-22T18:41:31.622Z"
                }
             },
             "required":[
@@ -18600,7 +18600,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.776Z"
+                  "example":"2025-10-22T18:41:31.622Z"
                }
             },
             "required":[
@@ -18763,7 +18763,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Dynamic QR Code created at.",
-                  "example":"2025-10-22T15:27:33.779Z"
+                  "example":"2025-10-22T18:41:31.625Z"
                }
             },
             "required":[
@@ -18912,7 +18912,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Dynamic QR Code created at.",
-                  "example":"2025-10-22T15:27:33.780Z"
+                  "example":"2025-10-22T18:41:31.626Z"
                }
             },
             "required":[
@@ -18945,7 +18945,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Dynamic QR Code expiration date.",
-                  "example":"2025-10-22T15:27:33.780Z"
+                  "example":"2025-10-22T18:41:31.626Z"
                },
                "key_id":{
                   "type":"string",
@@ -18977,7 +18977,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Dynamic QR Code created at.",
-                  "example":"2025-10-22T15:27:33.780Z"
+                  "example":"2025-10-22T18:41:31.626Z"
                }
             },
             "required":[
@@ -19018,7 +19018,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Expiration date to pay static QR Code. <b>Max date is 3 months ahead.</b>",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.623Z"
                },
                "payable_many_times":{
                   "type":"boolean",
@@ -19077,7 +19077,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Expiration date to pay qrCode. <b>Max date is 3 months ahead.</b>",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.623Z"
                },
                "payable_many_times":{
                   "type":"boolean",
@@ -19100,7 +19100,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Static QR Code created at.",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.623Z"
                }
             },
             "required":[
@@ -19153,7 +19153,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Expiration date to pay static QR Code. <b>Max date is 3 months ahead.</b>",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.624Z"
                },
                "payable_many_times":{
                   "type":"boolean",
@@ -19176,7 +19176,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Static QR Code created at.",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.624Z"
                }
             },
             "required":[
@@ -19229,7 +19229,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Expiration date to pay static QR Code. <b>Max date is 3 months ahead.</b>",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.624Z"
                },
                "payable_many_times":{
                   "type":"boolean",
@@ -19252,7 +19252,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Static QR Code created at.",
-                  "example":"2025-10-22T15:27:33.777Z"
+                  "example":"2025-10-22T18:41:31.624Z"
                }
             },
             "required":[
@@ -19354,7 +19354,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key Created At.",
-                  "example":"2025-10-22T15:27:33.780Z"
+                  "example":"2025-10-22T18:41:31.626Z"
                }
             },
             "required":[
@@ -19439,7 +19439,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.781Z"
+                  "example":"2025-10-22T18:41:31.626Z"
                }
             },
             "required":[
@@ -19524,7 +19524,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.781Z"
+                  "example":"2025-10-22T18:41:31.627Z"
                }
             },
             "required":[
@@ -19609,7 +19609,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.781Z"
+                  "example":"2025-10-22T18:41:31.627Z"
                }
             },
             "required":[
@@ -19694,7 +19694,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.781Z"
+                  "example":"2025-10-22T18:41:31.627Z"
                }
             },
             "required":[
@@ -19779,7 +19779,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.781Z"
+                  "example":"2025-10-22T18:41:31.627Z"
                }
             },
             "required":[
@@ -19864,7 +19864,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.782Z"
+                  "example":"2025-10-22T18:41:31.627Z"
                }
             },
             "required":[
@@ -19949,7 +19949,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.782Z"
+                  "example":"2025-10-22T18:41:31.627Z"
                }
             },
             "required":[
@@ -20034,7 +20034,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.782Z"
+                  "example":"2025-10-22T18:41:31.628Z"
                }
             },
             "required":[
@@ -20072,7 +20072,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.782Z"
+                  "example":"2025-10-22T18:41:31.628Z"
                }
             },
             "required":[
@@ -20110,7 +20110,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Key created at.",
-                  "example":"2025-10-22T15:27:33.783Z"
+                  "example":"2025-10-22T18:41:31.628Z"
                }
             },
             "required":[
@@ -20180,7 +20180,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Expiration date.",
-                  "example":"2025-10-22T15:27:33.767Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                },
                "payer_person_type":{
                   "type":"string",
@@ -20204,7 +20204,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Due date.",
-                  "example":"2025-10-22T15:27:33.767Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                },
                "interest_value":{
                   "type":"number",
@@ -20241,7 +20241,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Created at.",
-                  "example":"2025-10-22T15:27:33.767Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                },
                "change_value":{
                   "type":"number",
@@ -20379,7 +20379,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Expiration date.",
-                  "example":"2025-10-22T15:27:33.772Z"
+                  "example":"2025-10-22T18:41:31.619Z"
                },
                "payer_person_type":{
                   "type":"string",
@@ -20403,7 +20403,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Due date.",
-                  "example":"2025-10-22T15:27:33.772Z"
+                  "example":"2025-10-22T18:41:31.619Z"
                },
                "interest_value":{
                   "type":"number",
@@ -20440,7 +20440,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Created at.",
-                  "example":"2025-10-22T15:27:33.772Z"
+                  "example":"2025-10-22T18:41:31.619Z"
                },
                "change_value":{
                   "type":"number",
@@ -20665,7 +20665,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Created at.",
-                  "example":"2025-10-22T15:27:33.772Z"
+                  "example":"2025-10-22T18:41:31.619Z"
                }
             },
             "required":[
@@ -20900,7 +20900,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.758Z"
+                  "example":"2025-10-22T18:41:31.607Z"
                }
             },
             "required":[
@@ -21058,7 +21058,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.770Z"
+                  "example":"2025-10-22T18:41:31.617Z"
                }
             },
             "required":[
@@ -21150,7 +21150,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.768Z"
+                  "example":"2025-10-22T18:41:31.616Z"
                }
             },
             "required":[
@@ -21242,7 +21242,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.769Z"
+                  "example":"2025-10-22T18:41:31.616Z"
                }
             },
             "required":[
@@ -21329,7 +21329,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.769Z"
+                  "example":"2025-10-22T18:41:31.616Z"
                }
             },
             "required":[
@@ -21426,7 +21426,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.769Z"
+                  "example":"2025-10-22T18:41:31.617Z"
                }
             },
             "required":[
@@ -21519,7 +21519,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.770Z"
+                  "example":"2025-10-22T18:41:31.617Z"
                }
             },
             "required":[
@@ -21612,7 +21612,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.768Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                }
             },
             "required":[
@@ -21711,7 +21711,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.759Z"
+                  "example":"2025-10-22T18:41:31.608Z"
                }
             },
             "required":[
@@ -21890,7 +21890,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Devolution created at.",
-                  "example":"2025-10-22T15:27:33.758Z"
+                  "example":"2025-10-22T18:41:31.607Z"
                }
             },
             "required":[
@@ -21961,19 +21961,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created at.",
-                  "example":"2025-10-22T15:27:33.768Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                },
                "canceled_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment canceled at.",
-                  "example":"2025-10-22T15:27:33.768Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                },
                "payment_date":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment date.",
-                  "example":"2025-10-22T15:27:33.768Z"
+                  "example":"2025-10-22T18:41:31.615Z"
                }
             },
             "required":[
@@ -22090,7 +22090,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Date of created payment.",
-                  "example":"2025-10-22T15:27:33.761Z"
+                  "example":"2025-10-22T18:41:31.611Z"
                }
             },
             "required":[
@@ -22265,7 +22265,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Deposit created at.",
-                  "example":"2025-10-22T15:27:33.760Z"
+                  "example":"2025-10-22T18:41:31.609Z"
                }
             },
             "required":[
@@ -22430,7 +22430,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Devolution created at.",
-                  "example":"2025-10-22T15:27:33.761Z"
+                  "example":"2025-10-22T18:41:31.612Z"
                }
             },
             "required":[
@@ -22580,7 +22580,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Devolution received created at.",
-                  "example":"2025-10-22T15:27:33.764Z"
+                  "example":"2025-10-22T18:41:31.612Z"
                }
             },
             "required":[
@@ -22755,7 +22755,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment created date.",
-                  "example":"2025-10-22T15:27:33.765Z"
+                  "example":"2025-10-22T18:41:31.613Z"
                }
             },
             "required":[
@@ -22819,7 +22819,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Devolution created at.",
-                  "example":"2025-10-22T15:27:33.765Z"
+                  "example":"2025-10-22T18:41:31.613Z"
                }
             },
             "required":[
@@ -22933,7 +22933,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Deposit created at.",
-                  "example":"2025-10-22T15:27:33.765Z"
+                  "example":"2025-10-22T18:41:31.613Z"
                }
             },
             "required":[
@@ -23045,7 +23045,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Devolution received created at.",
-                  "example":"2025-10-22T15:27:33.766Z"
+                  "example":"2025-10-22T18:41:31.613Z"
                }
             },
             "required":[
@@ -23159,7 +23159,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix trusted contact created date.",
-                  "example":"2025-10-22T15:27:33.773Z"
+                  "example":"2025-10-22T18:41:31.620Z"
                }
             },
             "required":[
@@ -23250,13 +23250,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Trusted Contact created at.",
-                  "example":"2025-10-22T15:27:33.773Z"
+                  "example":"2025-10-22T18:41:31.620Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Trusted Contact updated at.",
-                  "example":"2025-10-22T15:27:33.773Z"
+                  "example":"2025-10-22T18:41:31.620Z"
                }
             }
          },
@@ -23378,13 +23378,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Trusted Contact created at.",
-                  "example":"2025-10-22T15:27:33.773Z"
+                  "example":"2025-10-22T18:41:31.620Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix Trusted Contact updated at.",
-                  "example":"2025-10-22T15:27:33.773Z"
+                  "example":"2025-10-22T18:41:31.620Z"
                }
             },
             "required":[
@@ -23430,7 +23430,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Conversion created at.",
-                  "example":"2025-10-22T15:27:33.730Z"
+                  "example":"2025-10-22T18:41:31.561Z"
                }
             },
             "required":[
@@ -23512,7 +23512,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Conversion created at.",
-                  "example":"2025-10-22T15:27:33.731Z"
+                  "example":"2025-10-22T18:41:31.562Z"
                }
             },
             "required":[
@@ -23663,7 +23663,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Quotation created at.",
-                  "example":"2025-10-22T15:27:33.731Z"
+                  "example":"2025-10-22T18:41:31.562Z"
                }
             },
             "required":[
@@ -23756,7 +23756,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Conversion created at.",
-                  "example":"2025-10-22T15:27:33.732Z"
+                  "example":"2025-10-22T18:41:31.563Z"
                }
             },
             "required":[
@@ -23849,7 +23849,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Quotation TTL date.",
-                  "example":"2025-10-22T15:27:33.774Z"
+                  "example":"2025-10-22T18:41:31.621Z"
                }
             },
             "required":[
@@ -23923,7 +23923,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Wallet created at.",
-                  "example":"2025-10-22T15:27:33.792Z"
+                  "example":"2025-10-22T18:41:31.636Z"
                }
             },
             "required":[
@@ -23990,7 +23990,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Wallet created at.",
-                  "example":"2025-10-22T15:27:33.793Z"
+                  "example":"2025-10-22T18:41:31.636Z"
                }
             },
             "required":[
@@ -24080,7 +24080,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Transfer created at.",
-                  "example":"2025-10-22T15:27:33.752Z"
+                  "example":"2025-10-22T18:41:31.602Z"
                }
             },
             "required":[
@@ -24138,7 +24138,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Wallet created at.",
-                  "example":"2025-10-22T15:27:33.753Z"
+                  "example":"2025-10-22T18:41:31.603Z"
                }
             },
             "required":[
@@ -24195,7 +24195,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Wallet created at.",
-                  "example":"2025-10-22T15:27:33.753Z"
+                  "example":"2025-10-22T18:41:31.603Z"
                }
             },
             "required":[
@@ -24517,13 +24517,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation created at.",
-                  "example":"2025-10-22T15:27:33.754Z"
+                  "example":"2025-10-22T18:41:31.604Z"
                },
                "reverted_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation reverted at.",
-                  "example":"2025-10-22T15:27:33.754Z"
+                  "example":"2025-10-22T18:41:31.604Z"
                },
                "currency_id":{
                   "type":"number",
@@ -24660,13 +24660,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation created at.",
-                  "example":"2025-10-22T15:27:33.754Z"
+                  "example":"2025-10-22T18:41:31.604Z"
                },
                "reverted_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation reverted at.",
-                  "example":"2025-10-22T15:27:33.754Z"
+                  "example":"2025-10-22T18:41:31.604Z"
                },
                "currency_id":{
                   "type":"number",
@@ -24793,7 +24793,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Transfer created at.",
-                  "example":"2025-10-22T15:27:33.756Z"
+                  "example":"2025-10-22T18:41:31.606Z"
                }
             },
             "required":[
@@ -24822,7 +24822,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.755Z"
+                  "example":"2025-10-22T18:41:31.604Z"
                }
             },
             "required":[
@@ -25072,7 +25072,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Banking TED Received Created At.",
-                  "example":"2025-10-22T15:27:33.657Z"
+                  "example":"2025-10-22T18:41:31.435Z"
                }
             },
             "required":[
@@ -25113,7 +25113,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Bank ted created at.",
-                  "example":"2025-10-22T15:27:33.653Z"
+                  "example":"2025-10-22T18:41:31.431Z"
                }
             },
             "required":[
@@ -25276,19 +25276,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed confirmed date.",
-                  "example":"2025-10-22T15:27:33.656Z"
+                  "example":"2025-10-22T18:41:31.433Z"
                },
                "failed_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed failed date.",
-                  "example":"2025-10-22T15:27:33.656Z"
+                  "example":"2025-10-22T18:41:31.434Z"
                },
                "created_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed created date.",
-                  "example":"2025-10-22T15:27:33.656Z"
+                  "example":"2025-10-22T18:41:31.434Z"
                }
             },
             "required":[
@@ -25454,19 +25454,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed confirmed date.",
-                  "example":"2025-10-22T15:27:33.654Z"
+                  "example":"2025-10-22T18:41:31.432Z"
                },
                "failed_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed failed date.",
-                  "example":"2025-10-22T15:27:33.654Z"
+                  "example":"2025-10-22T18:41:31.432Z"
                },
                "created_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed created date.",
-                  "example":"2025-10-22T15:27:33.654Z"
+                  "example":"2025-10-22T18:41:31.432Z"
                }
             },
             "required":[
@@ -25591,7 +25591,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"BankingTed Created at.",
-                  "example":"2025-10-22T15:27:33.655Z"
+                  "example":"2025-10-22T18:41:31.433Z"
                }
             },
             "required":[
@@ -25627,7 +25627,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Bank created at.",
-                  "example":"2025-10-22T15:27:33.658Z"
+                  "example":"2025-10-22T18:41:31.436Z"
                }
             },
             "required":[
@@ -25806,13 +25806,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Due date.",
-                  "example":"2025-10-22T15:27:33.660Z"
+                  "example":"2025-10-22T18:41:31.437Z"
                },
                "limit_due_date":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Limit due date.",
-                  "example":"2025-10-22T15:27:33.660Z"
+                  "example":"2025-10-22T18:41:31.437Z"
                },
                "barcode":{
                   "type":"string",
@@ -25828,7 +25828,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Creation date.",
-                  "example":"2025-10-22T15:27:33.660Z"
+                  "example":"2025-10-22T18:41:31.437Z"
                },
                "personalized":{
                   "type":"boolean",
@@ -25898,13 +25898,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Due date.",
-                  "example":"2025-10-22T15:27:33.661Z"
+                  "example":"2025-10-22T18:41:31.438Z"
                },
                "limit_due_date":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Limit due date.",
-                  "example":"2025-10-22T15:27:33.661Z"
+                  "example":"2025-10-22T18:41:31.438Z"
                },
                "barcode":{
                   "type":"string",
@@ -25950,13 +25950,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Creation date.",
-                  "example":"2025-10-22T15:27:33.661Z"
+                  "example":"2025-10-22T18:41:31.438Z"
                },
                "confirmed_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Confirmation date.",
-                  "example":"2025-10-22T15:27:33.661Z"
+                  "example":"2025-10-22T18:41:31.438Z"
                }
             },
             "required":[
@@ -26271,8 +26271,25 @@
          "GetBankingBilletPixDepositPdfRestResponse":{
             "type":"object",
             "properties":{
-               
-            }
+               "id":{
+                  "type":"string",
+                  "description":"Bank billet pix deposit ID."
+               },
+               "file_name":{
+                  "type":"string",
+                  "description":"Bank billet pix deposit ID."
+               },
+               "created_at":{
+                  "format":"date-time",
+                  "type":"string",
+                  "description":"Bank billet pix deposit ID."
+               }
+            },
+            "required":[
+               "id",
+               "file_name",
+               "created_at"
+            ]
          },
          "CreateUserWithdrawSettingRequestBody":{
             "type":"object",
@@ -26495,7 +26512,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Date of created withdraw.",
-                  "example":"2025-10-22T15:27:33.784Z"
+                  "example":"2025-10-22T18:41:31.629Z"
                }
             },
             "required":[
@@ -26775,7 +26792,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Date of created withdraw.",
-                  "example":"2025-10-22T15:27:33.784Z"
+                  "example":"2025-10-22T18:41:31.629Z"
                }
             },
             "required":[
@@ -26802,7 +26819,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.785Z"
+                  "example":"2025-10-22T18:41:31.630Z"
                }
             },
             "required":[
@@ -26856,7 +26873,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.785Z"
+                  "example":"2025-10-22T18:41:31.630Z"
                }
             },
             "required":[
@@ -26916,7 +26933,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.791Z"
+                  "example":"2025-10-22T18:41:31.635Z"
                }
             },
             "required":[
@@ -27033,19 +27050,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment confirmed at.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "payment_canceled_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment canceled at.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "payment_date":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment date.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "payment_type":{
                   "type":"string",
@@ -27087,7 +27104,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation created at.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "transaction_id":{
                   "type":"string",
@@ -27164,7 +27181,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Transaction updated at.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "txid":{
                   "type":"string",
@@ -27266,13 +27283,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation creation date.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "reverted_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation reverted at.",
-                  "example":"2025-10-22T15:27:33.786Z"
+                  "example":"2025-10-22T18:41:31.631Z"
                },
                "currency_id":{
                   "type":"number",
@@ -27495,7 +27512,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.790Z"
+                  "example":"2025-10-22T18:41:31.634Z"
                }
             },
             "required":[
@@ -27541,24 +27558,24 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation creation date.",
-                  "example":"2025-10-22T15:27:33.787Z"
+                  "example":"2025-10-22T18:41:31.632Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation updated date.",
-                  "example":"2025-10-22T15:27:33.787Z"
+                  "example":"2025-10-22T18:41:31.632Z"
                },
                "transaction_id":{
                   "type":"string",
                   "description":"Transaction Id (Statement ID). Ledger ID when the balance changed.",
-                  "example":"2025-10-22T15:27:33.787Z"
+                  "example":"2025-10-22T18:41:31.632Z"
                },
                "transaction_created_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Transaction created date (Statement created date). The time when the balance changed.",
-                  "example":"2025-10-22T15:27:33.787Z"
+                  "example":"2025-10-22T18:41:31.632Z"
                },
                "currency_id":{
                   "type":"number",
@@ -27775,7 +27792,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.787Z"
+                  "example":"2025-10-22T18:41:31.632Z"
                }
             },
             "required":[
@@ -27862,7 +27879,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.788Z"
+                  "example":"2025-10-22T18:41:31.632Z"
                }
             },
             "required":[
@@ -27921,13 +27938,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation creation date.",
-                  "example":"2025-10-22T15:27:33.788Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "reverted_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation reverted at.",
-                  "example":"2025-10-22T15:27:33.788Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "currency_id":{
                   "type":"number",
@@ -28130,7 +28147,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation Created At.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.634Z"
                },
                "operation_created_at_us":{
                   "type":"string",
@@ -28141,13 +28158,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation Reverted At.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.634Z"
                },
                "operation_updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation Updated At.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.634Z"
                },
                "transaction_id":{
                   "type":"string",
@@ -28158,7 +28175,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Transaction Created At.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.634Z"
                },
                "fee":{
                   "type":"number",
@@ -28412,19 +28429,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment confirmed at.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "payment_canceled_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment canceled at.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "payment_date":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment date.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "payment_type":{
                   "type":"string",
@@ -28462,7 +28479,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Operation created at.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "transaction_id":{
                   "type":"string",
@@ -28539,7 +28556,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Transaction updated at.",
-                  "example":"2025-10-22T15:27:33.789Z"
+                  "example":"2025-10-22T18:41:31.633Z"
                },
                "txid":{
                   "type":"string",
@@ -28637,13 +28654,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"File created at.",
-                  "example":"2025-10-22T15:27:33.792Z"
+                  "example":"2025-10-22T18:41:31.635Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"File updated at.",
-                  "example":"2025-10-22T15:27:33.792Z"
+                  "example":"2025-10-22T18:41:31.635Z"
                }
             },
             "required":[
@@ -28828,7 +28845,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"User created date.",
-                  "example":"2025-10-22T15:27:33.793Z"
+                  "example":"2025-10-22T18:41:31.636Z"
                }
             },
             "required":[
@@ -28860,19 +28877,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"User created date.",
-                  "example":"2025-10-22T15:27:33.793Z"
+                  "example":"2025-10-22T18:41:31.637Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"User updated date.",
-                  "example":"2025-10-22T15:27:33.793Z"
+                  "example":"2025-10-22T18:41:31.637Z"
                },
                "deleted_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"User deleted date.",
-                  "example":"2025-10-22T15:27:33.793Z"
+                  "example":"2025-10-22T18:41:31.637Z"
                }
             },
             "required":[
@@ -28959,7 +28976,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"User created date.",
-                  "example":"2025-10-22T15:27:33.794Z"
+                  "example":"2025-10-22T18:41:31.637Z"
                }
             },
             "required":[
@@ -29105,13 +29122,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"User created date.",
-                  "example":"2025-10-22T15:27:33.794Z"
+                  "example":"2025-10-22T18:41:31.639Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"User updated date.",
-                  "example":"2025-10-22T15:27:33.794Z"
+                  "example":"2025-10-22T18:41:31.639Z"
                }
             },
             "required":[
@@ -29217,13 +29234,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"User created date.",
-                  "example":"2025-10-22T15:27:33.795Z"
+                  "example":"2025-10-22T18:41:31.640Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"User updated date.",
-                  "example":"2025-10-22T15:27:33.795Z"
+                  "example":"2025-10-22T18:41:31.640Z"
                }
             },
             "required":[
@@ -29280,7 +29297,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"User bank account created at.",
-                  "example":"2025-10-22T15:27:33.796Z"
+                  "example":"2025-10-22T18:41:31.640Z"
                }
             },
             "required":[
@@ -29419,7 +29436,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Onboarding Created at.",
-                  "example":"2025-10-22T15:27:33.800Z"
+                  "example":"2025-10-22T18:41:31.641Z"
                }
             },
             "required":[
@@ -29553,13 +29570,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Onboarding Created at.",
-                  "example":"2025-10-22T15:27:33.801Z"
+                  "example":"2025-10-22T18:41:31.642Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Onboarding Updated at.",
-                  "example":"2025-10-22T15:27:33.801Z"
+                  "example":"2025-10-22T18:41:31.642Z"
                }
             },
             "required":[
@@ -29700,7 +29717,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Onboarding Created at.",
-                  "example":"2025-10-22T15:27:33.801Z"
+                  "example":"2025-10-22T18:41:31.642Z"
                }
             },
             "required":[
@@ -29773,7 +29790,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Onboarding Created at.",
-                  "example":"2025-10-22T15:27:33.802Z"
+                  "example":"2025-10-22T18:41:31.642Z"
                }
             },
             "required":[
@@ -29840,7 +29857,7 @@
                "created_at":{
                   "type":"object",
                   "description":"Onboarding document file created at.",
-                  "example":"2025-10-22T15:27:33.803Z"
+                  "example":"2025-10-22T18:41:31.643Z"
                }
             },
             "required":[
@@ -29922,13 +29939,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card activation date.",
-                  "example":"2025-10-22T15:27:33.806Z"
+                  "example":"2025-10-22T18:41:31.645Z"
                },
                "created_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Card creation date.",
-                  "example":"2025-10-22T15:27:33.806Z"
+                  "example":"2025-10-22T18:41:31.645Z"
                }
             },
             "required":[
@@ -30009,7 +30026,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card creation date.",
-                  "example":"2025-10-22T15:27:33.807Z"
+                  "example":"2025-10-22T18:41:31.645Z"
                }
             },
             "required":[
@@ -30049,7 +30066,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card creation date.",
-                  "example":"2025-10-22T15:27:33.806Z"
+                  "example":"2025-10-22T18:41:31.644Z"
                }
             },
             "required":[
@@ -30098,7 +30115,7 @@
                "expiry":{
                   "type":"string",
                   "description":"Expiry Date.",
-                  "example":"2025-10-22T15:27:33.807Z"
+                  "example":"2025-10-22T18:41:31.645Z"
                },
                "cvv":{
                   "type":"string",
@@ -30109,7 +30126,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Activation Date.",
-                  "example":"2025-10-22T15:27:33.807Z"
+                  "example":"2025-10-22T18:41:31.645Z"
                }
             },
             "required":[
@@ -30153,7 +30170,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card creation date.",
-                  "example":"2025-10-22T15:27:33.808Z"
+                  "example":"2025-10-22T18:41:31.646Z"
                }
             },
             "required":[
@@ -30252,7 +30269,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card creation date.",
-                  "example":"2025-10-22T15:27:33.808Z"
+                  "example":"2025-10-22T18:41:31.646Z"
                }
             },
             "required":[
@@ -30344,7 +30361,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card creation date.",
-                  "example":"2025-10-22T15:27:33.809Z"
+                  "example":"2025-10-22T18:41:31.646Z"
                }
             },
             "required":[
@@ -30476,13 +30493,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Created At.",
-                  "example":"2025-10-22T15:27:33.810Z"
+                  "example":"2025-10-22T18:41:31.647Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Updated At.",
-                  "example":"2025-10-22T15:27:33.810Z"
+                  "example":"2025-10-22T18:41:31.647Z"
                }
             },
             "required":[
@@ -30516,13 +30533,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Created At.",
-                  "example":"2025-10-22T15:27:33.809Z"
+                  "example":"2025-10-22T18:41:31.647Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Updated At.",
-                  "example":"2025-10-22T15:27:33.809Z"
+                  "example":"2025-10-22T18:41:31.647Z"
                }
             },
             "required":[
@@ -30550,13 +30567,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Created At.",
-                  "example":"2025-10-22T15:27:33.810Z"
+                  "example":"2025-10-22T18:41:31.647Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Updated At.",
-                  "example":"2025-10-22T15:27:33.810Z"
+                  "example":"2025-10-22T18:41:31.647Z"
                }
             },
             "required":[
@@ -30663,12 +30680,12 @@
                "created_at":{
                   "type":"object",
                   "description":"Card Onboarding Document Created At.",
-                  "example":"2025-10-22T15:27:33.805Z"
+                  "example":"2025-10-22T18:41:31.644Z"
                },
                "updated_at":{
                   "type":"object",
                   "description":"Card Onboarding Document Updated At.",
-                  "example":"2025-10-22T15:27:33.805Z"
+                  "example":"2025-10-22T18:41:31.644Z"
                }
             },
             "required":[
@@ -30697,7 +30714,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Bith Date.",
-                  "example":"2025-10-22T15:27:33.805Z"
+                  "example":"2025-10-22T18:41:31.644Z"
                },
                "document":{
                   "type":"string",
@@ -30748,13 +30765,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Created At.",
-                  "example":"2025-10-22T15:27:33.805Z"
+                  "example":"2025-10-22T18:41:31.644Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Card Onboarding Updated At.",
-                  "example":"2025-10-22T15:27:33.805Z"
+                  "example":"2025-10-22T18:41:31.644Z"
                }
             },
             "required":[
@@ -30825,19 +30842,19 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix scheduled payment payment date.",
-                  "example":"2025-10-22T15:27:33.813Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                },
                "created_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix scheduled payment creation date.",
-                  "example":"2025-10-22T15:27:33.813Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Pix scheduled payment update date.",
-                  "example":"2025-10-22T15:27:33.813Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                }
             },
             "required":[
@@ -30986,7 +31003,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorization request expiration date",
-                  "example":"2025-10-22T15:27:33.813Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                },
                "status":{
                   "type":"string",
@@ -31012,13 +31029,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorization creation date.",
-                  "example":"2025-10-22T15:27:33.813Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorization update date.",
-                  "example":"2025-10-22T15:27:33.813Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                }
             },
             "required":[
@@ -31172,7 +31189,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorization request expiration date",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                },
                "status":{
                   "type":"string",
@@ -31198,13 +31215,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorization creation date.",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorization update date.",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.649Z"
                }
             },
             "required":[
@@ -31274,13 +31291,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment creation date.",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.650Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment update date.",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.650Z"
                }
             },
             "required":[
@@ -31383,13 +31400,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment creation date.",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.650Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment update date.",
-                  "example":"2025-10-22T15:27:33.814Z"
+                  "example":"2025-10-22T18:41:31.650Z"
                }
             },
             "required":[
@@ -31519,13 +31536,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment creation date.",
-                  "example":"2025-10-22T15:27:33.815Z"
+                  "example":"2025-10-22T18:41:31.650Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payment update date.",
-                  "example":"2025-10-22T15:27:33.815Z"
+                  "example":"2025-10-22T18:41:31.650Z"
                }
             },
             "required":[
@@ -31899,7 +31916,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Recurrence request expiration date",
-                  "example":"2025-10-22T15:27:33.818Z"
+                  "example":"2025-10-22T18:41:31.652Z"
                },
                "cancellation_reason":{
                   "type":"string",
@@ -31932,13 +31949,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Recurrence creation date.",
-                  "example":"2025-10-22T15:27:33.818Z"
+                  "example":"2025-10-22T18:41:31.652Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Recurrence update date.",
-                  "example":"2025-10-22T15:27:33.818Z"
+                  "example":"2025-10-22T18:41:31.652Z"
                }
             },
             "required":[
@@ -32168,7 +32185,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Recurrence request expiration date",
-                  "example":"2025-10-22T15:27:33.819Z"
+                  "example":"2025-10-22T18:41:31.652Z"
                },
                "cancellation_reason":{
                   "type":"string",
@@ -32206,13 +32223,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Recurrence creation date.",
-                  "example":"2025-10-22T15:27:33.819Z"
+                  "example":"2025-10-22T18:41:31.653Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Recurrence update date.",
-                  "example":"2025-10-22T15:27:33.819Z"
+                  "example":"2025-10-22T18:41:31.653Z"
                }
             },
             "required":[
@@ -32356,13 +32373,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Charge creation date.",
-                  "example":"2025-10-22T15:27:33.820Z"
+                  "example":"2025-10-22T18:41:31.653Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Charge update date.",
-                  "example":"2025-10-22T15:27:33.820Z"
+                  "example":"2025-10-22T18:41:31.653Z"
                }
             },
             "required":[
@@ -32483,13 +32500,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Charge creation date.",
-                  "example":"2025-10-22T15:27:33.820Z"
+                  "example":"2025-10-22T18:41:31.654Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Charge update date.",
-                  "example":"2025-10-22T15:27:33.820Z"
+                  "example":"2025-10-22T18:41:31.654Z"
                }
             },
             "required":[
