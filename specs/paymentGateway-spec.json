@@ -1830,7 +1830,7 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Transaction Creation Date.",
-                  "example":"2025-10-17T13:41:20.829Z"
+                  "example":"2025-10-22T15:30:01.702Z"
                }
             },
             "required":[
@@ -4168,13 +4168,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payin creation date.",
-                  "example":"2025-10-17T13:41:20.845Z"
+                  "example":"2025-10-22T15:30:01.715Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payin update date.",
-                  "example":"2025-10-17T13:41:20.845Z"
+                  "example":"2025-10-22T15:30:01.715Z"
                }
             },
             "required":[
@@ -4457,13 +4457,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Three DS authentication creation date.",
-                  "example":"2025-10-17T13:41:20.852Z"
+                  "example":"2025-10-22T15:30:01.717Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Three DS authentication last update date.",
-                  "example":"2025-10-17T13:41:20.852Z"
+                  "example":"2025-10-22T15:30:01.717Z"
                }
             },
             "required":[
@@ -4895,25 +4895,25 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Authorized date.",
-                  "example":"2025-10-17T13:41:20.857Z"
+                  "example":"2025-10-22T15:30:01.718Z"
                },
                "failed_date":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Failed date.",
-                  "example":"2025-10-17T13:41:20.857Z"
+                  "example":"2025-10-22T15:30:01.718Z"
                },
                "created_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Created at.",
-                  "example":"2025-10-17T13:41:20.857Z"
+                  "example":"2025-10-22T15:30:01.718Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Updated at.",
-                  "example":"2025-10-17T13:41:20.857Z"
+                  "example":"2025-10-22T15:30:01.718Z"
                }
             },
             "required":[
@@ -5270,13 +5270,13 @@
                   "format":"date-time",
                   "type":"string",
                   "description":"Payout creation date.",
-                  "example":"2025-10-17T13:41:20.930Z"
+                  "example":"2025-10-22T15:30:01.719Z"
                },
                "updated_at":{
                   "format":"date-time",
                   "type":"string",
                   "description":"Payout update date.",
-                  "example":"2025-10-17T13:41:20.930Z"
+                  "example":"2025-10-22T15:30:01.719Z"
                }
             },
             "required":[
@@ -5596,4 +5596,4 @@
          }
       }
    }
- }
+}
