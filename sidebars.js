@@ -139,6 +139,7 @@ const sidebars = {
         'paymentGateway/api-overview/api-responses',
         'paymentGateway/api-overview/changelog',
         'paymentGateway/api-overview/webhooks',
+        'paymentGateway/api-overview/3ds-secure',
       ],
     },
     {
