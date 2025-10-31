@@ -1,4 +1,22 @@
-# 3DS Secure Integration - Documentation
+# 3DS Secure 
+
+## What is 3DS Secure?
+
+**3DS Secure (3D Secure)** is an authentication protocol designed to add an extra layer of security to online credit and debit card transactions. The name "3D" refers to the three domains involved in the authentication process:
+
+1. **Acquirer Domain**: The merchant's payment processor
+2. **Issuer Domain**: The cardholder's bank
+3. **Interoperability Domain**: The payment networks (Visa, Mastercard, etc.)
+
+3DS Secure protects both merchants and cardholders by requiring additional authentication during online purchases. When a transaction requires 3DS authentication, the cardholder is redirected to their bank's authentication page where they must verify their identity (typically through a password, SMS code, or biometric authentication).
+
+This protocol helps reduce fraud and chargebacks, as authenticated transactions shift liability from the merchant to the issuer, providing better protection for all parties involved in the payment process.
+
+**Important:** 3DS Secure can be used for both **credit** and **debit** card transactions. For **Brazil**, the use of 3DS is **mandatory for debit card transactions** as required by Brazilian payment.
+
+---
+
+This page contains an **example project** that demonstrates how to implement 3DS Secure integration in your application. Below you will find details about this project and how to use it.
 
 ## What is this project?
 
@@ -20,39 +38,6 @@ To perform a 3DS integration in your system, you will need to:
 2. **Implement in your frontend** the sequence of endpoints that make up the 3DS flow
 3. **Configure ngrok** to expose the application publicly (required to receive gateway callbacks)
 
-This project eliminates the need to implement all the communication logic with 3DS APIs directly in your backend, providing intermediate endpoints (proxy) that handle complex communication while your frontend only needs to call simpler local APIs.
-
-## About the Proxy API
-
-The proxy API was created to **avoid CORS (Cross-Origin Resource Sharing) errors** when making requests from the frontend directly to the 3DS gateway endpoints. Therefore, an internal server was created that acts as an intermediary between your frontend and the gateway APIs.
-
-### When to use the Proxy
-
-Use the proxy endpoints (`/api/proxy/v2/...`) when:
-- You are making direct calls from the frontend (JavaScript in the browser)
-- You encounter CORS errors when calling the gateway directly
-- You need an intermediate access point
-
-### Calling 3DS Endpoints Directly
-
-If the proxy is not necessary (for example, if you're making calls from the backend or if the gateway allows CORS), you can call the 3DS endpoints directly:
-
-**Proxy Endpoints (with internal server):**
-- `POST /api/proxy/v2/threeds-authentication-setup`
-- `POST /api/proxy/v2/threeds-authentication`
-- `POST /api/proxy/v2/threeds-challenge-result`
-
-**Direct 3DS Endpoints (without proxy):**
-- `POST {THREEDS_BASE_URL}/v2/threeds-authentication-setup`
-- `POST {THREEDS_BASE_URL}/v2/threeds-authentication`
-- `POST {THREEDS_BASE_URL}/v2/threeds-challenge-result`
-
-**How to use:** Simply use the correct `THREEDS_BASE_URL` (configured in `.env` or directly: `https://example.threeds.tech`) and **remove the `/api/proxy` prefix** from the path.
-
-**Example:**
-- With proxy: `http://localhost:3030/api/proxy/v2/threeds-authentication-setup`
-- Without proxy: `https://example.threeds.tech/v2/threeds-authentication-setup`
-
 ## Integration Flow
 
 ### Sequence of Endpoints that should be implemented in the frontend:
@@ -63,8 +48,7 @@ If the proxy is not necessary (for example, if you're making calls from the back
 2. **POST `{baseUrl}/v2/threeds-authentication-setup`**
    - Starts the 3DS authentication process
    - Receives device data collection information
-   - **With proxy:** `POST /api/proxy/v2/threeds-authentication-setup`
-   - **Without proxy:** `POST {THREEDS_BASE_URL}/v2/threeds-authentication-setup`
+   - `POST {BASE_URL}/v2/threeds-authentication-setup`
 
 3. **Device Data Collection**
    - Performs automatic collection via iframe/form as per the setup response
@@ -74,15 +58,13 @@ If the proxy is not necessary (for example, if you're making calls from the back
    - May return:
      - `ACCEPTED`: Authentication approved without challenge
      - `WAITING_3DS_AUTHENTICATION`: Requires cardholder challenge
-   - **With proxy:** `POST /api/proxy/v2/threeds-authentication`
-   - **Without proxy:** `POST {THREEDS_BASE_URL}/v2/threeds-authentication`
+     - `POST {BASE_URL}/v2/threeds-authentication`
 
 5. **POST `{baseUrl}/v2/threeds-challenge-result`** (if necessary)
    - Only if step 4 returned `WAITING_3DS_AUTHENTICATION`
    - Called after the cardholder completes the challenge (e.g., enters bank password)
    - Receives return data via `GET /api/3ds-return`
-   - **With proxy:** `POST /api/proxy/v2/threeds-challenge-result`
-   - **Without proxy:** `POST {THREEDS_BASE_URL}/v2/threeds-challenge-result`
+   - `POST {BASE_URL}/v2/threeds-challenge-result`
 
 ### Support Endpoints:
 
@@ -94,7 +76,12 @@ If the proxy is not necessary (for example, if you're making calls from the back
 
 ### Step 1: Download the Project
 
-Download or clone the project to your local environment.
+Download the project using the below:
+
+**Download Link:**
+- [Download Project ZIP](https://zro-image-temp.s3.us-east-2.amazonaws.com/acquirer-3ds-hml-doc.zip) - Download the project as a ZIP file
+
+After downloading, extract the files (if downloaded as ZIP) to your local environment.
 
 ### Step 2: Run the Project
 
@@ -104,9 +91,7 @@ Follow the detailed instructions in the **README.md** file inside the project, w
 - ngrok installation and configuration
 - How to start the server
 
-⚠️ **Important**: This project **only works with ngrok** to expose port 3030. It's necessary to configure ngrok before use.
-
-### Step 3: Implement in Frontend
+### Examples
 
 ## Payload Example
 
@@ -182,15 +167,49 @@ Inside the project you will find:
 - **ENV_VARIABLES.md**: Description of required environment variables
 - **README-Docker.md**: Docker deployment instructions
 
-## Questions?
+## Using 3DS Results in Payment
 
-If you have questions about:
-- **Installation and configuration**: Consult the project's README.md
-- **Integration and implementation**: Contact the responsible team
-- **Technical problems**: Check the troubleshooting section in README.md or contact support
+After completing the 3DS authentication flow, you will receive authentication data that must be included in the payment authorization request.
+
+### Payin Endpoint
+
+The 3DS authentication result should be sent to the payin endpoint when creating a payment:
+
+**Endpoint:**
+https://docs.zrobank.io/paymentGateway/endpoints/v-1-create-payin-rest-controller-execute-v-1
+
+
+**Important:** Include the 3DS authentication data (xid, cavv, secure_version, directory_server_transaction_id, three_ds_server_transaction_id) in the payment payload when calling this endpoint.
+
+**Example:**
+The 3DS response data should be included in the payment request body along with the other payment information:
+
+```json
+{
+  // ... other payment fields ...
+  "threeDSData": {
+    "xid": "string",
+    "cavv": "string",
+    "secure_version": "2.0",
+    "directory_server_transaction_id": "string",
+    "three_ds_server_transaction_id": "string"
+  }
+}
+```
+
+This ensures that the payment gateway validates the transaction with the authentication results from the 3DS Secure flow.
 
 ---
 
 **Note**: This project is intended for homologation (HML) environment. For production, adjust URLs and configurations as needed.
 
 **Note 2**: Contact the team to provide the necessary URLs and credentials.
+
+---
+
+## Questions?
+
+If you have questions about:
+- **Installation and configuration**: Consult the project's README.md
+- **Integration and implementation**: Contact the responsible team
+- **Technical problems**: Check the troubleshooting section in README.md or contact support
