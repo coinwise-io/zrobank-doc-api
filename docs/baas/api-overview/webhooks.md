@@ -284,6 +284,14 @@ Your account can be configured so that when certain events occur on your account
 }
 ```
 
+:::note
+The WALLET_ACCOUNT_BALANCE_UPDATED webhook is triggered for both credit and debit operations, but it behaves differently for each case:
+
+The webhook is sent when a credit operation is initiated. The old_balance contains the balance before the operation, while new_balance shows the potential new balance if the operation succeeds. Note that the operation may still fail, so new_balance represents a pending state.
+
+The webhook is sent after a debit operation has been consolidated. In this case, both old_balance and new_balance contain the same value, representing the final consolidated balance after the debit has been processed.
+:::
+
   </TabItem>
 </Tabs>
 
