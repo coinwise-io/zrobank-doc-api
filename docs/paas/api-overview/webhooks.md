@@ -8,6 +8,7 @@ Your account can be configured so that when certain events occur on your account
 
 ## Types of webhooks
 
+<<<<<<< HEAD
 | Type                | Description                                  |
 | ------------------- | -------------------------------------------- |
 | PAYMENT             | When you send a pix payment.                 |
@@ -23,6 +24,17 @@ Your account can be configured so that when certain events occur on your account
 | WALLET ACCOUNT BALANCE UPDATED | When you balance is updated. |
 
 > > > > > > > ecd3d15 (docs: added docs of webhook balance_update)
+=======
+| Type                           | Description                                  |
+| ------------------------------ | -------------------------------------------- |
+| PAYMENT                        | When you send a pix payment.                 |
+| PAYMENT FAILED                 | When you send a pix payment and it fails.    |
+| DEVOLUTION                     | When you send a pix devolution.              |
+| DEVOLUTION FAILED              | When you send a pix devolution and it fails. |
+| DEVOLUTION RECEIVED            | When receive a pix devolution.               |
+| DEPOSIT                        | When receive a pix deposit.                  |
+| WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                 |
+>>>>>>> 60ad965 (fix: review)
 
 <br /><br />
 
