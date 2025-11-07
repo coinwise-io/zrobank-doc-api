@@ -18,7 +18,7 @@ Your account can be configured so that when certain events occur on your account
 | DEPOSIT                        | When receive a pix deposit.                         |
 | ONBOARDING                     | When you create a new user onboarding               |
 | ONBOARDING FAILED              | When you create a new user onboarding and it fails. |
-| WALLET ACCOUNT BALANCE UPDATED | When you balance is updated.                        |
+| WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                        |
 
 <br /><br />
 
@@ -271,10 +271,10 @@ Your account can be configured so that when certain events occur on your account
   "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
   "type": "WALLET_ACCOUNT_BALANCE_UPDATED",
   "action": "credit",
-  "value": "100",
-  "old_balance": "1000",
-  "new_balance": "1100",
-  "created_at": "2024-06-20T12:34:56Z"
+  "value": 100,
+  "old_balance": 1000,
+  "new_balance": 1100,
+  "created_at": "2024-06-20T12:34:56.071Z"
 }
 ```
 
