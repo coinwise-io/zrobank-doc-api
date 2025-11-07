@@ -8,14 +8,15 @@ Your account can be configured so that when certain events occur on your account
 
 ## Types of webhooks
 
-| Type                | Description                                  |
-| ------------------- | -------------------------------------------- |
-| PAYMENT             | When you send a pix payment.                 |
-| PAYMENT FAILED      | When you send a pix payment and it fails.    |
-| DEVOLUTION          | When you send a pix devolution.              |
-| DEVOLUTION FAILED   | When you send a pix devolution and it fails. |
-| DEVOLUTION RECEIVED | When receive a pix devolution.               |
-| DEPOSIT             | When receive a pix deposit.                  |
+| Type                           | Description                                  |
+| ------------------------------ | -------------------------------------------- |
+| PAYMENT                        | When you send a pix payment.                 |
+| PAYMENT FAILED                 | When you send a pix payment and it fails.    |
+| DEVOLUTION                     | When you send a pix devolution.              |
+| DEVOLUTION FAILED              | When you send a pix devolution and it fails. |
+| DEVOLUTION RECEIVED            | When receive a pix devolution.               |
+| DEPOSIT                        | When receive a pix deposit.                  |
+| WALLET ACCOUNT BALANCE UPDATED | When you balance is updated.                 |
 
 <br /><br />
 
@@ -173,6 +174,25 @@ Your account can be configured so that when certain events occur on your account
   "beneficiary_bank_name": "ZRO IP S/A",
   "beneficiary_bank_ispb": "26264220",
   "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Balance updated">
+
+```json
+{
+  "id": "d3558873-388a-4a98-a185-578a03bce8e2",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_uuid": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "wallet_name": "DEFAULT",
+  "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
+  "type": "WALLET_ACCOUNT_BALANCE_UPDATED",
+  "action": "credit",
+  "value": "100",
+  "old_balance": "1000",
+  "new_balance": "1100",
+  "created_at": "2024-06-20T12:34:56Z"
 }
 ```
 
