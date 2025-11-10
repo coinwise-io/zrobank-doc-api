@@ -206,7 +206,7 @@ Your account can be configured so that when certain events occur on your account
   "wallet_name": "DEFAULT",
   "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
   "type": "WALLET_ACCOUNT_BALANCE_UPDATED",
-  "action": "credit | debit",
+  "action": "credit",
   "value": 100,
   "old_balance": 1000,
   "new_balance": 1100,
