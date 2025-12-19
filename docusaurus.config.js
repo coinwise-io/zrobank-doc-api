@@ -21,6 +21,9 @@ const config = {
   trailingSlash: false,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  customFields: {
+    zroInternationalDocumentationUrl: process.env.ZRO_INTERNATIONAL_DOCUMENTATION_URL || null,
+  },
   plugins: [
     require.resolve('@cmfcmf/docusaurus-search-local'),
     [
@@ -139,11 +142,10 @@ const config = {
             position: 'left',
             label: 'Pix as a Service',
           },
-                    {
-            type: 'docSidebar',
-            sidebarId: 'paymentGatewaySidebar',
+          {
+            type: 'html',
             position: 'left',
-            label: 'Payments Gateway',
+            value: `<a href="${process.env.ZRO_INTERNATIONAL_DOCUMENTATION_URL || '#'}" target="_self" class="navbar__item navbar__link">Payments Gateway</a>`,
           },
         ],
       },

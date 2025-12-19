@@ -2,12 +2,14 @@ import React from 'react'
 import clsx from 'clsx'
 import styles from './styles.module.css'
 import Link from '@docusaurus/Link'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 type FeatureItem = {
   title: string
   src: string
   to: string
   description: JSX.Element
+  isExternal?: boolean
 }
 
 const FeatureList: FeatureItem[] = [
@@ -57,7 +59,7 @@ const FeatureList: FeatureItem[] = [
   },
 ]
 
-function Feature({ title, src, description, to }: FeatureItem) {
+function Feature({ title, src, description, to, isExternal }: FeatureItem) {
   return (
     <div className={clsx('col', styles.featureCard)}>
       <div className={styles.featureCardItem}>
@@ -66,18 +68,37 @@ function Feature({ title, src, description, to }: FeatureItem) {
           <h3>{title}</h3>
         </div>
         <p>{description}</p>
-        <Link to={to}>See more</Link>
+        {isExternal ? (
+          <Link href={to} target="_self">See more</Link>
+        ) : (
+          <Link to={to}>See more</Link>
+        )}
       </div>
     </div>
   )
 }
 
 export default function HomepageFeatures(): JSX.Element {
+  const { siteConfig } = useDocusaurusContext()
+  const zroInternationalUrl = (siteConfig?.customFields as { zroInternationalDocumentationUrl?: string })?.zroInternationalDocumentationUrl
+
+  // Update Payments Gateway feature to use external URL if available
+  const updatedFeatureList = FeatureList.map((feature) => {
+    if (feature.title === 'Payments Gateway' && zroInternationalUrl) {
+      return {
+        ...feature,
+        to: zroInternationalUrl,
+        isExternal: true,
+      }
+    }
+    return feature
+  })
+
   return (
     <section className={styles.features}>
       <div className="container">
         <div className={clsx('row', styles.featureRow)}>
-          {FeatureList.map((props, idx) => (
+          {updatedFeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
