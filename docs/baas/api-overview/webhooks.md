@@ -18,6 +18,7 @@ Your account can be configured so that when certain events occur on your account
 | DEPOSIT                        | When receive a pix deposit.                         |
 | ONBOARDING                     | When you create a new user onboarding               |
 | ONBOARDING FAILED              | When you create a new user onboarding and it fails. |
+| MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.     |
 | WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                        |
 
 <br /><br />
@@ -275,6 +276,20 @@ Your account can be configured so that when certain events occur on your account
   "old_balance": 1000,
   "new_balance": 1100,
   "created_at": "2024-06-20T12:34:56.071Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Merchant Onboarding KYC Status">
+
+```json
+{
+  "slug_merchant": "0897A2E2022D4B68AD15DB6204C11BE7",
+  "document_id": "12345678000195",
+  "dt_insert": "2025-02-04T10:30:00Z",
+  "risk_analysis_status": "PENDING",
+  "dt_risk_analysis_status": "2025-02-04T12:00:00Z",
+  "risk_analysis_status_justification": "Documents pending for risk review"
 }
 ```
 
