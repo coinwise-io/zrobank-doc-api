@@ -68,15 +68,6 @@ const config = {
             },
             showSchemas: true
           },
-          paymentGateway: {
-            specPath: 'specs/paymentGateway-spec.json',
-            outputDir: 'docs/paymentGateway/endpoints',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
-            },
-            showSchemas: true
-          },
         },
       },
     ],
