@@ -122,32 +122,6 @@ const sidebars = {
       items: require('./docs/baas/endpoints/sidebar.js'),
     },
   ],
-    paymentGatewaySidebar: [
-    {
-      type: 'category',
-      label: 'API Overview',
-      items: [
-        'paymentGateway/api-overview/introduction',
-        'paymentGateway/api-overview/authentication',
-        'paymentGateway/api-overview/protocol',
-        'paymentGateway/api-overview/idempotence',
-        'paymentGateway/api-overview/rate-limiting',
-        'paymentGateway/api-overview/request-id',
-        'paymentGateway/api-overview/serialization',
-        'paymentGateway/api-overview/replay',
-        'paymentGateway/api-overview/pagination',
-        'paymentGateway/api-overview/api-responses',
-        'paymentGateway/api-overview/changelog',
-        'paymentGateway/api-overview/webhooks',
-        'paymentGateway/api-overview/3ds-secure',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Endpoints',
-      items: require('./docs/paymentGateway/endpoints/sidebar.js'),
-    },
-  ],
 }
 
 module.exports = sidebars
