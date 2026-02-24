@@ -24,6 +24,10 @@ const config = {
   customFields: {
     zroInternationalDocumentationUrl: process.env.ZRO_INTERNATIONAL_DOCUMENTATION_URL || null,
   },
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
   plugins: [
     require.resolve('@cmfcmf/docusaurus-search-local'),
     [
@@ -32,18 +36,20 @@ const config = {
         id: 'api',
         docsPluginId: 'classic',
         config: {
-          gateway: {
-            specPath: 'specs/gateway-spec.json',
-            outputDir: 'docs/gateway/endpoints',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
+            gateway: {
+              specPath: 'specs/gateway-spec.json',
+              outputDir: 'docs/gateway/endpoints',
+              downloadUrl: '/specs/gateway-spec.json',
+              sidebarOptions: {
+                groupPathsBy: 'tag',
+                categoryLinkSource: 'tag',
+              },
+              showSchemas: true
             },
-            showSchemas: true
-          },
           paas: {
             specPath: 'specs/paas-spec.json',
             outputDir: 'docs/paas/endpoints',
+            downloadUrl: '/specs/paas-spec.json',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
@@ -53,6 +59,7 @@ const config = {
           caas: {
             specPath: 'specs/caas-spec.json',
             outputDir: 'docs/caas/endpoints',
+            downloadUrl: '/specs/caas-spec.json',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
@@ -62,6 +69,17 @@ const config = {
           baas: {
             specPath: 'specs/baas-spec.json',
             outputDir: 'docs/baas/endpoints',
+            downloadUrl: '/specs/baas-spec.json',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+            },
+            showSchemas: true
+          },
+          paymentGateway: {
+            specPath: 'specs/paymentGateway-spec.json',
+            outputDir: 'docs/paymentGateway/endpoints',
+            downloadUrl: '/specs/paymentGateway-spec.json',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
@@ -154,7 +172,6 @@ const config = {
       //   indexName: "dev_zrobank",
       // },
     }),
-  themes: ['docusaurus-theme-openapi-docs'],
 }
 
 module.exports = config

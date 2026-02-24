@@ -33,7 +33,7 @@ function generateSpecs(url, filename, excludeOptions = []) {
       )
     })
     .catch((err) => {
-      console.error(err)
+      console.error(`Error generating ${filename} from ${url}:`, err.message)
     })
 }
 
