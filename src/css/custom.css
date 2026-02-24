@@ -198,3 +198,12 @@ input[type='number'] {
 .card {
   background: inherit !important;
 }
+
+/* Fix Export Dropdown text contrast - only for dropdown items */
+.dropdown__menu .dropdown__link {
+  color: #142032 !important;
+}
+
+.dropdown__menu .dropdown__link:hover {
+  color: #142032 !important;
+}

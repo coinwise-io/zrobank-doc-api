@@ -118,6 +118,11 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Guides',
+      items: require('./docs/baas/guides/sidebar.js'),
+    },
+    {
+      type: 'category',
       label: 'Endpoints',
       items: require('./docs/baas/endpoints/sidebar.js'),
     },

@@ -28,11 +28,15 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: yarn
 
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use project Yarn version
+        run: corepack use yarn@4.12.0
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Build website
         run: yarn build
 
