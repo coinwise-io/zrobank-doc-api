@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
+    "start": "CHOKIDAR_USEPOLLING=false docusaurus start --poll 1000",
     "build": "node specs/generate-specs.js && bash specs/generate-docs.sh && node utils/replace-helper.js && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -18,10 +18,12 @@
     "@cmfcmf/docusaurus-search-local": "^1.1.0",
     "@docusaurus/core": "^2.4.3",
     "@docusaurus/preset-classic": "^2.4.3",
+    "@docusaurus/theme-mermaid": "2.4.3",
     "@hookform/resolvers": "^3.3.4",
     "@mdx-js/react": "^1.6.22",
     "axios": "^1.6.8",
     "clsx": "^1.1.1",
+    "cytoscape": "3.28.1",
     "docusaurus-plugin-openapi-docs": "^2.1.3",
     "docusaurus-theme-openapi-docs": "^2.1.3",
     "prism-react-renderer": "^1.3.1",
@@ -49,5 +51,8 @@
   },
   "engines": {
     "node": ">=16.14"
+  },
+  "resolutions": {
+    "cytoscape": "3.28.1"
   }
 }
