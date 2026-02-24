@@ -6,8 +6,8 @@ It is important to note that all API requests must be made via HTTPS, as calls m
 
 ## How to generate a new Access Token?
 
-**[To generate a new Access Token](../endpoints/login-auth-rest-controller-execute.api.mdx)**, simply provide your `API ID` and `API Key` in the request body of the `/auth/signin` endpoint. This request will return an Access Token, which is precisely the Bearer Token required for authentication of all requests.
+**[To generate a new Access Token](../endpoints/v-1-login-auth-rest-controller-execute-v-1.api.mdx)**, simply provide your `API ID` and `API Key` in the request body of the `/auth/signin` endpoint. This request will return an Access Token, which is precisely the Bearer Token required for authentication of all requests.
 
 :::info
-If your Access Token stops working or you have accidentally shared it, insert it into the ["Refresh token"](../endpoints/refresh-token-auth-rest-controller-execute.api.mdx) endpoint and a new valid Access Token will be returned, ready to be used.
+If your Access Token stops working or you have accidentally shared it, insert it into the ["Refresh token"](../endpoints/v-1-refresh-token-auth-rest-controller-execute-v-1.api.mdx) endpoint and a new valid Access Token will be returned, ready to be used.
 :::
