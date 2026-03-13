@@ -8,18 +8,22 @@ Your account can be configured so that when certain events occur on your account
 
 ## Types of webhooks
 
-| Type                           | Description                                         |
-| ------------------------------ | --------------------------------------------------- |
-| PAYMENT                        | When you send a pix payment.                        |
-| PAYMENT FAILED                 | When you send a pix payment and it fails.           |
-| DEVOLUTION                     | When you send a pix devolution.                     |
-| DEVOLUTION FAILED              | When you send a pix devolution and it fails.        |
-| DEVOLUTION RECEIVED            | When receive a pix devolution.                      |
-| DEPOSIT                        | When receive a pix deposit.                         |
-| ONBOARDING                     | When you create a new user onboarding               |
-| ONBOARDING FAILED              | When you create a new user onboarding and it fails. |
-| MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.     |
-| WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                        |
+| Type                           | Description                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------- |
+| PAYMENT                        | When you send a pix payment.                                                 |
+| PAYMENT FAILED                 | When you send a pix payment and it fails.                                    |
+| DEVOLUTION                     | When you send a pix devolution.                                              |
+| DEVOLUTION FAILED              | When you send a pix devolution and it fails.                                 |
+| DEVOLUTION RECEIVED            | When receive a pix devolution.                                               |
+| DEPOSIT                        | When receive a pix deposit.                                                  |
+| ONBOARDING                     | When you create a new user onboarding                                        |
+| ONBOARDING FAILED              | When you create a new user onboarding and it fails.                          |
+| MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
+| WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                                                 |
+| JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
+| JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
+| JUDICIAL UNBLOCK ACCOUNT       | When a court order unblocks the user's account.                              |
+| JUDICIAL UNBLOCK ACCOUNT BALANCE | When a court order releases a previously blocked balance amount.            |
 
 <br /><br />
 
@@ -491,6 +495,83 @@ Your account can be configured so that when certain events occur on your account
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
+
+  </TabItem>
+</Tabs>
+
+## Judicial Webhooks
+
+Judicial webhooks are triggered by court-ordered operations on user accounts. You can register multiple URLs for the same event type — all registered URLs will receive the notification independently. This is useful if you operate multiple products (e.g., PaaS and Gateway) and need each one to receive the event.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Judicial Block Account">
+
+Triggered when a court order blocks the user's account entirely.
+
+```json
+{
+  "idJudicialBlockAccount": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "accountNumber": "000001",
+  "branchNumber": "0001",
+  "createdAt": "2024-04-17T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Judicial Block Account Balance">
+
+Triggered when a court order blocks a specific amount from the user's account balance. The `requestedAmount` field is included only when provided by the court order.
+
+```json
+{
+  "idJudicialBlockAccount": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "accountNumber": "000001",
+  "branchNumber": "0001",
+  "isTotalValue": false,
+  "requestedAmount": 150000,
+  "createdAt": "2024-04-17T17:30:00.020Z"
+}
+```
+
+> When `isTotalValue` is `true`, the entire available balance is blocked. `requestedAmount` is optional and only present when informed in the court order.
+
+  </TabItem>
+  <TabItem value="Judicial Unblock Account">
+
+Triggered when a court order lifts a full account block.
+
+```json
+{
+  "idJudicialUnblockAccount": "c3e9b7f1-12ab-4d88-9e4f-1a2b3c4d5e6f",
+  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "accountNumber": "000001",
+  "branchNumber": "0001",
+  "createdAt": "2024-04-17T17:35:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Judicial Unblock Account Balance">
+
+Triggered when a court order releases a previously blocked balance amount.
+
+```json
+{
+  "idJudicialUnblockAccount": "c3e9b7f1-12ab-4d88-9e4f-1a2b3c4d5e6f",
+  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "blockAccountBalanceId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "accountNumber": "000001",
+  "branchNumber": "0001",
+  "requestedAmount": 150000,
+  "createdAt": "2024-04-17T17:35:00.020Z"
+}
+```
+
+> `blockAccountBalanceId` references the original `JUDICIAL_BLOCK_ACCOUNT_BALANCE` event that is being released.
 
   </TabItem>
 </Tabs>
