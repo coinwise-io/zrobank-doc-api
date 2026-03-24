@@ -516,9 +516,13 @@ Triggered when a court order blocks the user's account entirely.
   "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
   "accountNumber": "000001",
   "branchNumber": "0001",
+  "processNumber": "0001234-56.2026.8.26.0100",
+  "courtName": "1ª Vara Cível de São Paulo",
   "createdAt": "2024-04-17T17:30:00.020Z"
 }
 ```
+
+> `processNumber` and `courtName` are optional — they are only present when provided in the court order.
 
   </TabItem>
   <TabItem value="Judicial Block Account Balance">
@@ -533,11 +537,13 @@ Triggered when a court order blocks a specific amount from the user's account ba
   "branchNumber": "0001",
   "isTotalValue": false,
   "requestedAmount": 150000,
+  "processNumber": "0001234-56.2026.8.26.0100",
+  "courtName": "1ª Vara Cível de São Paulo",
   "createdAt": "2024-04-17T17:30:00.020Z"
 }
 ```
 
-> When `isTotalValue` is `true`, the entire available balance is blocked. `requestedAmount` is optional and only present when informed in the court order.
+> When `isTotalValue` is `true`, the entire available balance is blocked. `requestedAmount` is optional and only present when informed in the court order. `processNumber` and `courtName` are also optional.
 
   </TabItem>
   <TabItem value="Judicial Unblock Account">
@@ -550,9 +556,13 @@ Triggered when a court order lifts a full account block.
   "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
   "accountNumber": "000001",
   "branchNumber": "0001",
+  "processNumber": "0001234-56.2026.8.26.0100",
+  "courtName": "1ª Vara Cível de São Paulo",
   "createdAt": "2024-04-17T17:35:00.020Z"
 }
 ```
+
+> `processNumber` and `courtName` are optional — they are only present when provided in the court order.
 
   </TabItem>
   <TabItem value="Judicial Unblock Account Balance">
@@ -566,6 +576,8 @@ Triggered when a court order releases a previously blocked balance amount.
   "blockAccountBalanceId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
   "accountNumber": "000001",
   "branchNumber": "0001",
+  "processNumber": "0001234-56.2026.8.26.0100",
+  "courtName": "1ª Vara Cível de São Paulo",
   "requestedAmount": 150000,
   "createdAt": "2024-04-17T17:35:00.020Z"
 }
