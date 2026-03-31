@@ -16,8 +16,9 @@ Your account can be configured so that when certain events occur on your account
 | DEVOLUTION FAILED              | When you send a pix devolution and it fails.                                 |
 | DEVOLUTION RECEIVED            | When receive a pix devolution.                                               |
 | DEPOSIT                        | When receive a pix deposit.                                                  |
-| ONBOARDING                     | When you create a new user onboarding                                        |
+| ONBOARDING FINISHED            | When you create a new user onboarding                                        |
 | ONBOARDING FAILED              | When you create a new user onboarding and it fails.                          |
+| ONBOARDING REJECTED            | When you create a new user onboarding and it rejected.                       |
 | MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
 | WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                                                 |
 | JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
@@ -192,7 +193,7 @@ Your account can be configured so that when certain events occur on your account
 {
   "id": "9c4af5a2-6a6b-4e4e-8af8-e03a331b9c5a",
   "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
-  "type": "ONBOARDING",
+  "type": "ONBOARDING_FINISHED",
   "name": "John",
   "full_name": "John Doe",
   "genre": "M",
@@ -232,6 +233,47 @@ Your account can be configured so that when certain events occur on your account
   "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
   "user_id": "a379d727-5409-4b9f-9cae-902aed13efcd",
   "type": "ONBOARDING_FAILED",
+  "name": "John",
+  "full_name": "John Doe",
+  "genre": "M",
+  "mother_name": "Jane Doe",
+  "birth_date": "1984-11-03",
+  "document": "11122233344",
+  "phone_number": "5511955551234",
+  "email": "new-user@zrobank.com.br",
+  "active": true,
+  "person_type": "LEGAL_PERSON",
+  "legal_person_type": "LTDA",
+  "address": {
+    "zip_code": "96075858",
+    "street": "Alameda",
+    "number": 10,
+    "neighborhood": "Alphaville",
+    "city": "São Paulo",
+    "federative_unit": "SP",
+    "country": "Brasil",
+    "complement": "flat 1201"
+  },
+  "nationality": "Brasileiro",
+  "pep": true,
+  "pep_since": "2015-02-18T18:38:09.412Z",
+  "occupation_cbo_code": 0,
+  "occupation_income": 0,
+  "patrimony": 1299,
+  "failed_code": "DOCUMENT_INVALID",
+  "failed_message": "Failed document onboarding."
+}
+```
+
+  </TabItem>
+
+  <TabItem value="Onboarding Rejected">
+
+```json
+{
+  "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "user_id": "a379d727-5409-4b9f-9cae-902aed13efcd",
+  "type": "ONBOARDING_REJECTED",
   "name": "John",
   "full_name": "John Doe",
   "genre": "M",
