@@ -186,7 +186,7 @@ Your account can be configured so that when certain events occur on your account
 
   </TabItem>
 
-  <TabItem value="Onboarding">
+  <TabItem value="Onboarding Finished">
 
 ```json
 {
@@ -219,7 +219,9 @@ Your account can be configured so that when certain events occur on your account
   "pep_since": "2015-02-18T18:38:09.412Z",
   "occupation_cbo_code": 0,
   "occupation_income": 0,
-  "patrimony": 1299
+  "patrimony": 1299,
+  "failed_code": null,
+  "failed_message": null
 }
 ```
 
@@ -275,13 +277,15 @@ Your account can be configured so that when certain events occur on your account
   "wallet_name": "DEFAULT",
   "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
   "type": "WALLET_ACCOUNT_BALANCE_UPDATED",
-  "action": "credit" | "debit",
+  "action": "credit",
   "value": 100,
   "old_balance": 1000,
   "new_balance": 1100,
   "created_at": "2024-06-20T12:34:56.071Z"
 }
 ```
+
+> `action` possible values: `credit` or `debit`.
 
   </TabItem>
   <TabItem value="Merchant Onboarding KYC Status">
