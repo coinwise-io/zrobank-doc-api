@@ -51,11 +51,12 @@ Create onboarding record with legal person address and revenue.
 
 Register shareholders. Can be Natural Person (CPF) or Legal Person (CNPJ).
 
-**Returns:** `shareholder_id` → Save for Step 4
+**Returns:** `shareholder_id` → Save for Step 4 (Natural Person shareholders only)
 
 **Requirements:**
 - At least one shareholder
-- If shareholder is Legal Person, must link a legal representative in Step 4
+- If shareholder is Natural Person (CPF), the `document` must match the legal representative's document created in Step 4
+- Legal Person (CNPJ) shareholders do not require a legal representative
 - Total `participation_percentage` ≤ 100%
 
 ---
@@ -72,8 +73,7 @@ Register legal representatives. Must be Natural Person with CPF.
 
 **Requirements:**
 - Must be Natural Person (CPF)
-- Must link to shareholder via `shareholder_id`
-- Legal Person shareholders must have at least one representative
+- Must link to a Natural Person shareholder via `shareholder_id`
 - At least one legal representative required
 
 ---
@@ -137,8 +137,7 @@ Submit onboarding for processing.
 - ✓ At least one shareholder created
 - ✓ At least one legal representative created
 - ✓ All legal representatives are Natural Person
-- ✓ All legal representatives linked to shareholders
-- ✓ Legal Person shareholders have at least one representative linked
+- ✓ All legal representatives linked to Natural Person shareholders
 - ✓ All legal representatives have uploaded: selfie, identity_document, qualification_declaration
 - ✓ Legal person has uploaded: SOCIAL_CONTRACT
 - ✓ Legal person has uploaded: BALANCE_SHEET or REVENUE_STATEMENT
@@ -173,7 +172,7 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 
 If webhooks are configured, you will receive notifications for:
 - `FINISHED` - Onboarding approved
-- `FAILED` - Processing error
+- `REJECTED` - Onboarding not approved
 
 Configure webhooks to receive real-time notifications instead of polling this endpoint.
 
