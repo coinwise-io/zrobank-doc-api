@@ -31,6 +31,8 @@ Create user account as Legal Person with CNPJ.
 
 **Returns:** `user_id`
 
+**Note:** If a previous onboarding was **REJECTED** or **FAILED**, reuse the existing `user_id` and **skip to** [Step 2](#step-2-create-onboarding).
+
 ---
 
 ## Step 2: Create Onboarding
