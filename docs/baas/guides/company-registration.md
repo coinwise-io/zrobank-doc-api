@@ -1,11 +1,11 @@
 ---
 sidebar_position: 3
-title: "Company Registration"
+title: "Company Registration - Acquiring"
 ---
 
-# Company Registration
+# Company Registration - Acquiring
 
-Essential flow to register a company after Legal Person onboarding in the BaaS API.
+Essential flow to use Acquiring product after Legal Person onboarding in BaaS API.
 
 ## Prerequisite
 
