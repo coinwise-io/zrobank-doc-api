@@ -29,19 +29,19 @@ Execute steps 1-7 in order.
 
 Create user account as Legal Person with CNPJ.
 
-**Returns:** `user_id`
+**Returns:** `id`
 
-**Note:** If a previous onboarding was **REJECTED** or **FAILED**, reuse the existing `user_id` and **skip to** [Step 2](#step-2-create-onboarding).
+**Note:** If a previous onboarding was **REJECTED** or **FAILED**, reuse the existing `id` and **skip to** [Step 2](#step-2-create-onboarding).
 
 ---
 
 ## Step 2: Create Onboarding
 
-`POST /users/onboarding/legal-person`
+`POST /users/onboardings/legal-person`
 
 Create onboarding record with legal person address and revenue.
 
-**Returns:** `onboarding_id` → Save for Steps 6 and 7
+**Returns:** `id` → Save for Steps 6 and 7
 
 **Note:** Cannot create if user has active onboarding (PENDING, IN_PROCESS, FINISHED). Can create new if previous was REJECTED or FAILED.
 
@@ -53,7 +53,7 @@ Create onboarding record with legal person address and revenue.
 
 Register shareholders. Can be Natural Person (CPF) or Legal Person (CNPJ).
 
-**Returns:** `shareholder_id` → Save for Step 4 (Natural Person shareholders only)
+**Returns:** `id` → Save for Step 4 (Natural Person shareholders only)
 
 **Requirements:**
 - At least one shareholder
@@ -71,7 +71,7 @@ Register legal representatives. Must be Natural Person with CPF.
 
 **Requires:** `shareholder_id` from Step 3
 
-**Returns:** `legal_representative_id` → Save for Step 5
+**Returns:** `id` → Save for Step 5
 
 **Requirements:**
 - Must be Natural Person (CPF)
@@ -89,7 +89,7 @@ Upload documents for each legal representative (multipart/form-data).
 **Required:**
 - `selfie` (file)
 - `identity_document` (file)
-- `identity_document_type` (enum: `id`, `cnh`, `passaporte`)
+- `identity_document_type` (enum: `id`, `cnh`, `passport`)
 - `qualification_declaration` (file)
 
 **Optional:**
@@ -99,13 +99,13 @@ Upload documents for each legal representative (multipart/form-data).
 **Requirements:**
 - Upload for ALL legal representatives
 - Max 25 MB per file
-- Formats: PDF, JPEG, JPG, PNG
+- Formats: PDF, JPEG, JPG
 
 ---
 
 ## Step 6: Upload Legal Person Documents
 
-`POST /users/onboarding/legal-person/{id}/documents`
+`POST /users/onboardings/legal-person/{id}/documents`
 
 Upload legal person documents. Call once per document type.
 
@@ -121,14 +121,14 @@ Upload legal person documents. Call once per document type.
 - `KYC_AML_POLICY`
 
 **Requirements:**
-- Max 25 MB per file
-- Formats: PDF, JPEG, JPG, PNG
+- Max 10 MB per file
+- Formats: PDF, JPEG, JPG
 
 ---
 
 ## Step 7: Finalize
 
-`POST /users/onboarding/legal-person/{id}/finalize`
+`POST /users/onboardings/legal-person/{id}/finalize`
 
 Submit onboarding for processing.
 
@@ -153,7 +153,7 @@ After finalization, use the endpoint below to check the onboarding status.
 
 ## Checking Status
 
-`GET /users/onboarding/legal-person/{id}`
+`GET /users/onboardings/legal-person/{id}`
 
 Use this endpoint to check the current onboarding status.
 
@@ -173,8 +173,11 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 **Webhooks:**
 
 If webhooks are configured, you will receive notifications for:
-- `FINISHED` - Onboarding approved
-- `REJECTED` - Onboarding not approved
+- `ONBOARDING_FINISHED` - Onboarding approved
+- `ONBOARDING_REJECTED` - Onboarding not approved
+- `ONBOARDING_FAILED` - Processing error
+
+See [Webhooks](/baas/api-overview/webhooks) for payload examples and delivery details.
 
 Configure webhooks to receive real-time notifications instead of polling this endpoint.
 

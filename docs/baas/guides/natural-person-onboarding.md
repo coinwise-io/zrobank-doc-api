@@ -26,9 +26,9 @@ Execute steps 1-3 in order. Step 4 is for checking the result.
 
 Create user account as Natural Person with CPF.
 
-**Returns:** `user_id`
+**Returns:** `id`
 
-**Note:** If a previous onboarding was **REJECTED** or **FAILED**, reuse the existing `user_id` and **skip to** [Step 2](#step-2-create-onboarding).
+**Note:** If a previous onboarding was **REJECTED** or **FAILED**, reuse the existing `id` and **skip to** [Step 2](#step-2-create-onboarding).
 
 ---
 
@@ -38,7 +38,7 @@ Create user account as Natural Person with CPF.
 
 Create onboarding record with user address and personal data.
 
-**Returns:** `onboarding_id` → Save for Steps 3 and 4
+**Returns:** `id` → Save for Steps 3 and 4
 
 **Body (required):**
 - `address` (object): `zip_code`, `street`, `number`, `city`, `federative_unit`, `country` (required); `neighborhood`, `complement` (optional)
@@ -76,7 +76,7 @@ Upload documents (multipart/form-data). Two methods available:
 
 **Requirements:**
 - Max 25 MB per file
-- Choose one method (A or B), not both
+- Choose one method (A or B), not both — sending `document_id` and `document_file_type` together is rejected
 
 ---
 
@@ -101,8 +101,11 @@ PENDING → FINISHED / REJECTED / FAILED
 **Webhooks:**
 
 If webhooks are configured, you will receive notifications for:
-- `FINISHED` - Onboarding approved
-- `REJECTED` - Onboarding not approved
+- `ONBOARDING_FINISHED` - Onboarding approved
+- `ONBOARDING_REJECTED` - Onboarding not approved
+- `ONBOARDING_FAILED` - Processing error
+
+See [Webhooks](/baas/api-overview/webhooks) for payload examples and delivery details.
 
 Configure webhooks to receive real-time notifications instead of polling this endpoint.
 

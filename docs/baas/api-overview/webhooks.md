@@ -18,7 +18,10 @@ Your account can be configured so that when certain events occur on your account
 | DEPOSIT                        | When receive a pix deposit.                                                  |
 | ONBOARDING FINISHED            | When you create a new user onboarding and it is approved.                    |
 | ONBOARDING REJECTED            | When you create a new user onboarding and it is rejected.                    |
+| ONBOARDING FAILED              | When onboarding processing fails due to an internal or provider-side error.  |
 | MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
+| COMPANY REGISTRATION ONBOARDING STATUS UPDATED | When company registration changes status, including states that require new documents or corrections. |
+| COMPANY REGISTRATION ONBOARDING APPROVED | When company registration is approved and becomes active.                  |
 | WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                                                 |
 | JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
 | JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
@@ -267,6 +270,46 @@ Your account can be configured so that when certain events occur on your account
 ```
 
   </TabItem>
+  <TabItem value="Onboarding Failed">
+
+```json
+{
+  "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "user_id": "a379d727-5409-4b9f-9cae-902aed13efcd",
+  "type": "ONBOARDING_FAILED",
+  "name": "John",
+  "full_name": "John Doe",
+  "genre": "M",
+  "mother_name": "Jane Doe",
+  "birth_date": "1984-11-03",
+  "document": "11122233344",
+  "phone_number": "5511955551234",
+  "email": "new-user@zrobank.com.br",
+  "active": true,
+  "person_type": "LEGAL_PERSON",
+  "legal_person_type": "LTDA",
+  "address": {
+    "zip_code": "96075858",
+    "street": "Alameda",
+    "number": 10,
+    "neighborhood": "Alphaville",
+    "city": "São Paulo",
+    "federative_unit": "SP",
+    "country": "Brasil",
+    "complement": "flat 1201"
+  },
+  "nationality": "Brasileiro",
+  "pep": true,
+  "pep_since": "2015-02-18T18:38:09.412Z",
+  "occupation_cbo_code": 0,
+  "occupation_income": 0,
+  "patrimony": 1299,
+  "failed_code": "ONBOARDING_FAILED",
+  "failed_message": "Unexpected onboarding processing error."
+}
+```
+
+  </TabItem>
   <TabItem value="Balance updated">
 
 ```json
@@ -300,6 +343,43 @@ Your account can be configured so that when certain events occur on your account
   "risk_analysis_status_justification": "Documents pending for risk review"
 }
 ```
+
+  </TabItem>
+  <TabItem value="Company Registration Onboarding Status Updated">
+
+```json
+{
+  "id": "8fc58500-b12e-49d7-892c-dfd704b94c2d",
+  "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
+  "status": "WAITING_DOCUMENTS",
+  "cnpj": "12345678000190",
+  "origin": "COMPANIES_KYC",
+  "note": "Additional company documents required.",
+  "updated_at": "2025-04-15T14:30:00.000Z"
+}
+```
+
+> Possible `status` values include `WAITING_ANALYSIS`, `WAITING_DOCUMENTS`, `WAITING_CORRECTIONS`, `ACTIVE`, `DECLINED`, and `CANCELED`. For terminal statuses such as `DECLINED` or `CANCELED`, the payload can also include `failed_code` and `failed_message`.
+
+> `ACTIVE` can appear in this webhook before final approval is confirmed through alias bank account readiness. For the final approval signal, use `COMPANY_REGISTRATION_ONBOARDING_APPROVED`.
+
+  </TabItem>
+  <TabItem value="Company Registration Onboarding Approved">
+
+```json
+{
+  "id": "8fc58500-b12e-49d7-892c-dfd704b94c2d",
+  "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
+  "status": "ACTIVE",
+  "cnpj": "12345678000190",
+  "bank_number": "655",
+  "bank_account_status": "ACTIVE",
+  "alias_created_date": "2025-01-15T10:00:00Z",
+  "updated_at": "2025-04-15T16:45:00.000Z"
+}
+```
+
+> This is the final approval event for clients that depend on the company registration plus alias bank account activation.
 
   </TabItem>
 </Tabs>
