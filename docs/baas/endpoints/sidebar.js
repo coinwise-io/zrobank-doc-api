@@ -1,5 +1,5 @@
 module.exports = [
-  { type: "doc", id: "baas/endpoints/z-ro-bank-baas-api" },
+  { type: "doc", id: "baas/endpoints/z-ro-global-baas-api" },
   {
     type: "category",
     label: "Authentication",

@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Zro Gateway',
+    title: 'Z.ro Gateway',
     src: require('@site/static/img/door.png').default,
     to: '/gateway/api-overview/introduction',
     description: (
@@ -52,7 +52,7 @@ const FeatureList: FeatureItem[] = [
     to: '/paymentGateway/api-overview/introduction',
     description: (
       <>
-        Accept card payments with agility and security through our Payments Gateway API, 
+        Accept card payments with agility and security through our Payments Gateway API,
         enabling seamless integration for in-person and online transactions.
       </>
     ),

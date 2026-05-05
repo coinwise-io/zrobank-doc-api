@@ -10,10 +10,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Z.ro Bank',
+  title: 'Z.ro Global',
   tagline: 'Documentation',
   favicon: 'img/favicon.png',
-  url: 'https://docs.zrobank.io',
+  url: 'https://docs.zroglobal.io',
   baseUrl: '/',
   organizationName: 'coinwise-io', // Usually your GitHub org/user name.
   projectName: 'zrobank-doc-api', // Usually your repo name.
@@ -76,16 +76,16 @@ const config = {
             },
             showSchemas: true
           },
-          paymentGateway: {
-            specPath: 'specs/paymentGateway-spec.json',
-            outputDir: 'docs/paymentGateway/endpoints',
-            downloadUrl: '/specs/paymentGateway-spec.json',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
-            },
-            showSchemas: true
-          },
+          // paymentGateway: {
+          //   specPath: 'specs/paymentGateway-spec.json',
+          //   outputDir: 'docs/paymentGateway/endpoints',
+          //   downloadUrl: '/specs/paymentGateway-spec.json',
+          //   sidebarOptions: {
+          //     groupPathsBy: 'tag',
+          //     categoryLinkSource: 'tag',
+          //   },
+          //   showSchemas: true
+          // },
         },
       },
     ],
@@ -117,7 +117,7 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         logo: {
-          alt: 'Zro Bank Logo',
+          alt: 'Z.ro Global Logo',
           src: 'img/new-logo.png',
         },
         items: [
@@ -169,7 +169,7 @@ const config = {
       // algolia: {
       //   appId: ALGOLIA_APP_ID,
       //   apiKey: ALGOLIA_API_KEY,
-      //   indexName: "dev_zrobank",
+      //   indexName: "dev_zroglobal",
       // },
     }),
 }

@@ -1,6 +1,6 @@
 # Authentication
 
-There are two types of authentication methods available for the Z.ro Gateway API:
+There are two types of authentication methods available for the Z.ro Global Gateway API:
 
 - Using PaaS Token
 - Using `x-api-key` (DEPRECATED)
@@ -8,11 +8,11 @@ There are two types of authentication methods available for the Z.ro Gateway API
 ## Using PaaS Token
 
 The PaaS Token is a JWT (JSON Web Token) issued by our PaaS system. This token may be used to authenticate your requests
-to the Z.ro Gateway API and the PaaS API.
+to the Z.ro Global Gateway API and the PaaS API.
 
 To obtain your PaaS Token, you need to perform the authorization as described in the [PaaS Authorization section](/paas/api-overview/authentication).
 
-After you have obtained your PaaS Token, you can use it to authenticate your requests to the Z.ro Gateway API. To do this,
+After you have obtained your PaaS Token, you can use it to authenticate your requests to the Z.ro Global Gateway API. To do this,
 you need to include the PaaS Token in the request header as a Bearer Token in the `Authorization` header. Example:
 
 ```shell
@@ -23,12 +23,12 @@ curl --request GET \
 
 ## Using `x-api-key` (DEPRECATED)
 
-The `x-api-key` is a unique identifier that allows you to authenticate your requests to the Z.ro Gateway API.
+The `x-api-key` is a unique identifier that allows you to authenticate your requests to the Z.ro Global Gateway API.
 
 To obtain your `x-api-key`, you need to contact our support team. Once your `x-api-key` is created, you are ready to
 start the integration.
 
-To authenticate the requests you make to the Z.ro Gateway API, you need to include the `x-api-key` in the request
+To authenticate the requests you make to the Z.ro Global Gateway API, you need to include the `x-api-key` in the request
 header. Example:
 
 ```shell
