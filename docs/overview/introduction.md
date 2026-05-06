@@ -8,7 +8,7 @@ Here you'll find all the information you must have to integrate with Z.ro Global
 
 Z.ro Global is a Brazilian digital bank and cryptocurrency exchange based on blockchain technology. We build financial services for customers and their businesses using proprietary technology.
 
-** ZERO FOR BUSINESS ** - Made for your company
+** Z.RO FOR BUSINESS ** - Made for your company
 
 For institutional clients, we build all crypto and payments infrastructure using the best practices and technology available. Count on us to always deliver the software your company needs to reach its full potential.
 
