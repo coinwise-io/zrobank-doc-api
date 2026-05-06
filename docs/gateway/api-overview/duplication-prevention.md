@@ -1,6 +1,6 @@
 # Duplication Prevention
 
-This document provides an overview of the duplication prevention mechanisms implemented in the Z.ro Gateway API.
+This document provides an overview of the duplication prevention mechanisms implemented in the Z.ro Global Gateway API.
 
 The API is designed to ensure that duplicate requests are not processed, which helps maintain data integrity and
 consistency.

@@ -7,16 +7,16 @@ Webhooks enable real-time communication by automatically sending HTTP requests w
 require polling, webhooks push data to a specified URL, improving efficiency. Common uses include payment processing,
 notifications, and automation.
 
-The ZroBank API supports webhooks for various events, such as **payment status updates**, **withdraws**, **refunds** and
+The Z.ro Global API supports webhooks for various events, such as **payment status updates**, **withdraws**, **refunds** and
 **KYC** (Know Your
 Customer).
 
 ## Webhooks URLs
 
-All webhook URLs must be **HTTPS** and publicly accessible. The ZroBank API sends a `POST` request to the URL with a
+All webhook URLs must be **HTTPS** and publicly accessible. The Z.ro Global API sends a `POST` request to the URL with a
 JSON
 payload (example below).
-These URLs must be provided to ZroBank Integration Team to enable the webhooks.
+These URLs must be provided to Z.ro Global Integration Team to enable the webhooks.
 
 The URLs we need:
 
@@ -36,7 +36,7 @@ By default, all webhooks are sent without any authentication. If you need to sec
 
 If all the URLs provided are an authenticated URL, we support the **OAuth2 Client Credentials** flow for authentication.
 
-- You need to provide the `client_id`, `client_secret` and `token endpoint` (commonly `/oauth/token`) to the ZroBank
+- You need to provide the `client_id`, `client_secret` and `token endpoint` (commonly `/oauth/token`) to the Z.ro Global
   Integration Team.
 - We will call the token endpoint to get the access token.
 - All the next webhooks will include the access token in the `Authorization` header.
@@ -75,7 +75,7 @@ explanation of each field.
   "payer": {
     "name": "Maria Ferreira Da Silva",
     "cpf_cnpj": "***004714**",
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220",
     "paid_by_client": false,
     "kyc": {
@@ -89,7 +89,7 @@ explanation of each field.
   "receiver": null,
   "refund": null,
   "bank_account_data": {
-    "bank_name": "ZRO PAGAMENTOS S.A.",
+    "bank_name": "ZERO PAGAMENTO S.A.",
     "bank_ispb": "26264220",
     "account_number": "5684",
     "account_digit": "1",
@@ -119,7 +119,7 @@ explanation of each field.
   "payer": {
     "name": "Maria Ferreira Da Silva",
     "cpf_cnpj": "***004714**",
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220",
     "paid_by_client": false,
     "kyc": {
@@ -133,7 +133,7 @@ explanation of each field.
   "receiver": null,
   "refund": null,
   "bank_account_data": {
-    "bank_name": "ZRO PAGAMENTOS S.A.",
+    "bank_name": "ZERO PAGAMENTO S.A.",
     "bank_ispb": "26264220",
     "account_number": "56841",
     "account_branch": "0001",
@@ -162,7 +162,7 @@ explanation of each field.
   "payer": {
     "name": "Maria Ferreira Da Silva",
     "cpf_cnpj": "***004714**",
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220",
     "paid_by_client": false,
     "kyc": {
@@ -199,12 +199,12 @@ explanation of each field.
   "receiver": {
     "name": "Maria Ferreira Da Silva",
     "cpf_cnpj": "12345678900",
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220"
   },
   "refund": null,
   "bank_account_data": {
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220",
     "account_number": "8720077",
     "account_digit": "7",
@@ -235,12 +235,12 @@ explanation of each field.
   "receiver": {
     "name": "Maria Ferreira Da Silva",
     "cpf_cnpj": "12345678900",
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220"
   },
   "refund": null,
   "bank_account_data": {
-    "bank_name": "Zro Pagamento S.A",
+    "bank_name": "ZERO Pagamento S.A",
     "bank_ispb": "26264220",
     "account_number": "8720077",
     "account_branch": "0001",

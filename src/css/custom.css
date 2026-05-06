@@ -92,22 +92,6 @@ code {
   --ifm-color-yellow-dark: #df7d03;
 }
 
-.try-btn {
-  display: inline-block;
-  border-radius: 8px;
-  background-color: var(--ifm-color-cyan-dark);
-  color: #ffffff;
-  padding: 5px 10px;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-.try-btn:hover {
-  background-color: #136366; /* Darker shade of #2e8555 */
-}
-
 .aa-DetachedSearchButton {
   border-radius: 20px !important;
   padding: 0 16px 0 6px !important;
