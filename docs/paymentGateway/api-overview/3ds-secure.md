@@ -43,7 +43,7 @@ To perform a 3DS integration in your system, you will need to:
 ### Sequence of Endpoints that should be implemented in the frontend:
 
 1. **Get Transactional Token**
-   - Call the ZroBank API to get an authentication token
+   - Call the Z.ro Global API to get an authentication token
 
 2. **POST `{baseUrl}/v2/threeds-authentication-setup`**
    - Starts the 3DS authentication process
@@ -143,7 +143,7 @@ The project contains:
 
 - **`server.js`**: Express server with proxy endpoints and 3DS return management
 - **`public/js/3ds-service.js`**: JavaScript class that implements all 3DS flow logic
-- **`public/js/zrobank-token-service.js`**: Service for transactional token acquisition
+- **`public/js/zro-global-token-service.js`**: Service for transactional token acquisition
 - **`public/index.html`**: Example interface for testing
 - **`public/settings.html`**: Variable configuration page
 - **`.env`**: Environment variable configuration file (create manually)
@@ -153,7 +153,7 @@ The project contains:
 If you want to integrate into your frontend without using the example interface:
 
 1. **`public/js/3ds-service.js`** - Main 3DS logic
-2. **`public/js/zrobank-token-service.js`** - Token acquisition
+2. **`public/js/zro-global-token-service.js`** - Token acquisition
 3. **`public/js/config.js`** - Helper functions
 
 You can adapt these files as needed or use them only as a reference to implement in your own code.
@@ -176,7 +176,7 @@ After completing the 3DS authentication flow, you will receive authentication da
 The 3DS authentication result should be sent to the payin endpoint when creating a payment:
 
 **Endpoint:**
-https://docs.zrobank.io/paymentGateway/endpoints/v-1-create-payin-rest-controller-execute-v-1
+https://docs.zroglobal.io/paymentGateway/endpoints/v-1-create-payin-rest-controller-execute-v-1
 
 
 **Important:** Include the 3DS authentication data (xid, cavv, secure_version, directory_server_transaction_id, three_ds_server_transaction_id) in the payment payload when calling this endpoint.

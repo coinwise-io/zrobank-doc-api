@@ -2,7 +2,7 @@
 
 ## Customer Bank Account Registration
 
-The Zro Gateway has a feature that limits the bank accounts authorized for deposits and/or withdrawals made by customers.
+The Z.ro Global Gateway has a feature that limits the bank accounts authorized for deposits and/or withdrawals made by customers.
 
 By default, this protection is disabled and can be activated upon request to our team.
 

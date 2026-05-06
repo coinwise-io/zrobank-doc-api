@@ -14,19 +14,19 @@ export default function Footer() {
       <Content>
         <Logo src="img/new-logo.png" alt="Logo" />
         <Copyright>
-          Customer support: alo@zrobank.com.br | LGPD: dpo.zro@zrobank.com.br |
+          Customer support: alo@zro.global | LGPD: dpo.zro@zro.global |
           CNPJ: 26.264.220/0001-16
         </Copyright>
         <IconsContainer>
           <a
-            href="https://www.linkedin.com/company/zrobank"
+            href="https://www.linkedin.com/company/zroglobal"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Icon src="img/linkedin.png" />
           </a>
           <a
-            href="https://www.instagram.com/zrobank"
+            href="https://www.instagram.com/zro.global"
             target="_blank"
             rel="noopener noreferrer"
           >
