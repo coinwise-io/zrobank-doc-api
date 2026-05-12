@@ -156,3 +156,39 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 
   </TabItem>
 </Tabs>
+
+## Application status values
+
+### Transaction
+
+| Status | Description |
+| -- | -- |
+| paid | Deposit received and approved. |
+| failed | Failed to generate the QR Code. |
+| pending | QR Code has not been paid yet. |
+| paid_by_third_party | Deposit made by a third party and has been refunded. |
+| payment rejected | Deposit rejected by a business rule and has been refunded. |
+| paid_without_qrcode | Deposit did not come through a QR Code and has been refunded. |
+
+### Withdraw
+
+| Status | Description |
+| -- | -- |
+| paid | Withdrawal executed and approved. |
+| failed | Withdrawal failed when sending or being approved. |
+| pending | Withdrawal is pending sending or approval. |
+
+### Refund
+
+| Status | Description |
+| -- | -- |
+| awaiting | Refund is in the queue to be executed. |
+| paid | Refund executed and approved. |
+| failed | Refund failed when sending or being approved. |
+| pending | Refund is pending sending or approval. |
+
+### Returned
+
+| Status | Description |
+| -- | -- |
+| refund_received | A refund was received from a customer. |
