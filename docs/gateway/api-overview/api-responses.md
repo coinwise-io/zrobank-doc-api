@@ -166,7 +166,7 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | paid | Deposit received and approved. |
 | failed | Failed to generate the QR Code. |
 | pending | QR Code has not been paid yet. |
-| paid_by_third_party | Deposit made by a third party and has been refunded. |
+| paid_by_third_party | Deposit made by a third party and will be refunded. |
 | payment rejected | Deposit rejected by a business rule and has been refunded. |
 | paid_without_qrcode | Deposit did not come through a QR Code and has been refunded. |
 
