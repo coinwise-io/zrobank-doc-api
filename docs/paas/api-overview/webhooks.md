@@ -336,3 +336,36 @@ Your account can be configured so that when certain events occur on your account
 
   </TabItem>
 </Tabs>
+
+## Payloads (Version 4)
+
+<Tabs>
+  <TabItem value="Deposit">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "type": "DEPOSIT",
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "txid": null,
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "amount": "63",
+  "owner_name": "Z.ro Bolsao",
+  "owner_document": "00000000000",
+  "owner_bank_name": "ZERO IP S/A",
+  "owner_bank_ispb": "26264220",
+  "owner_branch_number": "0000",
+  "owner_account_number": "000000",
+  "owner_account_type": "CACC",
+  "beneficiary_name": "Name",
+  "beneficiary_account_number": "000000",
+  "beneficiary_branch_number": "0000",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+</Tabs>
