@@ -23,6 +23,51 @@ Your account can be configured so that when certain events occur on your account
 | COMPANY REGISTRATION ONBOARDING STATUS UPDATED | When company registration changes status, including states that require new documents or corrections. |
 | COMPANY REGISTRATION ONBOARDING APPROVED | When company registration is approved and becomes active.                  |
 | WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                                                 |
+| PIX REFUND OPEN                | When a Pix refund request is opened by the receiving PSP.                    |
+| PIX REFUND PENDING             | When a Pix refund request is pending processing.                             |
+| PIX REFUND WAITING             | When a Pix refund request is waiting for the PSP's response.                 |
+| PIX REFUND CLOSED              | When a Pix refund request is closed and the funds are returned.              |
+| PIX REFUND CANCELED            | When a Pix refund request is canceled.                                       |
+| PIX REFUND FAILED              | When a Pix refund request fails.                                             |
+| PIX FUND RECOVERY REQUEST CREATED | When a Pix fund recovery request is created.                              |
+| PIX FUND RECOVERY REQUEST ANALYSED | When a Pix fund recovery request has been analysed.                      |
+| PIX FUND RECOVERY REQUEST COMPLETED APPROVED | When a Pix fund recovery request is completed and approved.    |
+| PIX FUND RECOVERY REQUEST COMPLETED REJECTED | When a Pix fund recovery request is completed and rejected.    |
+| PIX FUND RECOVERY REQUEST CANCELED | When a Pix fund recovery request is canceled.                            |
+| PIX FUND RECOVERY REQUEST FAILED | When a Pix fund recovery request fails.                                    |
+| PIX AUTOMATIC RECURRENCE CREATED | When a Pix automatic recurrence is created.                               |
+| PIX AUTOMATIC RECURRENCE FAILED | When a Pix automatic recurrence creation fails.                            |
+| PIX AUTOMATIC RECURRENCE APPROVED | When a Pix automatic recurrence is approved.                             |
+| PIX AUTOMATIC RECURRENCE REJECTED | When a Pix automatic recurrence is rejected.                             |
+| PIX AUTOMATIC RECURRENCE CANCELED | When a Pix automatic recurrence is canceled.                             |
+| PIX AUTOMATIC RECURRENCE CANCELED FAILED | When a Pix automatic recurrence cancellation fails.               |
+| PIX AUTOMATIC RECURRENCE EXPIRED | When a Pix automatic recurrence expires after the request expiration date. |
+| PIX AUTOMATIC RECURRENCE FINISHED | When a Pix automatic recurrence reaches its end date.                    |
+| PIX AUTOMATIC AUTHORIZATION PENDING | When a Pix automatic authorization is pending user approval.           |
+| PIX AUTOMATIC AUTHORIZATION APPROVED | When a Pix automatic authorization is approved.                       |
+| PIX AUTOMATIC AUTHORIZATION REJECTED | When a Pix automatic authorization is rejected.                       |
+| PIX AUTOMATIC AUTHORIZATION CANCELED | When a Pix automatic authorization is canceled.                       |
+| PIX AUTOMATIC AUTHORIZATION FINISHED | When a Pix automatic authorization is finished.                       |
+| PIX AUTOMATIC AUTHORIZATION APPROVED FAILED | When a Pix automatic authorization approval fails.               |
+| PIX AUTOMATIC AUTHORIZATION REJECTED FAILED | When a Pix automatic authorization rejection fails.              |
+| PIX AUTOMATIC AUTHORIZATION CANCELED FAILED | When a Pix automatic authorization cancellation fails.           |
+| PIX AUTOMATIC AUTHORIZATION UPDATED CONFIRMED | When a Pix automatic authorization max value update is confirmed. |
+| PIX AUTOMATIC AUTHORIZATION UPDATED FAILED | When a Pix automatic authorization max value update fails.       |
+| PIX AUTOMATIC CHARGE CREATED   | When a Pix automatic charge is created.                                      |
+| PIX AUTOMATIC CHARGE CREATED FAILED | When a Pix automatic charge creation fails.                             |
+| PIX AUTOMATIC CHARGE PAID      | When a Pix automatic charge is paid.                                         |
+| PIX AUTOMATIC CHARGE NOT PAID  | When a Pix automatic charge is not paid.                                     |
+| PIX AUTOMATIC CHARGE CANCELED  | When a Pix automatic charge is canceled.                                     |
+| PIX AUTOMATIC CHARGE CANCELED FAILED | When a Pix automatic charge cancellation fails.                       |
+| PIX AUTOMATIC PAYMENT CREATED  | When a Pix automatic payment is created.                                     |
+| PIX AUTOMATIC PAYMENT CANCELLATION FAILED | When a Pix automatic payment cancellation fails.                  |
+| PIX AUTOMATIC PAYMENT CANCELED | When a Pix automatic payment is canceled.                                    |
+| BANKING BILLET PIX DEPOSIT CREATED CONFIRMED | When a Bolepix is created and the Pix QR code is confirmed.        |
+| BANKING BILLET PIX DEPOSIT CREATED FAILED | When a Bolepix creation fails during billet registration or QR code generation. |
+| BANKING BILLET PIX DEPOSIT RECEIVED | When a Bolepix payment is received.                                        |
+| BANKING BILLET PIX DEPOSIT BATCH REJECTED | When a batch of Bolepix is rejected during validation.               |
+| BANKING BILLET PIX DEPOSIT BATCH GENERATED | When a batch of Bolepix is successfully generated.                 |
+| BANKING BILLET PIX DEPOSIT BATCH FAILED | When a batch of Bolepix fails to process.                            |
 | JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
 | JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
 | JUDICIAL UNBLOCK ACCOUNT       | When a court order unblocks the user's account.                              |
@@ -577,6 +622,1474 @@ Your account can be configured so that when certain events occur on your account
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
   "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Pix Refund Webhooks
+
+Triggered when a Pix refund request changes status. All states share the same payload structure; optional fields (`analysis_result`, `rejection_reason`, `failed_code`, `failed_message`) are only present when applicable to the current state.
+
+> Possible `reason` values: `FRAUD`, `PSP_ERROR`, `PIX_AUTOMATIC`.<br />
+> Possible `analysis_result` values: `TOTALLY_APPROVED`, `PARTIALLY_APPROVED`, `REJECTED`.<br />
+> Possible `rejection_reason` values: `NO_BALANCE`, `ACCOUNT_CLOSURE`, `OTHER`, `INVALID_REQUEST`, `INFRACTION_DISAGREED`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Open">
+
+Triggered when a refund request is opened by the receiving PSP.
+
+```json
+{
+  "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+  "status": "OPEN",
+  "previous_status": null,
+  "contested": false,
+  "reason": "FRAUD",
+  "amount": 10000,
+  "returned_amount": 0,
+  "description": "Transação contestada pelo usuário.",
+  "solicitation_psp_id": "RR26264220202404171333Hq7F9SWyvUE",
+  "analysis_result": null,
+  "rejection_reason": null,
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "failed_code": null,
+  "failed_message": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-17T17:30:00.020Z",
+  "event_id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a_OPEN_1713375000020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Pending">
+
+Triggered when a refund request is pending processing after being opened.
+
+```json
+{
+  "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+  "status": "PENDING",
+  "previous_status": "OPEN",
+  "contested": false,
+  "reason": "FRAUD",
+  "amount": 10000,
+  "returned_amount": 0,
+  "description": "Transação contestada pelo usuário.",
+  "solicitation_psp_id": "RR26264220202404171333Hq7F9SWyvUE",
+  "analysis_result": null,
+  "rejection_reason": null,
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "failed_code": null,
+  "failed_message": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-17T18:00:00.000Z",
+  "event_id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a_PENDING_1713376800000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Waiting">
+
+Triggered when a refund request is waiting for the PSP's response.
+
+```json
+{
+  "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+  "status": "WAITING",
+  "previous_status": "PENDING",
+  "contested": false,
+  "reason": "FRAUD",
+  "amount": 10000,
+  "returned_amount": 0,
+  "description": "Transação contestada pelo usuário.",
+  "solicitation_psp_id": "RR26264220202404171333Hq7F9SWyvUE",
+  "analysis_result": null,
+  "rejection_reason": null,
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "failed_code": null,
+  "failed_message": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-17T20:00:00.000Z",
+  "event_id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a_WAITING_1713384000000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Closed">
+
+Triggered when a refund request is closed and the funds are returned.
+
+```json
+{
+  "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+  "status": "CLOSED",
+  "previous_status": "WAITING",
+  "contested": false,
+  "reason": "FRAUD",
+  "amount": 10000,
+  "returned_amount": 10000,
+  "description": "Transação contestada pelo usuário.",
+  "solicitation_psp_id": "RR26264220202404171333Hq7F9SWyvUE",
+  "analysis_result": "TOTALLY_APPROVED",
+  "rejection_reason": null,
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "failed_code": null,
+  "failed_message": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T10:00:00.000Z",
+  "event_id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a_CLOSED_1713434400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled">
+
+Triggered when a refund request is canceled.
+
+```json
+{
+  "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+  "status": "CANCELED",
+  "previous_status": "PENDING",
+  "contested": false,
+  "reason": "FRAUD",
+  "amount": 10000,
+  "returned_amount": 0,
+  "description": "Transação contestada pelo usuário.",
+  "solicitation_psp_id": "RR26264220202404171333Hq7F9SWyvUE",
+  "analysis_result": null,
+  "rejection_reason": null,
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "failed_code": null,
+  "failed_message": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T08:00:00.000Z",
+  "event_id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a_CANCELED_1713427200000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Failed">
+
+Triggered when a refund request fails due to a processing error.
+
+```json
+{
+  "id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a",
+  "status": "FAILED",
+  "previous_status": "WAITING",
+  "contested": false,
+  "reason": "FRAUD",
+  "amount": 10000,
+  "returned_amount": 0,
+  "description": "Transação contestada pelo usuário.",
+  "solicitation_psp_id": "RR26264220202404171333Hq7F9SWyvUE",
+  "analysis_result": null,
+  "rejection_reason": null,
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "failed_code": "PIX_REFUND_FAILED",
+  "failed_message": "Internal error during refund processing.",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T10:00:00.000Z",
+  "event_id": "3d4e5f6a-7b8c-9d0e-1f2a-3b4c5d6e7f8a_FAILED_1713434400000"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Pix Fund Recovery Request Webhooks
+
+Triggered when a Pix fund recovery request changes status. A fund recovery request is used to recover funds in cases of fraud or erroneous transactions.
+
+> Possible `reason` values: `FRAUD`, `CANCEL_DEVOLUTION`, `PIX_AUTOMATIC_FRAUD`, `PIX_AUTOMATIC_PSP_ERROR`.<br />
+> Possible `fraud_reason` values: `SCAM`, `MULE`, `SCAM_MULE`, `OTHER`. Present only when `reason` is `FRAUD` and the analysis identifies the fraud type.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Created">
+
+Triggered when a fund recovery request is created.
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "CREATED",
+  "previous_status": null,
+  "reason": "FRAUD",
+  "description": "Solicitação de devolução por suspeita de fraude.",
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "fraud_reason": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-17T17:30:00.020Z",
+  "event_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890_CREATED_1713375000020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Analysed">
+
+Triggered when a fund recovery request has been analysed and is awaiting completion.
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "ANALYSED",
+  "previous_status": "CREATED",
+  "reason": "FRAUD",
+  "description": "Solicitação analisada, aguardando conclusão.",
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "fraud_reason": "SCAM",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-17T20:00:00.000Z",
+  "event_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890_ANALYSED_1713384000000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Completed Approved">
+
+Triggered when a fund recovery request is completed and the funds are approved for return.
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "COMPLETED_APPROVED",
+  "previous_status": "ANALYSED",
+  "reason": "FRAUD",
+  "description": "Solicitação de devolução aprovada.",
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "fraud_reason": "SCAM",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T10:00:00.000Z",
+  "event_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890_COMPLETED_APPROVED_1713434400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Completed Rejected">
+
+Triggered when a fund recovery request is completed but the return is rejected.
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "COMPLETED_REJECTED",
+  "previous_status": "ANALYSED",
+  "reason": "FRAUD",
+  "description": "Solicitação de devolução rejeitada.",
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "fraud_reason": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T10:00:00.000Z",
+  "event_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890_COMPLETED_REJECTED_1713434400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled">
+
+Triggered when a fund recovery request is canceled before completion.
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "CANCELED",
+  "previous_status": "CREATED",
+  "reason": "FRAUD",
+  "description": "Solicitação de devolução cancelada.",
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "fraud_reason": null,
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T08:00:00.000Z",
+  "event_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890_CANCELED_1713427200000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Failed">
+
+Triggered when a fund recovery request fails due to a processing error.
+
+```json
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "status": "FAILED",
+  "previous_status": "CREATED",
+  "reason": "FRAUD",
+  "description": "Falha no processamento da solicitação de devolução.",
+  "transaction_end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "fraud_reason": null,
+  "failed_code": "PIX_FUND_RECOVERY_REQUEST_FAILED",
+  "failed_message": "Internal error during fund recovery processing.",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "event_timestamp": "2024-04-18T08:00:00.000Z",
+  "event_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890_FAILED_1713427200000"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Pix Automatic Recurrence Webhooks
+
+Triggered when a Pix automatic recurrence (recurring payment agreement) changes status. The recurrence represents the contract between payer and receiver for recurring Pix payments.
+
+> Possible `status` values: `CREATED`, `FAILED`, `APPROVED`, `REJECTED`, `CANCELED`, `EXPIRED`, `FINISHED`.<br />
+> Possible `state` values: `CREATED_CONFIRMED`, `CREATED_FAILED`, `APPROVED_CONFIRMED`, `REJECTED_CONFIRMED`, `CANCELED_CONFIRMED`, `CANCELED_FAILED`, `EXPIRED_CONFIRMED`, `FINISHED_CONFIRMED`.<br />
+> Possible `frequency` values: `WEEKLY`, `MONTHLY`, `QUARTERLY`, `SEMI_ANNUALLY`, `ANNUALLY`.<br />
+> Possible `journey` values: `JOURNEY_1`, `JOURNEY_2`, `JOURNEY_3`, `JOURNEY_4`, `JOURNEY_4_STATIC`.<br />
+> Possible `cancellation.reason` values: `ACCOUNT_CANCELED`, `RECEIVER_COMPANY_CLOSURE`, `OWNER_DEATH`, `CONFIRMATION_ERROR`, `FRAUD_SUSPICION`, `RECURRENCE_ALREADY_CONFIRMED`, `RECEIVER_REQUEST`, `PAYER_REQUEST`, `RECEIVER_PSP_REQUEST`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Created">
+
+Triggered when a recurrence agreement is successfully created after registration with the PSP.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "CREATED",
+  "previous_status": "PENDING",
+  "state": "CREATED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "request_expiration_date": "2024-04-24T17:30:00.020Z",
+  "value": 10000,
+  "floor_max_value": null,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "ispb": "26264220",
+    "document": "***000000**",
+    "name": "Name",
+    "person_type": "CPF",
+    "bank_branch": "0001",
+    "bank_account": "000001"
+  },
+  "debtor": {
+    "document": "***000000**",
+    "person_type": "CPF",
+    "name": "Name"
+  },
+  "next_charge": {
+    "due_date": "2024-05-01",
+    "value": 10000
+  },
+  "contract_description": "Assinatura mensal",
+  "tags": ["tag1"],
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-17T17:30:00.020Z",
+  "event_timestamp": "2024-04-17T17:30:00.020Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_CREATED_1713375000020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Failed">
+
+Triggered when a recurrence creation fails during registration with the PSP.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "FAILED",
+  "previous_status": "PENDING",
+  "state": "CREATED_FAILED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "floor_max_value": null,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_description": "Assinatura mensal",
+  "failed_code": "PIX_AUTOMATIC_RECURRENCE_FAILED",
+  "failed_message": "Internal error during recurrence creation.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-17T17:30:00.020Z",
+  "event_timestamp": "2024-04-17T17:30:00.020Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_FAILED_1713375000020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Approved">
+
+Triggered when a recurrence agreement is approved by the payer.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "APPROVED",
+  "previous_status": "CREATED",
+  "state": "APPROVED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "floor_max_value": null,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "ispb": "26264220",
+    "document": "***000000**",
+    "name": "Name",
+    "person_type": "CPF",
+    "bank_branch": "0001",
+    "bank_account": "000001"
+  },
+  "next_charge": {
+    "due_date": "2024-05-01",
+    "value": 10000
+  },
+  "contract_description": "Assinatura mensal",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-20T09:00:00.000Z",
+  "event_timestamp": "2024-04-20T09:00:00.000Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_APPROVED_1713603600000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Rejected">
+
+Triggered when a recurrence agreement is rejected by the payer.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "REJECTED",
+  "previous_status": "CREATED",
+  "state": "REJECTED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "ispb": "26264220",
+    "document": "***000000**",
+    "name": "Name",
+    "person_type": "CPF",
+    "bank_branch": "0001",
+    "bank_account": "000001"
+  },
+  "contract_description": "Assinatura mensal",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-18T08:00:00.000Z",
+  "event_timestamp": "2024-04-18T08:00:00.000Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_REJECTED_1713427200000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled">
+
+Triggered when a recurrence agreement is successfully canceled.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "CANCELED",
+  "previous_status": "APPROVED",
+  "state": "CANCELED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "cancellation": {
+    "id": "cancel-001",
+    "reason": "PAYER_REQUEST"
+  },
+  "contract_description": "Assinatura mensal",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-06-01T10:00:00.000Z",
+  "event_timestamp": "2024-06-01T10:00:00.000Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_CANCELED_1717232400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled Failed">
+
+Triggered when a cancellation attempt fails during communication with the PSP.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "CANCELED",
+  "previous_status": "APPROVED",
+  "state": "CANCELED_FAILED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_description": "Assinatura mensal",
+  "failed_code": "PIX_AUTOMATIC_RECURRENCE_CANCELED_FAILED",
+  "failed_message": "Internal error during recurrence cancellation.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-06-01T10:00:00.000Z",
+  "event_timestamp": "2024-06-01T10:00:00.000Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_CANCELED_FAILED_1717232400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Expired">
+
+Triggered when a recurrence expires after the request expiration date without being approved or rejected by the payer.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "EXPIRED",
+  "previous_status": "CREATED",
+  "state": "EXPIRED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "request_expiration_date": "2024-04-24T17:30:00.020Z",
+  "value": 10000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_description": "Assinatura mensal",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-24T17:30:00.020Z",
+  "event_timestamp": "2024-04-24T17:30:00.020Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_EXPIRED_1713980400020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Finished">
+
+Triggered when a recurrence reaches its configured end date.
+
+```json
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "contract_number": "CONTRACT-001",
+  "status": "FINISHED",
+  "previous_status": "APPROVED",
+  "state": "FINISHED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "ispb": "26264220",
+    "document": "***000000**",
+    "name": "Name",
+    "person_type": "CPF",
+    "bank_branch": "0001",
+    "bank_account": "000001"
+  },
+  "contract_description": "Assinatura mensal",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2025-05-01T00:00:00.000Z",
+  "event_timestamp": "2025-05-01T00:00:00.000Z",
+  "event_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890_FINISHED_1746057600000"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Pix Automatic Authorization Webhooks
+
+Triggered when a Pix automatic authorization changes status. The authorization represents the payer's consent to allow recurring Pix debits from their account.
+
+> Possible `status` values: `PENDING`, `APPROVED`, `REJECTED`, `CANCELED`, `FINISHED`.<br />
+> Possible `state` values: `PENDING_CONFIRMED`, `APPROVED_CONFIRMED`, `REJECTED_CONFIRMED`, `APPROVED_FAILED`, `REJECTED_FAILED`, `CANCELED_CONFIRMED`, `CANCELED_FAILED`, `FINISHED_CONFIRMED`, `UPDATED_CONFIRMED`, `UPDATED_FAILED`.<br />
+> Possible `frequency` values: `WEEKLY`, `MONTHLY`, `QUARTERLY`, `SEMI_ANNUALLY`, `ANNUALLY`.<br />
+> Possible `journey` values: `JOURNEY_1`, `JOURNEY_2`, `JOURNEY_3`, `JOURNEY_4`.<br />
+> Possible `rejection_reason` values: `UNRECOGNIZED_RECEIVER`, `NOT_INTERESTED`, `UNAVAILABLE_FOR_LEGAL_PERSON`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Pending">
+
+Triggered when an authorization request is pending user approval.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "PENDING",
+  "previous_status": null,
+  "state": "PENDING_CONFIRMED",
+  "previous_state": null,
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "floor_max_value": null,
+  "payment_max_value": 15000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "contract_number": "CONTRACT-001",
+  "contract_description": "Assinatura mensal",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "request_expiration_date": "2024-04-24T17:30:00.020Z",
+  "rejection_reason": null,
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-17T17:30:00.020Z",
+  "event_timestamp": "2024-04-17T17:30:00.020Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_PENDING_1713375000020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Approved">
+
+Triggered when the user approves the authorization.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "APPROVED",
+  "previous_status": "PENDING",
+  "state": "APPROVED_CONFIRMED",
+  "previous_state": "PENDING_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "payment_max_value": 15000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "contract_number": "CONTRACT-001",
+  "contract_description": "Assinatura mensal",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-20T09:00:00.000Z",
+  "event_timestamp": "2024-04-20T09:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_APPROVED_1713603600000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Rejected">
+
+Triggered when the user rejects the authorization.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "REJECTED",
+  "previous_status": "PENDING",
+  "state": "REJECTED_CONFIRMED",
+  "previous_state": "PENDING_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_number": "CONTRACT-001",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "rejection_reason": "NOT_INTERESTED",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-18T08:00:00.000Z",
+  "event_timestamp": "2024-04-18T08:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_REJECTED_1713427200000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled">
+
+Triggered when an authorization is successfully canceled.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "CANCELED",
+  "previous_status": "APPROVED",
+  "state": "CANCELED_CONFIRMED",
+  "previous_state": "APPROVED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "payment_max_value": 15000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_number": "CONTRACT-001",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-06-01T10:00:00.000Z",
+  "event_timestamp": "2024-06-01T10:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_CANCELED_1717232400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Finished">
+
+Triggered when an authorization is finished after the recurrence reaches its end date.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "FINISHED",
+  "previous_status": "APPROVED",
+  "state": "FINISHED_CONFIRMED",
+  "previous_state": "APPROVED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "payment_max_value": 15000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "contract_number": "CONTRACT-001",
+  "contract_description": "Assinatura mensal",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2025-05-01T00:00:00.000Z",
+  "event_timestamp": "2025-05-01T00:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_FINISHED_1746057600000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Approved Failed">
+
+Triggered when the approval confirmation fails during communication with the PSP.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "APPROVED",
+  "previous_status": "PENDING",
+  "state": "APPROVED_FAILED",
+  "previous_state": "PENDING_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "payment_max_value": 15000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "contract_number": "CONTRACT-001",
+  "contract_description": "Assinatura mensal",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "failed_code": "PIX_AUTOMATIC_AUTHORIZATION_APPROVED_FAILED",
+  "failed_message": "Internal error during authorization approval.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-20T09:00:00.000Z",
+  "event_timestamp": "2024-04-20T09:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_APPROVED_FAILED_1713603600000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Rejected Failed">
+
+Triggered when the rejection confirmation fails during communication with the PSP.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "REJECTED",
+  "previous_status": "PENDING",
+  "state": "REJECTED_FAILED",
+  "previous_state": "PENDING_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_number": "CONTRACT-001",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "rejection_reason": "NOT_INTERESTED",
+  "failed_code": "PIX_AUTOMATIC_AUTHORIZATION_REJECTED_FAILED",
+  "failed_message": "Internal error during authorization rejection.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-18T08:00:00.000Z",
+  "event_timestamp": "2024-04-18T08:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_REJECTED_FAILED_1713427200000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled Failed">
+
+Triggered when the cancellation confirmation fails during communication with the PSP.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "CANCELED",
+  "previous_status": "APPROVED",
+  "state": "CANCELED_FAILED",
+  "previous_state": "APPROVED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 10000,
+  "payment_max_value": 15000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_number": "CONTRACT-001",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "failed_code": "PIX_AUTOMATIC_AUTHORIZATION_CANCELED_FAILED",
+  "failed_message": "Internal error during authorization cancellation.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-06-01T10:00:00.000Z",
+  "event_timestamp": "2024-06-01T10:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_CANCELED_FAILED_1717232400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Updated Confirmed">
+
+Triggered when a max value update is successfully confirmed by the PSP.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "APPROVED",
+  "previous_status": "APPROVED",
+  "state": "UPDATED_CONFIRMED",
+  "previous_state": "APPROVED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 12000,
+  "payment_max_value": 18000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "owner": {
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "contract_number": "CONTRACT-001",
+  "contract_description": "Assinatura mensal",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-07-01T10:00:00.000Z",
+  "event_timestamp": "2024-07-01T10:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_UPDATED_CONFIRMED_1719828000000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Updated Failed">
+
+Triggered when a max value update fails during communication with the PSP.
+
+```json
+{
+  "id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "status": "APPROVED",
+  "previous_status": "APPROVED",
+  "state": "UPDATED_FAILED",
+  "previous_state": "APPROVED_CONFIRMED",
+  "journey": "JOURNEY_1",
+  "frequency": "MONTHLY",
+  "start_date": "2024-05-01",
+  "end_date": "2025-05-01",
+  "value": 12000,
+  "payment_max_value": 18000,
+  "beneficiary": {
+    "ispb": "26264220",
+    "document": "00000000000000",
+    "name": "Z.ro Bolsao"
+  },
+  "contract_number": "CONTRACT-001",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "failed_code": "PIX_AUTOMATIC_AUTHORIZATION_UPDATED_FAILED",
+  "failed_message": "Internal error during authorization max value update.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-07-01T10:00:00.000Z",
+  "event_timestamp": "2024-07-01T10:00:00.000Z",
+  "event_id": "c3d4e5f6-a7b8-9012-cdef-012345678901_UPDATED_FAILED_1719828000000"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Pix Automatic Charge Webhooks
+
+Triggered when a Pix automatic charge (individual debit attempt within a recurrence) changes status.
+
+> Possible `status` values: `CREATED`, `CREATED_FAILED`, `PAID`, `NOT_PAID`, `CANCELED`, `CANCELED_FAILED`.<br />
+> Possible `scheduling_purpose` values: `SCHEDULING` (first attempt), `NEW_ATTEMPT` (after expiration), `RESEND` (after settlement error).<br />
+> Possible `cancellation_reason` values: `ACCOUNT_CLOSED`, `ACCOUNT_BLOCKED`, `RECURRENCE_CANCELED`, `SETTLEMENT_FAILURE`, `OTHER_REASON_BY_PARTICIPANT`, `REQUESTED_BY_PAYER`, `REQUESTED_BY_RECEIVER`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Created">
+
+Triggered when a charge is created and registered with the PSP.
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-123456789012",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "pix_automatic_recurrence_user_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "contract_number": "CONTRACT-001",
+  "type": "PIX_AUTOMATIC_CHARGE_CREATED",
+  "status": "CREATED",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-17T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Paid">
+
+Triggered when a charge is successfully paid.
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-123456789012",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "pix_automatic_recurrence_user_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "contract_number": "CONTRACT-001",
+  "type": "PIX_AUTOMATIC_CHARGE_PAID",
+  "status": "PAID",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-05-01T08:00:00.000Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Not Paid">
+
+Triggered when a charge is not paid (e.g., insufficient funds, account blocked).
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-123456789012",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "pix_automatic_recurrence_user_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "contract_number": "CONTRACT-001",
+  "type": "PIX_AUTOMATIC_CHARGE_NOT_PAID",
+  "status": "NOT_PAID",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-05-01T08:00:00.000Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled">
+
+Triggered when a charge is canceled before payment.
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-123456789012",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "pix_automatic_recurrence_user_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "contract_number": "CONTRACT-001",
+  "type": "PIX_AUTOMATIC_CHARGE_CANCELED",
+  "status": "CANCELED",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "cancellation_reason": "REQUESTED_BY_PAYER",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-30T15:00:00.000Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Created Failed">
+
+Triggered when a charge creation fails during registration with the PSP.
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-123456789012",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "pix_automatic_recurrence_user_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "contract_number": "CONTRACT-001",
+  "type": "PIX_AUTOMATIC_CHARGE_CREATED_FAILED",
+  "status": "CREATED_FAILED",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "failed_code": "PIX_AUTOMATIC_CHARGE_CREATED_FAILED",
+  "failed_message": "Internal error during charge creation.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-17T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled Failed">
+
+Triggered when a charge cancellation attempt fails during communication with the PSP.
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-123456789012",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "pix_automatic_recurrence_user_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "contract_number": "CONTRACT-001",
+  "type": "PIX_AUTOMATIC_CHARGE_CANCELED_FAILED",
+  "status": "CANCELED_FAILED",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "cancellation_reason": "REQUESTED_BY_PAYER",
+  "failed_code": "PIX_AUTOMATIC_CHARGE_CANCELED_FAILED",
+  "failed_message": "Internal error during charge cancellation.",
+  "created_at": "2024-04-17T17:30:00.020Z",
+  "updated_at": "2024-04-30T15:00:00.000Z"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Pix Automatic Payment Webhooks
+
+Triggered when a Pix automatic payment (settled transaction within an authorization) changes status. Unlike the charge, the payment represents the actual financial movement.
+
+> Possible `status` values: `CREATED`, `CANCELLATION_FAILED`, `CANCELED`.<br />
+> Possible `scheduling_purpose` values: `SCHEDULING`, `NEW_ATTEMPT`, `RESEND`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Created">
+
+Triggered when a payment is successfully created and settled.
+
+```json
+{
+  "id": "e5f6a7b8-c9d0-1234-efab-234567890123",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_authorization_id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "type": "PIX_AUTOMATIC_PAYMENT_CREATED",
+  "status": "CREATED",
+  "previous_status": null,
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "end_to_end_id": "E26264220202405011730XyzAbc12345",
+  "conciliation_receiver_id": "RR26264220202405011730XyzAbc12345",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "cancellation_id": null,
+  "created_at": "2024-05-01T17:30:00.020Z",
+  "updated_at": "2024-05-01T17:30:00.020Z",
+  "event_timestamp": "2024-05-01T17:30:00.020Z",
+  "event_id": "e5f6a7b8-c9d0-1234-efab-234567890123_CREATED_1714583400020"
+}
+```
+
+  </TabItem>
+  <TabItem value="Canceled">
+
+Triggered when a payment is canceled.
+
+```json
+{
+  "id": "e5f6a7b8-c9d0-1234-efab-234567890123",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_authorization_id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "type": "PIX_AUTOMATIC_PAYMENT_CANCELED",
+  "status": "CANCELED",
+  "previous_status": "CREATED",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "end_to_end_id": "E26264220202405011730XyzAbc12345",
+  "conciliation_receiver_id": "RR26264220202405011730XyzAbc12345",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "cancellation_id": "cancel-abc-123",
+  "created_at": "2024-05-01T17:30:00.020Z",
+  "updated_at": "2024-05-02T09:00:00.000Z",
+  "event_timestamp": "2024-05-02T09:00:00.000Z",
+  "event_id": "e5f6a7b8-c9d0-1234-efab-234567890123_CANCELED_1714640400000"
+}
+```
+
+  </TabItem>
+  <TabItem value="Cancellation Failed">
+
+Triggered when a payment cancellation attempt fails.
+
+```json
+{
+  "id": "e5f6a7b8-c9d0-1234-efab-234567890123",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "pix_automatic_authorization_id": "c3d4e5f6-a7b8-9012-cdef-012345678901",
+  "type": "PIX_AUTOMATIC_PAYMENT_CANCELLATION_FAILED",
+  "status": "CANCELLATION_FAILED",
+  "previous_status": "CREATED",
+  "scheduling_purpose": "SCHEDULING",
+  "due_date": "2024-05-01",
+  "value": 10000,
+  "end_to_end_id": "E26264220202405011730XyzAbc12345",
+  "conciliation_receiver_id": "RR26264220202405011730XyzAbc12345",
+  "recurrence_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "cancellation_id": "cancel-abc-123",
+  "created_at": "2024-05-01T17:30:00.020Z",
+  "updated_at": "2024-05-02T09:00:00.000Z",
+  "event_timestamp": "2024-05-02T09:00:00.000Z",
+  "event_id": "e5f6a7b8-c9d0-1234-efab-234567890123_CANCELLATION_FAILED_1714640400000"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Bolepix Deposit Webhooks
+
+Triggered when a Bolepix (banking billet with embedded Pix QR code) changes state. A Bolepix is a bank slip that also contains an embedded Pix QR code, allowing the payer to settle it via either method.
+
+> Possible `state` values: `CREATED_CONFIRMED`, `CREATED_FAILED`, `RECEIVED`.<br />
+> Possible `status` values: `CREATED_BILLET_PENDING`, `CREATED_BILLET_WAITING`, `CREATED_BILLET_CONFIRMED`, `CREATED_BILLET_FAILED`, `CREATED_QRCODE_PENDING`, `CREATED_QRCODE_CONFIRMED`, `CREATED_QRCODE_FAILED`.<br />
+> Possible `qr_code_type` values: `PIX_AUTOMATIC`, `PIX_QRCODE_DYNAMIC`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Created Confirmed">
+
+Triggered when a Bolepix is successfully created and the Pix QR code is confirmed.
+
+```json
+{
+  "id": "a7b8c9d0-e1f2-3456-abcd-ef0123456789",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
+  "tx_id": "TX0001234567890",
+  "state": "CREATED_CONFIRMED",
+  "previous_state": "CREATED_WAITING",
+  "status": "CREATED_QRCODE_CONFIRMED",
+  "emv": "00020101021226890014br.gov.bcb.pix2567qrcode.example.com/v2/a7b8c9d0-e1f2-3456-abcd-ef01234567895204000053039865802BR5913Z.ro Bolsao6009Sao Paulo62070503***6304ABCD",
+  "payment_link_url": "https://pay.example.com/bolepix/a7b8c9d0",
+  "due_date": "2024-05-10T00:00:00.000Z",
+  "limit_due_date": "2024-05-20T00:00:00.000Z",
+  "amount": 15000,
+  "amount_received": null,
+  "interest_perc_value": 1.00,
+  "fine_value": 200,
+  "discount_value": null,
+  "beneficiary": {
+    "name": "Z.ro Bolsao",
+    "document": "00000000000000",
+    "city": "São Paulo"
+  },
+  "pix_key": {
+    "key": "00000000000000"
+  },
+  "payer": {
+    "person_type": "CPF",
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "qr_code_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "qr_code_type": "PIX_QRCODE_DYNAMIC",
+  "description": "Fatura Maio 2024",
+  "recipient_city": "São Paulo",
+  "external_id": "EXT-001",
+  "transaction_tag": "TAG-001",
+  "allow_update": true,
+  "allow_update_change": false,
+  "allow_update_withdrawal": false,
+  "failure": null,
+  "confirmed_at": null,
+  "event_timestamp": "2024-04-17T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Created Failed">
+
+Triggered when a Bolepix creation fails during billet registration or QR code generation.
+
+```json
+{
+  "id": "a7b8c9d0-e1f2-3456-abcd-ef0123456789",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
+  "state": "CREATED_FAILED",
+  "previous_state": "CREATED_WAITING",
+  "status": "CREATED_BILLET_FAILED",
+  "due_date": "2024-05-10T00:00:00.000Z",
+  "limit_due_date": "2024-05-20T00:00:00.000Z",
+  "amount": 15000,
+  "beneficiary": {
+    "name": "Z.ro Bolsao",
+    "document": "00000000000000",
+    "city": "São Paulo"
+  },
+  "payer": {
+    "person_type": "CPF",
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "description": "Fatura Maio 2024",
+  "failure": [
+    {
+      "code": "BANKING_BILLET_PIX_DEPOSIT_CREATED_FAILED",
+      "message": "Internal error during billet registration."
+    }
+  ],
+  "confirmed_at": null,
+  "event_timestamp": "2024-04-17T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Received">
+
+Triggered when the Bolepix payment is received (paid by the payer).
+
+```json
+{
+  "id": "a7b8c9d0-e1f2-3456-abcd-ef0123456789",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "operation_id": "cb835846-47b2-4bad-abd3-56e8b0d65ffe",
+  "tx_id": "TX0001234567890",
+  "state": "RECEIVED",
+  "previous_state": "CREATED_CONFIRMED",
+  "status": "CREATED_QRCODE_CONFIRMED",
+  "emv": "00020101021226890014br.gov.bcb.pix2567qrcode.example.com/v2/a7b8c9d0-e1f2-3456-abcd-ef01234567895204000053039865802BR5913Z.ro Bolsao6009Sao Paulo62070503***6304ABCD",
+  "payment_link_url": "https://pay.example.com/bolepix/a7b8c9d0",
+  "due_date": "2024-05-10T00:00:00.000Z",
+  "limit_due_date": "2024-05-20T00:00:00.000Z",
+  "amount": 15000,
+  "amount_received": 15000,
+  "beneficiary": {
+    "name": "Z.ro Bolsao",
+    "document": "00000000000000",
+    "city": "São Paulo"
+  },
+  "pix_key": {
+    "key": "00000000000000"
+  },
+  "payer": {
+    "person_type": "CPF",
+    "document": "***000000**",
+    "name": "Name"
+  },
+  "qr_code_id": "b2c3d4e5-f6a7-8901-bcde-f01234567890",
+  "qr_code_type": "PIX_QRCODE_DYNAMIC",
+  "description": "Fatura Maio 2024",
+  "recipient_city": "São Paulo",
+  "external_id": "EXT-001",
+  "transaction_tag": "TAG-001",
+  "confirmed_at": "2024-05-08T10:30:00.000Z",
+  "event_timestamp": "2024-05-08T10:30:00.000Z"
+}
+```
+
+  </TabItem>
+</Tabs>
+
+## Bolepix Deposit Batch Webhooks
+
+Triggered when a batch of Bolepix (banking billet with embedded Pix QR code) changes status. A batch groups multiple billets for bulk generation and distribution by email.
+
+> Possible `status` values: `REJECTED`, `GENERATED`, `FAILED`.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Generated">
+
+Triggered when a batch is successfully processed and all billets are generated.
+
+```json
+{
+  "id": "c9d0e1f2-a3b4-5678-cdef-012345678901",
+  "batch_name": "Lote Maio 2024",
+  "status": "GENERATED",
+  "previous_status": "VALIDATED",
+  "items_count": 150,
+  "personalized": false,
+  "email_send_date": "2024-05-01T08:00:00.000Z",
+  "event_timestamp": "2024-04-30T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Rejected">
+
+Triggered when a batch fails validation and is rejected before generation.
+
+```json
+{
+  "id": "c9d0e1f2-a3b4-5678-cdef-012345678901",
+  "batch_name": "Lote Maio 2024",
+  "status": "REJECTED",
+  "previous_status": "UNDER_ANALYSIS",
+  "items_count": 150,
+  "personalized": false,
+  "email_send_date": null,
+  "event_timestamp": "2024-04-30T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Failed">
+
+Triggered when a batch fails during processing due to an internal error.
+
+```json
+{
+  "id": "c9d0e1f2-a3b4-5678-cdef-012345678901",
+  "batch_name": "Lote Maio 2024",
+  "status": "FAILED",
+  "previous_status": "VALIDATED",
+  "items_count": 150,
+  "personalized": false,
+  "email_send_date": null,
+  "event_timestamp": "2024-04-30T17:30:00.020Z"
 }
 ```
 
