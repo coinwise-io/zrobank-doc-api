@@ -7793,6 +7793,44 @@
                      "format":"date-time",
                      "type":"string"
                   }
+               },
+               {
+                  "name":"state",
+                  "required":false,
+                  "in":"query",
+                  "description":"Operation state(s). Repeat the query param to send multiple states (e.g., state=pending&state=waiting_accept).",
+                  "schema":{
+                     "type":"array",
+                     "items":{
+                        "type":"string",
+                        "enum":[
+                           "accepted",
+                           "declined",
+                           "undone",
+                           "pending",
+                           "reverted",
+                           "waiting_accept",
+                           "waiting_revert",
+                           "waiting_ledger",
+                           "waiting_credit",
+                           "waiting_debit",
+                           "waiting_accept_credit"
+                        ]
+                     }
+                  }
+               },
+               {
+                  "name":"wallet_account_role",
+                  "required":false,
+                  "in":"query",
+                  "description":"Filter operations by wallet role: owner (outgoing) or beneficiary (incoming).",
+                  "schema":{
+                     "type":"string",
+                     "enum":[
+                        "owner",
+                        "beneficiary"
+                     ]
+                  }
                }
             ],
             "responses":{
@@ -8300,6 +8338,94 @@
                }
             ],
             "summary":"Get Pending Balance",
+            "tags":[
+               "Operations | Operation"
+            ]
+         }
+      },
+      "/v1/operations/balance/pending/detailed":{
+         "get":{
+            "description":"Returns the sum of pending operations for the wallet, separated into incoming (wallet is beneficiary) and outgoing (wallet is owner) amounts.",
+            "operationId":"GetPendingSumDetailedByWalletAccountRestController_execute_v1",
+            "parameters":[
+               {
+                  "name":"x-wallet-uuid",
+                  "in":"header",
+                  "description":"Sender Wallet UUID (if empty, your default Wallet UUID will be settled)",
+                  "schema":{
+                     "type":"string"
+                  }
+               },
+               {
+                  "name":"nonce",
+                  "in":"header",
+                  "description":"The nonce ID is a UUID (v4) used to uniquely identify the \n        request. All requests must have an identifier.\n      ",
+                  "required":true,
+                  "schema":{
+                     "type":"string"
+                  }
+               },
+               {
+                  "name":"x-lang",
+                  "in":"header",
+                  "description":"Indicates the preferred language. Defaults to Brazilian \n        Portuguese if unspecified.\n      ",
+                  "required":false,
+                  "schema":{
+                     "type":"string",
+                     "enum":[
+                        "pt-BR",
+                        "en-US"
+                     ]
+                  }
+               },
+               {
+                  "name":"x-product-uuid",
+                  "in":"header",
+                  "description":"The product ID is a UUID (v4) used to identify the Z.ro \n        product configuration.\n      ",
+                  "required":false,
+                  "schema":{
+                     "type":"string"
+                  }
+               },
+               {
+                  "name":"x-product-target-user-uuid",
+                  "in":"header",
+                  "description":"The product target user ID is a UUID (v4) used to identify \n        what user account this request must be executed.\n        Require: x-product-uuid. \n      ",
+                  "required":false,
+                  "schema":{
+                     "type":"string"
+                  }
+               }
+            ],
+            "responses":{
+               "200":{
+                  "description":"The detailed pending balance was successfully returned.",
+                  "content":{
+                     "application/json":{
+                        "schema":{
+                           "$ref":"#/components/schemas/GetPendingSumDetailedByWalletAccountRestResponse"
+                        }
+                     }
+                  }
+               },
+               "400":{
+                  "description":"If any required params are missing or has invalid format or type."
+               },
+               "401":{
+                  "description":"User authentication failed."
+               },
+               "422":{
+                  "description":"If any required params are missing or has invalid format or type."
+               }
+            },
+            "security":[
+               {
+                  "bearer":[
+
+                  ]
+               }
+            ],
+            "summary":"Get Detailed Pending Balance",
             "tags":[
                "Operations | Operation"
             ]
@@ -24842,6 +24968,25 @@
             },
             "required":[
                "pending_balance"
+            ]
+         },
+         "GetPendingSumDetailedByWalletAccountRestResponse":{
+            "type":"object",
+            "properties":{
+               "pending_incoming_amount":{
+                  "type":"number",
+                  "description":"Sum of incoming pending balance in cents (operations where the wallet is beneficiary).",
+                  "example":250000
+               },
+               "pending_outgoing_amount":{
+                  "type":"number",
+                  "description":"Sum of outgoing pending balance in cents (operations where the wallet is owner).",
+                  "example":100000
+               }
+            },
+            "required":[
+               "pending_incoming_amount",
+               "pending_outgoing_amount"
             ]
          },
          "GetAllBankingTedReceivedRestResponseItem":{
