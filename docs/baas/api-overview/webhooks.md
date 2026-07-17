@@ -68,6 +68,7 @@ Your account can be configured so that when certain events occur on your account
 | BANKING BILLET PIX DEPOSIT BATCH REJECTED | When a batch of Bolepix is rejected during validation.               |
 | BANKING BILLET PIX DEPOSIT BATCH GENERATED | When a batch of Bolepix is successfully generated.                 |
 | BANKING BILLET PIX DEPOSIT BATCH FAILED | When a batch of Bolepix fails to process.                            |
+| BANKING TED RECEIVED           | When you receive a TED (bank transfer) into your account.                    |
 | JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
 | JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
 | JUDICIAL UNBLOCK ACCOUNT       | When a court order unblocks the user's account.                              |
@@ -231,6 +232,33 @@ Your account can be configured so that when certain events occur on your account
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
+
+  </TabItem>
+  <TabItem value="Banking TED Received">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "type": "BANKING_TED_RECEIVED",
+  "amount": 150000,
+  "owner_name": "Name",
+  "owner_document": "***000000**",
+  "owner_bank_code": "237",
+  "owner_bank_name": "BANCO BRADESCO S/A",
+  "owner_bank_ispb": "60746948",
+  "owner_bank_account": "000000",
+  "owner_bank_branch": "0000",
+  "owner_account_type": "CACC",
+  "transaction_id": "STR20260417173300000000000000001",
+  "finality_code": 10,
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> `owner_*` fields describe the sender of the TED and are only present when informed by the originating bank. `owner_document` is delivered masked. `transaction_id` and `finality_code` are optional.
 
   </TabItem>
 
