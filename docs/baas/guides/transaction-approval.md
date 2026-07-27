@@ -34,7 +34,7 @@ graph TD
     F --> G{State?}
     G -- PENDING --> E
     G -- APPROVED --> H[Payment released]
-    G -- CANCELED --> I[Request canceled by the payer]
+    G -- CANCELED --> I[Request canceled]
     G -- EXPIRED --> J[Start a new request]
 ```
 
@@ -48,14 +48,16 @@ A request is approved when the votes match the setting. Votes are counted by the
 
 | `approver_master_required` | Approval condition | Who can vote |
 |---|---|---|
-| `false` (or omitted) | total votes >= `approvers_quantity` | any user allowed to call the endpoint |
+| `false` (or omitted) | total votes >= `approvers_quantity` | users holding `APPROVER` or `APPROVER_MASTER`, plus the wallet owner |
 | `true` | common votes >= `approvers_quantity` **and** master votes >= `approver_master_quantity` | only users whose vote resolves to `APPROVER_MASTER`, `APPROVER`, or `ROOT` |
 
 **How a vote is classified:**
 - user has the `APPROVER_MASTER` tag → counted as a **master vote**
 - user is the wallet owner → counted as a **common vote** (`ROOT`)
 - user has the `APPROVER` tag → counted as a **common vote**
-- none of the above, with `approver_master_required = true` → `403`
+- none of the above → `403`, regardless of `approver_master_required`
+
+Voting is granted to the `APPROVER` and `APPROVER_MASTER` permission types only. `CLIENT` and `ADMIN` cannot vote even when master approval is not required.
 
 The wallet owner is identified by user id, not by tag, so they can vote without being assigned `APPROVER` — unless they also hold `APPROVER_MASTER`, in which case their vote counts as a master vote. `APPROVER_MASTER` always takes precedence over the other classifications.
 
@@ -89,6 +91,8 @@ List the transaction types that support the approval flow. Use it to confirm tha
 
 Create the rule that decides when a Pix payment of this wallet requires approval. Transaction type and currency are fixed by the endpoint — you do not send them.
 
+**Only the wallet owner can create or delete a setting.** No permission type grants these two endpoints, so an `APPROVER`, `CLIENT`, or `ADMIN` user receives `403`.
+
 **Required body:**
 - `approvers_quantity` (integer, 1 to 100)
 - `min_amount` (BRL cents, positive) → payments from this amount on require approval
@@ -108,7 +112,12 @@ Create the rule that decides when a Pix payment of this wallet requires approval
 
 **Returns:** `id`, `created_at`
 
-**Important:** `approver_master_required = true` without `approver_master_quantity` is rejected. See [Approval Rules](#approval-rules) before choosing the quantities.
+**Important:**
+- `approver_master_required = true` without `approver_master_quantity` is rejected
+- Only **one** setting exists per wallet, currency, and transaction type. Creating a second one is rejected
+- Settings cannot be edited. To change the quantities, delete the current setting and create a new one
+
+See [Approval Rules](#approval-rules) before choosing the quantities.
 
 ---
 
@@ -155,7 +164,7 @@ Each approver calls this endpoint once. One call is one approval vote.
 
 **Integration rules:**
 - The endpoint is called by the **approver**, authenticated as themselves — not by the payer
-- There is no reject endpoint. To refuse a payment, the payer cancels the request (Step 7)
+- There is no reject endpoint. To refuse a payment, cancel the request (Step 7)
 - Only `PENDING` requests accept votes
 - When the last required vote arrives, the request moves to `APPROVED` and the payment is released
 
@@ -176,7 +185,7 @@ Source of truth for the current state of the request.
 | `PENDING` | Waiting for the remaining approval votes | Keep polling, or have the missing approvers call Step 5 |
 | `APPROVED` | Every required vote was cast | Payment released. Follow it through the Pix payment endpoints |
 | `CANCELED` | Canceled by the payer | Create a new request if the payment is still needed |
-| `EXPIRED` | Not approved in time | Create a new request |
+| `EXPIRED` | Not approved by the end of the day. Expiration runs in the first minute of the following day | Create a new request |
 
 **Reading `votes`:** it is the total number of votes cast, master and common together. When `approver_master_required` is `true`, `votes >= approvers_quantity` alone does **not** mean the request is approved — use `state`, and `GET /permissions/transaction-approvals` if you need the breakdown.
 
@@ -187,6 +196,8 @@ Source of truth for the current state of the request.
 `DELETE /permissions/transaction-approval-requests/{id}`
 
 Cancel a request that should not be paid. This is how a payment is refused.
+
+Any user with access to the wallet can cancel — not only the user who created the request. Only `PENDING` requests can be canceled.
 
 **Returns:** `id`, `user_name`, `transaction_approval_setting_id`, `render_request_body`, `amount`, `transaction_type_tag`, `state`, `votes`, `created_at`
 
@@ -209,7 +220,7 @@ Cancel a request that should not be paid. This is how a payment is refused.
 
 - `GET /permissions/transaction-approval-settings/pix-payment/{id}` → get one setting
 - `GET /permissions/transaction-approval-settings/pix-payment` → list settings, filter by `currency_symbol` or `transaction_type_tag`
-- `DELETE /permissions/transaction-approval-settings/{id}` → remove a setting, so payments stop requiring approval
+- `DELETE /permissions/transaction-approval-settings/{id}` → remove a setting, so payments stop requiring approval. Wallet owner only, and rejected while the setting still has `PENDING` requests
 - `GET /permissions/transaction-approval-requests` → list requests, filter by `state` or `transaction_type_tag`
 - `GET /permissions/transaction-approvals` → list the votes already cast, filter by `transaction_approval_request_id`. Each item returns `user_id`, `user_name`, `wallet_id`, `amount`, `permission_type_tag`, `created_at` — use `permission_type_tag` to tell master votes from common votes
 
