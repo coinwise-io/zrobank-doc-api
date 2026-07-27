@@ -123,6 +123,12 @@ Create the rule that decides when a Pix payment of this wallet requires approval
 
 See [Approval Rules](#approval-rules) before choosing the quantities.
 
+### Replacing a Setting
+
+`DELETE /permissions/transaction-approval-settings/{id}`
+
+Settings are immutable — to change the quantities or `min_amount`, delete the current setting and create a new one. Wallet owner only. The request is rejected while the setting still has `PENDING` approval requests, so cancel or wait for them first.
+
 ---
 
 ## Step 3: Decode the Pix Key
@@ -220,11 +226,10 @@ Any user with access to the wallet can cancel — not only the user who created 
 
 ---
 
-## Optional Read Endpoints
+## Other Endpoints
 
 - `GET /permissions/transaction-approval-settings/pix-payment/{id}` → get one setting
 - `GET /permissions/transaction-approval-settings/pix-payment` → list settings, filter by `currency_symbol` or `transaction_type_tag`
-- `DELETE /permissions/transaction-approval-settings/{id}` → remove a setting, so payments stop requiring approval. Wallet owner only, and rejected while the setting still has `PENDING` requests
 - `GET /permissions/transaction-approval-requests` → list requests, filter by `state` or `transaction_type_tag`
 - `GET /permissions/transaction-approvals` → list the votes already cast, filter by `transaction_approval_request_id`. Each item returns `user_id`, `user_name`, `wallet_id`, `amount`, `permission_type_tag`, `created_at` — use `permission_type_tag` to tell master votes from common votes
 
