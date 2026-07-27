@@ -46,10 +46,12 @@ Steps 1 and 2 are executed once, when configuring the wallet. Steps 3 to 6 are e
 
 A request is approved when the votes match the setting. Votes are counted by the permission type of the voting user, and `approver_master_required` decides whether master votes are counted apart.
 
-| `approver_master_required` | Approval condition | Who can vote |
+| `approver_master_required` | How votes are counted | Approval condition |
 |---|---|---|
-| `false` (or omitted) | total votes >= `approvers_quantity` | users holding `APPROVER` or `APPROVER_MASTER`, plus the wallet owner |
-| `true` | common votes >= `approvers_quantity` **and** master votes >= `approver_master_quantity` | only users whose vote resolves to `APPROVER_MASTER`, `APPROVER`, or `ROOT` |
+| `false` (or omitted) | single counter — the voter's role is not considered | total votes >= `approvers_quantity` |
+| `true` | two counters — `APPROVER` and the wallet owner fill the common count, `APPROVER_MASTER` fills the master count | common votes >= `approvers_quantity` **and** master votes >= `approver_master_quantity` |
+
+Eligibility to vote is the same in both cases — `APPROVER`, `APPROVER_MASTER`, and the wallet owner. The flag changes only how the votes are counted.
 
 **How a vote is classified:**
 - user has the `APPROVER_MASTER` tag → counted as a **master vote**
@@ -70,6 +72,8 @@ The wallet owner is identified by user id, not by tag, so they can vote without 
 | 2 approvers + 1 master | 2 | 1 | `APPROVED` |
 
 Master votes do not count toward `approvers_quantity`. Size the setting accordingly: the example above needs **three** distinct voters.
+
+**Sizing warning.** Assigning `APPROVER_MASTER` to the wallet owner removes their common vote — the master classification wins, so they stop filling the `approvers_quantity` count. A wallet with only an owner (also master) and one `APPROVER` can never satisfy `approvers_quantity: 2`, and the request stays `PENDING` until it expires. Nothing validates this when the setting is created: each vote still returns `201`. Make sure the wallet has enough distinct voters in each category before choosing the quantities.
 
 ---
 
