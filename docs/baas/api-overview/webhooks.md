@@ -69,6 +69,7 @@ Your account can be configured so that when certain events occur on your account
 | BANKING BILLET PIX DEPOSIT BATCH GENERATED | When a batch of Bolepix is successfully generated.                 |
 | BANKING BILLET PIX DEPOSIT BATCH FAILED | When a batch of Bolepix fails to process.                            |
 | BANKING TED RECEIVED           | When you receive a TED (bank transfer) into your account.                    |
+| BANKING TED SENT               | When a TED you sent changes status (waiting, forwarded, failed).             |
 | JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
 | JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
 | JUDICIAL UNBLOCK ACCOUNT       | When a court order unblocks the user's account.                              |
@@ -259,6 +260,93 @@ Your account can be configured so that when certain events occur on your account
 ```
 
 > `owner_*` fields describe the sender of the TED and are only present when informed by the originating bank. `owner_document` is delivered masked. `transaction_id` and `finality_code` are optional.
+
+  </TabItem>
+  <TabItem value="Banking TED Sent - Waiting">
+
+```json
+{
+  "id": "3a3e5c0e-9b1f-4a7c-8d2e-1f2a3b4c5d6e",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_TED_SENT",
+  "status": "WAITING",
+  "amount": 150000,
+  "beneficiary_bank_code": "341",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_name": "Name",
+  "beneficiary_type": "PF",
+  "beneficiary_document": "12345678900",
+  "beneficiary_agency": "0001",
+  "beneficiary_account": "000000",
+  "beneficiary_account_digit": "0",
+  "beneficiary_account_type": "CACC",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Banking TED Sent - Forwarded">
+
+```json
+{
+  "id": "3a3e5c0e-9b1f-4a7c-8d2e-1f2a3b4c5d6e",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_TED_SENT",
+  "status": "FORWARDED",
+  "amount": 150000,
+  "beneficiary_bank_code": "341",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_name": "Name",
+  "beneficiary_type": "PF",
+  "beneficiary_document": "12345678900",
+  "beneficiary_agency": "0001",
+  "beneficiary_account": "000000",
+  "beneficiary_account_digit": "0",
+  "beneficiary_account_type": "CACC",
+  "forwarded_at": "2024-04-17T13:34:02.500Z",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:34:02.500Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Banking TED Sent - Failed">
+
+```json
+{
+  "id": "3a3e5c0e-9b1f-4a7c-8d2e-1f2a3b4c5d6e",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_TED_SENT",
+  "status": "FAILED",
+  "amount": 150000,
+  "beneficiary_bank_code": "341",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_name": "Name",
+  "beneficiary_type": "PF",
+  "beneficiary_document": "12345678900",
+  "beneficiary_agency": "0001",
+  "beneficiary_account": "000000",
+  "beneficiary_account_digit": "0",
+  "beneficiary_account_type": "CACC",
+  "failure_code": "AB03",
+  "failure_message": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "failed_at": "2024-04-17T13:34:10.900Z",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:34:10.900Z"
+}
+```
+
+> A sent TED emits one webhook per status transition (`WAITING`, `FORWARDED`, `FAILED`), all sharing the same `id`. `FORWARDED` is the final success status. `forwarded_at`, `failure_code`, `failure_message` and `failed_at` are only present on the matching status. `beneficiary_bank_name` and `beneficiary_bank_ispb` are optional.
 
   </TabItem>
 
