@@ -8,70 +8,72 @@ Your account can be configured so that when certain events occur on your account
 
 ## Types of webhooks
 
-| Type                           | Description                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------- |
-| PAYMENT                        | When you send a pix payment.                                                 |
-| PAYMENT FAILED                 | When you send a pix payment and it fails.                                    |
-| DEVOLUTION                     | When you send a pix devolution.                                              |
-| DEVOLUTION FAILED              | When you send a pix devolution and it fails.                                 |
-| DEVOLUTION RECEIVED            | When receive a pix devolution.                                               |
-| DEPOSIT                        | When receive a pix deposit.                                                  |
-| ONBOARDING FINISHED            | When you create a new user onboarding and it is approved.                    |
-| ONBOARDING REJECTED            | When you create a new user onboarding and it is rejected.                    |
-| ONBOARDING FAILED              | When onboarding processing fails due to an internal or provider-side error.  |
-| MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
+| Type                                           | Description                                                                                           |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| PAYMENT                                        | When you send a pix payment.                                                                          |
+| PAYMENT FAILED                                 | When you send a pix payment and it fails.                                                             |
+| DEVOLUTION                                     | When you send a pix devolution.                                                                       |
+| DEVOLUTION FAILED                              | When you send a pix devolution and it fails.                                                          |
+| DEVOLUTION RECEIVED                            | When receive a pix devolution.                                                                        |
+| DEVOLUTION RECEIVED FAILED                     | When a received pix devolution fails.                                                                 |
+| DEPOSIT                                        | When receive a pix deposit.                                                                           |
+| DEPOSIT RECEIVED FAILED                        | When a received pix deposit fails.                                                                    |
+| ONBOARDING FINISHED                            | When you create a new user onboarding and it is approved.                                             |
+| ONBOARDING REJECTED                            | When you create a new user onboarding and it is rejected.                                             |
+| ONBOARDING FAILED                              | When onboarding processing fails due to an internal or provider-side error.                           |
+| MERCHANT ONBOARDING KYC STATUS                 | When merchant onboarding KYC status is updated.                                                       |
 | COMPANY REGISTRATION ONBOARDING STATUS UPDATED | When company registration changes status, including states that require new documents or corrections. |
-| COMPANY REGISTRATION ONBOARDING APPROVED | When company registration is approved and becomes active.                  |
-| WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                                                 |
-| PIX REFUND OPEN                | When a Pix refund request is opened by the receiving PSP.                    |
-| PIX REFUND PENDING             | When a Pix refund request is pending processing.                             |
-| PIX REFUND WAITING             | When a Pix refund request is waiting for the PSP's response.                 |
-| PIX REFUND CLOSED              | When a Pix refund request is closed and the funds are returned.              |
-| PIX REFUND CANCELED            | When a Pix refund request is canceled.                                       |
-| PIX REFUND FAILED              | When a Pix refund request fails.                                             |
-| PIX FUND RECOVERY REQUEST CREATED | When a Pix fund recovery request is created.                              |
-| PIX FUND RECOVERY REQUEST ANALYSED | When a Pix fund recovery request has been analysed.                      |
-| PIX FUND RECOVERY REQUEST COMPLETED APPROVED | When a Pix fund recovery request is completed and approved.    |
-| PIX FUND RECOVERY REQUEST COMPLETED REJECTED | When a Pix fund recovery request is completed and rejected.    |
-| PIX FUND RECOVERY REQUEST CANCELED | When a Pix fund recovery request is canceled.                            |
-| PIX FUND RECOVERY REQUEST FAILED | When a Pix fund recovery request fails.                                    |
-| PIX AUTOMATIC RECURRENCE CREATED | When a Pix automatic recurrence is created.                               |
-| PIX AUTOMATIC RECURRENCE FAILED | When a Pix automatic recurrence creation fails.                            |
-| PIX AUTOMATIC RECURRENCE APPROVED | When a Pix automatic recurrence is approved.                             |
-| PIX AUTOMATIC RECURRENCE REJECTED | When a Pix automatic recurrence is rejected.                             |
-| PIX AUTOMATIC RECURRENCE CANCELED | When a Pix automatic recurrence is canceled.                             |
-| PIX AUTOMATIC RECURRENCE CANCELED FAILED | When a Pix automatic recurrence cancellation fails.               |
-| PIX AUTOMATIC RECURRENCE EXPIRED | When a Pix automatic recurrence expires after the request expiration date. |
-| PIX AUTOMATIC RECURRENCE FINISHED | When a Pix automatic recurrence reaches its end date.                    |
-| PIX AUTOMATIC AUTHORIZATION PENDING | When a Pix automatic authorization is pending user approval.           |
-| PIX AUTOMATIC AUTHORIZATION APPROVED | When a Pix automatic authorization is approved.                       |
-| PIX AUTOMATIC AUTHORIZATION REJECTED | When a Pix automatic authorization is rejected.                       |
-| PIX AUTOMATIC AUTHORIZATION CANCELED | When a Pix automatic authorization is canceled.                       |
-| PIX AUTOMATIC AUTHORIZATION FINISHED | When a Pix automatic authorization is finished.                       |
-| PIX AUTOMATIC AUTHORIZATION APPROVED FAILED | When a Pix automatic authorization approval fails.               |
-| PIX AUTOMATIC AUTHORIZATION REJECTED FAILED | When a Pix automatic authorization rejection fails.              |
-| PIX AUTOMATIC AUTHORIZATION CANCELED FAILED | When a Pix automatic authorization cancellation fails.           |
-| PIX AUTOMATIC AUTHORIZATION UPDATED CONFIRMED | When a Pix automatic authorization max value update is confirmed. |
-| PIX AUTOMATIC AUTHORIZATION UPDATED FAILED | When a Pix automatic authorization max value update fails.       |
-| PIX AUTOMATIC CHARGE CREATED   | When a Pix automatic charge is created.                                      |
-| PIX AUTOMATIC CHARGE CREATED FAILED | When a Pix automatic charge creation fails.                             |
-| PIX AUTOMATIC CHARGE PAID      | When a Pix automatic charge is paid.                                         |
-| PIX AUTOMATIC CHARGE NOT PAID  | When a Pix automatic charge is not paid.                                     |
-| PIX AUTOMATIC CHARGE CANCELED  | When a Pix automatic charge is canceled.                                     |
-| PIX AUTOMATIC CHARGE CANCELED FAILED | When a Pix automatic charge cancellation fails.                       |
-| PIX AUTOMATIC PAYMENT CREATED  | When a Pix automatic payment is created.                                     |
-| PIX AUTOMATIC PAYMENT CANCELLATION FAILED | When a Pix automatic payment cancellation fails.                  |
-| PIX AUTOMATIC PAYMENT CANCELED | When a Pix automatic payment is canceled.                                    |
-| BANKING BILLET PIX DEPOSIT CREATED CONFIRMED | When a Bolepix is created and the Pix QR code is confirmed.        |
-| BANKING BILLET PIX DEPOSIT CREATED FAILED | When a Bolepix creation fails during billet registration or QR code generation. |
-| BANKING BILLET PIX DEPOSIT RECEIVED | When a Bolepix payment is received.                                        |
-| BANKING BILLET PIX DEPOSIT BATCH REJECTED | When a batch of Bolepix is rejected during validation.               |
-| BANKING BILLET PIX DEPOSIT BATCH GENERATED | When a batch of Bolepix is successfully generated.                 |
-| BANKING BILLET PIX DEPOSIT BATCH FAILED | When a batch of Bolepix fails to process.                            |
-| JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
-| JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
-| JUDICIAL UNBLOCK ACCOUNT       | When a court order unblocks the user's account.                              |
-| JUDICIAL UNBLOCK ACCOUNT BALANCE | When a court order releases a previously blocked balance amount.            |
+| COMPANY REGISTRATION ONBOARDING APPROVED       | When company registration is approved and becomes active.                                             |
+| WALLET ACCOUNT BALANCE UPDATED                 | When the balance is updated.                                                                          |
+| PIX REFUND OPEN                                | When a Pix refund request is opened by the receiving PSP.                                             |
+| PIX REFUND PENDING                             | When a Pix refund request is pending processing.                                                      |
+| PIX REFUND WAITING                             | When a Pix refund request is waiting for the PSP's response.                                          |
+| PIX REFUND CLOSED                              | When a Pix refund request is closed and the funds are returned.                                       |
+| PIX REFUND CANCELED                            | When a Pix refund request is canceled.                                                                |
+| PIX REFUND FAILED                              | When a Pix refund request fails.                                                                      |
+| PIX FUND RECOVERY REQUEST CREATED              | When a Pix fund recovery request is created.                                                          |
+| PIX FUND RECOVERY REQUEST ANALYSED             | When a Pix fund recovery request has been analysed.                                                   |
+| PIX FUND RECOVERY REQUEST COMPLETED APPROVED   | When a Pix fund recovery request is completed and approved.                                           |
+| PIX FUND RECOVERY REQUEST COMPLETED REJECTED   | When a Pix fund recovery request is completed and rejected.                                           |
+| PIX FUND RECOVERY REQUEST CANCELED             | When a Pix fund recovery request is canceled.                                                         |
+| PIX FUND RECOVERY REQUEST FAILED               | When a Pix fund recovery request fails.                                                               |
+| PIX AUTOMATIC RECURRENCE CREATED               | When a Pix automatic recurrence is created.                                                           |
+| PIX AUTOMATIC RECURRENCE FAILED                | When a Pix automatic recurrence creation fails.                                                       |
+| PIX AUTOMATIC RECURRENCE APPROVED              | When a Pix automatic recurrence is approved.                                                          |
+| PIX AUTOMATIC RECURRENCE REJECTED              | When a Pix automatic recurrence is rejected.                                                          |
+| PIX AUTOMATIC RECURRENCE CANCELED              | When a Pix automatic recurrence is canceled.                                                          |
+| PIX AUTOMATIC RECURRENCE CANCELED FAILED       | When a Pix automatic recurrence cancellation fails.                                                   |
+| PIX AUTOMATIC RECURRENCE EXPIRED               | When a Pix automatic recurrence expires after the request expiration date.                            |
+| PIX AUTOMATIC RECURRENCE FINISHED              | When a Pix automatic recurrence reaches its end date.                                                 |
+| PIX AUTOMATIC AUTHORIZATION PENDING            | When a Pix automatic authorization is pending user approval.                                          |
+| PIX AUTOMATIC AUTHORIZATION APPROVED           | When a Pix automatic authorization is approved.                                                       |
+| PIX AUTOMATIC AUTHORIZATION REJECTED           | When a Pix automatic authorization is rejected.                                                       |
+| PIX AUTOMATIC AUTHORIZATION CANCELED           | When a Pix automatic authorization is canceled.                                                       |
+| PIX AUTOMATIC AUTHORIZATION FINISHED           | When a Pix automatic authorization is finished.                                                       |
+| PIX AUTOMATIC AUTHORIZATION APPROVED FAILED    | When a Pix automatic authorization approval fails.                                                    |
+| PIX AUTOMATIC AUTHORIZATION REJECTED FAILED    | When a Pix automatic authorization rejection fails.                                                   |
+| PIX AUTOMATIC AUTHORIZATION CANCELED FAILED    | When a Pix automatic authorization cancellation fails.                                                |
+| PIX AUTOMATIC AUTHORIZATION UPDATED CONFIRMED  | When a Pix automatic authorization max value update is confirmed.                                     |
+| PIX AUTOMATIC AUTHORIZATION UPDATED FAILED     | When a Pix automatic authorization max value update fails.                                            |
+| PIX AUTOMATIC CHARGE CREATED                   | When a Pix automatic charge is created.                                                               |
+| PIX AUTOMATIC CHARGE CREATED FAILED            | When a Pix automatic charge creation fails.                                                           |
+| PIX AUTOMATIC CHARGE PAID                      | When a Pix automatic charge is paid.                                                                  |
+| PIX AUTOMATIC CHARGE NOT PAID                  | When a Pix automatic charge is not paid.                                                              |
+| PIX AUTOMATIC CHARGE CANCELED                  | When a Pix automatic charge is canceled.                                                              |
+| PIX AUTOMATIC CHARGE CANCELED FAILED           | When a Pix automatic charge cancellation fails.                                                       |
+| PIX AUTOMATIC PAYMENT CREATED                  | When a Pix automatic payment is created.                                                              |
+| PIX AUTOMATIC PAYMENT CANCELLATION FAILED      | When a Pix automatic payment cancellation fails.                                                      |
+| PIX AUTOMATIC PAYMENT CANCELED                 | When a Pix automatic payment is canceled.                                                             |
+| BANKING BILLET PIX DEPOSIT CREATED CONFIRMED   | When a Bolepix is created and the Pix QR code is confirmed.                                           |
+| BANKING BILLET PIX DEPOSIT CREATED FAILED      | When a Bolepix creation fails during billet registration or QR code generation.                       |
+| BANKING BILLET PIX DEPOSIT RECEIVED            | When a Bolepix payment is received.                                                                   |
+| BANKING BILLET PIX DEPOSIT BATCH REJECTED      | When a batch of Bolepix is rejected during validation.                                                |
+| BANKING BILLET PIX DEPOSIT BATCH GENERATED     | When a batch of Bolepix is successfully generated.                                                    |
+| BANKING BILLET PIX DEPOSIT BATCH FAILED        | When a batch of Bolepix fails to process.                                                             |
+| JUDICIAL BLOCK ACCOUNT                         | When a court order blocks the user's account entirely.                                                |
+| JUDICIAL BLOCK ACCOUNT BALANCE                 | When a court order blocks a specific amount from the user's account balance.                          |
+| JUDICIAL UNBLOCK ACCOUNT                       | When a court order unblocks the user's account.                                                       |
+| JUDICIAL UNBLOCK ACCOUNT BALANCE               | When a court order releases a previously blocked balance amount.                                      |
 
 <br /><br />
 
@@ -231,6 +233,56 @@ Your account can be configured so that when certain events occur on your account
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
+
+  </TabItem>
+  <TabItem value="Devolution Received Failed">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "type": "DEVOLUTION_RECEIVED_FAILED",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T17:33:05.712Z"
+}
+```
+
+> Triggered when an inbound Pix devolution fails. `error_code` carries the Bacen return code and `error_description` its human-readable, translated message.
+
+  </TabItem>
+  <TabItem value="Deposit Received Failed">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "type": "DEPOSIT_RECEIVED_FAILED",
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "amount": "63",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> Triggered when an inbound Pix deposit fails. `error_code` carries the Bacen return code and `error_description` its human-readable, translated message.
 
   </TabItem>
 
@@ -1913,7 +1965,7 @@ Triggered when a Bolepix is successfully created and the Pix QR code is confirme
   "limit_due_date": "2024-05-20T00:00:00.000Z",
   "amount": 15000,
   "amount_received": null,
-  "interest_perc_value": 1.00,
+  "interest_perc_value": 1.0,
   "fine_value": 200,
   "discount_value": null,
   "beneficiary": {

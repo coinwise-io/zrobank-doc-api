@@ -15,7 +15,9 @@ Your account can be configured so that when certain events occur on your account
 | DEVOLUTION                     | When you send a pix devolution.              |
 | DEVOLUTION FAILED              | When you send a pix devolution and it fails. |
 | DEVOLUTION RECEIVED            | When receive a pix devolution.               |
+| DEVOLUTION RECEIVED FAILED     | When a received pix devolution fails.        |
 | DEPOSIT                        | When receive a pix deposit.                  |
+| DEPOSIT RECEIVED FAILED        | When a received pix deposit fails.           |
 | WALLET ACCOUNT BALANCE UPDATED | When the balance is updated.                 |
 
 <br /><br />
@@ -176,6 +178,56 @@ Your account can be configured so that when certain events occur on your account
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
+
+  </TabItem>
+  <TabItem value="Devolution Received Failed">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "type": "DEVOLUTION",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T17:33:05.712Z"
+}
+```
+
+> Triggered when an inbound Pix devolution fails. `error_code` carries the Bacen return code and `error_description` its human-readable, translated message.
+
+  </TabItem>
+  <TabItem value="Deposit Received Failed">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "type": "DEPOSIT",
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "amount": "63",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> Triggered when an inbound Pix deposit fails. `error_code` carries the Bacen return code and `error_description` its human-readable, translated message.
 
   </TabItem>
   <TabItem value="Balance updated">
