@@ -122,7 +122,7 @@ Upload documents with `multipart/form-data`.
 
 **Integration rules:**
 - Upload only categories returned by Step 3
-- Send `legal_representative_id` for representative documents
+- Send `legal_representative_id` for representative documents only — sending it for a company-scoped category is rejected
 - Accepted formats: `application/pdf`, `image/jpeg`, `image/jpg`
 - Max file size follows the configured environment limit
 
@@ -154,12 +154,13 @@ See [Webhooks](/baas/api-overview/webhooks) for company registration webhook pay
 
 **422 on create or upload:**
 - Fix request data and retry
+- Also returned when the company registration is not found by the pending-documents or document upload endpoints
 
 **403:**
 - Authenticated user does not own the company registration
 
-**404:**
-- Company registration not found
+**Not found on `GET /users/company-registrations/{id}`:**
+- Returns `200` with a `null` body (no `404` is returned by these endpoints)
 
 **DECLINED or CANCELED:**
 - Correct the data or documents and start a new company registration flow

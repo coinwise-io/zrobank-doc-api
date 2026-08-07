@@ -51,7 +51,7 @@ Create onboarding record with user address and personal data.
 - `occupation_income` (number, R$ cents)
 - `patrimony` (number, R$ cents)
 
-**Note:** Cannot create if user has active onboarding (PENDING, FINISHED). Can create new if previous was REJECTED or FAILED.
+**Note:** Cannot create if user already has an onboarding in any status other than REJECTED, FAILED or EXPIRED. Can create new if previous was REJECTED, FAILED or EXPIRED.
 
 ---
 
@@ -88,15 +88,17 @@ Use this endpoint to check the current onboarding status.
 
 **Status flow:**
 ```
-PENDING → FINISHED / REJECTED / FAILED
+PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 ```
 
 | Status | Meaning | Action |
 |--------|---------|--------|
-| `PENDING` | Awaiting documents or processing | Complete step 3 or wait |
+| `PENDING` | Awaiting documents | Complete step 3 |
+| `IN_PROCESS` | Documents received, under analysis | Wait |
 | `FINISHED` | Approved | Proceed |
 | `REJECTED` | Not approved | Create new onboarding |
 | `FAILED` | Error | Contact support |
+| `EXPIRED` | Onboarding expired after long inactivity | Create new onboarding |
 
 **Webhooks:**
 
