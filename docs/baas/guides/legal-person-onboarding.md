@@ -164,7 +164,7 @@ While the onboarding is `IN_PROCESS`, every legal representative must complete a
 
 1. The legal person analysis is approved
 2. An individual liveness link is created for every active legal representative
-3. The `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` webhook delivers all links in a single notification
+3. The `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` webhook delivers the links — normally all of them in a single notification
 4. Deliver each link to its legal representative — the representative opens it and completes the facial capture
 5. Each approval fires the `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED` webhook with status `APPROVED`
 6. Once every representative is approved, the onboarding proceeds toward `FINISHED`
@@ -197,6 +197,7 @@ Lists every legal representative of the onboarding with their individual livenes
 **Integration rules:**
 - Delivering each link to its representative is your responsibility — no notification is sent to them
 - Links are individual per representative and do not expire
+- The `RELEASED` webhook may be delivered more than once — the payload always carries the current full set of links, so process it idempotently and use the progress endpoint as the source of truth for who has a link
 - `PENDING` with no `url` is normal, not an error — the legal person analysis has not been approved yet
 - Do not wait for an intermediate webhook notification — only `APPROVED` is announced
 - Treat `url` and `name` as sensitive data — the link grants access to the liveness capture and the name is personal data
