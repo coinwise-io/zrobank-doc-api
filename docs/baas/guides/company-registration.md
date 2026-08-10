@@ -41,7 +41,7 @@ Execute steps 1-2 first. If the status requires documents, execute steps 3-4 and
 
 `POST /users/company-registrations`
 
-Create the provider-side company registration using a finished legal person onboarding.
+Create the company registration using a finished legal person onboarding.
 
 **Required body:**
 - `onboarding_id`
@@ -77,7 +77,7 @@ Use polling as fallback or when webhook delivery is not configured.
 
 | Status | Meaning | Action |
 |--------|---------|--------|
-| `WAITING_ANALYSIS` | Registration created and under provider analysis | Wait or keep polling |
+| `WAITING_ANALYSIS` | Registration created and under analysis | Wait or keep polling |
 | `WAITING_DOCUMENTS` | Additional documents are required | Go to Steps 3-4 |
 | `WAITING_CORRECTIONS` | Corrections or new documents are required | Go to Steps 3-4 |
 | `ACTIVE` | Registration approved and active | Flow finished. If you also depend on alias bank account readiness, use `bank_account_status` or `COMPANY_REGISTRATION_ONBOARDING_APPROVED` |
@@ -124,7 +124,7 @@ Upload documents with `multipart/form-data`.
 - Upload only categories returned by Step 3
 - Send `legal_representative_id` for representative documents only — sending it for a company-scoped category is rejected
 - Accepted formats: `application/pdf`, `image/jpeg`, `image/jpg`
-- Max file size follows the configured environment limit
+- Max file size: 4.5 MB per file
 
 After uploads, go back to Step 2 and recheck the company registration status.
 

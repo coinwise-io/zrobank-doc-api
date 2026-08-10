@@ -17,9 +17,10 @@ graph TD
     D --> E[5: Upload Representative Docs]
     E --> F[6: Upload Legal Person Docs]
     F --> G[7: Finalize]
+    G --> H[8: Legal Representative Liveness]
 ```
 
-Execute steps 1-7 in order.
+Execute steps 1-7 in order. Step 8 happens while the onboarding is `IN_PROCESS`: each legal representative completes an individual liveness check.
 
 ---
 
@@ -149,7 +150,61 @@ Submit onboarding for processing.
 
 **If validation fails:** Returns `422` with error details. Fix and retry.
 
-After finalization, use the endpoint below to check the onboarding status.
+After finalization, the onboarding stays `IN_PROCESS` while the legal person data is analyzed and the legal representatives complete their liveness checks (Step 8).
+
+---
+
+## Step 8: Legal Representative Liveness
+
+While the onboarding is `IN_PROCESS`, every legal representative must complete an individual liveness check (facial capture) through a dedicated link.
+
+**Note:** This step applies only when liveness is enabled for your product. If it is not enabled, the onboarding proceeds without this step and the liveness endpoint returns `422`.
+
+**How it works:**
+
+1. The legal person analysis is approved
+2. An individual liveness link is created for every active legal representative
+3. The `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` webhook delivers all links in a single notification
+4. Deliver each link to its legal representative — the representative opens it and completes the facial capture
+5. Each approval fires the `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED` webhook with status `APPROVED`
+6. Once every representative is approved, the onboarding proceeds toward `FINISHED`
+
+### Checking Liveness Progress
+
+`GET /users/onboardings/{id}/legal-representatives/liveness`
+
+Lists every legal representative of the onboarding with their individual liveness link and progress. Use it to know who is still pending.
+
+**Response (array, one item per representative):**
+- `id` — legal representative ID
+- `name` — legal representative name
+- `url` — individual liveness link (absent while the link has not been created yet)
+- `status` — liveness progress (see table below)
+- `submitted_at` — when the representative submitted the liveness (absent while nothing was submitted)
+
+| Status | Meaning | Action |
+|--------|---------|--------|
+| `PENDING` | No link yet — the legal person analysis still has to be approved | Wait |
+| `WAITING_SUBMISSION` | Link issued, the representative has not completed the liveness | Deliver the link to the representative |
+| `IN_ANALYSIS` | Submitted, result not confirmed yet | Wait |
+| `APPROVED` | Liveness completed | Done for this representative |
+
+**Webhooks:**
+
+- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` — all links created, payload contains one entry per representative (`legalRepresentativeId`, `name`, `url`)
+- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED` — per-representative progress, payload contains `legalRepresentativeId`, `status` and `submittedAt`. Only `APPROVED` is announced — poll the endpoint above for intermediate statuses
+
+**Integration rules:**
+- Delivering each link to its representative is your responsibility — no notification is sent to them
+- Links are individual per representative and do not expire
+- `PENDING` with no `url` is normal, not an error — the legal person analysis has not been approved yet
+- Do not wait for an intermediate webhook notification — only `APPROVED` is announced
+- Treat `url` and `name` as sensitive data — the link grants access to the liveness capture and the name is personal data
+- If a representative fails identity verification, the onboarding becomes `REJECTED` and `rejected_legal_representative_id` in the status endpoint identifies which representative caused it
+
+**Errors:**
+- `422` — onboarding not found, not yet finalized, or it does not require legal representative liveness
+- `403` — onboarding does not belong to the authenticated user
 
 ---
 
@@ -167,7 +222,7 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 | Status | Meaning | Action |
 |--------|---------|--------|
 | `PENDING` | Incomplete | Complete steps 1-7 |
-| `IN_PROCESS` | Processing | Wait |
+| `IN_PROCESS` | Processing — legal representatives may still need to complete liveness | Follow Step 8 |
 | `FINISHED` | Approved | Proceed |
 | `REJECTED` | Not approved | Create new onboarding |
 | `FAILED` | Error | Contact support |
@@ -176,6 +231,8 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 **Webhooks:**
 
 If webhooks are configured, you will receive notifications for:
+- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` - Liveness links created for all legal representatives
+- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED` - A legal representative completed the liveness
 - `ONBOARDING_FINISHED` - Onboarding approved
 - `ONBOARDING_REJECTED` - Onboarding not approved
 - `ONBOARDING_FAILED` - Processing error
