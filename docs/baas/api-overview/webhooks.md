@@ -19,6 +19,8 @@ Your account can be configured so that when certain events occur on your account
 | ONBOARDING FINISHED            | When you create a new user onboarding and it is approved.                    |
 | ONBOARDING REJECTED            | When you create a new user onboarding and it is rejected.                    |
 | ONBOARDING FAILED              | When onboarding processing fails due to an internal or provider-side error.  |
+| ONBOARDING LEGAL REPRESENTATIVE LIVENESS RELEASED | When the liveness links of the legal representatives are created.         |
+| ONBOARDING LEGAL REPRESENTATIVE LIVENESS UPDATED | When a legal representative completes the liveness check.                  |
 | MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
 | COMPANY REGISTRATION ONBOARDING STATUS UPDATED | When company registration changes status, including states that require new documents or corrections. |
 | COMPANY REGISTRATION ONBOARDING APPROVED | When company registration is approved and becomes active.                  |
@@ -469,6 +471,47 @@ Your account can be configured so that when certain events occur on your account
   "failed_message": "Unexpected onboarding processing error."
 }
 ```
+
+  </TabItem>
+  <TabItem value="Onboarding Legal Representative Liveness Released">
+
+```json
+{
+  "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
+  "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
+  "type": "ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED",
+  "links": [
+    {
+      "legal_representative_id": "7b5e8c47-b6a3-4e29-942f-7f5ec06b26a2",
+      "name": "Maria Souza",
+      "url": "https://liveness.example.com/abc123"
+    },
+    {
+      "legal_representative_id": "1b2c3d4e-1234-5678-9abc-def012345678",
+      "name": "João Silva",
+      "url": "https://liveness.example.com/def456"
+    }
+  ]
+}
+```
+
+> `id` is the legal person onboarding ID. `links` carries one entry per legal representative. The webhook may be delivered more than once — the payload always contains the current full set of links, so process it idempotently. See [Legal Person Onboarding](/baas/guides/legal-person-onboarding) for the full liveness flow.
+
+  </TabItem>
+  <TabItem value="Onboarding Legal Representative Liveness Updated">
+
+```json
+{
+  "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
+  "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
+  "type": "ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED",
+  "legal_representative_id": "7b5e8c47-b6a3-4e29-942f-7f5ec06b26a2",
+  "status": "APPROVED",
+  "submitted_at": "2026-08-10T13:33:41.071Z"
+}
+```
+
+> Emitted once per legal representative. Only `APPROVED` is announced — poll `GET /users/onboardings/{id}/legal-representatives/liveness` for intermediate statuses.
 
   </TabItem>
   <TabItem value="Balance updated">
