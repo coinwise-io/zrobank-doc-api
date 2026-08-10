@@ -124,7 +124,7 @@ Upload documents with `multipart/form-data`.
 - Upload only categories returned by Step 3
 - Send `legal_representative_id` for representative documents only — sending it for a company-scoped category is rejected
 - Accepted formats: `application/pdf`, `image/jpeg`, `image/jpg`
-- Max file size follows the configured environment limit
+- Max file size: 4.5 MB per file
 
 After uploads, go back to Step 2 and recheck the company registration status.
 
