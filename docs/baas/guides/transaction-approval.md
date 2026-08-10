@@ -195,7 +195,7 @@ Source of truth for the current state of the request.
 | `PENDING` | Waiting for the remaining approval votes | Keep polling, or have the missing approvers call Step 5 |
 | `APPROVED` | Every required vote was cast | Payment released. Follow it through the Pix payment endpoints |
 | `CANCELED` | Canceled by a user of the wallet | Create a new request if the payment is still needed |
-| `EXPIRED` | Not approved by the end of the payment date. A daily job expires the pending requests whose `payment_date` was the previous day | Create a new request |
+| `EXPIRED` | Not approved by the end of the payment date — pending requests expire on the day after their `payment_date` | Create a new request |
 
 **Scheduled payments:** expiration is keyed on the payment date, not on the creation date. A request created without `payment_date` uses the creation date, so it expires the day after it is created. A request scheduled for a future date stays `PENDING` and keeps accepting votes until the day after that date.
 
