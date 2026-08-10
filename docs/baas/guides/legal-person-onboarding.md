@@ -43,7 +43,7 @@ Create onboarding record with legal person address and revenue.
 
 **Returns:** `id` → Save for Steps 6 and 7
 
-**Note:** Cannot create if user has active onboarding (PENDING, IN_PROCESS, FINISHED). Can create new if previous was REJECTED or FAILED.
+**Note:** Cannot create if user already has an onboarding in any status other than REJECTED, FAILED or EXPIRED. Can create new if previous was REJECTED, FAILED or EXPIRED.
 
 ---
 
@@ -53,12 +53,12 @@ Create onboarding record with legal person address and revenue.
 
 Register shareholders. Can be Natural Person (CPF) or Legal Person (CNPJ).
 
-**Returns:** `id` → Save for Step 4 (Natural Person shareholders only)
+**Returns:** `id` → Save for Step 4
 
 **Requirements:**
 - At least one shareholder
 - If shareholder is Natural Person (CPF), the `document` must match the legal representative's document created in Step 4
-- Legal Person (CNPJ) shareholders do not require a legal representative
+- Legal Person (CNPJ) shareholders must have at least one legal representative linked to them (validated at finalization)
 - Total `participation_percentage` ≤ 100%
 
 ---
@@ -75,7 +75,8 @@ Register legal representatives. Must be Natural Person with CPF.
 
 **Requirements:**
 - Must be Natural Person (CPF)
-- Must link to a Natural Person shareholder via `shareholder_id`
+- Must link to a shareholder of the same onboarding via `shareholder_id` (Natural Person or Legal Person shareholder)
+- If the linked shareholder is Natural Person, its `document` must match the representative's document
 - At least one legal representative required
 
 ---
@@ -139,7 +140,8 @@ Submit onboarding for processing.
 - ✓ At least one shareholder created
 - ✓ At least one legal representative created
 - ✓ All legal representatives are Natural Person
-- ✓ All legal representatives linked to Natural Person shareholders
+- ✓ All legal representatives linked to a shareholder of this onboarding
+- ✓ Every Legal Person (CNPJ) shareholder has at least one linked legal representative
 - ✓ All legal representatives have uploaded: selfie, identity_document, qualification_declaration
 - ✓ Legal person has uploaded: SOCIAL_CONTRACT
 - ✓ Legal person has uploaded: BALANCE_SHEET or REVENUE_STATEMENT
@@ -169,6 +171,7 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 | `FINISHED` | Approved | Proceed |
 | `REJECTED` | Not approved | Create new onboarding |
 | `FAILED` | Error | Contact support |
+| `EXPIRED` | Onboarding expired after long inactivity | Create new onboarding |
 
 **Webhooks:**
 
