@@ -74,6 +74,14 @@ Your account can be configured so that when certain events occur on your account
 | BANKING BILLET PIX DEPOSIT BATCH FAILED | When a batch of Bolepix fails to process.                            |
 | BANKING TED RECEIVED           | When you receive a TED (bank transfer) into your account.                    |
 | BANKING TED SENT               | When a TED you sent changes status (waiting, forwarded, failed).             |
+| BANKING TED RECEIVED FRAUD ANALYSIS | When a received TED enters antifraud manual review.                     |
+| BANKING TED RECEIVED FRAUD DECLINED | When a received TED is declined by the antifraud analysis.              |
+| BANKING TED SENT FRAUD ANALYSIS | When a TED you sent enters antifraud manual review.                         |
+| BANKING TED SENT FRAUD DECLINED | When a TED you sent is declined by the antifraud analysis.                  |
+| PIX DEPOSIT FRAUD ANALYSIS     | When a received Pix deposit enters antifraud analysis.                       |
+| PIX DEPOSIT FRAUD DECLINED     | When a received Pix deposit is blocked by the antifraud analysis.            |
+| PIX PAYMENT FRAUD ANALYSIS     | When a Pix payment you sent enters antifraud manual review.                  |
+| PIX PAYMENT FRAUD DECLINED     | When a Pix payment you sent is declined by the antifraud analysis.           |
 | JUDICIAL BLOCK ACCOUNT         | When a court order blocks the user's account entirely.                       |
 | JUDICIAL BLOCK ACCOUNT BALANCE | When a court order blocks a specific amount from the user's account balance. |
 | JUDICIAL UNBLOCK ACCOUNT       | When a court order unblocks the user's account.                              |
@@ -2512,6 +2520,235 @@ Triggered when a batch fails during processing due to an internal error.
   </TabItem>
 </Tabs>
 
+## Antifraud Webhooks
+
+Triggered when a transaction enters antifraud analysis or is declined by it. `FRAUD_ANALYSIS` events mean the transaction is on hold for review; the transaction then either proceeds through its normal status flow (if approved) or a `FRAUD_DECLINED` event follows. Payload versions 1 and 2 are identical.
+
+Optional fields are only present when the information is available for the transaction.
+
+### Payloads (Version 1)
+
+<Tabs>
+  <TabItem value="Banking TED Received Fraud Analysis">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "type": "BANKING_TED_RECEIVED_FRAUD_ANALYSIS",
+  "status": "ANTIFRAUD_ANALYSIS_REVIEW",
+  "amount": 150000,
+  "owner_name": "Name",
+  "owner_document": "***000000**",
+  "owner_bank_code": "237",
+  "owner_bank_name": "BANCO BRADESCO S/A",
+  "owner_bank_ispb": "60746948",
+  "owner_bank_account": "000000",
+  "owner_bank_branch": "0000",
+  "owner_account_type": "CACC",
+  "transaction_id": "STR20260417173300000000000000001",
+  "finality_code": 10,
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> `owner_*` fields, `transaction_id` and `finality_code` are optional.
+
+  </TabItem>
+  <TabItem value="Banking TED Received Fraud Declined">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "BANKING_TED_RECEIVED_FRAUD_DECLINED",
+  "status": "FAILED",
+  "amount": 150000,
+  "owner_name": "Name",
+  "owner_document": "***000000**",
+  "owner_bank_code": "237",
+  "owner_bank_name": "BANCO BRADESCO S/A",
+  "owner_bank_ispb": "60746948",
+  "owner_bank_account": "000000",
+  "owner_bank_branch": "0000",
+  "owner_account_type": "CACC",
+  "transaction_id": "STR20260417173300000000000000001",
+  "finality_code": 10,
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:35:02.500Z"
+}
+```
+
+> A declined received TED has no `operation_id` — the amount is never credited.
+
+  </TabItem>
+  <TabItem value="Banking TED Sent Fraud Analysis">
+
+```json
+{
+  "id": "3a3e5c0e-9b1f-4a7c-8d2e-1f2a3b4c5d6e",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_TED_SENT_FRAUD_ANALYSIS",
+  "status": "ANTIFRAUD_ANALYSIS_REVIEW",
+  "amount": 150000,
+  "beneficiary_bank_code": "341",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_name": "Name",
+  "beneficiary_type": "PF",
+  "beneficiary_document": "12345678900",
+  "beneficiary_agency": "0001",
+  "beneficiary_account": "000000",
+  "beneficiary_account_digit": "0",
+  "beneficiary_account_type": "CACC",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Banking TED Sent Fraud Declined">
+
+```json
+{
+  "id": "3a3e5c0e-9b1f-4a7c-8d2e-1f2a3b4c5d6e",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_TED_SENT_FRAUD_DECLINED",
+  "status": "FAILED",
+  "amount": 150000,
+  "beneficiary_bank_code": "341",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_name": "Name",
+  "beneficiary_type": "PF",
+  "beneficiary_document": "12345678900",
+  "beneficiary_agency": "0001",
+  "beneficiary_account": "000000",
+  "beneficiary_account_digit": "0",
+  "beneficiary_account_type": "CACC",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:35:02.500Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Pix Deposit Fraud Analysis">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "PIX_DEPOSIT_FRAUD_ANALYSIS",
+  "status": "WAITING_ANTIFRAUD",
+  "amount": 6300,
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "tx_id": null,
+  "owner_name": "Name",
+  "owner_document": "***000000**",
+  "owner_person_type": "CPF",
+  "owner_branch": "0000",
+  "owner_account_number": "000000",
+  "owner_account_type": "CACC",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZERO IP S/A",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Pix Deposit Fraud Declined">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "PIX_DEPOSIT_FRAUD_DECLINED",
+  "status": "BLOCKED",
+  "amount": 6300,
+  "owner_name": "Name",
+  "owner_document": "***000000**",
+  "owner_person_type": "CPF",
+  "owner_branch": "0000",
+  "owner_account_number": "000000",
+  "owner_account_type": "CACC",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZERO IP S/A",
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "tx_id": null,
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:35:02.500Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Pix Payment Fraud Analysis">
+
+```json
+{
+  "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "0f0aca83-8ea1-5ecb-9fe9-d31782ef06fb",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "PIX_PAYMENT_FRAUD_ANALYSIS",
+  "status": "ANTIFRAUD_ANALYSIS_REVIEW",
+  "amount": 27000,
+  "end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "beneficiary_bank_ispb": "26264220",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_name": "Name",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_branch": "0000",
+  "beneficiary_account_number": "000000",
+  "beneficiary_account_type": "CACC",
+  "created_at": "2024-04-17T17:29:00.020Z",
+  "updated_at": "2024-04-17T17:29:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Pix Payment Fraud Declined">
+
+```json
+{
+  "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "0f0aca83-8ea1-5ecb-9fe9-d31782ef06fb",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "PIX_PAYMENT_FRAUD_DECLINED",
+  "status": "FAILED",
+  "amount": 27000,
+  "beneficiary_name": "Name",
+  "beneficiary_document": "***000000**",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_bank_ispb": "26264220",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_branch": "0000",
+  "beneficiary_account_number": "000000",
+  "beneficiary_account_type": "CACC",
+  "key": "name@zro.global",
+  "end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "created_at": "2024-04-17T17:29:00.020Z",
+  "updated_at": "2024-04-17T17:31:00.020Z"
+}
+```
+
+> `key` is the destination Pix key, present only for payments made by key.
+
+  </TabItem>
+</Tabs>
+
 ## Judicial Webhooks
 
 Judicial webhooks are triggered by court-ordered operations on user accounts. You can register multiple URLs for the same event type — all registered URLs will receive the notification independently. This is useful if you operate multiple products (e.g., PaaS and Gateway) and need each one to receive the event.
@@ -2525,38 +2762,38 @@ Triggered when a court order blocks the user's account entirely.
 
 ```json
 {
-  "idJudicialBlockAccount": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
-  "accountNumber": "000001",
-  "branchNumber": "0001",
-  "processNumber": "0001234-56.2026.8.26.0100",
-  "courtName": "1ª Vara Cível de São Paulo",
-  "createdAt": "2024-04-17T17:30:00.020Z"
+  "id_judicial_block_account": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "account_number": "000001",
+  "branch_number": "0001",
+  "process_number": "0001234-56.2026.8.26.0100",
+  "court_name": "1ª Vara Cível de São Paulo",
+  "created_at": "2024-04-17T17:30:00.020Z"
 }
 ```
 
-> `processNumber` and `courtName` are optional — they are only present when provided in the court order.
+> `process_number` and `court_name` are optional — they are only present when provided in the court order.
 
   </TabItem>
   <TabItem value="Judicial Block Account Balance">
 
-Triggered when a court order blocks a specific amount from the user's account balance. The `requestedAmount` field is included only when provided by the court order.
+Triggered when a court order blocks a specific amount from the user's account balance. The `requested_amount` field is included only when provided by the court order.
 
 ```json
 {
-  "idJudicialBlockAccount": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
-  "accountNumber": "000001",
-  "branchNumber": "0001",
-  "isTotalValue": false,
-  "requestedAmount": 150000,
-  "processNumber": "0001234-56.2026.8.26.0100",
-  "courtName": "1ª Vara Cível de São Paulo",
-  "createdAt": "2024-04-17T17:30:00.020Z"
+  "id_judicial_block_account": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "account_number": "000001",
+  "branch_number": "0001",
+  "is_total_value": false,
+  "requested_amount": 150000,
+  "process_number": "0001234-56.2026.8.26.0100",
+  "court_name": "1ª Vara Cível de São Paulo",
+  "created_at": "2024-04-17T17:30:00.020Z"
 }
 ```
 
-> When `isTotalValue` is `true`, the entire available balance is blocked. `requestedAmount` is optional and only present when informed in the court order. `processNumber` and `courtName` are also optional.
+> When `is_total_value` is `true`, the entire available balance is blocked. `requested_amount` is optional and only present when informed in the court order. `process_number` and `court_name` are also optional.
 
   </TabItem>
   <TabItem value="Judicial Unblock Account">
@@ -2565,17 +2802,17 @@ Triggered when a court order lifts a full account block.
 
 ```json
 {
-  "idJudicialUnblockAccount": "c3e9b7f1-12ab-4d88-9e4f-1a2b3c4d5e6f",
-  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
-  "accountNumber": "000001",
-  "branchNumber": "0001",
-  "processNumber": "0001234-56.2026.8.26.0100",
-  "courtName": "1ª Vara Cível de São Paulo",
-  "createdAt": "2024-04-17T17:35:00.020Z"
+  "id_judicial_unblock_account": "c3e9b7f1-12ab-4d88-9e4f-1a2b3c4d5e6f",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "account_number": "000001",
+  "branch_number": "0001",
+  "process_number": "0001234-56.2026.8.26.0100",
+  "court_name": "1ª Vara Cível de São Paulo",
+  "created_at": "2024-04-17T17:35:00.020Z"
 }
 ```
 
-> `processNumber` and `courtName` are optional — they are only present when provided in the court order.
+> `process_number` and `court_name` are optional — they are only present when provided in the court order.
 
   </TabItem>
   <TabItem value="Judicial Unblock Account Balance">
@@ -2584,19 +2821,19 @@ Triggered when a court order releases a previously blocked balance amount.
 
 ```json
 {
-  "idJudicialUnblockAccount": "c3e9b7f1-12ab-4d88-9e4f-1a2b3c4d5e6f",
-  "userId": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
-  "blockAccountBalanceId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-  "accountNumber": "000001",
-  "branchNumber": "0001",
-  "processNumber": "0001234-56.2026.8.26.0100",
-  "courtName": "1ª Vara Cível de São Paulo",
-  "requestedAmount": 150000,
-  "createdAt": "2024-04-17T17:35:00.020Z"
+  "id_judicial_unblock_account": "c3e9b7f1-12ab-4d88-9e4f-1a2b3c4d5e6f",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "block_account_balance_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "account_number": "000001",
+  "branch_number": "0001",
+  "process_number": "0001234-56.2026.8.26.0100",
+  "court_name": "1ª Vara Cível de São Paulo",
+  "requested_amount": 150000,
+  "created_at": "2024-04-17T17:35:00.020Z"
 }
 ```
 
-> `blockAccountBalanceId` references the original `JUDICIAL_BLOCK_ACCOUNT_BALANCE` event that is being released.
+> `block_account_balance_id` references the original `JUDICIAL_BLOCK_ACCOUNT_BALANCE` event that is being released.
 
   </TabItem>
 </Tabs>
