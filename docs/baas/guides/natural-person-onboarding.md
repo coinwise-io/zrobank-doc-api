@@ -13,10 +13,10 @@ Complete flow for onboarding a Natural Person through the BaaS API.
 graph TD
     A[1: Create User Account] --> B[2: Create Onboarding]
     B --> C[3: Upload Documents]
-    C --> D[4: Check Status]
+    C --> D[4: Liveness]
 ```
 
-Execute steps 1-3 in order. Step 4 is for checking the result.
+Execute steps 1-3 in order. Step 4 happens while the onboarding is `IN_PROCESS`: the account holder completes a liveness check.
 
 ---
 
@@ -80,7 +80,58 @@ Upload documents (multipart/form-data). Two methods available:
 
 ---
 
-## Step 4: Check Status
+## Step 4: Liveness
+
+While the onboarding is `IN_PROCESS`, the account holder must complete a liveness check (facial capture) through a dedicated link.
+
+**Note:** This step applies only when liveness is enabled for your product. If it is not enabled, the onboarding proceeds without this step and the liveness endpoint returns `422`.
+
+**How it works:**
+
+1. Documents are received and the onboarding enters `IN_PROCESS`
+2. A liveness link is created for the account holder
+3. The `ONBOARDING_NATURAL_PERSON_LIVENESS_RELEASED` webhook delivers the link
+4. Deliver the link to the account holder — they open it and complete the facial capture
+5. The approval fires the `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED` webhook with status `APPROVED`
+6. The onboarding proceeds toward `FINISHED`
+
+### Checking Liveness Progress
+
+`GET /users/onboardings/{id}/liveness`
+
+Returns the account holder's liveness link and progress for the onboarding.
+
+**Response:**
+- `url` — liveness link (absent while the link has not been created yet)
+- `status` — liveness progress (see table below)
+- `submitted_at` — when the holder submitted the liveness (absent while nothing was submitted)
+
+| Status | Meaning | Action |
+|--------|---------|--------|
+| `PENDING` | No link yet | Wait |
+| `WAITING_SUBMISSION` | Link issued, the holder has not completed the liveness | Deliver the link to the holder |
+| `IN_ANALYSIS` | Submitted, result not confirmed yet | Wait |
+| `APPROVED` | Liveness completed | Done |
+
+**Webhooks:**
+
+- `ONBOARDING_NATURAL_PERSON_LIVENESS_RELEASED` — link created, payload contains `name` and `url`
+- `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED` — liveness progress, payload contains `status` and `submitted_at`. Only `APPROVED` is announced — poll the endpoint above for intermediate statuses
+
+**Integration rules:**
+- Delivering the link to the account holder is your responsibility — no notification is sent to them
+- The link does not expire
+- The `RELEASED` webhook may be delivered more than once — the payload always carries the current link, so process it idempotently and use the progress endpoint as the source of truth
+- Do not wait for an intermediate webhook notification — only `APPROVED` is announced
+- Treat `url` and `name` as sensitive data — the link grants access to the liveness capture and the name is personal data
+
+**Errors:**
+- `422` — onboarding not found, still `PENDING`, or it does not require liveness
+- `403` — onboarding does not belong to the authenticated user
+
+---
+
+## Checking Status
 
 `GET /users/onboardings/{id}`
 
@@ -94,7 +145,7 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 | Status | Meaning | Action |
 |--------|---------|--------|
 | `PENDING` | Awaiting documents | Complete step 3 |
-| `IN_PROCESS` | Documents received, under analysis | Wait |
+| `IN_PROCESS` | Documents received, under analysis — the holder may still need to complete liveness | Follow Step 4 |
 | `FINISHED` | Approved | Proceed |
 | `REJECTED` | Not approved | Create new onboarding |
 | `FAILED` | Error | Contact support |
@@ -103,6 +154,8 @@ PENDING → IN_PROCESS → FINISHED / REJECTED / FAILED
 **Webhooks:**
 
 If webhooks are configured, you will receive notifications for:
+- `ONBOARDING_NATURAL_PERSON_LIVENESS_RELEASED` - Liveness link created for the account holder
+- `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED` - The account holder completed the liveness
 - `ONBOARDING_FINISHED` - Onboarding approved
 - `ONBOARDING_REJECTED` - Onboarding not approved
 - `ONBOARDING_FAILED` - Processing error
