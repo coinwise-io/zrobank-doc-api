@@ -191,8 +191,8 @@ Lists every legal representative of the onboarding with their individual livenes
 
 **Webhooks:**
 
-- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` — all links created, payload contains one entry per representative (`legalRepresentativeId`, `name`, `url`)
-- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED` — per-representative progress, payload contains `legalRepresentativeId`, `status` and `submittedAt`. Only `APPROVED` is announced — poll the endpoint above for intermediate statuses
+- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_RELEASED` — all links created, payload contains one entry per representative (`legal_representative_id`, `name`, `url`)
+- `ONBOARDING_LEGAL_REPRESENTATIVE_LIVENESS_UPDATED` — per-representative progress, payload contains `legal_representative_id`, `status` and `submitted_at`. Only `APPROVED` is announced — poll the endpoint above for intermediate statuses
 
 **Integration rules:**
 - Delivering each link to its representative is your responsibility — no notification is sent to them
