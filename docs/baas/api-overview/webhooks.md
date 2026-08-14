@@ -21,6 +21,8 @@ Your account can be configured so that when certain events occur on your account
 | ONBOARDING FAILED              | When onboarding processing fails due to an internal or provider-side error.  |
 | ONBOARDING LEGAL REPRESENTATIVE LIVENESS RELEASED | When the liveness links of the legal representatives are created.         |
 | ONBOARDING LEGAL REPRESENTATIVE LIVENESS UPDATED | When a legal representative completes the liveness check.                  |
+| ONBOARDING NATURAL PERSON LIVENESS RELEASED | When the liveness link of a natural person onboarding is created.               |
+| ONBOARDING NATURAL PERSON LIVENESS UPDATED | When the natural person account holder completes the liveness check.             |
 | MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
 | COMPANY REGISTRATION ONBOARDING STATUS UPDATED | When company registration changes status, including states that require new documents or corrections. |
 | COMPANY REGISTRATION ONBOARDING APPROVED | When company registration is approved and becomes active.                  |
@@ -512,6 +514,36 @@ Your account can be configured so that when certain events occur on your account
 ```
 
 > Emitted once per legal representative. Only `APPROVED` is announced — poll `GET /users/onboardings/{id}/legal-representatives/liveness` for intermediate statuses.
+
+  </TabItem>
+  <TabItem value="Onboarding Natural Person Liveness Released">
+
+```json
+{
+  "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
+  "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
+  "type": "ONBOARDING_NATURAL_PERSON_LIVENESS_RELEASED",
+  "name": "Maria Souza",
+  "url": "https://liveness.example.com/abc123"
+}
+```
+
+> `id` is the natural person onboarding ID and `url` is the account holder's liveness link. The webhook may be delivered more than once — the payload always contains the current link, so process it idempotently. See [Natural Person Onboarding](/baas/guides/natural-person-onboarding) for the full liveness flow.
+
+  </TabItem>
+  <TabItem value="Onboarding Natural Person Liveness Updated">
+
+```json
+{
+  "id": "f6e2e084-29b9-4935-a059-5473b13033aa",
+  "user_id": "c324fb70-db23-482c-a85e-ec3eb58d5941",
+  "type": "ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED",
+  "status": "APPROVED",
+  "submitted_at": "2026-08-10T13:33:41.071Z"
+}
+```
+
+> Only `APPROVED` is announced — poll `GET /users/onboardings/{id}/liveness` for intermediate statuses.
 
   </TabItem>
   <TabItem value="Balance updated">
