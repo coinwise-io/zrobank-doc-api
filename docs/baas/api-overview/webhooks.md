@@ -88,7 +88,7 @@ Your account can be configured so that when certain events occur on your account
 | Authorization Basic    | base64<username:password>                                          |
 | Authorization Bearer   | API key or token.                                                  |
 | Signature Verification | Shared secret key.                                                 |
-| Custom header          | Header name is not previous defined , using with api key or token. |
+| Custom header          | Custom header name of your choice, used with an API key or token.  |
 | mTLS                   | TLS certificate.                                                   |
 
 <br /><br />
@@ -151,13 +151,16 @@ Your account can be configured so that when certain events occur on your account
   "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
   "type": "DEVOLUTION",
   "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "txid": null,
   "operation_id": "fbfe1a0f-011f-5edb-a01d-19e669a6d853",
   "amount": "270",
   "owner_name": "Name",
+  "owner_person_type": "CPF",
   "owner_document": "***000000**",
   "owner_bank_ispb": "26264220",
   "owner_bank_name": "ZERO IP S/A",
   "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
   "beneficiary_document": "00000000000000",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
@@ -173,18 +176,21 @@ Your account can be configured so that when certain events occur on your account
   "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
   "type": "DEVOLUTION",
   "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "txid": null,
   "operation_id": null,
   "amount": "270",
   "owner_name": "Name",
+  "owner_person_type": "CPF",
   "owner_document": "***000000**",
   "owner_bank_ispb": "26264220",
   "owner_bank_name": "ZERO IP S/A",
   "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
   "beneficiary_document": "00000000000000",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
   "error_code": "AB03",
-  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "error_message": "Liquidação da transação interrompida devido a timeout no SPI.",
   "created_at": "2024-04-17T17:33:05.523Z"
 }
 ```
@@ -203,10 +209,12 @@ Your account can be configured so that when certain events occur on your account
   "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
   "amount": "270",
   "owner_name": "Name",
+  "owner_person_type": "CPF",
   "owner_document": "***000000**",
   "owner_bank_name": "ZERO IP S/A",
   "owner_bank_ispb": "26264220",
   "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
   "beneficiary_document": "00000000000000",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
@@ -226,11 +234,13 @@ Your account can be configured so that when certain events occur on your account
   "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
   "amount": "63",
   "owner_name": "Z.ro Bolsao",
-  "owner_document": "00000000000",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
   "owner_bank_name": "ZERO IP S/A",
   "owner_bank_ispb": "26264220",
   "beneficiary_name": "Name",
   "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
   "beneficiary_document": "***000000**",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
@@ -356,6 +366,8 @@ Your account can be configured so that when certain events occur on your account
 
   <TabItem value="Onboarding Finished">
 
+**Natural person:**
+
 ```json
 {
   "id": "9c4af5a2-6a6b-4e4e-8af8-e03a331b9c5a",
@@ -370,8 +382,8 @@ Your account can be configured so that when certain events occur on your account
   "phone_number": "5511955551234",
   "email": "new-user@zro.global",
   "active": true,
-  "person_type": "LEGAL_PERSON",
-  "legal_person_type": "LTDA",
+  "person_type": "NATURAL_PERSON",
+  "legal_person_type": null,
   "address": {
     "zip_code": "96075858",
     "street": "Alameda",
@@ -387,15 +399,54 @@ Your account can be configured so that when certain events occur on your account
   "pep_since": "2015-02-18T18:38:09.412Z",
   "occupation_cbo_code": 0,
   "occupation_income": 0,
-  "patrimony": 1299,
-  "failed_code": null,
-  "failed_message": null
+  "patrimony": 1299
 }
 ```
+
+**Legal person:**
+
+```json
+{
+  "id": "6b7c2d31-9e0f-47a5-b1c8-2d3e4f5a6b7c",
+  "user_id": "d485ec81-ec34-593d-b96f-013bfe24efdb",
+  "type": "ONBOARDING_FINISHED",
+  "name": "Empresa Exemplo",
+  "full_name": "Empresa Exemplo LTDA",
+  "genre": null,
+  "mother_name": null,
+  "birth_date": null,
+  "document": "11222333000144",
+  "phone_number": "5511955551234",
+  "email": "company@zro.global",
+  "active": true,
+  "person_type": "LEGAL_PERSON",
+  "legal_person_type": "LTDA",
+  "address": {
+    "zip_code": "96075858",
+    "street": "Alameda",
+    "number": 10,
+    "neighborhood": "Alphaville",
+    "city": "São Paulo",
+    "federative_unit": "SP",
+    "country": "Brasil",
+    "complement": "flat 1201"
+  },
+  "nationality": null,
+  "pep": null,
+  "pep_since": null,
+  "occupation_cbo_code": null,
+  "occupation_income": 1000000,
+  "patrimony": null
+}
+```
+
+> For legal person onboardings, natural-person fields come as `null` and `occupation_income` carries the company revenue (BRL cents).
 
   </TabItem>
 
   <TabItem value="Onboarding Rejected">
+
+**Natural person:**
 
 ```json
 {
@@ -411,8 +462,8 @@ Your account can be configured so that when certain events occur on your account
   "phone_number": "5511955551234",
   "email": "new-user@zro.global",
   "active": true,
-  "person_type": "LEGAL_PERSON",
-  "legal_person_type": "LTDA",
+  "person_type": "NATURAL_PERSON",
+  "legal_person_type": null,
   "address": {
     "zip_code": "96075858",
     "street": "Alameda",
@@ -434,8 +485,52 @@ Your account can be configured so that when certain events occur on your account
 }
 ```
 
+**Legal person:**
+
+```json
+{
+  "id": "6b7c2d31-9e0f-47a5-b1c8-2d3e4f5a6b7c",
+  "user_id": "d485ec81-ec34-593d-b96f-013bfe24efdb",
+  "type": "ONBOARDING_REJECTED",
+  "legal_representative_id": "7b5e8c47-b6a3-4e29-942f-7f5ec06b26a2",
+  "name": "Empresa Exemplo",
+  "full_name": "Empresa Exemplo LTDA",
+  "genre": null,
+  "mother_name": null,
+  "birth_date": null,
+  "document": "11222333000144",
+  "phone_number": "5511955551234",
+  "email": "company@zro.global",
+  "active": true,
+  "person_type": "LEGAL_PERSON",
+  "legal_person_type": "LTDA",
+  "address": {
+    "zip_code": "96075858",
+    "street": "Alameda",
+    "number": 10,
+    "neighborhood": "Alphaville",
+    "city": "São Paulo",
+    "federative_unit": "SP",
+    "country": "Brasil",
+    "complement": "flat 1201"
+  },
+  "nationality": null,
+  "pep": null,
+  "pep_since": null,
+  "occupation_cbo_code": null,
+  "occupation_income": 1000000,
+  "patrimony": null,
+  "failed_code": "ONBOARDING_REJECTED",
+  "failed_message": "Your onboarding was rejected during validation and anti-fraud checks."
+}
+```
+
+> `legal_representative_id` identifies the legal representative that caused the rejection. It is absent when the rejection was not caused by a specific representative.
+
   </TabItem>
   <TabItem value="Onboarding Failed">
+
+**Natural person:**
 
 ```json
 {
@@ -451,8 +546,8 @@ Your account can be configured so that when certain events occur on your account
   "phone_number": "5511955551234",
   "email": "new-user@zro.global",
   "active": true,
-  "person_type": "LEGAL_PERSON",
-  "legal_person_type": "LTDA",
+  "person_type": "NATURAL_PERSON",
+  "legal_person_type": null,
   "address": {
     "zip_code": "96075858",
     "street": "Alameda",
@@ -469,6 +564,45 @@ Your account can be configured so that when certain events occur on your account
   "occupation_cbo_code": 0,
   "occupation_income": 0,
   "patrimony": 1299,
+  "failed_code": "ONBOARDING_FAILED",
+  "failed_message": "Unexpected onboarding processing error."
+}
+```
+
+**Legal person:**
+
+```json
+{
+  "id": "6b7c2d31-9e0f-47a5-b1c8-2d3e4f5a6b7c",
+  "user_id": "d485ec81-ec34-593d-b96f-013bfe24efdb",
+  "type": "ONBOARDING_FAILED",
+  "name": "Empresa Exemplo",
+  "full_name": "Empresa Exemplo LTDA",
+  "genre": null,
+  "mother_name": null,
+  "birth_date": null,
+  "document": "11222333000144",
+  "phone_number": "5511955551234",
+  "email": "company@zro.global",
+  "active": true,
+  "person_type": "LEGAL_PERSON",
+  "legal_person_type": "LTDA",
+  "address": {
+    "zip_code": "96075858",
+    "street": "Alameda",
+    "number": 10,
+    "neighborhood": "Alphaville",
+    "city": "São Paulo",
+    "federative_unit": "SP",
+    "country": "Brasil",
+    "complement": "flat 1201"
+  },
+  "nationality": null,
+  "pep": null,
+  "pep_since": null,
+  "occupation_cbo_code": null,
+  "occupation_income": 1000000,
+  "patrimony": null,
   "failed_code": "ONBOARDING_FAILED",
   "failed_message": "Unexpected onboarding processing error."
 }
@@ -623,6 +757,58 @@ Your account can be configured so that when certain events occur on your account
 ## Payloads (Version 2)
 
 <Tabs>
+  <TabItem value="Payment">
+
+```json
+{
+  "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "type": "PAYMENT",
+  "end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "txid": null,
+  "operation_id": "0f0aca83-8ea1-5ecb-9fe9-d31782ef06fb",
+  "amount": "270",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "beneficiary_name": "Name",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "beneficiary_account_type": "CACC",
+  "beneficiary_account_number": "000000",
+  "beneficiary_branch_number": "0000",
+  "created_at": "2024-04-17T17:30:00.020Z"
+}
+```
+
+  </TabItem>
+  <TabItem value="Devolution">
+
+```json
+{
+  "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
+  "type": "DEVOLUTION",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "txid": null,
+  "operation_id": "fbfe1a0f-011f-5edb-a01d-19e669a6d853",
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZERO IP S/A",
+  "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
+  "beneficiary_document": "00000000000000",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "created_at": "2024-04-17T17:33:05.523Z"
+}
+```
+
+  </TabItem>
   <TabItem value="Devolution Received">
 
 ```json
@@ -636,12 +822,14 @@ Your account can be configured so that when certain events occur on your account
   "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
   "amount": "270",
   "owner_name": "Name",
+  "owner_person_type": "CPF",
   "owner_document": "***000000**",
   "owner_bank_name": "ZERO IP S/A",
   "owner_bank_ispb": "26264220",
   "beneficiary_name": "Name",
   "beneficiary_account_number": "000000",
   "beneficiary_branch_number": "0000",
+  "beneficiary_person_type": "CPF",
   "beneficiary_document": "***000000**",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
@@ -661,12 +849,14 @@ Your account can be configured so that when certain events occur on your account
   "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
   "amount": "63",
   "owner_name": "Z.ro Bolsao",
-  "owner_document": "00000000000",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
   "owner_bank_name": "ZERO IP S/A",
   "owner_bank_ispb": "26264220",
   "beneficiary_name": "Name",
   "beneficiary_account_number": "000000",
   "beneficiary_branch_number": "0000",
+  "beneficiary_person_type": "CPF",
   "beneficiary_document": "***000000**",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
@@ -707,18 +897,21 @@ Your account can be configured so that when certain events occur on your account
   "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
   "type": "DEVOLUTION_FAILED",
   "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "txid": null,
   "operation_id": null,
   "amount": "270",
   "owner_name": "Name",
+  "owner_person_type": "CPF",
   "owner_document": "***000000**",
   "owner_bank_ispb": "26264220",
   "owner_bank_name": "ZERO IP S/A",
   "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
   "beneficiary_document": "00000000000000",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
   "error_code": "AB03",
-  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "error_message": "Liquidação da transação interrompida devido a timeout no SPI.",
   "created_at": "2024-04-17T17:33:05.523Z"
 }
 ```
@@ -740,7 +933,8 @@ Your account can be configured so that when certain events occur on your account
   "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
   "amount": "63",
   "owner_name": "Z.ro Bolsao",
-  "owner_document": "00000000000",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
   "owner_bank_name": "ZERO IP S/A",
   "owner_bank_ispb": "26264220",
   "owner_branch_number": "0000",
@@ -748,6 +942,7 @@ Your account can be configured so that when certain events occur on your account
   "beneficiary_name": "Name",
   "beneficiary_account_number": "000000",
   "beneficiary_branch_number": "0000",
+  "beneficiary_person_type": "CPF",
   "beneficiary_document": "***000000**",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
@@ -784,6 +979,34 @@ Your account can be configured so that when certain events occur on your account
 ```
 
   </TabItem>
+  <TabItem value="Devolution Failed">
+
+```json
+{
+  "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
+  "type": "DEVOLUTION_FAILED",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "txid": null,
+  "operation_id": null,
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZERO IP S/A",
+  "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
+  "beneficiary_document": "00000000000000",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_message": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T17:33:05.523Z"
+}
+```
+
+  </TabItem>
 </Tabs>
 
 ## Payloads (Version 4)
@@ -800,7 +1023,8 @@ Your account can be configured so that when certain events occur on your account
   "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
   "amount": "63",
   "owner_name": "Z.ro Bolsao",
-  "owner_document": "00000000000",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
   "owner_bank_name": "ZERO IP S/A",
   "owner_bank_ispb": "26264220",
   "owner_branch_number": "0000",
@@ -809,6 +1033,7 @@ Your account can be configured so that when certain events occur on your account
   "beneficiary_name": "Name",
   "beneficiary_account_number": "000000",
   "beneficiary_branch_number": "0000",
+  "beneficiary_person_type": "CPF",
   "beneficiary_document": "***000000**",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_bank_ispb": "26264220",
