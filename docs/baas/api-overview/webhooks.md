@@ -19,10 +19,10 @@ Your account can be configured so that when certain events occur on your account
 | ONBOARDING FINISHED            | When you create a new user onboarding and it is approved.                    |
 | ONBOARDING REJECTED            | When you create a new user onboarding and it is rejected.                    |
 | ONBOARDING FAILED              | When onboarding processing fails due to an internal or provider-side error.  |
-| ONBOARDING LEGAL REPRESENTATIVE LIVENESS RELEASED | When the liveness links of the legal representatives are created.         |
-| ONBOARDING LEGAL REPRESENTATIVE LIVENESS UPDATED | When a legal representative completes the liveness check.                  |
-| ONBOARDING NATURAL PERSON LIVENESS RELEASED | When the liveness link of a natural person onboarding is created.               |
-| ONBOARDING NATURAL PERSON LIVENESS UPDATED | When the natural person account holder completes the liveness check.             |
+| ONBOARDING LEGAL REPRESENTATIVE LIVENESS RELEASED | When the liveness links of the legal representatives are created (link method only). |
+| ONBOARDING LEGAL REPRESENTATIVE LIVENESS UPDATED | When a legal representative's liveness progresses (only `APPROVED` with the link; every status with video upload). |
+| ONBOARDING NATURAL PERSON LIVENESS RELEASED | When the liveness link of a natural person onboarding is created (link method only). |
+| ONBOARDING NATURAL PERSON LIVENESS UPDATED | When the account holder's liveness progresses (only `APPROVED` with the link; every status with video upload). |
 | MERCHANT ONBOARDING KYC STATUS | When merchant onboarding KYC status is updated.                              |
 | COMPANY REGISTRATION ONBOARDING STATUS UPDATED | When company registration changes status, including states that require new documents or corrections. |
 | COMPANY REGISTRATION ONBOARDING APPROVED | When company registration is approved and becomes active.                  |
@@ -639,7 +639,7 @@ Your account can be configured so that when certain events occur on your account
 }
 ```
 
-> `id` is the legal person onboarding ID. `links` carries one entry per legal representative. The webhook may be delivered more than once — the payload always contains the current full set of links, so process it idempotently. See [Legal Person Onboarding](/baas/guides/legal-person-onboarding) for the full liveness flow.
+> `id` is the legal person onboarding ID. `links` carries one entry per legal representative. The webhook may be delivered more than once — the payload always contains the current full set of links, so process it idempotently. Sent only when the representatives' liveness uses the link method; with video upload no links exist and this webhook is not sent. See [Legal Person Onboarding](/baas/guides/legal-person-onboarding) for the full liveness flow.
 
   </TabItem>
   <TabItem value="Onboarding Legal Representative Liveness Updated">
@@ -655,7 +655,7 @@ Your account can be configured so that when certain events occur on your account
 }
 ```
 
-> Emitted once per legal representative. Only `APPROVED` is announced — poll `GET /users/onboardings/{id}/legal-representatives/liveness` for intermediate statuses.
+> Emitted per legal representative. With the link method only `APPROVED` is announced. With video upload every status change is announced: `PENDING` (video received), `IN_ANALYSIS`, `WAITING_SUBMISSION` (upload a new video), `APPROVED` or `REJECTED`. `submitted_at` is absent while nothing was submitted. Poll `GET /v2/users/onboardings/{id}/legal-representatives/liveness` for the current state.
 
   </TabItem>
   <TabItem value="Onboarding Natural Person Liveness Released">
@@ -670,7 +670,7 @@ Your account can be configured so that when certain events occur on your account
 }
 ```
 
-> `id` is the natural person onboarding ID and `url` is the account holder's liveness link. The webhook may be delivered more than once — the payload always contains the current link, so process it idempotently. See [Natural Person Onboarding](/baas/guides/natural-person-onboarding) for the full liveness flow.
+> `id` is the natural person onboarding ID and `url` is the account holder's liveness link. The webhook may be delivered more than once — the payload always contains the current link, so process it idempotently. Sent only when the liveness uses the link method; with video upload no link exists and this webhook is not sent. See [Natural Person Onboarding](/baas/guides/natural-person-onboarding) for the full liveness flow.
 
   </TabItem>
   <TabItem value="Onboarding Natural Person Liveness Updated">
@@ -685,7 +685,7 @@ Your account can be configured so that when certain events occur on your account
 }
 ```
 
-> Only `APPROVED` is announced — poll `GET /users/onboardings/{id}/liveness` for intermediate statuses.
+> With the link method only `APPROVED` is announced. With video upload every status change is announced: `PENDING` (video received), `IN_ANALYSIS`, `WAITING_SUBMISSION` (upload a new video), `APPROVED` or `REJECTED`. `submitted_at` is absent while nothing was submitted. Poll `GET /v2/users/onboardings/{id}/liveness` for the current state.
 
   </TabItem>
   <TabItem value="Balance updated">
