@@ -182,7 +182,7 @@ While the onboarding is `IN_PROCESS`, every legal representative's liveness (fac
 
 **Integration rules:**
 - Delivering each link to its representative is your responsibility — no notification is sent to them
-- Links are individual per representative. The links themselves do not expire, but your product may set a deadline for completing the capture. An onboarding can be rejected when that deadline passes without submission; check the onboarding status before using an old link
+- Links are individual per representative. Before delivering or reusing a capture link, check that the onboarding is still open and observe any capture deadline applicable to your integration
 - The `RELEASED` webhook may be delivered more than once — the payload always carries the current full set of links, so process it idempotently and use the progress endpoint as the source of truth for who has a link
 - `PENDING` with no `url` is normal, not an error — the legal person analysis has not been approved yet
 - Do not wait for an intermediate webhook notification — with the links, only `APPROVED` is announced
@@ -212,7 +212,7 @@ Upload the liveness video of one legal representative, recorded by your own capt
 - `state` — processing state returned by this request: `UPLOADED` (received), `PROCESSING` (under analysis), `COMPLETED` (analysis finished) or `FAILED` (analysis could not be completed)
 - `captured_at`, `created_at`
 
-`201` confirms the upload request was accepted; it does not approve liveness. `COMPLETED` also does not mean approval. Use the [liveness progress endpoint](#checking-liveness-progress) for the liveness result and the [onboarding status endpoint](#checking-status) for the overall outcome. A retry of the same video after a processing failure may return the existing video and its original timestamps.
+`201` confirms the upload request was accepted; it does not approve liveness. `COMPLETED` also does not mean approval. Use the [liveness progress endpoint](#checking-liveness-progress) for the liveness result and the [onboarding status endpoint](#checking-status) for the overall outcome.
 
 **How it works:**
 
@@ -232,7 +232,7 @@ Upload the liveness video of one legal representative, recorded by your own capt
 - Methods cannot be mixed: once one representative has a video, representatives without one block the finalization (`LEGAL_REPRESENTATIVE_LIVENESS_VIDEOS_INCOMPLETE`)
 - The result is asynchronous — do not resend while the status is `PENDING` or `IN_ANALYSIS`
 - If the upload times out, check liveness progress before retrying: the video may already have been accepted
-- A closed (`FINISHED`, `REJECTED`, `FAILED`, `EXPIRED`) or discarded onboarding does not accept uploads, even if its last liveness status is `WAITING_SUBMISSION`
+- A closed (`FINISHED`, `REJECTED`, `FAILED`, `EXPIRED`) onboarding does not accept uploads, even if its last liveness status is `WAITING_SUBMISSION`
 
 **Errors:**
 - `400` — invalid parameters (e.g. malformed `captured_at`)
