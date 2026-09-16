@@ -134,9 +134,9 @@ Below are listed the types of HTTP Status Codes, API Error Codes, and Data Valid
 | ONBOARDING_INVALID_STATUS                             | Onboarding with invalid status.                                                                    |
 | ONBOARDING_LIVENESS_NOT_REQUIRED                      | This onboarding does not require a liveness verification.                                          |
 | ONBOARDING_LIVENESS_VIDEO_DISABLED                    | Liveness video upload is not available for this onboarding.                                        |
-| ONBOARDING_LIVENESS_METHOD_LOCKED                     | The liveness method of this onboarding is already set: a liveness video is only accepted while the onboarding documents are still incomplete. |
-| LEGAL_REPRESENTATIVE_LIVENESS_METHOD_LOCKED           | A legal representative liveness video cannot be accepted after the onboarding is finalized.        |
-| LEGAL_REPRESENTATIVE_LIVENESS_VIDEOS_INCOMPLETE       | When a liveness video is sent for one legal representative, every legal representative must send one before finalizing the onboarding. |
+| ONBOARDING_LIVENESS_METHOD_LOCKED                     | The first liveness video must be sent before the onboarding documents are complete. Eligible replacements follow the video replacement rules. |
+| LEGAL_REPRESENTATIVE_LIVENESS_METHOD_LOCKED           | The first liveness video for a representative must be sent before finalization. Eligible replacements follow the video replacement rules.        |
+| LEGAL_REPRESENTATIVE_LIVENESS_VIDEOS_INCOMPLETE       | When a liveness video is sent for one legal representative, every active legal representative must have one before finalizing the onboarding. |
 | ONBOARDING_LIVENESS_VIDEO_ALREADY_UPLOADED            | A liveness video was already sent for this onboarding.                                             |
 | ONBOARDING_LIVENESS_ALREADY_COMPLETED                 | The liveness verification of this onboarding was already completed.                                |
 | ONBOARDING_LIVENESS_VIDEO_TOO_OLD                     | The liveness video is too old: it must have been captured within the last {} hours.                |

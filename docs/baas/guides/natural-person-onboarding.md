@@ -72,6 +72,7 @@ Upload documents (multipart/form-data). Two methods available:
 **Method B — Digital identity:**
 - `selfie` (file, required)
 - `document_id` (string, required)
+- `document_front` (file, required when using liveness video upload) — JPEG or PNG up to 5 MB; `document_back` and `document_file_type` are not required for this method
 
 **Optional:**
 - `address_proof` (file)
@@ -79,7 +80,7 @@ Upload documents (multipart/form-data). Two methods available:
 **Requirements:**
 - Max 25 MB per file
 - Choose one method (A or B), not both — sending `document_id` and `document_file_type` together is rejected
-- If a liveness video was uploaded (see [Step 4](#step-4-liveness)), use **Method A** and send `document_front` as a **JPEG or PNG image up to 5 MB**. Otherwise the request that completes the documents is rejected with `422` (`INVALID_FORMAT`)
+- If a liveness video was uploaded (see [Step 4](#step-4-liveness)), send `document_front` with **either method** as a **JPEG or PNG image up to 5 MB**. Otherwise the request that completes the documents is rejected with `422` (`INVALID_FORMAT`)
 
 Once all required documents are received, the onboarding enters `IN_PROCESS`.
 
@@ -109,7 +110,7 @@ You never declare the method: uploading a video selects `VIDEO_UPLOAD`; otherwis
 
 **Integration rules:**
 - Delivering the link to the account holder is your responsibility — no notification is sent to them
-- The link does not expire
+- The link itself does not expire, but your product may set a deadline for completing the capture. An onboarding can be rejected when that deadline passes without submission; check the onboarding status before using an old link
 - The `RELEASED` webhook may be delivered more than once — the payload always carries the current link, so process it idempotently and use the progress endpoint as the source of truth
 - Do not wait for an intermediate webhook notification — with the link, only `APPROVED` is announced
 - Treat `url` and `name` as sensitive data — the link grants access to the liveness capture and the name is personal data
@@ -125,22 +126,24 @@ Upload a liveness video recorded by your own capture flow (multipart/form-data).
 **When:** after Step 2 and **before** the documents of Step 3 are complete (onboarding still `PENDING`).
 
 **Body:**
-- `video` (file, required) — MP4 or MOV, max 50 MB
+- `video` (file, required) — MP4 (`video/mp4`) or MOV (`video/quicktime`), max 50 MB by default; maximum resolution: 8,294,400 pixels per frame (width × height, e.g. 3840 × 2160)
 - `liveness_provider` (string, required, max 255) — name of the solution that recorded and verified the liveness (yours or a third party's)
 - `liveness_provider_transaction_id` (string, required, max 255) — identifier of that capture at the provider, kept as an audit reference
-- `captured_at` (string, required) — capture instant in `YYYY-MM-DDTHH:mm:ss.SSSZ` format (e.g. `2026-08-30T12:00:00.000Z`). It cannot be in the future and must be within the **last 24 hours**
+- `captured_at` (string, required) — capture instant in `YYYY-MM-DDTHH:mm:ss.SSSZ` format (e.g. `2026-08-30T12:00:00.000Z`). It cannot be in the future and must be within the **last 24 hours**, or a shorter capture window agreed for your integration
 
 **Returns (`201`):**
 - `id` — liveness video ID
 - `onboarding_id`
 - `file_id` — stored video file ID
-- `state` — `UPLOADED` right after the upload; later `PROCESSING`, `COMPLETED` or `FAILED`
+- `state` — processing state returned by this request: `UPLOADED` (received), `PROCESSING` (under analysis), `COMPLETED` (analysis finished) or `FAILED` (analysis could not be completed)
 - `captured_at`, `created_at`
+
+`201` confirms the upload request was accepted; it does not approve liveness. `COMPLETED` also does not mean approval. Use the [liveness progress endpoint](#checking-liveness-progress) for the liveness result and the [onboarding status endpoint](#checking-status) for the overall outcome. A retry of the same video after a processing failure may return the existing video and its original timestamps.
 
 **How it works:**
 
 1. Upload the video while the onboarding is `PENDING` — the `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED` webhook announces status `PENDING`
-2. Upload the documents (Step 3, Method A, `document_front` as JPEG or PNG up to 5 MB) — the onboarding enters `IN_PROCESS` and the video analysis starts. **No link is issued and no `RELEASED` webhook is sent**
+2. Upload the documents (Step 3, either method, including `document_front` as JPEG or PNG up to 5 MB) — the onboarding enters `IN_PROCESS` and the video analysis starts. **No link is issued and no `RELEASED` webhook is sent**
 3. The result arrives through `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED`:
    - `APPROVED` — the onboarding proceeds toward `FINISHED`
    - `REJECTED` — the onboarding becomes `REJECTED` (`ONBOARDING_REJECTED` webhook); create a new onboarding
@@ -148,10 +151,11 @@ Upload a liveness video recorded by your own capture flow (multipart/form-data).
    - `WAITING_SUBMISSION` — the video could not be analysed; upload a new one
 
 **Integration rules:**
-- One video per onboarding. A new upload is accepted **only** while the progress status is `WAITING_SUBMISSION` and the onboarding is still `IN_PROCESS` — otherwise the upload returns `422` (`ONBOARDING_LIVENESS_VIDEO_ALREADY_UPLOADED` or `ONBOARDING_LIVENESS_ALREADY_COMPLETED`)
-- The video method is not compatible with digital identity (Step 3, Method B): the front of the physical identity document is required
+- One video per onboarding. An existing video can be replaced only if its processing failed and both the onboarding and liveness step still allow another submission. Use `WAITING_SUBMISSION` to identify when to send a new video, and confirm that the onboarding is still open. An ineligible replacement returns `422` (`ONBOARDING_LIVENESS_VIDEO_ALREADY_UPLOADED` or `ONBOARDING_LIVENESS_ALREADY_COMPLETED`)
+- Digital identity (Step 3, Method B) also supports video upload: send `selfie`, `document_id` and `document_front`. Do not send `document_file_type` together with `document_id`
 - The result is asynchronous — do not resend while the status is `PENDING` or `IN_ANALYSIS`
-- A closed (`FINISHED`, `REJECTED`, `FAILED`, `EXPIRED`) onboarding does not accept uploads
+- If the upload times out, check liveness progress before retrying: the video may already have been accepted
+- A closed (`FINISHED`, `REJECTED`, `FAILED`, `EXPIRED`) or discarded onboarding does not accept uploads, even if its last liveness status is `WAITING_SUBMISSION`
 
 **Errors:**
 - `400` — invalid parameters (e.g. malformed `captured_at`)
@@ -164,11 +168,11 @@ Upload a liveness video recorded by your own capture flow (multipart/form-data).
 | `ONBOARDING_LIVENESS_METHOD_LOCKED` | Documents already complete — a first video is no longer accepted |
 | `ONBOARDING_LIVENESS_VIDEO_ALREADY_UPLOADED` | A video was already sent and is not eligible for replacement |
 | `ONBOARDING_LIVENESS_ALREADY_COMPLETED` | The liveness of this onboarding was already concluded |
-| `ONBOARDING_LIVENESS_VIDEO_TOO_OLD` | `captured_at` is older than 24 hours |
+| `ONBOARDING_LIVENESS_VIDEO_TOO_OLD` | `captured_at` is outside the accepted capture window (24 hours by default) |
 | `ONBOARDING_LIVENESS_VIDEO_CAPTURED_IN_FUTURE` | `captured_at` is in the future |
 | `ONBOARDING_LIVENESS_NOT_REQUIRED` | Liveness is not enabled for this onboarding |
 | `ONBOARDING_INVALID_STATUS` | The onboarding is closed and no longer accepts uploads |
-| `FILE_IS_REQUIRED`, `FILE_FORMAT`, `FILE_SIZE` | Missing video, unsupported format or file over 50 MB |
+| `FILE_IS_REQUIRED`, `FILE_FORMAT`, `FILE_SIZE` | Missing video, unsupported format or file over the upload limit (50 MB by default) |
 
 ### Checking Liveness Progress
 
@@ -180,7 +184,7 @@ Returns the account holder's liveness progress and, for the link method, the lin
 - `method` — `LINK` or `VIDEO_UPLOAD`
 - `url` — liveness link (`LINK` only; absent while the link has not been created yet)
 - `status` — liveness progress (see table below)
-- `submitted_at` — when the liveness was submitted (absent while nothing was submitted)
+- `submitted_at` — submission timestamp, when available; its absence does not mean that no video was received
 
 | Status | `LINK` | `VIDEO_UPLOAD` | Action |
 |--------|--------|----------------|--------|
@@ -193,7 +197,7 @@ Returns the account holder's liveness progress and, for the link method, the lin
 **Webhooks:**
 
 - `ONBOARDING_NATURAL_PERSON_LIVENESS_RELEASED` — link created (`LINK` only), payload contains `name` and `url`
-- `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED` — liveness progress, payload contains `status` and `submitted_at`. With the link only `APPROVED` is announced; with video upload every status change is announced. Use the endpoint above as the source of truth
+- `ONBOARDING_NATURAL_PERSON_LIVENESS_UPDATED` — liveness progress, payload contains `status` and optional `submitted_at`. With the link only `APPROVED` is announced; video upload can announce `PENDING`, `IN_ANALYSIS`, `WAITING_SUBMISSION`, `APPROVED` and `REJECTED`. Do not require an event for every intermediate status. Process repeated notifications idempotently and use the endpoint above as the source of truth
 
 **Errors:**
 - `422` — onboarding not found, still `PENDING` without a video, or it does not require liveness
@@ -232,7 +236,7 @@ If webhooks are configured, you will receive notifications for:
 
 See [Webhooks](/baas/api-overview/webhooks) for payload examples and delivery details.
 
-Configure webhooks to receive real-time notifications instead of polling this endpoint.
+Use webhooks for notifications and this endpoint to confirm the current onboarding status. Liveness approval alone does not mean that the onboarding is `FINISHED`.
 
 ---
 
