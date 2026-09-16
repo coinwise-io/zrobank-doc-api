@@ -20,6 +20,16 @@ You will need:
 
 **Approver setup is a prerequisite managed outside this BaaS flow.** Have an authorized wallet administrator provision the `APPROVER` and, when required, `APPROVER_MASTER` roles before enabling approval settings. Provision access to view the relevant requests as well as permission to vote; approval permission alone does not grant every other action in this guide.
 
+### Provisioning Approvers through the Users API
+
+The BaaS approval endpoints do not assign roles to wallet users. If the approvers are not configured yet, use the **Users API** with its required authentication and headers, including `x-wallet-uuid` for the same wallet used in this guide. The update must be performed by the wallet owner or an authorized wallet administrator; do not grant administrative privileges just to let a user vote. If your integration only has BaaS access, arrange this setup with the wallet administrator before enabling the approval setting.
+
+1. `GET /operations/permissions/types` lists the available permission type tags.
+2. `GET /operations/permissions/users` lists wallet members and their current `permission_types`.
+3. `PATCH /operations/permissions` updates an existing member. Send `user_id` and `permission_types`, including `APPROVER` for common approval or `APPROVER_MASTER` for master approval.
+
+**The submitted `permission_types` list replaces the member's current roles; it does not append to them.** Include the complete intended list, preserving other roles the member still needs. Confirm access to read requests separately from permission to vote or cancel. `ROOT` cannot be assigned, and this endpoint cannot change the wallet owner's permissions.
+
 ---
 
 ## Flow Overview
