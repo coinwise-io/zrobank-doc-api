@@ -71,7 +71,7 @@ Eligibility to vote is the same in both cases — `APPROVER`, `APPROVER_MASTER`,
 
 Voting is granted to the `APPROVER` and `APPROVER_MASTER` permission types only. `CLIENT` and `ADMIN` cannot vote even when master approval is not required.
 
-The wallet owner's vote counts as common unless the owner also has `APPROVER_MASTER`, in which case it counts only as a master vote. Each eligible user contributes at most one vote to a request.
+The wallet owner can vote without being assigned `APPROVER`. The owner's vote counts as common unless the owner also has `APPROVER_MASTER`, in which case it counts only as a master vote. Each eligible user contributes at most one vote to a request.
 
 **Numeric example** — setting with `approvers_quantity: 2`, `approver_master_required: true`, `approver_master_quantity: 1`:
 
@@ -83,7 +83,7 @@ The wallet owner's vote counts as common unless the owner also has `APPROVER_MAS
 
 Master votes do not count toward `approvers_quantity`. Size the setting accordingly: the example above needs **three** distinct voters.
 
-**Before enabling the setting, confirm that the wallet has enough distinct eligible voters in each category.** Count an owner with `APPROVER_MASTER` only toward the master requirement. Use the request's `state` to confirm approval; a successful vote response alone does not confirm that all required votes were received.
+**Before enabling the setting, confirm that the wallet has enough distinct eligible voters in each category.** Creating the setting does not check whether the wallet currently has enough eligible voters to satisfy it. A successful creation response therefore does not guarantee that requests can receive all required votes. Count an owner with `APPROVER_MASTER` only toward the master requirement. Without all required votes, a request remains `PENDING` until canceled or expired. Use the request's `state` to confirm approval; a `201` vote response alone does not confirm that all required votes were received.
 
 ---
 
