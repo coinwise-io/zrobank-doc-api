@@ -18,7 +18,7 @@ You will need:
 - `x-transaction-uuid` header on every write request (create, approve, cancel, delete)
 - the approver users already registered in the wallet
 
-**Approver setup is out of scope for the BaaS API.** The approval roles are wallet permission types (`APPROVER` and `APPROVER_MASTER`) and are assigned through the users API with `PUT /operations/permissions`, body `{ "user_id": "...", "permission_types": ["APPROVER_MASTER"] }`. Available tags can be listed with `GET /operations/permissions/types`. Assign the roles before creating a setting that requires master approval, otherwise no user will be able to vote.
+**Approver setup is a prerequisite managed outside this BaaS flow.** Have an authorized wallet administrator provision the `APPROVER` and, when required, `APPROVER_MASTER` roles before enabling approval settings. Provision access to view the relevant requests as well as permission to vote; approval permission alone does not grant every other action in this guide.
 
 ---
 
@@ -61,7 +61,7 @@ Eligibility to vote is the same in both cases — `APPROVER`, `APPROVER_MASTER`,
 
 Voting is granted to the `APPROVER` and `APPROVER_MASTER` permission types only. `CLIENT` and `ADMIN` cannot vote even when master approval is not required.
 
-The wallet owner is identified by user id, not by tag, so they can vote without being assigned `APPROVER` — unless they also hold `APPROVER_MASTER`, in which case their vote counts as a master vote. `APPROVER_MASTER` always takes precedence over the other classifications.
+The wallet owner's vote counts as common unless the owner also has `APPROVER_MASTER`, in which case it counts only as a master vote. Each eligible user contributes at most one vote to a request.
 
 **Numeric example** — setting with `approvers_quantity: 2`, `approver_master_required: true`, `approver_master_quantity: 1`:
 
@@ -73,7 +73,7 @@ The wallet owner is identified by user id, not by tag, so they can vote without 
 
 Master votes do not count toward `approvers_quantity`. Size the setting accordingly: the example above needs **three** distinct voters.
 
-**Sizing warning.** Assigning `APPROVER_MASTER` to the wallet owner removes their common vote — the master classification wins, so they stop filling the `approvers_quantity` count. A wallet with only an owner (also master) and one `APPROVER` can never satisfy `approvers_quantity: 2`, and the request stays `PENDING` until it expires. Nothing validates this when the setting is created: each vote still returns `201`. Make sure the wallet has enough distinct voters in each category before choosing the quantities.
+**Before enabling the setting, confirm that the wallet has enough distinct eligible voters in each category.** Count an owner with `APPROVER_MASTER` only toward the master requirement. Use the request's `state` to confirm approval; a successful vote response alone does not confirm that all required votes were received.
 
 ---
 
@@ -173,8 +173,9 @@ Each approver calls this endpoint once. One call is one approval vote.
 **Returns:** `id`, `created_at`
 
 **Integration rules:**
-- The endpoint is called by the **approver**, authenticated as themselves — not by the payer
-- There is no reject endpoint. To refuse a payment, cancel the request (Step 7)
+- Authenticate each vote as the eligible user casting it. Do not use one user's credentials to represent other approvers
+- Before voting, have the approver confirm the amount and beneficiary shown in the request's API response
+- There is no reject endpoint. To refuse a payment, a user authorized to cancel requests must cancel it (Step 7)
 - Only `PENDING` requests accept votes
 - When the last required vote arrives, the request moves to `APPROVED` and the payment is released
 
@@ -209,7 +210,7 @@ Source of truth for the current state of the request.
 
 Cancel a request that should not be paid. This is how a payment is refused.
 
-Any user with access to the wallet can cancel — not only the user who created the request. Only `PENDING` requests can be canceled.
+Cancellation requires permission for this action in the selected wallet. An authorized caller can cancel a request created by another user of that wallet. The approver role alone does not grant cancellation permission. Only `PENDING` requests can be canceled.
 
 **Returns:** `id`, `user_name`, `transaction_approval_setting_id`, `render_request_body`, `amount`, `transaction_type_tag`, `state`, `votes`, `created_at`
 
@@ -220,7 +221,7 @@ Any user with access to the wallet can cancel — not only the user who created 
 ## Minimal Integration Sequence
 
 1. `GET /permissions/transaction-approval-types` to confirm the transaction type.
-2. Assign `APPROVER` / `APPROVER_MASTER` to the wallet users (users API, see Prerequisite).
+2. Confirm that the wallet users have the required approval and request access permissions (see Prerequisite).
 3. `POST /permissions/transaction-approval-settings/pix-payment` and save the returned `id`.
 4. On each payment: `POST /pix/payments/decode/by-key`, then `POST /permissions/transaction-approval-requests/pix-payment-by-key`.
 5. Each approver calls `POST /permissions/transaction-approvals` with the request `id`.
@@ -240,11 +241,12 @@ Any user with access to the wallet can cancel — not only the user who created 
 ## Error Handling
 
 **403:**
-- The authenticated user is not allowed to vote on this request — with `approver_master_required = true`, the user holds none of `APPROVER_MASTER`, `APPROVER`, or `ROOT`
-- The user does not own the request being read or canceled
+- The authenticated caller lacks permission for the requested action in the selected wallet
+- Voting requires an eligible approver; reading and canceling requests require their respective permissions
 
-**404:**
-- Approval request not found, or no approval setting matches the request
+**Request not found:**
+- `GET /permissions/transaction-approval-requests/{id}` returns `200` with `null` when no request is available in the selected wallet
+- A create, approval or cancellation operation that references a missing request or setting returns `422` (`TRANSACTION_APPROVAL_REQUEST_NOT_FOUND` or `TRANSACTION_APPROVAL_SETTING_NOT_FOUND`)
 
 **422 on create setting:**
 - `approver_master_required` is `true` and `approver_master_quantity` is missing
