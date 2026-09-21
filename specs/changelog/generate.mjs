@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 // Builds docs/baas/api-overview/changelog.md from the OpenAPI contract diff
-// between consecutive zrobank-services releases. Specs come from the release
-// asset `api-baas.openapi.json` (generated with APP_ENV=production), so the
-// changelog can only describe what production exposes.
+// between consecutive zrobank-services releases. Specs live in
+// specs/baas/releases/<tag>/api-baas.openapi.json, mirrored here by the
+// zrobank-services release workflow (generated with APP_ENV=production), so
+// the changelog can only describe what production exposes.
 //
-//   node specs/changelog/generate.mjs [--tag vX.Y.Z] [--force] [--local-specs <dir>]
+//   node specs/changelog/generate.mjs [--tag vX.Y.Z] [--force] [--specs-dir <dir>]
 //
 // Exit code 0 always when the file was written; the report on stdout and the
 // GITHUB_OUTPUT keys (changed, gate, tags) drive the workflow decision.
@@ -16,8 +17,8 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
-const REPO = 'coinwise-io/zrobank-services';
 const ASSET = 'api-baas.openapi.json';
+const RELEASES_DIR = path.join(ROOT, 'specs/baas/releases');
 const OUT = path.join(ROOT, 'docs/baas/api-overview/changelog.md');
 const FROM = 'v1.84.0';
 const FLOOD = 5;
@@ -29,9 +30,8 @@ const flag = (name) => {
 };
 const onlyTag = typeof flag('tag') === 'string' ? flag('tag') : undefined;
 const force = flag('force') === true;
-const localSpecs = typeof flag('local-specs') === 'string' ? flag('local-specs') : undefined;
+const specsDir = typeof flag('specs-dir') === 'string' ? path.resolve(flag('specs-dir')) : RELEASES_DIR;
 const oasdiffBin = typeof flag('oasdiff') === 'string' ? flag('oasdiff') : 'oasdiff';
-const workDir = path.join(ROOT, '.cache/changelog');
 
 const compareTags = (a, b) => {
   const pa = a.slice(1).split('.').map(Number);
@@ -43,36 +43,15 @@ const compareTags = (a, b) => {
 const compareReleases = (a, b) => (a.date || '').localeCompare(b.date || '') || compareTags(a.tag, b.tag);
 const isReleaseTag = (t) => /^v\d+\.\d+\.\d+$/.test(t);
 
-function gh(args) {
-  return execFileSync('gh', args, { encoding: 'utf8', maxBuffer: 64e6 });
-}
-
 function listReleases() {
-  if (localSpecs) {
-    return fs.readdirSync(localSpecs)
-      .filter((t) => isReleaseTag(t) && fs.existsSync(path.join(localSpecs, t, ASSET)))
-      .map((t) => ({ tag: t, date: fs.statSync(path.join(localSpecs, t, ASSET)).mtime.toISOString().slice(0, 10), hasAsset: true }));
-  }
-  const rows = JSON.parse(gh(['release', 'list', '--repo', REPO, '--limit', '500', '--json', 'tagName,publishedAt,isDraft']));
-  return rows
-    .filter((r) => !r.isDraft && isReleaseTag(r.tagName))
-    .map((r) => ({ tag: r.tagName, date: (r.publishedAt || '').slice(0, 10), hasAsset: undefined }));
+  const indexPath = path.join(specsDir, 'index.json');
+  const index = fs.existsSync(indexPath) ? JSON.parse(fs.readFileSync(indexPath, 'utf8')) : {};
+  return fs.readdirSync(specsDir)
+    .filter((tag) => isReleaseTag(tag) && fs.existsSync(path.join(specsDir, tag, ASSET)))
+    .map((tag) => ({ tag, date: (index[tag]?.publishedAt || '').slice(0, 10) }));
 }
 
-function specPath(tag) {
-  if (localSpecs) return path.join(localSpecs, tag, ASSET);
-  const dir = path.join(workDir, tag);
-  const file = path.join(dir, ASSET);
-  if (!fs.existsSync(file)) {
-    fs.mkdirSync(dir, { recursive: true });
-    try {
-      gh(['release', 'download', tag, '--repo', REPO, '--pattern', ASSET, '--dir', dir, '--clobber']);
-    } catch {
-      return null;
-    }
-  }
-  return fs.existsSync(file) ? file : null;
-}
+const specPath = (tag) => path.join(specsDir, tag, ASSET);
 
 const severityFile = path.join(HERE, 'severity.txt');
 const deny = fs.readFileSync(path.join(HERE, 'denylist.txt'), 'utf8').split('\n').map((s) => s.trim()).filter(Boolean)
@@ -139,7 +118,6 @@ const newSections = [];
 let previous = null;
 for (const release of releases) {
   const file = specPath(release.tag);
-  if (!file) { report.push({ tag: release.tag, status: 'no-asset' }); continue; }
   if (!previous) { previous = release; report.push({ tag: release.tag, status: 'baseline' }); continue; }
   const inScope = onlyTag ? release.tag === onlyTag : true;
   if (!inScope) { previous = release; continue; }

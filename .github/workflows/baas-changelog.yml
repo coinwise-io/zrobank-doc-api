@@ -1,14 +1,17 @@
 name: BaaS API changelog
 
 # Turns the OpenAPI contract diff between consecutive zrobank-services releases
-# into docs/baas/api-overview/changelog.md. Specs are the release assets
-# published by zrobank-services (APP_ENV=production), read with a read-only
-# token. Compatible changes are committed straight to develop; removals and
+# into docs/baas/api-overview/changelog.md. Specs arrive in
+# specs/baas/releases/<tag>/ through a push made by the zrobank-services
+# release workflow (generated with APP_ENV=production), so no secret is needed
+# here. Compatible changes are committed straight to develop; removals and
 # denylist hits open a pull request instead.
 
 on:
-  schedule:
-    - cron: "15 * * * *"
+  push:
+    branches: [develop]
+    paths:
+      - "specs/baas/releases/**"
   workflow_dispatch:
     inputs:
       tag:
@@ -65,7 +68,6 @@ jobs:
       - name: Generate changelog
         id: gen
         env:
-          GH_TOKEN: ${{ secrets.SERVICES_RELEASES_TOKEN }}
           INPUT_TAG: ${{ inputs.tag }}
           INPUT_FORCE: ${{ inputs.force }}
         run: |
