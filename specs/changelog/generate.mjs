@@ -130,8 +130,9 @@ function render(entries) {
 
 const releases = listReleases().filter((r) => compareTags(r.tag, FROM) >= 0).sort(compareReleases);
 let content = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '# Changelog\n';
-const sectionRe = (tag) => new RegExp(`^## ${tag.replace(/\./g, '\\.')}\\b[^\\n]*\\n[\\s\\S]*?(?=^## |(?![\\s\\S]))`, 'm');
-const hasSection = (tag) => new RegExp(`^## ${tag.replace(/\./g, '\\.')}\\b`, 'm').test(content);
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const sectionRe = (tag) => new RegExp(`^## ${escapeRegExp(tag)}\\b[^\\n]*\\n[\\s\\S]*?(?=^## |(?![\\s\\S]))`, 'm');
+const hasSection = (tag) => new RegExp(`^## ${escapeRegExp(tag)}\\b`, 'm').test(content);
 
 const report = [];
 const newSections = [];
