@@ -1,0 +1,119 @@
+name: BaaS API changelog
+
+# Turns the OpenAPI contract diff between consecutive zrobank-services releases
+# into docs/baas/api-overview/changelog.md. Specs are the release assets
+# published by zrobank-services (APP_ENV=production), read with a read-only
+# token. Compatible changes are committed straight to develop; removals and
+# denylist hits open a pull request instead.
+
+on:
+  schedule:
+    - cron: "15 * * * *"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to (re)generate. Empty processes every release without a section.
+        required: false
+        type: string
+      force:
+        description: Rewrite the section even when it already exists.
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: baas-changelog
+  cancel-in-progress: false
+
+env:
+  OASDIFF_VERSION: 1.12.8
+  OASDIFF_SHA256: 29e20a6d139eb84bd8412a7ede2cbde58052848870374d43870cb35d0c5a33c4
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Enable Corepack
+        run: corepack enable && corepack prepare yarn@4.12.0 --activate
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Install oasdiff
+        run: |
+          set -euo pipefail
+          curl -fsSL -o oasdiff.tar.gz "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
+          echo "${OASDIFF_SHA256}  oasdiff.tar.gz" | sha256sum -c -
+          mkdir -p "$HOME/.local/bin"
+          tar -xzf oasdiff.tar.gz -C "$HOME/.local/bin" oasdiff
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Generate changelog
+        id: gen
+        env:
+          GH_TOKEN: ${{ secrets.SERVICES_RELEASES_TOKEN }}
+          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+          args=()
+          if [ -n "${INPUT_TAG}" ]; then args+=(--tag "${INPUT_TAG}"); fi
+          if [ "${INPUT_FORCE}" = "true" ]; then args+=(--force); fi
+          node specs/changelog/generate.mjs "${args[@]}"
+
+      - name: Configure git
+        if: steps.gen.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit to develop
+        if: steps.gen.outputs.changed == 'true' && steps.gen.outputs.gate != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAGS: ${{ steps.gen.outputs.tags }}
+        run: |
+          set -euo pipefail
+          git add docs/baas/api-overview/changelog.md
+          git commit -m "docs(baas): changelog ${TAGS}"
+          git push origin HEAD:develop
+          # A push made with GITHUB_TOKEN does not trigger on:push workflows.
+          gh workflow run deploy.yaml --ref develop
+
+      - name: Open pull request for review
+        if: steps.gen.outputs.changed == 'true' && steps.gen.outputs.gate == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAGS: ${{ steps.gen.outputs.tags }}
+          SUMMARY: ${{ steps.gen.outputs.summary }}
+        run: |
+          set -euo pipefail
+          branch="changelog/baas-${GITHUB_RUN_ID}"
+          git checkout -b "$branch"
+          git add docs/baas/api-overview/changelog.md
+          git commit -m "docs(baas): changelog ${TAGS}"
+          git push origin "$branch"
+          {
+            echo "Changelog gerado automaticamente a partir do diff de contrato OpenAPI entre releases do zrobank-services."
+            echo
+            echo "Precisa de revisão porque há remoções ou termos da denylist (\`specs/changelog/denylist.txt\`)."
+            echo
+            echo '```'
+            echo "${SUMMARY}"
+            echo '```'
+          } > /tmp/pr-body.md
+          gh pr create --base develop --head "$branch" --title "docs(baas): changelog ${TAGS} (revisão)" --body-file /tmp/pr-body.md

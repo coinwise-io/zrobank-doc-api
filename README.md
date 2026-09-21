@@ -83,3 +83,14 @@ sh specs/generate-docs.sh
 ```sh
 node utils/replace-helper.js
 ```
+
+## Changelog da API BaaS
+
+`docs/baas/api-overview/changelog.md` é gerado, não escrito à mão. O workflow `.github/workflows/baas-changelog.yml` (cron horário e `workflow_dispatch` com `tag`/`force`) baixa o asset `api-baas.openapi.json` de duas releases consecutivas do `zrobank-services`, roda `oasdiff changelog` em pt-br e escreve uma seção `## vX.Y.Z (data)` por release com mudança de contrato, agrupada por endpoint.
+
+- Mudanças compatíveis entram por commit direto em `develop` e o deploy é disparado na sequência.
+- Remoções e termos da `specs/changelog/denylist.txt` abrem um pull request para revisão.
+- `specs/changelog/severity.txt` silencia tipos de mudança sem valor para o integrador (renomeação de tag, id de operação, renomeação de schema).
+- Secret necessário: `SERVICES_RELEASES_TOKEN`, PAT somente leitura das releases do `zrobank-services`.
+
+Para testar localmente com specs em disco: `node specs/changelog/generate.mjs --local-specs <dir>` onde `<dir>/<tag>/api-baas.openapi.json` existe para cada release.
