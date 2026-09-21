@@ -1,0 +1,44 @@
+name: BaaS changelog tests
+
+on:
+  pull_request:
+    paths:
+      - "specs/changelog/**"
+      - ".github/workflows/baas-changelog*.yml"
+      - "package.json"
+      - "yarn.lock"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OASDIFF_VERSION: 1.12.8
+      OASDIFF_SHA256: 29e20a6d139eb84bd8412a7ede2cbde58052848870374d43870cb35d0c5a33c4
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
+        with:
+          node-version: 20
+          package-manager-cache: false
+      - name: Install dependencies
+        run: |
+          corepack enable
+          corepack prepare yarn@4.12.0 --activate
+          yarn install --immutable
+      - name: Install oasdiff
+        run: |
+          set -euo pipefail
+          curl -fsSL -o oasdiff.tar.gz "https://github.com/oasdiff/oasdiff/releases/download/v${OASDIFF_VERSION}/oasdiff_${OASDIFF_VERSION}_linux_amd64.tar.gz"
+          echo "${OASDIFF_SHA256}  oasdiff.tar.gz" | sha256sum -c -
+          mkdir -p "$HOME/.local/bin"
+          tar -xzf oasdiff.tar.gz -C "$HOME/.local/bin" oasdiff
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Test changelog with real contract diffs
+        run: yarn test:changelog

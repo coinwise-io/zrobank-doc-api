@@ -40,7 +40,7 @@ const compareTags = (a, b) => {
   return pa[0] - pb[0] || pa[1] - pb[1] || pa[2] - pb[2] || a.localeCompare(b);
 };
 // Releases are ordered by publish date first: patch tags were not always cut in numeric order.
-const compareReleases = (a, b) => (a.date || '').localeCompare(b.date || '') || compareTags(a.tag, b.tag);
+const compareReleases = (a, b) => (a.publishedAt || '').localeCompare(b.publishedAt || '') || compareTags(a.tag, b.tag);
 const isReleaseTag = (t) => /^v\d+\.\d+\.\d+$/.test(t);
 
 function listReleases() {
@@ -48,7 +48,7 @@ function listReleases() {
   const index = fs.existsSync(indexPath) ? JSON.parse(fs.readFileSync(indexPath, 'utf8')) : {};
   return fs.readdirSync(specsDir)
     .filter((tag) => isReleaseTag(tag) && fs.existsSync(path.join(specsDir, tag, ASSET)))
-    .map((tag) => ({ tag, date: (index[tag]?.publishedAt || '').slice(0, 10) }));
+    .map((tag) => ({ tag, publishedAt: index[tag]?.publishedAt || '' }));
 }
 
 const specPath = (tag) => path.join(specsDir, tag, ASSET);
@@ -109,12 +109,15 @@ function render(entries) {
 
 const releases = listReleases().filter((r) => compareTags(r.tag, FROM) >= 0).sort(compareReleases);
 let content = fs.existsSync(OUT) ? fs.readFileSync(OUT, 'utf8') : '# Changelog\n';
-const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const sectionRe = (tag) => new RegExp(`^## ${escapeRegExp(tag)}\\b[^\\n]*\\n[\\s\\S]*?(?=^## |(?![\\s\\S]))`, 'm');
-const hasSection = (tag) => new RegExp(`^## ${escapeRegExp(tag)}\\b`, 'm').test(content);
+const originalContent = content;
+const matches = [...content.matchAll(/^## (v\d+\.\d+\.\d+)\b[^\n]*\n[\s\S]*?(?=^## v\d+\.\d+\.\d+\b|(?![\s\S]))/gm)];
+const introduction = matches.length ? content.slice(0, matches[0].index) : content;
+const sections = new Map(matches.map((match) => [match[1], match[0].trimEnd()]));
+const hasSection = (tag) => sections.has(tag);
+const releaseByTag = new Map(releases.map((release) => [release.tag, release]));
+const changedTags = new Set();
 
 const report = [];
-const newSections = [];
 let previous = null;
 for (const release of releases) {
   const file = specPath(release.tag);
@@ -125,17 +128,18 @@ for (const release of releases) {
 
   const entries = changelog(specPath(previous.tag), file);
   if (entries.length === 0) {
-    if (force && hasSection(release.tag)) content = content.replace(sectionRe(release.tag), '');
+    const removed = force && sections.delete(release.tag);
+    if (removed) changedTags.add(release.tag);
     previous = release;
-    report.push({ tag: release.tag, status: 'no-contract-change' });
+    report.push({ tag: release.tag, status: removed ? 'section-removed' : 'no-contract-change' });
     continue;
   }
   const body = render(entries);
-  const removals = entries.filter((c) => /-(removed|deprecated)$/.test(c.id)).length;
+  const removals = entries.filter((c) => /-(removed|deprecated)(?:-|$)/.test(c.id)).length;
   const denyHits = body.split('\n').filter((l) => deny.some((re) => re.test(l)));
-  const section = `## ${release.tag} (${release.date})\n\n${body}\n`;
-  if (force && hasSection(release.tag)) content = content.replace(sectionRe(release.tag), '');
-  newSections.push({ tag: release.tag, section });
+  const section = `## ${release.tag} (${release.publishedAt.slice(0, 10)})\n\n${body}`;
+  if (sections.get(release.tag) !== section) changedTags.add(release.tag);
+  sections.set(release.tag, section);
   report.push({
     tag: release.tag, from: previous.tag, status: removals || denyHits.length ? 'REVIEW' : 'auto',
     entries: entries.length, breaking: entries.filter((c) => c.level === 3).length,
@@ -144,25 +148,30 @@ for (const release of releases) {
   previous = release;
 }
 
-if (newSections.length) {
-  // Sections are newest-first. Insert before the first existing section, or at the end.
-  const block = newSections.reverse().map((s) => s.section).join('\n');
-  const firstSection = content.search(/^## v\d+\.\d+\.\d+/m);
-  content = firstSection === -1
-    ? `${content.trimEnd()}\n\n${block}`
-    : `${content.slice(0, firstSection).trimEnd()}\n\n${block}\n${content.slice(firstSection)}`;
-  content = `${content.replace(/\n{3,}/g, '\n\n').trimEnd()}\n`;
+const releaseFor = (tag) => releaseByTag.get(tag) || {
+  tag, publishedAt: sections.get(tag)?.match(/^## [^\n]*\((\d{4}-\d{2}-\d{2})\)/)?.[1] || '',
+};
+const newestFirst = (a, b) => compareReleases(releaseFor(b), releaseFor(a));
+if (changedTags.size) {
+  // Merge regenerated/backfilled sections with existing editorial text, then sort
+  // the complete history. A deletion alone must also reach disk and the workflow.
+  const block = [...sections.keys()].sort(newestFirst).map((tag) => sections.get(tag)).join('\n\n');
+  content = `${[introduction.trimEnd(), block].filter(Boolean).join('\n\n')}\n`;
+}
+const changed = content !== originalContent;
+if (changed) {
   const require = createRequire(path.join(ROOT, 'package.json'));
   require('@mdx-js/mdx').sync(content);
   fs.writeFileSync(OUT, content);
 }
 
-const changed = newSections.length > 0;
 const gate = report.some((r) => r.status === 'REVIEW');
-const summary = report.filter((r) => ['auto', 'REVIEW'].includes(r.status))
-  .map((r) => `${r.tag}: ${r.entries} mudanças, ${r.breaking} breaking, ${r.endpointsAdded} endpoints novos, ${r.removals} remoções${r.denyHits.length ? `, denylist: ${r.denyHits.length}` : ''}`).join('\n');
-console.log(JSON.stringify({ changed, gate, sections: newSections.map((s) => s.tag), report }, null, 2));
+const summary = report.filter((r) => ['auto', 'REVIEW', 'section-removed'].includes(r.status))
+  .map((r) => r.status === 'section-removed' ? `${r.tag}: seção obsoleta removida (sem mudança de contrato)`
+    : `${r.tag}: ${r.entries} mudanças, ${r.breaking} breaking, ${r.endpointsAdded} endpoints novos, ${r.removals} remoções${r.denyHits.length ? `, denylist: ${r.denyHits.length}` : ''}`).join('\n');
+const updatedTags = [...changedTags].sort(newestFirst);
+console.log(JSON.stringify({ changed, gate, sections: updatedTags, report }, null, 2));
 if (process.env.GITHUB_OUTPUT) {
-  const tags = newSections.map((s) => s.tag).join(' ');
+  const tags = updatedTags.join(' ');
   fs.appendFileSync(process.env.GITHUB_OUTPUT, `changed=${changed}\ngate=${gate}\ntags=${tags}\nsummary<<EOS\n${summary}\nEOS\n`);
 }
