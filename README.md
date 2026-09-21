@@ -83,3 +83,20 @@ sh specs/generate-docs.sh
 ```sh
 node utils/replace-helper.js
 ```
+
+## Changelog da API BaaS
+
+`docs/baas/api-overview/changelog.md` é gerado, não escrito à mão. O workflow de release do `zrobank-services` publica a spec de produção de cada release em `specs/baas/releases/<tag>/api-baas.openapi.json` (e a data em `specs/baas/releases/index.json`). Esse push dispara `.github/workflows/baas-changelog.yml` (também por `workflow_dispatch` com `tag`/`force`), que roda `oasdiff changelog` entre releases consecutivas e escreve uma seção `## vX.Y.Z (data)` por release com mudança de contrato, agrupada por endpoint, em inglês.
+
+- Mudanças compatíveis entram por commit direto em `develop` e o deploy é disparado na sequência.
+- Remoções e termos da `specs/changelog/denylist.txt` abrem um pull request para revisão.
+- `specs/changelog/severity.txt` silencia tipos de mudança sem valor para o integrador (renomeação de tag, id de operação, renomeação de schema).
+- Nenhum secret neste repositório: quem escreve é o `zrobank-services`, com um PAT guardado lá.
+
+O changelog é público. O PR de revisão de remoções e termos da denylist é uma etapa editorial, não um controle de acesso. As páginas de referência dos endpoints continuam com as fontes de `specs/generate-specs.js`, incluindo `BAAS_BASE_URL`; a migração dessas páginas para specs de releases não faz parte deste fluxo.
+
+A ordem usa o timestamp completo de publicação, inclusive entre releases do mesmo dia. `--force --tag <tag>` substitui a seção na posição cronológica correta ou a exclui se não houver mais mudança de contrato. Uma regeneração idêntica não produz commit. O services recupera falhas de mirror baixando os assets já publicados; não é necessário regenerá-los.
+
+Validação: `yarn test:changelog` (oasdiff 1.12.8 no `PATH`, ou `OASDIFF_BIN=<binário>`). O workflow `baas-changelog-check.yml` roda esses testes em PRs usando o binário com checksum verificado, sem publicar conteúdo. Os testes usam specs e arquivos temporários, cobrem remoções com e sem depreciação, recuperação de seções, ordem por horário, backfill e idempotência.
+
+Para testar localmente com specs em outro diretório: `node specs/changelog/generate.mjs --specs-dir <dir>` onde `<dir>/<tag>/api-baas.openapi.json` e `<dir>/index.json` existem.

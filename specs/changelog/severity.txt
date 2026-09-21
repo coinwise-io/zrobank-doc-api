@@ -1,0 +1,7 @@
+api-tag-added none
+api-tag-removed none
+api-operation-id-added none
+api-operation-id-removed none
+response-property-all-of-added none
+response-property-all-of-removed none
+request-parameter-type-generalized none

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test:changelog": "node --test specs/changelog/generate.test.mjs",
     "docusaurus": "docusaurus",
     "start": "CHOKIDAR_USEPOLLING=false docusaurus start --poll 1000",
     "build": "node specs/generate-specs.js && bash specs/generate-docs.sh && node utils/replace-helper.js && docusaurus build",
