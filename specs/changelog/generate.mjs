@@ -160,6 +160,13 @@ function collapseFloods(entries) {
   return out;
 }
 
+// Feature area from the operation tag: "Pix | Compliance | Infraction Notifications" → "Pix Infraction Notifications".
+function opFeature(spec, c) {
+  const tag = (spec?.paths?.[c.path]?.[c.operation.toLowerCase()]?.tags || [])[0] || 'Other';
+  const parts = tag.split('|').map((t) => t.trim()).filter(Boolean);
+  return parts.length > 1 ? `${parts[0]} ${parts.at(-1)}` : parts[0] || 'Other';
+}
+
 function opSummary(spec, c) {
   const op = spec?.paths?.[c.path]?.[c.operation.toLowerCase()];
   // Table cell: escape backslashes first, then pipes; collapse line breaks.
@@ -180,27 +187,39 @@ function render(entries, { headSpec, baseSpec }) {
     }
     return [...byText.entries()].map(([text, eps]) => `- ${text} — ${[...new Set(eps)].join(', ')}`);
   };
+  const sortedEndpoints = (list) => list.sort((a, b) => a.path.localeCompare(b.path) || a.operation.localeCompare(b.operation));
   const endpointTable = (list, spec) => [
     '| Endpoint | Description |',
     '| --- | --- |',
-    ...list.sort((a, b) => a.path.localeCompare(b.path) || a.operation.localeCompare(b.operation))
-      .map((c) => `| ${endpoint(c)} | ${opSummary(spec, c)} |`),
+    ...sortedEndpoints(list).map((c) => `| ${endpoint(c)} | ${opSummary(spec, c)} |`),
   ];
+  // New endpoints read as product features: grouped by tag, biggest group first.
+  const features = [...buckets.added.reduce((m, c) => {
+    const f = opFeature(headSpec, c);
+    return m.set(f, [...(m.get(f) || []), c]);
+  }, new Map()).entries()].sort(([, a], [, b]) => b.length - a.length);
+  const featureTables = features.length > 1
+    ? features.flatMap(([name, list]) => [`### ${name}`, '', ...endpointTable(list, headSpec), ''])
+    : [...endpointTable(buckets.added, headSpec), ''];
 
   if (buckets.breaking.length) lines.push('## Breaking changes', '', ...grouped(buckets.breaking), '');
   if (buckets.removed.length) lines.push('## Removed endpoints', '', ...endpointTable(buckets.removed, baseSpec), '');
   if (buckets.deprecated.length) lines.push('## Deprecated endpoints', '', ...endpointTable(buckets.deprecated, headSpec), '');
-  if (buckets.added.length) lines.push('## New endpoints', '', ...endpointTable(buckets.added, headSpec), '');
+  if (buckets.added.length) lines.push('## New endpoints', '', ...featureTables);
   if (buckets.changed.length) lines.push('## Changed', '', ...grouped(buckets.changed), '');
   if (entries.some((c) => c.level === 2)) lines.push('_⚠️ marks changes that may require action on your side, such as new enum values in responses._', '');
 
+  const plural = (n, word) => `${n} ${word}${n > 1 ? 's' : ''}`;
   const changedEndpoints = new Set([...buckets.breaking, ...buckets.changed].map(endpoint)).size;
+  const shown = features.slice(0, 4).map(([name]) => name);
+  if (features.length > 4) shown.push(`${plural(features.length - 4, 'more area')}`);
   const parts = [
-    buckets.breaking.length ? `${buckets.breaking.length} breaking change${buckets.breaking.length > 1 ? 's' : ''}` : 'No breaking changes',
-    buckets.removed.length && `${buckets.removed.length} endpoint${buckets.removed.length > 1 ? 's' : ''} removed`,
-    buckets.deprecated.length && `${buckets.deprecated.length} endpoint${buckets.deprecated.length > 1 ? 's' : ''} deprecated`,
-    buckets.added.length && `${buckets.added.length} new endpoint${buckets.added.length > 1 ? 's' : ''}`,
-    changedEndpoints && `${changedEndpoints} changed endpoint${changedEndpoints > 1 ? 's' : ''}`,
+    buckets.breaking.length && plural(buckets.breaking.length, 'breaking change'),
+    features.length && `New: ${shown.join(', ')} (${plural(buckets.added.length, 'endpoint')})`,
+    buckets.removed.length && `${plural(buckets.removed.length, 'endpoint')} removed`,
+    buckets.deprecated.length && `${plural(buckets.deprecated.length, 'endpoint')} deprecated`,
+    changedEndpoints && plural(changedEndpoints, 'changed endpoint'),
+    !buckets.breaking.length && 'No breaking changes',
   ].filter(Boolean);
   const tags = Object.entries(buckets).filter(([, l]) => l.length).map(([k]) => ({ breaking: 'breaking', removed: 'removed', deprecated: 'deprecated', added: 'new-endpoints', changed: 'changes' })[k]);
   return { body: lines.join('\n').trim(), summary: parts.join(' · '), tags, buckets };
@@ -213,6 +232,7 @@ function post(release, rendered) {
     `slug: ${release.tag}`,
     `date: ${release.publishedAt.slice(0, 10)}`,
     `tags: [${rendered.tags.join(', ')}]`,
+    `description: "${rendered.summary.replace(/"/g, "'")}"`,
     '---',
     '',
     `${rendered.summary}.`,

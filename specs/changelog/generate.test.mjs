@@ -50,8 +50,8 @@ test('new endpoints become a table with the spec summary, auto-published, idempo
   const first = f.run();
   assert.deepEqual(first.files, ['2026-09-21-v1.84.1.md']);
   const post = first.content['2026-09-21-v1.84.1.md'];
-  assert.match(post, /^---\ntitle: v1\.84\.1\nslug: v1\.84\.1\ndate: 2026-09-21\ntags: \[new-endpoints\]\n---/);
-  assert.match(post, /No breaking changes · 1 new endpoint\.\n\n<!-- truncate -->/);
+  assert.match(post, /^---\ntitle: v1\.84\.1\nslug: v1\.84\.1\ndate: 2026-09-21\ntags: \[new-endpoints\]\ndescription: "New: Test \(1 endpoint\) · No breaking changes"\n---/);
+  assert.match(post, /New: Test \(1 endpoint\) · No breaking changes\.\n\n<!-- truncate -->/);
   assert.match(post, /## New endpoints\n\n\| Endpoint \| Description \|\n\| --- \| --- \|\n\| `GET \/new` \| List new things \|/);
   assert.equal(first.gate, false);
   assert.match(first.outputs, /changed=true\ngate=false\ntags=v1\.84\.1/);
@@ -123,6 +123,19 @@ test('denylist terms require review even for compatible additions', (t) => {
   const result = f.run();
   assert.equal(result.gate, true);
   assert.equal(result.report[1].denyHits.length, 1);
+});
+
+test('new endpoints are grouped by feature tag, biggest first, and lead the summary', (t) => {
+  const head = spec({
+    ...stable.paths,
+    '/pix/a': { get: { ...op('List A'), tags: ['Pix | Fund Recovery Requests'] } },
+    '/pix/b': { post: { ...op('Create B'), tags: ['Pix | Fund Recovery Requests'] } },
+    '/rep/c': { get: { ...op('List C'), tags: ['Reports'] } },
+  });
+  const f = fixture(t, [['v1.84.0', '2026-09-20T08:00:00Z', stable], ['v1.84.1', '2026-09-21T08:00:00Z', head]]);
+  const post = f.run().content['2026-09-21-v1.84.1.md'];
+  assert.match(post, /New: Pix Fund Recovery Requests, Reports \(3 endpoints\) · No breaking changes\./);
+  assert.match(post, /## New endpoints\n\n### Pix Fund Recovery Requests\n\n\| Endpoint \| Description \|[\s\S]*`GET \/pix\/a`[\s\S]*### Reports\n\n\| Endpoint/);
 });
 
 test('a new required request field is a breaking change', (t) => {
