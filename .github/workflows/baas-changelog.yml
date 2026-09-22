@@ -90,7 +90,7 @@ jobs:
           TAGS: ${{ steps.gen.outputs.tags }}
         run: |
           set -euo pipefail
-          git add docs/baas/api-overview/changelog.md
+          git add changelog/baas
           git commit -m "docs(baas): changelog ${TAGS}"
           git push origin HEAD:develop
           # A push made with GITHUB_TOKEN does not trigger on:push workflows.
@@ -106,7 +106,7 @@ jobs:
           set -euo pipefail
           branch="changelog/baas-${GITHUB_RUN_ID}"
           git checkout -b "$branch"
-          git add docs/baas/api-overview/changelog.md
+          git add changelog/baas
           git commit -m "docs(baas): changelog ${TAGS}"
           git push origin "$branch"
           {

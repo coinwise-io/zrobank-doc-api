@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "specs/changelog/**"
+      - "changelog/**"
       - ".github/workflows/baas-changelog*.yml"
       - "package.json"
       - "yarn.lock"
