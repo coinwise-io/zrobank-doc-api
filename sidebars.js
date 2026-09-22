@@ -112,7 +112,7 @@ const sidebars = {
         'baas/api-overview/replay',
         'baas/api-overview/pagination',
         'baas/api-overview/api-responses',
-        'baas/api-overview/changelog',
+        { type: 'link', label: 'Changelog', href: '/baas/changelog' },
         'baas/api-overview/webhooks',
       ],
     },

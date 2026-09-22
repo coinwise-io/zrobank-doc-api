@@ -31,6 +31,26 @@ const config = {
   plugins: [
     require.resolve('@cmfcmf/docusaurus-search-local'),
     [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'baas-changelog',
+        routeBasePath: 'baas/changelog',
+        path: 'changelog/baas',
+        blogTitle: 'BaaS API changelog',
+        blogDescription:
+          'Contract changes of the BaaS API, one entry per platform release, generated from the OpenAPI specification.',
+        blogSidebarTitle: 'Releases',
+        blogSidebarCount: 20,
+        postsPerPage: 10,
+        showReadingTime: false,
+        feedOptions: {
+          type: 'all',
+          title: 'BaaS API changelog',
+          description: 'Contract changes of the Z.ro Global BaaS API, per release.',
+        },
+      },
+    ],
+    [
       'docusaurus-plugin-openapi-docs',
       {
         id: 'api',
