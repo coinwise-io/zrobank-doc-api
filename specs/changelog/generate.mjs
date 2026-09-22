@@ -162,7 +162,8 @@ function collapseFloods(entries) {
 
 function opSummary(spec, c) {
   const op = spec?.paths?.[c.path]?.[c.operation.toLowerCase()];
-  return (op?.summary || (op?.tags || [])[0] || '').replace(/\|/g, '\\|').trim();
+  // Table cell: escape backslashes first, then pipes; collapse line breaks.
+  return (op?.summary || (op?.tags || [])[0] || '').replace(/\\/g, '\\\\').replace(/\|/g, '\\|').replace(/\s*\n\s*/g, ' ').trim();
 }
 
 function render(entries, { headSpec, baseSpec }) {
