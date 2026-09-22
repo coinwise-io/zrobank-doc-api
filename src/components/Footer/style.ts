@@ -9,27 +9,27 @@ export const FooterContainer = styled.footer`
 `
 
 export const Content = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
 
   @media (max-width: 768px) {
+    display: flex;
     flex-direction: column;
   }
 `
 
-export const Logo = styled.img`
-  width: 100px;
-`
-
 export const Copyright = styled.p`
+  grid-column: 2;
   margin-bottom: 0;
   text-align: center;
 `
 
 export const IconsContainer = styled.div`
   display: flex;
+  grid-column: 3;
   gap: 1rem;
+  justify-self: end;
 `
 
 export const Icon = styled.img`

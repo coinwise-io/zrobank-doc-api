@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   FooterContainer,
-  Logo,
   Copyright,
   IconsContainer,
   Icon,
@@ -12,7 +11,6 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Content>
-        <Logo src="img/new-logo.png" alt="Logo" />
         <Copyright>
           Customer support: alo@zro.global | LGPD: dpo.zro@zro.global |
           CNPJ: 26.264.220/0001-16
