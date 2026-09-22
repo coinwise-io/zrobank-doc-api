@@ -41,7 +41,6 @@ Contract changes of the BaaS API, one section per platform release, grouped by e
 
 ### `GET /v1/users/onboardings/with-steps`
 - ⚠️ **Attention:** added the new 'LIVENESS' enum value to the 'data/items/steps/items/name' response property for the response status '200'
-- removed the 'CAF_LIVENESS' enum value from the 'data/items/steps/items/name' response property for the response status '200'
 
 ### `POST /v2/banking/billet-payments/decode`
 - added the required property 'beneficiary_document' to the response with the '201' status
