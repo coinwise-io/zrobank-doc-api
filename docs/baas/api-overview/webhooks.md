@@ -101,6 +101,50 @@ Your account can be configured so that when certain events occur on your account
 
 <br /><br />
 
+## Signature Verification
+
+Signature verification is optional and configured entirely on your side. We do not compute or attach a cryptographic signature (e.g. HMAC) over the webhook payload — instead, you define a static authentication token and choose which HTTP header we should send it in.
+
+**How it works**
+
+1. When registering your webhook URL with our team, provide the static token (a value you generate and manage) and the name of the header you want it delivered in — it does not need to be a fixed or reserved header name.
+2. We include that token, unchanged, in the header you specified on every webhook request.
+3. On your side, validation is a direct comparison: check that the incoming request's header matches the token you registered. There is no algorithm, encoding, timestamp, or nonce involved, and the payload itself is not signed.
+
+This same mechanism applies uniformly to every webhook type listed above (`DEPOSIT`, `PAYMENT`, and all others) — there is no per-event variation.
+
+**Example**
+
+Suppose you register the header `X-Zro-Signature` with the token `my-shared-secret-token`. Every webhook request will include:
+
+```
+X-Zro-Signature: my-shared-secret-token
+```
+
+Validating it on your side is just:
+
+```js
+if (request.headers['x-zro-signature'] !== 'my-shared-secret-token') {
+  return response.status(401).send('Invalid signature');
+}
+```
+
+> Because the payload is not cryptographically signed, treat the token as a shared secret and combine it with transport security (HTTPS, and mTLS if configured) rather than relying on it alone to guarantee payload integrity.
+
+<br /><br />
+
+## Retry Policy
+
+If your endpoint does not respond with a successful status, we retry the delivery using **retry with exponential backoff**: the interval between attempts increases progressively as more attempts are made.
+
+- **Trigger:** any non-success response — any `4xx`, any `5xx`, or a timeout — is treated as a failure and queues a retry.
+- **Max attempts and retry window:** both are configurable per client. Let our team know your desired maximum number of attempts and the maximum total time we should keep retrying when you register your webhook.
+- **Backoff:** exponential — attempts are spaced further apart as the retry window progresses.
+
+If you need different retry parameters for a specific webhook, request the change with our team when registering or updating the webhook configuration.
+
+<br /><br />
+
 ## Payloads (Version 1)
 
 <Tabs>
