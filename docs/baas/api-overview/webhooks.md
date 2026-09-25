@@ -91,13 +91,69 @@ Your account can be configured so that when certain events occur on your account
 
 ## Credentials (Not required)
 
-| Type                   | Description                                                        |
-| ---------------------- | ------------------------------------------------------------------ |
-| Authorization Basic    | base64<username:password>                                          |
-| Authorization Bearer   | API key or token.                                                  |
-| Signature Verification | Shared secret key.                                                 |
-| Custom header          | Custom header name of your choice, used with an API key or token.  |
-| mTLS                   | TLS certificate.                                                   |
+Each webhook registration can have one credential. You generate the credential value and share it with our team through a secure channel when you register the webhook. We send it in an HTTP header on every request to that webhook, exactly as registered.
+
+| Type                   | Header we send             | Value                         |
+| ---------------------- | -------------------------- | ----------------------------- |
+| Authorization Basic    | `Authorization`            | base64 of `username:password` |
+| Authorization Bearer   | `Authorization`            | API key or token              |
+| Signature Verification | `zro-signature`            | Shared secret key             |
+| Custom header          | Header name of your choice | API key or token              |
+
+No prefix such as `Basic ` or `Bearer ` is added. If your server expects one, include it in the value you register.
+
+<br /><br />
+
+## Verifying Webhook Requests
+
+When a credential is configured, webhook requests are authenticated only by its header:
+
+- The value is static: it is the same on every request and carries no timestamp or nonce.
+- No signature, such as an HMAC, is computed, and the payload is not signed. With the `Signature Verification` type, the `zro-signature` header carries the shared secret key itself.
+- The same mechanism applies to every webhook type. The credential is configured per webhook registration.
+
+To verify a request, compare the header value with the credential you registered and reject the request if they differ:
+
+```js
+const crypto = require('node:crypto');
+
+const expected = Buffer.from(process.env.WEBHOOK_CREDENTIAL);
+
+function isAuthenticWebhook(request) {
+  // Node.js lowercases header names: use `zro-signature`, `authorization`
+  // or your custom header name in lowercase.
+  const received = Buffer.from(request.headers['zro-signature'] ?? '');
+
+  return (
+    received.length === expected.length &&
+    crypto.timingSafeEqual(received, expected)
+  );
+}
+```
+
+<br /><br />
+
+## Retry Policy
+
+A delivery succeeds when your endpoint responds with a `2xx` status. A delivery fails when:
+
+- the response has any other status, including `4xx` and `5xx`;
+- no response arrives within the request timeout;
+- the connection fails (for example, DNS, TLS or connection refused).
+
+Failed deliveries are retried only if a retry policy is configured for your webhook. Otherwise, each event is sent once. The policy defines:
+
+- **Maximum attempts:** the total number of deliveries, including the first one.
+- **Initial interval and multiplier:** each wait is the previous one multiplied by the multiplier, starting from the initial interval, with a random variation.
+- **Maximum interval:** the longest wait between two attempts. Once it is reached, the remaining attempts use this interval.
+
+There is no setting for the total retry period. It results from the maximum attempts and the intervals.
+
+Ask our team to set or confirm the retry policy and the request timeout when you register or update the webhook.
+
+When the last attempt fails, the event is not sent again. Use the query endpoints to reconcile events you did not receive.
+
+The same event can arrive more than once, for example when your endpoint processes it but responds after the timeout. Process webhooks idempotently.
 
 <br /><br />
 
