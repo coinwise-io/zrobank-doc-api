@@ -22,57 +22,68 @@ Your account can be configured so that when certain events occur on your account
 
 ## Credentials (Not required)
 
-| Type                   | Description                                                        |
-| ---------------------- | ------------------------------------------------------------------ |
-| Authorization Basic    | base64<username:password>                                          |
-| Authorization Bearer   | API key or token.                                                  |
-| Signature Verification | Shared secret key.                                                 |
-| Custom header          | Header name is not previous defined , using with api key or token. |
-| mTLS                   | TLS certificate.                                                   |
+Each webhook registration can have one credential. You generate the credential value and share it with our team through a secure channel when you register the webhook. We send it in an HTTP header on every request to that webhook, exactly as registered.
+
+| Type                   | Header we send             | Value                         |
+| ---------------------- | -------------------------- | ----------------------------- |
+| Authorization Basic    | `Authorization`            | base64 of `username:password` |
+| Authorization Bearer   | `Authorization`            | API key or token              |
+| Signature Verification | `zro-signature`            | Shared secret key             |
+| Custom header          | Header name of your choice | API key or token              |
+
+No prefix such as `Basic ` or `Bearer ` is added. If your server expects one, include it in the value you register.
 
 <br /><br />
 
-## Signature Verification
+## Verifying Webhook Requests
 
-Signature verification is optional and configured entirely on your side. We do not compute or attach a cryptographic signature (e.g. HMAC) over the webhook payload — instead, you define a static authentication token and choose which HTTP header we should send it in.
+Webhook requests are authenticated only by the credential header:
 
-**How it works**
+- The value is static: it is the same on every request and carries no timestamp or nonce.
+- No signature, such as an HMAC, is computed, and the payload is not signed. With the `Signature Verification` type, the `zro-signature` header carries the shared secret key itself.
+- The same mechanism applies to every webhook type. The credential is configured per webhook registration.
 
-1. When registering your webhook URL with our team, provide the static token (a value you generate and manage) and the name of the header you want it delivered in — it does not need to be a fixed or reserved header name.
-2. We include that token, unchanged, in the header you specified on every webhook request.
-3. On your side, validation is a direct comparison: check that the incoming request's header matches the token you registered. There is no algorithm, encoding, timestamp, or nonce involved, and the payload itself is not signed.
-
-This same mechanism applies uniformly to every webhook type listed above (`DEPOSIT`, `PAYMENT`, and all others) — there is no per-event variation.
-
-**Example**
-
-Suppose you register the header `X-Zro-Signature` with the token `my-shared-secret-token`. Every webhook request will include:
-
-```
-X-Zro-Signature: my-shared-secret-token
-```
-
-Validating it on your side is just:
+To verify a request, compare the header value with the credential you registered and reject the request if they differ:
 
 ```js
-if (request.headers['x-zro-signature'] !== 'my-shared-secret-token') {
-  return response.status(401).send('Invalid signature');
+const crypto = require('node:crypto');
+
+const expected = Buffer.from(process.env.WEBHOOK_CREDENTIAL);
+
+function isAuthenticWebhook(request) {
+  // Use `zro-signature`, `authorization` or your custom header name.
+  const received = Buffer.from(request.headers['zro-signature'] ?? '');
+
+  return (
+    received.length === expected.length &&
+    crypto.timingSafeEqual(received, expected)
+  );
 }
 ```
-
-> Because the payload is not cryptographically signed, treat the token as a shared secret and combine it with transport security (HTTPS, and mTLS if configured) rather than relying on it alone to guarantee payload integrity.
 
 <br /><br />
 
 ## Retry Policy
 
-If your endpoint does not respond with a successful status, we retry the delivery using **retry with exponential backoff**: the interval between attempts increases progressively as more attempts are made.
+A delivery succeeds when your endpoint responds with a `2xx` status. A delivery fails when:
 
-- **Trigger:** any non-success response — any `4xx`, any `5xx`, or a timeout — is treated as a failure and queues a retry.
-- **Max attempts and retry window:** both are configurable per client. Let our team know your desired maximum number of attempts and the maximum total time we should keep retrying when you register your webhook.
-- **Backoff:** exponential — attempts are spaced further apart as the retry window progresses.
+- the response has any other status, including `4xx` and `5xx`;
+- no response arrives within the request timeout;
+- the connection fails (for example, DNS, TLS or connection refused).
 
-If you need different retry parameters for a specific webhook, request the change with our team when registering or updating the webhook configuration.
+The request timeout is defined per webhook.
+
+Failed deliveries are retried only if a retry policy is configured for your webhook. Otherwise, each event is sent once. Ask our team to set or confirm the policy when you register or update the webhook. The policy defines:
+
+- **Maximum attempts:** the total number of deliveries, including the first one.
+- **Initial interval and multiplier:** the wait between attempts starts from the initial interval and grows exponentially, with a small random variation.
+- **Maximum interval:** the longest wait between two attempts. Once it is reached, the remaining attempts use this interval.
+
+There is no setting for the total retry period. It results from the maximum attempts and the intervals.
+
+When the last attempt fails, the event is not sent again. Use the query endpoints to reconcile events you did not receive.
+
+The same event can arrive more than once, for example when your endpoint processes it but responds after the timeout. Process webhooks idempotently.
 
 <br /><br />
 
