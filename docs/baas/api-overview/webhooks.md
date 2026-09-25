@@ -106,7 +106,7 @@ No prefix such as `Basic ` or `Bearer ` is added. If your server expects one, in
 
 ## Verifying Webhook Requests
 
-Webhook requests are authenticated only by the credential header:
+When a credential is configured, webhook requests are authenticated only by its header:
 
 - The value is static: it is the same on every request and carries no timestamp or nonce.
 - No signature, such as an HMAC, is computed, and the payload is not signed. With the `Signature Verification` type, the `zro-signature` header carries the shared secret key itself.
@@ -120,7 +120,8 @@ const crypto = require('node:crypto');
 const expected = Buffer.from(process.env.WEBHOOK_CREDENTIAL);
 
 function isAuthenticWebhook(request) {
-  // Use `zro-signature`, `authorization` or your custom header name.
+  // Node.js lowercases header names: use `zro-signature`, `authorization`
+  // or your custom header name in lowercase.
   const received = Buffer.from(request.headers['zro-signature'] ?? '');
 
   return (
@@ -140,15 +141,15 @@ A delivery succeeds when your endpoint responds with a `2xx` status. A delivery 
 - no response arrives within the request timeout;
 - the connection fails (for example, DNS, TLS or connection refused).
 
-The request timeout is defined per webhook.
-
-Failed deliveries are retried only if a retry policy is configured for your webhook. Otherwise, each event is sent once. Ask our team to set or confirm the policy when you register or update the webhook. The policy defines:
+Failed deliveries are retried only if a retry policy is configured for your webhook. Otherwise, each event is sent once. The policy defines:
 
 - **Maximum attempts:** the total number of deliveries, including the first one.
-- **Initial interval and multiplier:** the wait between attempts starts from the initial interval and grows exponentially, with a small random variation.
+- **Initial interval and multiplier:** each wait is the previous one multiplied by the multiplier, starting from the initial interval, with a random variation.
 - **Maximum interval:** the longest wait between two attempts. Once it is reached, the remaining attempts use this interval.
 
 There is no setting for the total retry period. It results from the maximum attempts and the intervals.
+
+Ask our team to set or confirm the retry policy and the request timeout when you register or update the webhook.
 
 When the last attempt fails, the event is not sent again. Use the query endpoints to reconcile events you did not receive.
 
