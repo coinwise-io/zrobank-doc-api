@@ -96,4 +96,4 @@ Cada post traz o resumo em uma linha e as seções, nesta ordem: Breaking change
 - Nenhum secret neste repositório: quem escreve é o `zrobank-services`, com um PAT guardado lá.
 - Outra API entra adicionando uma chave em `APIS` no gerador, o diretório `specs/<api>/releases` no mirror do services e uma instância de blog no `docusaurus.config.js`.
 
-Validação: `yarn test:changelog` (oasdiff 1.12.8 no `PATH`, ou `OASDIFF_BIN=<binário>`). Para testar com specs em outro diretório: `node specs/changelog/generate.mjs --specs-dir <dir> --posts-dir <dir>` onde `<dir>/<tag>/api-baas.openapi.json` e `<dir>/index.json` existem.
+Validação: `yarn test:changelog` (oasdiff 1.12.8 no `PATH`, ou `OASDIFF_BIN=<binário>`). Para testar com specs em outro diretório: `node specs/changelog/generate.mjs --specs-dir <dir> --posts-dir <dir>` onde `<dir>/<tag>/api-baas.openapi.json` e `<dir>/index.json` existem!
