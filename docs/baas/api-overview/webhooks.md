@@ -80,6 +80,8 @@ Your account can be configured so that when certain events occur on your account
 | BANKING TED RECEIVED FRAUD DECLINED               | When a received TED is declined by the antifraud analysis.                                                                 |
 | BANKING TED SENT FRAUD ANALYSIS                   | When a TED you sent enters antifraud manual review.                                                                        |
 | BANKING TED SENT FRAUD DECLINED                   | When a TED you sent is declined by the antifraud analysis.                                                                 |
+| BANKING BILLET PAYMENT FRAUD ANALYSIS             | When a billet payment you made enters antifraud manual review.                                                             |
+| BANKING BILLET PAYMENT FRAUD DECLINED             | When a billet payment you made is declined by the antifraud analysis.                                                      |
 | PIX DEPOSIT FRAUD ANALYSIS                        | When a received Pix deposit enters antifraud analysis.                                                                     |
 | PIX DEPOSIT FRAUD DECLINED                        | When a received Pix deposit is blocked by the antifraud analysis.                                                          |
 | PIX PAYMENT FRAUD ANALYSIS                        | When a Pix payment you sent enters antifraud manual review.                                                                |
@@ -2744,6 +2746,62 @@ Optional fields are only present when the information is available for the trans
   "updated_at": "2024-04-17T13:35:02.500Z"
 }
 ```
+
+  </TabItem>
+  <TabItem value="Banking Billet Payment Fraud Analysis">
+
+```json
+{
+  "id": "6f1c2d3e-4a5b-4c6d-8e7f-9a0b1c2d3e4f",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_BILLET_PAYMENT_FRAUD_ANALYSIS",
+  "status": "ANTIFRAUD_ANALYSIS_REVIEW",
+  "amount": 55555,
+  "barcode": "34191790010104351004791020150008291070026000",
+  "typeable_line": "34191090081043510047910201500082910700260000",
+  "due_date": "2024-04-20T00:00:00.000Z",
+  "payment_date": "2024-04-17T13:33:41.071Z",
+  "beneficiary_name": "Name",
+  "beneficiary_document": "***000000**",
+  "beneficiary_person_type": "NATURAL_PERSON",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> `barcode`, `typeable_line`, `due_date`, `payment_date` and `beneficiary_*` fields are optional. `beneficiary_person_type` is `NATURAL_PERSON` or `LEGAL_PERSON`.
+
+  </TabItem>
+  <TabItem value="Banking Billet Payment Fraud Declined">
+
+```json
+{
+  "id": "6f1c2d3e-4a5b-4c6d-8e7f-9a0b1c2d3e4f",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "wallet_id": "f08e96c8-b659-40bf-a1bd-5225ef4e5632",
+  "type": "BANKING_BILLET_PAYMENT_FRAUD_DECLINED",
+  "status": "FAILED",
+  "amount": 55555,
+  "barcode": "34191790010104351004791020150008291070026000",
+  "typeable_line": "34191090081043510047910201500082910700260000",
+  "due_date": "2024-04-20T00:00:00.000Z",
+  "payment_date": "2024-04-17T13:33:41.071Z",
+  "beneficiary_name": "Name",
+  "beneficiary_document": "***000000**",
+  "beneficiary_person_type": "NATURAL_PERSON",
+  "beneficiary_bank_ispb": "60701190",
+  "beneficiary_bank_name": "BANCO ITAU S/A",
+  "created_at": "2024-04-17T13:33:41.071Z",
+  "updated_at": "2024-04-17T13:35:02.500Z"
+}
+```
+
+> Sent both when the payment is declined automatically and when it is declined after manual review. `barcode`, `typeable_line`, `due_date`, `payment_date` and `beneficiary_*` fields are optional.
 
   </TabItem>
   <TabItem value="Pix Deposit Fraud Analysis">
