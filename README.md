@@ -15,6 +15,10 @@ Run `yarn build` or `npm run build` for mount the documentation before any other
 
 Run `yarn start` or `npm start`. This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
+Or:
+
+Run `corepack yarn install`, `corepack yarn build` and `corepack yarn start`.
+
 
 ### Deployment
 
