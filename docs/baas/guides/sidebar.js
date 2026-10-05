@@ -4,4 +4,5 @@ module.exports = [
   'baas/guides/company-registration',
   'baas/guides/transaction-approval',
   'baas/guides/open-finance-payments',
+  'baas/guides/automatic-pix',
 ];
