@@ -1035,6 +1035,58 @@ The same event can arrive more than once, for example when your endpoint process
 ```
 
   </TabItem>
+  <TabItem value="Devolution Received Failed">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "DEVOLUTION_RECEIVED_FAILED",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T17:33:05.712Z"
+}
+```
+
+> Same as Version 1, plus `user_id`.
+
+  </TabItem>
+  <TabItem value="Deposit Received Failed">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "DEPOSIT_RECEIVED_FAILED",
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "amount": "63",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_account_number": "000000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_description": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> Same as Version 1, plus `user_id`.
+
+  </TabItem>
 </Tabs>
 
 ## Payloads (Version 3)
@@ -1125,6 +1177,96 @@ The same event can arrive more than once, for example when your endpoint process
 ```
 
   </TabItem>
+  <TabItem value="Payment">
+
+```json
+{
+  "id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "PAYMENT",
+  "end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "txid": null,
+  "operation_id": "0f0aca83-8ea1-5ecb-9fe9-d31782ef06fb",
+  "amount": "270",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "beneficiary_name": "Name",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "beneficiary_account_type": "CACC",
+  "beneficiary_account_number": "000000",
+  "beneficiary_branch_number": "0000",
+  "created_at": "2024-04-17T17:30:00.020Z"
+}
+```
+
+> Same as Version 2, plus `user_id`.
+
+  </TabItem>
+  <TabItem value="Devolution">
+
+```json
+{
+  "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "DEVOLUTION",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "txid": null,
+  "operation_id": "fbfe1a0f-011f-5edb-a01d-19e669a6d853",
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZERO IP S/A",
+  "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
+  "beneficiary_document": "00000000000000",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "created_at": "2024-04-17T17:33:05.523Z"
+}
+```
+
+> Same as Version 2, plus `user_id`.
+
+  </TabItem>
+  <TabItem value="Devolution Received">
+
+```json
+{
+  "id": "10b66e97-c747-4dcb-92ad-da1420a0a6b9",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "DEVOLUTION_RECEIVED",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "txid": null,
+  "operation_id": "fbfe1a0f-011f-5edb-a01d-19e669a6d853",
+  "original_id": "4b344f93-68fb-4ddc-83b4-6288eb7c63ce",
+  "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_name": "ZERO IP S/A",
+  "owner_bank_ispb": "26264220",
+  "beneficiary_name": "Name",
+  "beneficiary_account_number": "000000",
+  "beneficiary_branch_number": "0000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "created_at": "2024-04-17T17:33:05.712Z"
+}
+```
+
+> Same as Version 2, plus `user_id`.
+
+  </TabItem>
 </Tabs>
 
 ## Payloads (Version 4)
@@ -1158,6 +1300,106 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
+
+  </TabItem>
+  <TabItem value="Payment Failed">
+
+```json
+{
+  "id": "77198133-185e-4c08-8252-f47c9b15785b",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "PAYMENT_FAILED",
+  "end_to_end_id": "E26264220202404171336mckyTdpt5VZ",
+  "txid": null,
+  "operation_id": null,
+  "amount": "3",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "beneficiary_name": "Name",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_account_type": "CACC",
+  "beneficiary_account_number": "000000",
+  "beneficiary_branch_number": "0000",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "NOT_ENOUGH_FUNDS",
+  "error_description": "Não há saldo disponível.",
+  "created_at": "2024-04-17T13:36:21.188Z"
+}
+```
+
+> Same as Version 3, plus `user_id`.
+
+  </TabItem>
+  <TabItem value="Devolution Failed">
+
+```json
+{
+  "id": "0a1d863e-98bd-49a3-916d-840a1ec0609f",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "DEVOLUTION_FAILED",
+  "end_to_end_id": "D26264220202404171733p6FuxQmuCKp",
+  "original_end_to_end_id": "E26264220202404171729SrlHOwU3HqB",
+  "txid": null,
+  "operation_id": null,
+  "amount": "270",
+  "owner_name": "Name",
+  "owner_person_type": "CPF",
+  "owner_document": "***000000**",
+  "owner_bank_ispb": "26264220",
+  "owner_bank_name": "ZERO IP S/A",
+  "beneficiary_name": "Z.ro Bolsao",
+  "beneficiary_person_type": "CNPJ",
+  "beneficiary_document": "00000000000000",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "error_code": "AB03",
+  "error_message": "Liquidação da transação interrompida devido a timeout no SPI.",
+  "created_at": "2024-04-17T17:33:05.523Z"
+}
+```
+
+> Same as Version 3, plus `user_id`.
+
+  </TabItem>
+</Tabs>
+
+## Payloads (Version 5)
+
+<Tabs>
+  <TabItem value="Deposit">
+
+```json
+{
+  "id": "a839f358-0e39-409e-b9a5-5a56b18ba3f2",
+  "user_id": "9d77c248-c5b5-4f6d-9d12-d1463dc49bd9",
+  "type": "DEPOSIT",
+  "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
+  "txid": null,
+  "operation_id": "7da84c17-d40c-5bc1-9b69-867d1460736b",
+  "amount": "63",
+  "owner_name": "Z.ro Bolsao",
+  "owner_person_type": "CNPJ",
+  "owner_document": "00000000000000",
+  "owner_bank_name": "ZERO IP S/A",
+  "owner_bank_ispb": "26264220",
+  "owner_branch_number": "0000",
+  "owner_account_number": "000000",
+  "owner_account_type": "CACC",
+  "beneficiary_name": "Name",
+  "beneficiary_account_number": "000000",
+  "beneficiary_branch_number": "0000",
+  "beneficiary_person_type": "CPF",
+  "beneficiary_document": "***000000**",
+  "beneficiary_bank_name": "ZERO IP S/A",
+  "beneficiary_bank_ispb": "26264220",
+  "created_at": "2024-04-17T13:33:41.071Z"
+}
+```
+
+> Same as Version 4, plus `user_id`.
 
   </TabItem>
 </Tabs>
