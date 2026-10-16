@@ -1058,8 +1058,6 @@ The same event can arrive more than once, for example when your endpoint process
 }
 ```
 
-> Same as Version 1, plus `user_id`.
-
   </TabItem>
   <TabItem value="Deposit Received Failed">
 
@@ -1083,8 +1081,6 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
-
-> Same as Version 1, plus `user_id`.
 
   </TabItem>
 </Tabs>
@@ -1203,8 +1199,6 @@ The same event can arrive more than once, for example when your endpoint process
 }
 ```
 
-> Same as Version 2, plus `user_id`.
-
   </TabItem>
   <TabItem value="Devolution">
 
@@ -1231,8 +1225,6 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T17:33:05.523Z"
 }
 ```
-
-> Same as Version 2, plus `user_id`.
 
   </TabItem>
   <TabItem value="Devolution Received">
@@ -1263,8 +1255,6 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T17:33:05.712Z"
 }
 ```
-
-> Same as Version 2, plus `user_id`.
 
   </TabItem>
 </Tabs>
@@ -1330,8 +1320,6 @@ The same event can arrive more than once, for example when your endpoint process
 }
 ```
 
-> Same as Version 3, plus `user_id`.
-
   </TabItem>
   <TabItem value="Devolution Failed">
 
@@ -1360,8 +1348,6 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T17:33:05.523Z"
 }
 ```
-
-> Same as Version 3, plus `user_id`.
 
   </TabItem>
 </Tabs>
@@ -1398,8 +1384,6 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T13:33:41.071Z"
 }
 ```
-
-> Same as Version 4, plus `user_id`.
 
   </TabItem>
 </Tabs>
