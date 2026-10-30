@@ -1,14 +1,58 @@
 require('dotenv').config()
 const fs = require('fs')
-const paasUrl = process.env.PAAS_BASE_URL
-const gatewayUrl = process.env.GATEWAY_BASE_URL
-const baasUrl = process.env.BAAS_BASE_URL
 
-function generateSpecs(url, filename, excludeOptions = []) {
+// Each service sits behind its own Cloudflare Access application, so each one
+// has its own service token: <SERVICE>_CF_ACCESS_CLIENT_ID / _SECRET
+// (e.g. BAAS_CF_ACCESS_CLIENT_ID).
+function cloudflareAccessHeaders(service) {
+  const clientId = process.env[`${service}_CF_ACCESS_CLIENT_ID`]
+  const clientSecret = process.env[`${service}_CF_ACCESS_CLIENT_SECRET`]
+
+  if (!clientId || !clientSecret) return {}
+
+  return {
+    'CF-Access-Client-Id': clientId,
+    'CF-Access-Client-Secret': clientSecret,
+  }
+}
+
+const services = {
+  PAAS: process.env.PAAS_BASE_URL,
+  GATEWAY: process.env.GATEWAY_BASE_URL,
+  BAAS: process.env.BAAS_BASE_URL,
+}
+
+async function fetchSpec(service) {
+  const url = services[service]
+  if (!url) throw new Error(`${service}_BASE_URL is not set`)
+
+  // Without a valid token Cloudflare redirects to its login page, so a
+  // redirect is treated as an authentication failure instead of being followed.
+  const res = await fetch(url, {
+    headers: { Accept: 'application/json', ...cloudflareAccessHeaders(service) },
+    redirect: 'manual',
+  })
+
+  if (res.status >= 300 && res.status < 400) {
+    const location = new URL(res.headers.get('location'), url)
+    throw new Error(
+      `HTTP ${res.status} redirect to ${location.origin}${location.pathname} (check the Cloudflare Access credentials)`
+    )
+  }
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`)
+
+  const contentType = res.headers.get('content-type') || ''
+  if (!contentType.includes('json')) {
+    throw new Error(`expected JSON, got "${contentType}"`)
+  }
+
+  return res.json()
+}
+
+function generateSpecs(service, filename, excludeOptions = []) {
   let specJson = {}
 
-  fetch(url)
-    .then((res) => res.json())
+  fetchSpec(service)
     .then((data) => {
       for (const key in data.paths) {
         for (const method in data.paths[key]) {
@@ -33,16 +77,19 @@ function generateSpecs(url, filename, excludeOptions = []) {
       )
     })
     .catch((err) => {
-      console.error(`Error generating ${filename} from ${url}:`, err.message)
+      console.error(
+        `Error generating ${filename} from ${service}, keeping the committed spec:`,
+        err.message
+      )
     })
 }
 
-generateSpecs(paasUrl, 'paas-spec', [
+generateSpecs('PAAS', 'paas-spec', [
   '/cielo/',
   '/nupay/',
   '/cotations/',
   '/picpay/',
 ])
-generateSpecs(paasUrl, 'caas-spec', ['/cielo/', '/nupay/', '/picpay/', '/pix/'])
-generateSpecs(gatewayUrl, 'gateway-spec', [])
-generateSpecs(baasUrl, 'baas-spec', [])
+generateSpecs('PAAS', 'caas-spec', ['/cielo/', '/nupay/', '/picpay/', '/pix/'])
+generateSpecs('GATEWAY', 'gateway-spec', [])
+generateSpecs('BAAS', 'baas-spec', [])
