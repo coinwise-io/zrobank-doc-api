@@ -58,5 +58,29 @@
     "apps": [
       "api-baas"
     ]
+  },
+  "v1.91.22": {
+    "publishedAt": "2026-10-19T22:02:19Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.91.23": {
+    "publishedAt": "2026-10-23T18:51:27Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.92.0": {
+    "publishedAt": "2026-10-28T19:42:48Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.92.1": {
+    "publishedAt": "2026-10-28T21:55:40Z",
+    "apps": [
+      "api-baas"
+    ]
   }
 }
