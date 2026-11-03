@@ -3042,7 +3042,6 @@ Optional fields are only present when the information is available for the trans
   "status": "WAITING_ANTIFRAUD",
   "amount": 6300,
   "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
-  "tx_id": null,
   "owner_name": "Name",
   "owner_document": "***000000**",
   "owner_person_type": "CPF",
@@ -3077,11 +3076,12 @@ Optional fields are only present when the information is available for the trans
   "owner_bank_ispb": "26264220",
   "owner_bank_name": "ZERO IP S/A",
   "end_to_end_id": "E26264220202404171333Hq7F9SWyvUE",
-  "tx_id": null,
   "created_at": "2024-04-17T13:33:41.071Z",
   "updated_at": "2024-04-17T13:35:02.500Z"
 }
 ```
+
+> In Pix deposit antifraud payloads, `tx_id` is present only when the deposit has a transaction ID (for example, a payment of a QR code charge).
 
   </TabItem>
   <TabItem value="Pix Payment Fraud Analysis">
@@ -3099,7 +3099,7 @@ Optional fields are only present when the information is available for the trans
   "beneficiary_bank_ispb": "26264220",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_name": "Name",
-  "beneficiary_person_type": "CPF",
+  "beneficiary_person_type": "NATURAL_PERSON",
   "beneficiary_document": "***000000**",
   "beneficiary_branch": "0000",
   "beneficiary_account_number": "000000",
@@ -3123,7 +3123,7 @@ Optional fields are only present when the information is available for the trans
   "amount": 27000,
   "beneficiary_name": "Name",
   "beneficiary_document": "***000000**",
-  "beneficiary_person_type": "CPF",
+  "beneficiary_person_type": "NATURAL_PERSON",
   "beneficiary_bank_ispb": "26264220",
   "beneficiary_bank_name": "ZERO IP S/A",
   "beneficiary_branch": "0000",
@@ -3140,6 +3140,12 @@ Optional fields are only present when the information is available for the trans
 
   </TabItem>
 </Tabs>
+
+**Pix antifraud payload notes**
+
+- In Pix payment payloads (`PIX_PAYMENT_FRAUD_ANALYSIS`, `PIX_PAYMENT_FRAUD_DECLINED`), `beneficiary_person_type` is `NATURAL_PERSON` or `LEGAL_PERSON`.
+- In Pix deposit payloads (`PIX_DEPOSIT_FRAUD_ANALYSIS`, `PIX_DEPOSIT_FRAUD_DECLINED`), `owner_person_type` is `CPF` or `CNPJ`, and the `owner_*` fields describe the payer.
+- CPF documents (`beneficiary_document`, `owner_document`) are masked (for example, `***000000**`) unless the third-party CPF display is enabled for your account. CNPJ documents are never masked.
 
 ## Judicial Webhooks
 
