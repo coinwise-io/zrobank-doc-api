@@ -211,6 +211,8 @@ The same event can arrive more than once, for example when your endpoint process
 }
 ```
 
+> Triggered when an outgoing Pix payment fails. `error_code` carries the failure reason and `error_description` its translated message. When the payment goes over the daily limit the account set for that beneficiary's CPF/CNPJ, `error_code` is `DAILY_BENEFICIARY_LIMIT_EXCEEDED` and `error_description` is "Limite diário por destinatário atingido."
+
   </TabItem>
   <TabItem value="Devolution">
 
@@ -1007,6 +1009,8 @@ The same event can arrive more than once, for example when your endpoint process
 }
 ```
 
+> Triggered when an outgoing Pix payment fails. `error_code` carries the failure reason and `error_description` its translated message. When the payment goes over the daily limit the account set for that beneficiary's CPF/CNPJ, `error_code` is `DAILY_BENEFICIARY_LIMIT_EXCEEDED` and `error_description` is "Limite diário por destinatário atingido."
+
   </TabItem>
   <TabItem value="Devolution Failed">
 
@@ -1143,6 +1147,8 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T13:36:21.188Z"
 }
 ```
+
+> Triggered when an outgoing Pix payment fails. `error_code` carries the failure reason and `error_description` its translated message. When the payment goes over the daily limit the account set for that beneficiary's CPF/CNPJ, `error_code` is `DAILY_BENEFICIARY_LIMIT_EXCEEDED` and `error_description` is "Limite diário por destinatário atingido."
 
   </TabItem>
   <TabItem value="Devolution Failed">
@@ -1319,6 +1325,8 @@ The same event can arrive more than once, for example when your endpoint process
   "created_at": "2024-04-17T13:36:21.188Z"
 }
 ```
+
+> Triggered when an outgoing Pix payment fails. `error_code` carries the failure reason and `error_description` its translated message. When the payment goes over the daily limit the account set for that beneficiary's CPF/CNPJ, `error_code` is `DAILY_BENEFICIARY_LIMIT_EXCEEDED` and `error_description` is "Limite diário por destinatário atingido."
 
   </TabItem>
   <TabItem value="Devolution Failed">
