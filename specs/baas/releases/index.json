@@ -58,5 +58,53 @@
     "apps": [
       "api-baas"
     ]
+  },
+  "v1.91.22": {
+    "publishedAt": "2026-10-19T22:02:19Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.91.23": {
+    "publishedAt": "2026-10-23T18:51:27Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.92.0": {
+    "publishedAt": "2026-10-28T19:42:48Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.92.1": {
+    "publishedAt": "2026-10-28T21:55:40Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.93.0": {
+    "publishedAt": "2026-11-05T17:29:01Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.94.0": {
+    "publishedAt": "2026-11-11T14:32:11Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.94.1": {
+    "publishedAt": "2026-11-11T15:06:08Z",
+    "apps": [
+      "api-baas"
+    ]
+  },
+  "v1.94.2": {
+    "publishedAt": "2026-11-11T21:13:15Z",
+    "apps": [
+      "api-baas"
+    ]
   }
 }
